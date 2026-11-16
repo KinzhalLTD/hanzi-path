@@ -1,6 +1,6 @@
 // Hanzi Path – native side of the WebView bridge (Expo, iOS first).
 // Handles: Sign in with Apple / Google (Firebase Auth), cloud sync (Firestore), account deletion,
-// in-app purchases (RevenueCat), local notifications, speech, haptics, sharing and analytics events.
+// in-app purchases (RevenueCat), ads (AdMob + consent), local notifications, speech, haptics, sharing and analytics events.
 // Messages arrive from the web app as JSON: {type, id?, ...payload}; replies go back via window.__fromNative({id, ...}).
 import React, { useRef, useEffect } from 'react';
 import { Share, Platform, Linking } from 'react-native';
@@ -16,6 +16,7 @@ import { doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firest
 import { logEvent } from 'firebase/analytics';
 import { auth, db, analytics, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID } from './firebase';
 import { initPurchases, buy, restore, linkUser } from './purchases';
+import { initAds, showInterstitial, showRewarded, showPrivacyOptions } from './ads';
 
 GoogleSignin.configure({ iosClientId: GOOGLE_IOS_CLIENT_ID, webClientId: GOOGLE_WEB_CLIENT_ID });
 Notifications.setNotificationHandler({ handleNotification: async () => ({ shouldShowBanner: true, shouldShowList: true, shouldPlaySound: true, shouldSetBadge: false }) });
@@ -31,13 +32,20 @@ export default function HanziBridge({ html }) {
   const sendStore = () => {
     if (store.current.prices) push({ type: 'prices', ...store.current.prices });
     if (store.current.pro !== null) push({ type: 'pro', active: store.current.pro });
+    if (store.current.ads) push(store.current.ads);
   };
   useEffect(() => {
-    initPurchases({
-      onPro: (active) => { store.current.pro = active; push({ type: 'pro', active }); },
-      onPrices: (p) => { store.current.prices = p; push({ type: 'prices', ...p }); },
-    });
-    if (auth.currentUser) linkUser(auth.currentUser.uid);
+    (async () => {
+      // purchases first, so ads are never initialised for Pro users
+      await initPurchases({
+        onPro: (active) => { store.current.pro = active; push({ type: 'pro', active }); },
+        onPrices: (p) => { store.current.prices = p; push({ type: 'prices', ...p }); },
+      });
+      if (auth.currentUser) linkUser(auth.currentUser.uid);
+      const a = await initAds({ getPro: () => store.current.pro === true });   // consent form → ATT → AdMob
+      store.current.ads = { type: 'ads', privacy: !!a.privacyRequired };
+      push(store.current.ads);
+    })();
   }, []);
 
   const handlers = {
@@ -107,7 +115,11 @@ export default function HanziBridge({ html }) {
     purchase: async ({ sku }) => buy(sku),
     restore: async () => restore(),
     openUrl: async ({ url }) => { if (/^https:\/\//.test(url)) await Linking.openURL(url); },
-    // rewarded, interstitial and listen are wired in the ads module (next step)
+    // ---------- ads (free users) ----------
+    interstitial: async () => showInterstitial(),
+    rewarded: async () => showRewarded(),
+    'ads:privacy': async () => showPrivacyOptions(),
+    // listen (speech recognition for pronunciation scoring) is wired in the speech module
   };
 
   const onMessage = async (e) => {

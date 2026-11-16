@@ -402,7 +402,7 @@ ar:{secUnlock:'افتح هذا الموضوع',secTopicsN:'مواضيع',secTopi
  perk1:'HSK 1 إلى 6 كاملة — 4,995 كلمة',perk2:'ألعاب وفحوصات نطق بلا حدود',perk3:'بلا إعلانات',perk4:'تلميحات مجانية و+50٪ عملات',perk5:'كل الدروس دون إنترنت',
  monthly:'شهري',yearly:'سنوي',lifetime:'مدى الحياة',perMonth:'/ شهر',perYear:'/ سنة',once:'مرة واحدة',best:'الأفضل قيمة',
  trial:'جرّب ٧ أيام مجانًا، ثم',startTrial:'ابدأ التجربة المجانية',buy:'متابعة',restore:'استعادة المشتريات',later:'ليس الآن',
- termsL:'شروط الاستخدام',buyFail:'تعذّر إتمام الشراء، حاول مجددًا',legal:'يتجدّد الاشتراك تلقائيًا بالسعر نفسه ما لم يُلغَ قبل ٢٤ ساعة على الأقل من نهاية الفترة الحالية أو التجربة المجانية، ويُخصم المبلغ من حساب Apple. يمكنك الإدارة والإلغاء من إعدادات حساب App Store.',
+ termsL:'شروط الاستخدام',adPrivacy:'خيارات خصوصية الإعلانات',adNone:'لا يوجد إعلان متاح الآن، حاول بعد قليل',buyFail:'تعذّر إتمام الشراء، حاول مجددًا',legal:'يتجدّد الاشتراك تلقائيًا بالسعر نفسه ما لم يُلغَ قبل ٢٤ ساعة على الأقل من نهاية الفترة الحالية أو التجربة المجانية، ويُخصم المبلغ من حساب Apple. يمكنك الإدارة والإلغاء من إعدادات حساب App Store.',
  locked:'برو',freeSample:'عيّنة مجانية',search:'ابحث بالصينية أو البينيين أو العربية',all:'الكل',noTr:'المعنى العربي قيد الإضافة',
  mw:'المصنِّف',trad:'التقليدي',ad:'إعلان',
  gamesTitle:'الألعاب الصينية التقليدية',gamesSub:'العب وتعلّم الحروف في كل جولة',playsLeft:'محاولات اليوم',unlimited:'بلا حدود',
@@ -440,7 +440,7 @@ en:{secUnlock:'Unlock this topic',secTopicsN:'topics',secTopicsT:'Topics',secLea
  perk1:'HSK 1–6 complete — 4,995 words',perk2:'Unlimited games & pronunciation checks',perk3:'No ads',perk4:'Free hints & +50% coins',perk5:'All lessons offline',
  monthly:'Monthly',yearly:'Yearly',lifetime:'Lifetime',perMonth:'/ month',perYear:'/ year',once:'one-time',best:'Best value',
  trial:'Try 7 days free, then',startTrial:'Start free trial',buy:'Continue',restore:'Restore purchases',later:'Not now',
- termsL:'Terms of Use',buyFail:'Purchase could not be completed. Please try again.',legal:'Payment is charged to your Apple Account. The subscription renews automatically at the same price unless cancelled at least 24 hours before the end of the current period or free trial. Manage or cancel in your App Store account settings.',
+ termsL:'Terms of Use',adPrivacy:'Ad privacy choices',adNone:'No ad is available right now. Try again in a moment.',buyFail:'Purchase could not be completed. Please try again.',legal:'Payment is charged to your Apple Account. The subscription renews automatically at the same price unless cancelled at least 24 hours before the end of the current period or free trial. Manage or cancel in your App Store account settings.',
  locked:'PRO',freeSample:'Free sample',search:'Search Chinese, pinyin or English',all:'All',noTr:'',
  mw:'Measure word',trad:'Traditional',ad:'Ad',
  gamesTitle:'Traditional Chinese games',gamesSub:'Play and learn characters every round',playsLeft:'plays today',unlimited:'Unlimited',
@@ -513,6 +513,7 @@ function toneOptions(py){ const s=new Set([py]); let g=0; while(s.size<4&&g++<40
 const RN=window.ReactNativeWebView; const pending={};
 function native(type,payload){ return new Promise(res=>{ const id=Math.random().toString(36).slice(2); pending[id]=res; RN.postMessage(JSON.stringify({type,id,...payload})); setTimeout(()=>{ if(pending[id]){ pending[id]({ok:false,timeout:true}); delete pending[id]; } },120000); }); }
 window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){ const was=!!S.pro; S.pro=!!m.active; save(); if(was!==S.pro){ if(S.pro) toast(t('proOn')); render(); } }
+  if(m.type==='ads'){ window.__adPrivacy=!!m.privacy; }
   if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); window.__trialOk=m.trial!==false; }}catch(e){} };
 function speak(text){ if(!S.sound) return; try{musDuck(1.4+text.length*.35);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang:'zh-CN'})); return; }
   try{const u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';u.rate=.8;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){} }
@@ -525,8 +526,10 @@ function simAd(rewarded){ return new Promise(res=>{ const d=document.createEleme
   d.innerHTML=`<div class="sub">${t('ad')} · demo</div><div style="font:800 24px Inter">AdMob</div><div class="num" style="font-size:40px" id="adn">${n}</div><button class="btn ghost sm" id="adx" disabled>${t('close')}</button>`;
   document.body.appendChild(d); const iv=setInterval(()=>{n--; $('#adn',d).textContent=n; if(n<=0){clearInterval(iv); $('#adx',d).disabled=false;}},1000);
   $('#adx',d).onclick=()=>{d.remove(); res({ok:true});}; }); }
-function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return RN?native('interstitial',{}):simAd(false); }
-function rewarded(){ track('ad_rewarded'); return (RN?native('rewarded',{}):simAd(true)).then(r=>r&&r.ok!==false); }
+function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return adWrap(RN?native('interstitial',{}):simAd(false)); }
+/* music and voice pause while an ad plays, then fade back */
+function adWrap(p){ try{ if(AC&&AC.state==='running') AC.suspend(); }catch(e){} return p.then(r=>{ try{ if(AC&&MUS.unlocked&&!document.hidden) AC.resume(); }catch(e){} return r; }); }
+function rewarded(){ track('ad_rewarded'); return adWrap(RN?native('rewarded',{}):simAd(true)).then(r=>{ if(r&&r.unavailable) toast(t('adNone')); return !!(r&&r.ok!==false&&!r.unavailable); }); }
 /* In the native app Pro comes ONLY from a verified App Store purchase (RevenueCat entitlement "pro"). The web preview simulates. */
 function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^pro_/.test(sku),demo:true}); }
 const LEGAL={terms:'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',privacy:'https://hanzi-path-64170.web.app/privacy.html'};
@@ -1311,7 +1314,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
      <div><div class="sub">${t('sound')}</div><div class="seg" id="snd"><button data-v="1" aria-pressed="${S.sound}">${t('on')}</button><button data-v="0" aria-pressed="${!S.sound}">${t('off')}</button></div></div>
      <button class="btn ghost block" id="revb">复 ${t('review')} · <span class="num">${dueIds().length}</span></button>
      <button class="btn ghost block" id="shopb">${coinHTML} ${t('shop')}</button>
-     <button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost block" id="pv">${t('privacy')}</button>
+     <button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost block" id="pv">${t('privacy')}</button>${RN&&window.__adPrivacy?`<button class="btn ghost block" id="adp">${t('adPrivacy')}</button>`:''}
      <button class="btn ghost block" id="rz" style="color:var(--bad)">${t('reset')}</button></div>
    <div class="fine">${t('credit')}</div>`);
   const pp=$('#pp',m); if(pp) pp.onclick=paywall;
@@ -1325,7 +1328,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
   $$('#snd button',m).forEach(b=>b.onclick=()=>{S.sound=b.dataset.v==='1';save();render();});
   $('#shopb',m).onclick=shop; $('#revb',m).onclick=()=>go('review');
   $('#rs',m).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();toast(t('proOn'));render();} else toast(t('restored')); };
-  $('#pv',m).onclick=()=>openUrl(LEGAL.privacy);
+  $('#pv',m).onclick=()=>openUrl(LEGAL.privacy); const ap=$('#adp',m); if(ap) ap.onclick=()=>native('ads:privacy',{});
   $('#rz',m).onclick=()=>sheet(`<h2>${t('resetQ')}</h2><button class="btn red block" id="y">${t('yes')}</button><button class="btn ghost block" id="n">${t('no')}</button>`,s=>{
     $('#y',s).onclick=()=>{ const keep={lang:S.lang,pro:S.pro,owned:S.owned,refCode:S.refCode}; try{localStorage.removeItem(KEY);}catch(e){} S=Object.assign({},DEFAULT,keep,{day:today()}); save(); closeSheet(); go('home'); };
     $('#n',s).onclick=closeSheet; });

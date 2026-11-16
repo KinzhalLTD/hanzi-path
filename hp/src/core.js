@@ -42,6 +42,7 @@ function toneOptions(py){ const s=new Set([py]); let g=0; while(s.size<4&&g++<40
 const RN=window.ReactNativeWebView; const pending={};
 function native(type,payload){ return new Promise(res=>{ const id=Math.random().toString(36).slice(2); pending[id]=res; RN.postMessage(JSON.stringify({type,id,...payload})); setTimeout(()=>{ if(pending[id]){ pending[id]({ok:false,timeout:true}); delete pending[id]; } },120000); }); }
 window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){ const was=!!S.pro; S.pro=!!m.active; save(); if(was!==S.pro){ if(S.pro) toast(t('proOn')); render(); } }
+  if(m.type==='ads'){ window.__adPrivacy=!!m.privacy; }
   if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); window.__trialOk=m.trial!==false; }}catch(e){} };
 function speak(text){ if(!S.sound) return; try{musDuck(1.4+text.length*.35);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang:'zh-CN'})); return; }
   try{const u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';u.rate=.8;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){} }
@@ -54,8 +55,10 @@ function simAd(rewarded){ return new Promise(res=>{ const d=document.createEleme
   d.innerHTML=`<div class="sub">${t('ad')} · demo</div><div style="font:800 24px Inter">AdMob</div><div class="num" style="font-size:40px" id="adn">${n}</div><button class="btn ghost sm" id="adx" disabled>${t('close')}</button>`;
   document.body.appendChild(d); const iv=setInterval(()=>{n--; $('#adn',d).textContent=n; if(n<=0){clearInterval(iv); $('#adx',d).disabled=false;}},1000);
   $('#adx',d).onclick=()=>{d.remove(); res({ok:true});}; }); }
-function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return RN?native('interstitial',{}):simAd(false); }
-function rewarded(){ track('ad_rewarded'); return (RN?native('rewarded',{}):simAd(true)).then(r=>r&&r.ok!==false); }
+function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return adWrap(RN?native('interstitial',{}):simAd(false)); }
+/* music and voice pause while an ad plays, then fade back */
+function adWrap(p){ try{ if(AC&&AC.state==='running') AC.suspend(); }catch(e){} return p.then(r=>{ try{ if(AC&&MUS.unlocked&&!document.hidden) AC.resume(); }catch(e){} return r; }); }
+function rewarded(){ track('ad_rewarded'); return adWrap(RN?native('rewarded',{}):simAd(true)).then(r=>{ if(r&&r.unavailable) toast(t('adNone')); return !!(r&&r.ok!==false&&!r.unavailable); }); }
 /* In the native app Pro comes ONLY from a verified App Store purchase (RevenueCat entitlement "pro"). The web preview simulates. */
 function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^pro_/.test(sku),demo:true}); }
 const LEGAL={terms:'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',privacy:'https://hanzi-path-64170.web.app/privacy.html'};

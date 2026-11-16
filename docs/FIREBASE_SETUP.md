@@ -56,7 +56,7 @@ Do not send passwords or private keys. These values are safe to put in the app.
 
 ## Packages for the Expo app
 ```bash
-npx expo install react-native-purchases react-native-webview expo-speech expo-haptics expo-notifications expo-apple-authentication expo-crypto @react-native-async-storage/async-storage firebase
+npx expo install react-native-purchases react-native-google-mobile-ads expo-tracking-transparency react-native-webview expo-speech expo-haptics expo-notifications expo-apple-authentication expo-crypto @react-native-async-storage/async-storage firebase
 npm i @react-native-google-signin/google-signin
 ```
 `app.json` additions:

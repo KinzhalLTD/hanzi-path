@@ -10,3 +10,4 @@
 - Bundle ID `space.kinzhal.hanzipath`; Firebase project `hanzi-path-64170`.
 - In-app purchases: RevenueCat (`native/purchases.js`), entitlement `pro`. Pro must only come from the native `{type:'pro'}` message, never from cloud sync. Setup steps in `docs/IN_APP_PURCHASES.md`; test with `scripts/test_iap.py`.
 - Privacy policy URL is `https://hanzi-path-64170.web.app/privacy.html` (Firebase Hosting, website step).
+- Ads: AdMob via `native/ads.js` (consent → ATT → init), free users only, interstitial at break points (max 6/day), rewarded opt-in. Setup in `docs/ADS.md`; test with `scripts/test_ads.py`.

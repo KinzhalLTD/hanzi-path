@@ -227,7 +227,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
      <div><div class="sub">${t('sound')}</div><div class="seg" id="snd"><button data-v="1" aria-pressed="${S.sound}">${t('on')}</button><button data-v="0" aria-pressed="${!S.sound}">${t('off')}</button></div></div>
      <button class="btn ghost block" id="revb">复 ${t('review')} · <span class="num">${dueIds().length}</span></button>
      <button class="btn ghost block" id="shopb">${coinHTML} ${t('shop')}</button>
-     <button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost block" id="pv">${t('privacy')}</button>
+     <button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost block" id="pv">${t('privacy')}</button>${RN&&window.__adPrivacy?`<button class="btn ghost block" id="adp">${t('adPrivacy')}</button>`:''}
      <button class="btn ghost block" id="rz" style="color:var(--bad)">${t('reset')}</button></div>
    <div class="fine">${t('credit')}</div>`);
   const pp=$('#pp',m); if(pp) pp.onclick=paywall;
@@ -241,7 +241,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
   $$('#snd button',m).forEach(b=>b.onclick=()=>{S.sound=b.dataset.v==='1';save();render();});
   $('#shopb',m).onclick=shop; $('#revb',m).onclick=()=>go('review');
   $('#rs',m).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();toast(t('proOn'));render();} else toast(t('restored')); };
-  $('#pv',m).onclick=()=>openUrl(LEGAL.privacy);
+  $('#pv',m).onclick=()=>openUrl(LEGAL.privacy); const ap=$('#adp',m); if(ap) ap.onclick=()=>native('ads:privacy',{});
   $('#rz',m).onclick=()=>sheet(`<h2>${t('resetQ')}</h2><button class="btn red block" id="y">${t('yes')}</button><button class="btn ghost block" id="n">${t('no')}</button>`,s=>{
     $('#y',s).onclick=()=>{ const keep={lang:S.lang,pro:S.pro,owned:S.owned,refCode:S.refCode}; try{localStorage.removeItem(KEY);}catch(e){} S=Object.assign({},DEFAULT,keep,{day:today()}); save(); closeSheet(); go('home'); };
     $('#n',s).onclick=closeSheet; });
