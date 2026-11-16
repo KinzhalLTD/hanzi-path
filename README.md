@@ -16,7 +16,7 @@ Live preview: https://claude.ai/artifact/3aHGcsoEvxkHoZ4BPCV31Q
 | `art/` | Game art and photos (embedded as webp in `photos.json`; sector originals in `art/sectors/`) |
 | `sources/` | Upstream HSK list (complete-hsk-vocabulary, MIT) |
 | `vendor/` | Hanzi Writer (MIT) |
-| `native/` | Expo / React Native wrapper: WebView bridge, Firebase auth + sync, notifications |
+| `mobile/` | Expo app (iOS): WebView bridge, Firebase auth + sync, RevenueCat, AdMob, notifications. Build guide: `docs/BUILD_IOS.md` |
 | `docs/` | Setup guides |
 | `scripts/` | Build, content validation and Playwright tests |
 
@@ -35,7 +35,7 @@ Tests (Playwright + Chrome, 390×844): `python3 scripts/regress.py hp/dist/hanzi
 
 ## Native app
 - Bundle ID: `space.kinzhal.hanzipath`
-- Firebase project: `hanzi-path-64170` (Auth: Apple + Google, Firestore `users/{uid}`, rules in `native/firestore.rules`)
+- Firebase project: `hanzi-path-64170` (Auth: Apple + Google, Firestore `users/{uid}`, rules in `mobile/firestore.rules`)
 - See `docs/FIREBASE_SETUP.md`. The web build shows a labelled demo login; inside the native WebView the same buttons use real accounts.
 
 ## Credits

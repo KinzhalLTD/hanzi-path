@@ -1,0 +1,7 @@
+// Bundle the single-file web app (assets/web/hanzi-path.html) as an asset, not as code.
+const { getDefaultConfig } = require('expo/metro-config');
+
+const config = getDefaultConfig(__dirname);
+config.resolver.assetExts.push('html');
+
+module.exports = config;

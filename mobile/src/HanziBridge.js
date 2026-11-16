@@ -23,7 +23,10 @@ Notifications.setNotificationHandler({ handleNotification: async () => ({ should
 
 const publicUser = (u, provider) => ({ uid: u.uid, name: u.displayName || '', email: u.email || '', provider });
 
-export default function HanziBridge({ html }) {
+// Folder that holds the bundled page; WebKit may read files only inside it.
+const dirOf = (u) => u.slice(0, u.lastIndexOf('/') + 1);
+
+export default function HanziBridge({ uri, onReady }) {
   const web = useRef(null);
   const reply = (id, data) => web.current?.injectJavaScript(`window.__fromNative(${JSON.stringify({ id, ...data })});true;`);
   const push = (data) => web.current?.injectJavaScript(`window.__fromNative&&window.__fromNative(${JSON.stringify(data)});true;`);
@@ -129,9 +132,23 @@ export default function HanziBridge({ html }) {
     catch (err) { if (msg.id) reply(msg.id, { ok: false, error: String(err.message || err) }); }
   };
 
+  // Only the bundled page itself loads inside the app; any other link opens in Safari.
+  const onNav = (req) => {
+    if (req.url.startsWith('file://') || req.url.startsWith('about:') || req.isTopFrame === false) return true;
+    if (/^https:\/\//.test(req.url)) Linking.openURL(req.url).catch(() => {});
+    return false;
+  };
+
   return (
-    <WebView ref={web} originWhitelist={['*']} source={{ html }} onMessage={onMessage} onLoadEnd={sendStore}
+    <WebView ref={web} originWhitelist={['*']} source={{ uri }}
+      allowFileAccess allowingReadAccessToURL={dirOf(uri)}
+      onMessage={onMessage} onLoadEnd={() => { sendStore(); onReady?.(); }}
+      onShouldStartLoadWithRequest={onNav}
+      onContentProcessDidTerminate={() => web.current?.reload()}
       allowsInlineMediaPlayback mediaPlaybackRequiresUserAction={false} javaScriptEnabled domStorageEnabled
+      contentInsetAdjustmentBehavior="never" automaticallyAdjustContentInsets={false}
+      bounces={false} overScrollMode="never" allowsBackForwardNavigationGestures={false}
+      setSupportMultipleWindows={false} webviewDebuggingEnabled={__DEV__}
       style={{ flex: 1, backgroundColor: '#0d0908' }} />
   );
 }

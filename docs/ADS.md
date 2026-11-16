@@ -1,6 +1,6 @@
 # Hanzi Path – Ads (AdMob + mediation)
 
-**Built in the app:** `native/ads.js`, bridge handlers, `app.json` plugins, mediation plugin `native/plugins/withAdMediation.js`.
+**Built in the app:** `mobile/src/ads.js`, bridge handlers, `app.json` plugins, mediation plugin `mobile/plugins/withAdMediation.js`.
 
 | Item | Value |
 |---|---|

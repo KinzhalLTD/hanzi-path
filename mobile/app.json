@@ -2,6 +2,12 @@
   "expo": {
     "name": "Hanzi Path",
     "slug": "hanzi-path",
+    "scheme": "hanzipath",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/app-icon-1024.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0d0908",
     "ios": {
       "bundleIdentifier": "space.kinzhal.hanzipath",
       "usesAppleSignIn": true,
@@ -42,6 +48,14 @@
       }
     },
     "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "backgroundColor": "#0d0908"
+        }
+      ],
       "expo-apple-authentication",
       "expo-notifications",
       [
@@ -111,11 +125,11 @@
           "userTrackingPermission": "This lets us show ads that are more relevant to you. Pro removes all ads."
         }
       ],
+      "expo-asset",
       "./plugins/withAdMediation"
     ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./app-icon-1024.png",
-    "userInterfaceStyle": "dark"
+    "platforms": [
+      "ios"
+    ]
   }
 }

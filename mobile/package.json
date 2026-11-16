@@ -1,0 +1,39 @@
+{
+  "name": "hanzi-path-mobile",
+  "version": "1.0.0",
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-google-signin/google-signin": "^17.0.0",
+    "expo": "~58.0.25",
+    "expo-apple-authentication": "~58.0.3",
+    "expo-asset": "~58.0.21",
+    "expo-crypto": "~58.0.8",
+    "expo-dev-client": "~58.0.20",
+    "expo-file-system": "~58.0.13",
+    "expo-haptics": "~58.0.8",
+    "expo-notifications": "~58.1.9",
+    "expo-speech": "~58.0.4",
+    "expo-splash-screen": "~58.0.14",
+    "expo-status-bar": "~58.0.5",
+    "expo-system-ui": "~58.0.7",
+    "expo-tracking-transparency": "~58.1.0",
+    "firebase": "^13.4.0",
+    "react": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-google-mobile-ads": "^17.4.0",
+    "react-native-purchases": "^11.0.3",
+    "react-native-webview": "14.0.1"
+  },
+  "scripts": {
+    "sync-web": "node scripts/sync-web.js",
+    "prestart": "node scripts/sync-web.js",
+    "start": "expo start --dev-client",
+    "ios": "expo run:ios",
+    "check:store": "node scripts/sync-web.js && node scripts/check-store.js",
+    "eas-build-post-install": "node scripts/sync-web.js",
+    "build:ios": "eas build -p ios --profile production",
+    "submit:ios": "eas submit -p ios --profile production --latest"
+  },
+  "private": true,
+  "main": "index.js"
+}

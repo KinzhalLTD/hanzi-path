@@ -1,6 +1,6 @@
 # Hanzi Path – In-app purchases (App Store + RevenueCat)
 
-The app side is finished (`native/purchases.js`, paywall, shop, restore). You do the account setup below once,
+The app side is finished (`mobile/src/purchases.js`, paywall, shop, restore). You do the account setup below once,
 then send Claude **one value**: the RevenueCat public App Store SDK key (starts with `appl_`).
 
 Order matters: **Step 1 can take a few days to approve – start it first.**
@@ -98,7 +98,7 @@ On the iPhone: Settings → App Store → **Sandbox Account** → sign in with i
 - [ ] Terms of Use and Privacy Policy links open from the paywall
 
 ## How it works (for reference)
-- `native/purchases.js` configures RevenueCat, loads localized prices and trial eligibility, buys, restores,
+- `mobile/src/purchases.js` configures RevenueCat, loads localized prices and trial eligibility, buys, restores,
   and links purchases to the Firebase account (`Purchases.logIn(uid)`).
 - The web app receives `{type:'prices'}` and `{type:'pro', active}` messages. **Pro is set only from the verified
   `pro` entitlement** – it is excluded from cloud sync, so it cannot be copied or faked.
