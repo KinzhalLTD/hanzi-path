@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+node_modules/
+hp/dist/app.js
+out/cedict_base.json
+shots/
+audio/
+*.wav
+.DS_Store
+.env
+*.p8
+*.p12
+*.mobileprovision

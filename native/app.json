@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Hanzi Path",
+    "slug": "hanzi-path",
+    "ios": {
+      "bundleIdentifier": "space.kinzhal.hanzipath",
+      "usesAppleSignIn": true,
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Used to check your Chinese pronunciation.",
+        "NSSpeechRecognitionUsageDescription": "Used to score your Chinese pronunciation."
+      }
+    },
+    "plugins": [
+      "expo-apple-authentication",
+      "expo-notifications",
+      ["@react-native-google-signin/google-signin", { "iosUrlScheme": "com.googleusercontent.apps.745293456497-coheqcrop5suk9p61f9kletsajdoouco" }]
+    ]
+  }
+}

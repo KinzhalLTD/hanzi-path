@@ -1,0 +1,315 @@
+@tech
+#ai|人工智能|الذكاء الاصطناعي|Artificial intelligence
+人工智能|réngōng zhìnéng|الذكاء الاصطناعي|artificial intelligence|1
+机器学习|jīqì xuéxí|تعلّم الآلة|machine learning|2
+深度学习|shēndù xuéxí|التعلّم العميق|deep learning|2
+神经网络|shénjīng wǎngluò|شبكة عصبية|neural network|2
+大模型|dàmóxíng|نموذج لغوي كبير|large model (LLM)|2
+训练|xùnliàn|تدريب|training|1
+数据集|shùjùjí|مجموعة بيانات|dataset|2
+算力|suànlì|قدرة حوسبية|computing power|2
+提示词|tíshìcí|أمر توجيهي (برومبت)|prompt|2
+生成式|shēngchéngshì|توليدي|generative|3
+聊天机器人|liáotiān jīqìrén|روبوت محادثة|chatbot|1
+语音识别|yǔyīn shíbié|التعرّف على الكلام|speech recognition|2
+人脸识别|rénliǎn shíbié|التعرّف على الوجه|face recognition|2
+图像识别|túxiàng shíbié|التعرّف على الصور|image recognition|2
+自然语言处理|zìrán yǔyán chǔlǐ|معالجة اللغة الطبيعية|natural language processing|3
+推理|tuīlǐ|استدلال|inference, reasoning|3
+参数|cānshù|معامِل|parameter|2
+幻觉|huànjué|هلوسة (في الذكاء الاصطناعي)|hallucination|3
+智能体|zhìnéngtǐ|وكيل ذكي|AI agent|3
+机器人|jīqìrén|روبوت|robot|1
+#chip|芯片与硬件|الرقائق والأجهزة|Chips & hardware
+芯片|xīnpiàn|رقاقة|chip|1
+半导体|bàndǎotǐ|أشباه الموصلات|semiconductor|2
+晶圆|jīngyuán|رقاقة سيليكون (ويفر)|wafer|3
+光刻机|guāngkèjī|آلة الطباعة الضوئية|lithography machine|3
+制程|zhìchéng|عقدة التصنيع (نانومتر)|process node|3
+纳米|nàmǐ|نانومتر|nanometer|2
+处理器|chǔlǐqì|معالج|processor|1
+显卡|xiǎnkǎ|بطاقة رسوميات|graphics card (GPU)|1
+内存|nèicún|ذاكرة عشوائية|memory (RAM)|1
+硬盘|yìngpán|قرص صلب|hard drive|1
+主板|zhǔbǎn|اللوحة الأم|motherboard|2
+屏幕|píngmù|شاشة|screen|1
+分辨率|fēnbiànlǜ|دقّة الشاشة|resolution|2
+电路板|diànlùbǎn|لوحة دوائر|circuit board|2
+集成电路|jíchéng diànlù|دائرة متكاملة|integrated circuit|3
+散热|sànrè|تبديد الحرارة|heat dissipation|2
+功耗|gōnghào|استهلاك الطاقة|power consumption|3
+摄像头|shèxiàngtóu|كاميرا|camera|1
+耳机|ěrjī|سمّاعات|headphones|1
+可穿戴设备|kě chuāndài shèbèi|أجهزة قابلة للارتداء|wearable device|2
+#tel|通信与互联网|الاتصالات والإنترنت|Telecom & internet
+5G|wǔ G|الجيل الخامس|5G|1
+信号|xìnhào|إشارة|signal|1
+基站|jīzhàn|محطة قاعدية|base station|2
+宽带|kuāndài|إنترنت عريض النطاق|broadband|2
+光纤|guāngxiān|ألياف ضوئية|optical fiber|2
+无线网|wúxiànwǎng|شبكة لاسلكية (واي فاي)|Wi-Fi|1
+流量|liúliàng|باقة بيانات|mobile data|1
+蓝牙|lányá|بلوتوث|Bluetooth|1
+网速|wǎngsù|سرعة الإنترنت|internet speed|1
+带宽|dàikuān|عرض النطاق|bandwidth|3
+物联网|wùliánwǎng|إنترنت الأشياء|Internet of Things|2
+卫星通信|wèixīng tōngxìn|الاتصالات الفضائية|satellite communication|3
+运营商|yùnyíngshāng|مشغّل الاتصالات|carrier, operator|2
+手机卡|shǒujīkǎ|شريحة جوّال|SIM card|1
+漫游|mànyóu|تجوال|roaming|2
+数据中心|shùjù zhōngxīn|مركز بيانات|data center|2
+云计算|yún jìsuàn|حوسبة سحابية|cloud computing|2
+服务器|fúwùqì|خادم|server|2
+延迟|yánchí|زمن الاستجابة|latency|3
+芯片组|xīnpiànzǔ|طقم الرقائق|chipset|3
+#energy|新能源与制造|الطاقة الجديدة والتصنيع|New energy & manufacturing
+新能源|xīnnéngyuán|طاقة جديدة|new energy|1
+太阳能|tàiyángnéng|طاقة شمسية|solar energy|1
+光伏|guāngfú|خلايا كهروضوئية|photovoltaic|2
+风能|fēngnéng|طاقة رياح|wind energy|1
+风力发电|fēnglì fādiàn|توليد الكهرباء بالرياح|wind power generation|2
+储能|chǔnéng|تخزين الطاقة|energy storage|2
+锂电池|lǐdiànchí|بطارية ليثيوم|lithium battery|2
+氢能|qīngnéng|طاقة الهيدروجين|hydrogen energy|2
+碳中和|tànzhōnghé|الحياد الكربوني|carbon neutrality|2
+碳排放|tànpáifàng|انبعاثات الكربون|carbon emissions|2
+核电站|hédiànzhàn|محطة نووية|nuclear power plant|2
+智能制造|zhìnéng zhìzào|التصنيع الذكي|smart manufacturing|2
+3D打印|sān D dǎyìn|الطباعة ثلاثية الأبعاد|3D printing|1
+工业机器人|gōngyè jīqìrén|روبوت صناعي|industrial robot|2
+生产线|shēngchǎnxiàn|خط إنتاج|production line|1
+无人机|wúrénjī|طائرة مسيّرة (درون)|drone|1
+数字孪生|shùzì luánshēng|التوأم الرقمي|digital twin|3
+虚拟现实|xūnǐ xiànshí|الواقع الافتراضي|virtual reality|2
+增强现实|zēngqiáng xiànshí|الواقع المعزّز|augmented reality|2
+专利|zhuānlì|براءة اختراع|patent|2
+#ind|科技产业|صناعة التقنية|Tech industry
+科技公司|kējì gōngsī|شركة تقنية|tech company|1
+初创公司|chūchuàng gōngsī|شركة ناشئة|startup|2
+独角兽|dújiǎoshòu|شركة يونيكورن|unicorn (startup)|3
+融资|róngzī|تمويل|financing, funding|2
+风险投资|fēngxiǎn tóuzī|رأس المال الجريء|venture capital|3
+上市|shàngshì|طرح عام (إدراج في البورصة)|to go public (IPO)|2
+研发|yánfā|البحث والتطوير|R&D|2
+产品经理|chǎnpǐn jīnglǐ|مدير منتج|product manager|2
+用户体验|yònghù tǐyàn|تجربة المستخدم|user experience|2
+迭代|diédài|تكرار التطوير|iteration|3
+发布会|fābùhuì|مؤتمر إطلاق|launch event|2
+华为|Huáwéi|هواوي|Huawei|1
+比亚迪|Bǐyàdí|بي واي دي|BYD|1
+大疆|Dàjiāng|دي جي آي|DJI|2
+科技园|kējìyuán|حديقة تقنية|science park|2
+中关村|Zhōngguāncūn|تشونغقوانتسون (وادي السيليكون الصيني)|Zhongguancun|3
+数字经济|shùzì jīngjì|الاقتصاد الرقمي|digital economy|2
+数字化转型|shùzìhuà zhuǎnxíng|التحوّل الرقمي|digital transformation|2
+开源|kāiyuán|مفتوح المصدر|open source|2
+知识产权|zhīshi chǎnquán|الملكية الفكرية|intellectual property|3
+>这个大模型有一千亿个参数。|Zhège dàmóxíng yǒu yìqiān yì ge cānshù.|لهذا النموذج الكبير مئة مليار معامِل.|This large model has 100 billion parameters.
+>先进制程的芯片需要光刻机。|Xiānjìn zhìchéng de xīnpiàn xūyào guāngkèjī.|تحتاج الرقائق المتقدّمة إلى آلات الطباعة الضوئية.|Advanced-node chips require lithography machines.
+>沙特正在大力发展光伏和氢能。|Shātè zhèngzài dàlì fāzhǎn guāngfú hé qīngnéng.|تطوّر السعودية بقوة الطاقة الشمسية والهيدروجين.|Saudi Arabia is investing heavily in solar and hydrogen.
+>这家初创公司刚完成了一轮融资。|Zhè jiā chūchuàng gōngsī gāng wánchéngle yì lún róngzī.|أنهت هذه الشركة الناشئة للتو جولة تمويل.|This startup just closed a funding round.
+>手机没有信号，可能是附近没有基站。|Shǒujī méiyǒu xìnhào, kěnéng shì fùjìn méiyǒu jīzhàn.|لا توجد إشارة، ربما لا توجد محطة قاعدية قريبة.|No signal — maybe there's no base station nearby.
+>人工智能有时会产生幻觉，要检查答案。|Réngōng zhìnéng yǒushí huì chǎnshēng huànjué, yào jiǎnchá dá'àn.|قد يهلوس الذكاء الاصطناعي أحيانًا، فتحقّق من الإجابة.|AI sometimes hallucinates, so check its answers.
+@it
+#dev|软件开发|تطوير البرمجيات|Software development
+编程|biānchéng|برمجة|programming|1
+程序员|chéngxùyuán|مبرمج|programmer|1
+代码|dàimǎ|كود|code|1
+源代码|yuándàimǎ|الشيفرة المصدرية|source code|2
+编程语言|biānchéng yǔyán|لغة برمجة|programming language|1
+前端|qiánduān|الواجهة الأمامية|front end|2
+后端|hòuduān|الواجهة الخلفية|back end|2
+全栈|quánzhàn|مطوّر شامل|full stack|2
+框架|kuàngjià|إطار عمل|framework|2
+接口|jiēkǒu|واجهة برمجية (API)|interface, API|2
+调试|tiáoshì|تصحيح الأخطاء|to debug|2
+漏洞|lòudòng|ثغرة|bug, vulnerability|2
+上线|shàngxiàn|إطلاق (النشر)|to go live|2
+部署|bùshǔ|نشر (تطبيق)|deployment|2
+版本|bǎnběn|إصدار|version|1
+需求|xūqiú|متطلّبات|requirements|2
+测试|cèshì|اختبار|testing|1
+敏捷开发|mǐnjié kāifā|التطوير الرشيق|agile development|3
+代码审查|dàimǎ shěnchá|مراجعة الكود|code review|3
+技术债|jìshù zhài|الدَّين التقني|technical debt|3
+#net|网络与云|الشبكات والسحابة|Networks & cloud
+网络|wǎngluò|شبكة|network|1
+网址|wǎngzhǐ|عنوان موقع|URL, web address|1
+域名|yùmíng|اسم النطاق|domain name|2
+IP地址|IP dìzhǐ|عنوان IP|IP address|2
+路由器|lùyóuqì|راوتر|router|1
+防火墙|fánghuǒqiáng|جدار حماية|firewall|2
+云服务|yún fúwù|خدمة سحابية|cloud service|2
+虚拟机|xūnǐjī|آلة افتراضية|virtual machine|3
+容器|róngqì|حاوية|container (Docker)|3
+负载均衡|fùzài jūnhéng|موازنة الحمل|load balancing|3
+缓存|huǎncún|ذاكرة تخزين مؤقت|cache|2
+备份|bèifèn|نسخة احتياطية|backup|1
+宕机|dàngjī|تعطّل الخادم|server crash, downtime|3
+运维|yùnwéi|العمليات والصيانة|operations (DevOps)|3
+带宽|dàikuān|عرض النطاق|bandwidth|2
+协议|xiéyì|بروتوكول|protocol|2
+下载|xiàzài|تنزيل|download|1
+上传|shàngchuán|رفع (ملف)|upload|1
+同步|tóngbù|مزامنة|sync|2
+账号|zhànghào|حساب|account|1
+#data|数据与数据库|البيانات وقواعد البيانات|Data & databases
+数据库|shùjùkù|قاعدة بيانات|database|1
+表|biǎo|جدول|table|1
+字段|zìduàn|حقل|field|2
+主键|zhǔjiàn|المفتاح الأساسي|primary key|3
+查询|cháxún|استعلام|query|2
+索引|suǒyǐn|فهرس|index|2
+大数据|dàshùjù|البيانات الضخمة|big data|1
+数据分析|shùjù fēnxī|تحليل البيانات|data analysis|1
+可视化|kěshìhuà|تصوير البيانات|visualization|2
+报表|bàobiǎo|تقرير (جدول بيانات)|report|2
+仪表盘|yíbiǎopán|لوحة مؤشّرات|dashboard|2
+数据清洗|shùjù qīngxǐ|تنظيف البيانات|data cleaning|3
+算法|suànfǎ|خوارزمية|algorithm|2
+数据结构|shùjù jiégòu|بنية البيانات|data structure|2
+复杂度|fùzádù|تعقيد (خوارزمي)|complexity|3
+格式|géshì|صيغة|format|1
+文件|wénjiàn|ملف|file|1
+文件夹|wénjiànjiā|مجلّد|folder|1
+存储|cúnchǔ|تخزين|storage|2
+迁移|qiānyí|ترحيل (البيانات)|migration|3
+#sec|网络安全|الأمن السيبراني|Cybersecurity
+网络安全|wǎngluò ānquán|الأمن السيبراني|cybersecurity|1
+密码|mìmǎ|كلمة مرور|password|1
+加密|jiāmì|تشفير|encryption|2
+解密|jiěmì|فكّ التشفير|decryption|2
+黑客|hēikè|مخترق (هاكر)|hacker|1
+病毒|bìngdú|فيروس|virus|1
+木马|mùmǎ|حصان طروادة|Trojan|2
+钓鱼网站|diàoyú wǎngzhàn|موقع تصيّد|phishing site|2
+勒索软件|lèsuǒ ruǎnjiàn|برمجية فدية|ransomware|3
+验证码|yànzhèngmǎ|رمز التحقّق|verification code|1
+双重认证|shuāngchóng rènzhèng|المصادقة الثنائية|two-factor authentication|2
+权限|quánxiàn|صلاحيات|permissions|2
+数据泄露|shùjù xièlòu|تسريب البيانات|data breach|2
+隐私|yǐnsī|خصوصية|privacy|1
+补丁|bǔding|تصحيح أمني|patch|2
+登录|dēnglù|تسجيل الدخول|log in|1
+注销|zhùxiāo|إلغاء الحساب|deregister, log out|2
+攻击|gōngjī|هجوم|attack|2
+渗透测试|shèntòu cèshì|اختبار الاختراق|penetration testing|3
+白帽黑客|báimào hēikè|هاكر أخلاقي|white-hat hacker|3
+>这个接口返回了错误，我们需要调试。|Zhège jiēkǒu fǎnhuíle cuòwù, wǒmen xūyào tiáoshì.|أعادت هذه الواجهة خطأً، نحتاج إلى تصحيحه.|This API returned an error; we need to debug it.
+>新版本今晚十点上线。|Xīn bǎnběn jīnwǎn shí diǎn shàngxiàn.|يُطلق الإصدار الجديد الليلة الساعة العاشرة.|The new version goes live at 10 tonight.
+>服务器宕机了，运维正在处理。|Fúwùqì dàngjī le, yùnwéi zhèngzài chǔlǐ.|تعطّل الخادم، وفريق العمليات يعالج المشكلة.|The server is down; ops is on it.
+>请不要点击钓鱼网站的链接。|Qǐng búyào diǎnjī diàoyú wǎngzhàn de liànjiē.|لا تنقر على روابط مواقع التصيّد.|Don't click links from phishing sites.
+>给这个字段加一个索引，查询会更快。|Gěi zhège zìduàn jiā yí ge suǒyǐn, cháxún huì gèng kuài.|أضف فهرسًا لهذا الحقل لتصبح الاستعلامات أسرع.|Add an index to this field and queries will be faster.
+>记得开启双重认证。|Jìde kāiqǐ shuāngchóng rènzhèng.|تذكّر تفعيل المصادقة الثنائية.|Remember to turn on two-factor authentication.
+@biz
+#fin|金融与会计|المالية والمحاسبة|Finance & accounting
+财务|cáiwù|الشؤون المالية|finance|1
+会计|kuàijì|محاسبة، محاسب|accounting, accountant|1
+利润|lìrùn|ربح|profit|1
+成本|chéngběn|تكلفة|cost|1
+收入|shōurù|إيرادات|revenue, income|1
+毛利|máolì|إجمالي الربح|gross profit|2
+净利润|jìnglìrùn|صافي الربح|net profit|2
+现金流|xiànjīnliú|التدفّق النقدي|cash flow|2
+资产|zīchǎn|أصول|assets|2
+负债|fùzhài|خصوم|liabilities|2
+资产负债表|zīchǎn fùzhàibiǎo|الميزانية العمومية|balance sheet|3
+利润表|lìrùnbiǎo|قائمة الدخل|income statement|3
+税|shuì|ضريبة|tax|1
+增值税|zēngzhíshuì|ضريبة القيمة المضافة|VAT|2
+汇率|huìlǜ|سعر الصرف|exchange rate|1
+人民币|rénmínbì|اليوان الصيني|renminbi (RMB)|1
+股票|gǔpiào|أسهم|stocks|1
+投资|tóuzī|استثمار|investment|1
+回报率|huíbàolǜ|معدّل العائد|rate of return|2
+审计|shěnjì|تدقيق|audit|2
+#trade|国际贸易|التجارة الدولية|International trade
+外贸|wàimào|تجارة خارجية|foreign trade|1
+进出口|jìnchūkǒu|الاستيراد والتصدير|import and export|1
+离岸价|lí'ànjià|سعر التسليم على ظهر السفينة|FOB price|3
+到岸价|dào'ànjià|سعر التكلفة والتأمين والشحن|CIF price|3
+信用证|xìnyòngzhèng|اعتماد مستندي|letter of credit|3
+电汇|diànhuì|حوالة برقية|telegraphic transfer (T/T)|2
+关税|guānshuì|رسوم جمركية|tariff|2
+原产地证|yuánchǎndìzhèng|شهادة المنشأ|certificate of origin|3
+认证|rènzhèng|شهادة اعتماد|certification|2
+贴牌|tiēpái|تصنيع بعلامة العميل|OEM (own-label)|3
+代理|dàilǐ|وكيل|agent, agency|2
+经销商|jīngxiāoshāng|موزّع|distributor|2
+批发|pīfā|بيع بالجملة|wholesale|1
+零售|língshòu|بيع بالتجزئة|retail|1
+展会|zhǎnhuì|معرض تجاري|trade fair|1
+广交会|Guǎngjiāohuì|معرض كانتون|Canton Fair|2
+义乌|Yìwū|ييوو (سوق الجملة)|Yiwu (wholesale market)|2
+验货|yànhuò|فحص البضاعة|goods inspection|2
+索赔|suǒpéi|مطالبة بالتعويض|claim (compensation)|3
+贸易逆差|màoyì nìchā|عجز تجاري|trade deficit|3
+#mkt|营销与销售|التسويق والمبيعات|Marketing & sales
+市场|shìchǎng|سوق|market|1
+营销|yíngxiāo|تسويق|marketing|1
+品牌|pǐnpái|علامة تجارية|brand|1
+广告|guǎnggào|إعلان|advertisement|1
+客户|kèhù|عميل|client|1
+潜在客户|qiánzài kèhù|عميل محتمل|prospect, lead|2
+销售额|xiāoshòu'é|حجم المبيعات|sales revenue|2
+市场份额|shìchǎng fèn'é|حصة سوقية|market share|2
+竞争对手|jìngzhēng duìshǒu|منافس|competitor|1
+定位|dìngwèi|تموضع|positioning|2
+目标客户|mùbiāo kèhù|الجمهور المستهدف|target customer|2
+转化率|zhuǎnhuàlǜ|معدّل التحويل|conversion rate|3
+复购率|fùgòulǜ|معدّل الشراء المتكرّر|repeat-purchase rate|3
+促销|cùxiāo|عرض ترويجي|promotion|1
+折扣|zhékòu|خصم|discount|1
+打折|dǎzhé|تخفيض|on sale|1
+私域流量|sīyù liúliàng|جمهور خاص مملوك|private-domain traffic|3
+关键绩效指标|guānjiàn jìxiào zhǐbiāo|مؤشّرات الأداء الرئيسية|KPI|3
+渠道|qúdào|قناة (توزيع)|channel|2
+口碑|kǒubēi|السمعة الشفهية|word of mouth|2
+#mgmt|公司与管理|الشركات والإدارة|Company & management
+公司|gōngsī|شركة|company|1
+总经理|zǒngjīnglǐ|مدير عام|general manager|1
+董事长|dǒngshìzhǎng|رئيس مجلس الإدارة|chairman of the board|2
+股东|gǔdōng|مساهم|shareholder|2
+部门|bùmén|قسم|department|1
+人力资源|rénlì zīyuán|الموارد البشرية|human resources|2
+员工|yuángōng|موظّف|employee|1
+招聘|zhāopìn|توظيف|recruitment|1
+面试|miànshì|مقابلة عمل|job interview|1
+工资|gōngzī|راتب|salary|1
+年终奖|niánzhōngjiǎng|مكافأة نهاية العام|year-end bonus|2
+绩效|jìxiào|أداء|performance|2
+战略|zhànlüè|استراتيجية|strategy|2
+营业执照|yíngyè zhízhào|رخصة تجارية|business license|2
+有限公司|yǒuxiàn gōngsī|شركة ذات مسؤولية محدودة|limited company (Ltd.)|2
+合资企业|hézī qǐyè|مشروع مشترك|joint venture|3
+总部|zǒngbù|المقرّ الرئيسي|headquarters|2
+分公司|fēngōngsī|فرع|branch office|2
+会议纪要|huìyì jìyào|محضر اجتماع|meeting minutes|3
+名片|míngpiàn|بطاقة عمل|business card|1
+#etiq|商务礼仪与谈判|آداب العمل والتفاوض|Etiquette & negotiation
+谈判|tánpàn|تفاوض|negotiation|1
+让步|ràngbù|تنازل|concession|2
+底价|dǐjià|أدنى سعر|bottom price|2
+砍价|kǎnjià|مساومة|to haggle|2
+双赢|shuāngyíng|مكسب للطرفين|win-win|2
+合作伙伴|hézuò huǒbàn|شريك عمل|business partner|1
+关系|guānxi|علاقات (غوانشي)|guanxi, connections|2
+面子|miànzi|ماء الوجه|face (prestige)|2
+敬酒|jìngjiǔ|رفع النخب|to propose a toast|2
+宴请|yànqǐng|دعوة إلى وليمة|to host a banquet|2
+客套话|kètàohuà|عبارات المجاملة|polite formulas|3
+考虑考虑|kǎolǜ kǎolǜ|"سنفكّر في الأمر" (رفض مهذّب)|"we'll think about it" (polite no)|3
+意向书|yìxiàngshū|خطاب نوايا|letter of intent|3
+签约|qiānyuē|توقيع العقد|to sign a contract|1
+条款|tiáokuǎn|بند|clause|2
+违约|wéiyuē|الإخلال بالعقد|breach of contract|3
+保密协议|bǎomì xiéyì|اتفاقية عدم إفصاح|NDA|3
+仲裁|zhòngcái|تحكيم|arbitration|3
+长期合作|chángqī hézuò|تعاون طويل الأمد|long-term cooperation|1
+请多关照|qǐng duō guānzhào|أرجو رعايتكم (عبارة مجاملة)|please take care of me (courtesy)|2
+>我们可以接受信用证付款。|Wǒmen kěyǐ jiēshòu xìnyòngzhèng fùkuǎn.|يمكننا قبول الدفع باعتماد مستندي.|We can accept payment by letter of credit.
+>这是离岸价还是到岸价？|Zhè shì lí'ànjià háishi dào'ànjià?|هل هذا سعر فوب أم سيف؟|Is this the FOB or CIF price?
+>如果数量多一点，价格能让步吗？|Rúguǒ shùliàng duō yìdiǎn, jiàgé néng ràngbù ma?|إذا زادت الكمية، هل يمكن التنازل في السعر؟|Can you come down on price for a larger quantity?
+>我们希望和贵公司长期合作，实现双赢。|Wǒmen xīwàng hé guì gōngsī chángqī hézuò, shíxiàn shuāngyíng.|نأمل التعاون طويلًا مع شركتكم لتحقيق مكسب للطرفين.|We hope for long-term, win-win cooperation with your company.
+>今年的净利润增长了百分之十五。|Jīnnián de jìnglìrùn zēngzhǎngle bǎi fēn zhī shíwǔ.|نما صافي الربح هذا العام بنسبة خمسة عشر بالمئة.|Net profit grew 15% this year.
+>签约之前请先签保密协议。|Qiānyuē zhīqián qǐng xiān qiān bǎomì xiéyì.|وقّع اتفاقية عدم الإفصاح قبل العقد من فضلك.|Please sign the NDA before the contract.

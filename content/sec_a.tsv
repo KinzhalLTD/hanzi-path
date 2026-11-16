@@ -1,0 +1,340 @@
+# @sector  #topicKey|zh|ar|en  term: zh|pinyin|ar|en|level(1 core,2 pro,3 adv)  >example: zh|pinyin|ar|en
+@eng
+#civil|土木建筑|الهندسة المدنية والبناء|Civil & construction
+地基|dìjī|أساسات|foundation|1
+桩基|zhuāngjī|أساسات خازوقية|pile foundation|2
+梁|liáng|جسر (عارضة)|beam|1
+柱子|zhùzi|عمود|column, pillar|1
+楼板|lóubǎn|بلاطة أرضية|floor slab|2
+承重墙|chéngzhòngqiáng|جدار حامل|load-bearing wall|2
+脚手架|jiǎoshǒujià|سقالة|scaffolding|1
+模板|múbǎn|قوالب صبّ (شدّة)|formwork|2
+浇筑|jiāozhù|صبّ (الخرسانة)|to pour (concrete)|2
+养护|yǎnghù|معالجة الخرسانة|curing (of concrete)|3
+抗压强度|kàngyā qiángdù|مقاومة الضغط|compressive strength|3
+荷载|hèzài|حمولة|load|2
+挠度|náodù|انحراف (ترخيم)|deflection|3
+地质勘察|dìzhì kānchá|المسح الجيوتقني|geotechnical survey|3
+测量|cèliáng|مساحة، قياس|surveying, measurement|1
+标高|biāogāo|منسوب|elevation (level)|2
+防水|fángshuǐ|عزل مائي|waterproofing|1
+隧道|suìdào|نفق|tunnel|1
+桥梁|qiáoliáng|جسور|bridges|1
+塔吊|tǎdiào|رافعة برجية|tower crane|2
+#mech|机械与暖通|الميكانيك والتكييف|Mechanical & HVAC
+机械|jīxiè|ميكانيكا، آلات|machinery|1
+泵|bèng|مضخّة|pump|1
+压缩机|yāsuōjī|ضاغط|compressor|2
+换热器|huànrèqì|مبادل حراري|heat exchanger|2
+冷却塔|lěngquètǎ|برج تبريد|cooling tower|2
+风管|fēngguǎn|مجرى هواء|air duct|2
+风量|fēngliàng|معدّل تدفّق الهواء|airflow rate|3
+制冷剂|zhìlěngjì|غاز تبريد|refrigerant|2
+冷水机组|lěngshuǐ jīzǔ|مبرّد مياه (تشيلر)|chiller|3
+轴承|zhóuchéng|محمل (رولمان)|bearing|2
+齿轮|chǐlún|ترس|gear|1
+法兰|fǎlán|شفة (فلنجة)|flange|2
+螺栓|luóshuān|مسمار ملولب (برغي)|bolt|1
+垫片|diànpiàn|حشية (جوان)|gasket|2
+密封|mìfēng|إحكام، ختم|seal|2
+振动|zhèndòng|اهتزاز|vibration|2
+润滑|rùnhuá|تزييت|lubrication|2
+转速|zhuànsù|سرعة الدوران|rotational speed (rpm)|3
+扭矩|niǔjǔ|عزم الدوران|torque|3
+疲劳|píláo|كلال المعدن|(metal) fatigue|3
+#oil|石油天然气|النفط والغاز|Oil & gas
+石油|shíyóu|نفط|petroleum, oil|1
+天然气|tiānránqì|غاز طبيعي|natural gas|1
+油田|yóutián|حقل نفط|oil field|1
+钻井|zuānjǐng|حفر الآبار|drilling|2
+海上平台|hǎishàng píngtái|منصّة بحرية|offshore platform|2
+炼油厂|liànyóuchǎng|مصفاة نفط|oil refinery|2
+储罐|chǔguàn|خزّان تخزين|storage tank|2
+压力容器|yālì róngqì|وعاء ضغط|pressure vessel|3
+分离器|fēnlíqì|فاصل|separator|3
+管线|guǎnxiàn|خط أنابيب|pipeline|2
+防腐|fángfǔ|مقاومة التآكل|anti-corrosion|2
+腐蚀|fǔshí|تآكل|corrosion|2
+无损检测|wúsǔn jiǎncè|الفحص غير الإتلافي|non-destructive testing (NDT)|3
+射线检测|shèxiàn jiǎncè|الفحص بالأشعة|radiographic testing|3
+试压|shìyā|اختبار الضغط|pressure testing|2
+泄漏|xièlòu|تسرّب|leak|2
+桶|tǒng|برميل|barrel|1
+产量|chǎnliàng|الإنتاج (الكمية)|output, production volume|2
+石化|shíhuà|البتروكيماويات|petrochemicals|2
+液化天然气|yèhuà tiānránqì|الغاز الطبيعي المسال|liquefied natural gas (LNG)|3
+#elec|电气与自动化|الكهرباء والأتمتة|Electrical & automation
+电压|diànyā|جهد كهربائي|voltage|1
+电流|diànliú|تيار كهربائي|electric current|1
+电阻|diànzǔ|مقاومة كهربائية|resistance|2
+功率|gōnglǜ|قدرة|power (watts)|2
+变压器|biànyāqì|محوّل كهربائي|transformer|2
+发电机|fādiànjī|مولّد|generator|1
+电机|diànjī|محرّك كهربائي|electric motor|2
+电缆|diànlǎn|كابل|cable|1
+配电柜|pèidiànguì|لوحة توزيع|switchboard, distribution panel|2
+断路器|duànlùqì|قاطع دارة|circuit breaker|2
+接地|jiēdì|تأريض|grounding, earthing|2
+短路|duǎnlù|دارة قصر (تماس)|short circuit|2
+传感器|chuángǎnqì|حسّاس|sensor|2
+控制系统|kòngzhì xìtǒng|نظام تحكّم|control system|2
+自动化|zìdònghuà|أتمتة|automation|1
+可编程控制器|kěbiānchéng kòngzhìqì|متحكّم منطقي قابل للبرمجة|PLC|3
+仪表|yíbiǎo|أجهزة قياس|instrumentation|2
+校准|jiàozhǔn|معايرة|calibration|3
+变频器|biànpínqì|محوّل تردّد|variable-frequency drive (VFD)|3
+停电|tíngdiàn|انقطاع الكهرباء|power outage|1
+#pm|项目与质量管理|إدارة المشاريع والجودة|Projects & QA/QC
+项目经理|xiàngmù jīnglǐ|مدير المشروع|project manager|1
+工期|gōngqī|مدة المشروع|construction period|2
+里程碑|lǐchéngbēi|مرحلة رئيسية|milestone|2
+预算|yùsuàn|ميزانية|budget|1
+招标|zhāobiāo|طرح مناقصة|to invite tenders|2
+投标|tóubiāo|تقديم عطاء|to bid|2
+中标|zhòngbiāo|الفوز بالمناقصة|to win a bid|2
+承包商|chéngbāoshāng|مقاول|contractor|1
+分包商|fēnbāoshāng|مقاول من الباطن|subcontractor|2
+业主|yèzhǔ|المالك (صاحب المشروع)|owner, client|2
+监理|jiānlǐ|الإشراف الهندسي|site supervision (consultant)|3
+验收|yànshōu|الاستلام بعد الفحص|acceptance (inspection)|2
+不合格|bù hégé|غير مطابق|non-conforming|2
+整改|zhěnggǎi|تصحيح، إصلاح|rectification|3
+变更|biàngēng|أمر تغيير|change (order)|2
+风险评估|fēngxiǎn pínggū|تقييم المخاطر|risk assessment|2
+安全许可|ānquán xǔkě|تصريح عمل آمن|safety permit (PTW)|3
+竣工|jùngōng|إنجاز المشروع|project completion|3
+规范|guīfàn|مواصفة، كود|code, specification|2
+标准|biāozhǔn|معيار|standard|1
+>这根梁的挠度超过了规范要求。|Zhè gēn liáng de náodù chāoguòle guīfàn yāoqiú.|ترخيم هذه العارضة تجاوز متطلّبات الكود.|The deflection of this beam exceeds the code limit.
+>混凝土浇筑以后要养护七天。|Hùnníngtǔ jiāozhù yǐhòu yào yǎnghù qī tiān.|بعد صبّ الخرسانة يجب معالجتها سبعة أيام.|After pouring, concrete must be cured for seven days.
+>焊缝需要做射线检测。|Hànfèng xūyào zuò shèxiàn jiǎncè.|يجب فحص اللحام بالأشعة.|The weld needs radiographic testing.
+>管线试压合格以后才能投产。|Guǎnxiàn shìyā hégé yǐhòu cái néng tóuchǎn.|لا يبدأ التشغيل إلا بعد نجاح اختبار ضغط الخط.|The pipeline can start up only after passing the pressure test.
+>这台泵的振动太大，可能是轴承坏了。|Zhè tái bèng de zhèndòng tài dà, kěnéng shì zhóuchéng huài le.|اهتزاز هذه المضخّة كبير، ربما تلف المحمل.|This pump vibrates too much; the bearing may be damaged.
+>我们公司中标了一个大型项目。|Wǒmen gōngsī zhòngbiāole yí ge dàxíng xiàngmù.|فازت شركتنا بمناقصة مشروع كبير.|Our company won a large project.
+>检查发现三处不合格，需要整改。|Jiǎnchá fāxiàn sān chù bù hégé, xūyào zhěnggǎi.|كشف الفحص ثلاث مخالفات تحتاج إلى تصحيح.|The inspection found three non-conformities to rectify.
+@med
+#body|人体与解剖|جسم الإنسان والتشريح|Body & anatomy
+心脏|xīnzàng|قلب|heart|1
+肺|fèi|رئة|lung|1
+肝|gān|كبد|liver|1
+肾|shèn|كلية|kidney|1
+胃|wèi|معدة|stomach|1
+大脑|dànǎo|دماغ|brain|1
+骨头|gǔtou|عظم|bone|1
+关节|guānjié|مفصل|joint|2
+肌肉|jīròu|عضلة|muscle|1
+血管|xuèguǎn|وعاء دموي|blood vessel|2
+动脉|dòngmài|شريان|artery|2
+静脉|jìngmài|وريد|vein|2
+神经|shénjīng|عصب|nerve|2
+脊椎|jǐzhuī|العمود الفقري|spine|2
+皮肤|pífū|جلد|skin|1
+细胞|xìbāo|خلية|cell|2
+免疫系统|miǎnyì xìtǒng|الجهاز المناعي|immune system|2
+消化系统|xiāohuà xìtǒng|الجهاز الهضمي|digestive system|2
+呼吸系统|hūxī xìtǒng|الجهاز التنفّسي|respiratory system|2
+内分泌|nèifēnmì|الغدد الصمّاء|endocrine|3
+#ill|疾病与症状|الأمراض والأعراض|Diseases & symptoms
+感冒|gǎnmào|زكام|cold|1
+流感|liúgǎn|إنفلونزا|flu|1
+头疼|tóuténg|صداع|headache|1
+恶心|ěxin|غثيان|nausea|1
+腹泻|fùxiè|إسهال|diarrhea|2
+炎症|yánzhèng|التهاب|inflammation|2
+感染|gǎnrǎn|عدوى|infection|2
+高血压|gāoxuèyā|ارتفاع ضغط الدم|hypertension|2
+糖尿病|tángniàobìng|السكّري|diabetes|2
+心脏病|xīnzàngbìng|أمراض القلب|heart disease|2
+哮喘|xiàochuǎn|ربو|asthma|2
+肺炎|fèiyán|التهاب رئوي|pneumonia|2
+骨折|gǔzhé|كسر|fracture|2
+中风|zhòngfēng|سكتة دماغية|stroke|2
+癌症|áizhèng|سرطان|cancer|2
+肿瘤|zhǒngliú|ورم|tumor|3
+传染病|chuánrǎnbìng|مرض معدٍ|infectious disease|2
+慢性病|mànxìngbìng|مرض مزمن|chronic disease|2
+并发症|bìngfāzhèng|مضاعفات|complication|3
+病毒|bìngdú|فيروس|virus|1
+#hosp|医院与科室|المستشفى والأقسام|Hospital & departments
+门诊|ménzhěn|العيادات الخارجية|outpatient clinic|2
+住院|zhùyuàn|التنويم في المستشفى|to be hospitalized|1
+出院|chūyuàn|الخروج من المستشفى|to be discharged|1
+病房|bìngfáng|جناح المرضى|ward|1
+手术室|shǒushùshì|غرفة العمليات|operating room|2
+重症监护室|zhòngzhèng jiānhùshì|العناية المركّزة|intensive care unit (ICU)|3
+内科|nèikē|الطب الباطني|internal medicine|2
+外科|wàikē|الجراحة|surgery (department)|2
+儿科|érkē|طب الأطفال|pediatrics|2
+妇产科|fùchǎnkē|النساء والولادة|obstetrics & gynecology|2
+眼科|yǎnkē|طب العيون|ophthalmology|2
+牙科|yákē|طب الأسنان|dentistry|1
+皮肤科|pífūkē|الأمراض الجلدية|dermatology|2
+骨科|gǔkē|العظام|orthopedics|2
+心内科|xīnnèikē|أمراض القلب|cardiology|3
+神经科|shénjīngkē|طب الأعصاب|neurology|3
+麻醉|mázuì|تخدير|anesthesia|2
+救护车|jiùhùchē|سيارة إسعاف|ambulance|1
+病历|bìnglì|ملف طبي|medical record|2
+医保|yībǎo|التأمين الطبي|medical insurance|2
+#test|检查与治疗|الفحوص والعلاج|Tests & treatment
+验血|yànxiě|تحليل دم|blood test|1
+化验|huàyàn|تحليل مخبري|lab test|2
+体温|tǐwēn|درجة حرارة الجسم|body temperature|1
+心率|xīnlǜ|معدّل ضربات القلب|heart rate|2
+心电图|xīndiàntú|تخطيط القلب|electrocardiogram (ECG)|3
+拍片|pāipiàn|تصوير بالأشعة|to take an X-ray|2
+超声波|chāoshēngbō|موجات فوق صوتية|ultrasound|2
+核磁共振|hécí gòngzhèn|الرنين المغناطيسي|MRI|3
+CT|CT|الأشعة المقطعية|CT scan|2
+输液|shūyè|محلول وريدي (مغذّي)|IV drip|2
+抗生素|kàngshēngsù|مضاد حيوي|antibiotic|2
+止痛药|zhǐtòngyào|مسكّن|painkiller|1
+副作用|fùzuòyòng|آثار جانبية|side effect|2
+剂量|jìliàng|جرعة|dosage|3
+康复|kāngfù|إعادة التأهيل، التعافي|rehabilitation, recovery|2
+复查|fùchá|مراجعة متابعة|follow-up check|2
+预约|yùyuē|حجز موعد|appointment|1
+转诊|zhuǎnzhěn|إحالة|referral|3
+急救|jíjiù|إسعافات أولية|first aid|2
+处方药|chǔfāngyào|دواء بوصفة طبية|prescription drug|3
+#tcm|中医|الطب الصيني التقليدي|Traditional Chinese medicine
+中药|zhōngyào|الأعشاب الصينية|Chinese herbal medicine|1
+针灸|zhēnjiǔ|الوخز بالإبر|acupuncture|1
+推拿|tuīná|التدليك الصيني|tuina massage|2
+拔罐|báguàn|الحجامة|cupping|2
+把脉|bǎmài|جسّ النبض|to take the pulse|2
+经络|jīngluò|خطوط الطاقة (المسارات)|meridians|3
+穴位|xuéwèi|نقاط الوخز|acupoint|3
+阴阳|yīnyáng|يين ويانغ|yin and yang|2
+气血|qìxuè|الطاقة والدم|qi and blood|3
+上火|shànghuǒ|حرارة داخلية (بالمفهوم الصيني)|excess internal heat|2
+凉性|liángxìng|ذو طبيعة باردة|cooling (food nature)|3
+热性|rèxìng|ذو طبيعة حارّة|warming (food nature)|3
+人参|rénshēn|جينسنغ|ginseng|2
+枸杞|gǒuqǐ|غوجي (توت الذئب)|goji berry|2
+当归|dāngguī|أنجليكا صينية|dong quai (angelica)|3
+甘草|gāncǎo|عرق السوس|licorice root|2
+黄芪|huángqí|القتاد الصيني|astragalus|3
+煎药|jiānyào|تحضير مغلي الأعشاب|to decoct herbs|3
+养生|yǎngshēng|العناية بالصحة|health preservation|2
+望闻问切|wàng wén wèn qiè|النظر والسمع والسؤال وجسّ النبض|look, listen, ask, feel (TCM diagnosis)|3
+>医生，我最近总是头疼恶心。|Yīshēng, wǒ zuìjìn zǒngshì tóuténg ěxin.|دكتور، أعاني مؤخرًا من الصداع والغثيان باستمرار.|Doctor, I keep having headaches and nausea lately.
+>你需要先去验血，然后拍个片。|Nǐ xūyào xiān qù yànxuè, ránhòu pāi ge piàn.|عليك أولًا إجراء تحليل دم ثم صورة أشعة.|You need a blood test first, then an X-ray.
+>这个药有什么副作用？|Zhège yào yǒu shénme fùzuòyòng?|ما الآثار الجانبية لهذا الدواء؟|What are the side effects of this medicine?
+>病人手术后转到了重症监护室。|Bìngrén shǒushù hòu zhuǎndàole zhòngzhèng jiānhùshì.|نُقل المريض بعد العملية إلى العناية المركّزة.|After surgery the patient was moved to the ICU.
+>他有高血压和糖尿病。|Tā yǒu gāoxuèyā hé tángniàobìng.|لديه ارتفاع في ضغط الدم وسكّري.|He has hypertension and diabetes.
+>中医通过把脉来了解病情。|Zhōngyī tōngguò bǎmài lái liǎojiě bìngqíng.|يفهم الطب الصيني الحالة بجسّ النبض.|Chinese medicine learns about illness by taking the pulse.
+>天气太干，吃辣的容易上火。|Tiānqì tài gān, chī là de róngyì shànghuǒ.|في الجوّ الجاف يسبّب الأكل الحار "حرارة داخلية".|In dry weather, spicy food easily causes "internal heat".
+@trans
+#rail|铁路与地铁|السكك الحديدية والمترو|Rail & metro
+高铁|gāotiě|قطار فائق السرعة|high-speed rail|1
+动车|dòngchē|قطار سريع (متعدد الوحدات)|bullet train (EMU)|2
+火车站|huǒchēzhàn|محطة قطار|railway station|1
+站台|zhàntái|رصيف المحطة|platform|1
+车厢|chēxiāng|عربة القطار|carriage|1
+二等座|èrděngzuò|الدرجة الثانية|second-class seat|1
+商务座|shāngwùzuò|درجة الأعمال|business-class seat|2
+卧铺|wòpù|مقعد نوم|sleeper berth|2
+检票口|jiǎnpiàokǒu|بوابة فحص التذاكر|ticket gate|1
+候车室|hòuchēshì|صالة الانتظار|waiting hall|1
+换乘|huànchéng|تبديل الخط|to transfer (lines)|1
+地铁线路|dìtiě xiànlù|خط المترو|metro line|1
+始发站|shǐfāzhàn|محطة الانطلاق|origin station|2
+终点站|zhōngdiǎnzhàn|المحطة الأخيرة|terminus|1
+晚点|wǎndiǎn|تأخّر (موعد)|delayed|1
+轨道|guǐdào|سكة|track, rail|2
+信号|xìnhào|إشارة|signal|2
+磁悬浮|cíxuánfú|قطار الرفع المغناطيسي|maglev|3
+时速|shísù|السرعة بالساعة|speed per hour|2
+12306|yāo èr sān líng liù|منصّة حجز القطارات الصينية|China rail booking app 12306|2
+#air|航空|الطيران|Aviation
+航班|hángbān|رحلة جوية|flight|1
+登机牌|dēngjīpái|بطاقة الصعود|boarding pass|1
+登机口|dēngjīkǒu|بوابة الصعود|boarding gate|1
+值机|zhíjī|تسجيل الوصول|check-in|1
+安检|ānjiǎn|التفتيش الأمني|security check|1
+托运|tuōyùn|شحن الأمتعة|to check (luggage)|1
+行李额|xínglǐ'é|وزن الأمتعة المسموح|baggage allowance|2
+转机|zhuǎnjī|ترانزيت|connecting flight|1
+直飞|zhífēi|رحلة مباشرة|direct flight|1
+起飞|qǐfēi|إقلاع|take-off|1
+降落|jiàngluò|هبوط|landing|1
+机长|jīzhǎng|قائد الطائرة|captain|2
+空乘|kōngchéng|طاقم الضيافة|flight attendant|2
+经济舱|jīngjìcāng|الدرجة السياحية|economy class|1
+头等舱|tóuděngcāng|الدرجة الأولى|first class|1
+跑道|pǎodào|مدرج|runway|2
+塔台|tǎtái|برج المراقبة|control tower|3
+气流|qìliú|مطبّات هوائية|turbulence|2
+航站楼|hángzhànlóu|مبنى الركّاب|terminal|2
+海关|hǎiguān|الجمارك|customs|1
+#road|道路交通|حركة المرور|Roads & driving
+高速公路|gāosù gōnglù|طريق سريع|expressway|1
+收费站|shōufèizhàn|بوابة رسوم|toll gate|2
+红绿灯|hónglǜdēng|إشارة المرور|traffic light|1
+十字路口|shízì lùkǒu|تقاطع|crossroads|1
+人行横道|rénxíng héngdào|ممرّ مشاة|crosswalk|1
+堵车|dǔchē|ازدحام مروري|traffic jam|1
+限速|xiànsù|حدّ السرعة|speed limit|2
+超速|chāosù|تجاوز السرعة|speeding|2
+罚单|fádān|مخالفة مرورية|traffic ticket|2
+驾照|jiàzhào|رخصة قيادة|driver's license|1
+导航|dǎoháng|ملاحة|navigation|1
+加油站|jiāyóuzhàn|محطة وقود|gas station|1
+停车场|tíngchēchǎng|موقف سيارات|parking lot|1
+违章|wéizhāng|مخالفة القواعد|traffic violation|2
+交警|jiāojǐng|شرطي مرور|traffic police|1
+事故|shìgù|حادث|accident|1
+立交桥|lìjiāoqiáo|جسر تقاطع علوي|overpass interchange|2
+环岛|huándǎo|دوّار|roundabout|2
+单行道|dānxíngdào|طريق باتجاه واحد|one-way street|2
+网约车|wǎngyuēchē|سيارة أجرة عبر التطبيق|ride-hailing car|1
+#ship|海运与物流|الشحن البحري واللوجستيات|Shipping & logistics
+港口|gǎngkǒu|ميناء|port|1
+码头|mǎtou|رصيف بحري|wharf, dock|2
+集装箱|jízhuāngxiāng|حاوية|container|1
+货轮|huòlún|سفينة شحن|cargo ship|2
+船期|chuánqī|جدول الإبحار|sailing schedule|3
+提单|tídān|بوليصة الشحن|bill of lading|3
+报关|bàoguān|التخليص الجمركي|customs declaration|2
+清关|qīngguān|الإفراج الجمركي|customs clearance|2
+货代|huòdài|وكيل شحن|freight forwarder|2
+运费|yùnfèi|أجرة الشحن|freight charge|1
+物流|wùliú|لوجستيات|logistics|1
+仓库|cāngkù|مستودع|warehouse|1
+快递|kuàidì|بريد سريع|express delivery|1
+包裹|bāoguǒ|طرد|parcel|1
+运单号|yùndānhào|رقم الشحنة|tracking number|2
+整柜|zhěngguì|حاوية كاملة|full container load (FCL)|3
+拼箱|pīnxiāng|شحن مجمّع|less than container load (LCL)|3
+空运|kōngyùn|شحن جوي|air freight|1
+海运|hǎiyùn|شحن بحري|sea freight|1
+供应链|gōngyìngliàn|سلسلة الإمداد|supply chain|2
+#auto|汽车与新能源|السيارات والطاقة الجديدة|Cars & EVs
+汽车|qìchē|سيارة|car|1
+电动车|diàndòngchē|سيارة كهربائية|electric vehicle|1
+新能源车|xīnnéngyuánchē|مركبة طاقة جديدة|new-energy vehicle|2
+充电桩|chōngdiànzhuāng|شاحن سيارات|charging pile|2
+续航|xùháng|مدى القيادة|driving range|2
+电池|diànchí|بطارية|battery|1
+混动|hùndòng|هجين|hybrid|2
+发动机|fādòngjī|محرّك|engine|1
+变速箱|biànsùxiāng|ناقل الحركة|gearbox|2
+刹车|shāchē|فرامل|brakes|1
+油门|yóumén|دوّاسة الوقود|accelerator|1
+方向盘|fāngxiàngpán|عجلة القيادة|steering wheel|1
+轮胎|lúntāi|إطار|tyre|1
+自动驾驶|zìdòng jiàshǐ|القيادة الذاتية|autonomous driving|2
+保养|bǎoyǎng|صيانة دورية|maintenance service|2
+二手车|èrshǒuchē|سيارة مستعملة|used car|1
+车牌|chēpái|لوحة السيارة|license plate|1
+保险杠|bǎoxiǎngàng|صدّام|bumper|3
+底盘|dǐpán|هيكل سفلي (شاسيه)|chassis|3
+百公里加速|bǎi gōnglǐ jiāsù|التسارع من 0 إلى 100|0–100 km/h acceleration|3
+>去北京的高铁晚点了二十分钟。|Qù Běijīng de gāotiě wǎndiǎnle èrshí fēnzhōng.|تأخّر القطار السريع المتّجه إلى بكين عشرين دقيقة.|The high-speed train to Beijing is twenty minutes late.
+>请在二号线换乘四号线。|Qǐng zài èr hào xiàn huànchéng sì hào xiàn.|من فضلك بدّل من الخط 2 إلى الخط 4.|Please transfer from Line 2 to Line 4.
+>我的航班要转机吗？|Wǒ de hángbān yào zhuǎnjī ma?|هل رحلتي فيها ترانزيت؟|Does my flight have a connection?
+>这辆电动车续航五百公里。|Zhè liàng diàndòngchē xùháng wǔbǎi gōnglǐ.|مدى هذه السيارة الكهربائية خمسمئة كيلومتر.|This EV has a 500 km range.
+>货物已经到港，正在清关。|Huòwù yǐjīng dào gǎng, zhèngzài qīngguān.|وصلت البضائع إلى الميناء وهي قيد الإفراج الجمركي.|The goods have arrived at port and are clearing customs.
+>请把提单和发票发给货代。|Qǐng bǎ tídān hé fāpiào fā gěi huòdài.|أرسل بوليصة الشحن والفاتورة إلى وكيل الشحن.|Please send the bill of lading and invoice to the forwarder.
+>前面堵车了，我们走高速吧。|Qiánmiàn dǔchē le, wǒmen zǒu gāosù ba.|الطريق أمامنا مزدحم، لنسلك الطريق السريع.|There's a jam ahead, let's take the expressway.

@@ -1,0 +1,336 @@
+@sci
+#phys|物理|الفيزياء|Physics
+物理|wùlǐ|فيزياء|physics|1
+力|lì|قوّة|force|1
+质量|zhìliàng|كتلة|mass|2
+速度|sùdù|سرعة|velocity, speed|1
+加速度|jiāsùdù|تسارع|acceleration|2
+重力|zhònglì|جاذبية|gravity|1
+摩擦力|mócālì|احتكاك|friction|2
+能量|néngliàng|طاقة|energy|1
+动能|dòngnéng|طاقة حركية|kinetic energy|2
+势能|shìnéng|طاقة كامنة|potential energy|2
+波长|bōcháng|طول موجي|wavelength|2
+频率|pínlǜ|تردّد|frequency|2
+光速|guāngsù|سرعة الضوء|speed of light|2
+电磁波|diàncíbō|موجة كهرومغناطيسية|electromagnetic wave|3
+磁场|cíchǎng|مجال مغناطيسي|magnetic field|2
+相对论|xiāngduìlùn|النظرية النسبية|theory of relativity|3
+量子|liàngzǐ|كمّ (كوانتم)|quantum|3
+原子|yuánzǐ|ذرّة|atom|1
+电子|diànzǐ|إلكترون|electron|2
+牛顿定律|Niúdùn dìnglǜ|قوانين نيوتن|Newton's laws|2
+#chem|化学|الكيمياء|Chemistry
+元素|yuánsù|عنصر|element|1
+化合物|huàhéwù|مركّب|compound|2
+分子|fēnzǐ|جزيء|molecule|1
+元素周期表|yuánsù zhōuqībiǎo|الجدول الدوري|periodic table|2
+氢|qīng|هيدروجين|hydrogen|1
+氧|yǎng|أكسجين|oxygen|1
+碳|tàn|كربون|carbon|1
+氮|dàn|نيتروجين|nitrogen|2
+化学反应|huàxué fǎnyìng|تفاعل كيميائي|chemical reaction|2
+催化剂|cuīhuàjì|محفّز|catalyst|3
+溶液|róngyè|محلول|solution|2
+浓度|nóngdù|تركيز|concentration|2
+酸|suān|حمض|acid|1
+碱|jiǎn|قاعدة (قلوي)|base, alkali|2
+氧化|yǎnghuà|أكسدة|oxidation|2
+沸点|fèidiǎn|درجة الغليان|boiling point|2
+熔点|róngdiǎn|درجة الانصهار|melting point|2
+实验室|shíyànshì|مختبر|laboratory|1
+试管|shìguǎn|أنبوب اختبار|test tube|1
+有机化学|yǒujī huàxué|الكيمياء العضوية|organic chemistry|3
+#bio|生物|الأحياء|Biology
+生物|shēngwù|أحياء، كائن حي|biology, organism|1
+基因|jīyīn|جين|gene|2
+DNA|DNA|الحمض النووي|DNA|2
+蛋白质|dànbáizhì|بروتين|protein|2
+进化|jìnhuà|تطوّر|evolution|2
+物种|wùzhǒng|نوع (حيوي)|species|2
+生态系统|shēngtài xìtǒng|نظام بيئي|ecosystem|2
+光合作用|guānghé zuòyòng|التمثيل الضوئي|photosynthesis|2
+新陈代谢|xīnchén dàixiè|الأيض|metabolism|3
+微生物|wēishēngwù|كائنات دقيقة|microorganism|2
+细菌|xìjūn|بكتيريا|bacteria|1
+遗传|yíchuán|الوراثة|heredity|2
+突变|tūbiàn|طفرة|mutation|3
+染色体|rǎnsètǐ|كروموسوم|chromosome|3
+哺乳动物|bǔrǔ dòngwù|الثدييات|mammal|2
+植物|zhíwù|نبات|plant|1
+食物链|shíwùliàn|سلسلة غذائية|food chain|2
+克隆|kèlóng|استنساخ|clone|3
+疫苗|yìmiáo|لقاح|vaccine|2
+显微镜|xiǎnwēijìng|مجهر|microscope|1
+#space|天文与地球|الفلك وعلوم الأرض|Astronomy & Earth
+宇宙|yǔzhòu|الكون|universe|1
+银河系|Yínhéxì|درب التبّانة|Milky Way|2
+星系|xīngxì|مجرّة|galaxy|2
+恒星|héngxīng|نجم|star|2
+行星|xíngxīng|كوكب|planet|1
+卫星|wèixīng|قمر صناعي، تابع|satellite|1
+黑洞|hēidòng|ثقب أسود|black hole|2
+光年|guāngnián|سنة ضوئية|light-year|2
+轨道|guǐdào|مدار|orbit|2
+望远镜|wàngyuǎnjìng|تلسكوب|telescope|1
+火箭|huǒjiàn|صاروخ|rocket|1
+空间站|kōngjiānzhàn|محطة فضائية|space station|2
+航天员|hángtiānyuán|رائد فضاء (صيني)|astronaut (taikonaut)|2
+嫦娥工程|Cháng'é gōngchéng|برنامج تشانغ إي القمري|Chang'e lunar program|3
+地震|dìzhèn|زلزال|earthquake|1
+火山|huǒshān|بركان|volcano|1
+板块|bǎnkuài|صفيحة تكتونية|tectonic plate|3
+气候变化|qìhòu biànhuà|التغيّر المناخي|climate change|2
+温室效应|wēnshì xiàoyìng|الاحتباس الحراري|greenhouse effect|2
+大气层|dàqìcéng|الغلاف الجوي|atmosphere|2
+#math|数学与方法|الرياضيات والمنهج العلمي|Math & method
+数学|shùxué|رياضيات|mathematics|1
+公式|gōngshì|صيغة، معادلة|formula|1
+方程|fāngchéng|معادلة|equation|2
+函数|hánshù|دالّة|function|2
+几何|jǐhé|هندسة (رياضية)|geometry|2
+代数|dàishù|جبر|algebra|2
+微积分|wēijīfēn|التفاضل والتكامل|calculus|3
+概率|gàilǜ|احتمال|probability|2
+统计|tǒngjì|إحصاء|statistics|2
+平均值|píngjūnzhí|متوسّط|mean, average|2
+变量|biànliàng|متغيّر|variable|2
+假设|jiǎshè|فرضية|hypothesis|2
+实验|shíyàn|تجربة|experiment|1
+数据|shùjù|بيانات|data|1
+误差|wùchā|خطأ (هامش)|error (measurement)|2
+样本|yàngběn|عيّنة|sample|2
+论文|lùnwén|بحث علمي|research paper|1
+同行评审|tóngháng píngshěn|مراجعة الأقران|peer review|3
+定理|dìnglǐ|مبرهنة|theorem|3
+圆周率|yuánzhōulǜ|باي (π)|pi (π)|2
+>光在真空中的速度大约是每秒三十万公里。|Guāng zài zhēnkōng zhōng de sùdù dàyuē shì měi miǎo sānshí wàn gōnglǐ.|سرعة الضوء في الفراغ نحو ثلاثمئة ألف كيلومتر في الثانية.|Light travels about 300,000 km per second in a vacuum.
+>植物通过光合作用产生氧气。|Zhíwù tōngguò guānghé zuòyòng chǎnshēng yǎngqì.|تنتج النباتات الأكسجين بالتمثيل الضوئي.|Plants produce oxygen through photosynthesis.
+>水的沸点是一百摄氏度。|Shuǐ de fèidiǎn shì yìbǎi shèshìdù.|درجة غليان الماء مئة درجة مئوية.|Water boils at 100°C.
+>我们先提出假设，再做实验。|Wǒmen xiān tíchū jiǎshè, zài zuò shíyàn.|نضع الفرضية أولًا ثم نجري التجربة.|We first form a hypothesis, then experiment.
+>中国的空间站叫天宫。|Zhōngguó de kōngjiānzhàn jiào Tiāngōng.|محطة الفضاء الصينية اسمها تيانقونغ.|China's space station is called Tiangong.
+>这篇论文经过了同行评审。|Zhè piān lùnwén jīngguòle tóngháng píngshěn.|خضع هذا البحث لمراجعة الأقران.|This paper went through peer review.
+@hist
+#dyn|朝代|السلالات الحاكمة|Dynasties
+夏朝|Xiàcháo|سلالة شيا|Xia dynasty|2
+商朝|Shāngcháo|سلالة شانغ|Shang dynasty|2
+周朝|Zhōucháo|سلالة تشو|Zhou dynasty|2
+春秋|Chūnqiū|عصر الربيع والخريف|Spring and Autumn period|2
+战国|Zhànguó|عصر الممالك المتحاربة|Warring States period|2
+秦朝|Qíncháo|سلالة تشين|Qin dynasty|1
+汉朝|Hàncháo|سلالة هان|Han dynasty|1
+三国|Sānguó|الممالك الثلاث|Three Kingdoms|1
+晋朝|Jìncháo|سلالة جين|Jin dynasty|3
+隋朝|Suícháo|سلالة سوي|Sui dynasty|2
+唐朝|Tángcháo|سلالة تانغ|Tang dynasty|1
+宋朝|Sòngcháo|سلالة سونغ|Song dynasty|1
+元朝|Yuáncháo|سلالة يوان (المغول)|Yuan dynasty|1
+明朝|Míngcháo|سلالة مينغ|Ming dynasty|1
+清朝|Qīngcháo|سلالة تشينغ|Qing dynasty|1
+民国|Mínguó|جمهورية الصين (1912–1949)|Republic of China era|2
+中华人民共和国|Zhōnghuá Rénmín Gònghéguó|جمهورية الصين الشعبية|People's Republic of China|1
+改革开放|gǎigé kāifàng|الإصلاح والانفتاح|Reform and Opening-up|2
+朝代|cháodài|سلالة حاكمة|dynasty|1
+年号|niánhào|اسم العهد|reign title|3
+#ppl|人物与制度|الشخصيات والنُّظم|People & institutions
+皇帝|huángdì|إمبراطور|emperor|1
+秦始皇|Qín Shǐhuáng|الإمبراطور الأول تشين شي هوانغ|First Emperor of Qin|1
+孔子|Kǒngzǐ|كونفوشيوس|Confucius|1
+老子|Lǎozǐ|لاوتسي|Laozi|1
+孙子|Sūnzǐ|سون تزو|Sun Tzu|2
+郑和|Zhèng Hé|تشنغ خه (الأدميرال المسلم)|Zheng He|2
+张骞|Zhāng Qiān|تشانغ تشيان (فاتح طريق الحرير)|Zhang Qian|2
+武则天|Wǔ Zétiān|وو تسه تيان (الإمبراطورة)|Wu Zetian|2
+成吉思汗|Chéngjísī Hán|جنكيز خان|Genghis Khan|2
+宰相|zǎixiàng|رئيس الوزراء (قديمًا)|chancellor|2
+大臣|dàchén|وزير|minister (imperial)|2
+将军|jiāngjūn|قائد عسكري|general|1
+科举|kējǔ|نظام الامتحانات الإمبراطورية|imperial examination|2
+状元|zhuàngyuan|الأول في الامتحان الإمبراطوري|top scholar|3
+儒家|Rújiā|الكونفوشيوسية|Confucianism|2
+道家|Dàojiā|الطاوية|Taoism|2
+法家|Fǎjiā|المدرسة القانونية|Legalism|3
+诸子百家|zhūzǐ bǎijiā|المدارس الفكرية المئة|Hundred Schools of Thought|3
+王朝更替|wángcháo gēngtì|تعاقب السلالات|dynastic cycle|3
+天命|tiānmìng|تفويض السماء|Mandate of Heaven|3
+#arch|考古与文物|الآثار والقطع الأثرية|Archaeology & relics
+考古|kǎogǔ|علم الآثار|archaeology|1
+文物|wénwù|قطعة أثرية|cultural relic|1
+遗址|yízhǐ|موقع أثري|ruins, site|2
+兵马俑|bīngmǎyǒng|جيش التيراكوتا|Terracotta Army|1
+青铜器|qīngtóngqì|أواني برونزية|bronze ware|2
+甲骨文|jiǎgǔwén|نقوش العظام الكهنوتية|oracle bone script|2
+陶器|táoqì|فخّار|pottery|2
+瓷器|cíqì|خزف (بورسلين)|porcelain|1
+丝绸|sīchóu|حرير|silk|1
+竹简|zhújiǎn|ألواح الخيزران|bamboo slips|3
+古墓|gǔmù|مقبرة قديمة|ancient tomb|2
+出土|chūtǔ|يُستخرج (من التنقيب)|to be unearthed|2
+博物馆|bówùguǎn|متحف|museum|1
+故宫|Gùgōng|المدينة المحرّمة|Forbidden City|1
+长城|Chángchéng|سور الصين العظيم|Great Wall|1
+大运河|Dà Yùnhé|القناة الكبرى|Grand Canal|2
+石窟|shíkū|كهوف منحوتة|grottoes|3
+碑文|bēiwén|نقش حجري|stele inscription|3
+世界遗产|shìjiè yíchǎn|التراث العالمي|World Heritage|2
+修复|xiūfù|ترميم|restoration|2
+#inv|四大发明与丝路|الاختراعات الأربعة وطريق الحرير|Inventions & Silk Road
+四大发明|sì dà fāmíng|الاختراعات الأربعة العظيمة|Four Great Inventions|1
+造纸术|zàozhǐshù|صناعة الورق|papermaking|2
+印刷术|yìnshuāshù|الطباعة|printing|2
+活字印刷|huózì yìnshuā|الطباعة بالحروف المتحرّكة|movable-type printing|3
+指南针|zhǐnánzhēn|البوصلة|compass|1
+火药|huǒyào|البارود|gunpowder|1
+丝绸之路|Sīchóu zhī Lù|طريق الحرير|Silk Road|1
+海上丝绸之路|hǎishàng Sīchóu zhī Lù|طريق الحرير البحري|Maritime Silk Road|2
+商队|shāngduì|قافلة تجارية|caravan|2
+骆驼|luòtuo|جمل|camel|1
+长安|Cháng'ān|تشانغآن (شيآن القديمة)|Chang'an (old Xi'an)|2
+敦煌|Dūnhuáng|دونهوانغ|Dunhuang|2
+泉州|Quánzhōu|تشيوانتشو (ميناء الزيتون)|Quanzhou (Zaitun)|3
+大食|Dàshí|العرب (في المصادر الصينية القديمة)|the Arabs (Tang-era name)|3
+怛罗斯之战|Dáluósī zhī zhàn|معركة طلاس|Battle of Talas (751)|3
+阿拉伯商人|Ālābó shāngrén|التجّار العرب|Arab merchants|2
+朝贡|cháogòng|الجزية|tribute|3
+一带一路|Yī Dài Yī Lù|مبادرة الحزام والطريق|Belt and Road Initiative|1
+贸易往来|màoyì wǎnglái|التبادل التجاري|trade exchanges|2
+文化交流|wénhuà jiāoliú|التبادل الثقافي|cultural exchange|1
+#mod|近现代史|التاريخ الحديث|Modern history
+鸦片战争|Yāpiàn Zhànzhēng|حرب الأفيون|Opium War|2
+辛亥革命|Xīnhài Gémìng|ثورة 1911 (شينهاي)|Xinhai Revolution|2
+孙中山|Sūn Zhōngshān|صن يات سين|Sun Yat-sen|2
+五四运动|Wǔsì Yùndòng|حركة الرابع من مايو|May Fourth Movement|3
+抗日战争|Kàngrì Zhànzhēng|حرب المقاومة ضد اليابان|War of Resistance against Japan|3
+长征|Chángzhēng|المسيرة الكبرى|Long March|2
+建国|jiànguó|تأسيس الدولة|founding of the state|2
+国庆节|Guóqìng Jié|العيد الوطني|National Day|1
+香港回归|Xiānggǎng huíguī|عودة هونغ كونغ|Hong Kong handover (1997)|2
+特区|tèqū|منطقة خاصة|special zone|2
+经济特区|jīngjì tèqū|منطقة اقتصادية خاصة|special economic zone|3
+深圳|Shēnzhèn|شنتشن|Shenzhen|1
+奥运会|Àoyùnhuì|الألعاب الأولمبية|Olympic Games|1
+世博会|Shìbóhuì|معرض إكسبو الدولي|World Expo|2
+加入世贸组织|jiārù Shìmào Zǔzhī|الانضمام إلى منظمة التجارة العالمية|joining the WTO (2001)|3
+建交|jiànjiāo|إقامة علاقات دبلوماسية|to establish diplomatic ties|2
+中沙建交|Zhōng-Shā jiànjiāo|العلاقات الصينية السعودية (1990)|China–Saudi diplomatic ties (1990)|3
+现代化|xiàndàihuà|التحديث|modernization|2
+历史学家|lìshǐxuéjiā|مؤرّخ|historian|2
+史书|shǐshū|كتب التاريخ|history book, chronicle|2
+>秦始皇统一了中国，修建了长城。|Qín Shǐhuáng tǒngyīle Zhōngguó, xiūjiànle Chángchéng.|وحّد الإمبراطور تشين الصين وبنى السور العظيم.|The First Emperor unified China and built the Great Wall.
+>唐朝的时候，很多阿拉伯商人来到长安。|Tángcháo de shíhou, hěn duō Ālābó shāngrén láidào Cháng'ān.|في عهد تانغ جاء كثير من التجّار العرب إلى تشانغآن.|In the Tang dynasty many Arab merchants came to Chang'an.
+>郑和七次下西洋，到过阿拉伯半岛。|Zhèng Hé qī cì xià Xīyáng, dàoguo Ālābó Bàndǎo.|أبحر تشنغ خه سبع مرّات غربًا ووصل إلى الجزيرة العربية.|Zheng He sailed west seven times and reached Arabia.
+>造纸术通过怛罗斯之战传到了阿拉伯世界。|Zàozhǐshù tōngguò Dáluósī zhī zhàn chuándàole Ālābó shìjiè.|انتقلت صناعة الورق إلى العالم العربي بعد معركة طلاس.|Papermaking reached the Arab world after the Battle of Talas.
+>这些文物是在古墓里出土的。|Zhèxiē wénwù shì zài gǔmù li chūtǔ de.|استُخرجت هذه القطع الأثرية من مقبرة قديمة.|These relics were unearthed in an ancient tomb.
+>一九九〇年，中国和沙特正式建交。|Yī jiǔ jiǔ líng nián, Zhōngguó hé Shātè zhèngshì jiànjiāo.|في عام 1990 أقامت الصين والسعودية علاقات دبلوماسية رسمية.|In 1990 China and Saudi Arabia established diplomatic relations.
+@modern
+#net|网络流行语|عبارات الإنترنت الرائجة|Internet slang
+点赞|diǎnzàn|يضغط إعجاب|to like (a post)|1
+网红|wǎnghóng|مشهور على الإنترنت|influencer|1
+刷屏|shuāpíng|يملأ الشاشة (منتشر)|to flood the feed|2
+吃瓜|chīguā|يتفرّج على الدراما|to watch drama unfold (as a bystander)|2
+躺平|tǎngpíng|الاستلقاء (الانسحاب من التنافس)|to "lie flat"|2
+内卷|nèijuǎn|التنافس المفرط|involution (rat race)|2
+打卡|dǎkǎ|يسجّل حضورًا؛ يزور مكانًا شهيرًا|to check in (at a hot spot)|1
+种草|zhòngcǎo|يُغري بشراء شيء|to get someone to want sth|2
+拔草|bácǎo|يتخلّى عن رغبة الشراء|to lose interest in buying|3
+yyds|yǒngyuǎn de shén|الأفضل على الإطلاق|GOAT ("forever the god")|2
+绝绝子|juéjuézǐ|رائع جدًا|totally awesome|2
+破防|pòfáng|تأثّر بشدة|emotionally hit (defenses broken)|2
+社恐|shèkǒng|رهاب اجتماعي (مزاحًا)|socially anxious|2
+社牛|shèniú|جريء اجتماعيًا|socially fearless|2
+凡尔赛|Fán'ěrsài|التباهي المتواضع|humblebrag|3
+摸鱼|mōyú|يتهرّب من العمل|to slack off at work|2
+上头|shàngtóu|مدمن على شيء (متحمّس)|hooked, carried away|2
+真香|zhēn xiāng|"طلع حلو" (تراجع عن الرفض)|"it's actually great" (eating one's words)|3
+柠檬精|níngméngjīng|شخص غيور|jealous person|3
+666|liùliùliù|ممتاز! (إعجاب)|awesome! (praise)|1
+#pay|移动支付与购物|الدفع والتسوّق الرقمي|Mobile pay & shopping
+扫码|sǎomǎ|مسح الرمز|to scan a QR code|1
+微信支付|Wēixìn Zhīfù|وي تشات باي|WeChat Pay|1
+支付宝|Zhīfùbǎo|علي باي|Alipay|1
+付款码|fùkuǎnmǎ|رمز الدفع|payment code|2
+收款码|shōukuǎnmǎ|رمز الاستلام|receiving QR code|2
+红包|hóngbāo|ظرف أحمر (هدية مالية)|red envelope|1
+转账|zhuǎnzhàng|تحويل مالي|bank transfer|1
+网购|wǎnggòu|تسوّق إلكتروني|online shopping|1
+淘宝|Táobǎo|تاوباو|Taobao|1
+购物车|gòuwùchē|سلّة التسوّق|shopping cart|1
+包邮|bāoyóu|شحن مجاني|free shipping|1
+差评|chàpíng|تقييم سيئ|negative review|2
+好评|hǎopíng|تقييم إيجابي|positive review|2
+退货|tuìhuò|إرجاع البضاعة|to return goods|1
+双十一|Shuāng Shíyī|مهرجان 11/11 للتسوّق|Singles' Day (11.11)|1
+直播带货|zhíbō dàihuò|البيع عبر البث المباشر|livestream selling|2
+外卖|wàimài|توصيل الطعام|food delivery|1
+骑手|qíshǒu|مندوب توصيل|delivery rider|2
+优惠券|yōuhuìquàn|قسيمة خصم|coupon|1
+拼单|pīndān|الشراء الجماعي|group order|2
+#apps|应用与社交|التطبيقات والتواصل|Apps & social
+微信|Wēixìn|وي تشات|WeChat|1
+朋友圈|péngyouquān|لحظات (وي تشات)|WeChat Moments|1
+抖音|Dǒuyīn|دوين (تيك توك الصيني)|Douyin|1
+小红书|Xiǎohóngshū|شياوهونغشو|Xiaohongshu (RedNote)|1
+微博|Wēibó|ويبو|Weibo|1
+B站|B zhàn|بيليبيلي|Bilibili|2
+群聊|qúnliáo|محادثة جماعية|group chat|1
+加好友|jiā hǎoyǒu|إضافة صديق|to add a friend|1
+语音消息|yǔyīn xiāoxi|رسالة صوتية|voice message|1
+表情包|biǎoqíngbāo|ملصقات تعبيرية (ميمز)|meme stickers|1
+二维码|èrwéimǎ|رمز QR|QR code|1
+粉丝|fěnsī|متابعون|followers, fans|1
+关注|guānzhù|يتابع|to follow|1
+私信|sīxìn|رسالة خاصة|direct message|2
+转发|zhuǎnfā|إعادة نشر|to repost|1
+评论区|pínglùnqū|قسم التعليقات|comment section|2
+热搜|rèsōu|الأكثر بحثًا (ترند)|trending search|2
+弹幕|dànmù|تعليقات متطايرة على الفيديو|bullet comments|3
+小程序|xiǎochéngxù|تطبيق مصغّر|mini-program|2
+实名认证|shímíng rènzhèng|التحقّق من الهوية|real-name verification|3
+#work|职场与生活|العمل والحياة|Work & lifestyle
+打工人|dǎgōngrén|الموظّف الكادح|worker (self-mocking)|1
+加班|jiābān|عمل إضافي|to work overtime|1
+996|jiǔjiǔliù|نظام 9 صباحًا–9 مساءً 6 أيام|"996" work schedule|2
+跳槽|tiàocáo|تغيير الوظيفة|to job-hop|2
+裸辞|luǒcí|الاستقالة دون بديل|to quit without a new job|3
+远程办公|yuǎnchéng bàngōng|العمل عن بُعد|remote work|2
+共享单车|gòngxiǎng dānchē|دراجات مشتركة|shared bikes|1
+充电宝|chōngdiànbǎo|شاحن متنقّل|power bank|1
+奶茶|nǎichá|شاي بالحليب|milk tea|1
+宅|zhái|ملازم البيت|homebody|2
+剁手|duòshǒu|"قطع اليد" (إدمان الشراء)|"chop hands" (shopping addict)|2
+单身狗|dānshēngǒu|عازب (مزاحًا)|single (joke)|2
+佛系|fóxì|هادئ لا يبالي|easy-going, zen|2
+养生|yǎngshēng|العناية بالصحة|wellness|2
+健身|jiànshēn|لياقة بدنية|fitness|1
+夜宵|yèxiāo|وجبة آخر الليل|late-night snack|1
+相亲|xiāngqīn|لقاء تعارف للزواج|blind date (arranged)|2
+房贷|fángdài|قرض سكني|mortgage|2
+躺赢|tǎngyíng|الفوز دون جهد|to win effortlessly|3
+内推|nèituī|توصية داخلية (توظيف)|internal referral|3
+#city|城市生活|الحياة في المدينة|City life
+小区|xiǎoqū|مجمّع سكني|residential compound|1
+物业|wùyè|إدارة العقار|property management|2
+快递柜|kuàidìguì|خزانة الطرود|parcel locker|2
+便利店|biànlìdiàn|بقالة صغيرة|convenience store|1
+广场舞|guǎngchǎngwǔ|رقص الساحات|square dancing|2
+早高峰|zǎo gāofēng|ذروة الصباح|morning rush hour|2
+地铁卡|dìtiěkǎ|بطاقة المترو|metro card|1
+健康码|jiànkāngmǎ|رمز صحي (من فترة الجائحة)|health code (pandemic era)|3
+垃圾分类|lājī fēnlèi|فرز النفايات|garbage sorting|2
+租房|zūfáng|استئجار سكن|to rent a flat|1
+中介|zhōngjiè|وسيط عقاري|agent, broker|2
+押一付三|yā yī fù sān|تأمين شهر ودفع ثلاثة أشهر|one month deposit, three months rent|3
+外地人|wàidìrén|شخص من خارج المدينة|non-local|2
+户口|hùkǒu|سجل الإقامة|household registration|3
+夜市|yèshì|سوق ليلي|night market|1
+商场|shāngchǎng|مركز تسوّق|shopping mall|1
+排队|páiduì|الوقوف في الطابور|to queue|1
+预约挂号|yùyuē guàhào|حجز موعد طبي|book a hospital appointment|2
+共享充电宝|gòngxiǎng chōngdiànbǎo|شاحن مشترك|shared power bank|2
+网吧|wǎngbā|مقهى إنترنت|internet café|1
+>这家店在小红书上很火，我们去打卡吧！|Zhè jiā diàn zài Xiǎohóngshū shang hěn huǒ, wǒmen qù dǎkǎ ba!|هذا المحل رائج على شياوهونغشو، لنذهب ونزوره!|This shop is hot on Xiaohongshu, let's go check it out!
+>老板，可以扫码付款吗？|Lǎobǎn, kěyǐ sǎomǎ fùkuǎn ma?|هل يمكنني الدفع بمسح الرمز؟|Can I pay by scanning the code?
+>他天天加班，真是个打工人。|Tā tiāntiān jiābān, zhēn shì ge dǎgōngrén.|يعمل إضافيًا كل يوم، موظّف كادح حقًا.|He works overtime every day, a real worker bee.
+>双十一我又剁手了。|Shuāng Shíyī wǒ yòu duòshǒu le.|في 11/11 أسرفت في الشراء مجددًا.|I overspent again on Singles' Day.
+>我拉你进群聊吧。|Wǒ lā nǐ jìn qúnliáo ba.|سأضيفك إلى المجموعة.|Let me add you to the group chat.
+>这个视频刷屏了，弹幕都在说666。|Zhège shìpín shuāpíng le, dànmù dōu zài shuō liùliùliù.|انتشر هذا الفيديو، والتعليقات كلها تقول "ممتاز".|This video went viral; the bullet comments all say "666".

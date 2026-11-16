@@ -1,0 +1,104 @@
+// Hanzi Path – native side of the WebView bridge (Expo, iOS first).
+// Handles: Sign in with Apple / Google (Firebase Auth), cloud sync (Firestore), account deletion,
+// local notifications, speech, haptics, sharing and analytics events.
+// Messages arrive from the web app as JSON: {type, id?, ...payload}; replies go back via window.__fromNative({id, ...}).
+import React, { useRef, useEffect } from 'react';
+import { Share, Platform } from 'react-native';
+import { WebView } from 'react-native-webview';
+import * as Speech from 'expo-speech';
+import * as Haptics from 'expo-haptics';
+import * as Notifications from 'expo-notifications';
+import * as AppleAuthentication from 'expo-apple-authentication';
+import * as Crypto from 'expo-crypto';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { OAuthProvider, GoogleAuthProvider, signInWithCredential, signOut, deleteUser } from 'firebase/auth';
+import { doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
+import { logEvent } from 'firebase/analytics';
+import { auth, db, analytics, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID } from './firebase';
+
+GoogleSignin.configure({ iosClientId: GOOGLE_IOS_CLIENT_ID, webClientId: GOOGLE_WEB_CLIENT_ID });
+Notifications.setNotificationHandler({ handleNotification: async () => ({ shouldShowBanner: true, shouldShowList: true, shouldPlaySound: true, shouldSetBadge: false }) });
+
+const publicUser = (u, provider) => ({ uid: u.uid, name: u.displayName || '', email: u.email || '', provider });
+
+export default function HanziBridge({ html }) {
+  const web = useRef(null);
+  const reply = (id, data) => web.current?.injectJavaScript(`window.__fromNative(${JSON.stringify({ id, ...data })});true;`);
+
+  const handlers = {
+    // ---------- accounts ----------
+    'auth:apple': async () => {
+      const rawNonce = Crypto.randomUUID();
+      const hashed = await Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, rawNonce);
+      try {
+        const r = await AppleAuthentication.signInAsync({ requestedScopes: [AppleAuthentication.AppleAuthenticationScope.FULL_NAME, AppleAuthentication.AppleAuthenticationScope.EMAIL], nonce: hashed });
+        const cred = new OAuthProvider('apple.com').credential({ idToken: r.identityToken, rawNonce });
+        const { user } = await signInWithCredential(auth, cred);
+        const name = [r.fullName?.givenName, r.fullName?.familyName].filter(Boolean).join(' ');
+        return { ok: true, user: { ...publicUser(user, 'apple'), name: user.displayName || name } };
+      } catch (e) { return { ok: false, cancelled: e.code === 'ERR_REQUEST_CANCELED', error: String(e.message || e) }; }
+    },
+    'auth:google': async () => {
+      try {
+        await GoogleSignin.hasPlayServices();
+        const r = await GoogleSignin.signIn();
+        if (r.type === 'cancelled') return { ok: false, cancelled: true };
+        const idToken = r.data?.idToken ?? r.idToken;
+        const { user } = await signInWithCredential(auth, GoogleAuthProvider.credential(idToken));
+        return { ok: true, user: publicUser(user, 'google') };
+      } catch (e) { return { ok: false, error: String(e.message || e) }; }
+    },
+    'auth:signOut': async () => { await signOut(auth); try { await GoogleSignin.signOut(); } catch {} return { ok: true }; },
+    // App Store guideline 5.1.1(v): accounts must be deletable inside the app.
+    'auth:delete': async () => {
+      const u = auth.currentUser; if (!u) return { ok: false };
+      try { await deleteDoc(doc(db, 'users', u.uid)); await deleteUser(u); return { ok: true }; }
+      catch (e) { return { ok: false, needsRecentLogin: e.code === 'auth/requires-recent-login', error: String(e.message || e) }; }
+    },
+    // ---------- cloud sync: one document per learner ----------
+    'sync:pull': async ({ uid }) => {
+      const s = await getDoc(doc(db, 'users', uid));
+      return s.exists() ? { ok: true, data: s.data().progress, updatedAt: s.data().updatedAt } : { ok: true, data: null };
+    },
+    'sync:push': async ({ uid, data, updatedAt }) => {
+      await setDoc(doc(db, 'users', uid), { progress: data, updatedAt, serverTime: serverTimestamp() }, { merge: true });
+      return { ok: true };
+    },
+    // ---------- notifications (local, no server needed) ----------
+    'notify:permission': async () => {
+      const { status } = await Notifications.requestPermissionsAsync();
+      return { ok: true, granted: status === 'granted' };
+    },
+    'notify:schedule': async ({ items }) => {
+      await Notifications.cancelAllScheduledNotificationsAsync();
+      for (const it of items || []) {
+        const trigger = it.repeat === 'daily'
+          ? { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour: it.hour, minute: it.minute }
+          : { type: Notifications.SchedulableTriggerInputTypes.DATE, date: new Date(it.at) };
+        if (it.at && new Date(it.at) < new Date()) continue;
+        await Notifications.scheduleNotificationAsync({ identifier: it.id, content: { title: it.title, body: it.body }, trigger });
+      }
+      return { ok: true };
+    },
+    // ---------- device ----------
+    speak: async ({ text, lang = 'zh-CN', rate = 0.8 }) => { Speech.stop(); Speech.speak(text, { language: lang, rate }); },
+    speakStop: async () => Speech.stop(),
+    haptic: async ({ kind }) => kind === 'error' ? Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error) : Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light),
+    share: async ({ text }) => Share.share({ message: text }),
+    track: async ({ ev, props }) => { try { analytics && logEvent(analytics, ev, props || {}); } catch {} },
+    // purchase, rewarded, interstitial, restore and listen are wired in the ads/IAP module (see APP_STORE_SUBMISSION.md)
+  };
+
+  const onMessage = async (e) => {
+    let msg; try { msg = JSON.parse(e.nativeEvent.data); } catch { return; }
+    const h = handlers[msg.type]; if (!h) return;
+    try { const r = await h(msg); if (msg.id) reply(msg.id, r || { ok: true }); }
+    catch (err) { if (msg.id) reply(msg.id, { ok: false, error: String(err.message || err) }); }
+  };
+
+  return (
+    <WebView ref={web} originWhitelist={['*']} source={{ html }} onMessage={onMessage}
+      allowsInlineMediaPlayback mediaPlaybackRequiresUserAction={false} javaScriptEnabled domStorageEnabled
+      style={{ flex: 1, backgroundColor: '#0d0908' }} />
+  );
+}
