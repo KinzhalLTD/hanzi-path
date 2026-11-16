@@ -241,7 +241,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
   $$('#snd button',m).forEach(b=>b.onclick=()=>{S.sound=b.dataset.v==='1';save();render();});
   $('#shopb',m).onclick=shop; $('#revb',m).onclick=()=>go('review');
   $('#rs',m).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();toast(t('proOn'));render();} else toast(t('restored')); };
-  $('#pv',m).onclick=()=>{ if(RN) RN.postMessage(JSON.stringify({type:'privacy'})); else toast(t('privacy')); };
+  $('#pv',m).onclick=()=>openUrl(LEGAL.privacy);
   $('#rz',m).onclick=()=>sheet(`<h2>${t('resetQ')}</h2><button class="btn red block" id="y">${t('yes')}</button><button class="btn ghost block" id="n">${t('no')}</button>`,s=>{
     $('#y',s).onclick=()=>{ const keep={lang:S.lang,pro:S.pro,owned:S.owned,refCode:S.refCode}; try{localStorage.removeItem(KEY);}catch(e){} S=Object.assign({},DEFAULT,keep,{day:today()}); save(); closeSheet(); go('home'); };
     $('#n',s).onclick=closeSheet; });
@@ -256,7 +256,7 @@ function shop(){
    <h3>${t('themes')}</h3><div class="shopgrid">${TILE_STYLES.map(([k,zh,c])=>{const own=S.owned['tiles_'+k],on=S.tileStyle===k;return `<button class="shopitem" data-t="${k}" data-cost="${c}"><span class="brush" style="font-size:28px;color:var(--gold2)">${zh}</span><span class="sub">${on?t('equipped'):own?t('equip'):`${coinHTML} <span class="num">${c}</span>`}</span></button>`;}).join('')}</div>
    <button class="btn ghost block" id="cl">${t('close')}</button>`,s=>{
     const p=$('#pro',s); if(p) p.onclick=()=>{closeSheet();paywall();};
-    $$('[data-c]',s).forEach(b=>b.onclick=async()=>{ const r=await purchase('coins_'+b.dataset.c); if(r&&r.ok!==false){ track('iap_coins',{pack:b.dataset.c}); S.coins+=+b.dataset.n; save(); SFX.coin(); confetti(40); updateTop(); toast('+'+fmt(+b.dataset.n)); } });
+    $$('[data-c]',s).forEach(b=>b.onclick=async()=>{ const r=await purchase('coins_'+b.dataset.c); if(r&&r.ok){ track('iap_coins',{pack:b.dataset.c}); S.coins+=+b.dataset.n; save(); SFX.coin(); confetti(40); updateTop(); toast('+'+fmt(+b.dataset.n)); } });
     $('#fz',s).onclick=()=>{ if(S.freezes>=3) return toast('❄ max 3'); if(spend(120)){ S.freezes++; save(); toast('❄ +1'); shop(); } };
     $$('[data-t]',s).forEach(b=>b.onclick=()=>{ const k=b.dataset.t,c=+b.dataset.cost; if(S.owned['tiles_'+k]){ S.tileStyle=k; save(); shop(); return; }
       if(S.coins<c) return toast(t('notEnough')); S.coins-=c; S.owned['tiles_'+k]=1; S.tileStyle=k; save(); SFX.coin(); shop(); });
@@ -271,9 +271,11 @@ function paywall(src='general'){ let plan='yearly'; track('paywall_view',{src});
     <div class="plans" style="margin-top:8px">${plans.map(([k,p,per])=>`<button class="plan" data-k="${k}" aria-pressed="${k===plan}">${k==='yearly'?`<span class="tag">${t('best')}</span>`:''}<b>${t(k)}</b><span class="price num">${p}</span><span class="per">${per}</span></button>`).join('')}</div>
     <div class="sub" style="text-align:center" id="tr"></div>
     <button class="btn block" id="buy"></button><button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost sm" id="lt" style="align-self:center;border:0">${t('later')}</button>
-    <div class="fine">${t('legal')}</div>`,s=>{
-    const upd=()=>{ $('#tr',s).innerHTML=plan==='yearly'?`${t('trial')} <span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:''; $('#buy',s).textContent=plan==='yearly'?t('startTrial'):t('buy'); };
+    <div class="fine">${t('legal')}</div><div class="fine" style="display:flex;gap:14px;justify-content:center"><a href="#" id="lterms">${t('termsL')}</a><a href="#" id="lpriv">${t('privacy')}</a></div>`,s=>{
+    $('#lterms',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.terms); }; $('#lpriv',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.privacy); };
+    const upd=()=>{ $('#tr',s).innerHTML=plan==='yearly'&&window.__trialOk===false?`<span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:plan==='yearly'?`${t('trial')} <span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:''; $('#buy',s).textContent=plan==='yearly'&&window.__trialOk!==false?t('startTrial'):t('buy'); };
     upd(); $$('.plan',s).forEach(b=>b.onclick=()=>{ plan=b.dataset.k; SFX.tap(); $$('.plan',s).forEach(x=>x.setAttribute('aria-pressed',x===b)); upd(); });
-    $('#buy',s).onclick=async()=>{ const r=await purchase('pro_'+plan); if(r&&r.ok!==false){ track(plan==='yearly'?'trial_start':'purchase',{plan,src}); S.pro=true; save(); closeSheet(); SFX.gong(); confetti(140); toast(t('proOn')); render(); } };
+    $('#buy',s).onclick=async()=>{ const b=$('#buy',s); b.disabled=true; const r=await purchase('pro_'+plan); b.disabled=false;
+      if(r&&!r.ok&&!r.cancelled) toast(t('buyFail')); if(r&&r.ok&&r.active){ track(plan==='yearly'?'trial_start':'purchase',{plan,src}); S.pro=true; save(); closeSheet(); SFX.gong(); confetti(140); toast(t('proOn')); render(); } };
     $('#rs',s).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();closeSheet();render();} else toast(t('restored')); };
     $('#lt',s).onclick=closeSheet; }); }

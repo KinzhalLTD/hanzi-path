@@ -41,7 +41,8 @@ function toneOptions(py){ const s=new Set([py]); let g=0; while(s.size<4&&g++<40
 /* ---------- native bridge (Expo WebView) with web fallbacks ---------- */
 const RN=window.ReactNativeWebView; const pending={};
 function native(type,payload){ return new Promise(res=>{ const id=Math.random().toString(36).slice(2); pending[id]=res; RN.postMessage(JSON.stringify({type,id,...payload})); setTimeout(()=>{ if(pending[id]){ pending[id]({ok:false,timeout:true}); delete pending[id]; } },120000); }); }
-window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){S.pro=!!m.active;save();render();}}catch(e){} };
+window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){ const was=!!S.pro; S.pro=!!m.active; save(); if(was!==S.pro){ if(S.pro) toast(t('proOn')); render(); } }
+  if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); window.__trialOk=m.trial!==false; }}catch(e){} };
 function speak(text){ if(!S.sound) return; try{musDuck(1.4+text.length*.35);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang:'zh-CN'})); return; }
   try{const u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';u.rate=.8;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){} }
 /* KPI events from the financial plan (Features sheet). The native app forwards them to analytics. */
@@ -55,7 +56,10 @@ function simAd(rewarded){ return new Promise(res=>{ const d=document.createEleme
   $('#adx',d).onclick=()=>{d.remove(); res({ok:true});}; }); }
 function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return RN?native('interstitial',{}):simAd(false); }
 function rewarded(){ track('ad_rewarded'); return (RN?native('rewarded',{}):simAd(true)).then(r=>r&&r.ok!==false); }
-function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,demo:true}); }
+/* In the native app Pro comes ONLY from a verified App Store purchase (RevenueCat entitlement "pro"). The web preview simulates. */
+function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^pro_/.test(sku),demo:true}); }
+const LEGAL={terms:'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',privacy:'https://hanzi-path-64170.web.app/privacy.html'};
+function openUrl(url){ if(RN) RN.postMessage(JSON.stringify({type:'openUrl',url})); else window.open(url,'_blank','noopener'); }
 function restorePurchases(){ return RN?native('restore',{}):Promise.resolve({ok:false}); }
 /* prices: the native app replaces these with localized App Store prices */
 const PRICES={ar:{monthly:'29.99 ر.س',yearly:'179.99 ر.س',yearlyPm:'15 ر.س',lifetime:'449 ر.س',c1:'9.99 ر.س',c2:'19.99 ر.س',c3:'39.99 ر.س'},

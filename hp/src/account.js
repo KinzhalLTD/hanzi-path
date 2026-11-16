@@ -40,10 +40,10 @@ async function signIn(provider){ track('login_start',{provider}); let r;
   S.user=r.user; S.guest=false; save(); track('login_success',{provider}); toast(`✓ ${t('signedInAs')} ${r.user.name||r.user.email||''}`); await syncNow(true); render(); }
 async function syncNow(pull){ if(!S.user) return; if(!RN){ S.syncedAt=Date.now(); save(); return; }
   if(pull){ const r=await native('sync:pull',{uid:S.user.uid}); if(r&&r.ok&&r.data&&(r.updatedAt||0)>(S.syncedAt||0)) mergeRemote(r.data); }
-  const data=Object.assign({},S); delete data.inbox; delete data.user; const w=await native('sync:push',{uid:S.user.uid,data,updatedAt:Date.now()}); if(w&&w.ok){ S.syncedAt=Date.now(); save(); } }
+  const data=Object.assign({},S); delete data.inbox; delete data.user; delete data.pro; const w=await native('sync:push',{uid:S.user.uid,data,updatedAt:Date.now()}); if(w&&w.ok){ S.syncedAt=Date.now(); save(); } }
 function mergeRemote(R){ const keepMax=['xp','lessons','games','pron','streak','freezes']; keepMax.forEach(k=>{ if(typeof R[k]==='number') S[k]=Math.max(S[k]||0,R[k]); });
   ['srs','units','written','code','codeCh','cult','book','best','wins','owned'].forEach(k=>{ if(R[k]&&typeof R[k]==='object'){ S[k]=Object.assign({},R[k],S[k]||{}); if(k==='srs') for(const id in R.srs){ if(!S.srs[id]||R.srs[id].b>S.srs[id].b) S.srs[id]=R.srs[id]; } } });
-  S.pro=S.pro||!!R.pro; S.coins=Math.max(S.coins||0,R.coins||0); save(); }
+  if(!RN) S.pro=S.pro||!!R.pro; /* native: Pro is restored from the App Store, never from synced data */ S.coins=Math.max(S.coins||0,R.coins||0); save(); }
 function signOut(){ if(RN) native('auth:signOut',{}); S.user=null; S.guest=true; save(); track('logout'); render(); }
 function deleteAccount(){ sheet(`<h2>${t('delQ')}</h2><p style="margin:0">${t('delB')}</p><button class="btn red block" id="y">${t('delYes')}</button><button class="btn ghost block" id="n">${t('no')}</button>`,s=>{
   $('#n',s).onclick=closeSheet; $('#y',s).onclick=async()=>{ if(RN){ const r=await native('auth:delete',{uid:S.user&&S.user.uid}); if(!r||r.ok===false){ toast(t('loginFail')); return; } } track('account_deleted'); S.user=null; S.guest=true; save(); closeSheet(); toast(t('deleted')); render(); }; }); }

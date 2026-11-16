@@ -8,3 +8,5 @@
 - Run `python3 scripts/regress.py hp/dist/hanzi-path.html /tmp/r.png` and the relevant `scripts/test_*.py` after changes; they must report `errors []`.
 - Owner works on Windows and prefers copy-paste commands (e.g. Google Cloud Shell) over click-by-click steps.
 - Bundle ID `space.kinzhal.hanzipath`; Firebase project `hanzi-path-64170`.
+- In-app purchases: RevenueCat (`native/purchases.js`), entitlement `pro`. Pro must only come from the native `{type:'pro'}` message, never from cloud sync. Setup steps in `docs/IN_APP_PURCHASES.md`; test with `scripts/test_iap.py`.
+- Privacy policy URL is `https://hanzi-path-64170.web.app/privacy.html` (Firebase Hosting, website step).

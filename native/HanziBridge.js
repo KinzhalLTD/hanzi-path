@@ -1,9 +1,9 @@
 // Hanzi Path – native side of the WebView bridge (Expo, iOS first).
 // Handles: Sign in with Apple / Google (Firebase Auth), cloud sync (Firestore), account deletion,
-// local notifications, speech, haptics, sharing and analytics events.
+// in-app purchases (RevenueCat), local notifications, speech, haptics, sharing and analytics events.
 // Messages arrive from the web app as JSON: {type, id?, ...payload}; replies go back via window.__fromNative({id, ...}).
 import React, { useRef, useEffect } from 'react';
-import { Share, Platform } from 'react-native';
+import { Share, Platform, Linking } from 'react-native';
 import { WebView } from 'react-native-webview';
 import * as Speech from 'expo-speech';
 import * as Haptics from 'expo-haptics';
@@ -15,6 +15,7 @@ import { OAuthProvider, GoogleAuthProvider, signInWithCredential, signOut, delet
 import { doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { logEvent } from 'firebase/analytics';
 import { auth, db, analytics, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID } from './firebase';
+import { initPurchases, buy, restore, linkUser } from './purchases';
 
 GoogleSignin.configure({ iosClientId: GOOGLE_IOS_CLIENT_ID, webClientId: GOOGLE_WEB_CLIENT_ID });
 Notifications.setNotificationHandler({ handleNotification: async () => ({ shouldShowBanner: true, shouldShowList: true, shouldPlaySound: true, shouldSetBadge: false }) });
@@ -24,6 +25,20 @@ const publicUser = (u, provider) => ({ uid: u.uid, name: u.displayName || '', em
 export default function HanziBridge({ html }) {
   const web = useRef(null);
   const reply = (id, data) => web.current?.injectJavaScript(`window.__fromNative(${JSON.stringify({ id, ...data })});true;`);
+  const push = (data) => web.current?.injectJavaScript(`window.__fromNative&&window.__fromNative(${JSON.stringify(data)});true;`);
+  // last known purchase state, re-sent whenever the page (re)loads
+  const store = useRef({ pro: null, prices: null });
+  const sendStore = () => {
+    if (store.current.prices) push({ type: 'prices', ...store.current.prices });
+    if (store.current.pro !== null) push({ type: 'pro', active: store.current.pro });
+  };
+  useEffect(() => {
+    initPurchases({
+      onPro: (active) => { store.current.pro = active; push({ type: 'pro', active }); },
+      onPrices: (p) => { store.current.prices = p; push({ type: 'prices', ...p }); },
+    });
+    if (auth.currentUser) linkUser(auth.currentUser.uid);
+  }, []);
 
   const handlers = {
     // ---------- accounts ----------
@@ -35,6 +50,7 @@ export default function HanziBridge({ html }) {
         const cred = new OAuthProvider('apple.com').credential({ idToken: r.identityToken, rawNonce });
         const { user } = await signInWithCredential(auth, cred);
         const name = [r.fullName?.givenName, r.fullName?.familyName].filter(Boolean).join(' ');
+        await linkUser(user.uid);
         return { ok: true, user: { ...publicUser(user, 'apple'), name: user.displayName || name } };
       } catch (e) { return { ok: false, cancelled: e.code === 'ERR_REQUEST_CANCELED', error: String(e.message || e) }; }
     },
@@ -45,14 +61,15 @@ export default function HanziBridge({ html }) {
         if (r.type === 'cancelled') return { ok: false, cancelled: true };
         const idToken = r.data?.idToken ?? r.idToken;
         const { user } = await signInWithCredential(auth, GoogleAuthProvider.credential(idToken));
+        await linkUser(user.uid);
         return { ok: true, user: publicUser(user, 'google') };
       } catch (e) { return { ok: false, error: String(e.message || e) }; }
     },
-    'auth:signOut': async () => { await signOut(auth); try { await GoogleSignin.signOut(); } catch {} return { ok: true }; },
+    'auth:signOut': async () => { await signOut(auth); try { await GoogleSignin.signOut(); } catch {} await linkUser(null); return { ok: true }; },
     // App Store guideline 5.1.1(v): accounts must be deletable inside the app.
     'auth:delete': async () => {
       const u = auth.currentUser; if (!u) return { ok: false };
-      try { await deleteDoc(doc(db, 'users', u.uid)); await deleteUser(u); return { ok: true }; }
+      try { await deleteDoc(doc(db, 'users', u.uid)); await deleteUser(u); await linkUser(null); return { ok: true }; }
       catch (e) { return { ok: false, needsRecentLogin: e.code === 'auth/requires-recent-login', error: String(e.message || e) }; }
     },
     // ---------- cloud sync: one document per learner ----------
@@ -86,7 +103,11 @@ export default function HanziBridge({ html }) {
     haptic: async ({ kind }) => kind === 'error' ? Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error) : Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light),
     share: async ({ text }) => Share.share({ message: text }),
     track: async ({ ev, props }) => { try { analytics && logEvent(analytics, ev, props || {}); } catch {} },
-    // purchase, rewarded, interstitial, restore and listen are wired in the ads/IAP module (see APP_STORE_SUBMISSION.md)
+    // ---------- in-app purchases ----------
+    purchase: async ({ sku }) => buy(sku),
+    restore: async () => restore(),
+    openUrl: async ({ url }) => { if (/^https:\/\//.test(url)) await Linking.openURL(url); },
+    // rewarded, interstitial and listen are wired in the ads module (next step)
   };
 
   const onMessage = async (e) => {
@@ -97,7 +118,7 @@ export default function HanziBridge({ html }) {
   };
 
   return (
-    <WebView ref={web} originWhitelist={['*']} source={{ html }} onMessage={onMessage}
+    <WebView ref={web} originWhitelist={['*']} source={{ html }} onMessage={onMessage} onLoadEnd={sendStore}
       allowsInlineMediaPlayback mediaPlaybackRequiresUserAction={false} javaScriptEnabled domStorageEnabled
       style={{ flex: 1, backgroundColor: '#0d0908' }} />
   );

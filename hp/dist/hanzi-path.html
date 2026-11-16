@@ -402,7 +402,7 @@ ar:{secUnlock:'افتح هذا الموضوع',secTopicsN:'مواضيع',secTopi
  perk1:'HSK 1 إلى 6 كاملة — 4,995 كلمة',perk2:'ألعاب وفحوصات نطق بلا حدود',perk3:'بلا إعلانات',perk4:'تلميحات مجانية و+50٪ عملات',perk5:'كل الدروس دون إنترنت',
  monthly:'شهري',yearly:'سنوي',lifetime:'مدى الحياة',perMonth:'/ شهر',perYear:'/ سنة',once:'مرة واحدة',best:'الأفضل قيمة',
  trial:'جرّب ٧ أيام مجانًا، ثم',startTrial:'ابدأ التجربة المجانية',buy:'متابعة',restore:'استعادة المشتريات',later:'ليس الآن',
- legal:'يتجدّد الاشتراك تلقائيًا ما لم يُلغَ قبل ٢٤ ساعة من نهاية الفترة. يمكنك الإدارة والإلغاء من إعدادات حساب App Store.',
+ termsL:'شروط الاستخدام',buyFail:'تعذّر إتمام الشراء، حاول مجددًا',legal:'يتجدّد الاشتراك تلقائيًا بالسعر نفسه ما لم يُلغَ قبل ٢٤ ساعة على الأقل من نهاية الفترة الحالية أو التجربة المجانية، ويُخصم المبلغ من حساب Apple. يمكنك الإدارة والإلغاء من إعدادات حساب App Store.',
  locked:'برو',freeSample:'عيّنة مجانية',search:'ابحث بالصينية أو البينيين أو العربية',all:'الكل',noTr:'المعنى العربي قيد الإضافة',
  mw:'المصنِّف',trad:'التقليدي',ad:'إعلان',
  gamesTitle:'الألعاب الصينية التقليدية',gamesSub:'العب وتعلّم الحروف في كل جولة',playsLeft:'محاولات اليوم',unlimited:'بلا حدود',
@@ -440,7 +440,7 @@ en:{secUnlock:'Unlock this topic',secTopicsN:'topics',secTopicsT:'Topics',secLea
  perk1:'HSK 1–6 complete — 4,995 words',perk2:'Unlimited games & pronunciation checks',perk3:'No ads',perk4:'Free hints & +50% coins',perk5:'All lessons offline',
  monthly:'Monthly',yearly:'Yearly',lifetime:'Lifetime',perMonth:'/ month',perYear:'/ year',once:'one-time',best:'Best value',
  trial:'Try 7 days free, then',startTrial:'Start free trial',buy:'Continue',restore:'Restore purchases',later:'Not now',
- legal:'Subscription renews automatically unless cancelled at least 24 hours before the period ends. Manage or cancel in your App Store account settings.',
+ termsL:'Terms of Use',buyFail:'Purchase could not be completed. Please try again.',legal:'Payment is charged to your Apple Account. The subscription renews automatically at the same price unless cancelled at least 24 hours before the end of the current period or free trial. Manage or cancel in your App Store account settings.',
  locked:'PRO',freeSample:'Free sample',search:'Search Chinese, pinyin or English',all:'All',noTr:'',
  mw:'Measure word',trad:'Traditional',ad:'Ad',
  gamesTitle:'Traditional Chinese games',gamesSub:'Play and learn characters every round',playsLeft:'plays today',unlimited:'Unlimited',
@@ -512,7 +512,8 @@ function toneOptions(py){ const s=new Set([py]); let g=0; while(s.size<4&&g++<40
 /* ---------- native bridge (Expo WebView) with web fallbacks ---------- */
 const RN=window.ReactNativeWebView; const pending={};
 function native(type,payload){ return new Promise(res=>{ const id=Math.random().toString(36).slice(2); pending[id]=res; RN.postMessage(JSON.stringify({type,id,...payload})); setTimeout(()=>{ if(pending[id]){ pending[id]({ok:false,timeout:true}); delete pending[id]; } },120000); }); }
-window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){S.pro=!!m.active;save();render();}}catch(e){} };
+window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){ const was=!!S.pro; S.pro=!!m.active; save(); if(was!==S.pro){ if(S.pro) toast(t('proOn')); render(); } }
+  if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); window.__trialOk=m.trial!==false; }}catch(e){} };
 function speak(text){ if(!S.sound) return; try{musDuck(1.4+text.length*.35);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang:'zh-CN'})); return; }
   try{const u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';u.rate=.8;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){} }
 /* KPI events from the financial plan (Features sheet). The native app forwards them to analytics. */
@@ -526,7 +527,10 @@ function simAd(rewarded){ return new Promise(res=>{ const d=document.createEleme
   $('#adx',d).onclick=()=>{d.remove(); res({ok:true});}; }); }
 function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return RN?native('interstitial',{}):simAd(false); }
 function rewarded(){ track('ad_rewarded'); return (RN?native('rewarded',{}):simAd(true)).then(r=>r&&r.ok!==false); }
-function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,demo:true}); }
+/* In the native app Pro comes ONLY from a verified App Store purchase (RevenueCat entitlement "pro"). The web preview simulates. */
+function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^pro_/.test(sku),demo:true}); }
+const LEGAL={terms:'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',privacy:'https://hanzi-path-64170.web.app/privacy.html'};
+function openUrl(url){ if(RN) RN.postMessage(JSON.stringify({type:'openUrl',url})); else window.open(url,'_blank','noopener'); }
 function restorePurchases(){ return RN?native('restore',{}):Promise.resolve({ok:false}); }
 /* prices: the native app replaces these with localized App Store prices */
 const PRICES={ar:{monthly:'29.99 ر.س',yearly:'179.99 ر.س',yearlyPm:'15 ر.س',lifetime:'449 ر.س',c1:'9.99 ر.س',c2:'19.99 ر.س',c3:'39.99 ر.س'},
@@ -1321,7 +1325,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
   $$('#snd button',m).forEach(b=>b.onclick=()=>{S.sound=b.dataset.v==='1';save();render();});
   $('#shopb',m).onclick=shop; $('#revb',m).onclick=()=>go('review');
   $('#rs',m).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();toast(t('proOn'));render();} else toast(t('restored')); };
-  $('#pv',m).onclick=()=>{ if(RN) RN.postMessage(JSON.stringify({type:'privacy'})); else toast(t('privacy')); };
+  $('#pv',m).onclick=()=>openUrl(LEGAL.privacy);
   $('#rz',m).onclick=()=>sheet(`<h2>${t('resetQ')}</h2><button class="btn red block" id="y">${t('yes')}</button><button class="btn ghost block" id="n">${t('no')}</button>`,s=>{
     $('#y',s).onclick=()=>{ const keep={lang:S.lang,pro:S.pro,owned:S.owned,refCode:S.refCode}; try{localStorage.removeItem(KEY);}catch(e){} S=Object.assign({},DEFAULT,keep,{day:today()}); save(); closeSheet(); go('home'); };
     $('#n',s).onclick=closeSheet; });
@@ -1336,7 +1340,7 @@ function shop(){
    <h3>${t('themes')}</h3><div class="shopgrid">${TILE_STYLES.map(([k,zh,c])=>{const own=S.owned['tiles_'+k],on=S.tileStyle===k;return `<button class="shopitem" data-t="${k}" data-cost="${c}"><span class="brush" style="font-size:28px;color:var(--gold2)">${zh}</span><span class="sub">${on?t('equipped'):own?t('equip'):`${coinHTML} <span class="num">${c}</span>`}</span></button>`;}).join('')}</div>
    <button class="btn ghost block" id="cl">${t('close')}</button>`,s=>{
     const p=$('#pro',s); if(p) p.onclick=()=>{closeSheet();paywall();};
-    $$('[data-c]',s).forEach(b=>b.onclick=async()=>{ const r=await purchase('coins_'+b.dataset.c); if(r&&r.ok!==false){ track('iap_coins',{pack:b.dataset.c}); S.coins+=+b.dataset.n; save(); SFX.coin(); confetti(40); updateTop(); toast('+'+fmt(+b.dataset.n)); } });
+    $$('[data-c]',s).forEach(b=>b.onclick=async()=>{ const r=await purchase('coins_'+b.dataset.c); if(r&&r.ok){ track('iap_coins',{pack:b.dataset.c}); S.coins+=+b.dataset.n; save(); SFX.coin(); confetti(40); updateTop(); toast('+'+fmt(+b.dataset.n)); } });
     $('#fz',s).onclick=()=>{ if(S.freezes>=3) return toast('❄ max 3'); if(spend(120)){ S.freezes++; save(); toast('❄ +1'); shop(); } };
     $$('[data-t]',s).forEach(b=>b.onclick=()=>{ const k=b.dataset.t,c=+b.dataset.cost; if(S.owned['tiles_'+k]){ S.tileStyle=k; save(); shop(); return; }
       if(S.coins<c) return toast(t('notEnough')); S.coins-=c; S.owned['tiles_'+k]=1; S.tileStyle=k; save(); SFX.coin(); shop(); });
@@ -1351,10 +1355,12 @@ function paywall(src='general'){ let plan='yearly'; track('paywall_view',{src});
     <div class="plans" style="margin-top:8px">${plans.map(([k,p,per])=>`<button class="plan" data-k="${k}" aria-pressed="${k===plan}">${k==='yearly'?`<span class="tag">${t('best')}</span>`:''}<b>${t(k)}</b><span class="price num">${p}</span><span class="per">${per}</span></button>`).join('')}</div>
     <div class="sub" style="text-align:center" id="tr"></div>
     <button class="btn block" id="buy"></button><button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost sm" id="lt" style="align-self:center;border:0">${t('later')}</button>
-    <div class="fine">${t('legal')}</div>`,s=>{
-    const upd=()=>{ $('#tr',s).innerHTML=plan==='yearly'?`${t('trial')} <span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:''; $('#buy',s).textContent=plan==='yearly'?t('startTrial'):t('buy'); };
+    <div class="fine">${t('legal')}</div><div class="fine" style="display:flex;gap:14px;justify-content:center"><a href="#" id="lterms">${t('termsL')}</a><a href="#" id="lpriv">${t('privacy')}</a></div>`,s=>{
+    $('#lterms',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.terms); }; $('#lpriv',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.privacy); };
+    const upd=()=>{ $('#tr',s).innerHTML=plan==='yearly'&&window.__trialOk===false?`<span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:plan==='yearly'?`${t('trial')} <span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:''; $('#buy',s).textContent=plan==='yearly'&&window.__trialOk!==false?t('startTrial'):t('buy'); };
     upd(); $$('.plan',s).forEach(b=>b.onclick=()=>{ plan=b.dataset.k; SFX.tap(); $$('.plan',s).forEach(x=>x.setAttribute('aria-pressed',x===b)); upd(); });
-    $('#buy',s).onclick=async()=>{ const r=await purchase('pro_'+plan); if(r&&r.ok!==false){ track(plan==='yearly'?'trial_start':'purchase',{plan,src}); S.pro=true; save(); closeSheet(); SFX.gong(); confetti(140); toast(t('proOn')); render(); } };
+    $('#buy',s).onclick=async()=>{ const b=$('#buy',s); b.disabled=true; const r=await purchase('pro_'+plan); b.disabled=false;
+      if(r&&!r.ok&&!r.cancelled) toast(t('buyFail')); if(r&&r.ok&&r.active){ track(plan==='yearly'?'trial_start':'purchase',{plan,src}); S.pro=true; save(); closeSheet(); SFX.gong(); confetti(140); toast(t('proOn')); render(); } };
     $('#rs',s).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();closeSheet();render();} else toast(t('restored')); };
     $('#lt',s).onclick=closeSheet; }); }
 
@@ -3034,10 +3040,10 @@ async function signIn(provider){ track('login_start',{provider}); let r;
   S.user=r.user; S.guest=false; save(); track('login_success',{provider}); toast(`✓ ${t('signedInAs')} ${r.user.name||r.user.email||''}`); await syncNow(true); render(); }
 async function syncNow(pull){ if(!S.user) return; if(!RN){ S.syncedAt=Date.now(); save(); return; }
   if(pull){ const r=await native('sync:pull',{uid:S.user.uid}); if(r&&r.ok&&r.data&&(r.updatedAt||0)>(S.syncedAt||0)) mergeRemote(r.data); }
-  const data=Object.assign({},S); delete data.inbox; delete data.user; const w=await native('sync:push',{uid:S.user.uid,data,updatedAt:Date.now()}); if(w&&w.ok){ S.syncedAt=Date.now(); save(); } }
+  const data=Object.assign({},S); delete data.inbox; delete data.user; delete data.pro; const w=await native('sync:push',{uid:S.user.uid,data,updatedAt:Date.now()}); if(w&&w.ok){ S.syncedAt=Date.now(); save(); } }
 function mergeRemote(R){ const keepMax=['xp','lessons','games','pron','streak','freezes']; keepMax.forEach(k=>{ if(typeof R[k]==='number') S[k]=Math.max(S[k]||0,R[k]); });
   ['srs','units','written','code','codeCh','cult','book','best','wins','owned'].forEach(k=>{ if(R[k]&&typeof R[k]==='object'){ S[k]=Object.assign({},R[k],S[k]||{}); if(k==='srs') for(const id in R.srs){ if(!S.srs[id]||R.srs[id].b>S.srs[id].b) S.srs[id]=R.srs[id]; } } });
-  S.pro=S.pro||!!R.pro; S.coins=Math.max(S.coins||0,R.coins||0); save(); }
+  if(!RN) S.pro=S.pro||!!R.pro; /* native: Pro is restored from the App Store, never from synced data */ S.coins=Math.max(S.coins||0,R.coins||0); save(); }
 function signOut(){ if(RN) native('auth:signOut',{}); S.user=null; S.guest=true; save(); track('logout'); render(); }
 function deleteAccount(){ sheet(`<h2>${t('delQ')}</h2><p style="margin:0">${t('delB')}</p><button class="btn red block" id="y">${t('delYes')}</button><button class="btn ghost block" id="n">${t('no')}</button>`,s=>{
   $('#n',s).onclick=closeSheet; $('#y',s).onclick=async()=>{ if(RN){ const r=await native('auth:delete',{uid:S.user&&S.user.uid}); if(!r||r.ok===false){ toast(t('loginFail')); return; } } track('account_deleted'); S.user=null; S.guest=true; save(); closeSheet(); toast(t('deleted')); render(); }; }); }
