@@ -127,7 +127,9 @@ export default function HanziBridge({ uri, onReady }) {
 
   const onMessage = async (e) => {
     let msg; try { msg = JSON.parse(e.nativeEvent.data); } catch { return; }
-    const h = handlers[msg.type]; if (!h) return;
+    const h = handlers[msg.type];
+    // Unknown request (e.g. 'listen' before speech recognition is added): answer at once so the page never waits for a timeout.
+    if (!h) { if (msg.id) reply(msg.id, { ok: false, unsupported: true }); return; }
     try { const r = await h(msg); if (msg.id) reply(msg.id, r || { ok: true }); }
     catch (err) { if (msg.id) reply(msg.id, { ok: false, error: String(err.message || err) }); }
   };

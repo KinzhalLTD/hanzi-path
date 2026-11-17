@@ -2476,7 +2476,7 @@ function bindTokens(root){ $$('.tok[data-w]',root).forEach(b=>b.onclick=e=>{ e.s
   sheet(`<div class="row" style="gap:14px"><span class="han" style="font-size:44px;font-weight:700;color:var(--gold2)">${esc(w.h)}</span><div class="grow"><div class="py" style="font-size:20px">${esc(w.p)}</div><div>${mean(w,3)}</div><span class="soon">HSK ${w.l}</span></div><button class="speak" id="tsp">🔊</button></div>
     <button class="btn block" id="topen">📖 ${t('openEntry')}</button>`,s=>{ $('#tsp',s).onclick=()=>speak(w.h); $('#topen',s).onclick=()=>go('word',w.id); }); }); }
 /* --- pronunciation check: native speech recognition in the app, Web Speech API in browsers --- */
-function hear(){ return new Promise(res=>{ if(RN){ native('listen',{lang:'zh-CN'}).then(r=>res(r&&r.text||null)); return; }
+function hear(){ return new Promise(res=>{ if(RN){ native('listen',{lang:'zh-CN'}).then(r=>res(r&&r.unsupported?undefined:(r&&r.text||null))); return; }
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition; if(!SR) return res(undefined);
   const r=new SR(); r.lang='zh-CN'; r.interimResults=false; r.maxAlternatives=4; let done=false; const fin=v=>{ if(!done){ done=true; res(v); } };
   r.onresult=e=>fin([...e.results[0]].map(a=>a.transcript).join('|')); r.onerror=()=>fin(null); r.onend=()=>fin(null);
