@@ -153,7 +153,7 @@ html[dir="rtl"] .feature .txt{padding:14px 0 14px 14px}
 .tile{position:absolute;border:0;padding:0;cursor:pointer;border-radius:9px;background:linear-gradient(160deg,#fffaf0,var(--ivory) 55%,var(--ivory2));color:var(--ink);
   box-shadow:inset 0 0 0 1px rgba(185,133,44,.45),3px 4px 0 #c9b28a,4px 6px 0 #8a6c40,6px 10px 14px -6px rgba(0,0,0,.7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;transition:transform .12s,opacity .25s,filter .2s;overflow:hidden}
 .tile .han{font-weight:700;line-height:1}.tile .tp{font:600 9px "Inter",sans-serif;color:var(--red)}
-.tile .tm{font:700 10.5px var(--f-ar);line-height:1.15;padding:0 3px;text-align:center;color:#3b2a20}
+.tile .tm{font:700 10.5px var(--f-ar);line-height:1.15;padding:0 3px;text-align:center;color:#3b2a20;max-width:100%;overflow-wrap:anywhere;hyphens:auto}
 .tile.blocked{filter:brightness(.6) saturate(.7)}
 .tile[style*="z-index:1"],.tile[style*="z-index:2"]{box-shadow:inset 0 0 0 1px rgba(185,133,44,.45),3px 4px 0 #c9b28a,4px 6px 0 #8a6c40,10px 14px 18px -6px rgba(0,0,0,.85)}
 .tile.sel{transform:translateY(-4px);box-shadow:inset 0 0 0 2.5px var(--red),3px 4px 0 #c9b28a,4px 6px 0 #8a6c40,0 0 0 4px rgba(232,182,92,.5)}
@@ -203,6 +203,7 @@ html[lang="ar"] .search{font-family:var(--f-ar)}
 /* sheets & paywall */
 .sheet{position:fixed;inset:0;z-index:60;background:rgba(5,3,3,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center}
 .sheet>div{background:linear-gradient(180deg,#1d1512,#0f0a09);border:1px solid var(--line);border-bottom:0;width:100%;max-width:540px;border-radius:28px 28px 0 0;max-height:94%;overflow:auto;padding-block:22px calc(22px + env(safe-area-inset-bottom,0px));padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px;position:relative}
+.sheet>div>*{flex-shrink:0;min-width:0}
 .sheet .grab{width:42px;height:5px;border-radius:9px;background:var(--line2);margin:-8px auto 4px}
 .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .plan{border:1.5px solid var(--line2);border-radius:18px;padding:14px 8px 12px;background:var(--surface);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;position:relative}
@@ -326,7 +327,7 @@ html[dir=rtl] .wordhead{text-align:right!important}
 pre.code,textarea.code{margin:0;padding:14px;border-radius:14px;background:#0b0f0d;border:1px solid rgba(123,227,176,.18);color:#d9e6df;font:500 14px/1.6 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;text-align:left;direction:ltr}
 textarea.code{width:100%;min-height:150px;resize:vertical;box-sizing:border-box}
 .c-kw{color:#ff8f7a}.c-st{color:#f7d894}.c-nu{color:#7be3b0}.c-cm{color:#7d8a83;font-style:italic}.c-id{color:#9cc9ff}.c-zh{color:#ffd0a8}
-.ztok{all:unset;cursor:pointer;border-bottom:1px dashed rgba(247,216,148,.6)}.ztok.c-zh{color:#ffd0a8}
+.ztok{all:unset;cursor:pointer;border-bottom:1px dashed rgba(247,216,148,.6);padding:8px 2px;margin:-8px 0}.ztok.c-zh{color:#ffd0a8}
 .copt{font:600 15px ui-monospace,Menlo,monospace!important;text-align:left;white-space:normal}
 .term{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);direction:ltr}
 .term .tbar{display:flex;gap:6px;align-items:center;padding:6px 10px;background:#1a1d1c;font:600 11px Inter;color:#8a958f}.term .tbar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.term .tbar i:nth-child(2){background:#febc2e}.term .tbar i:nth-child(3){background:#28c840}.term .tbar span{margin-inline-start:6px}
@@ -377,6 +378,8 @@ details.play{border:1px dashed rgba(232,182,92,.3);border-radius:14px;padding:10
 .acct{width:100%;border-collapse:collapse}.acct th{font-size:11px;text-align:start;color:var(--gold);padding:4px 6px;border-bottom:1px solid rgba(232,182,92,.2)}
 .acct td{padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:top;width:50%}
 .accb{all:unset;cursor:pointer;display:block;padding:4px 8px;border-radius:10px;background:rgba(232,182,92,.08)}
+
+.legal-a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px}
 </style>
 <div id="app"></div>
 <script>/**
@@ -1358,7 +1361,7 @@ function paywall(src='general'){ let plan='yearly'; track('paywall_view',{src});
     <div class="plans" style="margin-top:8px">${plans.map(([k,p,per])=>`<button class="plan" data-k="${k}" aria-pressed="${k===plan}">${k==='yearly'?`<span class="tag">${t('best')}</span>`:''}<b>${t(k)}</b><span class="price num">${p}</span><span class="per">${per}</span></button>`).join('')}</div>
     <div class="sub" style="text-align:center" id="tr"></div>
     <button class="btn block" id="buy"></button><button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost sm" id="lt" style="align-self:center;border:0">${t('later')}</button>
-    <div class="fine">${t('legal')}</div><div class="fine" style="display:flex;gap:14px;justify-content:center"><a href="#" id="lterms">${t('termsL')}</a><a href="#" id="lpriv">${t('privacy')}</a></div>`,s=>{
+    <div class="fine">${t('legal')}</div><div class="fine" style="display:flex;gap:14px;justify-content:center"><a href="#" class="legal-a" id="lterms">${t('termsL')}</a><a href="#" class="legal-a" id="lpriv">${t('privacy')}</a></div>`,s=>{
     $('#lterms',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.terms); }; $('#lpriv',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.privacy); };
     const upd=()=>{ $('#tr',s).innerHTML=plan==='yearly'&&window.__trialOk===false?`<span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:plan==='yearly'?`${t('trial')} <span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:''; $('#buy',s).textContent=plan==='yearly'&&window.__trialOk!==false?t('startTrial'):t('buy'); };
     upd(); $$('.plan',s).forEach(b=>b.onclick=()=>{ plan=b.dataset.k; SFX.tap(); $$('.plan',s).forEach(x=>x.setAttribute('aria-pressed',x===b)); upd(); });
