@@ -1,0 +1,233 @@
+# Second batch: deeper MEP, construction and infrastructure vocabulary (extends topics from sec_e/f/g).
+@mep
+#hvac|暖通空调|التدفئة والتهوية والتكييف|HVAC
+变风量|biànfēngliàng|حجم هواء متغيّر (VAV)|variable air volume (VAV)|3
+定风量|dìngfēngliàng|حجم هواء ثابت (CAV)|constant air volume (CAV)|3
+末端装置|mòduān zhuāngzhì|وحدة طرفية|terminal unit|3
+二通阀|èrtōngfá|صمام ثنائي الاتجاه|two-way valve|3
+三通阀|sāntōngfá|صمام ثلاثي الاتجاه|three-way valve|3
+电动调节阀|diàndòng tiáojiéfá|صمام تحكّم كهربائي|motorised control valve|3
+压差旁通阀|yāchā pángtōngfá|صمام تجاوز فرق الضغط|differential-pressure bypass valve|3
+膨胀水箱|péngzhàng shuǐxiāng|خزان التمدّد|expansion tank|2
+软化水|ruǎnhuàshuǐ|ماء مُيسَّر|softened water|3
+补水|bǔshuǐ|ماء التعويض|make-up water|3
+过滤器|guòlǜqì|مرشّح (فلتر)|filter, strainer|2
+Y型过滤器|Y xíng guòlǜqì|مصفاة على شكل Y|Y-strainer|3
+温度计|wēndùjì|مقياس حرارة|thermometer|1
+压力表|yālìbiǎo|مقياس ضغط|pressure gauge|2
+排气阀|páiqìfá|صمام تنفيس الهواء|air vent valve|3
+泄水阀|xièshuǐfá|صمام تصريف|drain valve|3
+冷热源|lěngrèyuán|مصدر التبريد والتدفئة|heating and cooling source|3
+制冷机房|zhìlěng jīfáng|غرفة التبريد المركزية|chiller plant room|2
+空调冷负荷计算|kōngtiáo lěngfùhè jìsuàn|حساب أحمال التبريد|cooling load calculation|3
+舒适性空调|shūshìxìng kōngtiáo|تكييف الراحة|comfort air conditioning|3
+精密空调|jīngmì kōngtiáo|تكييف دقيق (لغرف الخوادم)|precision air conditioning|3
+厨房排油烟|chúfáng pái yóuyān|شفط أبخرة المطبخ|kitchen exhaust|3
+#plumb|给排水|التغذية بالمياه والصرف|Plumbing & drainage
+虹吸雨水|hóngxī yǔshuǐ|تصريف أمطار سيفوني|siphonic rainwater drainage|3
+雨水斗|yǔshuǐdǒu|مصرف مطر السطح|roof rain outlet|3
+集水坑|jíshuǐkēng|حوض تجميع|sump pit|2
+污水提升|wūshuǐ tíshēng|رفع مياه الصرف|sewage lifting|3
+管道井|guǎndàojǐng|بئر الخدمات|services shaft|2
+倒流防止器|dàoliú fángzhǐqì|مانع التدفق العكسي|backflow preventer|3
+水质检测|shuǐzhì jiǎncè|اختبار جودة المياه|water quality test|2
+太阳能热水|tàiyángnéng rèshuǐ|سخّان شمسي|solar water heating|2
+循环泵|xúnhuánbèng|مضخة تدوير|circulation pump|2
+管道保温|guǎndào bǎowēn|عزل الأنابيب|pipe insulation|2
+阻火圈|zǔhuǒquān|طوق مانع للحريق|fire collar|3
+#fire|消防|الحماية من الحريق|Fire protection
+火灾探测器|huǒzāi tàncèqì|كاشف حريق|fire detector|2
+吸气式烟雾探测|xīqìshì yānwù tàncè|كشف الدخان بالشفط|aspirating smoke detection|3
+消防联动|xiāofáng liándòng|الربط الآلي لأنظمة الحريق|fire system interlock|3
+消防广播|xiāofáng guǎngbō|إذاعة الإخلاء|fire voice evacuation|3
+防火间距|fánghuǒ jiānjù|مسافة الفصل ضد الحريق|fire separation distance|3
+安全出口|ānquán chūkǒu|مخرج الطوارئ|emergency exit|1
+疏散楼梯|shūsàn lóutī|درج الهروب|escape staircase|2
+避难层|bìnàncéng|طابق اللجوء|refuge floor|3
+#power|电气（强电）|الكهرباء (القوى)|Electrical power
+电力电缆|diànlì diànlǎn|كابل قوى|power cable|2
+控制电缆|kòngzhì diànlǎn|كابل تحكّم|control cable|2
+阻燃电缆|zǔrán diànlǎn|كابل مقاوم للهب|flame-retardant cable|3
+耐火电缆|nàihuǒ diànlǎn|كابل مقاوم للحريق|fire-resistant cable|3
+电缆沟|diànlǎngōu|خندق الكابلات|cable trench|2
+电缆井|diànlǎnjǐng|بئر الكابلات|cable shaft|2
+动力配电|dònglì pèidiàn|توزيع قوى المحركات|power distribution (motors)|3
+照明配电|zhàomíng pèidiàn|توزيع الإنارة|lighting distribution|3
+电动机控制中心|diàndòngjī kòngzhì zhōngxīn|مركز التحكم بالمحركات (MCC)|motor control centre (MCC)|3
+软启动器|ruǎnqǐdòngqì|بادئ تشغيل ناعم|soft starter|3
+星三角启动|xīng sānjiǎo qǐdòng|بدء نجمة-دلتا|star–delta starting|3
+谐波|xiébō|توافقيات|harmonics|3
+电压降|diànyājiàng|هبوط الجهد|voltage drop|3
+短路电流|duǎnlù diànliú|تيار القصر|short-circuit current|3
+选择性保护|xuǎnzéxìng bǎohù|التنسيق الانتقائي للحماية|selective protection (discrimination)|3
+节能灯|jiénéngdēng|مصباح موفّر|energy-saving lamp|1
+LED灯|LED dēng|مصباح LED|LED light|1
+#elv|弱电与智能化|الأنظمة منخفضة الجهد والمباني الذكية|ELV & smart building
+信息发布系统|xìnxī fābù xìtǒng|نظام الشاشات الإعلامية|digital signage system|3
+会议系统|huìyì xìtǒng|نظام قاعات الاجتماعات|conference system|2
+一卡通|yìkǎtōng|نظام البطاقة الموحدة|one-card system|3
+电子巡更|diànzǐ xúngēng|نظام جولات الحراسة|guard tour system|3
+智能照明|zhìnéng zhàomíng|إنارة ذكية|smart lighting control|2
+物联网|wùliánwǎng|إنترنت الأشياء|Internet of Things (IoT)|2
+数据中心|shùjù zhōngxīn|مركز بيانات|data centre|2
+机柜|jīguì|خزانة شبكات (راك)|equipment rack|2
+#inst|仪表与自控|الأجهزة والتحكم الآلي|Instrumentation & control
+仪表|yíbiǎo|أجهزة قياس|instrumentation|2
+变送器|biànsòngqì|محوّل إشارة (ترانسميتر)|transmitter|3
+压力变送器|yālì biànsòngqì|محوّل ضغط|pressure transmitter|3
+温度传感器|wēndù chuángǎnqì|مستشعر حرارة|temperature sensor|2
+流量计|liúliàngjì|مقياس تدفّق|flow meter|2
+液位计|yèwèijì|مقياس منسوب السائل|level gauge|3
+可编程控制器|kěbiānchéng kòngzhìqì|وحدة تحكم منطقية قابلة للبرمجة (PLC)|programmable logic controller (PLC)|3
+分布式控制系统|fēnbùshì kòngzhì xìtǒng|نظام التحكم الموزّع (DCS)|distributed control system (DCS)|3
+上位机|shàngwèijī|حاسوب الإشراف (SCADA)|supervisory computer (SCADA)|3
+控制回路|kòngzhì huílù|حلقة تحكّم|control loop|3
+联锁|liánsuǒ|تعشيق (إنترلوك)|interlock|3
+设定值|shèdìngzhí|نقطة الضبط|set point|2
+报警值|bàojǐngzhí|حد الإنذار|alarm limit|3
+标定|biāodìng|معايرة|calibration|2
+信号|xìnhào|إشارة|signal|1
+模拟量|mónǐliàng|إشارة تماثلية|analogue signal|3
+数字量|shùzìliàng|إشارة رقمية|digital signal|3
+#gas|燃气与医用气体|الغاز والغازات الطبية|Gas & medical gases
+燃气|ránqì|غاز الوقود|fuel gas|1
+燃气管道|ránqì guǎndào|أنابيب الغاز|gas piping|2
+调压箱|tiáoyāxiāng|صندوق تنظيم الضغط|gas pressure regulating box|3
+燃气泄漏报警|ránqì xièlòu bàojǐng|إنذار تسرّب الغاز|gas leak alarm|2
+紧急切断阀|jǐnjí qiēduànfá|صمام الإغلاق الطارئ|emergency shut-off valve|3
+医用气体|yīyòng qìtǐ|الغازات الطبية|medical gases|2
+氧气|yǎngqì|أكسجين|oxygen|1
+负压吸引|fùyā xīyǐn|الشفط الطبي (فاكيوم)|medical vacuum|3
+压缩空气|yāsuō kōngqì|هواء مضغوط|compressed air|2
+空压机|kōngyājī|ضاغط هواء|air compressor|2
+@cons
+#site|施工现场与组织|موقع العمل وتنظيمه|Site & organisation
+施工许可证|shīgōng xǔkězhèng|رخصة البناء|building permit|2
+交接|jiāojiē|التسليم والاستلام بين الفرق|handover between trades|2
+工序|gōngxù|تسلسل الأعمال|work sequence|2
+流水施工|liúshuǐ shīgōng|التنفيذ المتتابع|flow-line construction|3
+穿插施工|chuānchā shīgōng|تداخل الأعمال|overlapping trades|3
+人工|réngōng|العمالة اليدوية|labour|1
+机械台班|jīxiè táibān|وردية آلة|machine shift|3
+材料进场验收|cáiliào jìnchǎng yànshōu|استلام المواد عند وصولها|material receiving inspection|3
+甲供材料|jiǎgōng cáiliào|مواد يوردها المالك|owner-supplied materials|3
+文明施工|wénmíng shīgōng|التنفيذ المنظم النظيف|tidy site practice|2
+扬尘控制|yángchén kòngzhì|التحكم بالغبار|dust control|2
+夜间施工|yèjiān shīgōng|العمل الليلي|night work|2
+#tools|施工机具与材料|معدات ومواد البناء|Plant, tools & materials
+电钻|diànzuàn|مثقاب كهربائي|power drill|1
+冲击钻|chōngjīzuàn|مثقاب دقّاق|hammer drill|2
+角磨机|jiǎomójī|صاروخ قطع (جلاخة)|angle grinder|2
+切割机|qiēgējī|آلة قطع|cutting machine|2
+电焊机|diànhànjī|ماكينة لحام|welding machine|2
+水平仪|shuǐpíngyí|ميزان ماء|spirit level|1
+卷尺|juǎnchǐ|متر قياس|tape measure|1
+激光测距仪|jīguāng cèjùyí|جهاز قياس المسافة بالليزر|laser distance meter|2
+脚手架|jiǎoshǒujià|سقالة|scaffolding|1
+爬架|pájià|سقالة متسلقة|climbing scaffold|3
+铝模|lǚmú|قوالب ألومنيوم|aluminium formwork|3
+木方|mùfāng|عروق خشبية|timber battens|2
+胶合板|jiāohébǎn|خشب أبلكاش|plywood|2
+钢管扣件|gāngguǎn kòujiàn|مواسير وقفيلات السقالات|tube-and-coupler scaffolding|3
+混凝土泵|hùnníngtǔbèng|مضخة خرسانة|concrete pump|2
+振动棒|zhèndòngbàng|هزّاز خرسانة|poker vibrator|2
+抹光机|mǒguāngjī|آلة تنعيم الخرسانة (هليكوبتر)|power trowel|3
+钢筋弯曲机|gāngjīn wānqūjī|آلة ثني الحديد|rebar bender|3
+钢筋切断机|gāngjīn qiēduànjī|آلة قص الحديد|rebar cutter|3
+防水卷材|fángshuǐ juǎncái|لفائف العزل المائي|waterproofing membrane|2
+防水涂料|fángshuǐ túliào|عزل مائي سائل|liquid waterproofing|2
+密封胶|mìfēngjiāo|مادة مانعة للتسرّب (سيلانت)|sealant|2
+膨胀螺栓|péngzhàng luóshuān|مسمار تمدد (فيشر)|expansion anchor|2
+化学锚栓|huàxué máoshuān|مسمار تثبيت كيميائي|chemical anchor|3
+#bim|数字化与BIM|الرقمنة ونمذجة معلومات البناء|Digital construction & BIM
+建筑信息模型|jiànzhù xìnxī móxíng|نمذجة معلومات البناء (BIM)|building information modelling (BIM)|2
+三维模型|sānwéi móxíng|نموذج ثلاثي الأبعاد|3D model|1
+模型深度|móxíng shēndù|مستوى تطوير النموذج (LOD)|level of development (LOD)|3
+协同平台|xiétóng píngtái|منصة التعاون|common data environment|3
+施工模拟|shīgōng mónǐ|محاكاة التنفيذ (4D)|construction simulation (4D)|3
+算量|suànliàng|حساب الكميات|quantity take-off|2
+点云扫描|diǎnyún sǎomiáo|المسح السحابي ثلاثي الأبعاد|point-cloud laser scanning|3
+数字孪生|shùzì luánshēng|التوأم الرقمي|digital twin|3
+智慧工地|zhìhuì gōngdì|الموقع الذكي|smart construction site|3
+#green|绿色建筑与节能|المباني الخضراء وتوفير الطاقة|Green building & energy saving
+绿色建筑|lǜsè jiànzhù|مبانٍ خضراء|green building|2
+节能|jiénéng|توفير الطاقة|energy saving|1
+外墙保温|wàiqiáng bǎowēn|عزل الواجهات الخارجية|external wall insulation|2
+断桥铝|duànqiáolǚ|ألومنيوم بعازل حراري|thermally broken aluminium|3
+中空玻璃|zhōngkōng bōli|زجاج مزدوج|insulated (double) glazing|2
+低辐射玻璃|dī fúshè bōli|زجاج منخفض الانبعاث (Low-E)|low-E glass|3
+遮阳|zhēyáng|تظليل|shading|2
+自然通风|zìrán tōngfēng|التهوية الطبيعية|natural ventilation|2
+雨水回收|yǔshuǐ huíshōu|حصاد مياه الأمطار|rainwater harvesting|2
+建筑垃圾|jiànzhù lājī|مخلفات البناء|construction waste|1
+碳排放|tàn páifàng|انبعاثات الكربون|carbon emissions|2
+#qhse|质量与安全|الجودة والسلامة|Quality & safety
+三级安全教育|sān jí ānquán jiàoyù|التدريب الأمني على ثلاثة مستويات|three-level safety training|3
+特种作业|tèzhǒng zuòyè|عمل يتطلب ترخيصًا خاصًا|special (licensed) operations|3
+持证上岗|chízhèng shànggǎng|العمل بشهادة تأهيل فقط|work only with a valid certificate|3
+起重吊装|qǐzhòng diàozhuāng|عمليات الرفع|lifting operations|2
+吊装方案|diàozhuāng fāng'àn|خطة الرفع|lifting plan|3
+信号工|xìnhàogōng|مؤشّر الرافعة|banksman (signaller)|3
+坠落|zhuìluò|سقوط من ارتفاع|fall from height|2
+物体打击|wùtǐ dǎjī|سقوط الأجسام|struck by falling objects|3
+触电|chùdiàn|صعق كهربائي|electric shock|1
+坍塌|tāntā|انهيار|collapse|2
+应急预案|yìngjí yù'àn|خطة الطوارئ|emergency response plan|2
+安全检查表|ānquán jiǎnchábiǎo|قائمة تفقّد السلامة|safety checklist|2
+#contract|合同与造价|العقود والتكاليف|Contracts & cost
+暂列金额|zànliè jīn'é|مبلغ احتياطي (احتمالي)|provisional sum|3
+暂估价|zàngūjià|سعر تقديري مؤقت|provisional (PC) price|3
+总价合同|zǒngjià hétong|عقد بمبلغ مقطوع|lump-sum contract|3
+单价合同|dānjià hétong|عقد بأسعار الوحدة|unit-rate (re-measurable) contract|3
+成本加酬金|chéngběn jiā chóujīn|عقد التكلفة زائد الأتعاب|cost-plus contract|3
+定额|dìng'é|المعدلات القياسية للتكلفة|standard cost norms (quota)|3
+清单计价|qīngdān jìjià|التسعير وفق جدول الكميات|BOQ-based pricing|3
+材料价差|cáiliào jiàchā|فروق أسعار المواد|material price fluctuation|3
+现场签证单|xiànchǎng qiānzhèngdān|نموذج تأكيد أعمال الموقع|site work confirmation form|3
+竣工验收|jùngōng yànshōu|الاستلام النهائي|completion acceptance|2
+缺陷责任期|quēxiàn zérènqī|فترة الإخطار بالعيوب|defects liability period|3
+@infra
+#road|道路与公路|الطرق والطرق السريعة|Roads & highways
+路线|lùxiàn|مسار الطريق|alignment, route|2
+横断面|héngduànmiàn|مقطع عرضي|cross-section|2
+纵断面|zòngduànmiàn|مقطع طولي|longitudinal profile|3
+填方|tiánfāng|ردم|fill|2
+挖方|wāfāng|قطع (حفر)|cut|2
+土方平衡|tǔfāng pínghéng|موازنة القطع والردم|cut-and-fill balance|3
+透层|tòucéng|طبقة تشريب (برايم)|prime coat|3
+粘层|niáncéng|طبقة لاصقة (تاك)|tack coat|3
+车辙|chēzhé|تخدّد الطريق|rutting|3
+坑槽|kēngcáo|حفرة في الطريق|pothole|2
+养护|yǎnghù|صيانة الطرق|road maintenance|2
+交通导改|jiāotōng dǎogǎi|تحويل حركة المرور|traffic diversion|3
+#bridge|桥梁|الجسور|Bridges
+桩基础|zhuāng jīchǔ|أساسات خازوقية|pile foundation|2
+盖梁|gàiliáng|كمرة رأس الركيزة|pier cap (cap beam)|3
+防撞墙|fángzhuàngqiáng|حاجز تصادم خرساني|crash barrier|3
+桥梁检测|qiáoliáng jiǎncè|فحص الجسور|bridge inspection|2
+钢箱梁|gāngxiāngliáng|كمرة صندوقية فولاذية|steel box girder|3
+桥面铺装|qiáomiàn pūzhuāng|رصف سطح الجسر|deck surfacing|3
+#tunnel|隧道与地下工程|الأنفاق والأعمال تحت الأرض|Tunnels & underground
+仰拱|yǎnggǒng|القوس السفلي (الأرضية المقوسة)|invert arch|3
+防水板|fángshuǐbǎn|غشاء العزل المائي للنفق|tunnel waterproofing membrane|3
+监控量测|jiānkòng liángcè|رصد التشوّهات|deformation monitoring|3
+塌方|tāfāng|انهيار في النفق|cave-in|2
+涌水|yǒngshuǐ|تدفّق المياه المفاجئ|water inrush|3
+#smart|智慧城市与交通|المدن الذكية والنقل الذكي|Smart cities & ITS
+智慧城市|zhìhuì chéngshì|مدينة ذكية|smart city|2
+智能交通系统|zhìnéng jiāotōng xìtǒng|أنظمة النقل الذكية (ITS)|intelligent transport system (ITS)|3
+红绿灯|hónglǜdēng|إشارة مرور ضوئية|traffic lights|1
+电子收费|diànzǐ shōufèi|التحصيل الإلكتروني للرسوم|electronic toll collection|2
+充电桩|chōngdiànzhuāng|شاحن سيارات كهربائية|EV charging point|2
+共享单车|gòngxiǎng dānchē|دراجات تشاركية|shared bicycles|1
+城市规划|chéngshì guīhuà|التخطيط العمراني|urban planning|2
+地下管线|dìxià guǎnxiàn|الخدمات تحت الأرض|underground utilities|2
+#env|环境工程|الهندسة البيئية|Environmental engineering
+环境影响评价|huánjìng yǐngxiǎng píngjià|تقييم الأثر البيئي|environmental impact assessment (EIA)|3
+固体废物|gùtǐ fèiwù|نفايات صلبة|solid waste|2
+垃圾填埋场|lājī tiánmáichǎng|مدفن النفايات|landfill|2
+垃圾焚烧|lājī fénshāo|حرق النفايات|waste incineration|2
+噪声控制|zàoshēng kòngzhì|التحكم بالضوضاء|noise control|2
+大气污染|dàqì wūrǎn|تلوّث الهواء|air pollution|1
+排放标准|páifàng biāozhǔn|معايير الانبعاثات|emission standard|3
+生态修复|shēngtài xiūfù|إعادة التأهيل البيئي|ecological restoration|3

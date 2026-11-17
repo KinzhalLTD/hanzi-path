@@ -39,7 +39,13 @@ async def main():
             await pg.evaluate("S.pro=true;save()")
             # play every scene
             total = 0
-            for di, dk in enumerate(['eng', 'biz', 'med', 'soft']):
+            doms = await pg.evaluate("TALK.map(d=>d.k)")
+            if doms != ['eng', 'mep', 'cons', 'infra', 'biz', 'med', 'soft']: errs.append(f'{lang} domain order {doms}')
+            terms = await pg.evaluate("TALK.flatMap(d=>d.scenes.map(s=>[d.k+'/'+s.k, tkTerms(d,s).length]))")
+            few = [x for x in terms if x[1] < 2]
+            if few: errs.append(f'{lang} scenes with <2 key terms {few}')
+            info[lang + '_terms'] = sum(x[1] for x in terms)
+            for di, dk in enumerate(doms):
                 ns = await pg.evaluate(f"TALK.find(d=>d.k==='{dk}').scenes.length")
                 for si in range(ns):
                     await pg.evaluate(f"go('talkscene',{{d:'{dk}',i:{si}}})"); await pg.wait_for_timeout(150)
@@ -66,6 +72,20 @@ async def main():
                     if si == 0 and di == 1: await pg.screenshot(path=f'{O}/talk_{lang}_summary.png', full_page=True)
                     total += 1
             info[lang + '_played'] = total
+            # key terms on intro and practice from the summary
+            await pg.evaluate("go('talkscene',{d:'mep',i:0})"); await pg.wait_for_timeout(150)
+            if await pg.locator('.tkterm').count() < 3: errs.append(lang + ' intro key terms missing')
+            await pg.screenshot(path=f'{O}/talk_{lang}_terms.png', full_page=True)
+            await pg.click('.tkterm >> nth=0'); await pg.wait_for_timeout(200)
+            if not await pg.locator('.sheet #topen').count(): errs.append(lang + ' term tap did not open word sheet')
+            await pg.evaluate("closeSheet()")
+            await pg.click('#go')
+            for turn in range(5):
+                await pg.wait_for_selector('.tkopt', timeout=4000)
+                j = await pg.evaluate("(()=>{ const tn=TALK.find(d=>d.k==='mep').scenes[0].turns[%d]; for(const b of $$('.tkopt')){ const o=tn.o.find(o=>o.zh===b.querySelector('.han').textContent); if(o&&o.t==='A') return +b.dataset.j; } return -1; })()" % turn)
+                await pg.click(f'.tkopt[data-j="{j}"]'); await pg.click('#tnx'); await pg.wait_for_timeout(60)
+            await pg.wait_for_selector('#tpr', timeout=4000); await pg.click('#tpr'); await pg.wait_for_timeout(300)
+            if not (await pg.locator('#go').count() or await pg.locator('.opt').count() or await pg.locator('.qhead').count()): errs.append(lang + ' term practice did not start')
             # toggles persist and hide pinyin
             await pg.evaluate("go('talkscene',{d:'soft',i:0})"); await pg.wait_for_timeout(150); await pg.click('#go'); await pg.wait_for_selector('.tkopt')
             await pg.click('#tpy'); await pg.click('#ttr'); await pg.wait_for_timeout(100)

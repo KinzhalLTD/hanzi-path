@@ -2,26 +2,38 @@
    software. Each turn: the partner speaks, the learner picks the best reply (weaker/wrong replies explain why),
    hears it and can say it. Ends with stars, rewards and a phrasebook. Data: content/talk_*.tsv → out/talk.json. ===== */
 const TALK=__TALK__;
-const TALK_ORDER=['eng','biz','med','soft']; TALK.sort((a,b)=>TALK_ORDER.indexOf(a.k)-TALK_ORDER.indexOf(b.k));
+const TALK_ORDER=['eng','mep','cons','infra','biz','med','soft']; TALK.sort((a,b)=>TALK_ORDER.indexOf(a.k)-TALK_ORDER.indexOf(b.k));
 Object.assign(T.ar,{tkTitle:'محادثات العمل',tkSub:'职场对话 · تدرّب على مواقف حقيقية',tkIntro:'تقمّص دورًا في موقف عمل حقيقي: استمع، اختر الرد الأنسب، وانطقه. كل خيار خاطئ يشرح لك السبب.',
   tkScenes:'مواقف',tkYou:'أنت',tkWith:'محاورك',tkStart:'ابدأ المحادثة',tkTurns:'تبادلات',tkPy:'بينيين',tkTr:'ترجمة',tkHint:'أظهر المعاني',tkPick:'اختر ردّك',
   tkBest:'أفضل رد!',tkOk:'مقبول، لكن…',tkNo:'غير مناسب',tkTry:'جرّب ردًا آخر',tkSay:'انطقها',tkNext:'متابعة',tkDone:'أكملت المحادثة!',tkFirst:'أفضل رد من أول مرة',
   tkBook:'عبارات هذا الموقف',tkReplay:'استمع للحوار كاملًا',tkAgain:'أعد المحاولة',tkNextScene:'الموقف التالي',tkFree:'الموقف الأول في كل مجال مجاني؛ البقية مع PRO.',tkTyping:'يكتب…',
-  tkCard:'محادثات العمل',tkCardSub:'هندسة · أعمال · طب · برمجة',tkVocab:'مفردات المجال',tkStop:'إيقاف',perk8:'محادثات العمل في 4 مجالات مهنية',nTalkT:'جديد: محادثات العمل 💬',nTalkB:'21 موقفًا حقيقيًا في الهندسة وتطوير الأعمال والطب والبرمجة.'});
+  tkCard:'محادثات العمل',tkCardSub:'هندسة · MEP · بناء · بنية تحتية · أعمال · طب · برمجة',tkTerms:'المصطلحات المهنية في هذا الموقف',tkPractise:'تدرّب على هذه المصطلحات',tkVocab:'مفردات المجال',tkStop:'إيقاف',perk8:'محادثات العمل في 4 مجالات مهنية',nTalkT:'جديد: محادثات العمل 💬',nTalkB:'مواقف حقيقية في الهندسة وMEP والبناء والبنية التحتية وتطوير الأعمال والطب والبرمجة.'});
 Object.assign(T.en,{tkTitle:'Workplace conversations',tkSub:'职场对话 · practise real situations',tkIntro:'Play a role in a real work situation: listen, choose the best reply and say it. Every weaker answer tells you why.',
   tkScenes:'scenes',tkYou:'You',tkWith:'Talking with',tkStart:'Start the conversation',tkTurns:'exchanges',tkPy:'Pinyin',tkTr:'Translation',tkHint:'Show meanings',tkPick:'Choose your reply',
   tkBest:'Best reply!',tkOk:'Acceptable, but…',tkNo:'Not appropriate',tkTry:'Try another reply',tkSay:'Say it',tkNext:'Continue',tkDone:'Conversation complete!',tkFirst:'Best reply first time',
   tkBook:'Phrases from this scene',tkReplay:'Listen to the whole dialogue',tkAgain:'Try again',tkNextScene:'Next scene',tkFree:'The first scene in every field is free; the rest come with PRO.',tkTyping:'typing…',
-  tkCard:'Workplace conversations',tkCardSub:'Engineering · business · medical · software',tkVocab:'Field vocabulary',tkStop:'Stop',perk8:'Workplace conversations in 4 professional fields',nTalkT:'New: workplace conversations 💬',nTalkB:'21 real situations in engineering, business development, medicine and software.'});
+  tkCard:'Workplace conversations',tkCardSub:'Engineering · MEP · construction · infrastructure · business · medical · software',tkTerms:'Professional terms in this scene',tkPractise:'Practise these terms',tkVocab:'Field vocabulary',tkStop:'Stop',perk8:'Workplace conversations in 4 professional fields',nTalkT:'New: workplace conversations 💬',nTalkB:'Real situations in engineering, MEP, construction, infrastructure, business development, medicine and software.'});
 
 const tkFree=(d,i)=>S.pro||i===0;
 const tkKey=(d,s)=>d.k+'/'+s.k;
 const tkL=(o,ar,en)=>isAr()?o[ar]:o[en];
 const tkStars=n=>`<span class="tkstars" aria-label="${n}/3">${[1,2,3].map(i=>`<i class="${i<=n?'on':''}">★</i>`).join('')}</span>`;
-const TK_AV={eng:['👷','👨‍🔧','🧑‍🏭','👨‍💼','👷‍♂️'],biz:['👩‍💼','👨‍💼','👩‍💼','👨‍💼','🧑‍💼','🧑‍💼'],med:['👩‍⚕️','🧑‍⚕️','🧔','👩‍⚕️','👵'],soft:['🧑‍💻','👨‍💻','🧑‍🔧','👩‍💻','👨‍💼']};
+const TK_AV={mep:['🧑‍💻','🧑‍🔧','🧑‍🚒','👨‍🔧','👨‍💼'],cons:['👷','👩‍💼','🏗','👨‍💼','👷‍♂️'],infra:['👨‍🔧','👷','👷‍♂️','🧑‍🔬','👮'],eng:['👷','👨‍🔧','🧑‍🏭','👨‍💼','👷‍♂️'],biz:['👩‍💼','👨‍💼','👩‍💼','👨‍💼','🧑‍💼','🧑‍💼'],med:['👩‍⚕️','🧑‍⚕️','🧔','👩‍⚕️','👵'],soft:['🧑‍💻','👨‍💻','🧑‍🔧','👩‍💻','👨‍💼']};
 const tkAv=(d,i)=>(TK_AV[d.k]||[])[i]||d.emo;
-const TK_COL={eng:'#b0602a',biz:'#2f6f8a',med:'#2e8a6a',soft:'#5a4aa0'};
+const TK_COL={mep:'#2f6f8a',cons:'#c0782a',infra:'#2e7d6e',eng:'#b0602a',biz:'#2f6f8a',med:'#2e8a6a',soft:'#5a4aa0'};
 
+/* professional terms that appear in a scene: sector terms (2+ characters) found in its lines, in order of appearance */
+const _tkTermCache={};
+function tkTerms(d,s){ const key=tkKey(d,s); if(_tkTermCache[key]) return _tkTermCache[key];
+  const txt=s.turns.map(tn=>tn.p[0]+tn.o.map(o=>o.zh).join('')).join('|'); const home=SECTORS.find(x=>x.k===d.sec), seen=new Set(), out=[];
+  const pools=[home,...SECTORS.filter(x=>x!==home&&['eng','mep','cons','infra','it','biz','med','tech'].includes(x.k))].filter(Boolean);
+  // a term counts when the segmenter reads it as a word (so 关系 inside 没关系 does not), or when it is a long compound found verbatim
+  const toks=new Set(txt.split('|').flatMap(l=>segment(l).map(x=>x.t)));
+  pools.forEach(sec=>sec._w.forEach(w=>{ const n=[...w.h].length; if(n<2||seen.has(w.h)) return; const at=txt.indexOf(w.h); if(at<0||!(toks.has(w.h)||n>=4)) return; seen.add(w.h); out.push({w,sec,at}); }));
+  // drop a term when a longer matched term contains it at the same places (风管 inside 风管底标高 stays only if it also appears alone)
+  const res=out.filter(x=>!out.some(y=>y!==x&&y.w.h.length>x.w.h.length&&y.w.h.includes(x.w.h)&&txt.split(x.w.h).length===txt.split(y.w.h).length)).sort((a,b)=>a.at-b.at).slice(0,30);
+  return _tkTermCache[key]=res; }
+const tkTermsHTML=list=>list.length?`<div class="tkterms">${list.map(({w,sec})=>{ const mt=secM(sec,w); return `<button class="tok tkterm" data-w="${w.id}"><span class="han">${esc(w.h)}</span><span class="py">${esc(w.p)}</span><span class="tkm">${esc(isAr()?mt.ar:mt.en)}</span></button>`; }).join('')}</div>`:'';
 function talkCard(){ const done=Object.keys(S.talk||{}).length, all=TALK.reduce((a,d)=>a+d.scenes.length,0);
   return `<button class="ptile talk" id="tk2"><span class="tb">谈</span><div class="grow" style="min-width:0"><b>${t('tkCard')}</b><span class="sub">${t('tkCardSub')}</span></div><span class="chip"><span class="num">${done}/${all}</span></span></button>`; }
 
@@ -57,8 +69,9 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
       <p style="margin:0">${esc(tkL(s,'sa','se'))}</p>
       <div class="tkroles"><div><span class="sub">${t('tkYou')}</span><b>${esc(tkL(s,'ma','me'))}</b></div><div><span class="sub">${t('tkWith')}</span><b>${av} ${esc(s.pz)} · ${esc(tkL(s,'pa','pe'))}</b></div></div>
       <div class="sub"><span class="num">${s.turns.length}</span> ${t('tkTurns')} ${(S.talk||{})[tkKey(d,s)]?'· '+tkStars(S.talk[tkKey(d,s)]):''}</div></div></div>
+    ${tkTerms(d,s).length?`<div class="card col" style="gap:8px"><b>📘 ${t('tkTerms')} · <span class="num">${tkTerms(d,s).length}</span></b>${tkTermsHTML(tkTerms(d,s))}</div>`:''}
     <div class="grow"></div><button class="btn block" id="go">${t('tkStart')} →</button>`;
-    $('#qx',m).onclick=()=>go('talk',{d:d.k}); bindTg(); applyTg(); $('#go',m).onclick=()=>{ SFX.tap(); track('talk_start',{scene:tkKey(d,s)}); chat(); }; }
+    $('#qx',m).onclick=()=>go('talk',{d:d.k}); bindTg(); applyTg(); bindTokens(m); $('#go',m).onclick=()=>{ SFX.tap(); track('talk_start',{scene:tkKey(d,s)}); chat(); }; }
 
   let ti=0, score=0, firstBest=0, hints=0;
   function chat(){ m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar grow"><i id="tbar" style="width:0%"></i></div>${toggles()}</div>
@@ -93,10 +106,13 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
       <div class="kv"><div><span class="sub">${t('tkFirst')}</span><b><span class="num">${firstBest}/${s.turns.length}</span></b></div><div><span class="sub">${t('earned')}</span><b style="color:var(--gold2)">+${xp}</b></div><div><span class="sub">${coinHTML}</span><b>+${c}</b></div></div>
       <div class="card col" style="gap:10px;text-align:start"><h3 style="margin:0">📒 ${t('tkBook')}</h3><button class="btn ghost block" id="trp">▶ ${t('tkReplay')}</button>
         ${s.turns.map(tn=>{ const a=tn.o.find(o=>o.t==='A'); return `<div class="tkph"><div class="row" style="gap:8px;align-items:flex-start"><div class="grow" style="min-width:0" dir="ltr">${analyseHTML2(a.zh,a.py)}</div><button class="speak sm" data-zh="${esc(a.zh)}" aria-label="🔊">🔊</button><button class="speak sm" data-say="${esc(a.zh)}" aria-label="🎤">🎤</button></div><div class="sub" dir="auto">${esc(isAr()?a.ar:a.en)}</div></div>`; }).join('')}</div>
+      ${tkTerms(d,s).length?`<div class="card col" style="gap:8px;text-align:start"><b>📘 ${t('tkTerms')}</b>${tkTermsHTML(tkTerms(d,s))}<button class="btn ghost block" id="tpr">🎯 ${t('tkPractise')} · <span class="num">${Math.min(10,tkTerms(d,s).length)}</span></button></div>`:''}
       <div class="row" style="gap:10px"><button class="btn ghost grow" id="tag">↺ ${t('tkAgain')}</button>${nx?`<button class="btn grow" id="tns">${t('tkNextScene')} →</button>`:`<button class="btn grow" id="tdn">${t('next')}</button>`}</div></div>`;
     bindTokens(m); $$('[data-zh]',m).forEach(b=>{ if(b.classList.contains('speak')) b.onclick=()=>speak(b.dataset.zh); }); $$('[data-say]',m).forEach(b=>b.onclick=()=>pronCheck(b.dataset.say));
     const leave=async to=>{ await interstitial(); to(); };
     $('#qx',m).onclick=()=>leave(()=>go('talk',{d:d.k})); $('#tag',m).onclick=()=>go('talkscene',{d:d.k,i:si});
+    const pr=$('#tpr',m); if(pr) pr.onclick=()=>{ const terms=tkTerms(d,s), ws=terms.slice(0,10).map(x=>x.w), pool=(SECTORS.find(x=>x.k===d.sec)||terms[0].sec)._w;
+      track('talk_terms',{scene:tkKey(d,s)}); route={name:'lesson'}; render(); runQuiz($('main'),{intro:ws.filter(w=>!S.srs[w.id]),questions:makeQuestions(ws,pool),back:()=>go('talkscene',{d:d.k,i:si}),onDone:()=>{ route={name:'talk',arg:{d:d.k}}; }}); };
     const ns=$('#tns',m); if(ns) ns.onclick=()=>leave(()=>tkFree(d,si+1)?go('talkscene',{d:d.k,i:si+1}):paywall('talk'));
     const dn=$('#tdn',m); if(dn) dn.onclick=()=>leave(()=>go('talk',{d:d.k}));
     let playing=false; $('#trp',m).onclick=()=>{ const b=$('#trp',m); if(playing){ playing=false; clearTimeout(timer); b.textContent='▶ '+t('tkReplay'); return; }

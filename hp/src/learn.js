@@ -31,7 +31,9 @@ function pySyllables(py){ const out=[]; for(const w of py.replace(/[^A-Za-zÀ-ɏ
 /** pinyin for each Han character of zh, taken from the sentence's own pinyin (so 银行 háng, 地铁 dì are right); null if they don't line up */
 const _alignCache=new Map();
 function alignPy(zh,py){ const k=zh+'|'+py; if(_alignCache.has(k)) return _alignCache.get(k);
-  const hs=[...zh].filter(c=>isHan(c)||c==='〇'), s=py?pySyllables(py):null; const r=s&&s.length===hs.length?s:null; _alignCache.set(k,r); return r; }
+  // Latin/digit tokens written the same in both lines (C35, Y型, PPR管) carry no syllables: drop them from the pinyin
+  const lat=new Set((zh.match(/[A-Za-z0-9]+/g)||[]).map(x=>x.toLowerCase())); const py2=py?py.split(/(\s+)/).filter(w=>!lat.has(w.replace(/[^A-Za-z0-9]/g,'').toLowerCase())||/[\u0300-\u036fāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(w)).join(''):'';
+  const hs=[...zh].filter(c=>isHan(c)||c==='〇'), s=py2?pySyllables(py2):null; const r=s&&s.length===hs.length?s:null; _alignCache.set(k,r); return r; }
 
 /* tone numbers <-> marks */
 const TONE_MARK={a:'āáǎà',e:'ēéěè',i:'īíǐì',o:'ōóǒò',u:'ūúǔù',v:'ǖǘǚǜ'};

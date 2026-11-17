@@ -1,0 +1,179 @@
+# Infrastructure 基础设施 — format: see scripts/sec_build.py. Levels: 1 core, 2 professional, 3 advanced.
+@infra
+#road|道路与公路|الطرق والطرق السريعة|Roads & highways
+道路|dàolù|طريق|road|1
+公路|gōnglù|طريق عام|highway|1
+高速公路|gāosù gōnglù|طريق سريع|expressway|1
+市政道路|shìzhèng dàolù|طرق بلدية|municipal road|2
+车道|chēdào|حارة مرورية|traffic lane|1
+路基|lùjī|جسم الطريق (القاعدة الترابية)|subgrade, roadbed|2
+路面|lùmiàn|سطح الطريق (الرصف)|pavement|1
+基层|jīcéng|طبقة الأساس|base course|2
+底基层|dǐjīcéng|طبقة ما تحت الأساس|sub-base|3
+面层|miàncéng|الطبقة السطحية|surface course|2
+沥青|lìqīng|أسفلت (بيتومين)|asphalt, bitumen|1
+沥青混凝土|lìqīng hùnníngtǔ|خرسانة أسفلتية|asphalt concrete|2
+水泥混凝土路面|shuǐní hùnníngtǔ lùmiàn|رصف خرساني|concrete pavement|3
+摊铺|tānpū|فرد الطبقة|paving (spreading)|2
+碾压|niǎnyā|دحل|rolling (compaction)|2
+平整度|píngzhěngdù|استواء السطح|surface evenness|3
+横坡|héngpō|الميل العرضي|cross fall|3
+纵坡|zòngpō|الميل الطولي|longitudinal gradient|3
+超高|chāogāo|الميل الجانبي للمنعطف|superelevation|3
+平曲线|píngqūxiàn|منحنى أفقي|horizontal curve|3
+竖曲线|shùqūxiàn|منحنى رأسي|vertical curve|3
+立交桥|lìjiāoqiáo|تقاطع متعدد المستويات|interchange (flyover)|2
+匝道|zādào|منحدر الدخول والخروج|ramp|2
+中央分隔带|zhōngyāng fēngédài|الجزيرة الوسطى|central median|3
+路缘石|lùyuánshí|حجر الرصيف (بردورة)|kerb|2
+人行道|rénxíngdào|رصيف المشاة|sidewalk|1
+护栏|hùlán|حاجز حماية|guardrail|2
+标线|biāoxiàn|علامات الطريق|road markings|2
+交通标志|jiāotōng biāozhì|إشارات المرور|traffic signs|1
+排水沟|páishuǐgōu|قناة تصريف|drainage ditch|2
+涵洞|hándòng|عبّارة|culvert|2
+收费站|shōufèizhàn|محطة رسوم|toll station|1
+服务区|fúwùqū|استراحة طريق|service area|1
+车流量|chēliúliàng|حجم المرور|traffic volume|2
+设计速度|shèjì sùdù|السرعة التصميمية|design speed|3
+#bridge|桥梁|الجسور|Bridges
+桥梁|qiáoliáng|جسور|bridges|1
+桥墩|qiáodūn|ركيزة جسر|pier|2
+桥台|qiáotái|دعامة طرفية|abutment|3
+上部结构|shàngbù jiégòu|البنية العلوية|superstructure|3
+下部结构|xiàbù jiégòu|البنية السفلية|substructure|3
+跨径|kuàjìng|البحر (طول الفتحة)|span length|3
+主梁|zhǔliáng|الكمرة الرئيسية|main girder|2
+箱梁|xiāngliáng|كمرة صندوقية|box girder|3
+T梁|T liáng|كمرة على شكل T|T-girder|3
+支座|zhīzuò|ركيزة (محمل الجسر)|bearing|2
+伸缩缝|shēnsuōfèng|فاصل تمدد|expansion joint|2
+桥面|qiáomiàn|سطح الجسر|bridge deck|2
+悬索桥|xuánsuǒqiáo|جسر معلّق|suspension bridge|2
+斜拉桥|xiélāqiáo|جسر بالكوابل المائلة|cable-stayed bridge|2
+拱桥|gǒngqiáo|جسر مقوّس|arch bridge|2
+梁桥|liángqiáo|جسر كمرات|girder bridge|2
+高架桥|gāojiàqiáo|جسر علوي ممتد|viaduct|2
+预应力|yùyìnglì|إجهاد مسبق|prestressing|2
+张拉|zhānglā|شدّ الكوابل|tensioning|3
+挂篮|guàlán|عربة الصب المعلّقة|form traveller|3
+悬臂浇筑|xuánbì jiāozhù|الصب الكابولي المتتابع|balanced cantilever casting|3
+顶推|dǐngtuī|الدفع التدريجي|incremental launching|3
+架桥机|jiàqiáojī|آلة تركيب الكمرات|bridge girder erection machine|3
+荷载试验|hèzài shìyàn|اختبار التحميل|load test|3
+#tunnel|隧道与地下工程|الأنفاق والأعمال تحت الأرض|Tunnels & underground
+隧道|suìdào|نفق|tunnel|1
+盾构|dùngòu|درع حفر الأنفاق|shield tunnelling|2
+盾构机|dùngòujī|آلة حفر الأنفاق (TBM)|tunnel boring machine (TBM)|2
+管片|guǎnpiàn|قطع تبطين النفق|tunnel lining segment|3
+新奥法|xīn'àofǎ|الطريقة النمساوية الحديثة (NATM)|New Austrian Tunnelling Method (NATM)|3
+钻爆法|zuānbàofǎ|الحفر والتفجير|drill and blast|3
+明挖法|míngwāfǎ|الحفر المكشوف|cut and cover|3
+暗挖|ànwā|الحفر المغلق|mined (bored) excavation|3
+初期支护|chūqī zhīhù|الدعم الأولي|primary support|3
+二次衬砌|èrcì chènqì|التبطين الثانوي|secondary lining|3
+喷射混凝土|pēnshè hùnníngtǔ|خرسانة مقذوفة (شوتكريت)|shotcrete|2
+锚杆|máogǎn|مسامير تثبيت صخري|rock bolt|3
+掌子面|zhǎngzimiàn|واجهة الحفر|tunnel face|3
+围岩|wéiyán|الصخور المحيطة|surrounding rock|3
+超前地质预报|chāoqián dìzhì yùbào|الاستكشاف الجيولوجي المسبق|advance geological prediction|3
+通风|tōngfēng|تهوية|ventilation|1
+综合管廊|zōnghé guǎnláng|نفق الخدمات المشترك|utility tunnel|3
+地铁站|dìtiězhàn|محطة مترو|metro station|1
+#rail|铁路与轨道交通|السكك الحديدية والنقل السككي|Railways & rail transit
+铁路|tiělù|سكة حديد|railway|1
+高铁|gāotiě|قطار فائق السرعة|high-speed rail|1
+轨道交通|guǐdào jiāotōng|النقل السككي|rail transit|2
+地铁|dìtiě|مترو|metro|1
+轻轨|qīngguǐ|قطار خفيف|light rail|2
+钢轨|gāngguǐ|قضيب حديدي|rail|2
+轨枕|guǐzhěn|عارضة السكة|sleeper (tie)|2
+道床|dàochuáng|فرشة السكة|track bed|3
+无砟轨道|wú zhǎ guǐdào|سكة بدون حصى|ballastless track|3
+有砟轨道|yǒu zhǎ guǐdào|سكة بالحصى|ballasted track|3
+道岔|dàochà|تحويلة|switch, turnout|2
+轨距|guǐjù|اتساع السكة|track gauge|3
+标准轨距|biāozhǔn guǐjù|الاتساع القياسي|standard gauge|3
+接触网|jiēchùwǎng|شبكة التغذية العلوية|overhead catenary|3
+牵引供电|qiānyǐn gōngdiàn|تغذية الجرّ الكهربائية|traction power supply|3
+信号系统|xìnhào xìtǒng|نظام الإشارات|signalling system|2
+站台|zhàntái|رصيف المحطة|platform|1
+车辆段|chēliàngduàn|مستودع القطارات|rolling-stock depot|3
+限界|xiànjiè|حدود الخلوص|clearance gauge|3
+联调联试|liántiáo liánshì|الاختبار والتشغيل المتكامل|integrated testing and commissioning|3
+#water|给水与污水处理|إمداد المياه ومعالجة الصرف|Water supply & wastewater
+供水|gōngshuǐ|إمداد المياه|water supply|1
+自来水厂|zìláishuǐchǎng|محطة معالجة مياه الشرب|water treatment plant|2
+海水淡化|hǎishuǐ dànhuà|تحلية مياه البحر|seawater desalination|2
+反渗透|fǎnshèntòu|التناضح العكسي|reverse osmosis|3
+输水管道|shūshuǐ guǎndào|خط نقل المياه|water transmission main|2
+管网|guǎnwǎng|شبكة الأنابيب|pipe network|2
+泵站|bèngzhàn|محطة ضخ|pumping station|2
+水塔|shuǐtǎ|خزان مياه علوي|water tower|1
+蓄水池|xùshuǐchí|خزان تخزين|reservoir tank|2
+污水处理厂|wūshuǐ chǔlǐchǎng|محطة معالجة الصرف الصحي|wastewater treatment plant|2
+格栅|géshān|مصفاة قضبانية|screen|3
+沉淀池|chéndiànchí|حوض ترسيب|sedimentation tank|3
+曝气池|pùqìchí|حوض تهوية|aeration tank|3
+活性污泥|huóxìng wūní|الحمأة المنشّطة|activated sludge|3
+消毒|xiāodú|تعقيم|disinfection|1
+雨污分流|yǔ wū fēnliú|فصل مياه الأمطار عن الصرف الصحي|separate storm and sewer systems|3
+排涝|páilào|تصريف مياه الفيضانات|flood drainage|3
+顶管|dǐngguǎn|دفع الأنابيب (بدون حفر)|pipe jacking|3
+非开挖|fēi kāiwā|تقنية بدون حفر|trenchless technology|3
+水质|shuǐzhì|جودة المياه|water quality|1
+#energy|能源与电网|الطاقة والشبكة الكهربائية|Energy & power grid
+电网|diànwǎng|الشبكة الكهربائية|power grid|1
+输电线路|shūdiàn xiànlù|خط نقل الكهرباء|transmission line|2
+特高压|tègāoyā|الجهد الفائق|ultra-high voltage (UHV)|3
+发电厂|fādiànchǎng|محطة توليد|power plant|1
+光伏电站|guāngfú diànzhàn|محطة طاقة شمسية كهروضوئية|solar PV plant|2
+光伏组件|guāngfú zǔjiàn|الألواح الشمسية|PV module|2
+风电场|fēngdiànchǎng|مزرعة رياح|wind farm|2
+储能|chǔnéng|تخزين الطاقة|energy storage|2
+逆变器|nìbiànqì|عاكس (إنفرتر)|inverter|2
+并网|bìngwǎng|الربط بالشبكة|grid connection|3
+氢能|qīngnéng|طاقة الهيدروجين|hydrogen energy|2
+油气管道|yóuqì guǎndào|خطوط أنابيب النفط والغاز|oil and gas pipeline|2
+天然气|tiānránqì|غاز طبيعي|natural gas|1
+#port|港口、机场与水利|الموانئ والمطارات والمنشآت المائية|Ports, airports & water works
+港口|gǎngkǒu|ميناء|port|1
+码头|mǎtou|رصيف بحري|wharf, quay|2
+防波堤|fángbōdī|حاجز الأمواج|breakwater|3
+疏浚|shūjùn|التجريف البحري|dredging|3
+集装箱码头|jízhuāngxiāng mǎtou|محطة حاويات|container terminal|2
+吊机|diàojī|رافعة رصيف|quay crane|2
+机场|jīchǎng|مطار|airport|1
+跑道|pǎodào|مدرج|runway|1
+滑行道|huáxíngdào|ممر الطائرات|taxiway|2
+航站楼|hángzhànlóu|مبنى الركاب|terminal building|2
+停机坪|tíngjīpíng|ساحة وقوف الطائرات|apron|2
+水坝|shuǐbà|سدّ|dam|1
+水库|shuǐkù|خزان مائي (بحيرة سد)|reservoir|1
+水电站|shuǐdiànzhàn|محطة كهرومائية|hydropower station|2
+堤防|dīfáng|سدود حماية (جسور ترابية)|levee, embankment|3
+#survey|测量与岩土|المساحة والجيوتقنية|Surveying & geotechnics
+测量|cèliáng|المساحة|surveying|1
+全站仪|quánzhànyí|محطة مساحة شاملة (توتال ستيشن)|total station|2
+水准仪|shuǐzhǔnyí|ميزان مساحي|level (instrument)|2
+水准点|shuǐzhǔndiǎn|نقطة منسوب مرجعية|benchmark|2
+坐标|zuòbiāo|إحداثيات|coordinates|1
+卫星定位|wèixīng dìngwèi|تحديد المواقع بالأقمار الصناعية (GNSS)|satellite positioning (GNSS)|2
+地形图|dìxíngtú|خريطة طبوغرافية|topographic map|2
+桩号|zhuānghào|محطة الطريق (Chainage)|chainage (station)|3
+中线|zhōngxiàn|خط المحور|centre line|2
+放样|fàngyàng|التوقيع الميداني|setting out|2
+无人机航测|wúrénjī hángcè|المسح الجوي بالدرون|drone survey|2
+岩土|yántǔ|الجيوتقنية (الصخور والتربة)|geotechnics|2
+钻孔|zuānkǒng|حفر جسّات|borehole|2
+标准贯入试验|biāozhǔn guànrù shìyàn|اختبار الاختراق القياسي (SPT)|standard penetration test (SPT)|3
+软土|ruǎntǔ|تربة رخوة|soft soil|2
+地基处理|dìjī chǔlǐ|تحسين التربة|ground improvement|3
+边坡|biānpō|منحدر (ميل جانبي)|slope|2
+边坡防护|biānpō fánghù|حماية المنحدرات|slope protection|3
+>这条高速公路的设计速度是每小时一百二十公里。|Zhè tiáo gāosù gōnglù de shèjì sùdù shì měi xiǎoshí yìbǎi èrshí gōnglǐ.|السرعة التصميمية لهذا الطريق السريع 120 كيلومترًا في الساعة.|This expressway's design speed is 120 km/h.
+>盾构机每天推进大约十五米。|Dùngòujī měi tiān tuījìn dàyuē shíwǔ mǐ.|تتقدّم آلة حفر الأنفاق نحو 15 مترًا يوميًا.|The TBM advances about 15 metres a day.
+>请把桩号写在每张横断面图上。|Qǐng bǎ zhuānghào xiě zài měi zhāng héngduànmiàntú shang.|اكتب رقم المحطة على كل مخطط مقطع عرضي.|Please write the chainage on every cross-section drawing.
+>这座斜拉桥的主跨有八百米。|Zhè zuò xiélāqiáo de zhǔkuà yǒu bābǎi mǐ.|البحر الرئيسي لهذا الجسر ذي الكوابل المائلة 800 متر.|This cable-stayed bridge has an 800 m main span.
+>海水淡化厂每天能生产三十万吨淡水。|Hǎishuǐ dànhuàchǎng měi tiān néng shēngchǎn sānshí wàn dūn dànshuǐ.|تنتج محطة التحلية 300 ألف طن من المياه العذبة يوميًا.|The desalination plant produces 300,000 tonnes of fresh water a day.
+>雨污分流以后，污水处理厂的负荷降低了。|Yǔ wū fēnliú yǐhòu, wūshuǐ chǔlǐchǎng de fùhè jiàngdī le.|بعد فصل مياه الأمطار عن الصرف انخفض الحمل على محطة المعالجة.|After separating storm water from sewage, the treatment plant's load dropped.

@@ -1,0 +1,318 @@
+# MEP engineering 机电工程 — format: see scripts/sec_build.py. Levels: 1 core, 2 professional, 3 advanced.
+@mep
+#hvac|暖通空调|التدفئة والتهوية والتكييف|HVAC
+暖通|nuǎntōng|التدفئة والتهوية والتكييف|HVAC (heating, ventilation, air conditioning)|1
+空调系统|kōngtiáo xìtǒng|نظام التكييف|air-conditioning system|1
+中央空调|zhōngyāng kōngtiáo|تكييف مركزي|central air conditioning|1
+冷水机组|lěngshuǐ jīzǔ|وحدة تبريد المياه (تشيلر)|chiller|2
+离心式冷水机组|líxīnshì lěngshuǐ jīzǔ|تشيلر طرد مركزي|centrifugal chiller|3
+螺杆式冷水机组|luógǎnshì lěngshuǐ jīzǔ|تشيلر لولبي|screw chiller|3
+风冷|fēnglěng|تبريد بالهواء|air-cooled|2
+水冷|shuǐlěng|تبريد بالماء|water-cooled|2
+冷却塔|lěngquètǎ|برج تبريد|cooling tower|2
+冷冻水|lěngdòngshuǐ|ماء مثلّج|chilled water|2
+冷却水|lěngquèshuǐ|ماء التبريد (المكثّف)|condenser water|2
+供水温度|gōngshuǐ wēndù|حرارة ماء الإمداد|supply water temperature|2
+回水温度|huíshuǐ wēndù|حرارة الماء الراجع|return water temperature|2
+供回水温差|gōng huíshuǐ wēnchā|فرق الحرارة بين الإمداد والراجع|supply–return temperature difference (ΔT)|3
+空气处理机组|kōngqì chǔlǐ jīzǔ|وحدة مناولة الهواء (AHU)|air handling unit (AHU)|2
+新风机组|xīnfēng jīzǔ|وحدة الهواء النقي|fresh-air unit|2
+风机盘管|fēngjī pánguǎn|وحدة ملف المروحة (FCU)|fan coil unit (FCU)|2
+多联机|duōliánjī|نظام التدفق المتغيّر للمبرّد (VRF)|VRF / multi-split system|2
+分体空调|fēntǐ kōngtiáo|مكيّف منفصل (سبليت)|split air conditioner|1
+热泵|rèbèng|مضخة حرارية|heat pump|2
+压缩机|yāsuōjī|ضاغط (كمبروسر)|compressor|2
+冷凝器|lěngníngqì|مكثّف|condenser|2
+蒸发器|zhēngfāqì|مبخّر|evaporator|2
+膨胀阀|péngzhàngfá|صمام التمدّد|expansion valve|3
+制冷剂|zhìlěngjì|مادة التبريد (فريون)|refrigerant|2
+冷媒管|lěngméiguǎn|أنابيب مادة التبريد|refrigerant piping|2
+冷负荷|lěngfùhè|حمل التبريد|cooling load|2
+热负荷|rèfùhè|حمل التدفئة|heating load|2
+冷吨|lěngdūn|طن تبريد|refrigeration ton (TR)|2
+能效比|néngxiàobǐ|معامل كفاءة الطاقة (EER)|energy efficiency ratio (EER)|3
+风量|fēngliàng|معدّل تدفّق الهواء|airflow rate|2
+风压|fēngyā|ضغط الهواء|air pressure (fan pressure)|2
+静压|jìngyā|الضغط الساكن|static pressure|3
+送风|sòngfēng|إمداد الهواء|supply air|2
+回风|huífēng|الهواء الراجع|return air|2
+排风|páifēng|طرد الهواء (العادم)|exhaust air|2
+新风|xīnfēng|الهواء النقي (الخارجي)|fresh / outdoor air|2
+风管|fēngguǎn|مجرى هواء (دكت)|air duct|1
+镀锌钢板风管|dùxīn gāngbǎn fēngguǎn|دكت من صاج مجلفن|galvanised sheet-steel duct|3
+软管|ruǎnguǎn|خرطوم مرن|flexible duct / hose|2
+风阀|fēngfá|مخمّد هواء (ديمبر)|air damper|2
+防火阀|fánghuǒfá|مخمّد حريق|fire damper|2
+排烟阀|páiyānfá|مخمّد طرد الدخان|smoke exhaust damper|3
+风口|fēngkǒu|فتحة هواء (جريلّ)|air outlet / grille|2
+散流器|sànliúqì|موزّع هواء (ديفيوزر)|ceiling diffuser|3
+百叶|bǎiyè|شبكة شرائح (لوفر)|louver|2
+消声器|xiāoshēngqì|كاتم صوت|silencer / attenuator|3
+保温|bǎowēn|عزل حراري|thermal insulation|1
+冷凝水|lěngníngshuǐ|ماء التكثيف|condensate|2
+排风扇|páifēngshàn|مروحة شفط|exhaust fan|1
+离心风机|líxīn fēngjī|مروحة طرد مركزي|centrifugal fan|2
+轴流风机|zhóuliú fēngjī|مروحة محورية|axial fan|2
+温控器|wēnkòngqì|منظّم حرارة (ثرموستات)|thermostat|2
+湿度|shīdù|الرطوبة|humidity|1
+露点|lùdiǎn|نقطة الندى|dew point|3
+焓|hán|الإنثالبي|enthalpy|3
+换气次数|huànqì cìshù|عدد مرات تغيير الهواء|air changes per hour (ACH)|3
+正压|zhèngyā|ضغط موجب|positive pressure|2
+负压|fùyā|ضغط سالب|negative pressure|2
+洁净室|jiéjìngshì|غرفة نظيفة|cleanroom|3
+锅炉|guōlú|غلاية (مرجل)|boiler|2
+地暖|dìnuǎn|تدفئة أرضية|underfloor heating|2
+换热器|huànrèqì|مبادل حراري|heat exchanger|2
+板式换热器|bǎnshì huànrèqì|مبادل حراري لوحي|plate heat exchanger|3
+蓄冷|xùlěng|تخزين التبريد|thermal (cold) storage|3
+区域供冷|qūyù gōnglěng|تبريد المناطق|district cooling|3
+水力平衡|shuǐlì pínghéng|الاتزان الهيدروليكي|hydronic balancing|3
+风平衡|fēng pínghéng|موازنة الهواء|air balancing|3
+#plumb|给排水|التغذية بالمياه والصرف|Plumbing & drainage
+给排水|jǐpáishuǐ|التغذية بالمياه والصرف الصحي|water supply and drainage (plumbing)|1
+给水|jǐshuǐ|التغذية بالمياه|water supply|1
+排水|páishuǐ|الصرف|drainage|1
+生活用水|shēnghuó yòngshuǐ|مياه الاستخدام المنزلي|domestic water|1
+热水系统|rèshuǐ xìtǒng|نظام المياه الساخنة|hot-water system|2
+污水|wūshuǐ|مياه الصرف الصحي|sewage, foul water|1
+废水|fèishuǐ|مياه الصرف الرمادية|waste water|2
+雨水|yǔshuǐ|مياه الأمطار|rainwater|1
+中水|zhōngshuǐ|مياه رمادية معاد تدويرها|reclaimed (grey) water|3
+给水管|jǐshuǐguǎn|أنبوب تغذية|supply pipe|1
+排水管|páishuǐguǎn|أنبوب صرف|drain pipe|1
+立管|lìguǎn|أنبوب صاعد (رايزر)|riser|2
+干管|gànguǎn|خط رئيسي|main pipe|2
+支管|zhīguǎn|خط فرعي|branch pipe|2
+透气管|tòuqìguǎn|أنبوب تهوية|vent pipe|2
+存水弯|cúnshuǐwān|سيفون (مانع روائح)|trap (U-bend)|2
+地漏|dìlòu|بالوعة أرضية|floor drain|1
+检查口|jiǎnchákǒu|فتحة تنظيف|cleanout|2
+检查井|jiǎnchájǐng|غرفة تفتيش (منهل)|manhole / inspection chamber|2
+化粪池|huàfènchí|خزان تحليل (بيارة)|septic tank|2
+隔油池|géyóuchí|مصيدة الشحوم|grease trap|2
+水箱|shuǐxiāng|خزان مياه|water tank|1
+水泵|shuǐbèng|مضخة مياه|water pump|1
+离心泵|líxīnbèng|مضخة طرد مركزي|centrifugal pump|2
+潜水泵|qiánshuǐbèng|مضخة غاطسة|submersible pump|2
+变频供水|biànpín gōngshuǐ|إمداد مياه بمحوّل تردد|variable-speed (VFD) booster supply|3
+增压泵|zēngyābèng|مضخة تقوية الضغط|booster pump|2
+减压阀|jiǎnyāfá|صمام تخفيض الضغط|pressure-reducing valve|2
+止回阀|zhǐhuífá|صمام عدم الرجوع|check valve|2
+闸阀|zháfá|صمام بوابي|gate valve|2
+截止阀|jiézhǐfá|صمام كروي (إغلاق)|globe valve|2
+蝶阀|diéfá|صمام فراشة|butterfly valve|2
+球阀|qiúfá|صمام كروي|ball valve|2
+安全阀|ānquánfá|صمام أمان|safety (relief) valve|2
+水表|shuǐbiǎo|عدّاد مياه|water meter|1
+管径|guǎnjìng|قطر الأنبوب|pipe diameter|2
+公称直径|gōngchēng zhíjìng|القطر الاسمي (DN)|nominal diameter (DN)|3
+坡度|pōdù|الميل (الانحدار)|slope, fall|2
+PPR管|PPR guǎn|أنابيب PPR|PPR pipe|2
+UPVC管|UPVC guǎn|أنابيب UPVC|uPVC pipe|2
+镀锌钢管|dùxīn gāngguǎn|أنبوب حديد مجلفن|galvanised steel pipe|2
+不锈钢管|búxiùgāng guǎn|أنبوب ستانلس ستيل|stainless steel pipe|2
+铸铁管|zhùtiěguǎn|أنبوب حديد زهر|cast-iron pipe|2
+沟槽连接|gōucáo liánjiē|وصلة أخدود (جروف)|grooved coupling|3
+法兰|fǎlán|شفة (فلانشة)|flange|2
+丝扣连接|sīkòu liánjiē|وصلة مسننة|threaded joint|2
+热熔连接|rèróng liánjiē|لحام بالانصهار الحراري|heat-fusion joint|3
+卫生洁具|wèishēng jiéjù|الأدوات الصحية|sanitary fixtures|2
+坐便器|zuòbiànqì|مرحاض إفرنجي|WC (toilet)|1
+洗手盆|xǐshǒupén|مغسلة|wash basin|1
+水龙头|shuǐlóngtóu|صنبور|tap, faucet|1
+热水器|rèshuǐqì|سخّان مياه|water heater|1
+水锤|shuǐchuí|المطرقة المائية|water hammer|3
+试压|shìyā|اختبار الضغط|pressure test|2
+通水试验|tōngshuǐ shìyàn|اختبار تدفّق المياه|water-flow test|3
+闭水试验|bìshuǐ shìyàn|اختبار الإحكام بالمياه (الغمر)|watertightness (flood) test|3
+灌水试验|guànshuǐ shìyàn|اختبار التعبئة بالماء|water-filling test|3
+冲洗消毒|chōngxǐ xiāodú|الغسل والتعقيم|flushing and disinfection|3
+#fire|消防|الحماية من الحريق|Fire protection
+消防|xiāofáng|مكافحة الحريق|fire protection, firefighting|1
+消防系统|xiāofáng xìtǒng|نظام مكافحة الحريق|fire protection system|1
+自动喷水灭火系统|zìdòng pēnshuǐ mièhuǒ xìtǒng|نظام الرش الآلي لإطفاء الحريق|automatic sprinkler system|2
+喷淋|pēnlín|رشاشات المياه|sprinklers|1
+喷头|pēntóu|رأس رشّاش|sprinkler head|2
+湿式系统|shīshì xìtǒng|نظام رطب|wet-pipe system|3
+干式系统|gānshì xìtǒng|نظام جاف|dry-pipe system|3
+预作用系统|yùzuòyòng xìtǒng|نظام سابق التفعيل|pre-action system|3
+雨淋系统|yǔlín xìtǒng|نظام الغمر (ديلوج)|deluge system|3
+消火栓|xiāohuǒshuān|حنفية حريق|fire hydrant|1
+室内消火栓|shìnèi xiāohuǒshuān|حنفية حريق داخلية|indoor fire hydrant (hose cabinet)|2
+消防水泵|xiāofáng shuǐbèng|مضخة حريق|fire pump|2
+稳压泵|wěnyābèng|مضخة الضغط الثابت (جوكي)|jockey pump|3
+消防水箱|xiāofáng shuǐxiāng|خزان مياه الحريق|fire water tank|2
+水泵接合器|shuǐbèng jiēhéqì|وصلة الدفاع المدني|fire department connection|3
+报警阀|bàojǐngfá|صمام الإنذار|alarm valve|3
+水流指示器|shuǐliú zhǐshìqì|مؤشر تدفّق المياه|water-flow indicator|3
+末端试水装置|mòduān shìshuǐ zhuāngzhì|جهاز اختبار نهاية الخط|end-of-line test valve|3
+灭火器|mièhuǒqì|طفاية حريق|fire extinguisher|1
+气体灭火|qìtǐ mièhuǒ|الإطفاء بالغاز|gas suppression|3
+泡沫灭火|pàomò mièhuǒ|الإطفاء بالرغوة|foam suppression|3
+火灾自动报警系统|huǒzāi zìdòng bàojǐng xìtǒng|نظام إنذار الحريق الآلي|fire alarm system|2
+烟感|yāngǎn|كاشف دخان|smoke detector|2
+温感|wēngǎn|كاشف حرارة|heat detector|2
+手动报警按钮|shǒudòng bàojǐng ànniǔ|زر إنذار يدوي|manual call point|2
+声光报警器|shēngguāng bàojǐngqì|إنذار صوتي ضوئي|sounder–strobe|3
+消防控制室|xiāofáng kòngzhìshì|غرفة التحكم بالحريق|fire control room|2
+防排烟系统|fáng páiyān xìtǒng|نظام التحكم بالدخان|smoke control system|3
+正压送风|zhèngyā sòngfēng|ضغط الدرج بالهواء|stair pressurisation|3
+应急照明|yìngjí zhàomíng|إنارة الطوارئ|emergency lighting|2
+疏散指示|shūsàn zhǐshì|علامات الإخلاء|exit / evacuation signs|2
+防火门|fánghuǒmén|باب مقاوم للحريق|fire door|2
+防火卷帘|fánghuǒ juǎnlián|ستارة حريق دوّارة|fire shutter|3
+防火分区|fánghuǒ fēnqū|منطقة حريق|fire compartment|3
+耐火极限|nàihuǒ jíxiàn|مقاومة الحريق (بالساعات)|fire-resistance rating|3
+防火封堵|fánghuǒ fēngdǔ|سدّ الفتحات ضد الحريق|firestopping|3
+消防验收|xiāofáng yànshōu|استلام الدفاع المدني|fire department acceptance|2
+#power|电气（强电）|الكهرباء (القوى)|Electrical power
+强电|qiángdiàn|كهرباء القوى|power (high-current) systems|1
+弱电|ruòdiàn|التيار الخفيف (أنظمة منخفضة الجهد)|extra-low-voltage systems|1
+供配电|gōng pèidiàn|الإمداد وتوزيع الكهرباء|power supply and distribution|2
+变电站|biàndiànzhàn|محطة تحويل|substation|2
+变压器|biànyāqì|محوّل|transformer|1
+高压|gāoyā|جهد عالٍ|high voltage|1
+中压|zhōngyā|جهد متوسط|medium voltage|2
+低压|dīyā|جهد منخفض|low voltage|1
+开关柜|kāiguānguì|لوحة مفاتيح (سويتشجير)|switchgear|2
+配电柜|pèidiànguì|لوحة توزيع رئيسية|distribution board (panel)|2
+配电箱|pèidiànxiāng|لوحة توزيع فرعية|distribution box|1
+断路器|duànlùqì|قاطع دائرة|circuit breaker|2
+空气开关|kōngqì kāiguān|قاطع هوائي صغير (MCB)|miniature circuit breaker|2
+漏电保护器|lòudiàn bǎohùqì|قاطع التيار المتبقي (RCD)|residual-current device (RCD)|2
+接触器|jiēchùqì|كونتاكتور|contactor|2
+继电器|jìdiànqì|مرحّل (ريلاي)|relay|2
+电缆|diànlǎn|كابل|cable|1
+电线|diànxiàn|سلك كهربائي|wire|1
+桥架|qiáojià|حامل كابلات (تراي)|cable tray|2
+线槽|xiàncáo|مجرى أسلاك|trunking|2
+穿线管|chuānxiànguǎn|أنبوب تمديد الأسلاك|conduit|2
+母线槽|mǔxiàncáo|مجرى قضبان التوزيع (باص داكت)|busway / busduct|3
+插座|chāzuò|مقبس|socket outlet|1
+开关|kāiguān|مفتاح|switch|1
+照明|zhàomíng|إنارة|lighting|1
+灯具|dēngjù|وحدة إنارة|light fitting|1
+照度|zhàodù|شدّة الإضاءة (لوكس)|illuminance (lux)|3
+柴油发电机|cháiyóu fādiànjī|مولّد ديزل|diesel generator|2
+不间断电源|bù jiànduàn diànyuán|مزوّد طاقة غير منقطع (UPS)|uninterruptible power supply (UPS)|2
+双电源切换|shuāng diànyuán qiēhuàn|مفتاح التحويل الآلي (ATS)|automatic transfer switch (ATS)|3
+接地|jiēdì|تأريض|earthing / grounding|2
+等电位联结|děngdiànwèi liánjié|ربط تساوي الجهد|equipotential bonding|3
+防雷|fángléi|الحماية من الصواعق|lightning protection|2
+避雷针|bìléizhēn|مانعة صواعق|lightning rod|2
+负荷计算|fùhè jìsuàn|حساب الأحمال|load calculation|3
+功率因数|gōnglǜ yīnshù|معامل القدرة|power factor|3
+无功补偿|wúgōng bǔcháng|تعويض القدرة غير الفعّالة|reactive power compensation|3
+三相电|sānxiāngdiàn|تيار ثلاثي الأطوار|three-phase power|2
+单相|dānxiàng|أحادي الطور|single-phase|2
+相线|xiàngxiàn|سلك الطور (فاز)|phase (line) conductor|2
+零线|língxiàn|السلك المحايد|neutral conductor|2
+地线|dìxiàn|سلك الأرضي|earth conductor|2
+短路|duǎnlù|قصر الدائرة|short circuit|1
+过载|guòzài|حمل زائد|overload|2
+绝缘电阻|juéyuán diànzǔ|مقاومة العزل|insulation resistance|3
+接地电阻|jiēdì diànzǔ|مقاومة التأريض|earth resistance|3
+电表|diànbiǎo|عدّاد كهرباء|electricity meter|1
+#elv|弱电与智能化|الأنظمة منخفضة الجهد والمباني الذكية|ELV & smart building
+智能化系统|zhìnénghuà xìtǒng|أنظمة المبنى الذكي|intelligent building systems|2
+楼宇自控系统|lóuyǔ zìkòng xìtǒng|نظام إدارة المبنى (BMS)|building management system (BMS)|2
+综合布线|zōnghé bùxiàn|الكابلات الهيكلية|structured cabling|2
+网络机房|wǎngluò jīfáng|غرفة الخوادم|server / network room|2
+弱电井|ruòdiànjǐng|بئر الأنظمة منخفضة الجهد|ELV riser shaft|3
+视频监控|shìpín jiānkòng|المراقبة بالكاميرات (CCTV)|video surveillance (CCTV)|1
+摄像机|shèxiàngjī|كاميرا|camera|1
+门禁系统|ménjìn xìtǒng|نظام التحكم بالدخول|access control system|2
+停车场管理系统|tíngchēchǎng guǎnlǐ xìtǒng|نظام إدارة مواقف السيارات|car-park management system|3
+公共广播|gōnggòng guǎngbō|نظام الإعلانات العامة|public address system|2
+背景音乐|bèijǐng yīnyuè|موسيقى الخلفية|background music system|2
+有线电视|yǒuxiàn diànshì|تلفزيون الكابل|cable TV (CATV)|2
+对讲系统|duìjiǎng xìtǒng|نظام الاتصال الداخلي (إنتركم)|intercom system|2
+入侵报警|rùqīn bàojǐng|إنذار التسلّل|intrusion alarm|2
+无线覆盖|wúxiàn fùgài|التغطية اللاسلكية|wireless coverage|2
+光纤|guāngxiān|ألياف ضوئية|optical fibre|2
+网线|wǎngxiàn|كابل شبكة|network cable|1
+配线架|pèixiànjià|لوحة التوصيل (باتش بانل)|patch panel|3
+传感器|chuángǎnqì|مستشعر|sensor|2
+控制器|kòngzhìqì|وحدة تحكّم|controller|2
+执行器|zhíxíngqì|مشغّل (أكتيوتر)|actuator|3
+能耗监测|nénghào jiāncè|مراقبة استهلاك الطاقة|energy monitoring|3
+电梯|diàntī|مصعد|lift, elevator|1
+自动扶梯|zìdòng fútī|سلّم كهربائي|escalator|1
+货梯|huòtī|مصعد بضائع|goods lift|2
+消防电梯|xiāofáng diàntī|مصعد رجال الإطفاء|firefighter lift|3
+#equip|设备、安装与调试|المعدات والتركيب والتشغيل|Equipment, installation & commissioning
+设备|shèbèi|معدّات|equipment|1
+机房|jīfáng|غرفة المعدات|plant room|1
+设备基础|shèbèi jīchǔ|قاعدة المعدّة|equipment plinth|2
+减震器|jiǎnzhènqì|مخمّد اهتزاز|vibration isolator|2
+支吊架|zhīdiàojià|دعامات وعلّاقات|supports and hangers|2
+抗震支架|kàngzhèn zhījià|دعامات مقاومة للزلازل|seismic bracing|3
+套管|tàoguǎn|جلبة (سليف)|sleeve|2
+预留洞口|yùliú dòngkǒu|فتحة محجوزة|block-out / provision opening|2
+预埋件|yùmáijiàn|قطعة مدفونة مسبقًا|cast-in item|2
+管线综合|guǎnxiàn zōnghé|تنسيق الخدمات|MEP services coordination|3
+碰撞检查|pèngzhuàng jiǎnchá|كشف التعارضات|clash detection|3
+安装|ānzhuāng|تركيب|installation|1
+单机试运转|dānjī shì yùnzhuǎn|تشغيل تجريبي لكل معدّة|individual equipment test run|3
+联动调试|liándòng tiáoshì|تشغيل متكامل للأنظمة|integrated systems commissioning|3
+调试|tiáoshì|التشغيل والاختبار|commissioning|2
+试运行|shì yùnxíng|التشغيل التجريبي|trial operation|2
+验收|yànshōu|الاستلام|acceptance|1
+交付|jiāofù|التسليم|handover|1
+运维|yùnwéi|التشغيل والصيانة|operation and maintenance (O&M)|2
+维保|wéibǎo|الصيانة والضمان|maintenance and warranty|2
+保修期|bǎoxiūqī|فترة الضمان|warranty period|1
+铭牌|míngpái|لوحة البيانات|nameplate|2
+额定功率|édìng gōnglǜ|القدرة المقنّنة|rated power|2
+额定电流|édìng diànliú|التيار المقنّن|rated current|3
+扬程|yángchéng|ارتفاع الضخ (الرفع)|pump head|2
+流量|liúliàng|معدّل التدفّق|flow rate|1
+转速|zhuànsù|سرعة الدوران|rotational speed|2
+振动|zhèndòng|اهتزاز|vibration|1
+噪声|zàoshēng|ضوضاء|noise|1
+变频器|biànpínqì|محوّل التردد (VFD)|variable-frequency drive (VFD)|2
+电机|diànjī|محرّك كهربائي|electric motor|1
+轴承|zhóuchéng|محمل|bearing|2
+联轴器|liánzhóuqì|وصلة عمود|coupling|3
+对中|duìzhōng|ضبط المحاذاة|alignment|3
+#conv|机电图纸与惯例|مخططات واصطلاحات MEP|MEP drawings & conventions
+机电|jīdiàn|الكهروميكانيك (MEP)|MEP (mechanical, electrical, plumbing)|1
+专业|zhuānyè|التخصّص (الانضباط الهندسي)|discipline (e.g. HVAC, electrical)|1
+平面图|píngmiàntú|مخطط أفقي|floor plan|1
+系统图|xìtǒngtú|مخطط النظام (رايزر)|system / riser diagram|2
+原理图|yuánlǐtú|مخطط مبدئي (سكيماتيك)|schematic diagram|2
+单线图|dānxiàntú|مخطط أحادي الخط|single-line diagram|3
+大样图|dàyàngtú|مخطط تفصيلي مكبّر|enlarged detail drawing|2
+设备表|shèbèibiǎo|جدول المعدات|equipment schedule|2
+材料表|cáiliàobiǎo|جدول المواد|material schedule|2
+图例|túlì|مفتاح الرموز|legend|1
+设计说明|shèjì shuōmíng|ملاحظات التصميم|design notes|2
+施工说明|shīgōng shuōmíng|ملاحظات التنفيذ|construction notes|2
+综合管线图|zōnghé guǎnxiàntú|مخطط الخدمات المنسّق|combined services drawing|3
+深化设计|shēnhuà shèjì|التصميم التفصيلي للتنفيذ (شوب دروينغ)|shop drawings / detailed design|2
+预留预埋图|yùliú yùmái tú|مخطط الفتحات والقطع المدفونة|builder's work (provisions) drawing|3
+管中标高|guǎnzhōng biāogāo|منسوب محور الأنبوب|pipe centre-line level|3
+管底标高|guǎndǐ biāogāo|منسوب قاع الأنبوب (Invert)|invert level|3
+风管底标高|fēngguǎn dǐ biāogāo|منسوب أسفل الدكت|duct bottom level|3
+吊顶|diàodǐng|سقف معلّق|false ceiling|1
+吊顶内净高|diàodǐng nèi jìnggāo|الارتفاع الصافي فوق السقف المعلّق|ceiling void clear height|3
+净高|jìnggāo|الارتفاع الصافي|clear height|2
+回路编号|huílù biānhào|رقم الدائرة|circuit number|2
+负荷等级|fùhè děngjí|فئة الحمل الكهربائي|load class (priority)|3
+防护等级|fánghù děngjí|درجة الحماية (IP)|ingress protection (IP) rating|3
+防爆|fángbào|مقاوم للانفجار|explosion-proof|2
+国标|guóbiāo|المواصفة الوطنية الصينية (GB)|Chinese national standard (GB)|2
+规范|guīfàn|الكود (المواصفة الملزمة)|code, specification|1
+强制性条文|qiángzhìxìng tiáowén|البنود الإلزامية|mandatory clauses|3
+送审|sòngshěn|التقديم للاعتماد|submittal for approval|2
+材料报审|cáiliào bàoshěn|اعتماد المواد|material submittal|2
+设备选型|shèbèi xuǎnxíng|اختيار المعدات|equipment selection|2
+样品|yàngpǐn|عيّنة|sample|1
+技术参数|jìshù cānshù|المواصفات الفنية|technical parameters|2
+>冷水机组的供水温度是七度，回水温度是十二度。|Lěngshuǐ jīzǔ de gōngshuǐ wēndù shì qī dù, huíshuǐ wēndù shì shí'èr dù.|حرارة ماء الإمداد في التشيلر سبع درجات، والراجع اثنتا عشرة درجة.|The chiller supplies water at 7 °C and it returns at 12 °C.
+>请在系统图上标出每根立管的管径。|Qǐng zài xìtǒngtú shang biāo chū měi gēn lìguǎn de guǎnjìng.|حدّد قطر كل أنبوب صاعد على مخطط النظام من فضلك.|Please mark the diameter of every riser on the system diagram.
+>风管底标高不能低于吊顶。|Fēngguǎn dǐ biāogāo bù néng dī yú diàodǐng.|لا يجوز أن يكون منسوب أسفل الدكت أدنى من السقف المعلّق.|The duct bottom level must not be below the false ceiling.
+>消防水泵每周要试运行一次。|Xiāofáng shuǐbèng měi zhōu yào shì yùnxíng yí cì.|يجب تشغيل مضخة الحريق تجريبيًا مرة كل أسبوع.|The fire pump must be test-run once a week.
+>配电箱的回路编号要和图纸一致。|Pèidiànxiāng de huílù biānhào yào hé túzhǐ yízhì.|يجب أن تطابق أرقام الدوائر في لوحة التوزيع المخططات.|Circuit numbers in the distribution box must match the drawings.
+>管线综合以后，我们发现了二十多处碰撞。|Guǎnxiàn zōnghé yǐhòu, wǒmen fāxiàn le èrshí duō chù pèngzhuàng.|بعد تنسيق الخدمات وجدنا أكثر من عشرين تعارضًا.|After services coordination we found more than twenty clashes.

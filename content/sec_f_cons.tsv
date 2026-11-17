@@ -1,0 +1,266 @@
+# Construction 建筑施工 — format: see scripts/sec_build.py. Levels: 1 core, 2 professional, 3 advanced.
+@cons
+#site|施工现场与组织|موقع العمل وتنظيمه|Site & organisation
+施工现场|shīgōng xiànchǎng|موقع التنفيذ|construction site|1
+工地|gōngdì|ورشة البناء|building site|1
+业主|yèzhǔ|المالك (صاحب العمل)|owner, employer|1
+甲方|jiǎfāng|الطرف الأول (المالك)|party A (client)|1
+乙方|yǐfāng|الطرف الثاني (المقاول)|party B (contractor)|1
+总承包|zǒng chéngbāo|المقاول الرئيسي|main (general) contractor|2
+分包|fēnbāo|مقاول باطن|subcontract(or)|2
+监理|jiānlǐ|الاستشاري المشرف|supervising engineer (consultant)|2
+设计院|shèjìyuàn|معهد التصميم (المكتب الاستشاري)|design institute|2
+项目经理|xiàngmù jīnglǐ|مدير المشروع|project manager|1
+总工|zǒnggōng|كبير المهندسين|chief engineer|2
+施工员|shīgōngyuán|مشرف تنفيذ|site supervisor|2
+质检员|zhìjiǎnyuán|مفتش الجودة|QC inspector|2
+安全员|ānquányuán|مسؤول السلامة|safety officer|2
+资料员|zīliàoyuán|مسؤول الوثائق|document controller|2
+劳务|láowù|العمالة|labour (workforce)|2
+班组|bānzǔ|فرقة عمل|work crew|2
+施工组织设计|shīgōng zǔzhī shèjì|الخطة التنظيمية للتنفيذ|construction organisation plan|3
+施工方案|shīgōng fāng'àn|طريقة التنفيذ (Method Statement)|method statement|2
+专项方案|zhuānxiàng fāng'àn|خطة خاصة لأعمال عالية الخطورة|special method statement (high-risk works)|3
+技术交底|jìshù jiāodǐ|إحاطة فنية للفريق|technical briefing to the crew|2
+开工|kāigōng|بدء الأعمال|commencement|1
+竣工|jùngōng|إنجاز المشروع|completion|2
+总平面布置|zǒng píngmiàn bùzhì|مخطط تنظيم الموقع|site layout plan|3
+临时设施|línshí shèshī|المرافق المؤقتة|temporary facilities|2
+临时用电|línshí yòngdiàn|الكهرباء المؤقتة للموقع|temporary site power|2
+塔吊|tǎdiào|رافعة برجية|tower crane|1
+汽车吊|qìchēdiào|رافعة متنقلة|mobile crane|2
+施工电梯|shīgōng diàntī|مصعد الموقع|construction hoist|2
+挖掘机|wājuéjī|حفّارة|excavator|1
+装载机|zhuāngzàijī|لودر|loader|2
+压路机|yālùjī|مدحلة|road roller|2
+泵车|bèngchē|شاحنة مضخة خرسانة|concrete pump truck|2
+混凝土搅拌车|hùnníngtǔ jiǎobànchē|خلّاطة خرسانة|concrete mixer truck|2
+围挡|wéidǎng|سياج الموقع|site hoarding|2
+材料堆场|cáiliào duīchǎng|ساحة تخزين المواد|material laydown area|2
+进场|jìnchǎng|الدخول إلى الموقع (التعبئة)|mobilisation, delivery to site|2
+退场|tuìchǎng|الخروج من الموقع|demobilisation|2
+施工日志|shīgōng rìzhì|يومية الموقع|site diary|2
+周报|zhōubào|التقرير الأسبوعي|weekly report|1
+例会|lìhuì|الاجتماع الدوري|regular site meeting|2
+工期|gōngqī|مدة التنفيذ|construction period|2
+关键线路|guānjiàn xiànlù|المسار الحرج|critical path|3
+里程碑|lǐchéngbēi|معلم رئيسي|milestone|2
+赶工|gǎngōng|تسريع العمل|acceleration|2
+窝工|wōgōng|توقّف العمالة (هدر الوقت)|idle labour (standing time)|3
+#earth|土方与基础|الحفر والأساسات|Earthworks & foundations
+土方|tǔfāng|أعمال الحفر والردم|earthworks|1
+开挖|kāiwā|حفر|excavation|1
+回填|huítián|ردم|backfill|1
+压实度|yāshídù|درجة الدمك|degree of compaction|3
+基坑|jīkēng|حفرة الأساسات|foundation pit|2
+基坑支护|jīkēng zhīhù|سند جوانب الحفر|excavation support (shoring)|3
+放坡|fàngpō|حفر بميول|sloped excavation|3
+降水|jiàngshuǐ|نزح المياه الجوفية|dewatering|2
+地下水位|dìxià shuǐwèi|منسوب المياه الجوفية|groundwater level|2
+地质勘察|dìzhì kānchá|التحريات الجيولوجية|geotechnical investigation|2
+地基承载力|dìjī chéngzàilì|قدرة تحمّل التربة|bearing capacity|3
+持力层|chílìcéng|الطبقة الحاملة|bearing stratum|3
+桩|zhuāng|خازوق|pile|1
+灌注桩|guànzhùzhuāng|خازوق مصبوب في الموقع|bored cast-in-place pile|3
+预制桩|yùzhìzhuāng|خازوق مسبق الصنع|precast pile|3
+桩基检测|zhuāngjī jiǎncè|اختبار الخوازيق|pile testing|3
+静载试验|jìngzài shìyàn|اختبار التحميل الساكن|static load test|3
+承台|chéngtái|هامة الخوازيق|pile cap|2
+独立基础|dúlì jīchǔ|قاعدة منفصلة|isolated (pad) footing|2
+条形基础|tiáoxíng jīchǔ|قاعدة شريطية|strip footing|2
+筏板基础|fábǎn jīchǔ|لبشة|raft foundation|2
+地梁|dìliáng|ميدة أرضية|ground beam|2
+垫层|diàncéng|خرسانة نظافة|blinding layer|2
+防水层|fángshuǐcéng|طبقة عزل مائي|waterproofing layer|2
+地下室|dìxiàshì|قبو|basement|1
+挡土墙|dǎngtǔqiáng|جدار استنادي|retaining wall|2
+地下连续墙|dìxià liánxùqiáng|جدار حجابي (Diaphragm wall)|diaphragm wall|3
+沉降观测|chénjiàng guāncè|رصد الهبوط|settlement monitoring|3
+#conc|钢筋混凝土|الخرسانة المسلّحة|Reinforced concrete
+钢筋混凝土|gāngjīn hùnníngtǔ|خرسانة مسلّحة|reinforced concrete|1
+混凝土强度等级|hùnníngtǔ qiángdù děngjí|رتبة مقاومة الخرسانة|concrete strength grade (e.g. C30)|3
+商品混凝土|shāngpǐn hùnníngtǔ|خرسانة جاهزة|ready-mixed concrete|2
+配合比|pèihébǐ|نسب الخلطة|mix design|2
+水泥|shuǐní|إسمنت|cement|1
+砂|shā|رمل|sand|1
+碎石|suìshí|حصى مكسّر|crushed stone (aggregate)|2
+外加剂|wàijiājì|إضافات الخرسانة|admixture|3
+坍落度|tānluòdù|الهبوط (Slump)|slump|3
+试块|shìkuài|مكعّب اختبار|test cube|2
+养护|yǎnghù|معالجة الخرسانة|curing|2
+振捣|zhèndǎo|هزّ الخرسانة|vibrating (compaction)|2
+施工缝|shīgōngfèng|فاصل صبّ|construction joint|2
+后浇带|hòujiāodài|شريحة الصبّ المؤجّل|post-cast strip|3
+伸缩缝|shēnsuōfèng|فاصل تمدّد|expansion joint|2
+沉降缝|chénjiàngfèng|فاصل هبوط|settlement joint|3
+保护层|bǎohùcéng|الغطاء الخرساني|concrete cover|2
+钢筋|gāngjīn|حديد تسليح|rebar|1
+主筋|zhǔjīn|حديد رئيسي|main reinforcement|2
+箍筋|gūjīn|كانات|stirrups, ties|2
+搭接|dājiē|وصلة تراكب|lap splice|2
+锚固长度|máogù chángdù|طول التثبيت|anchorage length|3
+直螺纹套筒|zhí luówén tàotǒng|وصلة ميكانيكية مسننة|threaded rebar coupler|3
+钢筋绑扎|gāngjīn bǎngzā|ربط الحديد|rebar tying|2
+钢筋隐蔽验收|gāngjīn yǐnbì yànshōu|استلام الحديد قبل الصبّ|rebar inspection before concreting|3
+模板|múbǎn|قوالب (شدّة)|formwork|1
+支撑|zhīchēng|دعامات|props, shoring|2
+拆模|chāimú|فكّ القوالب|stripping formwork|2
+浇筑|jiāozhù|صبّ|pouring|1
+楼板|lóubǎn|بلاطة|slab|1
+梁|liáng|كمرة|beam|1
+柱|zhù|عمود|column|1
+剪力墙|jiǎnlìqiáng|جدار قص|shear wall|2
+核心筒|héxīntǒng|النواة الخرسانية|core wall|3
+预应力|yùyìnglì|إجهاد مسبق|prestressed|3
+装配式建筑|zhuāngpèishì jiànzhù|مبانٍ مسبقة التصنيع|prefabricated (modular) building|3
+预制构件|yùzhì gòujiàn|عناصر مسبقة الصب|precast element|2
+裂缝|lièfèng|شرخ|crack|1
+蜂窝麻面|fēngwō mámiàn|تعشيش وسطح خشن|honeycombing and surface pitting|3
+#steel|钢结构|المنشآت المعدنية|Structural steel
+钢结构|gāng jiégòu|منشأ معدني|steel structure|1
+钢梁|gāngliáng|كمرة فولاذية|steel beam|2
+钢柱|gāngzhù|عمود فولاذي|steel column|2
+H型钢|H xínggāng|مقطع H|H-section steel|2
+工字钢|gōngzìgāng|مقطع I|I-beam|2
+角钢|jiǎogāng|زاوية فولاذية|angle steel|2
+槽钢|cáogāng|مقطع قناة|channel steel|2
+钢板|gāngbǎn|لوح فولاذي|steel plate|1
+桁架|héngjià|جملون|truss|2
+檩条|lǐntiáo|مدادات السقف|purlin|3
+支撑体系|zhīchēng tǐxì|نظام التكتيف|bracing system|3
+高强螺栓|gāoqiáng luóshuān|مسامير عالية المقاومة|high-strength bolt|2
+扭矩扳手|niǔjǔ bānshǒu|مفتاح عزم|torque wrench|2
+焊缝|hànfèng|خط اللحام|weld seam|2
+焊工|hàngōng|لحّام|welder|1
+探伤|tànshāng|الكشف عن العيوب (فحص غير إتلافي)|flaw detection (NDT)|3
+超声波探伤|chāoshēngbō tànshāng|فحص بالموجات فوق الصوتية|ultrasonic testing|3
+防腐涂装|fángfǔ túzhuāng|طلاء مضاد للتآكل|anti-corrosion coating|2
+防火涂料|fánghuǒ túliào|طلاء مقاوم للحريق|fire-resistant coating|2
+吊装|diàozhuāng|رفع وتركيب|lifting and erection|2
+预拼装|yù pīnzhuāng|تجميع تجريبي مسبق|trial assembly|3
+构件编号|gòujiàn biānhào|رقم العنصر|member mark|3
+加工图|jiāgōngtú|مخططات التصنيع|fabrication drawings|3
+#arch|建筑与装饰装修|الأعمال المعمارية والتشطيبات|Architecture & finishes
+建筑|jiànzhù|عمارة، مبنى|architecture, building|1
+砌体|qìtǐ|أعمال البناء بالطوب|masonry|2
+砌块|qìkuài|بلوك|concrete block|2
+砖|zhuān|طوب|brick|1
+砂浆|shājiāng|مونة|mortar|2
+抹灰|mǒhuī|لياسة (محارة)|plastering|2
+找平层|zhǎopíngcéng|طبقة تسوية|levelling screed|3
+腻子|nìzi|معجون|putty, skim coat|2
+涂料|túliào|طلاء|paint|1
+外墙|wàiqiáng|الجدار الخارجي|external wall|1
+保温层|bǎowēncéng|طبقة العزل الحراري|insulation layer|2
+幕墙|mùqiáng|واجهة ستائرية|curtain wall|2
+门窗|ménchuāng|الأبواب والنوافذ|doors and windows|1
+铝合金|lǚhéjīn|ألومنيوم|aluminium alloy|2
+玻璃|bōli|زجاج|glass|1
+石材|shícái|حجر|stone cladding|2
+瓷砖|cízhuān|بلاط سيراميك|ceramic tile|1
+地面|dìmiàn|الأرضيات|flooring|1
+防水|fángshuǐ|عزل مائي|waterproofing|1
+屋面|wūmiàn|السطح|roof|2
+女儿墙|nǚ'érqiáng|دروة السطح|parapet|3
+栏杆|lángān|درابزين|railing|2
+楼梯|lóutī|درج|staircase|1
+吊顶|diàodǐng|سقف معلّق|suspended ceiling|1
+石膏板|shígāobǎn|ألواح الجبس|gypsum board|2
+轻钢龙骨|qīnggāng lónggǔ|هيكل معدني خفيف|light-gauge steel framing|3
+精装修|jīng zhuāngxiū|تشطيب كامل فاخر|fully fitted-out finish|2
+毛坯房|máopīfáng|شقة على العظم|shell-and-core unit|2
+样板间|yàngbǎnjiān|شقة نموذجية|show flat, mock-up room|2
+#qhse|质量与安全|الجودة والسلامة|Quality & safety
+质量管理|zhìliàng guǎnlǐ|إدارة الجودة|quality management|1
+检验批|jiǎnyànpī|دفعة الفحص|inspection lot|3
+分项工程|fēnxiàng gōngchéng|بند أعمال فرعي|sub-item of work|3
+分部工程|fēnbù gōngchéng|جزء أعمال|work section|3
+隐蔽工程|yǐnbì gōngchéng|الأعمال المخفية|concealed works|2
+隐蔽验收|yǐnbì yànshōu|استلام الأعمال قبل التغطية|inspection before covering up|2
+旁站|pángzhàn|الإشراف الدائم أثناء التنفيذ|full-time attendance (supervision)|3
+见证取样|jiànzhèng qǔyàng|أخذ العينات بحضور شاهد|witnessed sampling|3
+不合格品|bù hégépǐn|منتج غير مطابق|non-conforming product|2
+整改通知单|zhěnggǎi tōngzhīdān|إشعار تصحيح|rectification notice|2
+返工|fǎngōng|إعادة العمل|rework|2
+质量通病|zhìliàng tōngbìng|عيوب الجودة الشائعة|common quality defects|3
+实测实量|shícè shíliàng|القياس الفعلي في الموقع|on-site measurement checks|3
+安全文明施工|ānquán wénmíng shīgōng|التنفيذ الآمن والمنظّم|safe and tidy construction|3
+安全帽|ānquánmào|خوذة|hard hat|1
+安全带|ānquándài|حزام أمان|safety harness|1
+安全网|ānquánwǎng|شبكة أمان|safety net|2
+临边防护|línbiān fánghù|حماية الحواف|edge protection|3
+洞口防护|dòngkǒu fánghù|حماية الفتحات|opening protection|3
+高处作业|gāochù zuòyè|العمل على ارتفاع|work at height|2
+动火作业|dònghuǒ zuòyè|أعمال ساخنة|hot work|2
+动火证|dònghuǒzhèng|تصريح عمل ساخن|hot-work permit|3
+受限空间|shòuxiàn kōngjiān|مكان محصور|confined space|3
+作业许可|zuòyè xǔkě|تصريح العمل|permit to work|2
+安全交底|ānquán jiāodǐ|إحاطة السلامة|safety briefing (toolbox talk)|2
+危险源|wēixiǎnyuán|مصدر خطر|hazard|2
+风险评估|fēngxiǎn pínggū|تقييم المخاطر|risk assessment|2
+事故|shìgù|حادث|accident|1
+未遂事件|wèisuì shìjiàn|حادث وشيك|near miss|3
+劳保用品|láobǎo yòngpǐn|معدات الوقاية الشخصية|personal protective equipment (PPE)|2
+#contract|合同与造价|العقود والتكاليف|Contracts & cost
+合同|hétong|عقد|contract|1
+招标|zhāobiāo|طرح مناقصة|invitation to tender|2
+投标|tóubiāo|تقديم عطاء|bid, tender|2
+中标|zhòngbiāo|الفوز بالمناقصة|win the bid|2
+标书|biāoshū|وثائق العطاء|tender documents|2
+工程量清单|gōngchéngliàng qīngdān|جدول الكميات|bill of quantities (BOQ)|2
+综合单价|zōnghé dānjià|سعر الوحدة الشامل|all-in unit rate|3
+预算|yùsuàn|الميزانية التقديرية|budget estimate|1
+结算|jiésuàn|الحساب الختامي|final account|2
+进度款|jìndùkuǎn|دفعة مرحلية|interim (progress) payment|2
+预付款|yùfùkuǎn|دفعة مقدّمة|advance payment|2
+质保金|zhìbǎojīn|محتجزات الضمان|retention money|2
+履约保函|lǚyuē bǎohán|خطاب ضمان حسن التنفيذ|performance bond|3
+变更|biàngēng|أمر تغيير|variation, change order|2
+签证|qiānzhèng|تأكيد أعمال إضافية في الموقع|site instruction / variation confirmation|3
+索赔|suǒpéi|مطالبة|claim|2
+工期延误|gōngqī yánwù|تأخير مدة التنفيذ|delay|2
+违约金|wéiyuējīn|غرامة تأخير|liquidated damages|3
+不可抗力|bùkěkànglì|القوة القاهرة|force majeure|3
+菲迪克合同|Fēidíkè hétong|عقد فيديك|FIDIC contract|3
+工程款|gōngchéngkuǎn|مستحقات المشروع|contract payments|2
+计量|jìliàng|قياس الكميات المنفّذة|measurement of works|2
+#conv|图纸与工程惯例|المخططات والاصطلاحات الهندسية|Drawings & engineering conventions
+施工图|shīgōngtú|مخططات التنفيذ|construction drawings|1
+建筑图|jiànzhùtú|المخططات المعمارية|architectural drawings|1
+结构图|jiégòutú|المخططات الإنشائية|structural drawings|1
+竣工图|jùngōngtú|مخططات كما نُفّذ|as-built drawings|2
+平面图|píngmiàntú|مسقط أفقي|plan|1
+立面图|lìmiàntú|واجهة|elevation|1
+剖面图|pōumiàntú|قطاع|section|1
+详图|xiángtú|تفصيلة|detail|1
+节点|jiédiǎn|تفصيلة اتصال|connection detail (node)|2
+轴线|zhóuxiàn|محاور الشبكة|grid lines (axes)|1
+轴网|zhóuwǎng|شبكة المحاور|structural grid|2
+标高|biāogāo|منسوب|level, elevation|1
+正负零|zhèng fù líng|منسوب الصفر (±0.000)|±0.000 datum level|2
+建筑标高|jiànzhù biāogāo|المنسوب المعماري (بعد التشطيب)|architectural (finished) level|3
+结构标高|jiégòu biāogāo|المنسوب الإنشائي|structural level|3
+层高|cénggāo|ارتفاع الطابق|floor-to-floor height|2
+比例|bǐlì|مقياس الرسم|scale|1
+图签|túqiān|جدول عنوان المخطط|title block|2
+图号|túhào|رقم المخطط|drawing number|2
+版本|bǎnběn|نسخة (مراجعة)|revision|1
+图纸会审|túzhǐ huìshěn|المراجعة المشتركة للمخططات|joint drawing review|3
+设计变更|shèjì biàngēng|تغيير التصميم|design change|2
+工作联系单|gōngzuò liánxìdān|مذكرة اتصال عمل|work correspondence form (RFI)|3
+技术核定单|jìshù hédìngdān|نموذج اعتماد فني|technical query / approval form|3
+毫米|háomǐ|ملّيمتر|millimetre (drawing unit)|1
+索引符号|suǒyǐn fúhào|رمز الإحالة|detail reference symbol|3
+指北针|zhǐběizhēn|سهم الشمال|north arrow|2
+定位放线|dìngwèi fàngxiàn|التوقيع والتخطيط في الموقع|setting out|2
+控制点|kòngzhìdiǎn|نقطة تحكّم مساحية|survey control point|2
+建筑面积|jiànzhù miànjī|مسطح البناء|gross floor area|2
+容积率|róngjīlǜ|نسبة مسطح البناء إلى الأرض|floor area ratio (FAR)|3
+三通一平|sān tōng yì píng|توصيل الماء والكهرباء والطريق وتسوية الأرض|site ready: water, power, road connected and land levelled|3
+五方责任主体|wǔ fāng zérèn zhǔtǐ|الأطراف الخمسة المسؤولة|the five responsible parties (owner, surveyor, designer, contractor, supervisor)|3
+>请按照图纸施工，有问题先发工作联系单。|Qǐng ànzhào túzhǐ shīgōng, yǒu wèntí xiān fā gōngzuò liánxìdān.|نفّذوا حسب المخططات، وإن وُجد إشكال فأرسلوا مذكرة اتصال أولًا.|Build to the drawings; if there is a problem, send an RFI first.
+>正负零相当于绝对标高十二点五米。|Zhèng fù líng xiāngdāng yú juéduì biāogāo shí'èr diǎn wǔ mǐ.|منسوب الصفر يعادل منسوبًا مطلقًا قدره 12.5 مترًا.|±0.000 corresponds to an absolute level of 12.5 m.
+>钢筋隐蔽验收通过以后才能浇筑混凝土。|Gāngjīn yǐnbì yànshōu tōngguò yǐhòu cái néng jiāozhù hùnníngtǔ.|لا يجوز صبّ الخرسانة إلا بعد اعتماد استلام الحديد.|Concrete may be poured only after the rebar inspection is passed.
+>这根梁的保护层厚度不够，需要整改。|Zhè gēn liáng de bǎohùcéng hòudù bú gòu, xūyào zhěnggǎi.|الغطاء الخرساني لهذه الكمرة غير كافٍ ويحتاج تصحيحًا.|This beam's concrete cover is too thin and must be corrected.
+>动火作业前必须办理动火证。|Dònghuǒ zuòyè qián bìxū bànlǐ dònghuǒzhèng.|قبل الأعمال الساخنة يجب استخراج تصريح العمل الساخن.|A hot-work permit is required before any hot work.
+>这项变更需要业主和监理签字确认。|Zhè xiàng biàngēng xūyào yèzhǔ hé jiānlǐ qiānzì quèrèn.|هذا التغيير يحتاج توقيع المالك والاستشاري المشرف.|This variation needs the owner’s and the supervisor’s signatures.

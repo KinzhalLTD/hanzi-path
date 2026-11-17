@@ -8,10 +8,12 @@ SECTORS.forEach((s,si)=>{ if(s.codeLink) s.terms=CODE_UNITS.filter(u=>u.tier==='
   s.topics=[core].concat(ext.topics.map(t=>Object.assign({},t,{terms:t.terms.filter(w=>!seen.has(w[0])&&seen.add(w[0]))}))).filter(t=>t.terms.length);
   s.ex=s.ex.concat(ext.ex||[]); let j=0;
   s.topics.forEach((t,ti)=>{ t._w=t.terms.map(w=>{ let o=byH[w[0]];
-      if(!o||o.sector&&o.sector!==s.k){ o={id:95000+si*1000+j,h:w[0],t:w[0],p:w[1],ar:[w[2]],en:[w[3]],l:0,fq:9999,mw:[],pos:[],sector:s.k}; byId[o.id]=o; if(!byH[o.h]) byH[o.h]=o; }
+      if(!o||o.sector&&o.sector!==s.k){ o={id:95000+si*1000+(ext.ids&&w[0] in ext.ids?ext.ids[w[0]]:j),h:w[0],t:w[0],p:w[1],ar:[w[2]],en:[w[3]],l:0,fq:9999,mw:[],pos:[],sector:s.k}; byId[o.id]=o; if(!byH[o.h]) byH[o.h]=o; }
       else if(!(o.ar&&o.ar.length)) o.ar=[w[2]];
       j++; SEC_META[s.k+':'+o.id]={ar:w[2],en:w[3],lv:w[4],ti}; return o; }); });
   s._w=s.topics.flatMap(t=>t._w); });
+// shown order: engineering fields side by side (ids depend on the array index, so the array itself is append-only)
+const SEC_ORDER=(()=>{ const want=['eng','mep','cons','infra','it','tech','med','biz','trans','sci','modern','hist']; const ix=want.map(k=>SECTORS.findIndex(s=>s.k===k)).filter(i=>i>=0); SECTORS.forEach((s,i)=>{ if(!ix.includes(i)) ix.push(i); }); return ix; })();
 const sstrip=x=>(x||'').normalize('NFD').replace(/[\u0300-\u036f\s']/g,'').toLowerCase();
 const secFree=(ti)=>S.pro||ti===0;
 const secM=(s,w)=>SEC_META[s.k+':'+w.id]||{ar:(w.ar||[])[0],en:(w.en||[])[0],lv:1,ti:0};
@@ -33,7 +35,7 @@ if(!document.getElementById('secCSS')) document.head.insertAdjacentHTML('beforee
 </style>`);
 SCREENS.sectors=m=>{ S.sec=S.sec||{}; const tot=SECTORS.reduce((a,s)=>a+s._w.length,0);
   m.insertAdjacentHTML('beforeend',`${topbar()}<div class="hero ph" style="min-height:180px">${photo('s_tech',0,'','bg')}<span class="eyebrow">${t('secSub')}</span><h1>${t('secTitle')}</h1><div class="sub" style="color:var(--ivory)"><span class="num">${tot}</span> ${t('words')} · <span class="num">${SECTORS.length}</span> ${t('secFields')} · <span class="num">${SECTORS.reduce((a,s)=>a+s.topics.length,0)}</span> ${t('secTopicsN')}</div></div>
-   <div class="secgrid">${SECTORS.map((s,i)=>{ const L=secLearned(s); return `<button class="seccard${SECTORS.length%2&&i===SECTORS.length-1?' wide':''}" data-i="${i}">${photo(s.photo,96,`<span class="brush" style="font-size:28px;color:var(--gold2);text-shadow:0 2px 10px #000">${s.zh}</span>`)}<div class="sc-meta"><b>${s.icon} ${isAr()?s.ar:s.en}</b><span class="sub"><span class="num">${s._w.length}</span> ${t('words')} · <span class="num">${s.topics.length}</span> ${t('secTopicsN')}</span><div class="secbar"><i style="width:${Math.round(100*L/s._w.length)}%"></i></div></div></button>`; }).join('')}
+   <div class="secgrid">${SEC_ORDER.map(i=>[SECTORS[i],i]).map(([s,i],n)=>{ const L=secLearned(s); return `<button class="seccard${SECTORS.length%2&&n===SECTORS.length-1?' wide':''}" data-i="${i}">${photo(s.photo,96,`<span class="brush" style="font-size:28px;color:var(--gold2);text-shadow:0 2px 10px #000">${s.zh}</span>`)}<div class="sc-meta"><b>${s.icon} ${isAr()?s.ar:s.en}</b><span class="sub"><span class="num">${s._w.length}</span> ${t('words')} · <span class="num">${s.topics.length}</span> ${t('secTopicsN')}</span><div class="secbar"><i style="width:${Math.round(100*L/s._w.length)}%"></i></div></div></button>`; }).join('')}
      <button class="seccard wide" id="acc">${photo('s_acc',96,`<span class="brush" style="font-size:28px;color:var(--gold2);text-shadow:0 2px 10px #000">方言</span>`)}<div class="sc-meta"><b>🗣 ${t('accTitle')}</b><span class="sub">${t('accSub')}</span></div></button></div>`);
   $$('[data-i]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('sector',+b.dataset.i); });
   $('#acc',m).onclick=()=>go('accents'); };

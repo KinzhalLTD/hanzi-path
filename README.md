@@ -28,7 +28,7 @@ bash scripts/build.sh       # writes hp/dist/hanzi-path.html
 Validate a content batch (needs `out/cedict_base.json`, generated from CC-CEDICT by `scripts/parse_cedict.py`):
 ```bash
 python3 -I scripts/check_content.py content/hsk6a.tsv out/cedict_base.json out/hsk_words.json 6
-python3 -I scripts/sec_ext.py . content/sec_a.tsv content/sec_b.tsv content/sec_c.tsv
+python3 -I scripts/sec_build.py "$PWD" path/to/cedict_base.json   # all content/sec_*.tsv, stable ids in content/sector_ids.json
 ```
 Tests (Playwright + Chrome, 390×844): `python3 scripts/regress.py hp/dist/hanzi-path.html /tmp/r.png`,
 `python3 scripts/test_music3.py hp/dist/hanzi-path.html /tmp`, and the other `scripts/test_*.py`.

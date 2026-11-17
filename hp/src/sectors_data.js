@@ -25,7 +25,11 @@ const SECTORS=[
  terms:[],ex:[]},
 {k:'biz',zh:'商务贸易',p:'shāngwù màoyì',ar:'الأعمال والتجارة',en:'Business & trade',icon:'💼',photo:'society',
  terms:[['合同','hétong','عقد','contract'],['报价','bàojià','عرض سعر','quotation'],['订单','dìngdān','طلبية','order'],['发票','fāpiào','فاتورة','invoice'],['付款','fùkuǎn','دفع','payment'],['定金','dìngjīn','عربون','deposit'],['供应商','gōngyìngshāng','مورّد','supplier'],['工厂','gōngchǎng','مصنع','factory'],['样品','yàngpǐn','عيّنة','sample'],['起订量','qǐdìngliàng','الحد الأدنى للطلب','minimum order quantity'],['交货期','jiāohuòqī','موعد التسليم','delivery time'],['进口','jìnkǒu','استيراد','import'],['出口','chūkǒu','تصدير','export'],['关税','guānshuì','رسوم جمركية','customs duty'],['折扣','zhékòu','خصم','discount'],['利润','lìrùn','ربح','profit'],['市场','shìchǎng','سوق','market'],['合作伙伴','hézuò huǒbàn','شريك','partner'],['谈判','tánpàn','تفاوض','negotiation'],['展会','zhǎnhuì','معرض تجاري','trade fair']],
- ex:[['请给我们发一份报价。','Qǐng gěi wǒmen fā yí fèn bàojià.','أرسلوا لنا عرض سعر من فضلكم.','Please send us a quotation.'],['你们的起订量是多少？','Nǐmen de qǐdìngliàng shì duōshao?','ما الحد الأدنى للطلب لديكم؟','What is your minimum order quantity?'],['我们下个月去广交会。','Wǒmen xià ge yuè qù Guǎngjiāohuì.','سنذهب الشهر القادم إلى معرض كانتون.','We\'re going to the Canton Fair next month.']]}];
+ ex:[['请给我们发一份报价。','Qǐng gěi wǒmen fā yí fèn bàojià.','أرسلوا لنا عرض سعر من فضلكم.','Please send us a quotation.'],['你们的起订量是多少？','Nǐmen de qǐdìngliàng shì duōshao?','ما الحد الأدنى للطلب لديكم؟','What is your minimum order quantity?'],['我们下个月去广交会。','Wǒmen xià ge yuè qù Guǎngjiāohuì.','سنذهب الشهر القادم إلى معرض كانتون.','We\'re going to the Canton Fair next month.']]},
+{k:'mep',zh:'机电工程',p:'jīdiàn gōngchéng',ar:'الأعمال الكهروميكانيكية (MEP)',en:'MEP engineering',icon:'🔧',photo:'s_mep',terms:[],ex:[]},
+{k:'cons',zh:'建筑施工',p:'jiànzhù shīgōng',ar:'البناء والتشييد',en:'Construction',icon:'🏗',photo:'s_cons',terms:[],ex:[]},
+{k:'infra',zh:'基础设施',p:'jīchǔ shèshī',ar:'البنية التحتية',en:'Infrastructure',icon:'🌉',photo:'s_infra',terms:[],ex:[]}
+];
 /* ===== Chinese accents & dialects 方言: the same idea said around China ===== */
 const ACCENTS=[
  {k:'yue',zh:'粤语',p:'Yuèyǔ',ar:'الكانتونية',en:'Cantonese',where:'广东、香港、澳门',whereAr:'قوانغدونغ وهونغ كونغ وماكاو',whereEn:'Guangdong, Hong Kong, Macau',
