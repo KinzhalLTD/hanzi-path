@@ -74,11 +74,13 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
     $('#qx',m).onclick=()=>go('talk',{d:d.k}); bindTg(); applyTg(); bindTokens(m); $('#go',m).onclick=()=>{ SFX.tap(); track('talk_start',{scene:tkKey(d,s)}); chat(); }; }
 
   let ti=0, score=0, firstBest=0, hints=0;
-  function chat(){ m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar grow"><i id="tbar" style="width:0%"></i></div>${toggles()}</div>
+  function chat(){ m.classList.add('tkchat'); window.scrollTo(0,0); m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar grow"><i id="tbar" style="width:0%"></i></div>${toggles()}</div>
       <div class="tklog" id="tlog"></div><div class="tkpanel" id="tpanel"></div>`;
     $('#qx',m).onclick=()=>go('talk',{d:d.k}); bindTg(); applyTg(); partner(); }
   const log=()=>$('#tlog',m), panel=()=>$('#tpanel',m);
-  const scrollEnd=()=>requestAnimationFrame(()=>{ try{ window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'}); }catch(e){ window.scrollTo(0,1e6); } });
+  // scroll inside the chat panes only (never the page): newest line at the bottom of the log, latest feedback visible in the panel
+  const paneEnd=el=>{ if(!el) return; try{ el.scrollTo({top:el.scrollHeight,behavior:'smooth'}); }catch(e){ el.scrollTop=el.scrollHeight; } };
+  const scrollEnd=()=>requestAnimationFrame(()=>{ paneEnd(log()); paneEnd(panel()); });
   const bindLine=el=>{ bindTokens(el); $$('.tkplay',el).forEach(b=>b.onclick=e=>{ e.stopPropagation(); speak(b.dataset.zh); }); };
   function partner(){ const tn=s.turns[ti]; $('#tbar',m).style.width=(ti/s.turns.length*100)+'%';
     log().insertAdjacentHTML('beforeend',`<div class="tkmsg them typing" dir="ltr"><span class="tkface">${av}</span><div class="tkbub"><span class="tkdots"><i></i><i></i><i></i></span></div></div>`); scrollEnd();
@@ -87,7 +89,7 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
   function choices(){ const tn=s.turns[ti], opts=shuffle(tn.o); let tries=[], hinted=false, done=false;
     panel().innerHTML=`<div class="row" style="gap:8px"><b class="grow">${t('tkPick')}</b><button class="btn ghost sm" id="thint">💡 ${t('tkHint')}</button></div>
       <div class="col tkopts" style="gap:8px">${opts.map((o,j)=>`<button class="tkopt" data-j="${j}" dir="ltr"><span class="han">${esc(o.zh)}</span><span class="py">${esc(o.py)}</span><span class="tktr2" dir="auto">${esc(isAr()?o.ar:o.en)}</span></button>`).join('')}</div><div id="tfb"></div>`;
-    scrollEnd(); $('#thint',m).onclick=()=>{ hinted=true; panel().classList.add('hinted'); $('#thint',m).disabled=true; SFX.tap(); };
+    requestAnimationFrame(()=>{ paneEnd(log()); const pn=panel(); if(pn) pn.scrollTop=0; }); $('#thint',m).onclick=()=>{ hinted=true; panel().classList.add('hinted'); $('#thint',m).disabled=true; SFX.tap(); };
     $$('.tkopt',m).forEach(b=>b.onclick=()=>{ if(done||b.disabled) return; const o=opts[+b.dataset.j]; tries.push(o.t); b.disabled=true;
       if(o.t==='A'){ done=true; const pts=tries.length===1?(hinted?2:3):tries[0]==='B'?1:0; score+=pts; if(tries.length===1) firstBest++; if(hinted) hints++;
         b.classList.add('right'); SFX.ok(); haptic('success'); if(pts===3) floatText('+3',b);
@@ -100,7 +102,7 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
         setTimeout(scrollEnd,30); $('#tfb',m).innerHTML=`<div class="tkfb ${o.t==='B'?'meh':'bad'}"><b>${o.t==='B'?'≈ '+t('tkOk'):'✕ '+t('tkNo')}</b><div>${esc(isAr()?o.na:o.ne)}</div><div class="sub">${esc(isAr()?o.ar:o.en)} · ${t('tkTry')}</div></div>`; } }); }
   function summary(){ const max=s.turns.length*3, pct=score/max, st=pct>=.9?3:pct>=.6?2:1, k=tkKey(d,s); S.talk=S.talk||{}; const prev=S.talk[k]||0; S.talk[k]=Math.max(prev,st);
     S.talkN=(S.talkN||0)+1; const xp=15+score*2; addXP(xp); const c=addCoins(10+st*5); track('talk_done',{scene:k,stars:st}); save();
-    SFX.win(); confetti(st===3?110:60); const nx=d.scenes[si+1];
+    SFX.win(); confetti(st===3?110:60); const nx=d.scenes[si+1]; m.classList.remove('tkchat'); window.scrollTo(0,0);
     m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar grow"><i style="width:100%"></i></div></div>
       <div class="result rise" style="padding-top:0"><div class="bao-dance">${bao(st===3?'cool':'happy',100)}</div><h1>${t('tkDone')}</h1><div class="tkstars big">${tkStars(st)}</div>
       <div class="kv"><div><span class="sub">${t('tkFirst')}</span><b><span class="num">${firstBest}/${s.turns.length}</span></b></div><div><span class="sub">${t('earned')}</span><b style="color:var(--gold2)">+${xp}</b></div><div><span class="sub">${coinHTML}</span><b>+${c}</b></div></div>

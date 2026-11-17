@@ -2,7 +2,7 @@
 Format:  @sector   #topicKey|zh|ar|en   term: zh|pinyin|ar|en|level(1 core, 2 professional, 3 advanced)   >example: zh|pinyin|ar|en
 A sector or topic may appear again in a later file: its terms are appended (lets new files extend existing topics).
 Stable ids: content/sector_ids.json maps sector -> {term: index}. Learners' progress is stored by id, so existing
-indices never change; new terms get the next free index. The app uses id = 95000 + sectorIndex*1000 + index.
+indices never change; new terms get the next free index. The app uses id = 95000 + sectorIndex*1000 + index for index < 1000, else 300000 + sectorIndex*10000 + index (secId in sectors.js).
 Usage: python3 -I scripts/sec_build.py ROOT CEDICT_BASE_JSON   (prints `errors N`; CEDICT optional)"""
 import json, sys, os, glob, re, importlib.util
 ROOT = sys.argv[1]; CED = sys.argv[2] if len(sys.argv) > 2 else None
@@ -45,7 +45,7 @@ for k, v in out.items():
             seen[x[0]] = t['k']; keep.append(x)
             if x[0] not in ids: ids[x[0]] = nxt; nxt += 1
         t['terms'] = keep
-    if nxt > 1000: errs.append(f'{k}: {nxt} ids, the id scheme allows 1000 per sector')
+    if nxt > 10000: errs.append(f'{k}: {nxt} ids, the id scheme allows 10000 per sector')
     v['ids'] = ids
 json.dump(reg, open(REG_PATH, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 json.dump(out, open(os.path.join(ROOT, 'out', 'sectors_ext.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))

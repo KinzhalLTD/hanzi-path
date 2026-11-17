@@ -1,0 +1,389 @@
+# MEP complete coverage — mechanical, electrical and plumbing works by trade (extends sec_e_mep / sec_h_more2).
+@mep
+#pipe|管材与管件|الأنابيب والقطع|Pipes & fittings
+管材|guǎncái|مواد الأنابيب|pipe material|1
+管件|guǎnjiàn|قطع توصيل الأنابيب|pipe fittings|1
+弯头|wāntóu|كوع|elbow|1
+九十度弯头|jiǔshí dù wāntóu|كوع 90 درجة|90° elbow|2
+四十五度弯头|sìshíwǔ dù wāntóu|كوع 45 درجة|45° elbow|2
+三通|sāntōng|تيّ (وصلة ثلاثية)|tee|1
+四通|sìtōng|صليبة (وصلة رباعية)|cross|2
+异径三通|yìjìng sāntōng|تيّ مختلف الأقطار|reducing tee|3
+大小头|dàxiǎotóu|مسلوب (مخفّض)|reducer|2
+同心大小头|tóngxīn dàxiǎotóu|مخفّض متحد المركز|concentric reducer|3
+偏心大小头|piānxīn dàxiǎotóu|مخفّض غير متحد المركز|eccentric reducer|3
+管箍|guǎngū|جلبة وصل|coupling|2
+活接|huójiē|وصلة اتحاد (يونيون)|union|2
+内丝|nèisī|سن داخلي|female thread|2
+外丝|wàisī|سن خارجي|male thread|2
+补芯|bǔxīn|بوشة تخفيض|reducing bush|3
+堵头|dǔtóu|سدادة (طبة)|plug, end cap|2
+管帽|guǎnmào|غطاء نهاية الأنبوب|pipe cap|2
+对焊|duìhàn|لحام تناكبي|butt weld|2
+承插焊|chéngchāhàn|لحام بالتلقيم (سوكت)|socket weld|3
+螺纹连接|luówén liánjiē|وصلة ملولبة|threaded connection|2
+卡压连接|kǎyā liánjiē|وصلة بالضغط (بريس)|press-fit connection|3
+焊接钢管|hànjiē gāngguǎn|أنبوب فولاذي ملحوم|welded steel pipe|2
+无缝钢管|wúfèng gāngguǎn|أنبوب فولاذي بدون لحام|seamless steel pipe|2
+铜管|tóngguǎn|أنبوب نحاس|copper pipe|1
+PE管|PE guǎn|أنبوب بولي إيثيلين|PE pipe|2
+HDPE管|HDPE guǎn|أنبوب بولي إيثيلين عالي الكثافة|HDPE pipe|2
+钢塑复合管|gāngsù fùhéguǎn|أنبوب مركّب فولاذ-بلاستيك|steel–plastic composite pipe|3
+球墨铸铁管|qiúmò zhùtiěguǎn|أنبوب حديد مرن (دكتايل)|ductile iron pipe|3
+管壁厚度|guǎnbì hòudù|سماكة جدار الأنبوب|wall thickness|2
+壁厚等级|bìhòu děngjí|جدول السماكة (Schedule)|pipe schedule|3
+补偿器|bǔchángqì|معوّض تمدّد|expansion compensator|3
+波纹管|bōwénguǎn|وصلة منفاخية|bellows|3
+软接头|ruǎnjiētóu|وصلة مرنة|flexible connector|2
+橡胶软接头|xiàngjiāo ruǎnjiētóu|وصلة مرنة مطاطية|rubber flexible joint|3
+防水套管|fángshuǐ tàoguǎn|جلبة مانعة لتسرّب الماء|waterproof sleeve|3
+刚性防水套管|gāngxìng fángshuǐ tàoguǎn|جلبة صلبة مانعة للتسرّب|rigid waterproof sleeve|3
+柔性防水套管|róuxìng fángshuǐ tàoguǎn|جلبة مرنة مانعة للتسرّب|flexible waterproof sleeve|3
+平焊法兰|píng hàn fǎlán|شفة لحام مسطحة (Slip-on)|slip-on flange|3
+对焊法兰|duìhàn fǎlán|شفة لحام رقبية|weld-neck flange|3
+盲板|mángbǎn|شفة عمياء|blind flange|2
+法兰垫片|fǎlán diànpiàn|حشية الشفة|flange gasket|2
+螺柱|luózhù|مسمار ملولب الطرفين|stud bolt|2
+管道标识|guǎndào biāozhì|علامات تعريف الأنابيب|pipe identification marking|2
+流向箭头|liúxiàng jiàntóu|سهم اتجاه التدفّق|flow-direction arrow|2
+#valve|阀门|الصمامات|Valves
+阀门|fámén|صمام|valve|1
+阀体|fátǐ|جسم الصمام|valve body|2
+阀芯|fáxīn|قلب الصمام|valve core (disc)|2
+阀杆|fágān|ساق الصمام|valve stem|2
+手轮|shǒulún|عجلة يدوية|handwheel|2
+手柄|shǒubǐng|مقبض|handle, lever|1
+电动阀|diàndòngfá|صمام كهربائي|motorised valve|2
+气动阀|qìdòngfá|صمام هوائي|pneumatic valve|2
+电磁阀|diàncífá|صمام كهرومغناطيسي (سولينويد)|solenoid valve|2
+平衡阀|pínghéngfá|صمام موازنة|balancing valve|3
+静态平衡阀|jìngtài pínghéngfá|صمام موازنة ثابت|static balancing valve|3
+动态平衡阀|dòngtài pínghéngfá|صمام موازنة ديناميكي|dynamic balancing valve|3
+浮球阀|fúqiúfá|صمام عوّامة|float valve|2
+旋塞阀|xuánsāifá|صمام سدادي|plug valve|3
+隔膜阀|gémófá|صمام غشائي|diaphragm valve|3
+针型阀|zhēnxíngfá|صمام إبري|needle valve|3
+角阀|jiǎofá|صمام زاوية|angle valve|2
+泄压阀|xièyāfá|صمام تخفيف الضغط|pressure relief valve|2
+持压阀|chíyāfá|صمام حفظ الضغط|pressure-sustaining valve|3
+缓闭止回阀|huǎnbì zhǐhuífá|صمام عدم رجوع بطيء الإغلاق|slow-closing check valve|3
+信号蝶阀|xìnhào diéfá|صمام فراشة بإشارة|supervised butterfly valve|3
+温控阀|wēnkòngfá|صمام تحكّم بالحرارة|thermostatic valve|2
+疏水阀|shūshuǐfá|مصيدة بخار|steam trap|3
+排污阀|páiwūfá|صمام تفريغ الرواسب|blow-down valve|3
+阀门井|fáménjǐng|غرفة الصمامات|valve chamber|3
+常开|chángkāi|مفتوح عادة|normally open (NO)|2
+常闭|chángbì|مغلق عادة|normally closed (NC)|2
+#pumpfan|泵与风机|المضخات والمراوح|Pumps & fans
+卧式泵|wòshìbèng|مضخة أفقية|horizontal pump|2
+立式泵|lìshìbèng|مضخة عمودية|vertical pump|2
+管道泵|guǎndàobèng|مضخة خطّية (إنلاين)|inline pump|2
+多级泵|duōjíbèng|مضخة متعددة المراحل|multistage pump|3
+双吸泵|shuāngxībèng|مضخة مزدوجة السحب|double-suction pump|3
+污水泵|wūshuǐbèng|مضخة صرف صحي|sewage pump|2
+排污泵|páiwūbèng|مضخة تصريف|drainage (sump) pump|2
+计量泵|jìliàngbèng|مضخة جرعات|dosing pump|3
+冷冻水泵|lěngdòng shuǐbèng|مضخة الماء المثلّج|chilled-water pump|2
+冷却水泵|lěngquè shuǐbèng|مضخة ماء التبريد|condenser-water pump|2
+一用一备|yí yòng yí bèi|واحدة عاملة وواحدة احتياطية|duty/standby (1+1)|2
+叶轮|yèlún|دافعة (مروحة المضخة)|impeller|2
+机械密封|jīxiè mìfēng|مانع تسرّب ميكانيكي|mechanical seal|3
+汽蚀|qìshí|التكهّف|cavitation|3
+必需汽蚀余量|bìxū qìshí yúliàng|صافي ارتفاع السحب المطلوب (NPSHr)|net positive suction head required (NPSHr)|3
+效率曲线|xiàolǜ qūxiàn|منحنى الكفاءة|efficiency curve|3
+工作点|gōngzuòdiǎn|نقطة التشغيل|duty point|3
+惯性基础|guànxìng jīchǔ|قاعدة قصور ذاتي|inertia base|3
+风机箱|fēngjīxiāng|صندوق مروحة|cabinet fan|2
+屋顶风机|wūdǐng fēngjī|مروحة سقف|roof fan|2
+混流风机|hùnliú fēngjī|مروحة تدفّق مختلط|mixed-flow fan|3
+射流风机|shèliú fēngjī|مروحة نفاثة|jet fan|3
+排烟风机|páiyān fēngjī|مروحة طرد الدخان|smoke exhaust fan|2
+加压送风机|jiāyā sòngfēngjī|مروحة ضغط الدرج|pressurisation fan|3
+风机皮带|fēngjī pídài|سير المروحة|fan belt|2
+#duct|风管系统|نظام مجاري الهواء|Ductwork
+矩形风管|jǔxíng fēngguǎn|دكت مستطيل|rectangular duct|2
+圆形风管|yuánxíng fēngguǎn|دكت دائري|circular duct|2
+螺旋风管|luóxuán fēngguǎn|دكت حلزوني|spiral duct|3
+复合风管|fùhé fēngguǎn|دكت مركّب (لوح عازل)|pre-insulated duct|3
+风管法兰|fēngguǎn fǎlán|شفة الدكت|duct flange|3
+共板法兰|gòngbǎn fǎlán|شفة مدمجة (TDC)|TDC flange|3
+导流叶片|dǎoliú yèpiàn|ريش توجيه|turning vanes|3
+变径|biànjìng|انتقال (تغيير المقطع)|transition|2
+静压箱|jìngyāxiāng|صندوق الضغط الساكن (بلنوم)|plenum box|3
+调节阀|tiáojiéfá|صمام (مخمّد) تنظيم|volume control damper|2
+止回阀|zhǐhuífá|مخمّد عدم الرجوع|backdraft damper|2
+多叶调节阀|duōyè tiáojiéfá|مخمّد متعدد الريش|opposed-blade damper|3
+检修口|jiǎnxiūkǒu|فتحة صيانة|access panel|2
+风管漏风量测试|fēngguǎn lòufēngliàng cèshì|اختبار تسرّب الدكت|duct leakage test|3
+风速|fēngsù|سرعة الهواء|air velocity|2
+风管保温|fēngguǎn bǎowēn|عزل الدكت|duct insulation|2
+条形风口|tiáoxíng fēngkǒu|فتحة شريطية (سلوت)|linear slot diffuser|3
+旋流风口|xuánliú fēngkǒu|ناشر دوّامي|swirl diffuser|3
+喷口|pēnkǒu|فوهة نفث|jet nozzle|3
+回风口|huífēngkǒu|فتحة الهواء الراجع|return grille|2
+防雨百叶|fángyǔ bǎiyè|لوفر مقاوم للمطر|weather louver|2
+#refr|制冷与热泵|التبريد والمضخات الحرارية|Refrigeration & heat pumps
+制冷循环|zhìlěng xúnhuán|دورة التبريد|refrigeration cycle|2
+蒸气压缩|zhēngqì yāsuō|ضغط البخار|vapour compression|3
+吸收式制冷|xīshōushì zhìlěng|التبريد بالامتصاص|absorption refrigeration|3
+冷凝温度|lěngníng wēndù|درجة حرارة التكثيف|condensing temperature|3
+蒸发温度|zhēngfā wēndù|درجة حرارة التبخّر|evaporating temperature|3
+过冷|guòlěng|تبريد إضافي (Subcooling)|subcooling|3
+过热|guòrè|تسخين زائد (Superheat)|superheat|3
+冷媒充注|lěngméi chōngzhù|شحن مادة التبريد|refrigerant charging|3
+抽真空|chōu zhēnkōng|تفريغ الهواء (فاكيوم)|evacuation (vacuuming)|2
+保压|bǎoyā|اختبار الثبات تحت الضغط|pressure-hold test|3
+检漏|jiǎnlòu|كشف التسرّب|leak detection|2
+铜管钎焊|tóngguǎn qiānhàn|لحام النحاس بالمونة|copper brazing|3
+氮气保护|dànqì bǎohù|حماية بالنيتروجين|nitrogen purging|3
+室外机|shìwàijī|الوحدة الخارجية|outdoor unit|1
+室内机|shìnèijī|الوحدة الداخلية|indoor unit|1
+分歧管|fēnqíguǎn|موزّع مادة التبريد (Y-joint)|refinet (branch joint)|3
+风冷热泵|fēnglěng rèbèng|مضخة حرارية هوائية|air-source heat pump|3
+地源热泵|dìyuán rèbèng|مضخة حرارية أرضية|ground-source heat pump|3
+冷库|lěngkù|غرفة تبريد|cold room|2
+制冰|zhìbīng|صنع الثلج|ice making|2
+#heat|供热与热水|التدفئة والمياه الساخنة|Heating & hot water
+热水锅炉|rèshuǐ guōlú|غلاية ماء ساخن|hot-water boiler|2
+蒸汽锅炉|zhēngqì guōlú|غلاية بخار|steam boiler|2
+燃气锅炉|ránqì guōlú|غلاية غاز|gas-fired boiler|2
+燃烧器|ránshāoqì|حارق|burner|2
+烟囱|yāncōng|مدخنة|chimney, flue|1
+容积式换热器|róngjīshì huànrèqì|سخّان تخزيني (كالوريفاير)|storage calorifier|3
+热水循环|rèshuǐ xúnhuán|تدوير المياه الساخنة|hot-water circulation|3
+散热器|sànrèqì|مشعّ حراري (رادياتير)|radiator|2
+军团菌|jūntuánjūn|بكتيريا الليجيونيلا|Legionella|3
+混水阀|hùnshuǐfá|صمام خلط|mixing valve|2
+#insul|保温与防腐|العزل والحماية من التآكل|Insulation & coatings
+橡塑保温|xiàngsù bǎowēn|عزل مطاطي (أرمافليكس)|nitrile rubber insulation|3
+玻璃棉|bōlimián|صوف زجاجي|glass wool|2
+岩棉|yánmián|صوف صخري|rock wool|2
+聚氨酯|jù'ānzhǐ|بولي يوريثان|polyurethane|3
+保温厚度|bǎowēn hòudù|سماكة العزل|insulation thickness|2
+防潮层|fángcháocéng|حاجز بخار|vapour barrier|3
+保护层|bǎohùcéng|غلاف حماية (كلادينغ)|cladding (jacket)|2
+铝箔|lǚbó|رقائق ألومنيوم|aluminium foil|2
+防结露|fáng jiélù|منع التكاثف|anti-condensation|3
+除锈|chúxiù|إزالة الصدأ|rust removal|2
+底漆|dǐqī|طلاء أساس (برايمر)|primer|2
+面漆|miànqī|طلاء نهائي|topcoat|2
+防锈漆|fángxiùqī|طلاء مانع للصدأ|anti-rust paint|2
+色环|sèhuán|حلقات لونية للتعريف|colour band|3
+#cable|电缆与敷设|الكابلات وتمديدها|Cables & containment
+导体|dǎotǐ|موصّل|conductor|2
+铜芯电缆|tóngxīn diànlǎn|كابل نحاسي|copper-core cable|2
+铝芯电缆|lǚxīn diànlǎn|كابل ألومنيوم|aluminium-core cable|3
+交联聚乙烯|jiāolián jùyǐxī|بولي إيثيلين متشابك (XLPE)|XLPE (cross-linked polyethylene)|3
+铠装电缆|kǎizhuāng diànlǎn|كابل مدرّع|armoured cable|3
+屏蔽电缆|píngbì diànlǎn|كابل مغلّف (مدرّع كهرومغناطيسيًا)|shielded cable|3
+低烟无卤|dīyān wúlǔ|منخفض الدخان خالٍ من الهالوجين (LSZH)|low-smoke zero-halogen (LSZH)|3
+矿物绝缘电缆|kuàngwù juéyuán diànlǎn|كابل معزول بالمعادن (MICC)|mineral-insulated cable (MICC)|3
+多芯电缆|duōxīn diànlǎn|كابل متعدد القلوب|multi-core cable|2
+截面积|jiémiànjī|مساحة المقطع|cross-sectional area|2
+载流量|zàiliúliàng|سعة حمل التيار|current-carrying capacity|3
+电缆敷设|diànlǎn fūshè|تمديد الكابلات|cable laying|2
+电缆头|diànlǎntóu|نهاية الكابل (تيرمنيشن)|cable termination|3
+接线端子|jiēxiàn duānzǐ|طرف توصيل (لاغ)|cable lug, terminal|2
+压接|yājiē|كبس الأطراف|crimping|2
+电缆标牌|diànlǎn biāopái|بطاقة تعريف الكابل|cable tag|2
+弯曲半径|wānqū bànjìng|نصف قطر الانحناء|bending radius|3
+托盘式桥架|tuōpánshì qiáojià|حامل كابلات مصمت|solid-bottom cable tray|3
+梯式桥架|tīshì qiáojià|حامل كابلات سلّمي|cable ladder|3
+金属软管|jīnshǔ ruǎnguǎn|أنبوب معدني مرن|flexible metal conduit|2
+线管|xiànguǎn|ماسورة أسلاك|electrical conduit|1
+接线盒|jiēxiànhé|علبة توصيل|junction box|1
+底盒|dǐhé|علبة الحائط|back box|2
+穿线|chuānxiàn|سحب الأسلاك|wire pulling|2
+相色|xiàngsè|ألوان الأطوار|phase colour coding|3
+#light|照明与插座|الإنارة والمقابس|Lighting & wiring devices
+筒灯|tǒngdēng|إضاءة سقفية غائرة (داون لايت)|downlight|2
+射灯|shèdēng|كشّاف موجّه (سبوت)|spotlight|2
+格栅灯|géshāndēng|إنارة شبكية|louvre panel light|2
+平板灯|píngbǎndēng|إضاءة لوحية|LED panel light|2
+灯带|dēngdài|شريط إضاءة|LED strip|2
+吸顶灯|xīdǐngdēng|مصباح سقفي ملاصق|ceiling-mounted light|2
+壁灯|bìdēng|مصباح حائط|wall light|1
+路灯|lùdēng|إنارة طرق|street light|1
+投光灯|tóuguāngdēng|كشّاف غامر|floodlight|2
+防爆灯|fángbàodēng|مصباح مقاوم للانفجار|explosion-proof light|3
+驱动电源|qūdòng diànyuán|مشغّل LED (درايفر)|LED driver|3
+色温|sèwēn|درجة حرارة اللون|colour temperature|2
+显色指数|xiǎnsè zhǐshù|مؤشر تجسيد الألوان (CRI)|colour rendering index (CRI)|3
+光通量|guāngtōngliàng|التدفّق الضوئي|luminous flux|3
+眩光|xuànguāng|الوهج|glare|2
+单控开关|dānkòng kāiguān|مفتاح أحادي|one-way switch|2
+双控开关|shuāngkòng kāiguān|مفتاح ثنائي (من مكانين)|two-way switch|2
+调光开关|tiáoguāng kāiguān|مفتاح تعتيم (ديمر)|dimmer switch|2
+感应开关|gǎnyìng kāiguān|مفتاح حساس للحركة|motion-sensor switch|2
+五孔插座|wǔ kǒng chāzuò|مقبس خماسي الثقوب|five-pin socket (2+3 pin)|2
+三孔插座|sān kǒng chāzuò|مقبس ثلاثي الثقوب|three-pin socket|2
+工业插座|gōngyè chāzuò|مقبس صناعي|industrial socket|3
+防水插座|fángshuǐ chāzuò|مقبس مقاوم للماء|weatherproof socket|2
+地插|dìchā|مقبس أرضي|floor socket|2
+#earth|防雷与接地|الحماية من الصواعق والتأريض|Lightning protection & earthing
+接闪器|jiēshǎnqì|جهاز التقاط الصاعقة|air terminal|3
+避雷带|bìléidài|شريط مانعة الصواعق|lightning conductor tape|3
+引下线|yǐnxiàxiàn|موصّل النزول|down conductor|3
+接地极|jiēdìjí|قطب تأريض|earth electrode|2
+接地体|jiēdìtǐ|جسم التأريض|earthing body|3
+接地网|jiēdìwǎng|شبكة التأريض|earth grid|3
+接地扁钢|jiēdì biǎngāng|شريط فولاذي للتأريض|earthing flat steel|3
+总等电位|zǒng děngdiànwèi|ربط تساوي الجهد الرئيسي|main equipotential bonding|3
+局部等电位|júbù děngdiànwèi|ربط تساوي الجهد المحلي|local equipotential bonding|3
+浪涌保护器|làngyǒng bǎohùqì|جهاز حماية من الارتفاع المفاجئ (SPD)|surge protective device (SPD)|3
+重复接地|chóngfù jiēdì|تأريض متكرر|repeated earthing|3
+TN-S系统|TN-S xìtǒng|نظام تأريض TN-S|TN-S earthing system|3
+#motor|电机与控制|المحركات والتحكم|Motors & control
+异步电动机|yìbù diàndòngjī|محرّك حثّي (غير متزامن)|induction motor|3
+直接启动|zhíjiē qǐdòng|تشغيل مباشر (DOL)|direct-on-line start|3
+热继电器|rè jìdiànqì|مرحّل حراري للحمل الزائد|thermal overload relay|3
+控制柜|kòngzhìguì|خزانة تحكّم|control panel|2
+控制箱|kòngzhìxiāng|صندوق تحكّم|control box|2
+按钮|ànniǔ|زر|push button|1
+急停按钮|jítíng ànniǔ|زر إيقاف طارئ|emergency stop button|2
+指示灯|zhǐshìdēng|مصباح بيان|indicator lamp|2
+手自动转换|shǒu zìdòng zhuǎnhuàn|مفتاح يدوي/آلي|hand–off–auto selector|3
+远程控制|yuǎnchéng kòngzhì|تحكّم عن بعد|remote control|2
+就地控制|jiùdì kòngzhì|تحكّم موضعي|local control|3
+二次回路|èrcì huílù|دائرة التحكم الثانوية|secondary (control) circuit|3
+电气原理图|diànqì yuánlǐtú|مخطط كهربائي مبدئي|electrical schematic|3
+接线图|jiēxiàntú|مخطط التوصيلات|wiring diagram|2
+#fixture|卫生洁具|الأدوات الصحية|Sanitary fixtures
+蹲便器|dūnbiànqì|مرحاض عربي (أرضي)|squat toilet|1
+小便器|xiǎobiànqì|مبولة|urinal|1
+冲洗阀|chōngxǐfá|صمام دفق (فلاش)|flush valve|2
+水箱配件|shuǐxiāng pèijiàn|أجزاء صندوق الطرد|cistern fittings|3
+台盆|táipén|مغسلة رخامية (تركيب على سطح)|countertop basin|2
+拖布池|tuōbùchí|حوض تنظيف (ممسحة)|mop sink|2
+洗涤盆|xǐdípén|حوض غسيل (مطبخ)|kitchen sink|1
+淋浴器|línyùqì|دش|shower|1
+浴缸|yùgāng|حوض استحمام|bathtub|1
+感应龙头|gǎnyìng lóngtóu|صنبور حسّاس|sensor tap|2
+混水龙头|hùnshuǐ lóngtóu|خلّاط|mixer tap|2
+角阀|jiǎofá|محبس زاوية|angle stop valve|2
+无障碍卫生间|wú zhàng'ài wèishēngjiān|حمام لذوي الإعاقة|accessible toilet|2
+洗眼器|xǐyǎnqì|غسّالة عيون للطوارئ|emergency eyewash|3
+#drain|排水系统|أنظمة الصرف|Drainage systems
+重力排水|zhònglì páishuǐ|صرف بالجاذبية|gravity drainage|2
+压力排水|yālì páishuǐ|صرف بالضغط|pumped drainage|3
+同层排水|tóngcéng páishuǐ|صرف في نفس الطابق|same-floor drainage|3
+排水立管|páishuǐ lìguǎn|صاعد الصرف|drainage stack|2
+通气立管|tōngqì lìguǎn|صاعد التهوية|vent stack|3
+伸顶通气|shēndǐng tōngqì|تهوية ممتدة فوق السطح|stack vent through roof|3
+吸气阀|xīqìfá|صمام قبول الهواء (AAV)|air admittance valve|3
+清扫口|qīngsǎokǒu|فتحة تنظيف أرضية|floor cleanout|2
+排水坡度|páishuǐ pōdù|ميل الصرف|drainage gradient|2
+存水弯水封|cúnshuǐwān shuǐfēng|حاجز الماء في السيفون|trap seal|3
+防返溢|fáng fǎnyì|منع الارتداد|anti-backflow (anti-flooding)|3
+雨水管|yǔshuǐguǎn|أنبوب مياه الأمطار|rainwater pipe|1
+空调冷凝水管|kōngtiáo lěngníng shuǐguǎn|أنبوب ماء التكثيف|condensate drain pipe|2
+室外排水管网|shìwài páishuǐ guǎnwǎng|شبكة الصرف الخارجية|external drainage network|3
+#wtreat|给水设备与水处理|معدات المياه ومعالجتها|Water equipment & treatment
+生活水箱|shēnghuó shuǐxiāng|خزان المياه المنزلية|domestic water tank|2
+不锈钢水箱|búxiùgāng shuǐxiāng|خزان ستانلس ستيل|stainless steel tank|2
+无负压供水|wú fùyā gōngshuǐ|إمداد بدون ضغط سالب|non-negative-pressure supply|3
+气压罐|qìyāguàn|خزان ضغط|pressure vessel (hydrophore)|3
+水处理|shuǐ chǔlǐ|معالجة المياه|water treatment|2
+软水器|ruǎnshuǐqì|جهاز تيسير المياه|water softener|2
+紫外线消毒器|zǐwàixiàn xiāodúqì|معقّم بالأشعة فوق البنفسجية|UV steriliser|3
+加药装置|jiāyào zhuāngzhì|جهاز حقن كيميائي|chemical dosing unit|3
+旁流水处理器|pángliú shuǐ chǔlǐqì|معالج جانبي للمياه|side-stream water treatment|3
+余氯|yúlǜ|الكلور المتبقي|residual chlorine|3
+浊度|zhuódù|العكارة|turbidity|3
+硬度|yìngdù|عسر الماء|water hardness|2
+#work|安装工艺|أساليب التركيب|Installation workmanship
+放线|fàngxiàn|تخطيط المسارات|setting out (marking lines)|2
+开孔|kāikǒng|فتح الثقوب|drilling openings|2
+套丝|tàosī|قلوظة الأنابيب|pipe threading|2
+坡口|pōkǒu|شطف حواف اللحام|weld bevel|3
+组对|zǔduì|المحاذاة قبل اللحام|fit-up|3
+点焊|diǎnhàn|لحام نقطي (تثبيت)|tack weld|2
+氩弧焊|yàhúhàn|لحام بالأرجون (TIG)|TIG welding|3
+电弧焊|diànhúhàn|لحام القوس الكهربائي|arc welding|2
+气割|qìgē|القطع بالغاز|oxy-fuel cutting|2
+吊杆|diàogān|قضيب تعليق|hanger rod|2
+膨胀螺丝|péngzhàng luósī|مسمار تمدد|expansion bolt|2
+管卡|guǎnqiǎ|مشبك أنابيب|pipe clamp|2
+U型卡|U xíng qiǎ|مشبك على شكل U|U-bolt|2
+支架间距|zhījià jiānjù|المسافة بين الدعامات|support spacing|3
+管道坡向|guǎndào pōxiàng|اتجاه ميل الأنبوب|pipe slope direction|3
+冲洗|chōngxǐ|غسيل الأنابيب|flushing|2
+吹扫试验|chuīsǎo shìyàn|اختبار النفخ|purge test|3
+成品保护|chéngpǐn bǎohù|حماية الأعمال المنجزة|protection of finished work|2
+标识挂牌|biāozhì guàpái|التعريف والوسم|tagging and labelling|2
+#tc|测试与调试|الاختبار والتشغيل|Testing & commissioning
+强度试验|qiángdù shìyàn|اختبار المتانة|strength test|3
+严密性试验|yánmìxìng shìyàn|اختبار الإحكام|tightness test|3
+水压试验|shuǐyā shìyàn|اختبار الضغط الهيدروستاتيكي|hydrostatic test|2
+气压试验|qìyā shìyàn|اختبار الضغط الهوائي|pneumatic test|3
+试验压力|shìyàn yālì|ضغط الاختبار|test pressure|2
+工作压力|gōngzuò yālì|ضغط التشغيل|working pressure|2
+稳压时间|wěnyā shíjiān|زمن ثبات الضغط|hold time|3
+绝缘测试|juéyuán cèshì|اختبار العزل (ميغر)|insulation (megger) test|2
+兆欧表|zhào'ōubiǎo|جهاز ميغر|megohmmeter (megger)|3
+接地电阻测试|jiēdì diànzǔ cèshì|اختبار مقاومة التأريض|earth resistance test|3
+回路电阻|huílù diànzǔ|مقاومة الحلقة|loop resistance|3
+相序测试|xiàngxù cèshì|اختبار تتابع الأطوار|phase rotation test|3
+漏电保护测试|lòudiàn bǎohù cèshì|اختبار قاطع التيار المتبقي|RCD trip test|3
+照度测试|zhàodù cèshì|اختبار شدة الإضاءة|lighting level test|3
+风量测试|fēngliàng cèshì|قياس تدفّق الهواء|airflow measurement|3
+水量平衡|shuǐliàng pínghéng|موازنة تدفّق الماء|water balancing|3
+测试平衡报告|cèshì pínghéng bàogào|تقرير الاختبار والموازنة (TAB)|testing, adjusting and balancing (TAB) report|3
+空载试运行|kōngzài shì yùnxíng|تشغيل بلا حمل|no-load test run|3
+负载试运行|fùzài shì yùnxíng|تشغيل تحت الحمل|load test run|3
+调试记录|tiáoshì jìlù|سجلات التشغيل|commissioning records|2
+#tool|机电工具与仪表|أدوات وأجهزة MEP|MEP tools & instruments
+管钳|guǎnqián|مفتاح أنابيب|pipe wrench|1
+扳手|bānshǒu|مفتاح ربط|spanner, wrench|1
+套筒扳手|tàotǒng bānshǒu|مفتاح لقمة|socket wrench|2
+螺丝刀|luósīdāo|مفك|screwdriver|1
+剥线钳|bōxiànqián|قشّارة أسلاك|wire stripper|2
+压线钳|yāxiànqián|كمّاشة كبس|crimping tool|2
+电工刀|diàngōngdāo|سكين كهربائي|electrician's knife|2
+万用表|wànyòngbiǎo|جهاز قياس متعدد (أفوميتر)|multimeter|1
+钳形电流表|qiánxíng diànliúbiǎo|أمبيرميتر كلّابي|clamp meter|2
+试电笔|shìdiànbǐ|مفك فاحص للكهرباء|voltage tester pen|1
+风速仪|fēngsùyí|مقياس سرعة الهواء|anemometer|3
+温湿度计|wēnshīdùjì|مقياس الحرارة والرطوبة|thermo-hygrometer|2
+红外测温仪|hóngwài cèwēnyí|ميزان حرارة بالأشعة تحت الحمراء|infrared thermometer|2
+热成像仪|rèchéngxiàngyí|كاميرا تصوير حراري|thermal imaging camera|3
+声级计|shēngjíjì|مقياس مستوى الصوت|sound level meter|3
+照度计|zhàodùjì|مقياس الإضاءة|lux meter|3
+压力试验泵|yālì shìyànbèng|مضخة اختبار الضغط|pressure test pump|2
+套丝机|tàosījī|آلة قلوظة|pipe threading machine|2
+开孔器|kāikǒngqì|منشار ثقوب|hole saw|2
+弯管器|wānguǎnqì|ثنّاية أنابيب|pipe bender|2
+真空泵|zhēnkōngbèng|مضخة تفريغ|vacuum pump|2
+#om|运行维护|التشغيل والصيانة|Operation & maintenance
+运行维护手册|yùnxíng wéihù shǒucè|دليل التشغيل والصيانة|O&M manual|2
+预防性维护|yùfángxìng wéihù|الصيانة الوقائية|preventive maintenance|2
+故障维修|gùzhàng wéixiū|الصيانة الإصلاحية|corrective maintenance|2
+巡检|xúnjiǎn|جولة تفقدية|routine inspection round|2
+备品备件|bèipǐn bèijiàn|قطع الغيار|spare parts|2
+更换滤网|gēnghuàn lǜwǎng|تغيير المرشحات|filter replacement|2
+清洗冷凝器|qīngxǐ lěngníngqì|تنظيف المكثّف|condenser cleaning|3
+能耗|nénghào|استهلاك الطاقة|energy consumption|2
+节能改造|jiénéng gǎizào|تحديث لتوفير الطاقة|energy retrofit|3
+工单|gōngdān|أمر عمل|work order|2
+报修|bàoxiū|بلاغ عطل|fault report|2
+#unit|单位与缩写|الوحدات والاختصارات|Units & abbreviations
+千瓦|qiānwǎ|كيلوواط (kW)|kilowatt (kW)|1
+千伏安|qiānfú'ān|كيلوفولت أمبير (kVA)|kilovolt-ampere (kVA)|2
+千伏|qiānfú|كيلوفولت (kV)|kilovolt (kV)|2
+伏特|fútè|فولت (V)|volt (V)|1
+安培|ānpéi|أمبير (A)|ampere (A)|1
+赫兹|hèzī|هرتز (Hz)|hertz (Hz)|2
+欧姆|ōumǔ|أوم (Ω)|ohm (Ω)|2
+兆帕|zhàopà|ميغاباسكال (MPa)|megapascal (MPa)|2
+千帕|qiānpà|كيلوباسكال (kPa)|kilopascal (kPa)|2
+帕斯卡|pàsīkǎ|باسكال (Pa)|pascal (Pa)|2
+立方米每小时|lìfāngmǐ měi xiǎoshí|متر مكعب في الساعة (m³/h)|cubic metres per hour (m³/h)|2
+升每秒|shēng měi miǎo|لتر في الثانية (L/s)|litres per second (L/s)|2
+英热单位|yīngrè dānwèi|وحدة حرارية بريطانية (BTU)|British thermal unit (BTU)|3
+分贝|fēnbèi|ديسيبل (dB)|decibel (dB)|2
+勒克斯|lèkèsī|لوكس (lx)|lux (lx)|3
+平方毫米|píngfāng háomǐ|ملّيمتر مربع (مقاس الكابل)|square millimetre (cable size)|2
+公称压力|gōngchēng yālì|الضغط الاسمي (PN)|nominal pressure (PN)|3
+英寸|yīngcùn|بوصة|inch|1
+华氏度|huáshìdù|درجة فهرنهايت|degree Fahrenheit|2
+摄氏度|shèshìdù|درجة مئوية|degree Celsius|1

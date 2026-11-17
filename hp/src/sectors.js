@@ -1,19 +1,25 @@
 /* ===== Sector vocabulary 行业词汇 + Chinese accents 方言 ===== */
 const SECTOR_EXT=__SECEXT__;
 const SEC_LV={1:{zh:'基础',ar:'أساسي',en:'Core',c:'#7fbf8e'},2:{zh:'专业',ar:'مهني',en:'Professional',c:'#e2b75a'},3:{zh:'高级',ar:'متقدّم',en:'Advanced',c:'#e07a6a'}};
-const SEC_META={};   // id -> {s:sectorKey, ar, en, lv, ti}
+const SEC_META={};
+// term index -> id: the first 1000 terms of a sector keep the original range; later terms use a wider range (no collisions)
+const secId=(si,j)=>j<1000?95000+si*1000+j:300000+si*10000+j;
 SECTORS.forEach((s,si)=>{ if(s.codeLink) s.terms=CODE_UNITS.filter(u=>u.tier==='basic').flatMap(u=>u.words).slice(0,20);
   const core={k:'core',zh:'核心词汇',ar:'المفردات الأساسية',en:'Core terms',terms:s.terms.map(w=>[w[0],w[1],w[2],w[3],1])};
   const ext=SECTOR_EXT[s.k]||{topics:[],ex:[]}; const seen=new Set(core.terms.map(w=>w[0]));
   s.topics=[core].concat(ext.topics.map(t=>Object.assign({},t,{terms:t.terms.filter(w=>!seen.has(w[0])&&seen.add(w[0]))}))).filter(t=>t.terms.length);
   s.ex=s.ex.concat(ext.ex||[]); let j=0;
   s.topics.forEach((t,ti)=>{ t._w=t.terms.map(w=>{ let o=byH[w[0]];
-      if(!o||o.sector&&o.sector!==s.k){ o={id:95000+si*1000+(ext.ids&&w[0] in ext.ids?ext.ids[w[0]]:j),h:w[0],t:w[0],p:w[1],ar:[w[2]],en:[w[3]],l:0,fq:9999,mw:[],pos:[],sector:s.k}; byId[o.id]=o; if(!byH[o.h]) byH[o.h]=o; }
+      if(!o||o.sector&&o.sector!==s.k){ o={id:secId(si,ext.ids&&w[0] in ext.ids?ext.ids[w[0]]:j),h:w[0],t:w[0],p:w[1],ar:[w[2]],en:[w[3]],l:0,fq:9999,mw:[],pos:[],sector:s.k}; byId[o.id]=o; if(!byH[o.h]) byH[o.h]=o; }
       else if(!(o.ar&&o.ar.length)) o.ar=[w[2]];
       j++; SEC_META[s.k+':'+o.id]={ar:w[2],en:w[3],lv:w[4],ti}; return o; }); });
   s._w=s.topics.flatMap(t=>t._w); });
 // shown order: engineering fields side by side (ids depend on the array index, so the array itself is append-only)
 const SEC_ORDER=(()=>{ const want=['eng','mep','cons','infra','it','tech','med','biz','trans','sci','modern','hist']; const ix=want.map(k=>SECTORS.findIndex(s=>s.k===k)).filter(i=>i>=0); SECTORS.forEach((s,i)=>{ if(!ix.includes(i)) ix.push(i); }); return ix; })();
+// trade groups for large sectors: chips above the topic tabs filter which topics are shown
+const SEC_GROUPS={mep:[['mech','暖通机械','الميكانيك والتكييف','Mechanical & HVAC',['hvac','pipe','valve','pumpfan','duct','refr','heat','insul','equip','gas']],
+  ['elec','电气','الكهرباء','Electrical',['power','cable','light','earth','motor','elv','inst']],['plumb','给排水','السباكة','Plumbing',['plumb','fixture','drain','wtreat']],
+  ['fire','消防','الحريق','Fire',['fire']],['gen','通用','عام','General',['conv','work','tc','tool','om','unit']]]};
 const sstrip=x=>(x||'').normalize('NFD').replace(/[\u0300-\u036f\s']/g,'').toLowerCase();
 const secFree=(ti)=>S.pro||ti===0;
 const secM=(s,w)=>SEC_META[s.k+':'+w.id]||{ar:(w.ar||[])[0],en:(w.en||[])[0],lv:1,ti:0};
@@ -46,7 +52,7 @@ SCREENS.sector=(m,i)=>{ const s=SECTORS[i]; track('sector_open',{sector:s.k}); S
    ${TALK.some(d=>d.sec===s.k)?`<button class="card row" id="stk" style="cursor:pointer;text-align:start;width:100%"><span class="brush" style="font-size:30px;color:var(--gold2)">谈</span><div class="grow"><b>💬 ${t('tkTitle')}</b><div class="sub"><span class="num">${TALK.find(d=>d.sec===s.k).scenes.length}</span> ${t('tkScenes')}</div></div>›</button>`:''}
    <div class="sstats"><div><b class="num">${s._w.length}</b><span class="sub">${t('words')}</span></div><div><b class="num">${s.topics.length}</b><span class="sub">${t('secTopicsN')}</span></div><div><b class="num">${secLearned(s)}</b><span class="sub">${t('secLearnedN')}</span></div></div>
    ${s.codeLink?`<button class="btn ghost block" id="tocode">💻 ${t('codeTitle')}</button>`:''}
-   <h3 style="margin-bottom:4px">${t('secTopicsT')}</h3><div class="ttabs" id="tt">${s.topics.map((tp,k)=>`<button class="ttab${k===ti?' on':''}" data-t="${k}"><span class="tz">${tp.zh}</span><b style="font-size:13.5px">${secFree(k)?'':'🔒 '}${isAr()?tp.ar:tp.en}</b><small><span class="num">${tp._w.length}</span> ${t('words')} · <span class="num">${tp._w.filter(w=>S.srs[w.id]).length}</span> ✓</small></button>`).join('')}</div>
+   <h3 style="margin-bottom:4px">${t('secTopicsT')}</h3>${SEC_GROUPS[s.k]?`<div class="lvf" id="tg"><button data-g="" class="on">${t('secAll')}</button>${SEC_GROUPS[s.k].map(g=>`<button data-g="${g[0]}">${g[1]} · ${isAr()?g[2]:g[3]}</button>`).join('')}</div>`:''}<div class="ttabs" id="tt">${s.topics.map((tp,k)=>`<button class="ttab${k===ti?' on':''}" data-t="${k}"><span class="tz">${tp.zh}</span><b style="font-size:13.5px">${secFree(k)?'':'🔒 '}${isAr()?tp.ar:tp.en}</b><small><span class="num">${tp._w.length}</span> ${t('words')} · <span class="num">${tp._w.filter(w=>S.srs[w.id]).length}</span> ✓</small></button>`).join('')}</div>
    <div class="lvf" id="lvf">${[0,1,2,3].map(k=>`<button data-l="${k}" class="${k===lv?'on':''}">${k?SEC_LV[k].zh+' · '+(isAr()?SEC_LV[k].ar:SEC_LV[k].en):t('secAll')}</button>`).join('')}</div>
    <input class="ssearch" id="sq" placeholder="${t('secSearch')}" autocomplete="off">
    <button class="btn block" id="learn"></button>
@@ -63,6 +69,9 @@ SCREENS.sector=(m,i)=>{ const s=SECTORS[i]; track('sector_open',{sector:s.k}); S
     $$('li[data-id]',$('#sl',m)).forEach(li=>li.onclick=()=>{ if(li.classList.contains('lk')) return paywall('sector'); S._wback={name:'sector',arg:i}; go('word',+li.dataset.id); }); };
   draw(); try{ $('#tt .ttab.on',m).scrollIntoView({inline:'center',block:'nearest'}); }catch(e){}
   $$('#tt .ttab',m).forEach(b=>b.onclick=()=>{ SFX.tap(); ti=+b.dataset.t; S._secT[s.k]=ti; q=''; $('#sq',m).value=''; $$('#tt .ttab',m).forEach(x=>x.classList.toggle('on',x===b)); draw(); });
+  $$('#tg button',m).forEach(b=>b.onclick=()=>{ SFX.tap(); const g=(SEC_GROUPS[s.k]||[]).find(x=>x[0]===b.dataset.g); $$('#tg button',m).forEach(x=>x.classList.toggle('on',x===b));
+    $$('#tt .ttab',m).forEach(x=>{ x.hidden=!!g&&!g[4].includes(s.topics[+x.dataset.t].k); });
+    const first=$$('#tt .ttab',m).find(x=>!x.hidden); if(first&&first.hidden===false&&!first.classList.contains('on')&&g) first.click(); try{ (first||{}).scrollIntoView&&first.scrollIntoView({inline:'start',block:'nearest'}); }catch(e){} });
   $$('#lvf button',m).forEach(b=>b.onclick=()=>{ lv=+b.dataset.l; $$('#lvf button',m).forEach(x=>x.classList.toggle('on',x===b)); draw(); });
   $('#sq',m).oninput=e=>{ q=e.target.value.trim(); draw(); };
   $('#bk',m).onclick=()=>go('sectors'); bindTokens(m); const tk=$('#stk',m); if(tk) tk.onclick=()=>go('talk',{d:TALK.find(d=>d.sec===s.k).k}); if(s.codeLink) $('#tocode',m).onclick=()=>go('code');
