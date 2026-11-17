@@ -1,0 +1,107 @@
+# Software engineering conversations (format in talk_eng.tsv)
+@soft|软件工程|هندسة البرمجيات|Software engineering|it|💻
+#standup|每日站会|الاجتماع اليومي القصير|Daily stand-up|林组长|قائد الفريق لين|Team lead Lin|مطوّر الواجهة|Front-end developer|اجتماع الصباح القصير مع قائد فريقك لين في شركة برمجيات في شنتشن.|Morning stand-up with your team lead Lin at a software company in Shenzhen.|4
+P|早上好，开始站会吧。你昨天做了什么？|Zǎoshang hǎo, kāishǐ zhànhuì ba. Nǐ zuótiān zuò le shénme?|صباح الخير، لنبدأ الاجتماع. ماذا أنجزت أمس؟|Morning, let’s start the stand-up. What did you do yesterday?
+A|昨天我完成了登录页面的接口，还写了单元测试。|Zuótiān wǒ wánchéng le dēnglù yèmiàn de jiēkǒu, hái xiě le dānyuán cèshì.|أمس أنهيت واجهة برمجة صفحة تسجيل الدخول، وكتبت اختبارات الوحدات.|Yesterday I finished the login page API and wrote unit tests.
+B|我写了很多代码。|Wǒ xiě le hěn duō dàimǎ.|كتبت كودًا كثيرًا.|I wrote a lot of code.|حدّد ما أنجزته.|Say what you actually finished.
+X|我忘了。|Wǒ wàng le.|نسيت.|I forgot.|حضّر تحديثك قبل الاجتماع.|Prepare your update before the meeting.
+P|很好。今天打算做什么？|Hěn hǎo. Jīntiān dǎsuàn zuò shénme?|جيد. ماذا ستعمل اليوم؟|Good. What’s your plan today?
+A|今天我开始做支付功能，下午和后端一起联调。|Jīntiān wǒ kāishǐ zuò zhīfù gōngnéng, xiàwǔ hé hòuduān yìqǐ liántiáo.|اليوم أبدأ ميزة الدفع، وعصرًا أختبر الربط مع فريق الخلفية.|Today I start the payment feature and integrate with the back end this afternoon.
+B|继续写代码。|Jìxù xiě dàimǎ.|أكمل كتابة الكود.|Keep coding.|اذكر المهمة المحددة.|Name the specific task.
+X|今天我休息。|Jīntiān wǒ xiūxi.|سأرتاح اليوم.|I’m taking it easy today.|غير مهني في اجتماع العمل.|Unprofessional in a work meeting.
+P|有没有遇到什么阻碍？|Yǒu méiyǒu yù dào shénme zǔ'ài?|هل تواجه أي عوائق؟|Any blockers?
+A|有一个：测试环境的数据库连不上，需要运维帮忙。|Yǒu yí ge: cèshì huánjìng de shùjùkù lián bu shàng, xūyào yùnwéi bāngmáng.|نعم، قاعدة بيانات بيئة الاختبار لا تتصل، وأحتاج مساعدة فريق التشغيل.|One: I can’t connect to the test database and need help from ops.
+B|有一点儿，我自己解决吧。|Yǒu yìdiǎnr, wǒ zìjǐ jiějué ba.|شيء بسيط، سأحلّه بنفسي.|A small one, I’ll handle it myself.|أعلن العوائق مبكرًا ليساعدك الفريق.|Raise blockers early so the team can help.
+X|问题太多了，说不完。|Wèntí tài duō le, shuō bu wán.|المشكلات كثيرة لا تنتهي.|Too many problems to list.|كن محددًا ومختصرًا.|Be specific and brief.
+P|好，会后我帮你联系运维。|Hǎo, huì hòu wǒ bāng nǐ liánxì yùnwéi.|حسنًا، بعد الاجتماع أتواصل لك مع فريق التشغيل.|OK, after the meeting I’ll contact ops for you.
+A|谢谢！另外，支付功能可能需要三天，比估计的多一天。|Xièxie! Lìngwài, zhīfù gōngnéng kěnéng xūyào sān tiān, bǐ gūjì de duō yì tiān.|شكرًا! وأيضًا ميزة الدفع قد تحتاج ثلاثة أيام، أي يومًا أكثر من التقدير.|Thanks! Also, payments may take three days, one more than estimated.
+B|谢谢。|Xièxie.|شكرًا.|Thanks.|نبّه مبكرًا إلى أي تأخير متوقّع.|Flag expected delays early.
+X|不用了，我不着急。|Búyòng le, wǒ bù zháojí.|لا داعي، لست مستعجلًا.|No need, I’m in no hurry.|العائق يؤخّر الفريق كله.|The blocker delays the whole team.
+P|明白，我会更新迭代计划。|Míngbai, wǒ huì gēngxīn diédài jìhuà.|مفهوم، سأحدّث خطة الدورة.|Got it, I’ll update the sprint plan.
+A|好的，有进展我会在群里同步。|Hǎo de, yǒu jìnzhǎn wǒ huì zài qún lǐ tóngbù.|حسنًا، سأحدّث المجموعة بأي تقدّم.|Great, I’ll post progress in the group chat.
+B|好的。|Hǎo de.|حسنًا.|OK.|التزم بالتواصل.|Commit to keeping people updated.
+X|计划没用，写完就行。|Jìhuà méi yòng, xiě wán jiù xíng.|الخطة بلا فائدة، المهم الإنهاء.|Plans are useless, just finish it.|التخطيط أساس عمل الفريق.|Planning is how teams coordinate.
+#review|代码审查|مراجعة الكود|Code review|老周|تشو الكبير|Senior engineer Zhou|المطوّر|Developer|المهندس الأقدم تشو راجع طلب الدمج الذي قدّمته.|Senior engineer Zhou has reviewed your merge request.|5
+P|我看了你的合并请求，有几个地方想讨论一下。|Wǒ kàn le nǐ de hébìng qǐngqiú, yǒu jǐ ge dìfang xiǎng tǎolùn yíxià.|راجعت طلب الدمج، وأريد مناقشة بعض النقاط.|I looked at your merge request; I’d like to discuss a few points.
+A|好的，谢谢你帮我审查，请说。|Hǎo de, xièxie nǐ bāng wǒ shěnchá, qǐng shuō.|حسنًا، شكرًا على المراجعة، تفضّل.|Sure, thanks for reviewing. Go ahead.
+B|我的代码没问题吧？|Wǒ de dàimǎ méi wèntí ba?|كودي سليم، صحيح؟|My code’s fine, right?|نبرة دفاعية؛ تقبّل الملاحظات.|Defensive; welcome the feedback.
+X|我的代码不需要审查。|Wǒ de dàimǎ bù xūyào shěnchá.|كودي لا يحتاج مراجعة.|My code doesn’t need review.|كل كود يحتاج مراجعة.|All code benefits from review.
+P|这个函数太长了，有两百多行，可读性不好。|Zhège hánshù tài cháng le, yǒu liǎngbǎi duō háng, kědúxìng bù hǎo.|هذه الدالة طويلة جدًا، أكثر من 200 سطر، وقراءتها صعبة.|This function is too long, over 200 lines; it’s hard to read.
+A|你说得对，我把它拆成几个小函数。|Nǐ shuō de duì, wǒ bǎ tā chāi chéng jǐ ge xiǎo hánshù.|معك حق، سأقسمها إلى عدة دوال صغيرة.|You’re right, I’ll split it into smaller functions.
+B|可是它能运行。|Kěshì tā néng yùnxíng.|لكنها تعمل.|But it works.|العمل وحده لا يكفي؛ الصيانة مهمة.|Working isn’t enough; maintainability matters.
+X|长一点儿更专业。|Cháng yìdiǎnr gèng zhuānyè.|الأطول أكثر احترافية.|Longer is more professional.|العكس صحيح.|The opposite is true.
+P|还有，这里没有处理空值，可能会报错。|Hái yǒu, zhèlǐ méiyǒu chǔlǐ kōngzhí, kěnéng huì bàocuò.|وأيضًا هنا لا تعالج القيم الفارغة، وقد يحدث خطأ.|Also, null values aren’t handled here; it may throw an error.
+A|好的，我加一个判断，再补一个测试用例。|Hǎo de, wǒ jiā yí ge pànduàn, zài bǔ yí ge cèshì yònglì.|حسنًا، أضيف شرط تحقق وحالة اختبار.|OK, I’ll add a check and another test case.
+B|用户不会输入空值的。|Yònghù bú huì shūrù kōngzhí de.|المستخدم لن يُدخل قيمة فارغة.|Users won’t enter empty values.|لا تفترض ذلك أبدًا.|Never assume that.
+X|报错了再说。|Bàocuò le zài shuō.|عندما يحدث الخطأ نرى.|We’ll deal with it when it breaks.|إصلاح الخطأ في الإنتاج أغلى.|Fixing it in production costs more.
+P|数据库查询放在循环里，性能会很差。|Shùjùkù cháxún fàng zài xúnhuán lǐ, xìngnéng huì hěn chà.|استعلام قاعدة البيانات داخل حلقة، والأداء سيكون سيئًا.|The database query is inside a loop; performance will be poor.
+A|明白，我改成一次批量查询。|Míngbai, wǒ gǎi chéng yí cì pīliàng cháxún.|فهمت، سأحوّلها إلى استعلام مجمّع واحد.|Got it, I’ll change it to one batch query.
+B|数据不多，应该没事。|Shùjù bù duō, yīnggāi méi shì.|البيانات قليلة، لا مشكلة.|Not much data, should be fine.|اليوم نعم، لكن البيانات ستكبر.|Today yes, but data grows.
+X|性能不重要。|Xìngnéng bú zhòngyào.|الأداء غير مهم.|Performance doesn’t matter.|الأداء يؤثر مباشرة على المستخدم.|Performance directly affects users.
+P|改完再提交，我今天下午再看一遍。|Gǎi wán zài tíjiāo, wǒ jīntiān xiàwǔ zài kàn yí biàn.|عدّل ثم أرسل، وسأراجعها مجددًا عصر اليوم.|Submit after the changes; I’ll look again this afternoon.
+A|好的，我中午之前改完，谢谢你的建议！|Hǎo de, wǒ zhōngwǔ zhīqián gǎi wán, xièxie nǐ de jiànyì!|حسنًا، أنهي التعديل قبل الظهر، شكرًا على ملاحظاتك!|Sure, I’ll finish before noon. Thanks for the suggestions!
+B|好。|Hǎo.|حسنًا.|OK.|اشكر المراجع وحدد موعدًا.|Thank the reviewer and give a time.
+X|你自己改吧。|Nǐ zìjǐ gǎi ba.|عدّلها بنفسك.|Change it yourself.|التعديل مسؤولية صاحب الكود.|The author owns the fix.
+#incident|线上故障|عطل في بيئة الإنتاج|Production incident|小马|ما الصغير|Ma (ops)|مطوّر الخلفية|Back-end developer|الساعة التاسعة مساءً، وزميلك في فريق التشغيل ما يتصل بك بشأن عطل.|9 p.m.: your ops colleague Ma calls you about an outage.|5
+P|紧急情况！用户说应用打不开了！|Jǐnjí qíngkuàng! Yònghù shuō yìngyòng dǎ bu kāi le!|حالة طارئة! المستخدمون يقولون إن التطبيق لا يفتح!|Emergency! Users say the app won’t open!
+A|收到。我先看一下监控和日志。|Shōudào. Wǒ xiān kàn yíxià jiānkòng hé rìzhì.|وصلني. سأنظر أولًا إلى المراقبة والسجلات.|On it. I’ll check monitoring and logs first.
+B|可能是用户的网络有问题。|Kěnéng shì yònghù de wǎngluò yǒu wèntí.|ربما شبكة المستخدمين.|Maybe the users’ network.|افتراض قبل التحقق.|An assumption before checking.
+X|我下班了，明天再说。|Wǒ xiàbān le, míngtiān zài shuō.|انتهى دوامي، غدًا.|I’m off work, tomorrow.|عطل الإنتاج لا ينتظر.|An outage can’t wait.
+P|监控显示服务器的错误率突然升高了。|Jiānkòng xiǎnshì fúwùqì de cuòwùlǜ tūrán shēnggāo le.|المراقبة تُظهر ارتفاعًا مفاجئًا في معدل أخطاء الخادم.|Monitoring shows the server error rate suddenly spiked.
+A|半小时前我们发布了新版本，可能是这个原因。|Bàn xiǎoshí qián wǒmen fābù le xīn bǎnběn, kěnéng shì zhège yuányīn.|أطلقنا إصدارًا جديدًا قبل نصف ساعة، قد يكون السبب.|We released a new version half an hour ago; that may be it.
+B|服务器太老了。|Fúwùqì tài lǎo le.|الخوادم قديمة.|The servers are too old.|ابحث عمّا تغيّر قبل الارتفاع مباشرة.|Look at what changed right before the spike.
+X|错误率高一点儿没关系。|Cuòwùlǜ gāo yìdiǎnr méi guānxi.|لا بأس بارتفاع الأخطاء قليلًا.|A higher error rate is fine.|المستخدمون لا يستطيعون الدخول.|Users can’t get in.
+P|那怎么办？|Nà zěnme bàn?|ماذا نفعل؟|So what do we do?
+A|先回滚到上一个版本，让服务恢复，然后再查原因。|Xiān huígǔn dào shàng yí ge bǎnběn, ràng fúwù huīfù, ránhòu zài chá yuányīn.|نرجع إلى الإصدار السابق أولًا لاستعادة الخدمة، ثم نبحث عن السبب.|Roll back to the previous version first to restore service, then find the cause.
+B|我们先找到问题再说。|Wǒmen xiān zhǎo dào wèntí zài shuō.|لنجد المشكلة أولًا.|Let’s find the bug first.|استعادة الخدمة أولًا ثم التحقيق.|Restore service first, investigate after.
+X|把服务器关了吧。|Bǎ fúwùqì guān le ba.|لنطفئ الخوادم.|Let’s shut down the servers.|يجعل العطل أسوأ.|That makes the outage worse.
+P|回滚完成了，错误率降下来了。|Huígǔn wánchéng le, cuòwùlǜ jiàng xiàlai le.|اكتمل الرجوع، وانخفض معدل الأخطاء.|Rollback done; the error rate dropped.
+A|太好了。我们在群里通知大家，服务已经恢复正常。|Tài hǎo le. Wǒmen zài qún lǐ tōngzhī dàjiā, fúwù yǐjīng huīfù zhèngcháng.|ممتاز. لنبلغ الجميع في المجموعة أن الخدمة عادت طبيعية.|Great. Let’s tell everyone in the group that service is back to normal.
+B|好的，没事了。|Hǎo de, méi shì le.|حسنًا، انتهى الأمر.|OK, all good.|أبلغ أصحاب المصلحة.|Inform stakeholders.
+X|不用告诉别人。|Búyòng gàosu biérén.|لا داعي لإخبار أحد.|No need to tell anyone.|الشفافية مهمة في الأعطال.|Transparency matters in incidents.
+P|好的。这次要写故障报告吗？|Hǎo de. Zhè cì yào xiě gùzhàng bàogào ma?|حسنًا. هل نكتب تقرير عطل هذه المرة؟|OK. Do we write an incident report this time?
+A|要写。我们明天开个复盘会，找到根本原因，避免再发生。|Yào xiě. Wǒmen míngtiān kāi ge fùpán huì, zhǎo dào gēnběn yuányīn, bìmiǎn zài fāshēng.|نعم. نعقد غدًا اجتماع مراجعة لنجد السبب الجذري ونمنع تكراره.|Yes. Tomorrow we hold a post-mortem to find the root cause and prevent a repeat.
+B|写一个简单的吧。|Xiě yí ge jiǎndān de ba.|لنكتب تقريرًا بسيطًا.|Let’s write a short one.|الأهم إيجاد السبب الجذري.|The key is finding the root cause.
+X|不用写，大家都忘了。|Búyòng xiě, dàjiā dōu wàng le.|لا داعي، الجميع سينسى.|No need, everyone’s forgotten.|بلا مراجعة سيتكرر العطل.|Without a review it will happen again.
+#product|需求讨论|مناقشة متطلبات المنتج|Product requirements|小王|وانغ الصغير|Wang (PM)|المهندس المسؤول|Tech lead|مديرة المنتج وانغ تريد إضافة واجهة عربية للتطبيق.|Product manager Wang wants to add an Arabic interface to the app.|5
+P|我们想在应用里加一个阿拉伯语版本。|Wǒmen xiǎng zài yìngyòng lǐ jiā yí ge Ālābóyǔ bǎnběn.|نريد إضافة نسخة عربية للتطبيق.|We want to add an Arabic version to the app.
+A|好主意。阿拉伯语从右往左写，界面布局需要调整。|Hǎo zhǔyi. Ālābóyǔ cóng yòu wǎng zuǒ xiě, jièmiàn bùjú xūyào tiáozhěng.|فكرة جيدة. العربية تُكتب من اليمين إلى اليسار، فنحتاج إلى تعديل تخطيط الواجهة.|Good idea. Arabic is written right to left, so the layout needs adjusting.
+B|只要翻译一下就行。|Zhǐyào fānyì yíxià jiù xíng.|تكفي الترجمة.|Just translate it.|الواجهة العربية تحتاج اتجاهًا معكوسًا لا ترجمة فقط.|Arabic needs a mirrored layout, not just translation.
+X|阿拉伯语用户很少。|Ālābóyǔ yònghù hěn shǎo.|مستخدمو العربية قليلون.|There are few Arabic users.|أكثر من 400 مليون ناطق بالعربية.|Over 400 million people speak Arabic.
+P|需要多长时间？下个月能上线吗？|Xūyào duō cháng shíjiān? Xià ge yuè néng shàngxiàn ma?|كم تحتاج من الوقت؟ هل نطلقها الشهر القادم؟|How long will it take? Can it launch next month?
+A|要看具体范围。如果只做主要页面，三周可以完成。|Yào kàn jùtǐ fànwéi. Rúguǒ zhǐ zuò zhǔyào yèmiàn, sān zhōu kěyǐ wánchéng.|يعتمد على النطاق. إذا اقتصرنا على الصفحات الرئيسية فثلاثة أسابيع تكفي.|It depends on scope. If we only do the main pages, three weeks.
+B|没问题，肯定能。|Méi wèntí, kěndìng néng.|لا مشكلة، أكيد.|No problem, definitely.|لا تَعِد قبل تحديد النطاق.|Don’t promise before scoping.
+X|至少需要一年。|Zhìshǎo xūyào yì nián.|سنة على الأقل.|At least a year.|تقدير مبالغ فيه دون تحليل.|An inflated estimate with no analysis.
+P|主要页面是首页、搜索和支付。|Zhǔyào yèmiàn shì shǒuyè, sōusuǒ hé zhīfù.|الصفحات الرئيسية: الرئيسية والبحث والدفع.|The main pages are home, search and payment.
+A|明白。支付页面的金额和日期格式也要本地化。|Míngbai. Zhīfù yèmiàn de jīn'é hé rìqī géshì yě yào běndìhuà.|مفهوم. يجب أيضًا توطين صيغ المبالغ والتواريخ في صفحة الدفع.|Understood. Amount and date formats on the payment page must be localised too.
+B|好的，知道了。|Hǎo de, zhīdào le.|حسنًا، فهمت.|OK, got it.|انتبه لتفاصيل التوطين.|Think about localisation details.
+X|支付不重要。|Zhīfù bú zhòngyào.|الدفع غير مهم.|Payment isn’t important.|الدفع أهم صفحة تجاريًا.|Payment is the most important page commercially.
+P|翻译谁来做？|Fānyì shéi lái zuò?|من سيتولّى الترجمة؟|Who will do the translation?
+A|最好请专业的阿拉伯语翻译，再让当地用户测试一下。|Zuìhǎo qǐng zhuānyè de Ālābóyǔ fānyì, zài ràng dāngdì yònghù cèshì yíxià.|الأفضل مترجم عربي محترف، ثم يجرّبه مستخدمون محليون.|Best to hire a professional Arabic translator, then have local users test it.
+B|用机器翻译吧。|Yòng jīqì fānyì ba.|لنستخدم الترجمة الآلية.|Use machine translation.|خطر على جودة الواجهة؛ راجعها بشريًا.|Risky for UI quality; have a human review.
+X|不用翻译，用英语就行。|Búyòng fānyì, yòng Yīngyǔ jiù xíng.|لا ترجمة، الإنجليزية تكفي.|No translation, English is fine.|يناقض هدف المشروع.|Defeats the purpose.
+P|好，你把估算发给我，我们周五评审。|Hǎo, nǐ bǎ gūsuàn fā gěi wǒ, wǒmen zhōuwǔ píngshěn.|حسنًا، أرسل لي التقدير ونراجعه الجمعة.|OK, send me the estimate and we’ll review it on Friday.
+A|好的，我明天把任务拆分和工作量估算发给你。|Hǎo de, wǒ míngtiān bǎ rènwu chāifēn hé gōngzuòliàng gūsuàn fā gěi nǐ.|حسنًا، أرسل لك غدًا تقسيم المهام وتقدير الجهد.|Sure, tomorrow I’ll send you the task breakdown and effort estimate.
+B|好的。|Hǎo de.|حسنًا.|OK.|حدّد ما سترسله ومتى.|Say what you’ll send and when.
+X|估算没意义。|Gūsuàn méi yìyì.|التقدير بلا معنى.|Estimates are meaningless.|التقدير ضروري للتخطيط.|Estimates are needed for planning.
+#interview|技术面试|مقابلة عمل تقنية|Technical interview|刘总监|المدير ليو|Director Liu|المرشّح|Candidate|تقدّمت لوظيفة مطوّر خلفية في شركة صينية تتوسع في الشرق الأوسط.|You’re interviewing for a back-end role at a Chinese company expanding into the Middle East.|5
+P|你好，请先简单介绍一下自己。|Nǐ hǎo, qǐng xiān jiǎndān jièshào yíxià zìjǐ.|مرحبًا، عرّف بنفسك باختصار.|Hello, please briefly introduce yourself.
+A|您好，我叫阿米尔，有五年后端开发经验，熟悉数据库和云服务。|Nín hǎo, wǒ jiào Āmǐ'ěr, yǒu wǔ nián hòuduān kāifā jīngyàn, shúxī shùjùkù hé yún fúwù.|مرحبًا، اسمي أمير، لدي خمس سنوات خبرة في تطوير الخلفية، وأعرف قواعد البيانات والخدمات السحابية جيدًا.|Hello, I’m Amir, with five years of back-end experience; I know databases and cloud services well.
+B|我叫阿米尔。|Wǒ jiào Āmǐ'ěr.|اسمي أمير.|I’m Amir.|قصير جدًا؛ اذكر خبرتك.|Too short; mention your experience.
+X|我的简历上都有，您自己看吧。|Wǒ de jiǎnlì shang dōu yǒu, nín zìjǐ kàn ba.|كل شيء في سيرتي، اقرأها.|It’s all on my CV, read it.|يبدو متعاليًا.|Comes across as arrogant.
+P|说说你做过的最有挑战的项目。|Shuōshuo nǐ zuò guo de zuì yǒu tiǎozhàn de xiàngmù.|حدّثني عن أصعب مشروع نفّذته.|Tell me about your most challenging project.
+A|我负责过一个支付系统，每天处理一百万笔交易，我们把响应时间缩短了一半。|Wǒ fùzé guo yí ge zhīfù xìtǒng, měi tiān chǔlǐ yìbǎi wàn bǐ jiāoyì, wǒmen bǎ xiǎngyìng shíjiān suōduǎn le yíbàn.|كنت مسؤولًا عن نظام دفع يعالج مليون معاملة يوميًا، وخفّضنا زمن الاستجابة إلى النصف.|I owned a payment system handling a million transactions a day; we cut response time in half.
+B|我做过很多项目。|Wǒ zuò guo hěn duō xiàngmù.|نفّذت مشاريع كثيرة.|I’ve done many projects.|اختر مشروعًا واحدًا بنتيجة رقمية.|Pick one project with a measurable result.
+X|都很简单，没有挑战。|Dōu hěn jiǎndān, méiyǒu tiǎozhàn.|كلها سهلة بلا تحدٍّ.|They were all easy, no challenges.|يوحي بقلة الخبرة.|Suggests little experience.
+P|如果系统突然变慢，你会怎么排查？|Rúguǒ xìtǒng tūrán biàn màn, nǐ huì zěnme páichá?|إذا أصبح النظام بطيئًا فجأة، كيف تتحرّى السبب؟|If the system suddenly slows down, how would you troubleshoot?
+A|先看监控指标，找出哪个服务慢，再查日志和数据库的慢查询。|Xiān kàn jiānkòng zhǐbiāo, zhǎo chū nǎge fúwù màn, zài chá rìzhì hé shùjùkù de màn cháxún.|أنظر أولًا إلى مؤشرات المراقبة لأعرف أي خدمة بطيئة، ثم أفحص السجلات والاستعلامات البطيئة.|Check monitoring first to find which service is slow, then the logs and slow database queries.
+B|重启服务器。|Chóngqǐ fúwùqì.|أعيد تشغيل الخادم.|Restart the server.|قد يساعد مؤقتًا لكنه ليس تشخيصًا.|May help briefly but isn’t a diagnosis.
+X|等它自己变快。|Děng tā zìjǐ biàn kuài.|أنتظر حتى يسرع وحده.|Wait for it to speed up.|إجابة غير مقبولة.|Not an acceptable answer.
+P|你为什么想加入我们公司？|Nǐ wèishénme xiǎng jiārù wǒmen gōngsī?|لماذا تريد الانضمام إلى شركتنا؟|Why do you want to join our company?
+A|你们的产品在中东发展很快，我希望用我的经验帮助团队，也想继续成长。|Nǐmen de chǎnpǐn zài Zhōngdōng fāzhǎn hěn kuài, wǒ xīwàng yòng wǒ de jīngyàn bāngzhù tuánduì, yě xiǎng jìxù chéngzhǎng.|منتجكم ينمو بسرعة في الشرق الأوسط، وأريد أن أفيد الفريق بخبرتي وأن أستمر في التطور.|Your product is growing fast in the Middle East; I want to bring my experience to the team and keep growing.
+B|因为工资高。|Yīnwèi gōngzī gāo.|لأن الراتب مرتفع.|Because the salary is high.|صادق لكن قدّمه من زاوية القيمة.|Honest, but frame it around value.
+X|我也不知道。|Wǒ yě bù zhīdào.|لا أعرف.|I don’t know.|يوحي بقلة الاهتمام.|Shows no interest.
+P|你有什么问题想问我们吗？|Nǐ yǒu shénme wèntí xiǎng wèn wǒmen ma?|هل لديك أسئلة لنا؟|Do you have any questions for us?
+A|有。请问团队现在最大的技术挑战是什么？|Yǒu. Qǐngwèn tuánduì xiànzài zuì dà de jìshù tiǎozhàn shì shénme?|نعم. ما أكبر تحدٍّ تقني يواجهه الفريق الآن؟|Yes. What’s the team’s biggest technical challenge right now?
+B|没有问题。|Méiyǒu wèntí.|لا أسئلة.|No questions.|فرصة ضائعة لإظهار اهتمامك.|A missed chance to show interest.
+X|什么时候可以放假？|Shénme shíhou kěyǐ fàngjià?|متى الإجازة؟|When can I go on holiday?|سؤال سيئ التوقيت في المقابلة.|Badly timed for an interview.

@@ -3,11 +3,11 @@
 /* ---------- notifications ---------- */
 const NOTIF_DEFAULT={on:true,time:'20:00',cats:{reminder:true,streak:true,review:true,news:true}};
 const nset=()=>{ S.notif=Object.assign({},NOTIF_DEFAULT,S.notif||{}); S.notif.cats=Object.assign({},NOTIF_DEFAULT.cats,S.notif.cats||{}); return S.notif; };
-const NEWS=[['legends','📖','nLegends'],['code','💻','nCode'],['write','✍️','nWrite'],['music','🎶','nMusic']];
+const NEWS=[['talk','💬','nTalk'],['legends','📖','nLegends'],['code','💻','nCode'],['write','✍️','nWrite'],['music','🎶','nMusic']];
 function inboxAdd(key,ic,title,body,to){ S.inbox=S.inbox||[]; if(S.inbox.some(x=>x.key===key)) return; S.inbox.unshift({key,ic,title,body,to,ts:Date.now(),read:false}); S.inbox=S.inbox.slice(0,40); }
 function buildInbox(){ const n=nset(), d=today(), h=new Date().getHours();
   if(!S.inbox||!S.inbox.length) inboxAdd('welcome','👋','nWelcomeT','nWelcomeB',{name:'home'});
-  if(n.cats.news) NEWS.forEach(([k,ic,key])=>inboxAdd('news-'+k,ic,key+'T',key+'B',{name:k==='legends'?'culture':k==='code'?'code':k==='write'?'writehub':'me'}));
+  if(n.cats.news) NEWS.forEach(([k,ic,key])=>inboxAdd('news-'+k,ic,key+'T',key+'B',{name:k==='talk'?'talk':k==='legends'?'culture':k==='code'?'code':k==='write'?'writehub':'me'}));
   if(n.cats.streak&&S.streak>0&&S.lastActive!==d&&h>=17) inboxAdd('streak-'+d,'🔥','nStreakT','nStreakB',{name:'home'});
   if(n.cats.review&&dueIds().length>=5) inboxAdd('review-'+d,'📖','nReviewT','nReviewB',{name:'review'});
   if(S.chestDay!==d) inboxAdd('chest-'+d,'🎁','nChestT','nChestB',{name:'home'});

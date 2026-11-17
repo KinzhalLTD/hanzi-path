@@ -285,7 +285,7 @@ function shop(){
 function paywall(src='general'){ let plan='yearly'; track('paywall_view',{src});
   const plans=[['monthly',price('monthly'),t('perMonth')],['yearly',price('yearly'),t('perYear')],['lifetime',price('lifetime'),t('once')]];
   sheet(`<div style="text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center"><div class="seal" style="width:62px;height:62px;font-size:38px;border-radius:16px">汉</div><h1>${t('proTitle')}</h1><div class="sub">${t('proSub')}</div></div>
-    <ul class="perks"><li><i>六</i>${t('perk1')}</li><li><i>写</i>${t('perk6')}</li><li><i>码</i>${t('perk7')}</li><li><i>戏</i>${t('perk2')}</li><li><i>静</i>${t('perk3')}</li><li><i>金</i>${t('perk4')}</li></ul>
+    <ul class="perks"><li><i>六</i>${t('perk1')}</li><li><i>写</i>${t('perk6')}</li><li><i>码</i>${t('perk7')}</li><li><i>谈</i>${t('perk8')}</li><li><i>戏</i>${t('perk2')}</li><li><i>静</i>${t('perk3')}</li><li><i>金</i>${t('perk4')}</li></ul>
     <div class="plans" style="margin-top:8px">${plans.map(([k,p,per])=>`<button class="plan" data-k="${k}" aria-pressed="${k===plan}">${k==='yearly'?`<span class="tag">${t('best')}</span>`:''}<b>${t(k)}</b><span class="price num">${p}</span><span class="per">${per}</span></button>`).join('')}</div>
     <div class="sub" style="text-align:center" id="tr"></div>
     <button class="btn block" id="buy"></button><button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost sm" id="lt" style="align-self:center;border:0">${t('later')}</button>

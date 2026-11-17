@@ -128,12 +128,12 @@ function render(){
   applyLang(); rollDay();
   const app=$('#app'); app.innerHTML='';
   if(!S.lang){ SCREENS.onboard(app); musPlay('home'); return; }
-  const full=['lesson','game','reader','recipe','write','placement'].includes(route.name);
+  const full=['lesson','game','reader','recipe','write','placement','talkscene'].includes(route.name);
   const m=document.createElement('main'); m.className='screen'+(full?' full':''); app.appendChild(m);
   if(!full){ m.insertAdjacentHTML('afterbegin','<div class="glow"></div>'); }
   (SCREENS[route.name]||SCREENS.home)(m,route.arg); bindTop(m);
   if(!full){ const tb=document.createElement('div'); tb.className='tabbar';
-    tb.innerHTML=`<nav>${TABS.map(([k,h])=>`<button class="tab" data-k="${k}" ${route.name===k||(k==='home'&&['level','review','writehub','code','codeunit'].includes(route.name))||(k==='dict'&&['word','builder','sectors','sector','accents'].includes(route.name))||(k==='culture'&&['section','recipe'].includes(route.name))?'aria-current="page"':''}><b>${h}</b>${t(k)}</button>`).join('')}</nav>`;
+    tb.innerHTML=`<nav>${TABS.map(([k,h])=>`<button class="tab" data-k="${k}" ${route.name===k||(k==='home'&&['level','review','writehub','code','codeunit','talk'].includes(route.name))||(k==='dict'&&['word','builder','sectors','sector','accents'].includes(route.name))||(k==='culture'&&['section','recipe'].includes(route.name))?'aria-current="page"':''}><b>${h}</b>${t(k)}</button>`).join('')}</nav>`;
     app.appendChild(tb); $$('.tab',tb).forEach(b=>b.onclick=()=>{SFX.tap(); go(b.dataset.k);}); }
   musPlay(trackFor(route));
 }

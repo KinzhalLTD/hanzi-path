@@ -1,0 +1,113 @@
+# Workplace conversations. Lines:
+# @domain|zh|ar|en|sector key|emoji
+# #scene|title zh|title ar|title en|partner zh|partner ar|partner en|my role ar|my role en|situation ar|situation en|hsk
+# P|zh|pinyin|ar|en                      partner line
+# A|zh|pinyin|ar|en                      best reply
+# B|zh|pinyin|ar|en|note ar|note en      acceptable but weaker
+# X|zh|pinyin|ar|en|note ar|note en      wrong reply
+@eng|工程|الهندسة|Engineering|eng|👷
+#site|工地安全检查|جولة تفتيش السلامة في الموقع|Site safety walk|王经理|المدير وانغ|Manager Wang|مهندس السلامة|HSE engineer|أنت مهندس السلامة لدى المالك، وتزور موقع المقاول اليوم مع مدير الموقع وانغ.|You are the owner’s HSE engineer visiting the contractor’s site with site manager Wang.|4
+P|你好！欢迎来到工地。今天主要检查哪些地方？|Nǐ hǎo! Huānyíng lái dào gōngdì. Jīntiān zhǔyào jiǎnchá nǎxiē dìfang?|أهلًا! مرحبًا بك في الموقع. ما الأماكن التي ستفتّشها اليوم بشكل أساسي؟|Hello! Welcome to the site. What will you mainly inspect today?
+A|我们先看一下脚手架，然后检查用电安全。|Wǒmen xiān kàn yíxià jiǎoshǒujià, ránhòu jiǎnchá yòngdiàn ānquán.|سنبدأ بالسقالات، ثم نفحص السلامة الكهربائية.|Let’s look at the scaffolding first, then check electrical safety.
+B|都看看吧。|Dōu kànkan ba.|لنلقِ نظرة على كل شيء.|Let’s just look at everything.|إجابة غامضة؛ المفتّش المحترف يعطي خطة واضحة.|Too vague; a professional inspector gives a clear plan.
+X|我们今天去吃火锅吧。|Wǒmen jīntiān qù chī huǒguō ba.|لنذهب لأكل القدر الحار اليوم.|Let’s go eat hotpot today.|خارج الموضوع تمامًا.|Completely off topic.
+P|好的。工人们都戴安全帽了，你看还有什么问题吗？|Hǎo de. Gōngrénmen dōu dài ānquánmào le, nǐ kàn hái yǒu shénme wèntí ma?|حسنًا. كل العمال يرتدون الخوذات، هل ترى مشكلات أخرى؟|OK. All the workers are wearing hard hats. Do you see any other problems?
+A|那边有两个人没系安全带，高处作业必须系好。|Nàbiān yǒu liǎng ge rén méi jì ānquándài, gāochù zuòyè bìxū jì hǎo.|هناك شخصان لم يربطا حزام الأمان، والعمل على ارتفاع يتطلّب ربطه جيدًا.|Two people over there aren’t wearing harnesses; work at height requires them.
+B|安全帽很好看。|Ānquánmào hěn hǎokàn.|الخوذات جميلة.|The hard hats look nice.|مجاملة وليست ملاحظة تفتيش.|A compliment, not an inspection finding.
+X|没有问题，大家可以不戴。|Méiyǒu wèntí, dàjiā kěyǐ bú dài.|لا مشكلة، يمكن للجميع ألّا يرتدوها.|No problem, nobody needs to wear them.|هذا يناقض قواعد السلامة.|This contradicts safety rules.
+P|不好意思，我马上让他们改正。还有别的吗？|Bù hǎoyìsi, wǒ mǎshàng ràng tāmen gǎizhèng. Hái yǒu bié de ma?|آسف، سأجعلهم يصحّحون ذلك فورًا. هل هناك شيء آخر؟|Sorry, I’ll have them fix it right away. Anything else?
+A|配电箱的门开着，请锁好，并贴上警告标志。|Pèidiànxiāng de mén kāizhe, qǐng suǒ hǎo, bìng tiē shang jǐnggào biāozhì.|باب لوحة التوزيع مفتوح، أغلقه بالقفل وألصق عليه لافتة تحذير.|The distribution board door is open. Please lock it and put up a warning sign.
+B|配电箱有点儿问题。|Pèidiànxiāng yǒudiǎnr wèntí.|في لوحة التوزيع مشكلة صغيرة.|There’s a small problem with the distribution board.|حدّد المشكلة والإجراء المطلوب.|Say exactly what is wrong and what to do.
+X|请把配电箱打开。|Qǐng bǎ pèidiànxiāng dǎkāi.|افتح لوحة التوزيع من فضلك.|Please open the distribution board.|هذا عكس الإجراء الآمن.|That is the opposite of the safe action.
+P|明白。这些问题需要多长时间整改？|Míngbai. Zhèxiē wèntí xūyào duō cháng shíjiān zhěnggǎi?|فهمت. كم يحتاج تصحيح هذه المشكلات من الوقت؟|Understood. How long do we have to fix these issues?
+A|安全带的问题请马上解决，其他的明天下班前完成。|Ānquándài de wèntí qǐng mǎshàng jiějué, qítā de míngtiān xiàbān qián wánchéng.|مشكلة الأحزمة تُحلّ فورًا، والباقي قبل نهاية دوام الغد.|Fix the harness issue immediately and the rest before the end of work tomorrow.
+B|越快越好。|Yuè kuài yuè hǎo.|كلما كان أسرع كان أفضل.|The sooner the better.|أعطِ موعدًا محددًا يمكن متابعته.|Give a specific deadline you can follow up.
+X|下个月再说吧。|Xià ge yuè zài shuō ba.|لنتكلّم عنها الشهر القادم.|Let’s talk about it next month.|مخاطر السلامة لا تنتظر شهرًا.|Safety risks can’t wait a month.
+P|没问题。检查报告什么时候能发给我？|Méi wèntí. Jiǎnchá bàogào shénme shíhou néng fā gěi wǒ?|لا مشكلة. متى يمكنك إرسال تقرير التفتيش؟|No problem. When can you send me the inspection report?
+A|今天下午我把报告和照片发到你的邮箱。|Jīntiān xiàwǔ wǒ bǎ bàogào hé zhàopiàn fā dào nǐ de yóuxiāng.|سأرسل التقرير والصور إلى بريدك عصر اليوم.|I’ll email you the report and photos this afternoon.
+B|以后吧。|Yǐhòu ba.|لاحقًا.|Later.|حدّد وقتًا؛ التقرير يوثّق الملاحظات.|Give a time; the report documents the findings.
+X|报告不用写。|Bàogào búyòng xiě.|لا داعي لكتابة تقرير.|No need to write a report.|كل تفتيش يحتاج سجلًّا مكتوبًا.|Every inspection needs a written record.
+#hvac|空调系统调试|تشغيل واختبار نظام التكييف|HVAC commissioning|李工|المهندس لي|Engineer Li|مهندس المالك|Owner’s engineer|المقاول انتهى من تركيب مبرّد المياه، وأنت مهندس المالك المسؤول عن الاستلام.|The contractor has installed the chiller; you are the owner’s engineer responsible for acceptance.|5
+P|冷水机组已经安装好了，我们今天可以开始调试吗？|Lěngshuǐ jīzǔ yǐjīng ānzhuāng hǎo le, wǒmen jīntiān kěyǐ kāishǐ tiáoshì ma?|تم تركيب وحدة تبريد المياه، هل يمكننا بدء التشغيل التجريبي اليوم؟|The chiller is installed. Can we start commissioning today?
+A|可以。请先确认管道冲洗和压力测试都完成了。|Kěyǐ. Qǐng xiān quèrèn guǎndào chōngxǐ hé yālì cèshì dōu wánchéng le.|نعم. تأكّد أولًا من اكتمال غسيل الأنابيب واختبار الضغط.|Yes. First confirm that pipe flushing and the pressure test are both done.
+B|可以，开机吧。|Kěyǐ, kāijī ba.|نعم، شغّلها.|Sure, switch it on.|تحقّق من الشروط المسبقة قبل التشغيل.|Check the prerequisites before start-up.
+X|不用测试，直接交付吧。|Búyòng cèshì, zhíjiē jiāofù ba.|لا داعي للاختبار، سلّمها مباشرة.|No need to test, just hand it over.|الاستلام دون اختبار مخالف للأصول.|Accepting without testing breaks procedure.
+P|压力测试做完了，二十四小时没有泄漏。|Yālì cèshì zuò wán le, èrshísì xiǎoshí méiyǒu xièlòu.|انتهى اختبار الضغط، ولا تسرّب خلال 24 ساعة.|The pressure test is done: no leaks in 24 hours.
+A|很好。请把测试记录给我看一下，我需要签字。|Hěn hǎo. Qǐng bǎ cèshì jìlù gěi wǒ kàn yíxià, wǒ xūyào qiānzì.|ممتاز. أرني سجلّ الاختبار، أحتاج إلى التوقيع عليه.|Great. Please show me the test record; I need to sign it.
+B|好。|Hǎo.|حسنًا.|OK.|اطلب السجلّ؛ التوثيق جزء من الاستلام.|Ask for the record; documentation is part of acceptance.
+X|泄漏一点儿也没关系。|Xièlòu yìdiǎnr yě méi guānxi.|لا بأس ببعض التسرّب.|A little leaking is fine.|التسرّب غير مقبول في اختبار الضغط.|Leaks are not acceptable in a pressure test.
+P|现在出水温度是七度，你觉得怎么样？|Xiànzài chūshuǐ wēndù shì qī dù, nǐ juéde zěnmeyàng?|حرارة المياه الخارجة الآن 7 درجات، ما رأيك؟|Leaving water temperature is 7 °C now. What do you think?
+A|设计值是七度，符合要求。回水温度是多少？|Shèjì zhí shì qī dù, fúhé yāoqiú. Huíshuǐ wēndù shì duōshao?|القيمة التصميمية 7 درجات، فهي مطابقة. وكم حرارة المياه الراجعة؟|Design is 7 °C, so it meets the requirement. What’s the return water temperature?
+B|有点儿冷。|Yǒudiǎnr lěng.|باردة قليلًا.|It’s a bit cold.|احكم مقارنةً بقيمة التصميم.|Judge it against the design value.
+X|应该是一百度。|Yīnggāi shì yìbǎi dù.|يجب أن تكون 100 درجة.|It should be 100 degrees.|هذه درجة غليان، لا مياه مبرّدة.|That’s boiling, not chilled water.
+P|回水是十二度。不过三号机的噪音比较大。|Huíshuǐ shì shí'èr dù. Búguò sān hào jī de zàoyīn bǐjiào dà.|الراجعة 12 درجة، لكن صوت الوحدة رقم 3 مرتفع نسبيًا.|Return is 12 °C. But unit 3 is quite noisy.
+A|可能是轴承或者底座的问题，请检查一下减震器。|Kěnéng shì zhóuchéng huòzhě dǐzuò de wèntí, qǐng jiǎnchá yíxià jiǎnzhènqì.|قد تكون المشكلة في المحامل أو القاعدة، افحص مخمّدات الاهتزاز.|It may be the bearings or the base. Please check the vibration isolators.
+B|我们先记下来，明天再看。|Wǒmen xiān jì xiàlai, míngtiān zài kàn.|لنسجّلها الآن ونرى غدًا.|Let’s note it and look tomorrow.|مقبول، لكن الأفضل التشخيص الآن.|Acceptable, but better to diagnose now.
+X|噪音没关系，大家习惯就好了。|Zàoyīn méi guānxi, dàjiā xíguàn jiù hǎo le.|الضجيج لا يهم، سيعتاد عليه الجميع.|The noise doesn’t matter; people will get used to it.|الضجيج علامة على عطل محتمل.|Noise can be a sign of a fault.
+P|好的，我们处理完再通知你。|Hǎo de, wǒmen chǔlǐ wán zài tōngzhī nǐ.|حسنًا، سنبلغك بعد معالجتها.|OK, we’ll let you know when it’s fixed.
+A|谢谢。问题解决以后，我们安排最后的验收。|Xièxie. Wèntí jiějué yǐhòu, wǒmen ānpái zuìhòu de yànshōu.|شكرًا. بعد حلّ المشكلة نرتّب الاستلام النهائي.|Thanks. Once it’s solved we’ll schedule the final acceptance.
+B|好的，再见。|Hǎo de, zàijiàn.|حسنًا، مع السلامة.|OK, bye.|حدّد الخطوة التالية.|Set the next step.
+X|不用通知我，你们自己验收吧。|Búyòng tōngzhī wǒ, nǐmen zìjǐ yànshōu ba.|لا تبلغوني، استلموا بأنفسكم.|Don’t tell me, accept it yourselves.|المقاول لا يستلم عمله بنفسه.|The contractor can’t accept its own work.
+#supplier|和供应商谈交货|التفاوض مع المورّد على التسليم|Delivery talks with a supplier|陈经理|المدير تشن|Manager Chen|مهندس المشتريات|Procurement engineer|تحتاج صمامات لمشروع ينتهي قريبًا، وتتصل بمدير المبيعات تشن في مصنع الصمامات.|You need valves for a project with a tight schedule and call sales manager Chen at the valve factory.|4
+P|您好，我是阀门厂的陈经理。请问您需要什么规格的阀门？|Nín hǎo, wǒ shì fámén chǎng de Chén jīnglǐ. Qǐngwèn nín xūyào shénme guīgé de fámén?|مرحبًا، أنا المدير تشن من مصنع الصمامات. ما مواصفات الصمامات التي تحتاجها؟|Hello, I’m Manager Chen from the valve factory. What valve specification do you need?
+A|我们需要两百个不锈钢球阀，尺寸两英寸，压力等级一百五十磅。|Wǒmen xūyào liǎngbǎi ge búxiùgāng qiúfá, chǐcùn liǎng yīngcùn, yālì děngjí yìbǎi wǔshí bàng.|نحتاج 200 صمام كروي من الفولاذ المقاوم للصدأ، مقاس بوصتين، فئة ضغط 150 رطلًا.|We need 200 stainless steel ball valves, 2 inch, pressure class 150.
+B|我们要很多阀门。|Wǒmen yào hěn duō fámén.|نريد صمامات كثيرة.|We want lots of valves.|حدّد الكمية والمواصفات.|Give quantity and specification.
+X|什么阀门都可以。|Shénme fámén dōu kěyǐ.|أي صمام يفي بالغرض.|Any valve will do.|المواصفات مهمة جدًا في الهندسة.|Specifications matter in engineering.
+P|没问题。这批货大概需要六周生产。|Méi wèntí. Zhè pī huò dàgài xūyào liù zhōu shēngchǎn.|لا مشكلة. هذه الدفعة تحتاج إلى نحو ستة أسابيع تصنيع.|No problem. This batch needs about six weeks of production.
+A|六周太长了，我们下个月就要安装，能提前吗？|Liù zhōu tài cháng le, wǒmen xià ge yuè jiù yào ānzhuāng, néng tíqián ma?|ستة أسابيع طويلة، سنركّب الشهر القادم، هل يمكن التبكير؟|Six weeks is too long; we install next month. Can you bring it forward?
+B|好的。|Hǎo de.|حسنًا.|OK.|لا تقبل قبل مقارنة الموعد بجدولك.|Don’t accept before checking it against your schedule.
+X|那我们明年再买。|Nà wǒmen míngnián zài mǎi.|إذن نشتري العام القادم.|Then we’ll buy next year.|يضيّع المشروع؛ تفاوض بدل الانسحاب.|Hurts the project; negotiate instead of walking away.
+P|如果先发一半，四周可以交货。|Rúguǒ xiān fā yíbàn, sì zhōu kěyǐ jiāohuò.|إذا شحنّا النصف أولًا، نسلّم خلال أربعة أسابيع.|If we ship half first, we can deliver in four weeks.
+A|可以，先发一百个，剩下的请在第六周之前送到。|Kěyǐ, xiān fā yìbǎi ge, shèngxià de qǐng zài dì liù zhōu zhīqián sòng dào.|موافق، اشحنوا 100 أولًا، والباقي قبل الأسبوع السادس.|OK, ship 100 first and deliver the rest before week six.
+B|一半不够。|Yíbàn búgòu.|النصف لا يكفي.|Half isn’t enough.|اقترح حلًا بدل الرفض فقط.|Offer a solution, not just a no.
+X|全部明天送到。|Quánbù míngtiān sòng dào.|سلّموا كل شيء غدًا.|Deliver everything tomorrow.|طلب غير واقعي.|An unrealistic demand.
+P|好的。质量证明文件需要哪些？|Hǎo de. Zhìliàng zhèngmíng wénjiàn xūyào nǎxiē?|حسنًا. ما مستندات إثبات الجودة المطلوبة؟|OK. Which quality documents do you need?
+A|请提供材质证书、压力测试报告和原产地证明。|Qǐng tígōng cáizhì zhèngshū, yālì cèshì bàogào hé yuánchǎndì zhèngmíng.|نرجو شهادة المادة وتقرير اختبار الضغط وشهادة المنشأ.|Please provide material certificates, pressure test reports and certificate of origin.
+B|你们有什么就给什么。|Nǐmen yǒu shénme jiù gěi shénme.|أعطونا ما لديكم.|Give us whatever you have.|حدّد المستندات المطلوبة في العقد.|Name the documents the contract requires.
+X|不需要文件。|Bù xūyào wénjiàn.|لا نحتاج مستندات.|We don’t need documents.|بدون شهادات لا يُقبل الصمام.|Without certificates the valves can’t be accepted.
+P|明白。报价单今天下午发给您。|Míngbai. Bàojiàdān jīntiān xiàwǔ fā gěi nín.|مفهوم. سأرسل عرض السعر عصر اليوم.|Understood. I’ll send the quotation this afternoon.
+A|谢谢，请写清楚单价、交货期和付款方式。|Xièxie, qǐng xiě qīngchu dānjià, jiāohuòqī hé fùkuǎn fāngshì.|شكرًا، اكتب بوضوح سعر الوحدة وموعد التسليم وطريقة الدفع.|Thanks. Please state unit price, delivery time and payment terms clearly.
+B|好的，谢谢。|Hǎo de, xièxie.|حسنًا، شكرًا.|OK, thanks.|اذكر ما يجب أن يتضمّنه العرض.|Say what the quote must include.
+X|不用报价，我们直接付款。|Búyòng bàojià, wǒmen zhíjiē fùkuǎn.|لا حاجة لعرض سعر، سندفع مباشرة.|No quote needed, we’ll just pay.|الشراء دون عرض سعر مخالف للإجراءات.|Buying without a quote breaks procurement rules.
+#progress|项目进度会议|اجتماع متابعة تقدّم المشروع|Project progress meeting|张总|المدير العام تشانغ|Director Zhang|مهندس المشروع|Project engineer|أنت مهندس المشروع لدى المقاول، والعمل متأخر ثلاثة أيام، ومدير المالك تشانغ يسأل.|You are the contractor’s project engineer; work is three days late and the owner’s director Zhang is asking.|5
+P|上周的工作完成得怎么样？|Shàng zhōu de gōngzuò wánchéng de zěnmeyàng?|كيف كان إنجاز أعمال الأسبوع الماضي؟|How did last week’s work go?
+A|管道安装完成了百分之八十，比计划晚了三天。|Guǎndào ānzhuāng wánchéng le bǎi fēn zhī bāshí, bǐ jìhuà wǎn le sān tiān.|اكتمل 80% من تركيب الأنابيب، متأخرين ثلاثة أيام عن الخطة.|Piping installation is 80% complete, three days behind plan.
+B|还可以。|Hái kěyǐ.|لا بأس.|Not bad.|قدّم أرقامًا؛ الاجتماع يحتاج حقائق.|Give numbers; the meeting needs facts.
+X|我不知道。|Wǒ bù zhīdào.|لا أعرف.|I don’t know.|مهندس المشروع يجب أن يعرف الحالة.|The project engineer must know the status.
+P|为什么会晚？|Wèishénme huì wǎn?|لماذا التأخير؟|Why is it late?
+A|主要是一批管件到货晚了，还有两天下雨不能焊接。|Zhǔyào shì yì pī guǎnjiàn dàohuò wǎn le, hái yǒu liǎng tiān xiàyǔ bù néng hànjiē.|أساسًا تأخّر وصول دفعة من التجهيزات، ويومان ماطران منعا اللحام.|Mainly a batch of fittings arrived late, and two rainy days stopped welding.
+B|天气不好。|Tiānqì bù hǎo.|الطقس سيئ.|Bad weather.|سبب ناقص؛ اذكر كل الأسباب.|Incomplete; give all the causes.
+X|都是工人的错。|Dōu shì gōngrén de cuò.|كله خطأ العمال.|It’s all the workers’ fault.|لوم الآخرين غير مهني.|Blaming others is unprofessional.
+P|那能赶上原来的完工日期吗？|Nà néng gǎn shang yuánlái de wángōng rìqī ma?|هل يمكن اللحاق بموعد الإنجاز الأصلي؟|Can we still make the original completion date?
+A|能。我们打算周末加班，再增加一个焊接小组。|Néng. Wǒmen dǎsuàn zhōumò jiābān, zài zēngjiā yí ge hànjiē xiǎozǔ.|نعم. ننوي العمل في عطلة الأسبوع وإضافة فريق لحام.|Yes. We plan to work weekends and add another welding crew.
+B|应该可以吧。|Yīnggāi kěyǐ ba.|يُفترض ذلك.|Probably.|اشرح خطة التعويض.|Explain the recovery plan.
+X|不知道，看情况吧。|Bù zhīdào, kàn qíngkuàng ba.|لا أعلم، حسب الظروف.|No idea, we’ll see.|يبدو أنك بلا خطة.|Sounds like you have no plan.
+P|加班会增加成本，谁来负责？|Jiābān huì zēngjiā chéngběn, shéi lái fùzé?|العمل الإضافي يزيد التكلفة، من يتحمّلها؟|Overtime adds cost. Who pays?
+A|加班费在我们的预算里，不会增加业主的费用。|Jiābānfèi zài wǒmen de yùsuàn lǐ, bú huì zēngjiā yèzhǔ de fèiyòng.|أجر الإضافي ضمن ميزانيتنا، ولن يزيد تكاليف المالك.|Overtime is within our budget; it won’t add cost to the owner.
+B|这个我回去问一下领导。|Zhège wǒ huíqu wèn yíxià lǐngdǎo.|سأسأل الإدارة عن هذا.|I’ll ask my management.|مقبول، لكن الأفضل أن تعرف الجواب قبل الاجتماع.|Acceptable, but better to know before the meeting.
+X|当然是你们付钱。|Dāngrán shì nǐmen fù qián.|طبعًا أنتم تدفعون.|Of course you pay.|التأخير من جهتك، فلا تحمّله للمالك.|The delay is on your side; don’t pass it to the owner.
+P|好。下次会议请带更新的进度表。|Hǎo. Xià cì huìyì qǐng dài gēngxīn de jìndùbiǎo.|حسنًا. أحضر الجدول الزمني المحدّث في الاجتماع القادم.|OK. Bring an updated schedule to the next meeting.
+A|好的，我会在周五之前把更新的进度表发给大家。|Hǎo de, wǒ huì zài zhōuwǔ zhīqián bǎ gēngxīn de jìndùbiǎo fā gěi dàjiā.|حسنًا، سأرسل الجدول المحدّث للجميع قبل الجمعة.|Sure, I’ll send everyone the updated schedule before Friday.
+B|好的。|Hǎo de.|حسنًا.|OK.|حدّد موعد التسليم.|Commit to a date.
+X|进度表不重要。|Jìndùbiǎo bú zhòngyào.|الجدول غير مهم.|The schedule isn’t important.|الجدول أداة الإدارة الأساسية.|The schedule is the key management tool.
+#ncr|焊缝不合格|تقرير عدم مطابقة اللحام|Weld non-conformance|刘师傅|المعلّم ليو|Foreman Liu|مهندس الجودة|QA/QC engineer|فحص الأشعة أظهر عيوبًا في لحامات أمس، وتتحدث مع رئيس فريق اللحام ليو.|Yesterday’s radiography found defects; you talk to welding foreman Liu.|5
+P|听说昨天的焊缝检测有问题？|Tīngshuō zuótiān de hànfèng jiǎncè yǒu wèntí?|سمعت أن فحص اللحامات أمس فيه مشكلة؟|I heard yesterday’s weld inspection had problems?
+A|是的，射线检测发现三条焊缝有气孔，不合格。|Shì de, shèxiàn jiǎncè fāxiàn sān tiáo hànfèng yǒu qìkǒng, bù hégé.|نعم، فحص الأشعة وجد مسامات في ثلاث لحامات، وهي غير مطابقة.|Yes, radiography found porosity in three welds; they’re rejected.
+B|有一点儿问题。|Yǒu yìdiǎnr wèntí.|هناك مشكلة صغيرة.|There’s a small problem.|كن محددًا: كم لحامًا وما العيب؟|Be specific: how many welds and what defect?
+X|没问题，都很好。|Méi wèntí, dōu hěn hǎo.|لا مشكلة، كله ممتاز.|No problem, all good.|يخالف نتيجة الفحص.|That contradicts the test result.
+P|是哪几条？我们马上返修。|Shì nǎ jǐ tiáo? Wǒmen mǎshàng fǎnxiū.|أيّها؟ سنصلحها فورًا.|Which ones? We’ll repair them right away.
+A|编号是十五、十八和二十二，详细位置在报告里。|Biānhào shì shíwǔ, shíbā hé èrshí'èr, xiángxì wèizhì zài bàogào lǐ.|الأرقام 15 و18 و22، والمواقع بالتفصيل في التقرير.|Numbers 15, 18 and 22; exact locations are in the report.
+B|我也不太清楚。|Wǒ yě bú tài qīngchu.|لست متأكدًا.|I’m not sure either.|مهندس الجودة يجب أن يعرف أرقام اللحامات.|The QA engineer must know the weld numbers.
+X|不用返修，直接用吧。|Búyòng fǎnxiū, zhíjiē yòng ba.|لا داعي للإصلاح، استخدموها.|No repair needed, just use them.|اللحام المرفوض لا يُستخدم.|Rejected welds can’t be used.
+P|好。返修以后还要再检测吗？|Hǎo. Fǎnxiū yǐhòu hái yào zài jiǎncè ma?|حسنًا. هل نعيد الفحص بعد الإصلاح؟|OK. Do we need to re-test after the repair?
+A|要。返修以后必须百分之百重新检测。|Yào. Fǎnxiū yǐhòu bìxū bǎi fēn zhī bǎi chóngxīn jiǎncè.|نعم، بعد الإصلاح يجب إعادة الفحص بنسبة 100%.|Yes. After repair, 100% re-inspection is required.
+B|看情况吧。|Kàn qíngkuàng ba.|حسب الحال.|Depends.|القاعدة واضحة: الإصلاح يُعاد فحصه.|The rule is clear: repairs get re-tested.
+X|不用了，相信你们。|Búyòng le, xiāngxìn nǐmen.|لا داعي، أثق بكم.|No need, I trust you.|الثقة لا تغني عن الفحص.|Trust doesn’t replace inspection.
+P|你觉得气孔是什么原因造成的？|Nǐ juéde qìkǒng shì shénme yuányīn zàochéng de?|برأيك ما سبب المسامات؟|What do you think caused the porosity?
+A|可能是焊条受潮了，请检查焊条烘干的记录。|Kěnéng shì hàntiáo shòucháo le, qǐng jiǎnchá hàntiáo hōnggān de jìlù.|ربما أصابت الرطوبة أقطاب اللحام، راجع سجلّ تجفيفها.|The electrodes may have absorbed moisture. Please check the baking records.
+B|可能是运气不好。|Kěnéng shì yùnqi bù hǎo.|ربما سوء حظ.|Maybe bad luck.|ابحث عن السبب الجذري.|Look for the root cause.
+X|是检测设备坏了。|Shì jiǎncè shèbèi huài le.|جهاز الفحص معطّل.|The test equipment is broken.|اتهام بلا دليل.|An accusation without evidence.
+P|明白了，以后我们会注意。|Míngbai le, yǐhòu wǒmen huì zhùyì.|فهمت، سننتبه مستقبلًا.|Got it, we’ll be careful from now on.
+A|谢谢。请在三天内提交纠正措施，我们一起关闭这个不合格报告。|Xièxie. Qǐng zài sān tiān nèi tíjiāo jiūzhèng cuòshī, wǒmen yìqǐ guānbì zhège bù hégé bàogào.|شكرًا. قدّموا الإجراء التصحيحي خلال ثلاثة أيام لنغلق التقرير معًا.|Thanks. Please submit corrective actions within three days so we can close this NCR together.
+B|好的，下次小心。|Hǎo de, xià cì xiǎoxīn.|حسنًا، انتبهوا المرة القادمة.|OK, be careful next time.|التقرير يحتاج إجراءً تصحيحيًا موثّقًا.|An NCR needs a documented corrective action.
+X|没关系，这种问题很正常。|Méi guānxi, zhè zhǒng wèntí hěn zhèngcháng.|لا بأس، هذه مشكلات طبيعية.|Never mind, these problems are normal.|التهاون يكرّر الخطأ.|Shrugging it off lets it happen again.

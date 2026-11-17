@@ -1,0 +1,107 @@
+# Medical conversations (format in talk_eng.tsv)
+@med|医疗|الطب|Medical|med|🩺
+#clinic|看医生：发烧咳嗽|زيارة الطبيب: حمّى وسعال|At the doctor: fever and cough|医生|الطبيبة|Doctor|المريض|Patient|أنت في الصين وأصبت بحمّى وسعال منذ يومين، وتدخل عيادة الطبيبة.|You are in China with fever and a cough for two days, and you see the doctor.|3
+P|你好，哪里不舒服？|Nǐ hǎo, nǎlǐ bù shūfu?|مرحبًا، بماذا تشعر؟|Hello, what’s the problem?
+A|医生，我发烧两天了，还一直咳嗽。|Yīshēng, wǒ fāshāo liǎng tiān le, hái yìzhí késou.|يا دكتورة، عندي حمّى منذ يومين، وسعال مستمر.|Doctor, I’ve had a fever for two days and I keep coughing.
+B|我不舒服。|Wǒ bù shūfu.|لست بخير.|I don’t feel well.|صِف الأعراض ومدّتها.|Describe the symptoms and how long.
+X|我很好。|Wǒ hěn hǎo.|أنا بخير.|I’m fine.|جئت لأنك مريض؛ قل الحقيقة.|You came because you’re ill; say so.
+P|量体温了吗？多少度？|Liáng tǐwēn le ma? Duōshao dù?|هل قست حرارتك؟ كم كانت؟|Did you take your temperature? How high?
+A|量了，昨天晚上三十八度五。|Liáng le, zuótiān wǎnshang sānshíbā dù wǔ.|نعم، مساء أمس كانت 38.5.|Yes, last night it was 38.5.
+B|很热。|Hěn rè.|حارّة جدًا.|Very hot.|أعطِ الرقم؛ الطبيب يحتاجه.|Give the number; the doctor needs it.
+X|一百度。|Yìbǎi dù.|مئة درجة.|100 degrees.|رقم مستحيل لحرارة الجسم.|Impossible body temperature.
+P|你对什么药过敏吗？|Nǐ duì shénme yào guòmǐn ma?|هل لديك حساسية من أي دواء؟|Are you allergic to any medicine?
+A|我对青霉素过敏。|Wǒ duì qīngméisù guòmǐn.|عندي حساسية من البنسلين.|I’m allergic to penicillin.
+B|不太清楚。|Bú tài qīngchu.|لست متأكدًا.|I’m not sure.|مقبول إن كان صحيحًا، لكن اعرف حساسيتك دائمًا.|OK if true, but always know your allergies.
+X|我喜欢吃药。|Wǒ xǐhuan chī yào.|أحب تناول الأدوية.|I like taking medicine.|لا يجيب عن سؤال مهم للسلامة.|Doesn’t answer a safety-critical question.
+P|好的。我先给你开一个血常规检查。|Hǎo de. Wǒ xiān gěi nǐ kāi yí ge xuèchángguī jiǎnchá.|حسنًا. سأطلب لك أولًا تحليل دم شاملًا.|OK. First I’ll order a complete blood count.
+A|好的。在哪儿抽血？要空腹吗？|Hǎo de. Zài nǎr chōuxuè? Yào kōngfù ma?|حسنًا. أين يُسحب الدم؟ وهل يجب أن أكون صائمًا؟|OK. Where do I have the blood drawn? Do I need to fast?
+B|好。|Hǎo.|حسنًا.|OK.|اسأل عن المكان والتحضير.|Ask where and how to prepare.
+X|我不想检查，直接给我打针吧。|Wǒ bù xiǎng jiǎnchá, zhíjiē gěi wǒ dǎzhēn ba.|لا أريد تحليلًا، أعطني حقنة مباشرة.|I don’t want tests, just give me an injection.|التشخيص قبل العلاج.|Diagnosis comes before treatment.
+P|结果出来了，是病毒感染。多喝水，按时吃药，三天后复查。|Jiéguǒ chūlai le, shì bìngdú gǎnrǎn. Duō hē shuǐ, ànshí chī yào, sān tiān hòu fùchá.|ظهرت النتيجة: عدوى فيروسية. اشرب ماء كثيرًا، وتناول الدواء في موعده، وراجع بعد ثلاثة أيام.|Results are in: a viral infection. Drink plenty of water, take the medicine on time, and come back in three days.
+A|明白了。这个药一天吃几次？饭前还是饭后？|Míngbai le. Zhège yào yì tiān chī jǐ cì? Fàn qián háishi fàn hòu?|فهمت. كم مرة في اليوم آخذ الدواء؟ قبل الأكل أم بعده؟|I see. How many times a day do I take it? Before or after meals?
+B|谢谢医生。|Xièxie yīshēng.|شكرًا يا دكتورة.|Thank you, doctor.|اسأل عن طريقة أخذ الدواء.|Ask how to take the medicine.
+X|我不吃药，喝咖啡就好了。|Wǒ bù chī yào, hē kāfēi jiù hǎo le.|لن آخذ الدواء، القهوة تكفي.|I won’t take medicine, coffee will do.|تجاهل تعليمات الطبيب خطر.|Ignoring medical advice is risky.
+#pharmacy|在药店买药|شراء دواء من الصيدلية|At the pharmacy|药剂师|الصيدلانية|Pharmacist|الزبون|Customer|معدتك تؤلمك بعد الأكل منذ ثلاثة أيام، فتدخل صيدلية.|Your stomach has hurt after meals for three days, so you go to a pharmacy.|3
+P|您好，需要什么药？|Nín hǎo, xūyào shénme yào?|مرحبًا، ماذا تحتاج من الأدوية؟|Hello, what medicine do you need?
+A|我胃不舒服，吃完饭就疼，有什么药吗？|Wǒ wèi bù shūfu, chī wán fàn jiù téng, yǒu shénme yào ma?|معدتي متعبة وتؤلمني بعد الأكل، هل لديكم دواء؟|My stomach is upset and hurts after I eat. Is there something for it?
+B|我要药。|Wǒ yào yào.|أريد دواء.|I want medicine.|صِف المشكلة ليختار الصيدلي الدواء.|Describe the problem so the pharmacist can choose.
+X|给我最贵的药。|Gěi wǒ zuì guì de yào.|أعطني أغلى دواء.|Give me the most expensive medicine.|الأغلى ليس الأنسب.|The priciest isn’t the right one.
+P|疼了多长时间了？有没有吐？|Téng le duō cháng shíjiān le? Yǒu méiyǒu tù?|منذ متى الألم؟ هل تقيأت؟|How long has it hurt? Any vomiting?
+A|三天了，没有吐，就是有点儿胀。|Sān tiān le, méiyǒu tù, jiùshì yǒudiǎnr zhàng.|ثلاثة أيام، لم أتقيأ، فقط بعض الانتفاخ.|Three days. No vomiting, just a bit bloated.
+B|很长时间。|Hěn cháng shíjiān.|منذ وقت طويل.|A long time.|حدّد المدة وأجب عن سؤال القيء.|Give the duration and answer about vomiting.
+X|你别问那么多。|Nǐ bié wèn nàme duō.|لا تسأل كثيرًا.|Stop asking so many questions.|الأسئلة لسلامتك.|The questions are for your safety.
+P|这个药饭前半小时吃，一天三次，一次一片。|Zhège yào fàn qián bàn xiǎoshí chī, yì tiān sān cì, yí cì yí piàn.|يؤخذ هذا الدواء قبل الأكل بنصف ساعة، ثلاث مرات يوميًا، قرص واحد كل مرة.|Take this half an hour before meals, three times a day, one tablet each time.
+A|好的，一天三次，一次一片，饭前半小时。需要处方吗？|Hǎo de, yì tiān sān cì, yí cì yí piàn, fàn qián bàn xiǎoshí. Xūyào chǔfāng ma?|حسنًا، ثلاث مرات يوميًا، قرص كل مرة، قبل الأكل بنصف ساعة. هل يحتاج وصفة؟|OK: three times a day, one tablet, half an hour before meals. Do I need a prescription?
+B|知道了。|Zhīdào le.|فهمت.|Got it.|أعد التعليمات للتأكد من الفهم.|Repeat the instructions back to confirm.
+X|那我一次吃三片吧。|Nà wǒ yí cì chī sān piàn ba.|إذن آخذ ثلاثة أقراص مرة واحدة.|Then I’ll take three at once.|جرعة خاطئة وخطرة.|A wrong, dangerous dose.
+P|不需要处方。还有，这几天别吃辣的。|Bù xūyào chǔfāng. Hái yǒu, zhè jǐ tiān bié chī là de.|لا يحتاج وصفة. وتجنّب الطعام الحار هذه الأيام.|No prescription needed. Also, avoid spicy food for a few days.
+A|好的。如果吃了药还疼，怎么办？|Hǎo de. Rúguǒ chī le yào hái téng, zěnme bàn?|حسنًا. وإن استمر الألم بعد الدواء، ماذا أفعل؟|OK. What if it still hurts after the medicine?
+B|可是我很喜欢吃辣的。|Kěshì wǒ hěn xǐhuan chī là de.|لكني أحب الطعام الحار.|But I love spicy food.|اتبع النصيحة لبضعة أيام.|Follow the advice for a few days.
+X|辣的对胃好。|Là de duì wèi hǎo.|الحار مفيد للمعدة.|Spicy food is good for the stomach.|معلومة خاطئة في هذه الحالة.|Wrong in this situation.
+P|如果三天还不好，一定要去医院看看。|Rúguǒ sān tiān hái bù hǎo, yídìng yào qù yīyuàn kànkan.|إن لم تتحسّن خلال ثلاثة أيام فاذهب إلى المستشفى حتمًا.|If it’s not better in three days, you must see a doctor at the hospital.
+A|明白了，谢谢您！一共多少钱？|Míngbai le, xièxie nín! Yígòng duōshao qián?|فهمت، شكرًا لك! كم المجموع؟|Understood, thank you! How much is it altogether?
+B|好。|Hǎo.|حسنًا.|OK.|أكّد الفهم واشكر.|Confirm and say thanks.
+X|医院太麻烦了，我不去。|Yīyuàn tài máfan le, wǒ bú qù.|المستشفى مزعج، لن أذهب.|Hospitals are a hassle, I won’t go.|تجاهل علامات الخطر قد يؤذيك.|Ignoring warning signs can harm you.
+#chestpain|问诊：胸痛|أخذ التاريخ المرضي: ألم الصدر|Taking a history: chest pain|王先生|السيد وانغ|Mr Wang|الطبيب|Doctor|أنت طبيب طوارئ، ومريض في الخمسين يشتكي ألمًا في الصدر.|You are an emergency doctor; a man in his fifties has chest pain.|5
+P|医生，我胸口疼。|Yīshēng, wǒ xiōngkǒu téng.|يا دكتور، صدري يؤلمني.|Doctor, my chest hurts.
+A|别着急，什么时候开始疼的？|Bié zháojí, shénme shíhou kāishǐ téng de?|اهدأ، متى بدأ الألم؟|Don’t worry. When did the pain start?
+B|疼得厉害吗？|Téng de lìhai ma?|هل الألم شديد؟|Is it very painful?|سؤال جيد، لكن ابدأ بوقت البداية.|Fair, but start with the onset.
+X|没关系，回家休息吧。|Méi guānxi, huí jiā xiūxi ba.|لا بأس، عد إلى البيت واسترح.|It’s nothing, go home and rest.|ألم الصدر يحتاج تقييمًا عاجلًا.|Chest pain needs urgent assessment.
+P|大概一个小时以前，爬楼梯的时候。|Dàgài yí ge xiǎoshí yǐqián, pá lóutī de shíhou.|قبل ساعة تقريبًا، أثناء صعود الدرج.|About an hour ago, while climbing stairs.
+A|是压着疼还是刺痛？疼痛会不会跑到左胳膊？|Shì yā zhe téng háishi cìtòng? Téngtòng huì bu huì pǎo dào zuǒ gēbo?|هل هو ألم ضاغط أم واخز؟ وهل يمتد إلى الذراع اليسرى؟|Is it pressing or stabbing? Does it spread to your left arm?
+B|你喜欢运动吗？|Nǐ xǐhuan yùndòng ma?|هل تحب الرياضة؟|Do you like exercise?|ليس الأولوية الآن.|Not the priority now.
+X|你应该多爬楼梯。|Nǐ yīnggāi duō pá lóutī.|عليك صعود الدرج أكثر.|You should climb more stairs.|نصيحة خطرة في هذه اللحظة.|Dangerous advice right now.
+P|像有石头压着，左胳膊也有点儿麻。|Xiàng yǒu shítou yā zhe, zuǒ gēbo yě yǒudiǎnr má.|كأن حجرًا يضغط عليه، وذراعي اليسرى خدرة قليلًا.|Like a stone pressing, and my left arm is a bit numb.
+A|您以前有高血压或者心脏病吗？|Nín yǐqián yǒu gāoxuèyā huòzhě xīnzàngbìng ma?|هل عندك ضغط مرتفع أو مرض في القلب؟|Do you have high blood pressure or heart disease?
+B|麻多长时间了？|Má duō cháng shíjiān le?|منذ متى الخدر؟|How long has it been numb?|مفيد، لكن السوابق المرضية أهم الآن.|Useful, but the medical history matters more now.
+X|那是肌肉累了。|Nà shì jīròu lèi le.|هذا إرهاق عضلي.|That’s just tired muscles.|طمأنة مبكرة رغم علامات الخطر.|False reassurance despite red flags.
+P|有高血压，一直在吃药。|Yǒu gāoxuèyā, yìzhí zài chī yào.|عندي ضغط مرتفع وأتناول دواءه باستمرار.|I have high blood pressure and take medicine for it.
+A|好的。我们马上给您做心电图，请先躺下来。|Hǎo de. Wǒmen mǎshàng gěi nín zuò xīndiàntú, qǐng xiān tǎng xiàlai.|حسنًا. سنجري لك تخطيط قلب فورًا، استلقِ من فضلك.|OK. We’ll do an ECG right away. Please lie down.
+B|明天来做个检查吧。|Míngtiān lái zuò ge jiǎnchá ba.|تعال غدًا لإجراء فحص.|Come back tomorrow for tests.|الحالة قد تكون طارئة، لا تؤجّل.|This may be an emergency; don’t delay.
+X|先停掉高血压的药。|Xiān tíng diào gāoxuèyā de yào.|أوقف دواء الضغط أولًا.|Stop your blood pressure medicine first.|قرار خطير بلا تقييم.|A dangerous decision without assessment.
+P|医生，我的情况严重吗？|Yīshēng, wǒ de qíngkuàng yánzhòng ma?|يا دكتور، هل حالتي خطيرة؟|Doctor, is it serious?
+A|现在还不能确定，我们会一直观察您。有任何不舒服马上告诉我们。|Xiànzài hái bù néng quèdìng, wǒmen huì yìzhí guānchá nín. Yǒu rènhé bù shūfu mǎshàng gàosu wǒmen.|لا يمكن الجزم الآن، وسنبقى نراقبك. أخبرنا فورًا بأي انزعاج.|We can’t be sure yet; we’ll keep monitoring you. Tell us at once if you feel worse.
+B|不严重，别担心。|Bù yánzhòng, bié dānxīn.|ليست خطيرة، لا تقلق.|It’s not serious, don’t worry.|لا تَعِد قبل ظهور النتائج.|Don’t promise before the results.
+X|很严重，可能会死。|Hěn yánzhòng, kěnéng huì sǐ.|خطيرة جدًا، قد تموت.|Very serious, you might die.|كن صادقًا لكن هادئًا.|Be honest but calm.
+#er|陪同事看急诊|مرافقة زميل إلى الطوارئ|Taking a colleague to the ER|护士|الممرضة|Nurse|الزميل المرافق|Accompanying colleague|زميلك خالد سقط في الموقع، وأحضرته إلى طوارئ المستشفى.|Your colleague Khalid fell on site and you bring him to the emergency department.|4
+P|病人怎么了？|Bìngrén zěnme le?|ما به المريض؟|What happened to the patient?
+A|他从两米高的地方摔下来了，右腿很疼，不能走路。|Tā cóng liǎng mǐ gāo de dìfang shuāi xiàlai le, yòu tuǐ hěn téng, bù néng zǒulù.|سقط من ارتفاع مترين، وساقه اليمنى تؤلمه ولا يستطيع المشي.|He fell from two metres; his right leg hurts badly and he can’t walk.
+B|他受伤了。|Tā shòushāng le.|أصيب.|He’s injured.|صِف الحادث والإصابة.|Describe the accident and the injury.
+X|他没事，就是想休息。|Tā méi shì, jiùshì xiǎng xiūxi.|لا شيء، يريد أن يرتاح فقط.|He’s fine, he just wants to rest.|يقلّل خطورة إصابة حقيقية.|Downplays a real injury.
+P|他摔到头了吗？有没有昏迷？|Tā shuāi dào tóu le ma? Yǒu méiyǒu hūnmí?|هل ارتطم رأسه؟ هل فقد الوعي؟|Did he hit his head? Did he lose consciousness?
+A|没有摔到头，一直很清醒。|Méiyǒu shuāi dào tóu, yìzhí hěn qīngxǐng.|لم يرتطم رأسه، وظل واعيًا طوال الوقت.|He didn’t hit his head and has been fully alert.
+B|我不知道，我没看见。|Wǒ bù zhīdào, wǒ méi kànjiàn.|لا أعلم، لم أرَ.|I don’t know, I didn’t see.|مقبول إن كان صحيحًا؛ قل ما رأيته بعد السقوط.|OK if true; say what you saw afterwards.
+X|头不重要。|Tóu bú zhòngyào.|الرأس غير مهم.|The head doesn’t matter.|إصابة الرأس من أخطر الإصابات.|Head injury is among the most serious.
+P|好，先拍个片子。他叫什么名字？有护照吗？|Hǎo, xiān pāi ge piānzi. Tā jiào shénme míngzi? Yǒu hùzhào ma?|حسنًا، نبدأ بصورة أشعة. ما اسمه؟ هل معه جواز؟|OK, we’ll do an X-ray first. What’s his name? Does he have a passport?
+A|他叫哈立德，这是他的护照，我是他的同事。|Tā jiào Hālìdé, zhè shì tā de hùzhào, wǒ shì tā de tóngshì.|اسمه خالد، وهذا جوازه، وأنا زميله.|His name is Khalid, here’s his passport, I’m his colleague.
+B|他的护照在宾馆。|Tā de hùzhào zài bīnguǎn.|جوازه في الفندق.|His passport is at the hotel.|مقبول، لكن أعطِ اسمه وصلتك به.|Fine, but give his name and your relation.
+X|先看病，名字以后再说。|Xiān kànbìng, míngzi yǐhòu zài shuō.|عالجوه أولًا، والاسم لاحقًا.|Treat him first, the name later.|التسجيل ضروري للعلاج والتأمين.|Registration is needed for treatment and insurance.
+P|先去那边交费，然后去放射科。|Xiān qù nàbiān jiāofèi, ránhòu qù fàngshèkē.|ادفع الرسوم هناك أولًا، ثم اذهب إلى قسم الأشعة.|Pay over there first, then go to radiology.
+A|好的。公司有医疗保险，可以直接用吗？|Hǎo de. Gōngsī yǒu yīliáo bǎoxiǎn, kěyǐ zhíjiē yòng ma?|حسنًا. لدى الشركة تأمين طبي، هل نستخدمه مباشرة؟|OK. Our company has medical insurance; can we use it directly?
+B|好的。|Hǎo de.|حسنًا.|OK.|اسأل عن التأمين لتتجنّب الدفع مرتين.|Ask about insurance to avoid paying twice.
+X|我们不交钱。|Wǒmen bù jiāo qián.|لن ندفع.|We’re not paying.|التعاون مع إجراءات المستشفى أسرع.|Cooperating with the process is faster.
+P|可以，把保险卡给收费处就行。|Kěyǐ, bǎ bǎoxiǎnkǎ gěi shōufèichù jiù xíng.|نعم، أعطِ بطاقة التأمين لمكتب المحاسبة.|Yes, just give the insurance card to the cashier.
+A|谢谢！放射科在几楼？|Xièxie! Fàngshèkē zài jǐ lóu?|شكرًا! في أي طابق قسم الأشعة؟|Thanks! Which floor is radiology on?
+B|好。|Hǎo.|حسنًا.|OK.|اسأل عن الاتجاهات لتصل أسرع.|Ask for directions to get there faster.
+X|太麻烦了，我们回去了。|Tài máfan le, wǒmen huíqu le.|مزعج جدًا، سنعود.|Too much hassle, we’re leaving.|زميلك يحتاج الأشعة.|Your colleague needs the X-ray.
+#diabetes|向病人解释糖尿病|شرح السكري للمريضة|Explaining diabetes to a patient|李阿姨|الخالة لي|Mrs Li|الطبيب|Doctor|أنت طبيب باطنية، ونتائج تحليل السيدة لي تُظهر سكري النوع الثاني.|You are an internist; Mrs Li’s results show type 2 diabetes.|5
+P|医生，我的化验结果怎么样？|Yīshēng, wǒ de huàyàn jiéguǒ zěnmeyàng?|يا دكتور، كيف نتائج تحاليلي؟|Doctor, how are my test results?
+A|您的血糖比较高，是二型糖尿病，不过可以控制得很好。|Nín de xuètáng bǐjiào gāo, shì èr xíng tángniàobìng, búguò kěyǐ kòngzhì de hěn hǎo.|السكر عندك مرتفع، وهو سكري من النوع الثاني، لكن يمكن السيطرة عليه جيدًا.|Your blood sugar is high: it’s type 2 diabetes, but it can be well controlled.
+B|结果不太好。|Jiéguǒ bú tài hǎo.|النتائج ليست جيدة.|The results aren’t good.|اشرح التشخيص بوضوح وبأمل.|Explain the diagnosis clearly and with hope.
+X|很严重，没有办法了。|Hěn yánzhòng, méiyǒu bànfǎ le.|خطيرة جدًا، لا حلّ.|It’s very serious, nothing can be done.|غير صحيح ويُرعب المريضة.|Untrue and frightening.
+P|糖尿病？那我以后要一直吃药吗？|Tángniàobìng? Nà wǒ yǐhòu yào yìzhí chī yào ma?|سكري؟ هل سأتناول الدواء دائمًا؟|Diabetes? Will I need medicine forever?
+A|先吃药，同时注意饮食和运动。如果控制得好，药量可能会减少。|Xiān chī yào, tóngshí zhùyì yǐnshí hé yùndòng. Rúguǒ kòngzhì de hǎo, yàoliàng kěnéng huì jiǎnshǎo.|نبدأ بالدواء مع الاهتمام بالغذاء والرياضة. إذا انضبط السكر قد تقل الجرعة.|We start with medicine plus diet and exercise. If it’s well controlled, the dose may go down.
+B|对，一辈子。|Duì, yíbèizi.|نعم، مدى الحياة.|Yes, for life.|جواب ناقص وقاسٍ.|Incomplete and harsh.
+X|不用吃药，多喝茶就行。|Búyòng chī yào, duō hē chá jiù xíng.|لا حاجة للدواء، اشربي الشاي.|No medicine needed, just drink tea.|نصيحة طبية خاطئة.|Wrong medical advice.
+P|我应该吃什么，不能吃什么？|Wǒ yīnggāi chī shénme, bù néng chī shénme?|ماذا آكل وماذا أتجنّب؟|What should I eat and avoid?
+A|少吃甜的和米饭，多吃蔬菜，每天走路三十分钟。|Shǎo chī tián de hé mǐfàn, duō chī shūcài, měi tiān zǒulù sānshí fēnzhōng.|قلّلي الحلويات والأرز، وأكثري من الخضار، وامشي 30 دقيقة يوميًا.|Less sweets and rice, more vegetables, and walk 30 minutes a day.
+B|正常吃就行。|Zhèngcháng chī jiù xíng.|كُلي بشكل طبيعي.|Eat normally.|الغذاء جزء أساسي من العلاج.|Diet is a core part of treatment.
+X|什么都不要吃。|Shénme dōu bú yào chī.|لا تأكلي شيئًا.|Don’t eat anything.|نصيحة خطرة.|Dangerous advice.
+P|我怕记不住这么多。|Wǒ pà jì bu zhù zhème duō.|أخاف ألّا أتذكّر كل هذا.|I’m afraid I won’t remember all this.
+A|没关系，我给您写下来，护士也会给您一本手册。|Méi guānxi, wǒ gěi nín xiě xiàlai, hùshi yě huì gěi nín yì běn shǒucè.|لا بأس، سأكتبها لك، وستعطيك الممرضة كتيّبًا أيضًا.|Don’t worry, I’ll write it down, and the nurse will give you a booklet.
+B|回去慢慢记吧。|Huíqu màn man jì ba.|احفظيها في البيت على مهل.|Memorise it slowly at home.|ساعد المريضة بمواد مكتوبة.|Help with written material.
+X|记不住是您的问题。|Jì bu zhù shì nín de wèntí.|عدم التذكّر مشكلتك.|Not remembering is your problem.|غير لائق ويقلّل الالتزام بالعلاج.|Rude and lowers adherence.
+P|谢谢医生，我什么时候再来？|Xièxie yīshēng, wǒ shénme shíhou zài lái?|شكرًا يا دكتور، متى أعود؟|Thank you, doctor. When should I come back?
+A|一个月以后来复查血糖。如果头晕或者特别口渴，要马上来医院。|Yí ge yuè yǐhòu lái fùchá xuètáng. Rúguǒ tóuyūn huòzhě tèbié kǒukě, yào mǎshàng lái yīyuàn.|بعد شهر لإعادة فحص السكر. وإن شعرت بدوخة أو عطش شديد فتعالي فورًا.|In a month to recheck your sugar. If you feel dizzy or very thirsty, come in straight away.
+B|一年以后吧。|Yì nián yǐhòu ba.|بعد سنة.|In a year.|المتابعة الأولى يجب أن تكون قريبة.|The first follow-up must be soon.
+X|不用再来了。|Búyòng zài lái le.|لا داعي للعودة.|No need to come back.|السكري يحتاج متابعة منتظمة.|Diabetes needs regular follow-up.

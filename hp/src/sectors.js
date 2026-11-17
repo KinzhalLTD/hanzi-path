@@ -41,6 +41,7 @@ SCREENS.sector=(m,i)=>{ const s=SECTORS[i]; track('sector_open',{sector:s.k}); S
   if(ti>=s.topics.length) ti=0;
   m.insertAdjacentHTML('beforeend',`<div class="row"><button class="icon-btn" id="bk">${isAr()?'›':'‹'}</button><div class="grow"><h2 style="margin:0">${s.icon} ${isAr()?s.ar:s.en}</h2><div class="py">${s.zh} · ${s.p}</div></div></div>
    ${photo(s.photo,150,`<span class="brush" style="font-size:46px;color:var(--gold2);text-shadow:0 2px 14px #000">${s.zh}</span>`)}
+   ${TALK.some(d=>d.sec===s.k)?`<button class="card row" id="stk" style="cursor:pointer;text-align:start;width:100%"><span class="brush" style="font-size:30px;color:var(--gold2)">谈</span><div class="grow"><b>💬 ${t('tkTitle')}</b><div class="sub"><span class="num">${TALK.find(d=>d.sec===s.k).scenes.length}</span> ${t('tkScenes')}</div></div>›</button>`:''}
    <div class="sstats"><div><b class="num">${s._w.length}</b><span class="sub">${t('words')}</span></div><div><b class="num">${s.topics.length}</b><span class="sub">${t('secTopicsN')}</span></div><div><b class="num">${secLearned(s)}</b><span class="sub">${t('secLearnedN')}</span></div></div>
    ${s.codeLink?`<button class="btn ghost block" id="tocode">💻 ${t('codeTitle')}</button>`:''}
    <h3 style="margin-bottom:4px">${t('secTopicsT')}</h3><div class="ttabs" id="tt">${s.topics.map((tp,k)=>`<button class="ttab${k===ti?' on':''}" data-t="${k}"><span class="tz">${tp.zh}</span><b style="font-size:13.5px">${secFree(k)?'':'🔒 '}${isAr()?tp.ar:tp.en}</b><small><span class="num">${tp._w.length}</span> ${t('words')} · <span class="num">${tp._w.filter(w=>S.srs[w.id]).length}</span> ✓</small></button>`).join('')}</div>
@@ -62,7 +63,7 @@ SCREENS.sector=(m,i)=>{ const s=SECTORS[i]; track('sector_open',{sector:s.k}); S
   $$('#tt .ttab',m).forEach(b=>b.onclick=()=>{ SFX.tap(); ti=+b.dataset.t; S._secT[s.k]=ti; q=''; $('#sq',m).value=''; $$('#tt .ttab',m).forEach(x=>x.classList.toggle('on',x===b)); draw(); });
   $$('#lvf button',m).forEach(b=>b.onclick=()=>{ lv=+b.dataset.l; $$('#lvf button',m).forEach(x=>x.classList.toggle('on',x===b)); draw(); });
   $('#sq',m).oninput=e=>{ q=e.target.value.trim(); draw(); };
-  $('#bk',m).onclick=()=>go('sectors'); bindTokens(m); if(s.codeLink) $('#tocode',m).onclick=()=>go('code');
+  $('#bk',m).onclick=()=>go('sectors'); bindTokens(m); const tk=$('#stk',m); if(tk) tk.onclick=()=>go('talk',{d:TALK.find(d=>d.sec===s.k).k}); if(s.codeLink) $('#tocode',m).onclick=()=>go('code');
   $$('[data-z]',m).forEach(b=>b.onclick=()=>speak(s.ex[+b.dataset.z][0])); $$('[data-mz]',m).forEach(b=>b.onclick=()=>pronCheck(s.ex[+b.dataset.mz][0]));
   $('#learn',m).onclick=()=>{ const set=cur().filter(w=>secFree(secM(s,w).ti)); if(!set.length) return paywall('sector');
     const fresh=shuffle(set.filter(w=>!S.srs[w.id])), old=shuffle(set.filter(w=>S.srs[w.id])); const pick10=fresh.concat(old).slice(0,10);
