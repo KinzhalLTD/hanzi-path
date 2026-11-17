@@ -12,13 +12,13 @@ SCREENS = [
   "go('builder',{mode:'rad'})", "go('builder',{mode:'book'})", "go('sectors')", "go('sector',0)", "go('sector',5)",
   "go('accents')", "go('code')", "go('codeunit',{i:0})", "go('codeunit',{i:0,step:1})", "go('codeunit',{i:0,step:2})",
   "go('writehub')", "go('write',{chars:['你']})", "go('section',0)", "go('section',3)", "go('reader',{i:0,start:0})",
-  "go('recipe',0)",
+  "go('recipe',0)", "go('placement')", "go('level',4)",
 ] + [f"go('game','{g}')" for g in ['mahjong', 'xiangqi', 'klotski', 'riddles', 'idioms', 'tangram', 'checkers']]
 SHEETS = [
   "go('games');tutorial('xiangqi',()=>{})", "go('games');tutorial('mahjong',()=>{})", "go('games');tutorial('tangram',()=>{})",
   "go('games');tutorial('checkers',()=>{})", "go('games');tutorial('idioms',()=>{})",
   "go('me');shop()", "go('me');paywall()", "go('me');musicSheet()", "go('me');inboxSheet()", "go('me');checkinSheet()",
-  "go('me');accountSheet(true)", "go('me');deleteAccount()",
+  "go('me');accountSheet(true)", "go('me');deleteAccount()", "go('level',1);gateSheet(1,chaptersOf(1)[0])",
 ]
 
 JS = r"""() => {

@@ -8,7 +8,7 @@ async def main():
     await pg.goto('file://'+P); await pg.wait_for_timeout(300)
     async def shot(n,full=False): await pg.wait_for_timeout(450); await pg.screenshot(path=f'{O}/a_{n}.png',full_page=full)
     for L in ['en','ar']:
-      if L=='en': await pg.click('.lang button[data-l="en"]')
+      if L=='en': await pg.click('.lang button[data-l="en"]'); await pg.wait_for_timeout(200); await pg.click('#onew')
       else: await pg.evaluate("S.lang='ar';save();go('home')")
       await pg.wait_for_timeout(600); await shot(L+'_home')
       await pg.click('[data-act="bell"]'); await shot(L+'_inbox'); await pg.evaluate('closeSheet()')

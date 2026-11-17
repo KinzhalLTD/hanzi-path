@@ -55,7 +55,7 @@ SCREENS.word=(m,id)=>{ const w=byId[id]; if(!w) return go('dict'); track('word_v
   const homo=W.filter(x=>x.id!==w.id&&x.p===w.p).slice(0,6);
   const tab=S.wtab||'mean';
   m.insertAdjacentHTML('beforeend',`<div class="row"><button class="icon-btn" id="bk">${isAr()?'›':'‹'}</button><div class="grow"></div><button class="icon-btn" id="bm" aria-label="wordbook" style="color:${inBook(w.id)?'var(--gold2)':'inherit'}">${inBook(w.id)?'★':'☆'}</button></div>
-   <div class="paper col rise" style="gap:10px"><div class="stamp">${w.code?'码':w.sector?'业':w.l+'级'}</div>
+   <div class="paper col rise" style="gap:10px"><div class="stamp">${w.code?'码':w.sector?'业':w.l+'级'}</div>${S.srs[w.id]?`<div class="row" style="gap:8px"><span class="sub" style="color:var(--ink2)">${t('mastery')}</span>${crownsHTML(mastery(w.id),15)}<span class="sub" style="color:var(--ink2)">${t('masteryN')[mastery(w.id)]}</span></div>`:''}
      <div class="han wordhead" style="font-size:64px;font-weight:700;line-height:1.05;text-align:start;color:#6a120d">${esc(w.h)}</div>
      <div class="row" style="gap:10px"><span class="py" style="font-size:24px;color:var(--red)">${esc(w.p)}</span><button class="speak" id="sp">🔊</button><button class="speak" id="mic">🎤</button>${[...w.h].some(canWrite)?'<button class="speak" id="wr">✍️</button>':''}</div>
      <div class="row" style="gap:6px;flex-wrap:wrap"><span class="soon" style="color:var(--red);border-color:rgba(179,38,30,.4)">${w.code?'💻 IT':w.sector?'🏭 '+((SECTORS.find(s=>s.k===w.sector)||{})[isAr()?'ar':'en']||''):'HSK '+w.l}</span>${w.t!==w.h?`<span class="soon" style="color:var(--ink2)">${t('trad')} <span class="han">${esc(w.t)}</span></span>`:''}${w.mw&&w.mw.length?`<span class="soon" style="color:var(--ink2)">${t('mw')} <span class="han">${esc(w.mw.join(' / '))}</span></span>`:''}${(w.pos||[]).slice(0,2).map(p=>`<span class="soon" style="color:var(--ink2)">${esc(p)}</span>`).join('')}</div>
@@ -63,7 +63,7 @@ SCREENS.word=(m,id)=>{ const w=byId[id]; if(!w) return go('dict'); track('word_v
    <div class="seg" id="wt">${[['mean',t('example')],['char',t('chars')],['fam',t('family')]].map(([k,l])=>`<button data-t="${k}" aria-pressed="${tab===k}">${l}</button>`).join('')}</div>
    <div id="wbody"></div>`);
   function body(){ const b=$('#wbody',m), k=S.wtab||'mean';
-    if(k==='mean') b.innerHTML=w.ex?`<div class="card col" style="gap:10px"><div class="sub">${t('tapWords')}</div>${analyseHTML(w.ex.zh)}<div>${esc(isAr()?w.ex.ar:(w.ex.en||''))}</div>
+    if(k==='mean') b.innerHTML=w.ex?`<div class="card col" style="gap:10px"><div class="sub">${t('tapWords')}</div>${analyseHTML2(w.ex.zh,w.ex.py)}<div>${esc(isAr()?w.ex.ar:(w.ex.en||''))}</div>
         <div class="row" style="gap:8px"><button class="btn ghost sm grow" id="exs">🔊 ${t('listenAgain')}</button><button class="btn sm grow" id="exm">🎤 ${t('readAloud')}</button></div></div>`:`<div class="card sub">${t('noExample')}</div>`;
     if(k==='char') b.innerHTML=`<div class="col" style="gap:10px">${chars.map(charHTML).join('')||`<div class="card sub">—</div>`}</div><div class="fine">${t('charCredit')}</div>`;
     if(k==='fam') b.innerHTML=`<div class="card col" style="gap:4px"><h3>${t('family')}</h3><ul class="list">${fam.map(x=>`<li data-id="${x.id}"><span class="han">${esc(x.h)}</span><span class="py">${esc(x.p)}</span><span class="lv">HSK${x.l}</span><span style="min-width:0;font-size:14px">${mean(x)}</span></li>`).join('')||'<li>—</li>'}</ul></div>

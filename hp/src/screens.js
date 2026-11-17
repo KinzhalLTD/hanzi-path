@@ -6,7 +6,11 @@ SCREENS.onboard=app=>{
    <div><h2>Choose your language · اختر لغتك</h2><div class="sub">Meanings and menus · المعاني والقوائم</div></div>
    <div class="lang"><button data-l="ar"><i>阿</i><div class="grow">العربية<div class="sub">تعلّم الصينية بالعربية</div></div>›</button>
    <button data-l="en"><i>英</i><div class="grow">English<div class="sub">Learn Chinese in English</div></div>›</button></div>`;
-  $$('.lang button',m).forEach(b=>b.onclick=()=>{ S.lang=b.dataset.l; save(); track('onboarding_complete',{lang:S.lang}); SFX.gong(); go('home'); });
+  $$('.lang button',m).forEach(b=>b.onclick=()=>{ S.lang=b.dataset.l; save(); track('onboarding_complete',{lang:S.lang}); SFX.gong(); applyLang();
+    m.innerHTML=`<div class="glow"></div><div class="result rise" style="padding-top:40px"><div class="bao-hop">${bao('happy',110)}</div><h1>${t('plAsk')}</h1>
+      <div class="lang"><button id="onew"><i>新</i><div class="grow">${t('plNew')}<div class="sub">HSK 1 · ${t('unit')} 1</div></div>›</button>
+      <button id="oknow"><i>考</i><div class="grow">${t('plKnow')}<div class="sub">${t('plCardSub')}</div></div>›</button></div></div>`;
+    $('#onew',m).onclick=()=>{ SFX.tap(); go('home'); }; $('#oknow',m).onclick=()=>{ SFX.tap(); go('placement'); }; });
 };
 /* ---------- home ---------- */
 SCREENS.home=m=>{
@@ -34,6 +38,7 @@ SCREENS.home=m=>{
     <div class="grow col" style="gap:6px"><h3>${t('goal')}</h3><div class="sub"><span class="num">${S.todayXP} / ${S.goal}</span> ${t('xp')}</div>
       ${nx?`<div class="sub">${RANK_HAN[r+1]} · <span class="num">${fmt(nx-S.xp)}</span> ${t('xp')} ${t('nextRank')}</div><div class="bar"><i style="width:${((S.xp-RANK_XP[r])/(nx-RANK_XP[r])*100).toFixed(1)}%"></i></div>`:''}</div>
   </div>
+  ${placementCard()}
   ${todayCard()}
   ${pathsCard()}
   ${chestCard()}
@@ -49,7 +54,7 @@ SCREENS.home=m=>{
   const rv=$('#rev',m); if(rv) rv.onclick=()=>go('review');
   $$('.medal',m).forEach(b=>b.onclick=()=>go('level',+b.dataset.l));
   $$('[data-q]',m).forEach(b=>b.onclick=()=>{ const q=QUEST_POOL.find(x=>x[0]===b.dataset.q); S.quests[q[0]]=1; const g=addCoins(q[2]); floatText('+'+g,b); save(); render(); });
-  $('#gfeat',m).onclick=()=>go('games'); bindChest(m); bindToday(m); bindPaths(m);
+  $('#gfeat',m).onclick=()=>go('games'); bindChest(m); bindToday(m); bindPaths(m); bindPlacementCard(m);
   $('#bao',m).onclick=()=>{ SFX.ok(); $('#baoq',m).textContent=quip('idle'); const b=$('#bao',m); b.classList.remove('spin'); void b.offsetWidth; b.classList.add('spin'); };
 };
 function chestCard(){ const open=S.chestDay===today();
@@ -64,16 +69,15 @@ SCREENS.level=(m,L)=>{
   m.insertAdjacentHTML('beforeend',`<div class="row"><button class="icon-btn" id="bk">${isAr()?'›':'‹'}</button><div class="grow"><h2>HSK ${L}</h2><div class="sub"><span class="num">${(byLevel[L]||[]).length}</span> ${t('words')} · <span class="num">${u.length}</span> ${t('units')}</div></div><span class="brush" style="font-size:30px;color:var(--gold)">${['','一','二','三','四','五','六'][L]}级</span></div>
    ${photo('hsk'+L,130,`<span class="brush" style="font-size:44px;color:var(--gold2);text-shadow:0 2px 14px #000">${['','一','二','三','四','五','六'][L]}级</span>`)}
    ${!S.pro&&L>1?`<button class="paper row" id="pw" style="cursor:pointer;text-align:start"><span class="brush" style="font-size:30px;color:var(--red)">锁</span><div class="grow"><b>${t('proTitle')}</b><div class="sub">${t('freeSample')}: ${t('unit')} 1–${FREE_SAMPLE_UNITS}</div></div><span class="btn sm red">PRO</span></button>`:''}
-   <div class="path">${u.map((ws,i)=>{const d=unitDone(L,i),free=unitFree(L,i),open=free&&(d||i<=cu);return `<div class="nodewrap"><button class="node ${d?'done':open?(i===cu?'cur':''):'locked'}" data-i="${i}" ${open?'':'data-locked="1"'}><span>${free?esc(ws[0].h[0]):'🔒'}</span></button><small>${t('unit')} ${i+1}</small></div>`;}).join('')}</div>`);
+   ${journeyHTML(L)}`);
   $('#bk',m).onclick=()=>go('home'); const pw=$('#pw',m); if(pw) pw.onclick=paywall;
-  $$('.node',m).forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; if(!unitFree(L,i)) return paywall(); if(b.dataset.locked) return; go('lesson',{l:L,i}); });
+  bindJourney(m,L);
 };
 /* ---------- quiz engine ---------- */
-function makeQuestions(words,pool){ const qs=[]; const others=w=>pick(pool.filter(x=>x.id!==w.id&&x.h!==w.h&&meaning(x)!==meaning(w)),3);
-  words.forEach(w=>{ let k=['mean','han','tone','listen'][Math.random()*4|0]; if(k==='tone'&&!hasTone(w.p)) k='mean'; if([...w.h].length<=2&&[...w.h].every(c=>typeof canWrite==='function'&&canWrite(c))&&Math.random()<.22) k='write'; qs.push({k,w,opts:k==='tone'?toneOptions(w.p):k==='write'?[]:shuffle([w,...others(w)])}); });
-  const out=shuffle(qs); if(words.length>=4) out.splice(Math.min(3,out.length),0,{k:'pairs',ws:pick(words,4)}); return out; }
-function runQuiz(m,{intro,questions,onDone,back}){
-  let i=0,correct=0,streak=0,best=0,introI=0,sel=null,answered=false,qStart=0,fast=0; const steps=intro?intro.length:0, total=()=>steps+questions.length, t0=Date.now();
+// sector/code/review sets: practise only the given words; HSK lessons also add sentences and weak older words (learn.js)
+function makeQuestions(words,pool,opts){ return lessonPlan(words,pool,opts||{review:true}); }
+function runQuiz(m,{intro,questions,onDone,back,gate}){
+  let i=0,correct=0,streak=0,best=0,introI=0,sel=null,answered=false,qStart=0,fast=0; const m0={}; const orig=questions.length; let firstOK=0; const steps=intro?intro.length:0, total=()=>steps+questions.length, t0=Date.now();
   const head=()=>`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar grow"><i style="width:${((introI+i)/total()*100).toFixed(1)}%"></i></div>${streak>=3?`<span class="chip">🔥 ${streak}</span>`:''}</div>`;
   const bindX=()=>{ $('#qx',m).onclick=()=>{ $$('.feedback').forEach(f=>f.remove()); back(); }; };
   const wcls=w=>{const n=[...w.h].length; return n>=4?'w4':n===3?'w3':n===2?'w2':'';};
@@ -82,7 +86,7 @@ function runQuiz(m,{intro,questions,onDone,back}){
      <div class="tzg ${wcls(w)} rise"><span class="han">${esc(w.h)}</span></div>
      <div class="prompt"><div class="row" style="gap:14px"><span class="py" style="font-size:26px">${esc(w.p)}</span><button class="speak" id="sp">🔊</button><button class="speak" id="mic">🎤</button></div>
        <div class="meaning">${mean(w,3)}</div>${extrasHTML(w)}</div>
-     ${w.ex?`<div class="paper excard col" style="gap:4px;padding:16px"><div class="sub">${t('example')} · ${t('tapWords')}</div>${analyseHTML(w.ex.zh)}<div>${esc(isAr()?w.ex.ar:(w.ex.en||''))}</div></div>`:''}
+     ${w.ex?`<div class="paper excard col" style="gap:4px;padding:16px"><div class="sub">${t('example')} · ${t('tapWords')}</div>${analyseHTML2(w.ex.zh,w.ex.py)}<div>${esc(isAr()?w.ex.ar:(w.ex.en||''))}</div></div>`:''}
      <div class="grow"></div><button class="btn block" id="go">${t('got')}</button>`;
     speak(w.h); $('#sp',m).onclick=()=>speak(w.h); $('#mic',m).onclick=()=>pronCheck(w.h); bindTokens(m); bindExtras(m,w); $('#go',m).onclick=()=>{SFX.tap(); introI++; introI<steps?card():ask();}; bindX(); }
   function pairs(q){ let pickL=null, left=4;
@@ -104,7 +108,7 @@ function runQuiz(m,{intro,questions,onDone,back}){
       $('#wmsg',m).textContent=(ok?'✓ ':'')+quip(ok?'ok':'bad'); $('#skip',m).hidden=true; setTimeout(next,1300); };
     const one=()=>{ const box=$('#hw',m); box.innerHTML=''; const wr=hwCreate(box,cs[ci],{size:Math.min(250,innerWidth-110)}); wr.quiz({showHintAfterMisses:2,onMistake:()=>{ miss++; haptic('error'); },onCorrectStroke:()=>SFX.tap(),onComplete:()=>{ ci++; if(ci<cs.length) setTimeout(one,450); else done(); }}); };
     $('#skip',m).onclick=()=>{ streak=0; srsMark(w.id,false); save(); next(); }; one(); }
-  function ask(){ answered=false; sel=null; qStart=Date.now(); const q=questions[i]; if(q.k==='pairs') return pairs(q); if(q.k==='write') return writeQ(q); const w=q.w; let prompt='',opts='',one=false;
+  function ask(){ answered=false; sel=null; qStart=Date.now(); const q=questions[i]; window.__cur=q; if(q.k==='pairs') return pairs(q); if(q.k==='write') return writeQ(q); if(LEARN_Q[q.k]) return LEARN_Q[q.k](q,{m,head,bindX,verdict}); const w=q.w; let prompt='',opts='',one=false;
     if(q.k==='mean'){ prompt=`<div class="sub">${t('whatMeans')}</div><div class="big han">${esc(w.h)}</div><button class="speak" id="sp">🔊</button>`; opts=q.opts.map((o,j)=>`<button class="opt" data-j="${j}">${mean(o)}</button>`).join(''); }
     if(q.k==='han'){ prompt=`<div class="sub">${t('pickHan')}</div><div class="meaning">${mean(w)}</div>`; opts=q.opts.map((o,j)=>`<button class="opt" data-j="${j}"><span class="han">${esc(o.h)}</span></button>`).join(''); }
     if(q.k==='listen'){ prompt=`<div class="sub">${t('listen')}</div><button class="speak xl" id="sp">🔊</button>`; opts=q.opts.map((o,j)=>`<button class="opt" data-j="${j}"><span class="han">${esc(o.h)}</span></button>`).join(''); setTimeout(()=>speak(w.h),250); }
@@ -114,27 +118,41 @@ function runQuiz(m,{intro,questions,onDone,back}){
     $$('.opt',m).forEach(b=>b.onclick=()=>{ if(answered) return; SFX.tap(); $$('.opt',m).forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); sel=+b.dataset.j; $('#ck',m).disabled=false; });
     $('#ck',m).onclick=()=>{ if(sel===null) return; answered=true; const o=q.opts[sel], ok=q.k==='tone'?o===w.p:o.id===w.id, rj=q.opts.findIndex(x=>q.k==='tone'?x===w.p:x.id===w.id);
       $$('.opt',m).forEach((b,j)=>{ if(j===rj) b.classList.add('right'); else if(j===sel) b.classList.add('wrong'); });
-      const quick=ok&&Date.now()-qStart<6000; if(quick) fast++;
-      if(ok){ correct++; streak++; best=Math.max(best,streak); SFX.ok(); haptic('success'); if(streak%5===0) confetti(40); } else { streak=0; SFX.bad(); haptic('error'); questions.push({...q,opts:shuffle(q.opts)}); }
-      srsMark(w.id,ok); save(); if(q.k!=='listen') setTimeout(()=>speak(w.h),200);
+      if(q.k!=='listen') setTimeout(()=>speak(w.h),200); verdict(ok,w,q); };
+  }
+  /* shared grading: streak, SRS, mastery tracking, feedback panel; extra = sentence/pinyin reveal for the new kinds */
+  function verdict(ok,w,q,extra=''){ answered=true; const quick=ok&&Date.now()-qStart<(['build','slisten','pinyin'].includes(q.k)?15000:6000); if(quick) fast++;
+      if(ok&&i<orig) firstOK++;
+      if(ok){ correct++; streak++; best=Math.max(best,streak); SFX.ok(); haptic('success'); if(streak%5===0) confetti(40); } else { streak=0; SFX.bad(); haptic('error'); if(!gate) questions.push({...q,opts:q.opts?shuffle(q.opts):q.opts,tiles:q.tiles?shuffle(q.tiles):q.tiles}); }
+      if(!(w.id in m0)) m0[w.id]=mastery(w.id); srsMark(w.id,ok); save();
       const f=document.createElement('div'); f.className='feedback rise '+(ok?'good':'bad');
       const mood=ok?(streak>=5?'cool':quick?'wow':'happy'):'oops', line=ok?(streak>=3&&streak%3===0?quip('streak'):quip('ok')):quip('bad');
-      f.innerHTML=`<div><div class="row" style="gap:12px;align-items:center"><div class="bao-hop">${bao(mood,58)}</div><div class="grow"><h3 style="color:${ok?'#7be3b0':'#ff9a8f'}">${ok?t('correct')+(streak>=3?` 🔥${streak}`:'')+(quick?' ⚡':''):t('wrong')}</h3><div class="bubble">${esc(line)}</div></div></div>${ok?'':`<div class="row"><span class="han" style="font-size:26px">${esc(w.h)}</span><span class="py">${esc(w.p)}</span><span class="grow">${mean(w)}</span></div>${storyOf(w.h)?`<div class="sub" style="color:var(--ivory)">😄 ${esc(isAr()?storyOf(w.h)[2]:storyOf(w.h)[1])}</div>`:''}${extrasHTML(w)}`}<button class="btn block ${ok?'jade':'red'}" id="nx">${t('next')}</button></div>`;
+      f.innerHTML=`<div>${extra}<div class="row" style="gap:12px;align-items:center"><div class="bao-hop">${bao(mood,58)}</div><div class="grow"><h3 style="color:${ok?'#7be3b0':'#ff9a8f'}">${ok?t('correct')+(streak>=3?` 🔥${streak}`:'')+(quick?' ⚡':''):t('wrong')}</h3><div class="bubble">${esc(line)}</div></div></div>${ok||extra?'':`<div class="row"><span class="han" style="font-size:26px">${esc(w.h)}</span><span class="py">${esc(w.p)}</span><span class="grow">${mean(w)}</span></div>${storyOf(w.h)?`<div class="sub" style="color:var(--ivory)">😄 ${esc(isAr()?storyOf(w.h)[2]:storyOf(w.h)[1])}</div>`:''}${extrasHTML(w)}`}<button class="btn block ${ok?'jade':'red'}" id="nx">${t('next')}</button></div>`;
       document.body.appendChild(f); bindExtras(f,w); $('#ck',m).hidden=true;
-      $('#nx',f).onclick=()=>{ f.remove(); i++; i<questions.length?ask():finish(); }; };
-  }
-  function finish(){ const n0=questions.length-(questions.length-i); const acc=Math.round(correct/questions.length*100); const xp=10+correct*2+fast+(acc===100?10:0); addXP(xp); const c=addCoins(acc===100?15:10);
+      $('#nx',f).onclick=()=>{ f.remove(); i++; i<questions.length?ask():finish(); }; }
+  function gateFinish(){ const r=gate.onFinish(firstOK); const p=gate.place; let xp=0,c=0;
+    if(r.pass){ xp=addXP(40)||40; c=addCoins(50); SFX.win(); confetti(140); haptic('success'); } else SFX.bad();
+    m.innerHTML=`<div class="result rise"><div class="jgate big ${r.pass?'done':''}" aria-hidden="true"><span>关</span></div><div class="eyebrow">${esc(placeName(p))} · ${esc(p[0])}</div>
+      <h1>${r.pass?t('jGatePass'):t('jGateFail')}</h1><div class="bao-dance">${bao(r.pass?'cool':'think',96)}</div>
+      <div class="kv"><div><span class="sub">${t('accuracy')}</span><b>${r.pct}%</b></div><div><span class="sub">${t('jNeed').replace('{n}',GATE_PASS)}</span><b>${r.pass?'👑':'–'}</b></div><div><span class="sub">${t('combo')}</span><b>🔥${best}</b></div></div>
+      ${r.pass?`<div class="row" style="justify-content:center;font:800 22px Inter;gap:14px"><span>✦ +40</span><span>${coinHTML} +${c}</span></div>`:''}
+      ${r.pass?`<div class="paper" style="padding:14px;text-align:start"><div class="sub" style="font-weight:700">💡 ${t('didYouKnow')}</div><div>${esc(placeFact(p))}</div></div>`:''}
+      <button class="btn block" id="dn">${t('next')}</button></div>`;
+    $('#dn',m).onclick=async()=>{ await interstitial(); go('level',gate.L); }; }
+  function finish(){ if(gate) return gateFinish(); const n0=questions.length-(questions.length-i); const acc=Math.round(correct/questions.length*100); const xp=10+correct*2+fast+(acc===100?10:0); addXP(xp); const c=addCoins(acc===100?15:10);
+    const ups=Object.keys(m0).map(Number).filter(id=>mastery(id)>m0[id]).map(id=>byId[id]).filter(Boolean);
     const secs=Math.round((Date.now()-t0)/1000); SFX.win(); confetti(acc===100?110:60);
     m.innerHTML=`<div class="result rise"><div class="bao-dance">${bao(acc===100?'cool':acc>=70?'happy':'wow',120)}</div><div class="bubble big">${esc(acc===100?quip('perfect'):quip('ok'))}</div><h1>${t('lessonDone')}</h1>${fast?`<div class="chip" style="margin:0 auto">⚡ ${t('speedBonus')} +${fast}</div>`:''}
       <div class="kv"><div><span class="sub">${t('earned')}</span><b style="color:var(--gold2)">+${xp}</b></div><div><span class="sub">${t('accuracy')}</span><b>${acc}%</b></div><div><span class="sub">${t('combo')}</span><b>🔥${best}</b></div></div>
       <div class="row" style="justify-content:center;font:800 22px Inter">${coinHTML} +${c}</div>
+      ${ups.length?`<div class="card col lvlups" style="gap:8px;text-align:start"><div class="eyebrow">⬆ ${t('lvlUp')} · <span class="num">${ups.length}</span></div>${ups.slice(0,6).map(w=>`<div class="row" style="gap:10px"><span class="han" style="font-size:22px;min-width:52px">${esc(w.h)}</span><span class="py grow">${esc(w.p)}</span>${crownsHTML(mastery(w.id))}<span class="sub" style="min-width:64px;text-align:end">${t('masteryN')[mastery(w.id)]}</span></div>`).join('')}</div>`:''}
       ${factCardHTML(whyFact())}<button class="btn block" id="dn">${t('next')}</button></div>`;
     bindFact(m); $('#dn',m).onclick=async()=>{ onDone&&onDone(); await interstitial(); render(); };
   }
   steps?card():ask();
 }
 SCREENS.lesson=(m,a)=>{ if(!a||a.custom) return; const {l,i}=a; const words=unitsOf(l)[i];
-  runQuiz(m,{intro:words.filter(w=>!S.srs[w.id]),questions:makeQuestions(words,byLevel[l]),back:()=>go('level',l),
+  runQuiz(m,{intro:words.filter(w=>!S.srs[w.id]),questions:makeQuestions(words,byLevel[l],{review:false}),back:()=>go('level',l),
     onDone:()=>{ track('lesson_complete',{level:l,unit:i}); if(!S.user&&!S.guest&&!S.askedLogin){ S.askedLogin=1; setTimeout(()=>accountSheet(true),900); } S.units[l+'-'+i]=1;S.lessons++;S.lessonsToday++;save();route={name:'level',arg:l};}}); };
 SCREENS.review=m=>{
   const due=dueIds().map(id=>byId[id]).filter(Boolean);

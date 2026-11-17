@@ -6,7 +6,7 @@ async def main():
     b=await p.chromium.launch(executable_path='/usr/bin/google-chrome'); pg=await b.new_page(viewport={'width':390,'height':844},device_scale_factor=2)
     errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
     sh=lambda n,f=False: pg.screenshot(path=f'{O}/{n}.png',full_page=f)
-    await pg.goto('file://'+P); await pg.wait_for_timeout(400); await pg.click('.lang button[data-l="ar"]'); await pg.wait_for_timeout(300)
+    await pg.goto('file://'+P); await pg.wait_for_timeout(400); await pg.click('.lang button[data-l="ar"]'); await pg.wait_for_timeout(300); await pg.click('#onew'); await pg.wait_for_timeout(200)
     await pg.click('.tab[data-k="culture"]'); await pg.wait_for_timeout(300); await sh('01_culture',True)
     await pg.click('[data-c="0"]'); await pg.wait_for_timeout(300); await sh('02_history',True)
     await pg.click('#go'); await pg.wait_for_timeout(300); await sh('03_reader')
