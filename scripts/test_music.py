@@ -7,6 +7,7 @@ async def main():
     errs=[]; pg.on('pageerror',lambda e:errs.append(str(e))); pg.on('console',lambda m: m.type=='error' and errs.append(m.text))
     await pg.goto('file://'+P); await pg.wait_for_timeout(400)
     await pg.click('.lang button[data-l="en"]'); await pg.wait_for_timeout(1500)
+    if await pg.locator('#onew').count(): await pg.click('#onew'); await pg.wait_for_timeout(300)
     print('home', await pg.evaluate("[MUS.key, !!MUS.node, MUS.bar, AC&&AC.state]"))
     for k in ['dict','culture','games','me']:
       await pg.click(f'.tab[data-k="{k}"]'); await pg.wait_for_timeout(900)

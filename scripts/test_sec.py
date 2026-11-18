@@ -8,7 +8,9 @@ async def main():
     await pg.goto('file://'+P); await pg.wait_for_timeout(300)
     async def shot(n,full=False): await pg.wait_for_timeout(400); await pg.screenshot(path=f'{O}/s_{n}.png',full_page=full)
     for L in ['en','ar']:
-      if L=='en': await pg.click('.lang button[data-l="en"]')
+      if L=='en':
+        await pg.click('.lang button[data-l="en"]')
+        if await pg.locator('#onew').count(): await pg.click('#onew'); await pg.wait_for_timeout(300)
       else: await pg.evaluate("S.lang='ar';save();go('home')")
       await pg.evaluate("document.querySelector('.ptiles').scrollIntoView()"); await shot(L+'_tiles')
       await pg.evaluate("go('sectors')"); await shot(L+'_hub',True)
