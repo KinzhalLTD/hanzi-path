@@ -45,7 +45,7 @@ proper = {}   # proper-noun readings: accepted, but never used to decide how ord
 # standard readings that CC-CEDICT lists differently (现代汉语词典 forms) or that occur in running text
 VARIANTS = {'下载': ['xia4 zai4'], '负载': ['fu4 zai4'], '负载均衡': ['fu4 zai4 jun1 heng2'], '联轴器': ['lian2 zhou2 qi4'], '泄露': ['xie4 lou4'], '验血': ['yan4 xue4'], '抽血': ['chou1 xie3'],
             '到了': ['dao4 le5'], '血': ['xue4', 'xie3'], '载荷': ['zai4 he4'], '荷载': ['he4 zai4'], '承载': ['cheng2 zai4'], '血压': ['xue4 ya1'],
-            '穿着': ['chuan1 zhe5']}  # V+着 (wearing) as well as the noun chuānzhuó
+            '穿着': ['chuan1 zhe5'], '都会': ['dou1 hui4']}  # V+着 (wearing) besides chuānzhuó; 都+会 (all can) besides dūhuì
 def load_ced(path):
     """CC-CEDICT readings by simplified headword; multi-character proper nouns are skipped."""
     if not path or not os.path.exists(path): return False

@@ -1,0 +1,321 @@
+# Grammar HSK 4. Format: see scripts/gram_build.py. Keys are stable ids: never rename them.
+@4
+#g4-budan|不但…，而且/还/也…|不但,而且|«不但…بل…»: ليس فقط… بل أيضًا|不但…而且…: not only… but also…
+a:«不但» في الجزء الأول و«而且/还/也» في الثاني لإضافة معلومة أقوى. إذا كان الفاعل واحدًا يأتي «不但» بعده، وإن اختلف الفاعلان فقبل الأول.
+e:不但 in the first part and 而且 / 还 / 也 in the second add a stronger point. With one subject 不但 follows it; with two different subjects it comes before the first.
+>他不但会说汉语，而且说得很流利。|Tā búdàn huì shuō Hànyǔ, érqiě shuō de hěn liúlì.|لا يتكلم الصينية فحسب، بل بطلاقة أيضًا.|He not only speaks Chinese, he speaks it fluently.
+>这家饭馆不但便宜，而且很干净。|Zhè jiā fànguǎn búdàn piányi, érqiě hěn gānjìng.|هذا المطعم ليس رخيصًا فحسب، بل نظيف أيضًا.|This restaurant is not only cheap but clean too.
+>不但我喜欢，我的家人也都喜欢。|Búdàn wǒ xǐhuan, wǒ de jiārén yě dōu xǐhuan.|لست وحدي من يحبه، بل عائلتي كلها أيضًا.|Not only do I like it, my whole family does too.
+#g4-buguang|不仅…，也/还…|不仅|«不仅…»: ليس فقط (أكثر رسمية)|不仅…: not only (more formal)
+a:«不仅» مثل «不但» لكنها أكثر رسمية، شائعة في الكتابة والأخبار، ويليها «也/还/而且».
+e:不仅 works like 不但 but is more formal, common in writing and the news, followed by 也 / 还 / 而且.
+>这个问题不仅影响学生，也影响老师。|Zhège wèntí bùjǐn yǐngxiǎng xuésheng, yě yǐngxiǎng lǎoshī.|هذه المشكلة لا تؤثر في الطلاب فحسب، بل في المعلمين أيضًا.|This problem affects not only students but teachers too.
+>运动不仅对身体好，还能让人心情愉快。|Yùndòng bùjǐn duì shēntǐ hǎo, hái néng ràng rén xīnqíng yúkuài.|الرياضة ليست مفيدة للجسم فقط، بل تحسّن المزاج أيضًا.|Exercise is not only good for the body, it also lifts your mood.
+#g4-zhiyao|只要…，就…|只要,就|«只要…就…»: يكفي أن… حتى|只要…就…: as long as…
+a:«只要» يذكر شرطًا كافيًا، و«就» قبل النتيجة: إن تحقق هذا وحده فالنتيجة مضمونة.
+e:只要 states a sufficient condition and 就 introduces the result: if just this is true, the result follows.
+>只要努力，就能学好汉语。|Zhǐyào nǔlì, jiù néng xué hǎo Hànyǔ.|يكفي أن تجتهد حتى تتقن الصينية.|As long as you work hard, you can learn Chinese well.
+>只要你愿意，我们随时可以开始。|Zhǐyào nǐ yuànyì, wǒmen suíshí kěyǐ kāishǐ.|ما دمت راغبًا يمكننا البدء في أي وقت.|As long as you're willing, we can start any time.
+>只要不下雨，比赛就照常进行。|Zhǐyào bú xià yǔ, bǐsài jiù zhàocháng jìnxíng.|ما لم تمطر، تُقام المباراة كالمعتاد.|As long as it doesn't rain, the match goes ahead.
+#g4-zhiyou|只有…，才…|只有,才|«只有…才…»: لا… إلا إذا|只有…才…: only if… (then)
+a:«只有» يذكر الشرط الوحيد الضروري، و«才» قبل النتيجة: بدون هذا لا تحدث النتيجة. قارن «只要…就» الشرط الكافي.
+e:只有 names the one necessary condition and 才 introduces the result: without it, no result. Compare 只要…就, a sufficient condition.
+>只有多练习，才能说得流利。|Zhǐyǒu duō liànxí, cái néng shuō de liúlì.|لن تتكلم بطلاقة إلا إذا تدربت كثيرًا.|Only with lots of practice can you speak fluently.
+>只有经理同意，我们才能开始。|Zhǐyǒu jīnglǐ tóngyì, wǒmen cái néng kāishǐ.|لا نستطيع البدء إلا بموافقة المدير.|We can only start if the manager agrees.
+x:只有多练习，就能说得流利。|只有多练习，才能说得流利。
+#g4-wulun|无论/不管 + Q/A还是B，都…|无论,不管,都|«无论/不管…都…»: مهما / أيًّا كان|无论 / 不管…都…: no matter…
+a:«无论» (رسمية) أو «不管» (كلامية) مع أداة استفهام أو خيارين، ثم «都/也» قبل الفعل: النتيجة ثابتة في كل الأحوال.
+e:无论 (formal) or 不管 (spoken) with a question word or two options, then 都 / 也 before the verb: the result holds in every case.
+>无论多忙，他每天都锻炼身体。|Wúlùn duō máng, tā měi tiān dōu duànliàn shēntǐ.|مهما كان مشغولًا، يتمرن كل يوم.|No matter how busy he is, he exercises every day.
+>不管你去不去，我都要去。|Bùguǎn nǐ qù bu qù, wǒ dōu yào qù.|سواء ذهبت أم لا، سأذهب أنا.|Whether you go or not, I'm going.
+>无论遇到什么困难，我们都不放弃。|Wúlùn yù dào shénme kùnnan, wǒmen dōu bú fàngqì.|مهما واجهنا من صعوبات، لن نستسلم.|Whatever difficulties we meet, we won't give up.
+x:无论多忙，他每天锻炼身体。|无论多忙，他每天都锻炼身体。
+#g4-jishi|即使…，也…|即使,也|«即使…也…»: حتى لو|即使…也…: even if…
+a:«即使» يفترض حالة (حقيقية أو متخيلة)، و«也» قبل النتيجة التي لا تتغير رغمها.
+e:即使 supposes a situation (real or imagined) and 也 introduces a result that stays the same anyway.
+>即使下雨，比赛也不会取消。|Jíshǐ xià yǔ, bǐsài yě bú huì qǔxiāo.|حتى لو أمطرت، لن تُلغى المباراة.|Even if it rains, the match won't be cancelled.
+>即使很累，她也坚持学习。|Jíshǐ hěn lèi, tā yě jiānchí xuéxí.|حتى وهي متعبة، تواظب على الدراسة.|Even when she's tired, she keeps studying.
+#g4-jiran|既然…，就…|既然,就|«既然…فـ…»: ما دام / بما أن|既然…就…: since (given that)
+a:«既然» يذكر أمرًا معروفًا كأساس، و«就» قبل الاستنتاج أو الاقتراح المبني عليه.
+e:既然 states a known fact as the basis, and 就 introduces the conclusion or suggestion drawn from it.
+>既然你不舒服，就早点儿回家吧。|Jìrán nǐ bù shūfu, jiù zǎo diǎnr huí jiā ba.|ما دمت متوعكًا فارجع إلى البيت مبكرًا.|Since you're not feeling well, go home early.
+>既然决定了，就别后悔。|Jìrán juédìng le, jiù bié hòuhuǐ.|بما أنك قررت فلا تندم.|Since you've decided, don't regret it.
+#g4-jinguan|尽管…，但是/还是…|尽管,但是,还是|«尽管»: بالرغم من|尽管…: even though
+a:«尽管» مثل «虽然» لكنها أقوى، والجزء الثاني بـ «但是/可是/还是/却».
+e:尽管 is like 虽然 but stronger; the second part uses 但是 / 可是 / 还是 / 却.
+>尽管很困难，我们还是完成了任务。|Jǐnguǎn hěn kùnnan, wǒmen háishi wánchéng le rènwu.|رغم الصعوبة، أنجزنا المهمة.|Even though it was hard, we still completed the task.
+>尽管他很年轻，但是经验很丰富。|Jǐnguǎn tā hěn niánqīng, dànshì jīngyàn hěn fēngfù.|رغم صغر سنه، خبرته واسعة.|Although he's young, he's very experienced.
+#g4-bushi-ershi|不是 A，而是 B|不是,而是|«ليس… بل…»|不是A，而是B: not A, but B
+a:تصحيح فكرة: «不是» قبل الخطأ و«而是» قبل الصحيح.
+e:Correcting an idea: 不是 before the wrong one, 而是 before the right one.
+>他不是不想来，而是没有时间。|Tā bú shì bù xiǎng lái, ér shì méiyǒu shíjiān.|ليس لأنه لا يريد المجيء، بل لأنه لا يملك وقتًا.|It's not that he doesn't want to come, he just has no time.
+>问题不是钱，而是时间。|Wèntí bú shì qián, ér shì shíjiān.|المشكلة ليست المال بل الوقت.|The problem isn't money, it's time.
+#g4-bushi-jiushi|不是 A，就是 B|不是,就是|«إما… وإما…»|不是A，就是B: either A or B
+a:«不是…就是…» تعني أن الأمر أحد الاثنين فقط، وغالبًا تصف عادة: إما يقرأ وإما ينام.
+e:不是…就是… says it is one of the two, often describing a habit: if he's not reading, he's sleeping.
+>他周末不是看书，就是睡觉。|Tā zhōumò bú shì kàn shū, jiù shì shuìjiào.|في عطلة الأسبوع إما يقرأ وإما ينام.|At weekends he's either reading or sleeping.
+>这几天不是刮风就是下雨。|Zhè jǐ tiān bú shì guā fēng jiù shì xià yǔ.|هذه الأيام إما رياح وإما مطر.|These days it's either windy or rainy.
+#g4-yifangmian|一方面…，另一方面…|一方面,另一方面|«من جهة… ومن جهة أخرى…»|一方面…另一方面…: on the one hand… on the other
+a:لعرض جانبين لأمر واحد، في الكتابة والنقاش.
+e:Presents two sides of one matter, in writing and discussion.
+>一方面我想出国，另一方面又舍不得家人。|Yì fāngmiàn wǒ xiǎng chū guó, lìng yì fāngmiàn yòu shěbude jiārén.|من جهة أريد السفر للخارج، ومن جهة أخرى يصعب عليّ ترك عائلتي.|On the one hand I want to go abroad; on the other I can't bear to leave my family.
+>这个工作一方面能提高能力，另一方面也能增加收入。|Zhège gōngzuò yì fāngmiàn néng tígāo nénglì, lìng yì fāngmiàn yě néng zēngjiā shōurù.|هذا العمل يرفع القدرات من جهة، ويزيد الدخل من جهة أخرى.|This job improves your skills on one hand and raises your income on the other.
+#g4-shouxian|首先…，其次…，最后…|首先,其次,最后|ترتيب النقاط: أولًا، ثانيًا، أخيرًا|首先, 其次, 最后: firstly, secondly, finally
+a:لترتيب الأفكار في الكلام الرسمي والكتابة: «首先» أولًا، «其次» ثانيًا، «然后» ثم، «最后» أخيرًا.
+e:To order points in formal speech and writing: 首先 firstly, 其次 secondly, 然后 then, 最后 finally.
+>首先，我要感谢大家的帮助。|Shǒuxiān, wǒ yào gǎnxiè dàjiā de bāngzhù.|أولًا، أود أن أشكر الجميع على المساعدة.|First, I'd like to thank everyone for their help.
+>首先要了解客户的需要，其次要做好计划。|Shǒuxiān yào liǎojiě kèhù de xūyào, qícì yào zuò hǎo jìhuà.|أولًا يجب فهم احتياجات العميل، وثانيًا إعداد خطة جيدة.|First understand the client's needs, then make a good plan.
+#g4-yushi|…，于是…|于是|«于是»: فـ / وعندئذٍ|于是: so, thereupon
+a:«于是» تربط حدثًا بما تلاه نتيجةً له في سرد الماضي. لا تُستعمل للأوامر أو المستقبل.
+e:于是 links an event to what followed as a result, in past narration. Not for commands or the future.
+>他觉得很累，于是早早地睡了。|Tā juéde hěn lèi, yúshì zǎozǎo de shuì le.|شعر بالتعب فنام مبكرًا.|He felt tired, so he went to bed early.
+>我们都饿了，于是找了一家饭馆。|Wǒmen dōu è le, yúshì zhǎo le yì jiā fànguǎn.|جعنا جميعًا فبحثنا عن مطعم.|We were all hungry, so we found a restaurant.
+#g4-yinci|…，因此…|因此|«因此»: لذلك (رسمية)|因此: therefore
+a:«因此» = لذلك، أكثر رسمية من «所以»، شائعة في التقارير والكتابة.
+e:因此 means "therefore", more formal than 所以, common in reports and writing.
+>今年雨水少，因此水果很贵。|Jīnnián yǔshuǐ shǎo, yīncǐ shuǐguǒ hěn guì.|قلّ المطر هذا العام، لذلك الفاكهة غالية.|There was little rain this year, so fruit is expensive.
+>他工作很认真，因此得到了经理的表扬。|Tā gōngzuò hěn rènzhēn, yīncǐ dé dào le jīnglǐ de biǎoyáng.|يعمل بجدية، لذلك نال ثناء المدير.|He works conscientiously, so he was praised by the manager.
+#g4-youyu|由于…，(所以/因此)…|由于|«由于»: بسبب / نظرًا لـ|由于: due to, owing to
+a:«由于» = «因为» بأسلوب رسمي، ويقترن بـ «所以» أو «因此».
+e:由于 is a formal 因为, paired with 所以 or 因此.
+>由于天气原因，航班推迟了。|Yóuyú tiānqì yuányīn, hángbān tuīchí le.|تأخرت الرحلة بسبب الطقس.|The flight was delayed due to the weather.
+>由于时间关系，我们今天就讲到这儿。|Yóuyú shíjiān guānxi, wǒmen jīntiān jiù jiǎng dào zhèr.|نظرًا لضيق الوقت، نكتفي بهذا اليوم.|Owing to time, we'll stop here today.
+#g4-fouze|…，否则…|否则|«否则»: وإلا|否则: otherwise
+a:«否则» في أول الجزء الثاني: إن لم يحدث الأول فستقع هذه النتيجة.
+e:否则 opens the second part: if the first doesn't happen, this will be the result.
+>快点儿走吧，否则要迟到了。|Kuài diǎnr zǒu ba, fǒuzé yào chídào le.|هيا أسرع وإلا سنتأخر.|Hurry up, or we'll be late.
+>你必须早点儿预订，否则就没有房间了。|Nǐ bìxū zǎo diǎnr yùdìng, fǒuzé jiù méiyǒu fángjiān le.|يجب أن تحجز مبكرًا وإلا فلن تجد غرفة.|You must book early, otherwise there'll be no rooms.
+#g4-shenzhi|…，甚至…|甚至|«甚至»: بل حتى|甚至: even, so much as
+a:«甚至» تضيف أبعد مثال وأكثره مفاجأة، قبل الفعل أو الاسم.
+e:甚至 adds the most extreme or surprising case, before the verb or noun.
+>他太忙了，甚至没有时间吃饭。|Tā tài máng le, shènzhì méiyǒu shíjiān chī fàn.|إنه مشغول جدًا حتى إنه لا يجد وقتًا للأكل.|He's so busy he doesn't even have time to eat.
+>这首歌大人小孩甚至老人都会唱。|Zhè shǒu gē dàrén xiǎohái shènzhì lǎorén dōu huì chàng.|هذه الأغنية يغنيها الكبار والصغار بل حتى المسنون.|Adults, kids, even old people can sing this song.
+#g4-lian|连 + N + 都/也 + V|连,都,也|«连…都…»: حتى|连…都…: even
+a:«连» قبل العنصر المفاجئ و«都/也» قبل الفعل: حتى هذا! غالبًا للتعبير عن مبالغة أو استغراب.
+e:连 before the surprising element and 都 / 也 before the verb: even this! Often for emphasis or surprise.
+>他连一个汉字也不认识。|Tā lián yí gè Hànzì yě bú rènshi.|لا يعرف حتى حرفًا صينيًا واحدًا.|He doesn't even know a single character.
+>这个问题连老师都不会。|Zhège wèntí lián lǎoshī dōu bú huì.|هذه المسألة لا يعرف حلها حتى المعلم.|Even the teacher can't solve this problem.
+>我忙得连饭都没吃。|Wǒ máng de lián fàn dōu méi chī.|كنت مشغولًا حتى إنني لم آكل.|I was so busy I didn't even eat.
+x:连他不知道。|连他都不知道。
+#g4-bing|并 + 不/没 + V|并不,并没有|«并不»: ليس كما تظن|并不 / 并没有: actually not
+a:«并» قبل النفي تؤكده وتصحح توقعًا خاطئًا: «并不难» ليس صعبًا كما تظن.
+e:并 before a negative strengthens it and corrects a wrong expectation: 并不难, it's not actually hard.
+>汉语并不像你想的那么难。|Hànyǔ bìng bú xiàng nǐ xiǎng de nàme nán.|الصينية ليست صعبة كما تظن.|Chinese isn't as hard as you think.
+>我并没有说过这句话。|Wǒ bìng méiyǒu shuō guo zhè jù huà.|لم أقل هذه العبارة أبدًا.|I never actually said that.
+#g4-que|S + 却 + V|却|«却»: لكنّه (على غير المتوقع)|却: but, yet (unexpectedly)
+a:«却» ظرف بعد الفاعل يدل على تناقض مع المتوقع. لا يأتي في أول الجملة مثل «但是».
+e:却 is an adverb after the subject showing a contrast with what was expected. Unlike 但是 it can't start the sentence.
+>他很努力，成绩却不太好。|Tā hěn nǔlì, chéngjì què bú tài hǎo.|يجتهد كثيرًا، لكن نتائجه ليست جيدة.|He works hard, yet his grades aren't good.
+>我说了很多，他却一句也没听进去。|Wǒ shuō le hěn duō, tā què yí jù yě méi tīng jìnqu.|قلت الكثير، لكنه لم يستمع لكلمة.|I said a lot, but he didn't take in a word.
+x:他很努力，却成绩不好。|他很努力，成绩却不好。
+#g4-jingran|S + 竟然 + V|竟然|«竟然»: يا للمفاجأة!|竟然: unexpectedly, to one's surprise
+a:«竟然» قبل الفعل تعبّر عن دهشة من نتيجة غير متوقعة.
+e:竟然 before the verb expresses surprise at an unexpected result.
+>他竟然忘了自己的生日。|Tā jìngrán wàng le zìjǐ de shēngrì.|نسي عيد ميلاده، يا للعجب!|He actually forgot his own birthday.
+>这么简单的问题，你竟然不会？|Zhème jiǎndān de wèntí, nǐ jìngrán bú huì?|مسألة بهذه البساطة ولا تعرف حلها؟|You can't even do such an easy question?
+#g4-nandao|难道…吗？|难道,吗|«难道…吗؟»: أيُعقل أن…؟|难道…吗？: surely not…?
+a:«难道» تصنع سؤالًا إنكاريًا قويًا يعبّر عن استغراب أو عتاب، ولا ينتظر جوابًا.
+e:难道 makes a strong rhetorical question showing surprise or reproach; no answer is expected.
+>难道你不知道吗？|Nándào nǐ bù zhīdào ma?|أيُعقل أنك لا تعرف؟|Surely you know?
+>难道我说错了吗？|Nándào wǒ shuō cuò le ma?|هل يُعقل أنني أخطأت؟|Could I have said something wrong?
+#g4-daodi|到底/究竟 + Q？|到底,究竟|«到底»: في النهاية / بالضبط|到底 / 究竟: on earth, exactly
+a:«到底» (كلامية) و«究竟» (رسمية) في السؤال تطلب الجواب الحقيقي بإلحاح: ماذا تريد بالضبط؟
+e:到底 (spoken) and 究竟 (formal) in a question insist on the real answer: what on earth do you want?
+>你到底想说什么？|Nǐ dàodǐ xiǎng shuō shénme?|ماذا تريد أن تقول بالضبط؟|What exactly are you trying to say?
+>这件事究竟是谁做的？|Zhè jiàn shì jiūjìng shì shéi zuò de?|مَن فعل هذا في الحقيقة؟|Who exactly did this?
+!«到底» بلا سؤال = أخيرًا: «他到底还是来了».|Without a question, 到底 means "in the end": 他到底还是来了.
+#g4-kongpa|恐怕 + Clause|恐怕|«恐怕»: أخشى أن / على الأرجح|恐怕: I'm afraid, probably
+a:«恐怕» تقدّم تقديرًا غالبًا غير مرغوب بلطف: أخشى أن…
+e:恐怕 softly introduces an estimate, usually unwelcome: I'm afraid….
+>恐怕他今天来不了了。|Kǒngpà tā jīntiān lái bu liǎo le.|أخشى أنه لن يستطيع المجيء اليوم.|I'm afraid he can't come today.
+>这么晚了，恐怕商店都关门了。|Zhème wǎn le, kǒngpà shāngdiàn dōu guān mén le.|تأخر الوقت، على الأرجح أغلقت المتاجر.|It's so late, the shops are probably all closed.
+#g4-yexu|也许/大概 + Clause|也许,大概|«也许» و«大概»: ربما وعلى الأرجح|也许 and 大概: perhaps, probably
+a:«也许» ربما (احتمال)، «大概» على الأرجح أو تقريبًا مع الأرقام: «大概两个小时».
+e:也许 is "perhaps"; 大概 is "probably", and "about" with numbers: 大概两个小时.
+>也许他已经知道了。|Yěxǔ tā yǐjīng zhīdào le.|ربما يعرف بالفعل.|Perhaps he already knows.
+>从这儿到机场大概要一个小时。|Cóng zhèr dào jīchǎng dàgài yào yí gè xiǎoshí.|من هنا إلى المطار نحو ساعة.|It takes about an hour from here to the airport.
+#g4-qianwan|千万 + 要/别 + V|千万|«千万»: احرص كل الحرص|千万: be sure to / never
+a:«千万» قبل «要» أو «别/不要» لتحذير أو وصية قوية: «千万别忘了» إياك أن تنسى.
+e:千万 before 要 or 别 / 不要 gives a strong warning or reminder: 千万别忘了, whatever you do, don't forget.
+>千万别忘了带护照。|Qiānwàn bié wàng le dài hùzhào.|إياك أن تنسى جواز السفر.|Whatever you do, don't forget your passport.
+>开车的时候千万要小心。|Kāichē de shíhou qiānwàn yào xiǎoxīn.|احرص كل الحرص عند القيادة.|Be sure to take care when driving.
+#g4-laiqu|V + 来 + V + 去|来,去|«V来V去»: ذهابًا وإيابًا / مرارًا|V来V去: back and forth, over and over
+a:تكرار الفعل مع «来…去» يصف حركة متكررة أو تفكيرًا مطولًا: «想来想去» فكرتُ مرارًا.
+e:Repeating a verb with 来…去 describes repeated movement or long deliberation: 想来想去, think it over and over.
+>他在房间里走来走去。|Tā zài fángjiān li zǒu lái zǒu qù.|يمشي جيئةً وذهابًا في الغرفة.|He's pacing up and down the room.
+>我想来想去，还是决定不去了。|Wǒ xiǎng lái xiǎng qù, háishi juédìng bú qù le.|فكرتُ مرارًا، وقررت في النهاية ألا أذهب.|After thinking it over and over, I decided not to go.
+#g4-ba-cheng|把 + A + V + 成/作 + B|把,成,作|«把… V成…»: يحوّل / يعدّ… كـ|把A V成/作B: turn A into B, treat A as B
+a:«把 A 翻译成 B» يترجم A إلى B، «把 A 当作 B» يعدّ A مثل B، «把 A 看成 B» يظن A هو B.
+e:把A翻译成B translate A into B, 把A当作B treat A as B, 把A看成B mistake A for B.
+>请把这句话翻译成阿拉伯语。|Qǐng bǎ zhè jù huà fānyì chéng Ālābóyǔ.|ترجم هذه الجملة إلى العربية من فضلك.|Please translate this sentence into Arabic.
+>他把我当作自己的弟弟。|Tā bǎ wǒ dàngzuò zìjǐ de dìdi.|يعاملني كأخيه الصغير.|He treats me like his own little brother.
+>我把“大”看成了“太”。|Wǒ bǎ “dà” kàn chéng le “tài”.|ظننتُ «大» هي «太».|I misread 大 as 太.
+#g4-vchu|V + 出(来)|出来,出|«V + 出来»: يكتشف / يُخرج|V + 出来: figure out, bring out
+a:«出来» بعد فعل إدراك تعني الاكتشاف أو التعرف: «看出来» لاحظ، «想出来» توصّل إلى، «听出来» عرف من الصوت.
+e:出来 after a perception verb means to work something out: 看出来 notice, 想出来 come up with, 听出来 recognise by sound.
+>我听出来了，是你的声音。|Wǒ tīng chūlai le, shì nǐ de shēngyīn.|عرفتُه، إنه صوتك.|I recognised it, it's your voice.
+>他想出了一个好办法。|Tā xiǎng chū le yí gè hǎo bànfǎ.|توصّل إلى حل جيد.|He came up with a good idea.
+>你看得出来她很紧张吗？|Nǐ kàn de chūlai tā hěn jǐnzhāng ma?|هل تلاحظ أنها متوترة؟|Can you tell she's nervous?
+#g4-vzhu|V + 住|住|«V + 住»: يثبّت / يحفظ|V + 住: hold firmly, fix
+a:«住» بعد الفعل تعني الثبات أو الإمساك: «记住» يحفظ، «站住» قف، «拿住» أمسك جيدًا.
+e:住 after a verb means firm or fixed: 记住 remember, 站住 stop right there, 拿住 hold tight.
+>请记住我的电话号码。|Qǐng jìzhù wǒ de diànhuà hàomǎ.|احفظ رقم هاتفي من فضلك.|Please remember my phone number.
+>站住！别跑！|Zhànzhù! Bié pǎo!|قف! لا تهرب!|Stop! Don't run!
+>我记不住这么多生词。|Wǒ jì bu zhù zhème duō shēngcí.|لا أستطيع حفظ كل هذه الكلمات الجديدة.|I can't remember so many new words.
+#g4-de-extreme|Adj + 得 + 很/不得了/要命|得很,不得了,要命|درجة شديدة: «…得不得了»|Adj + 得不得了: extremely
+a:بعد الصفة: «得很» كثيرًا، «得不得了» إلى حد لا يُحتمل، «得要命» للغاية (كلامية). كلها للمبالغة.
+e:After an adjective: 得很 very, 得不得了 incredibly, 得要命 terribly (spoken). All intensify.
+>听到这个消息，她高兴得不得了。|Tīng dào zhège xiāoxi, tā gāoxìng de bùdéliǎo.|فرحت إلى أقصى حد بالخبر.|She was overjoyed at the news.
+>今天热得要命。|Jīntiān rè de yàomìng.|الجو حار بشكل لا يطاق اليوم.|It's terribly hot today.
+>这里的东西贵得很。|Zhèlǐ de dōngxi guì de hěn.|الأشياء هنا غالية جدًا.|Things here are very expensive.
+#g4-de-clause|V/Adj + 得 + Clause|得|«得» + جملة: إلى درجة أن|得 + clause: so… that…
+a:بعد «得» يمكن أن تأتي جملة كاملة تصف النتيجة: «累得走不动了» تعبت حتى لم أعد أستطيع المشي.
+e:After 得 a whole clause can describe the result: 累得走不动了, so tired I couldn't walk.
+>我累得走不动了。|Wǒ lèi de zǒu bu dòng le.|تعبتُ حتى لم أعد أقدر على المشي.|I'm so tired I can't walk any more.
+>他激动得说不出话来。|Tā jīdòng de shuō bu chū huà lái.|تأثر حتى عجز عن الكلام.|He was so moved he couldn't speak.
+>她笑得眼泪都出来了。|Tā xiào de yǎnlèi dōu chūlai le.|ضحكت حتى سالت دموعها.|She laughed until she cried.
+#g4-yixiazi|一下子 + V|一下子|«一下子»: فجأة / دفعة واحدة|一下子: all of a sudden, in one go
+a:«一下子» قبل الفعل: حدث فجأة أو في لحظة واحدة.
+e:一下子 before the verb: it happened suddenly or all at once.
+>天一下子黑了。|Tiān yíxiàzi hēi le.|أظلمت السماء فجأة.|It suddenly got dark.
+>他一下子就明白了。|Tā yíxiàzi jiù míngbai le.|فهم في لحظة.|He got it at once.
+#g4-chabuduo|差不多 + Num/V|差不多|«差不多»: تقريبًا / متشابه|差不多: almost, about the same
+a:«差不多» قبل عدد أو فعل = تقريبًا، وخبرًا = متشابه تقريبًا: «这两个差不多».
+e:差不多 before a number or verb means "almost / about"; as a predicate it means "about the same": 这两个差不多.
+>我差不多等了一个小时。|Wǒ chàbuduō děng le yí gè xiǎoshí.|انتظرتُ ساعة تقريبًا.|I waited for almost an hour.
+>这两件衣服差不多。|Zhè liǎng jiàn yīfu chàbuduō.|هذان الثوبان متشابهان تقريبًا.|These two outfits are about the same.
+>作业差不多做完了。|Zuòyè chàbuduō zuò wán le.|الواجب على وشك الانتهاء.|The homework is nearly done.
+#g4-chadianr|差点儿 + V|差点儿|«差点儿»: كاد أن|差点儿: almost (but didn't)
+a:«差点儿» = كاد يحدث ولم يحدث: «差点儿迟到» كدتُ أتأخر. ومع أمر مرغوب «差点儿没赶上» يعني: لحقتُ بصعوبة.
+e:差点儿 means something nearly happened but didn't: 差点儿迟到, I was nearly late. With 没 for a wanted result, 差点儿没赶上 means "only just made it".
+>我差点儿忘了。|Wǒ chàdiǎnr wàng le.|كدتُ أنسى.|I almost forgot.
+>他差点儿摔倒。|Tā chàdiǎnr shuāidǎo.|كاد يسقط.|He nearly fell over.
+#g4-yihuir|V + 一会儿|一会儿|«一会儿»: برهة / بعد قليل|一会儿: a little while
+a:«一会儿» بعد الفعل مدة قصيرة: «休息一会儿» استرح قليلًا. وقبل الفعل: بعد قليل: «我一会儿就来».
+e:一会儿 after a verb is a short while: 休息一会儿, rest a bit. Before the verb it means "in a moment": 我一会儿就来.
+>我们休息一会儿吧。|Wǒmen xiūxi yíhuìr ba.|لنسترح قليلًا.|Let's rest for a bit.
+>你等我一会儿，我马上下来。|Nǐ děng wǒ yíhuìr, wǒ mǎshàng xiàlai.|انتظرني قليلًا، سأنزل حالًا.|Wait for me a moment, I'll be right down.
+#g4-you-by|由 + Person + V|由|«由»: يتولّى / من قِبل|由: by (who is responsible)
+a:«由 + شخص + فعل» تحدد المسؤول عن العمل، أسلوب رسمي: «这个项目由他负责».
+e:由 + person + verb says who is responsible, a formal pattern: 这个项目由他负责.
+>这个项目由王经理负责。|Zhège xiàngmù yóu Wáng jīnglǐ fùzé.|المدير وانغ هو المسؤول عن هذا المشروع.|Manager Wang is in charge of this project.
+>会议由我来主持。|Huìyì yóu wǒ lái zhǔchí.|سأتولى إدارة الاجتماع.|I'll chair the meeting.
+#g4-tongguo|通过 + N/V，…|通过|«通过»: عن طريق / من خلال|通过: through, by means of
+a:«通过» تذكر الوسيلة أو الطريق: «通过朋友介绍» عن طريق صديق. وفعلًا: «通过考试» نجح في الامتحان.
+e:通过 gives the means or channel: 通过朋友介绍, through a friend. As a verb: 通过考试, pass an exam.
+>我是通过朋友认识他的。|Wǒ shì tōngguò péngyou rènshi tā de.|تعرفتُ إليه عن طريق صديق.|I got to know him through a friend.
+>通过这次活动，大家互相了解了。|Tōngguò zhè cì huódòng, dàjiā hùxiāng liǎojiě le.|من خلال هذا النشاط تعارف الجميع.|Through this event everyone got to know each other.
+>他通过了HSK四级考试。|Tā tōngguò le HSK sì jí kǎoshì.|نجح في اختبار HSK المستوى الرابع.|He passed the HSK 4 exam.
+#g4-anzhao|按照/根据 + N，…|按照,根据|«按照» و«根据»: وفقًا لـ / بناءً على|按照 / 根据: according to
+a:«按照» وفق قاعدة أو خطة نتبعها، «根据» بناءً على معلومات أو أساس.
+e:按照 means following a rule or plan; 根据 means "based on" information or evidence.
+>请按照要求填表。|Qǐng ànzhào yāoqiú tián biǎo.|املأ الاستمارة وفقًا للمطلوب من فضلك.|Please fill in the form as required.
+>根据天气预报，明天有雨。|Gēnjù tiānqì yùbào, míngtiān yǒu yǔ.|وفقًا للنشرة الجوية، ستمطر غدًا.|According to the forecast, it will rain tomorrow.
+#g4-duiyu|对于 + N，…|对于|«对于»: بالنسبة إلى|对于: regarding, as for
+a:«对于» تقدّم الموضوع الذي نعلّق عليه، أكثر رسمية من «对».
+e:对于 introduces the topic you comment on; more formal than 对.
+>对于这个问题，大家有不同的看法。|Duìyú zhège wèntí, dàjiā yǒu bù tóng de kànfǎ.|بالنسبة لهذه المسألة، للجميع آراء مختلفة.|People have different views on this question.
+>对于初学者来说，声调最难。|Duìyú chūxuézhě lái shuō, shēngdiào zuì nán.|بالنسبة للمبتدئين، النغمات أصعب شيء.|For beginners, tones are the hardest.
+#g4-suizhe|随着 + N，…|随着|«随着»: مع (تغيّر)…|随着: along with, as… changes
+a:«随着» + تغيّر، ثم نتيجته: «随着经济的发展» مع تطور الاقتصاد. أسلوب رسمي.
+e:随着 + a change, then its effect: 随着经济的发展, as the economy develops. A formal pattern.
+>随着经济的发展，人们的生活越来越好。|Suízhe jīngjì de fāzhǎn, rénmen de shēnghuó yuèláiyuè hǎo.|مع تطور الاقتصاد تتحسن حياة الناس.|As the economy develops, people's lives get better.
+>随着年龄的增长，他变得更成熟了。|Suízhe niánlíng de zēngzhǎng, tā biàn de gèng chéngshú le.|مع تقدمه في السن أصبح أكثر نضجًا.|As he got older, he became more mature.
+#g4-xiangqilai|V + 起来 (recall/assess)|想起来,说起来|«想起来»: تذكّر / «说起来»: إذا تحدثنا عن|想起来 / 说起来: recall, speaking of
+a:«想起来» تذكّر، و«说起来» عندما نتحدث عن الأمر. و«起来» بعد فعل حسّي تقييم: «做起来很难» صعب عند التنفيذ.
+e:想起来 means "remember / recall"; 说起来 "speaking of it". After an action verb 起来 assesses it: 做起来很难, hard to actually do.
+>我想起来了，他叫李明。|Wǒ xiǎng qǐlai le, tā jiào Lǐ Míng.|تذكرتُ، اسمه لي مينغ.|Now I remember, his name is Li Ming.
+>说起来容易，做起来难。|Shuō qǐlai róngyì, zuò qǐlai nán.|الكلام سهل والفعل صعب.|Easier said than done.
+#g4-haoburongyi|好不容易/好容易 + 才 + V|好不容易,才|«好不容易»: بشقّ الأنفس|好不容易: with great difficulty
+a:«好不容易» و«好容易» يعنيان الشيء نفسه رغم النفي: بعد جهد كبير، وغالبًا مع «才».
+e:好不容易 and 好容易 mean the same despite the negative: after great effort, usually with 才.
+>我好不容易才买到票。|Wǒ hǎoburóngyì cái mǎi dào piào.|اشتريتُ التذكرة بشق الأنفس.|I only managed to get tickets with great difficulty.
+>他好不容易找到了工作。|Tā hǎoburóngyì zhǎo dào le gōngzuò.|وجد عملًا بعد جهد كبير.|He finally found a job after a lot of effort.
+#g4-wangwang|往往 + V|往往|«往往»: غالبًا ما (نمط عام)|往往: tend to, usually
+a:«往往» تصف نمطًا متكررًا مبنيًا على التجربة، ولا تُستعمل للمستقبل أو للأوامر، بخلاف «常常».
+e:往往 describes a recurring pattern from experience; unlike 常常 it isn't used for the future or for requests.
+>周末这里往往人很多。|Zhōumò zhèlǐ wǎngwǎng rén hěn duō.|في عطلة الأسبوع يكون هنا عادة ازدحام.|It's usually crowded here at weekends.
+>第一次做的事情往往比较难。|Dì yī cì zuò de shìqing wǎngwǎng bǐjiào nán.|ما نفعله أول مرة يكون صعبًا غالبًا.|Things you do for the first time tend to be harder.
+#g4-huxiang|互相 + V|互相|«互相»: بعضهم بعضًا|互相: each other
+a:«互相» قبل الفعل: الفعل متبادل بين الطرفين: «互相帮助» يساعد بعضهم بعضًا.
+e:互相 before the verb makes it mutual: 互相帮助, help each other.
+>同学们应该互相帮助。|Tóngxuémen yīnggāi hùxiāng bāngzhù.|على الزملاء أن يساعد بعضهم بعضًا.|Classmates should help each other.
+>我们互相学习吧。|Wǒmen hùxiāng xuéxí ba.|لنتعلم من بعضنا.|Let's learn from each other.
+#g4-conglai|从来 + 不/没(有) + V|从来|«从来不/没»: لم… قط|从来不 / 从来没: never
+a:«从来不» = لا يفعل أبدًا (عادة)، «从来没 + فعل + 过» = لم يحدث قط.
+e:从来不 means "never does" (habit); 从来没 + verb + 过 means "has never once".
+>他从来不喝酒。|Tā cónglái bù hē jiǔ.|لا يشرب الكحول أبدًا.|He never drinks.
+>我从来没见过这么大的雪。|Wǒ cónglái méi jiàn guo zhème dà de xuě.|لم أرَ ثلجًا كهذا قط.|I've never seen such heavy snow.
+#g4-jihu|几乎 + V/Adj|几乎|«几乎»: تقريبًا / يكاد|几乎: almost, nearly
+a:«几乎» قبل الفعل أو «都» أو النفي: «几乎每天» تقريبًا كل يوم، «几乎没有» يكاد لا يوجد.
+e:几乎 before the verb, 都 or a negative: 几乎每天 almost every day, 几乎没有 hardly any.
+>我几乎每天都喝咖啡。|Wǒ jīhū měi tiān dōu hē kāfēi.|أشرب القهوة كل يوم تقريبًا.|I drink coffee almost every day.
+>教室里几乎没有人。|Jiàoshì li jīhū méiyǒu rén.|لا يكاد يوجد أحد في الصف.|There's hardly anyone in the classroom.
+#g4-shaowei|稍微 + V/Adj + 一点儿/一下|稍微|«稍微»: قليلًا|稍微: slightly, a little
+a:«稍微» قبل الفعل أو الصفة، ويتبعها «一点儿» أو «一下»: «稍微等一下» انتظر قليلًا.
+e:稍微 before a verb or adjective, followed by 一点儿 or 一下: 稍微等一下, wait just a moment.
+>请稍微等一下。|Qǐng shāowēi děng yíxià.|انتظر قليلًا من فضلك.|Please wait a moment.
+>能稍微便宜一点儿吗？|Néng shāowēi piányi yìdiǎnr ma?|هل يمكن أرخص قليلًا؟|Could it be a little cheaper?
+#g4-qizhong|…，其中…|其中|«其中»: من بينهم / منها|其中: among them, of which
+a:«其中» تشير إلى جزء من مجموعة ذُكرت قبلًا: «我们班有三十人，其中十个是女生».
+e:其中 refers to part of a group just mentioned: 我们班有三十人，其中十个是女生.
+>我们公司有一百个员工，其中一半是女的。|Wǒmen gōngsī yǒu yìbǎi gè yuángōng, qízhōng yíbàn shì nǚ de.|في شركتنا مئة موظف، نصفهم من النساء.|Our company has 100 staff, half of whom are women.
+>我去过很多城市，其中最喜欢西安。|Wǒ qù guo hěn duō chéngshì, qízhōng zuì xǐhuan Xī'ān.|زرتُ مدنًا كثيرة، وأحبّها إليّ شيآن.|I've been to many cities; of them I like Xi'an best.
+#g4-yishang|Num + 以上/以下|以上,以下|«以上» و«以下»: فما فوق وما دون|以上 / 以下: above, below
+a:بعد العدد: «十八岁以上» من ثمانية عشر فما فوق، «零度以下» تحت الصفر. و«以上» وحدها: ما سبق ذكره.
+e:After a number: 十八岁以上 18 and over, 零度以下 below zero. 以上 alone means "the above".
+>十八岁以上才能开车。|Shíbā suì yǐshàng cái néng kāichē.|لا يمكن القيادة إلا من سن الثامنة عشرة فما فوق.|You can only drive from 18 up.
+>今天气温在零度以下。|Jīntiān qìwēn zài líng dù yǐxià.|درجة الحرارة اليوم تحت الصفر.|The temperature today is below zero.
+>以上就是我的看法。|Yǐshàng jiù shì wǒ de kànfǎ.|هذا ما لديّ من رأي.|That's my view.
+#g4-buru|A + 不如 + B (+ Adj)|不如|«不如»: ليس بجودة… / من الأفضل|不如: not as good as / might as well
+a:«A 不如 B» = A أقل من B. و«不如 + فعل» في الاقتراح = من الأفضل أن: «不如我们走路去».
+e:A 不如 B means A isn't as good as B. 不如 + verb suggests "we might as well": 不如我们走路去.
+>坐公共汽车不如坐地铁快。|Zuò gōnggòng qìchē bùrú zuò dìtiě kuài.|الحافلة ليست أسرع من المترو.|The bus isn't as fast as the metro.
+>天气这么好，不如我们去公园吧。|Tiānqì zhème hǎo, bùrú wǒmen qù gōngyuán ba.|الجو جميل، فلنذهب إلى الحديقة.|The weather's so nice, we might as well go to the park.
+#g4-de-shi|…的是…|的是|«الأهم هو…»: بنية «…的是…»|…的是…: what is … is …
+a:«…的是» تقدّم ما سيأتي وتركّز عليه: «最重要的是» الأهم هو، «让我高兴的是» ما أسعدني هو.
+e:…的是 sets up and focuses what follows: 最重要的是 the most important thing is, 让我高兴的是 what made me happy was.
+>最重要的是身体健康。|Zuì zhòngyào de shì shēntǐ jiànkāng.|الأهم هو الصحة.|The most important thing is good health.
+>让我没想到的是，他也来了。|Ràng wǒ méi xiǎng dào de shì, tā yě lái le.|ما لم أتوقعه هو أنه جاء أيضًا.|What I didn't expect was that he came too.
+#g4-shenmede|A、B 什么的 / 等|什么的,等|«什么的» و«等»: وغير ذلك|什么的 / 等: and so on
+a:«什么的» في الكلام و«等» في الكتابة بعد قائمة: إلخ. «等等» للتأكيد.
+e:什么的 in speech and 等 in writing follow a list: etc. 等等 is the emphatic form.
+>我喜欢看书、听音乐什么的。|Wǒ xǐhuan kàn shū, tīng yīnyuè shénmede.|أحب القراءة والاستماع إلى الموسيقى وما شابه.|I like reading, listening to music and so on.
+>我们准备了水果、饮料等。|Wǒmen zhǔnbèi le shuǐguǒ, yǐnliào děng.|أعددنا الفاكهة والمشروبات وغيرها.|We've prepared fruit, drinks and so on.
+#g4-lai-v|来 + V|来|«来 + فعل»: دعني أتولّى|来 + verb: let me (take this on)
+a:«来» قبل فعل آخر تعني المبادرة: «我来做» دعني أفعل. و«你来» دورك.
+e:来 before another verb shows taking something on: 我来做, let me do it. 你来 means "your turn".
+>我来帮你吧。|Wǒ lái bāng nǐ ba.|دعني أساعدك.|Let me help you.
+>今天我来请客。|Jīntiān wǒ lái qǐngkè.|اليوم الدعوة عليّ.|Today it's my treat.
+#g4-notional-passive|O + V + Result (no 被)|好了,完了|المجهول بلا «被»|Passive without 被
+a:في الصينية تكثر جمل المجهول بلا علامة: الشيء أولًا ثم الفعل: «作业做完了» أُنجز الواجب. هذا أكثر طبيعية من «被» للأمور المحايدة.
+e:Chinese often makes passives with no marker: the thing first, then the verb: 作业做完了, the homework is done. This is more natural than 被 for neutral events.
+>饭做好了，快来吃吧。|Fàn zuò hǎo le, kuài lái chī ba.|الطعام جاهز، تعالوا كلوا.|Dinner's ready, come and eat.
+>票已经卖完了。|Piào yǐjīng mài wán le.|نفدت التذاكر.|The tickets are sold out.
+>信写好了吗？|Xìn xiě hǎo le ma?|هل كُتبت الرسالة؟|Is the letter written?
+#g4-yiwei|以为 vs 认为|以为,认为|«以为» و«认为»: ظنّ خطأ ويرى|以为 vs 认为: wrongly thought vs believe
+a:«以为» = ظننتُ (وتبيّن أنني مخطئ)، «认为» = أرى/أعتقد، رأي مدروس.
+e:以为 means "I thought" (and was wrong); 认为 means "I believe", a considered opinion.
+>我以为你是中国人。|Wǒ yǐwéi nǐ shì Zhōngguó rén.|ظننتك صينيًا.|I thought you were Chinese.
+>我认为这个计划很好。|Wǒ rènwéi zhège jìhuà hěn hǎo.|أرى أن هذه الخطة جيدة.|I think this plan is good.
+#g4-budebu|不得不 + V|不得不|«不得不»: اضطر إلى|不得不: have no choice but to
+a:«不得不» = لا مفر من أن: نفي مزدوج يعني الاضطرار.
+e:不得不 means "have no choice but to": a double negative expressing necessity.
+>电脑坏了，我不得不买一台新的。|Diànnǎo huài le, wǒ bùdébù mǎi yì tái xīn de.|تعطل الحاسوب فاضطررت لشراء جديد.|My computer broke, so I had to buy a new one.
+>下大雨了，比赛不得不取消。|Xià dà yǔ le, bǐsài bùdébù qǔxiāo.|أمطرت بغزارة فاضطروا لإلغاء المباراة.|It poured, so the match had to be cancelled.
+#g4-zhenghao|正好/刚好 + V|正好,刚好|«正好»: تمامًا في الوقت المناسب|正好 / 刚好: just right, as it happens
+a:«正好» و«刚好» = بالضبط أو صادف أن: «你来得正好» جئت في الوقت المناسب.
+e:正好 and 刚好 mean "just right" or "as it happens": 你来得正好, you came at just the right time.
+>你来得正好，我们正要吃饭。|Nǐ lái de zhènghǎo, wǒmen zhèng yào chī fàn.|جئت في الوقت المناسب، كنا على وشك الأكل.|You've come at just the right time, we're about to eat.
+>这双鞋我穿正好。|Zhè shuāng xié wǒ chuān zhènghǎo.|هذا الحذاء على مقاسي تمامًا.|These shoes fit me perfectly.
+>我刚好有空。|Wǒ gānghǎo yǒu kòng.|صادف أنني متفرغ.|As it happens, I'm free.
+#g4-jiuyao-hai|S + 还 + 是 (tone softener)|还,还是|«还» لتلطيف الحكم: لا بأس به|还 to soften: fairly, passably
+a:«还» قبل صفة إيجابية تلطّف الحكم: «还可以» لا بأس، «还不错» جيد نوعًا ما.
+e:还 before a positive adjective softens it: 还可以 not bad, 还不错 pretty good.
+>这家饭馆的菜还不错。|Zhè jiā fànguǎn de cài hái búcuò.|طعام هذا المطعم جيد نوعًا ما.|The food here is pretty good.
+>你的汉语怎么样？——还可以。|Nǐ de Hànyǔ zěnmeyàng? —— Hái kěyǐ.|كيف لغتك الصينية؟ — لا بأس بها.|How's your Chinese? — Not bad.
+#g4-zhe-ne|Adj + 着呢|着呢|«…着呢»: جدًا (كلامي)|Adj + 着呢: really (spoken)
+a:«着呢» بعد الصفة في الكلام تعني «جدًا» مع تأكيد: «好着呢» بخير جدًا.
+e:着呢 after an adjective in speech means "really, very", with emphasis: 好着呢, doing just fine.
+>他身体好着呢。|Tā shēntǐ hǎo zhe ne.|صحته جيدة جدًا.|He's in great health.
+>时间还早着呢。|Shíjiān hái zǎo zhe ne.|ما زال الوقت مبكرًا جدًا.|There's plenty of time.
