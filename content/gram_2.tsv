@@ -1,0 +1,340 @@
+# Grammar HSK 2. Format: see scripts/gram_build.py. Keys are stable ids: never rename them.
+@2
+#g2-le-change|Statement + 了 (new situation)|了|«了» في آخر الجملة: تغيّر الحال|Sentence-final 了: a change of state
+a:«了» في آخر الجملة تعلن وضعًا جديدًا أو تغيّرًا: صار الجو ممطرًا، صرتُ جائعًا، لم أعد أدخّن (不…了).
+e:了 at the end of a sentence announces a new situation or a change: it's raining now, I'm hungry now, I no longer smoke (不…了).
+>下雨了。|Xià yǔ le.|بدأ المطر.|It's raining now.
+>我饿了。|Wǒ è le.|جعتُ.|I'm hungry.
+>他不抽烟了。|Tā bù chōuyān le.|لم يعد يدخّن.|He doesn't smoke any more.
+!«了» هنا لا تعني الماضي بالضرورة: «我二十岁了» = صار عمري عشرين.|This 了 is not about the past: 我二十岁了 = I'm twenty now.
+#g2-guo|S + V + 过 + O|过|«过»: سبق أن فعلت (التجربة)|过 for experience: have ever done
+a:«过» بعد الفعل تعني أن الفعل حدث مرة واحدة على الأقل في الماضي: سبق لي أن… النفي «没 + فعل + 过».
+e:过 after a verb says something has happened at least once before: "have ever…". The negative is 没 + verb + 过.
+>我去过中国。|Wǒ qù guo Zhōngguó.|سبق أن ذهبتُ إلى الصين.|I've been to China.
+>你吃过北京烤鸭吗？|Nǐ chī guo Běijīng kǎoyā ma?|هل سبق أن أكلت بطة بكين؟|Have you ever had Peking duck?
+>我没看过这本书。|Wǒ méi kàn guo zhè běn shū.|لم أقرأ هذا الكتاب من قبل.|I've never read this book.
+x:我没去过了北京。|我没去过北京。
+#g2-zhe|V + 着|着|«着»: حالة مستمرة|着 for a continuing state
+a:«着» بعد الفعل تصف حالة باقية: الباب مفتوح، هو جالس، تلبس معطفًا أحمر. وفي «V着V» فعل يرافق فعلًا: يأكل وهو واقف.
+e:着 after a verb describes a lasting state: the door is open, he is sitting, she is wearing a red coat. V着 + V shows one action accompanying another.
+>门开着。|Mén kāi zhe.|الباب مفتوح.|The door is open.
+>她穿着一件红衣服。|Tā chuān zhe yí jiàn hóng yīfu.|ترتدي ثوبًا أحمر.|She is wearing red clothes.
+>他笑着说：“没关系。”|Tā xiào zhe shuō: "Méi guānxi."|قال مبتسمًا: «لا بأس».|He said with a smile, "It's fine."
+#g2-zhengzai|S + 正在 + V + (O) + 呢|正在,在,呢|«正在…呢»: يفعل الآن|正在…呢: in the middle of doing
+a:«正在» أو «在» قبل الفعل، و«呢» في آخر الجملة اختيارية، للتعبير عن فعل يجري الآن. النفي «没在…».
+e:正在 or 在 before the verb, with an optional 呢 at the end, says an action is going on right now. The negative is 没在….
+>我正在吃饭呢。|Wǒ zhèngzài chī fàn ne.|أنا آكل الآن.|I'm eating right now.
+>他在打电话。|Tā zài dǎ diànhuà.|يتحدث في الهاتف.|He's on the phone.
+>你在做什么呢？|Nǐ zài zuò shénme ne?|ماذا تفعل الآن؟|What are you doing?
+#g2-yaole|要/快 + V + 了|快,要,了|«快…了» و«要…了»: على وشك|快…了 / 要…了: about to happen
+a:«快 + فعل/صفة + 了» أو «要 + فعل + 了» تعني أن شيئًا سيحدث قريبًا جدًا. مع كلمة زمن محددة استعمل «就要…了» لا «快».
+e:快 + verb/adjective + 了 or 要 + verb + 了 means something is about to happen. With a specific time word use 就要…了, not 快.
+>快下雨了。|Kuài xià yǔ le.|ستمطر قريبًا.|It's about to rain.
+>火车要开了。|Huǒchē yào kāi le.|القطار على وشك الانطلاق.|The train is about to leave.
+>他明天就要回国了。|Tā míngtiān jiù yào huí guó le.|سيعود إلى بلده غدًا.|He's going back to his country tomorrow.
+x:他明天快回国了。|他明天就要回国了。
+#g2-bi|A + 比 + B + Adj|比|المقارنة بـ «比»|Comparisons with 比
+a:«A 比 B + صفة» = A أكثر من B. لا تضع «很» أو «非常» قبل الصفة في المقارنة.
+e:A 比 B + adjective means A is more … than B. Don't put 很 or 非常 before the adjective in a comparison.
+>今天比昨天冷。|Jīntiān bǐ zuótiān lěng.|اليوم أبرد من أمس.|Today is colder than yesterday.
+>他比我高。|Tā bǐ wǒ gāo.|هو أطول مني.|He's taller than me.
+>坐火车比坐飞机便宜。|Zuò huǒchē bǐ zuò fēijī piányi.|القطار أرخص من الطائرة.|The train is cheaper than flying.
+x:他比我很高。|他比我高。
+#g2-bi-degree|A + 比 + B + Adj + 一点儿/多了/Num|多了,一点儿,得多|مقدار الفرق في المقارنة|How much more: 一点儿, 多了, numbers
+a:بعد الصفة يُذكر مقدار الفرق: «一点儿» قليلًا، «多了/得多» كثيرًا، أو رقم محدد: «大三岁» أكبر بثلاث سنوات. وللتأكيد قبل الصفة: «更» أو «还».
+e:After the adjective you can add how big the difference is: 一点儿 a little, 多了 / 得多 much, or a number: 大三岁, three years older. Before it, 更 or 还 means "even more".
+>这件比那件贵一点儿。|Zhè jiàn bǐ nà jiàn guì yìdiǎnr.|هذه أغلى من تلك قليلًا.|This one is a bit more expensive than that one.
+>我哥哥比我大三岁。|Wǒ gēge bǐ wǒ dà sān suì.|أخي أكبر مني بثلاث سنوات.|My brother is three years older than me.
+>今天比昨天热多了。|Jīntiān bǐ zuótiān rè duō le.|اليوم أحرّ من أمس بكثير.|Today is much hotter than yesterday.
+#g2-meiyou-bi|A + 没有 + B + (那么) + Adj|没有,那么|النفي في المقارنة: «没有»|Negative comparison with 没有
+a:«A 没有 B + صفة» = A ليس بقدر B. هذه الصيغة الطبيعية لنفي المقارنة، و«那么» تزيد المعنى: ليس إلى ذلك الحد.
+e:A 没有 B + adjective means A is not as … as B. It's the natural way to negate a comparison; 那么 adds "not that…".
+>我没有他高。|Wǒ méiyǒu tā gāo.|لست طويلًا مثله.|I'm not as tall as him.
+>北京没有上海那么热。|Běijīng méiyǒu Shànghǎi nàme rè.|بكين ليست حارة مثل شنغهاي.|Beijing isn't as hot as Shanghai.
+>这个没有那个好。|Zhège méiyǒu nàge hǎo.|هذا ليس جيدًا مثل ذاك.|This one isn't as good as that one.
+#g2-gen-yiyang|A + 跟/和 + B + 一样 (+ Adj)|一样,跟|«跟…一样»: مثل|跟…一样: the same as
+a:«A 跟 B 一样» = A مثل B تمامًا. ويمكن إضافة صفة: «一样大» بنفس الحجم. النفي «不一样».
+e:A 跟 B 一样 means A is the same as B. Add an adjective for the quality: 一样大, the same size. Negative: 不一样.
+>我的手机跟你的一样。|Wǒ de shǒujī gēn nǐ de yíyàng.|هاتفي مثل هاتفك.|My phone is the same as yours.
+>她跟她妈妈一样漂亮。|Tā gēn tā māma yíyàng piàoliang.|هي جميلة مثل أمها.|She's as pretty as her mother.
+>这两个字不一样。|Zhè liǎng gè zì bù yíyàng.|هذان الحرفان مختلفان.|These two characters are different.
+#g2-de-degree|V + 得 + (很) + Adj|得|«得» لوصف كيف يُنجز الفعل|得 to describe how an action is done
+a:لوصف جودة الفعل أو طريقته: فعل + «得» + صفة: «他跑得很快» يجري بسرعة. النفي: «跑得不快».
+e:To say how well or how an action is done: verb + 得 + adjective: 他跑得很快, he runs fast. Negative: 跑得不快.
+>他跑得很快。|Tā pǎo de hěn kuài.|يركض بسرعة.|He runs fast.
+>你说得很好。|Nǐ shuō de hěn hǎo.|تتكلم جيدًا.|You speak very well.
+>我昨天睡得不好。|Wǒ zuótiān shuì de bù hǎo.|لم أنم جيدًا أمس.|I didn't sleep well last night.
+x:他跑很快。|他跑得很快。
+#g2-de-vo|S + (V) + O + V + 得 + Adj|得|«得» مع وجود مفعول: كرّر الفعل|得 when the verb has an object
+a:إذا كان للفعل مفعول نكرّر الفعل بعده ثم «得»: «他说汉语说得很好». ويجوز حذف الفعل الأول: «他汉语说得很好».
+e:If the verb has an object, repeat the verb after it and then add 得: 他说汉语说得很好. The first verb can be dropped: 他汉语说得很好.
+>他说汉语说得很好。|Tā shuō Hànyǔ shuō de hěn hǎo.|يتكلم الصينية جيدًا.|He speaks Chinese very well.
+>她做菜做得很好吃。|Tā zuò cài zuò de hěn hǎochī.|تطبخ طعامًا لذيذًا.|She cooks really tasty food.
+>我汉字写得不好。|Wǒ Hànzì xiě de bù hǎo.|خطي في الحروف الصينية ليس جيدًا.|I don't write characters well.
+x:他说汉语得很好。|他说汉语说得很好。
+#g2-result|V + 完/好/到/懂/见|完,好,到,懂,见|مكمّل النتيجة|Result complements
+a:كلمة بعد الفعل تبيّن نتيجته: «完» انتهى، «好» أُنجز جيدًا، «到» وصل/حصل، «懂» فَهِم، «见» رأى أو سمع. النفي «没 + فعل + نتيجة».
+e:A word after the verb shows its result: 完 finished, 好 done properly, 到 reached/got, 懂 understood, 见 perceived. The negative is 没 + verb + result.
+>我做完作业了。|Wǒ zuò wán zuòyè le.|أنهيتُ الواجب.|I've finished my homework.
+>你听懂了吗？|Nǐ tīng dǒng le ma?|هل فهمت ما سمعته؟|Did you understand?
+>我没看见他。|Wǒ méi kànjiàn tā.|لم أره.|I didn't see him.
+!«看» = ينظر، «看见» = يرى فعلًا. «找» = يبحث، «找到» = يجد.|看 is to look, 看见 is to actually see; 找 is to look for, 找到 is to find.
+#g2-dir|V + 来/去|来,去,进来,回去|مكمّل الاتجاه البسيط|Simple direction complements
+a:«来» بعد الفعل حركة نحو المتكلم، و«去» بعيدًا عنه: «进来» ادخل (إلى هنا)، «出去» اخرج، «回去» ارجع. المكان يأتي قبل «来/去»: «回家去».
+e:来 after a verb means towards the speaker, 去 away: 进来 come in, 出去 go out, 回去 go back. A place goes before 来/去: 回家去.
+>请进来。|Qǐng jìnlái.|تفضّل بالدخول.|Please come in.
+>他出去了。|Tā chūqù le.|خرج.|He has gone out.
+>我们回学校去吧。|Wǒmen huí xuéxiào qù ba.|لنرجع إلى المدرسة.|Let's go back to school.
+x:他回去家了。|他回家去了。
+#g2-duration|S + V + 了 + Dur + (的) + O|了,年,小时|مدة الفعل|How long: duration after the verb
+a:المدة تأتي بعد الفعل لا قبله: «我学了两年汉语». و«了…了» في آخر الجملة تعني أن الفعل ما زال مستمرًا: «学了两年了».
+e:Duration comes after the verb, not before: 我学了两年汉语. With a second 了 at the end the action is still going on: 学了两年了.
+>我学了两年汉语。|Wǒ xué le liǎng nián Hànyǔ.|درستُ الصينية سنتين.|I studied Chinese for two years.
+>他等了一个小时。|Tā děng le yí gè xiǎoshí.|انتظر ساعة.|He waited for an hour.
+>我在北京住了三年了。|Wǒ zài Běijīng zhù le sān nián le.|أعيش في بكين منذ ثلاث سنوات.|I've been living in Beijing for three years.
+x:我两年学了汉语。|我学了两年汉语。
+#g2-ci|V + 了/过 + Num + 次|次|عدد المرات: «次»|How many times: 次
+a:«次» تعدّ المرات وتأتي بعد الفعل: «去过两次» ذهبتُ مرتين. مع ضمير مفعول يأتي الضمير قبل العدد: «见过他一次».
+e:次 counts times and follows the verb: 去过两次, been twice. A pronoun object goes before the count: 见过他一次.
+>我去过两次上海。|Wǒ qù guo liǎng cì Shànghǎi.|ذهبتُ إلى شنغهاي مرتين.|I've been to Shanghai twice.
+>这个电影我看了三次。|Zhège diànyǐng wǒ kàn le sān cì.|شاهدتُ هذا الفيلم ثلاث مرات.|I've watched this film three times.
+>我见过他一次。|Wǒ jiàn guo tā yí cì.|رأيته مرة واحدة.|I've met him once.
+#g2-shide|S + 是 + Time/Place/How + V + 的|是,的|«是…的»: التأكيد على تفاصيل حدث ماضٍ|是…的: stressing when, where or how
+a:لحدث معروف أنه وقع، نؤكد متى أو أين أو كيف أو مع من بـ «是…的». تفصيلة السؤال توضع بعد «是».
+e:For something already known to have happened, 是…的 stresses when, where, how or with whom. The detail goes right after 是.
+>你是什么时候来的？|Nǐ shì shénme shíhou lái de?|متى جئت؟|When did you come?
+>我是坐飞机来的。|Wǒ shì zuò fēijī lái de.|جئتُ بالطائرة.|I came by plane.
+>这本书是在北京买的。|Zhè běn shū shì zài Běijīng mǎi de.|اشتريتُ هذا الكتاب في بكين.|I bought this book in Beijing.
+!لا تستعمل «了» مع «是…的» لنفس الفعل.|Don't use 了 with 是…的 on the same verb.
+x:我是昨天来了。|我是昨天来的。
+#g2-yinwei|因为 + Reason，所以 + Result|因为,所以|«因为…所以…»: لأن… لذلك|因为…所以…: because… so…
+a:السبب يأتي أولًا مع «因为»، والنتيجة بعده مع «所以». يمكن استعمال إحداهما فقط. والسؤال «为什么؟» لماذا.
+e:The reason comes first with 因为, the result after with 所以. Either word can be used alone. Ask with 为什么？, why.
+>因为下雨，所以我没去。|Yīnwèi xià yǔ, suǒyǐ wǒ méi qù.|لأنها أمطرت، لم أذهب.|Because it rained, I didn't go.
+>我今天很累，所以想早点儿睡觉。|Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo diǎnr shuìjiào.|أنا متعب اليوم، لذلك أريد أن أنام مبكرًا.|I'm tired today, so I want to sleep early.
+>你为什么不高兴？|Nǐ wèishénme bù gāoxìng?|لماذا أنت غير سعيد؟|Why are you unhappy?
+#g2-suiran|虽然…，但是…|虽然,但是|«虽然…但是…»: رغم أن… إلا أن|虽然…但是…: although… but…
+a:في الصينية تُستعمل الكلمتان معًا عادةً: «虽然» في الجزء الأول و«但是» أو «可是» في الثاني، عكس الإنجليزية التي تمنع الجمع.
+e:Chinese normally uses both: 虽然 in the first part and 但是 or 可是 in the second, unlike English, where "although… but" is wrong.
+>虽然很贵，但是很好。|Suīrán hěn guì, dànshì hěn hǎo.|رغم أنه غالٍ، إلا أنه جيد.|Although it's expensive, it's good.
+>虽然他很忙，但是每天都运动。|Suīrán tā hěn máng, dànshì měi tiān dōu yùndòng.|رغم انشغاله، يتمرن كل يوم.|Although he's busy, he exercises every day.
+>汉语很难，可是很有意思。|Hànyǔ hěn nán, kěshì hěn yǒu yìsi.|الصينية صعبة، لكنها ممتعة.|Chinese is hard, but it's interesting.
+#g2-haishi|A + 还是 + B？|还是|«还是» في السؤال: أم|还是 in questions: or
+a:«还是» تطرح خيارين في السؤال: شاي أم قهوة؟ ولا تُستعمل مع «吗».
+e:还是 offers two choices in a question: tea or coffee? It is never used with 吗.
+>你喝茶还是喝咖啡？|Nǐ hē chá háishi hē kāfēi?|تشرب شايًا أم قهوة؟|Would you like tea or coffee?
+>你今天去还是明天去？|Nǐ jīntiān qù háishi míngtiān qù?|تذهب اليوم أم غدًا؟|Are you going today or tomorrow?
+>他是老师还是学生？|Tā shì lǎoshī háishi xuésheng?|هل هو معلم أم طالب؟|Is he a teacher or a student?
+x:你喝茶还是咖啡吗？|你喝茶还是喝咖啡？
+#g2-huozhe|A + 或者 + B|或者|«或者» في الخبر: أو|或者 in statements: or
+a:«或者» تعني «أو» في الجمل الخبرية والاقتراحات، أما في السؤال فنستعمل «还是».
+e:或者 means "or" in statements and suggestions; in questions use 还是 instead.
+>我们明天或者后天去。|Wǒmen míngtiān huòzhě hòutiān qù.|نذهب غدًا أو بعد غد.|We'll go tomorrow or the day after.
+>你可以坐公共汽车或者打车。|Nǐ kěyǐ zuò gōnggòng qìchē huòzhě dǎchē.|يمكنك ركوب الحافلة أو سيارة أجرة.|You can take the bus or a taxi.
+>喝茶或者喝水都可以。|Hē chá huòzhě hē shuǐ dōu kěyǐ.|الشاي أو الماء، كلاهما مناسب.|Tea or water, either is fine.
+#g2-rang|S + 让 + Person + V|让|«让»: يجعل / يسمح / يطلب من|让: let, make, ask someone to
+a:«让 + شخص + فعل» تعني أن الفاعل يطلب من الشخص أو يسمح له أو يجعله يفعل.
+e:让 + person + verb means the subject asks, lets or makes that person do something.
+>妈妈让我早点儿回家。|Māma ràng wǒ zǎo diǎnr huí jiā.|طلبت أمي أن أعود باكرًا.|Mum wants me to come home early.
+>老师让我们读课文。|Lǎoshī ràng wǒmen dú kèwén.|طلب المعلم أن نقرأ النص.|The teacher had us read the text.
+>这件事让我很高兴。|Zhè jiàn shì ràng wǒ hěn gāoxìng.|هذا الأمر أسعدني.|This made me very happy.
+#g2-gei|S + 给 + Person + V + O|给|«给» حرف جر: لـ / إلى|给 as a preposition: for / to
+a:«给 + شخص» قبل الفعل يعني أن الفعل موجّه إليه أو لمصلحته: «给你打电话» أتصل بك. وفعلًا «给» = يعطي.
+e:给 + person before the verb shows who the action is for or aimed at: 给你打电话, call you. As a verb 给 means "give".
+>我晚上给你打电话。|Wǒ wǎnshang gěi nǐ dǎ diànhuà.|سأتصل بك مساءً.|I'll call you this evening.
+>他给我买了一本书。|Tā gěi wǒ mǎi le yì běn shū.|اشترى لي كتابًا.|He bought me a book.
+>请给我一杯水。|Qǐng gěi wǒ yì bēi shuǐ.|أعطني كوب ماء من فضلك.|A glass of water, please.
+x:我打电话给你晚上。|我晚上给你打电话。
+#g2-double|S + V + Person + Thing|给,告诉,问,教|المفعولان: الشخص ثم الشيء|Two objects: person, then thing
+a:أفعال مثل «给» يعطي، «告诉» يخبر، «问» يسأل، «教» يعلّم تأخذ مفعولين: الشخص أولًا ثم الشيء.
+e:Verbs like 给 give, 告诉 tell, 问 ask and 教 teach take two objects: the person first, then the thing.
+>我告诉你一件事。|Wǒ gàosu nǐ yí jiàn shì.|سأخبرك بأمر.|Let me tell you something.
+>老师教我们汉语。|Lǎoshī jiāo wǒmen Hànyǔ.|المعلم يعلّمنا الصينية.|The teacher teaches us Chinese.
+>我想问你一个问题。|Wǒ xiǎng wèn nǐ yí gè wèntí.|أريد أن أسألك سؤالًا.|I'd like to ask you a question.
+#g2-li|A + 离 + B + 远/近|离|«离»: المسافة بين مكانين|离: distance from
+a:«A 离 B + 远/近» تصف المسافة بين A وB. للسؤال: «离…远吗؟». ويُستعمل للزمن أيضًا: «离考试还有三天».
+e:A 离 B + 远/近 describes the distance between A and B. Ask with 离…远吗？. It also works for time: 离考试还有三天.
+>我家离公司很近。|Wǒ jiā lí gōngsī hěn jìn.|بيتي قريب من الشركة.|My home is close to the office.
+>机场离这儿远吗？|Jīchǎng lí zhèr yuǎn ma?|هل المطار بعيد من هنا؟|Is the airport far from here?
+>离考试还有三天。|Lí kǎoshì hái yǒu sān tiān.|بقيت ثلاثة أيام على الامتحان.|There are three days until the exam.
+x:我家很近离公司。|我家离公司很近。
+#g2-cong-dao|从 + A + 到 + B|从,到|«从…到…»: من… إلى|从…到…: from… to…
+a:«从» نقطة البداية و«到» النهاية، للمكان والزمن، وتأتي قبل الفعل.
+e:从 marks the starting point and 到 the end, for both places and times; the phrase comes before the verb.
+>我从八点到五点工作。|Wǒ cóng bā diǎn dào wǔ diǎn gōngzuò.|أعمل من الثامنة إلى الخامسة.|I work from eight to five.
+>从这儿到机场要多长时间？|Cóng zhèr dào jīchǎng yào duō cháng shíjiān?|كم يستغرق الطريق من هنا إلى المطار؟|How long does it take from here to the airport?
+>他是从沙特来的。|Tā shì cóng Shātè lái de.|جاء من السعودية.|He came from Saudi Arabia.
+#g2-wang|往 + Dir + V|往|«往»: نحو / باتجاه|往: towards
+a:«往 + اتجاه» قبل الفعل في وصف الطريق: «往前走» امشِ إلى الأمام، «往左拐» انعطف يسارًا.
+e:往 + direction before the verb gives directions: 往前走 go straight on, 往左拐 turn left.
+>一直往前走。|Yìzhí wǎng qián zǒu.|امشِ إلى الأمام مباشرة.|Go straight ahead.
+>到路口往右拐。|Dào lùkǒu wǎng yòu guǎi.|عند التقاطع انعطف يمينًا.|Turn right at the crossroads.
+>这个车往哪儿开？|Zhège chē wǎng nǎr kāi?|إلى أين تذهب هذه السيارة؟|Where is this bus going?
+#g2-jiu|Time + 就 + V|就|«就»: مبكرًا / فورًا|就: as early as, right away
+a:«就» بعد كلمة الزمن تعني أن الأمر حدث أبكر أو أسرع من المتوقع، وتعني أيضًا «حالًا»: «我就来».
+e:就 after a time word says something happened earlier or sooner than expected. It also means "right away": 我就来.
+>他六点就起床了。|Tā liù diǎn jiù qǐchuáng le.|استيقظ منذ السادسة.|He was up as early as six.
+>我马上就来。|Wǒ mǎshàng jiù lái.|سآتي حالًا.|I'm coming right away.
+>你等一下，他就回来。|Nǐ děng yíxià, tā jiù huílai.|انتظر قليلًا، سيعود حالًا.|Wait a moment, he'll be right back.
+#g2-cai|Time + 才 + V|才|«才»: متأخرًا / ليس قبل|才: not until, only then
+a:«才» عكس «就»: الأمر حدث متأخرًا عن المتوقع. ومع «才» لا نستعمل «了».
+e:才 is the opposite of 就: something happened later than expected. Don't use 了 with 才.
+>他十点才起床。|Tā shí diǎn cái qǐchuáng.|لم يستيقظ إلا في العاشرة.|He didn't get up until ten.
+>我昨天十二点才睡觉。|Wǒ zuótiān shí'èr diǎn cái shuìjiào.|لم أنم أمس إلا في الثانية عشرة.|I didn't go to bed until twelve last night.
+>你怎么现在才来？|Nǐ zěnme xiànzài cái lái?|لماذا تأتي الآن فقط؟|Why are you only coming now?
+x:他十点才起床了。|他十点才起床。
+#g2-yijing|S + 已经 + V + 了|已经,了|«已经…了»: بالفعل / قد|已经…了: already
+a:«已经» قبل الفعل و«了» في آخر الجملة: الأمر تمّ أو بلغ حدًّا. «已经十点了» صارت العاشرة بالفعل.
+e:已经 before the verb with 了 at the end: something has already happened or reached a point. 已经十点了, it's already ten.
+>我已经吃饭了。|Wǒ yǐjīng chī fàn le.|أكلتُ بالفعل.|I've already eaten.
+>已经十一点了，快睡觉吧。|Yǐjīng shíyī diǎn le, kuài shuìjiào ba.|صارت الحادية عشرة، نَمْ بسرعة.|It's already eleven, go to sleep.
+>他已经走了。|Tā yǐjīng zǒu le.|لقد غادر بالفعل.|He has already left.
+#g2-hai|S + 还 + V/Adj|还|«还»: ما زال / أيضًا|还: still, also, yet
+a:«还» تعني «ما زال»: «他还在睡觉»، و«أيضًا» بالإضافة: «我还想喝茶»، و«还没…» لم بعد.
+e:还 means "still": 他还在睡觉; "also, in addition": 我还想喝茶; and with 没, "not yet": 还没….
+>他还在睡觉。|Tā hái zài shuìjiào.|ما زال نائمًا.|He's still sleeping.
+>我还想买一件衣服。|Wǒ hái xiǎng mǎi yí jiàn yīfu.|أريد أن أشتري ثوبًا آخر أيضًا.|I'd also like to buy another piece of clothing.
+>我还没吃饭。|Wǒ hái méi chī fàn.|لم آكل بعد.|I haven't eaten yet.
+#g2-zai|再 + V|再|«再»: مرة أخرى (في المستقبل)|再: again (in the future)
+a:«再» للتكرار في المستقبل أو الطلب: «再说一遍» قلها مرة أخرى. وفي «再见» نلتقي مجددًا. و«先…再…» أولًا… ثم.
+e:再 is for repeating something in the future or in requests: 再说一遍, say it again. Also 再见, and 先…再…, first… then….
+>请再说一遍。|Qǐng zài shuō yí biàn.|أعدها مرة أخرى من فضلك.|Please say it again.
+>明天再来吧。|Míngtiān zài lái ba.|تعالَ مرة أخرى غدًا.|Come again tomorrow.
+>我们先吃饭，再去看电影。|Wǒmen xiān chī fàn, zài qù kàn diànyǐng.|نأكل أولًا، ثم نذهب إلى السينما.|We'll eat first, then go to the cinema.
+#g2-yixia|V + 一下|一下|«一下»: قليلًا / لحظة|一下: briefly, have a go
+a:«一下» بعد الفعل تجعل الطلب لطيفًا وقصيرًا: «等一下» انتظر لحظة، «看一下» ألقِ نظرة.
+e:一下 after a verb makes it brief and polite: 等一下 wait a moment, 看一下 take a look.
+>请等一下。|Qǐng děng yíxià.|انتظر لحظة من فضلك.|Please wait a moment.
+>我看一下你的书，可以吗？|Wǒ kàn yíxià nǐ de shū, kěyǐ ma?|أستطيع أن ألقي نظرة على كتابك؟|Can I have a look at your book?
+>我来介绍一下。|Wǒ lái jièshào yíxià.|دعني أعرّفكم.|Let me introduce everyone.
+#g2-redup|V + V / V + 一 + V|看看,试试,想想|تكرار الفعل: تجربة لطيفة|Verb doubling: trying something
+a:تكرار الفعل يخفف المعنى: «看看» يلقي نظرة، «试试» يجرّب. وللفعل الثنائي: «休息休息».
+e:Doubling a verb softens it: 看看 have a look, 试试 give it a try. Two-syllable verbs double as a whole: 休息休息.
+>你试试这件衣服。|Nǐ shìshi zhè jiàn yīfu.|جرّب هذا الثوب.|Try this on.
+>我想想。|Wǒ xiǎngxiang.|دعني أفكر.|Let me think.
+>我们休息休息吧。|Wǒmen xiūxi xiūxi ba.|لنسترح قليلًا.|Let's take a little rest.
+#g2-yao|S + 要 + V/N|要|«要»: يريد / يجب / سوف|要: want, need, will
+a:«要» + اسم = أريد: «我要一杯茶». و«要» + فعل = سأفعل أو يجب: «我要去上班». النفي «不想» للرغبة و«不用» لعدم الحاجة.
+e:要 + noun means "want": 我要一杯茶. 要 + verb means "will" or "need to": 我要去上班. For the negative use 不想 (don't want) or 不用 (no need).
+>我要一杯咖啡。|Wǒ yào yì bēi kāfēi.|أريد كوب قهوة.|I'd like a coffee.
+>明天我要去医院。|Míngtiān wǒ yào qù yīyuàn.|سأذهب إلى المستشفى غدًا.|I have to go to the hospital tomorrow.
+>你不用去了。|Nǐ bú yòng qù le.|لا داعي أن تذهب.|You don't need to go.
+x:你不要去了吗？|你不用去了吗？
+#g2-keyi|S + 可以 + V|可以|«可以»: يمكن / مسموح|可以: may, can (permission)
+a:«可以» للإذن والإمكان: «我可以进来吗؟» هل يمكنني الدخول؟ الجواب «可以» أو «不行».
+e:可以 is for permission and possibility: 我可以进来吗？ may I come in? Answer 可以 or 不行.
+>我可以坐这儿吗？|Wǒ kěyǐ zuò zhèr ma?|هل يمكنني الجلوس هنا؟|May I sit here?
+>这儿可以拍照。|Zhèr kěyǐ pāizhào.|التصوير مسموح هنا.|You can take photos here.
+>你可以帮我一下吗？|Nǐ kěyǐ bāng wǒ yíxià ma?|هل يمكنك مساعدتي قليلًا؟|Could you help me for a moment?
+#g2-keneng|S + 可能 + V|可能|«可能»: ربما|可能: maybe, probably
+a:«可能» قبل الفعل أو في أول الجملة تعبّر عن احتمال: ربما. و«不可能» = مستحيل.
+e:可能 before the verb or at the start expresses probability: maybe. 不可能 means "impossible".
+>他可能不来了。|Tā kěnéng bù lái le.|ربما لن يأتي.|He might not come.
+>明天可能会下雨。|Míngtiān kěnéng huì xià yǔ.|ربما تمطر غدًا.|It may rain tomorrow.
+>这不可能！|Zhè bù kěnéng!|هذا مستحيل!|That's impossible!
+#g2-bie|别 + V (+ 了)|别|«别»: لا تفعل|别: don't
+a:«别» = «不要» للنهي، أقصر وأكثر استعمالًا في الكلام. «别…了» = توقّف عن…
+e:别 is a shorter, very common way to say 不要, don't. 别…了 means "stop…".
+>别担心。|Bié dānxīn.|لا تقلق.|Don't worry.
+>别说话了。|Bié shuōhuà le.|توقف عن الكلام.|Stop talking.
+>别忘了带护照。|Bié wàng le dài hùzhào.|لا تنسَ جواز السفر.|Don't forget your passport.
+#g2-mei|每 + M + N + 都|每,都|«每…都»: كل|每…都: every
+a:«每» تحتاج كلمة قياس (إلا مع 天/年)، وتصحبها «都» قبل الفعل غالبًا: «每个人都…».
+e:每 needs a measure word (except with 天 and 年) and usually pairs with 都 before the verb: 每个人都….
+>我每天都喝咖啡。|Wǒ měi tiān dōu hē kāfēi.|أشرب القهوة كل يوم.|I drink coffee every day.
+>每个人都有手机。|Měi gè rén dōu yǒu shǒujī.|كل شخص لديه هاتف.|Everyone has a phone.
+>他每个星期都去游泳。|Tā měi gè xīngqī dōu qù yóuyǒng.|يذهب للسباحة كل أسبوع.|He goes swimming every week.
+#g2-di|第 + Num + (M)|第|الترتيب: «第»|Ordinal numbers with 第
+a:«第» قبل العدد تجعله ترتيبيًا: «第一» الأول، «第三天» اليوم الثالث. ومع اسم نضيف كلمة القياس: «第二个问题».
+e:第 before a number makes it ordinal: 第一 first, 第三天 the third day. With a noun add the measure word: 第二个问题.
+>这是我第一次来中国。|Zhè shì wǒ dì yī cì lái Zhōngguó.|هذه أول مرة آتي فيها إلى الصين.|This is my first time in China.
+>他是第三个到的。|Tā shì dì sān gè dào de.|كان ثالث من وصل.|He was the third to arrive.
+>请看第五页。|Qǐng kàn dì wǔ yè.|انظروا إلى الصفحة الخامسة.|Please look at page five.
+#g2-de-clause|V + (O) + 的 + N|的|«的» لوصف الاسم بجملة (الاسم الموصول)|的 with a clause: the … that …
+a:الوصف كله يأتي قبل الاسم ثم «的»: «我昨天买的书» الكتاب الذي اشتريته أمس. لا يوجد «الذي» منفصل كالعربية.
+e:The whole description comes before the noun, followed by 的: 我昨天买的书, the book I bought yesterday. There is no separate "that/which".
+>我昨天买的书很好看。|Wǒ zuótiān mǎi de shū hěn hǎokàn.|الكتاب الذي اشتريته أمس ممتع.|The book I bought yesterday is good.
+>穿红衣服的人是我姐姐。|Chuān hóng yīfu de rén shì wǒ jiějie.|الشخص الذي يرتدي الأحمر أختي.|The person in red is my sister.
+>你认识跟他说话的人吗？|Nǐ rènshi gēn tā shuōhuà de rén ma?|هل تعرف الشخص الذي يكلّمه؟|Do you know the person talking to him?
+x:书我昨天买的很好看。|我昨天买的书很好看。
+#g2-duo-adj|多 + Adj？|多,多长,多远|«多 + صفة» للسؤال عن المقدار|多 + adjective: how long / far / big
+a:«多» + صفة تسأل عن المقدار: «多长» كم طوله، «多远» كم يبعد، «多大» كم عمره أو حجمه، «多长时间» كم من الوقت.
+e:多 + adjective asks about degree: 多长 how long, 多远 how far, 多大 how old/big, 多长时间 how much time.
+>你学汉语多长时间了？|Nǐ xué Hànyǔ duō cháng shíjiān le?|منذ متى تدرس الصينية؟|How long have you been learning Chinese?
+>你家离学校多远？|Nǐ jiā lí xuéxiào duō yuǎn?|كم يبعد بيتك عن المدرسة؟|How far is your home from school?
+>这个房间多大？|Zhège fángjiān duō dà?|ما مساحة هذه الغرفة؟|How big is this room?
+#g2-vbv|V/Adj + 不 + V/Adj？|不|سؤال «الإيجاب والنفي»: يفعل أم لا؟|Affirmative–negative questions
+a:تكرار الفعل مع «不» بينهما يصنع سؤالًا مثل «吗»: «你去不去？» تذهب أم لا؟ ولا يُضاف «吗». ومع «有»: «有没有».
+e:Saying the verb, then 不, then the verb again makes a question like 吗: 你去不去？. Don't add 吗. With 有 it's 有没有.
+>你去不去？|Nǐ qù bu qù?|هل تذهب أم لا؟|Are you going or not?
+>这个菜好吃不好吃？|Zhège cài hǎochī bu hǎochī?|هل هذا الطبق لذيذ؟|Is this dish tasty?
+>你有没有时间？|Nǐ yǒu méiyǒu shíjiān?|هل عندك وقت أم لا؟|Do you have time or not?
+x:你去不去吗？|你去不去？
+#g2-shibushi|…，是不是？ / 是不是…？|是不是|«是不是»: أليس كذلك؟|是不是: isn't it? / is it that…?
+a:«是不是» في آخر الجملة أو قبل الخبر تطلب تأكيد ما تظنه: أليس كذلك؟
+e:是不是 at the end, or before the predicate, asks someone to confirm what you think: isn't it?
+>你是中国人，是不是？|Nǐ shì Zhōngguó rén, shì bu shì?|أنت صيني، أليس كذلك؟|You're Chinese, aren't you?
+>你是不是不舒服？|Nǐ shì bu shì bù shūfu?|هل أنت متوعك؟|Are you not feeling well?
+>他是不是已经走了？|Tā shì bu shì yǐjīng zǒu le?|هل غادر بالفعل؟|Has he already left?
+#g2-youdianr|有点儿 + Adj|有点儿|«有点儿»: قليلًا (غالبًا سلبي)|有点儿: a bit (usually negative)
+a:«有点儿» قبل الصفة تعني «قليلًا» وتصف غالبًا شعورًا غير مريح: «有点儿累». قارن: «便宜一点儿» بعد الصفة للمقارنة.
+e:有点儿 before an adjective means "a bit", usually about something unwelcome: 有点儿累. Compare 便宜一点儿, after the adjective, which compares.
+>我今天有点儿累。|Wǒ jīntiān yǒudiǎnr lèi.|أنا متعب قليلًا اليوم.|I'm a bit tired today.
+>这个菜有点儿辣。|Zhège cài yǒudiǎnr là.|هذا الطبق حار قليلًا.|This dish is a little spicy.
+>今天有点儿冷。|Jīntiān yǒudiǎnr lěng.|الجو بارد قليلًا اليوم.|It's a bit cold today.
+x:我一点儿累。|我有点儿累。
+#g2-zui|最 + Adj/V|最|«最»: الأكثر (التفضيل)|最: the most
+a:«最» قبل الصفة أو فعل الشعور للتفضيل المطلق: «最好» الأفضل، «最喜欢» أحبّ ما.
+e:最 before an adjective or a feeling verb makes a superlative: 最好 the best, 最喜欢 like most.
+>他是我们班最高的。|Tā shì wǒmen bān zuì gāo de.|هو الأطول في صفّنا.|He's the tallest in our class.
+>我最喜欢吃饺子。|Wǒ zuì xǐhuan chī jiǎozi.|أكثر ما أحب أكله الجياوزي.|Dumplings are my favourite food.
+>这是最好的办法。|Zhè shì zuì hǎo de bànfǎ.|هذا أفضل حل.|This is the best way.
+#g2-feichang|非常/真/特别 + Adj|非常,真,特别|ظروف الدرجة: جدًا / حقًا|Degree adverbs: very, really
+a:«非常» جدًا جدًا، «特别» خصوصًا وكثيرًا، «真» حقًا وتأتي في التعجب. كلها قبل الصفة.
+e:非常 is "extremely", 特别 "especially", 真 "really", often in exclamations. All go before the adjective.
+>今天非常热。|Jīntiān fēicháng rè.|الجو حار جدًا اليوم.|It's extremely hot today.
+>你的汉语真好！|Nǐ de Hànyǔ zhēn hǎo!|لغتك الصينية رائعة حقًا!|Your Chinese is really good!
+>我特别喜欢这个城市。|Wǒ tèbié xǐhuan zhège chéngshì.|أحب هذه المدينة كثيرًا.|I especially like this city.
+#g2-juede|S + 觉得 + Clause|觉得|«觉得»: أظن / أشعر أن|觉得: think, feel that
+a:«觉得» + جملة كاملة لإبداء الرأي أو الشعور: «我觉得很好». السؤال: «你觉得怎么样？».
+e:觉得 + a whole clause gives an opinion or feeling: 我觉得很好. Ask: 你觉得怎么样？.
+>我觉得汉语不太难。|Wǒ juéde Hànyǔ bú tài nán.|أظن أن الصينية ليست صعبة جدًا.|I don't think Chinese is that hard.
+>你觉得这件衣服怎么样？|Nǐ juéde zhè jiàn yīfu zěnmeyàng?|ما رأيك في هذا الثوب؟|What do you think of this outfit?
+>我觉得有点儿冷。|Wǒ juéde yǒudiǎnr lěng.|أشعر ببعض البرد.|I feel a bit cold.
+#g2-yiqi|S + 一起 + V|一起|«一起»: معًا|一起: together
+a:«一起» قبل الفعل، وغالبًا مع «跟/和 + شخص»: «我跟你一起去» أذهب معك.
+e:一起 goes before the verb, often with 跟 / 和 + person: 我跟你一起去, I'll go with you.
+>我们一起吃饭吧。|Wǒmen yìqǐ chī fàn ba.|لنأكل معًا.|Let's eat together.
+>我跟朋友一起去旅游。|Wǒ gēn péngyou yìqǐ qù lǚyóu.|أسافر مع صديقي.|I'm travelling with a friend.
+>你要跟我们一起去吗？|Nǐ yào gēn wǒmen yìqǐ qù ma?|هل تريد أن تأتي معنا؟|Do you want to come with us?
+x:我一起跟你去。|我跟你一起去。
+#g2-weishenme|为什么 + V？|为什么|«为什么»: لماذا|为什么: why
+a:«为什么» قبل الفعل أو في أول الجملة، والجواب يبدأ بـ «因为». «怎么» تسأل أيضًا «لماذا» بنبرة استغراب.
+e:为什么 goes before the verb or at the start; answers begin with 因为. 怎么 can also ask "how come" with surprise.
+>你为什么学汉语？|Nǐ wèishénme xué Hànyǔ?|لماذا تدرس الصينية؟|Why are you learning Chinese?
+>他为什么没来？|Tā wèishénme méi lái?|لماذا لم يأتِ؟|Why didn't he come?
+>你怎么不吃？|Nǐ zěnme bù chī?|كيف لا تأكل؟|How come you're not eating?
+#g2-xian|先 + V1，然后/再 + V2|先,然后|«先…然后…»: أولًا… ثم|先…然后…: first… then…
+a:«先» قبل الفعل الأول، و«然后» أو «再» قبل الثاني لترتيب الأفعال.
+e:先 goes before the first action, 然后 or 再 before the next, to order the steps.
+>我先洗手，然后吃饭。|Wǒ xiān xǐ shǒu, ránhòu chī fàn.|أغسل يدي أولًا، ثم آكل.|I wash my hands first, then eat.
+>你先走吧，我马上来。|Nǐ xiān zǒu ba, wǒ mǎshàng lái.|اذهب أنت أولًا، سآتي حالًا.|You go first, I'll be right there.
+>我们先坐地铁，然后打车。|Wǒmen xiān zuò dìtiě, ránhòu dǎchē.|نركب المترو أولًا ثم سيارة أجرة.|We'll take the metro first, then a taxi.
+#g2-hui-de|会 + V + 的 (prediction)|会,的|«会…的»: سيحدث بالتأكيد|会…的: will surely
+a:«会 + فعل + 的» تعبّر عن ثقة بأن الشيء سيحدث: «他会来的» سيأتي بالتأكيد. تطمين لطيف.
+e:会 + verb + 的 expresses confidence that something will happen: 他会来的, he'll come for sure. Often reassuring.
+>别担心，他会来的。|Bié dānxīn, tā huì lái de.|لا تقلق، سيأتي.|Don't worry, he'll come.
+>你会喜欢这儿的。|Nǐ huì xǐhuan zhèr de.|ستحب هذا المكان.|You'll like it here.
+>明天不会下雨的。|Míngtiān bú huì xià yǔ de.|لن تمطر غدًا بالتأكيد.|It won't rain tomorrow.
+#g2-hao-v|好 + V|好吃,好看,好听,好玩|«好 + فعل»: لذيذ، جميل، ممتع|好 + verb: nice to …
+a:«好» قبل فعل حسّي يصنع صفة: «好吃» لذيذ، «好看» جميل، «好听» عذب، «好玩» ممتع. والعكس «难吃»، «难看».
+e:好 before a sense verb makes an adjective: 好吃 tasty, 好看 good-looking, 好听 nice to hear, 好玩 fun. The opposite uses 难: 难吃, 难看.
+>这个菜很好吃。|Zhège cài hěn hǎochī.|هذا الطبق لذيذ.|This dish is tasty.
+>这首歌很好听。|Zhè shǒu gē hěn hǎotīng.|هذه الأغنية جميلة.|This song sounds lovely.
+>北京好玩吗？|Běijīng hǎowán ma?|هل بكين ممتعة؟|Is Beijing fun?
+#g2-ba-adv|吧 (guess) vs 吗|吧,吗|«吧» للتخمين و«吗» للسؤال المحايد|吧 for guesses vs 吗
+a:«吗» سؤال محايد لا تعرف جوابه. «吧» سؤال تتوقع جوابه وتطلب تأكيده: «你累了吧؟» أنت متعب على ما أظن.
+e:吗 is a neutral question when you don't know. 吧 is a question when you expect the answer and want it confirmed: 你累了吧？ you must be tired.
+>你累了吧？|Nǐ lèi le ba?|أنت متعب على ما يبدو؟|You must be tired?
+>你是新来的吧？|Nǐ shì xīn lái de ba?|أنت جديد هنا، صحيح؟|You're new here, right?
+>你累了吗？|Nǐ lèi le ma?|هل أنت متعب؟|Are you tired?

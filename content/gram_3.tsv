@@ -1,0 +1,376 @@
+# Grammar HSK 3. Format: see scripts/gram_build.py. Keys are stable ids: never rename them.
+@3
+#g3-ba|S + 把 + O + V + Other|把|جملة «把»: ما الذي فُعل بالشيء|把 sentences: what is done to something
+a:«把» تقدّم المفعول المعروف قبل الفعل لتبيّن ما حدث له. لا يأتي الفعل وحده: يحتاج نتيجة أو اتجاهًا أو «了»: «把门关上».
+e:把 moves a known object before the verb to show what happens to it. The verb can't stand alone: it needs a result, direction or 了: 把门关上.
+>请把门关上。|Qǐng bǎ mén guānshang.|أغلق الباب من فضلك.|Please close the door.
+>我把作业做完了。|Wǒ bǎ zuòyè zuò wán le.|أنهيتُ الواجب.|I've finished my homework.
+>他把我的咖啡喝了。|Tā bǎ wǒ de kāfēi hē le.|شرب قهوتي.|He drank my coffee.
+!النفي والأفعال المساعدة قبل «把»: «我没把门关上»، «你能把书给我吗؟».|Negatives and modal verbs go before 把: 我没把门关上, 你能把书给我吗？
+x:我把作业做。|我把作业做完了。
+#g3-ba-place|S + 把 + O + V + 在/到/给 + X|把,在,到,给|«把» مع المكان أو المستلم|把 with a destination or receiver
+a:لنقل شيء إلى مكان أو شخص: «把 + الشيء + فعل + 在/到/给 + المكان أو الشخص». هنا «把» شبه ضرورية.
+e:To put or send something somewhere or to someone: 把 + thing + verb + 在/到/给 + place or person. Here 把 is almost obligatory.
+>把书放在桌子上吧。|Bǎ shū fàng zài zhuōzi shang ba.|ضع الكتاب على الطاولة.|Put the book on the table.
+>请把这封信交给经理。|Qǐng bǎ zhè fēng xìn jiāo gěi jīnglǐ.|سلّم هذه الرسالة للمدير من فضلك.|Please give this letter to the manager.
+>他把车开到公司门口了。|Tā bǎ chē kāi dào gōngsī ménkǒu le.|قاد السيارة إلى باب الشركة.|He drove the car to the company entrance.
+x:放书在桌子上。|把书放在桌子上。
+#g3-bei|S + 被 + (Agent) + V + Other|被|المبني للمجهول: «被»|The passive with 被
+a:«被» تبني جملة يقع فيها الفعل على الفاعل، غالبًا أمر غير مرغوب. الفاعل الحقيقي بعد «被» ويمكن حذفه، والفعل يحتاج نتيجة أو «了».
+e:被 makes a sentence where the subject receives the action, often something unwelcome. The doer follows 被 and can be dropped; the verb needs a result or 了.
+>我的手机被偷了。|Wǒ de shǒujī bèi tōu le.|سُرق هاتفي.|My phone was stolen.
+>蛋糕被弟弟吃完了。|Dàngāo bèi dìdi chī wán le.|أكل أخي الصغير الكعكة كلها.|The cake was eaten up by my little brother.
+>他被老师批评了。|Tā bèi lǎoshī pīpíng le.|انتقده المعلم.|He was criticised by the teacher.
+!في الكلام يُقال أيضًا «让» أو «叫» بدل «被» مع ذكر الفاعل.|In speech 让 or 叫 can replace 被 when the doer is mentioned.
+#g3-dir2|V + 上/下/进/出/回/过/起 + 来/去|上来,下去,出来,回来,过去,起来|مكمّل الاتجاه المركّب|Compound direction complements
+a:فعل + اتجاه + «来/去»: «走进来» دخل ماشيًا (نحوي)، «跑出去» خرج راكضًا. المكان يأتي قبل «来/去»: «走进教室来».
+e:Verb + direction + 来/去: 走进来 walk in (towards me), 跑出去 run out. A place goes before 来/去: 走进教室来.
+>他从楼上走下来了。|Tā cóng lóu shàng zǒu xiàlai le.|نزل من الطابق العلوي.|He walked down from upstairs.
+>小狗跑出去了。|Xiǎogǒu pǎo chūqu le.|خرج الجرو راكضًا.|The puppy ran out.
+>请把书拿回来。|Qǐng bǎ shū ná huílai.|أعد الكتاب إلى هنا من فضلك.|Please bring the book back.
+x:他走进来教室。|他走进教室来。
+#g3-potential|V + 得/不 + Result/Dir|得,不|مكمّل الإمكان: يستطيع أن… / لا يستطيع|Potential complements: can / can't manage
+a:«得» أو «不» بين الفعل ونتيجته تبيّن الإمكان: «看得懂» أستطيع فهم ما أقرأ، «听不清楚» لا أسمع بوضوح، «吃不完» لا أستطيع إكماله.
+e:得 or 不 between a verb and its result shows whether it's possible: 看得懂 can understand (reading), 听不清楚 can't hear clearly, 吃不完 can't finish.
+>这本书我看得懂。|Zhè běn shū wǒ kàn de dǒng.|أفهم هذا الكتاب.|I can understand this book.
+>声音太小，我听不见。|Shēngyīn tài xiǎo, wǒ tīng bu jiàn.|الصوت منخفض جدًا، لا أسمعه.|It's too quiet, I can't hear it.
+>菜太多了，我们吃不完。|Cài tài duō le, wǒmen chī bu wán.|الطعام كثير، لن نستطيع إنهاءه.|There's too much food, we can't finish it.
+!«不能看» = ممنوع أو غير مسموح، «看不懂» = لا أفهم رغم المحاولة.|不能看 = not allowed to look; 看不懂 = can't understand despite trying.
+#g3-result2|V + 错/对/清楚/干净/会|错,对,清楚,干净,会|مزيد من مكمّلات النتيجة|More result complements
+a:«错» خطأ، «对» صواب، «清楚» بوضوح، «干净» نظيف، «会» تعلّم حتى أتقن. النتيجة تلتصق بالفعل: «写错了».
+e:错 wrongly, 对 correctly, 清楚 clearly, 干净 clean, 会 learned to master. The result sticks to the verb: 写错了.
+>对不起，我写错了。|Duìbuqǐ, wǒ xiě cuò le.|آسف، كتبتُ خطأ.|Sorry, I wrote it wrong.
+>你听清楚了吗？|Nǐ tīng qīngchu le ma?|هل سمعت بوضوح؟|Did you hear clearly?
+>我把衣服洗干净了。|Wǒ bǎ yīfu xǐ gānjìng le.|غسلتُ الثياب جيدًا.|I washed the clothes clean.
+#g3-vzai|V + 在/到 + Place|在,到|«V + 在/到 + مكان»: موضع الفعل أو نهايته|V + 在 / 到 + place
+a:بعض الأفعال تُتبَع بمكان النتيجة: «住在» يسكن في، «坐在» يجلس على، «走到» يمشي حتى يصل إلى. هنا المكان بعد الفعل.
+e:Some verbs are followed by where the action ends up: 住在 live in, 坐在 sit on, 走到 walk up to. Here the place comes after the verb.
+>我住在北京。|Wǒ zhù zài Běijīng.|أسكن في بكين.|I live in Beijing.
+>他坐在我旁边。|Tā zuò zài wǒ pángbiān.|يجلس بجانبي.|He sits next to me.
+>我们走到公园吧。|Wǒmen zǒu dào gōngyuán ba.|لنمشِ حتى الحديقة.|Let's walk to the park.
+#g3-vov-dur|S + V + O + V + 了 + Dur|了|المدة مع مفعول: كرّر الفعل|Duration when the verb has an object
+a:مع المفعول نكرّر الفعل لنضع المدة بعده: «他学汉语学了三年»، أو نضع المدة قبل المفعول مع «的»: «学了三年的汉语».
+e:With an object, repeat the verb to put the duration after it: 他学汉语学了三年, or put the duration before the object: 学了三年的汉语.
+>他学汉语学了三年。|Tā xué Hànyǔ xué le sān nián.|درس الصينية ثلاث سنوات.|He studied Chinese for three years.
+>我看电视看了两个小时。|Wǒ kàn diànshì kàn le liǎng gè xiǎoshí.|شاهدتُ التلفاز ساعتين.|I watched TV for two hours.
+>她打了半个小时的电话。|Tā dǎ le bàn gè xiǎoshí de diànhuà.|تحدثت في الهاتف نصف ساعة.|She was on the phone for half an hour.
+#g3-dur-neg|Dur + 没 + V + 了|没,了|منذ متى لم تفعل؟|How long since: Dur + 没 + V + 了
+a:للتعبير عن مدة عدم حدوث شيء: المدة قبل «没»، و«了» في آخر الجملة: «三天没睡好了» لم أنم جيدًا منذ ثلاثة أيام.
+e:For how long something hasn't happened, the duration goes before 没, with 了 at the end: 三天没睡好了.
+>我三天没睡好了。|Wǒ sān tiān méi shuì hǎo le.|لم أنم جيدًا منذ ثلاثة أيام.|I haven't slept well for three days.
+>我们很长时间没见面了。|Wǒmen hěn cháng shíjiān méi jiànmiàn le.|لم نلتقِ منذ وقت طويل.|We haven't seen each other for ages.
+>他一个星期没来上班了。|Tā yí gè xīngqī méi lái shàngbān le.|لم يأتِ إلى العمل منذ أسبوع.|He hasn't come to work for a week.
+#g3-yijiu|一 + V1，就 + V2|一,就|«一…就…»: ما إن… حتى|一…就…: as soon as
+a:«一» قبل الفعل الأول و«就» قبل الثاني: الثاني يحدث مباشرة بعد الأول، أو كلما حدث الأول.
+e:一 before the first verb and 就 before the second: the second happens right after the first, or every time it does.
+>我一到家就给你打电话。|Wǒ yí dào jiā jiù gěi nǐ dǎ diànhuà.|ما إن أصل إلى البيت حتى أتصل بك.|I'll call you as soon as I get home.
+>他一喝酒就脸红。|Tā yì hē jiǔ jiù liǎn hóng.|كلما شرب احمرّ وجهه.|His face goes red whenever he drinks.
+>老师一说我就明白了。|Lǎoshī yì shuō wǒ jiù míngbai le.|ما إن شرح المعلم حتى فهمت.|I understood as soon as the teacher explained.
+#g3-yuelaiyue|越来越 + Adj|越来越|«越来越»: يزداد يومًا بعد يوم|越来越: more and more
+a:«越来越 + صفة» تصف تغيرًا مستمرًا. لا تضف «很» بعدها.
+e:越来越 + adjective describes a steady change: more and more…. Don't add 很 after it.
+>天气越来越冷了。|Tiānqì yuèláiyuè lěng le.|الجو يزداد برودة.|The weather is getting colder and colder.
+>你的汉语越来越好了。|Nǐ de Hànyǔ yuèláiyuè hǎo le.|لغتك الصينية تتحسن باستمرار.|Your Chinese keeps getting better.
+>来中国旅游的人越来越多。|Lái Zhōngguó lǚyóu de rén yuèláiyuè duō.|عدد السياح القادمين إلى الصين يتزايد.|More and more people travel to China.
+x:天气越来越很冷。|天气越来越冷。
+#g3-yueyue|越 + A，越 + B|越|«越…越…»: كلما… ازداد|越…越…: the more…, the more…
+a:«越 + فعل/صفة، 越 + فعل/صفة»: كلما زاد الأول زاد الثاني. يمكن أن يكون الفاعلان مختلفين.
+e:越 + A, 越 + B: the more A, the more B. The two parts can have different subjects.
+>雨越下越大。|Yǔ yuè xià yuè dà.|المطر يشتد أكثر فأكثر.|The rain is getting heavier and heavier.
+>汉语越学越有意思。|Hànyǔ yuè xué yuè yǒu yìsi.|كلما درستُ الصينية ازدادت متعة.|The more I study Chinese, the more interesting it gets.
+>你越说，他越不高兴。|Nǐ yuè shuō, tā yuè bù gāoxìng.|كلما تكلمت ازداد استياؤه.|The more you talk, the less happy he is.
+#g3-chule|除了…以外，还/也/都…|除了,以外,还,都|«除了…»: بالإضافة إلى / باستثناء|除了…以外: besides / except
+a:«除了…以外，还/也…» = بالإضافة إلى. «除了…以外，都…» = باستثناء. «以外» اختيارية.
+e:除了…以外，还/也… means "besides / as well as". 除了…以外，都… means "except". 以外 is optional.
+>除了汉语以外，我还学日语。|Chúle Hànyǔ yǐwài, wǒ hái xué Rìyǔ.|إلى جانب الصينية، أدرس اليابانية أيضًا.|Besides Chinese, I also study Japanese.
+>除了他，我们都去了。|Chúle tā, wǒmen dōu qù le.|ذهبنا جميعًا ما عداه.|All of us went except him.
+>除了周末，他每天都上班。|Chúle zhōumò, tā měi tiān dōu shàngbān.|يعمل كل يوم ما عدا عطلة الأسبوع.|He works every day except weekends.
+#g3-ruguo|如果 + (…的话)，(S) + 就…|如果,就,的话|«如果…就…»: إذا|如果…就…: if… then…
+a:«如果» في أول الشرط، و«的话» في آخره اختيارية، و«就» قبل فعل جواب الشرط. في الكلام يكفي «…的话».
+e:如果 opens the condition, 的话 can close it, and 就 goes before the verb of the result. In speech …的话 alone is enough.
+>如果明天下雨，我们就不去了。|Rúguǒ míngtiān xià yǔ, wǒmen jiù bú qù le.|إذا أمطرت غدًا فلن نذهب.|If it rains tomorrow, we won't go.
+>你有时间的话，就来我家吧。|Nǐ yǒu shíjiān de huà, jiù lái wǒ jiā ba.|إن كان لديك وقت فتعالَ إلى بيتي.|If you have time, come over.
+>如果你不懂，就问我。|Rúguǒ nǐ bù dǒng, jiù wèn wǒ.|إن لم تفهم فاسألني.|If you don't understand, ask me.
+x:就如果下雨，我们不去。|如果下雨，我们就不去。
+#g3-yibian|一边 + V1，一边 + V2|一边|«一边…一边…»: يفعل شيئين في آن|一边…一边…: doing two things at once
+a:«一边» قبل كل فعل يعني أن الفاعل نفسه يفعلهما معًا في الوقت نفسه.
+e:一边 before each verb says the same person does both at the same time.
+>他一边吃饭一边看手机。|Tā yìbiān chī fàn yìbiān kàn shǒujī.|يأكل وهو ينظر إلى هاتفه.|He looks at his phone while eating.
+>我喜欢一边听音乐一边跑步。|Wǒ xǐhuan yìbiān tīng yīnyuè yìbiān pǎobù.|أحب الركض وأنا أستمع إلى الموسيقى.|I like listening to music while I run.
+>我们一边走一边聊吧。|Wǒmen yìbiān zǒu yìbiān liáo ba.|لنتحدث ونحن نمشي.|Let's chat as we walk.
+#g3-you|又 + V (past repetition)|又|«又»: مرة أخرى (تكرار حدث فعلًا)|又: again (it already happened again)
+a:«又» لتكرار حدث فعلًا، غالبًا مع «了»: «他又迟到了» تأخر مجددًا. قارن «再» للتكرار في المستقبل.
+e:又 is for a repetition that has already happened, usually with 了: 他又迟到了, he's late again. Compare 再 for future repetition.
+>他又迟到了。|Tā yòu chídào le.|تأخر مرة أخرى.|He's late again.
+>今天又下雨了。|Jīntiān yòu xià yǔ le.|أمطرت مرة أخرى اليوم.|It's raining again today.
+>你怎么又忘了？|Nǐ zěnme yòu wàng le?|كيف نسيت مرة أخرى؟|How come you forgot again?
+x:明天你又来吧。|明天你再来吧。
+#g3-youyou|又 + Adj1 + 又 + Adj2|又|«又…又…»: جامع بين صفتين|又…又…: both… and…
+a:«又» قبل كل صفة أو فعل لجمع صفتين معًا، غالبًا متشابهتين في الإيجاب أو السلب.
+e:又 before each adjective or verb joins two qualities together, usually both positive or both negative.
+>这个苹果又大又甜。|Zhège píngguǒ yòu dà yòu tián.|هذه التفاحة كبيرة وحلوة.|This apple is big and sweet.
+>她又会唱歌又会跳舞。|Tā yòu huì chàng gē yòu huì tiàowǔ.|تجيد الغناء والرقص معًا.|She can both sing and dance.
+>我又累又饿。|Wǒ yòu lèi yòu è.|أنا متعب وجائع.|I'm tired and hungry.
+#g3-haishi-ba|还是 + V + 吧|还是,吧|«还是…吧»: من الأفضل أن|还是…吧: you'd better
+a:«还是» قبل الفعل مع «吧» في آخر الجملة: بعد التفكير، الخيار الأفضل هو…
+e:还是 before the verb with 吧 at the end: after thinking it over, the better choice is….
+>太晚了，你还是打车吧。|Tài wǎn le, nǐ háishi dǎchē ba.|الوقت متأخر، الأفضل أن تأخذ سيارة أجرة.|It's late, you'd better take a taxi.
+>我们还是明天去吧。|Wǒmen háishi míngtiān qù ba.|الأفضل أن نذهب غدًا.|We'd better go tomorrow.
+>你还是去看医生吧。|Nǐ háishi qù kàn yīshēng ba.|الأفضل أن تزور الطبيب.|You'd better see a doctor.
+#g3-erqie|…，而且…|而且|«而且»: وفوق ذلك|而且: and also, moreover
+a:«而且» تضيف معلومة أقوى أو إضافية: جيد، وفوق ذلك رخيص. وتأتي مع «不但» في المستوى الرابع.
+e:而且 adds a further, often stronger point: good, and cheap too. It pairs with 不但 at HSK 4.
+>这家饭馆很好吃，而且不贵。|Zhè jiā fànguǎn hěn hǎochī, érqiě bú guì.|هذا المطعم لذيذ وفوق ذلك ليس غاليًا.|This restaurant is tasty and not expensive either.
+>他会说汉语，而且说得很好。|Tā huì shuō Hànyǔ, érqiě shuō de hěn hǎo.|يتكلم الصينية، وبطلاقة أيضًا.|He speaks Chinese, and speaks it well.
+>今天很冷，而且下雪了。|Jīntiān hěn lěng, érqiě xià xuě le.|اليوم بارد، وفوق ذلك تثلج.|It's cold today, and it's snowing too.
+#g3-zhi|只 + V|只|«只»: فقط|只: only
+a:«只» ظرف يأتي قبل الفعل لا قبل الاسم: «我只有一个» عندي واحد فقط.
+e:只 is an adverb before the verb, not before the noun: 我只有一个, I only have one.
+>我只有一百块。|Wǒ zhǐ yǒu yìbǎi kuài.|معي مئة يوان فقط.|I only have a hundred yuan.
+>他只喝水，不喝饮料。|Tā zhǐ hē shuǐ, bù hē yǐnliào.|يشرب الماء فقط، لا المشروبات.|He only drinks water, not soft drinks.
+>我只去过一次。|Wǒ zhǐ qù guo yí cì.|ذهبتُ مرة واحدة فقط.|I've only been once.
+x:我有只一个。|我只有一个。
+#g3-jile|Adj + 极了|极了|«…极了»: للغاية|Adj + 极了: extremely
+a:«极了» بعد الصفة تعني «إلى أقصى حد»، شائعة في الكلام: «好极了» ممتاز! ولا تُستعمل مع «很».
+e:极了 after an adjective means "extremely", very common in speech: 好极了, excellent! Don't use it with 很.
+>这个菜好吃极了。|Zhège cài hǎochī jí le.|هذا الطبق لذيذ للغاية.|This dish is absolutely delicious.
+>今天热极了。|Jīntiān rè jí le.|اليوم حار للغاية.|It's extremely hot today.
+>听到这个消息，我高兴极了。|Tīng dào zhège xiāoxi, wǒ gāoxìng jí le.|فرحتُ كثيرًا لسماع هذا الخبر.|I was overjoyed to hear the news.
+#g3-adj-redup|AA的 / AABB|干干净净,高高的|تكرار الصفة للوصف الحيّ|Doubled adjectives for vivid description
+a:تكرار الصفة يجعل الوصف حيًّا ومحبّبًا: «高高的» طويل جدًا، «干干净净» نظيف تمامًا. لا يُستعمل معها «很» أو «不».
+e:Doubling an adjective makes a description vivid: 高高的 nice and tall, 干干净净 spotless. Don't use 很 or 不 with it.
+>她有一双大大的眼睛。|Tā yǒu yì shuāng dàdà de yǎnjing.|لها عينان كبيرتان.|She has big, big eyes.
+>房间打扫得干干净净。|Fángjiān dǎsǎo de gāngānjìngjìng.|الغرفة نظيفة تمامًا.|The room has been cleaned spotless.
+>他高高兴兴地回家了。|Tā gāogāoxìngxìng de huí jiā le.|عاد إلى البيت فرحًا.|He went home happily.
+#g3-de-adv|Adj + 地 + V|地|«地» لوصف طريقة الفعل قبل الفعل|地: describing the manner before the verb
+a:الصفة + «地» قبل الفعل تصف طريقته: «慢慢地走» يمشي ببطء. ثلاثة «de»: 的 قبل الاسم، 地 قبل الفعل، 得 بعد الفعل.
+e:Adjective + 地 before a verb describes how it's done: 慢慢地走, walk slowly. Three "de": 的 before nouns, 地 before verbs, 得 after verbs.
+>请慢慢地说。|Qǐng mànman de shuō.|تكلّم ببطء من فضلك.|Please speak slowly.
+>他认真地听老师讲课。|Tā rènzhēn de tīng lǎoshī jiǎngkè.|يستمع بانتباه إلى شرح المعلم.|He listens carefully to the teacher.
+>孩子们高兴地唱歌。|Háizimen gāoxìng de chàng gē.|يغني الأطفال بفرح.|The children sing happily.
+#g3-mw-redup|M + M (个个、天天)|个个,天天|تكرار كلمة القياس: كلّ واحد|Doubled measure words: each and every
+a:تكرار كلمة القياس أو بعض الأسماء يعني «كل واحد دون استثناء»: «个个» كل واحد، «天天» كل يوم، ويتبعها «都».
+e:Doubling a measure word or some nouns means "each and every": 个个 every one, 天天 every day; 都 usually follows.
+>他天天都跑步。|Tā tiāntiān dōu pǎobù.|يركض كل يوم.|He runs every day.
+>我们班的学生个个都很努力。|Wǒmen bān de xuésheng gègè dōu hěn nǔlì.|كل طلاب صفنا مجتهدون.|Every student in our class works hard.
+>家家都有电脑。|Jiājiā dōu yǒu diànnǎo.|كل بيت فيه حاسوب.|Every household has a computer.
+#g3-yidianr-ye|一点儿也/都 + 不/没|一点儿也,一点儿都|«一点儿也不»: ليس على الإطلاق|一点儿也不: not at all
+a:«一点儿也不 + صفة» أو «一点儿也没 + فعل» نفي قوي: لا على الإطلاق.
+e:一点儿也不 + adjective or 一点儿也没 + verb is a strong negative: not at all.
+>这个菜一点儿也不辣。|Zhège cài yìdiǎnr yě bú là.|هذا الطبق ليس حارًا على الإطلاق.|This dish isn't spicy at all.
+>我一点儿都不累。|Wǒ yìdiǎnr dōu bú lèi.|لست متعبًا أبدًا.|I'm not tired at all.
+>他一点儿也没变。|Tā yìdiǎnr yě méi biàn.|لم يتغير إطلاقًا.|He hasn't changed a bit.
+#g3-yi-ye|一 + M + (N) + 也/都 + 不/没|也,都|«一…也不»: ولا واحد|一…也不: not a single one
+a:«一 + كلمة قياس + اسم + 也/都 + نفي» تعني «ولا واحد»: «一个人也没有» لا يوجد أحد إطلاقًا.
+e:一 + measure word + noun + 也/都 + negative means "not a single": 一个人也没有, not one person.
+>教室里一个人也没有。|Jiàoshì li yí gè rén yě méiyǒu.|لا يوجد أحد في الصف.|There isn't a single person in the classroom.
+>我一分钱都没有。|Wǒ yì fēn qián dōu méiyǒu.|ليس معي فلس واحد.|I haven't got a penny.
+>他一句话也没说。|Tā yí jù huà yě méi shuō.|لم يقل كلمة واحدة.|He didn't say a single word.
+#g3-qw-indef|Q + 都/也 + V|什么都,谁都,哪儿都,怎么也|أدوات الاستفهام للعموم: كل شيء / لا أحد|Question words meaning "every- / any-"
+a:أداة الاستفهام + «都/也» قبل الفعل تعني العموم: «什么都吃» يأكل كل شيء، «谁都不知道» لا أحد يعرف، «哪儿都不去» لا أذهب إلى أي مكان.
+e:A question word + 都/也 before the verb makes it general: 什么都吃 eat anything, 谁都不知道 nobody knows, 哪儿都不去 not go anywhere.
+>他什么都吃。|Tā shénme dōu chī.|يأكل كل شيء.|He eats anything.
+>这件事谁都不知道。|Zhè jiàn shì shéi dōu bù zhīdào.|لا أحد يعرف هذا الأمر.|Nobody knows about this.
+>我怎么也找不到钥匙。|Wǒ zěnme yě zhǎo bu dào yàoshi.|لا أجد المفتاح مهما بحثت.|I can't find the keys no matter what.
+#g3-approx|Num + 多 / 左右 / 几十|多,左右,几|الأعداد التقريبية|Approximate numbers
+a:«多» بعد العدد = ونيّف: «二十多个» عشرون وكسر. «左右» بعد العدد = تقريبًا: «三点左右». «几十» عشرات.
+e:多 after a number means "and something": 二十多个, twenty-odd. 左右 after a number means "about": 三点左右. 几十 is "dozens".
+>我们班有二十多个学生。|Wǒmen bān yǒu èrshí duō gè xuésheng.|في صفّنا أكثر من عشرين طالبًا.|There are twenty-odd students in our class.
+>我三点左右到。|Wǒ sān diǎn zuǒyòu dào.|أصل نحو الساعة الثالثة.|I'll arrive at about three.
+>这里有几十家饭馆。|Zhèlǐ yǒu jǐ shí jiā fànguǎn.|هنا عشرات المطاعم.|There are dozens of restaurants here.
+#g3-dui|S + 对 + Person/Thing + Adj/V|对|«对»: تجاه / بالنسبة إلى|对: to, towards, about
+a:«对 + شخص أو شيء» قبل الصفة أو الفعل: «对我很好» لطيف معي، «对中国文化感兴趣» مهتم بالثقافة الصينية.
+e:对 + person or thing before the adjective or verb: 对我很好 kind to me, 对中国文化感兴趣 interested in Chinese culture.
+>老师对我们很好。|Lǎoshī duì wǒmen hěn hǎo.|المعلم لطيف معنا.|The teacher is very kind to us.
+>我对中国文化很感兴趣。|Wǒ duì Zhōngguó wénhuà hěn gǎn xìngqù.|أنا مهتم بالثقافة الصينية.|I'm very interested in Chinese culture.
+>抽烟对身体不好。|Chōuyān duì shēntǐ bù hǎo.|التدخين مضرّ بالصحة.|Smoking is bad for your health.
+x:我感兴趣对中国文化。|我对中国文化感兴趣。
+#g3-guanyu|关于 + Topic|关于|«关于»: حول / بخصوص|关于: about, concerning
+a:«关于» + موضوع، في أول الجملة أو قبل الاسم مع «的»: «关于中国的书» كتاب عن الصين.
+e:关于 + topic, at the start of a sentence or before a noun with 的: 关于中国的书, a book about China.
+>我看了一本关于中国历史的书。|Wǒ kàn le yì běn guānyú Zhōngguó lìshǐ de shū.|قرأت كتابًا عن تاريخ الصين.|I read a book about Chinese history.
+>关于这个问题，我们明天再说。|Guānyú zhège wèntí, wǒmen míngtiān zài shuō.|بخصوص هذه المسألة، نتكلم غدًا.|As for this question, let's talk tomorrow.
+>你知道关于他的事吗？|Nǐ zhīdào guānyú tā de shì ma?|هل تعرف شيئًا عنه؟|Do you know anything about him?
+#g3-weile|为了 + Purpose，S + V|为了,为|«为了»: من أجل / لكي|为了: in order to, for the sake of
+a:«为了» يقدّم الهدف في أول الجملة غالبًا. و«为 + شخص» = لأجله: «为你高兴» سعيد من أجلك.
+e:为了 introduces a purpose, usually at the start. 为 + person means "for": 为你高兴, happy for you.
+>为了学好汉语，他每天都练习。|Wèile xué hǎo Hànyǔ, tā měi tiān dōu liànxí.|ليتقن الصينية، يتدرب كل يوم.|To learn Chinese well, he practises every day.
+>为了身体健康，我不喝酒。|Wèile shēntǐ jiànkāng, wǒ bù hē jiǔ.|من أجل صحتي، لا أشرب الكحول.|For my health, I don't drink.
+>我真为你高兴。|Wǒ zhēn wèi nǐ gāoxìng.|أنا سعيد من أجلك حقًا.|I'm really happy for you.
+#g3-xiang|向 + Person/Dir + V|向|«向»: نحو / إلى|向: towards, to (someone)
+a:«向» قبل الفعل تشير إلى الاتجاه أو الشخص الموجَّه إليه الفعل: «向他学习» يتعلم منه، «向左转» استدر يسارًا.
+e:向 before the verb shows a direction or the person an action is aimed at: 向他学习 learn from him, 向左转 turn left.
+>我们应该向他学习。|Wǒmen yīnggāi xiàng tā xuéxí.|علينا أن نتعلم منه.|We should learn from him.
+>请向左转。|Qǐng xiàng zuǒ zhuǎn.|استدر يسارًا من فضلك.|Please turn left.
+>他向我问好。|Tā xiàng wǒ wènhǎo.|ألقى عليّ التحية.|He said hello to me.
+#g3-bi-de|A + V + 得 + 比 + B + Adj|比,得|المقارنة مع «得»|Comparing how actions are done
+a:لمقارنة طريقة الفعل: «他跑得比我快» أو «他比我跑得快». كلاهما صحيح.
+e:To compare how an action is done: 他跑得比我快 or 他比我跑得快. Both are correct.
+>他跑得比我快。|Tā pǎo de bǐ wǒ kuài.|يركض أسرع مني.|He runs faster than me.
+>她汉语说得比我好。|Tā Hànyǔ shuō de bǐ wǒ hǎo.|تتكلم الصينية أفضل مني.|She speaks Chinese better than I do.
+>我今天起得比昨天早。|Wǒ jīntiān qǐ de bǐ zuótiān zǎo.|استيقظتُ اليوم أبكر من أمس.|I got up earlier today than yesterday.
+#g3-xiang-yiyang|A + 像 + B + 一样|像,一样|«像…一样»: مثل / كأنه|像…一样: like, as… as
+a:«像 + شيء + 一样» للتشبيه: «像孩子一样» مثل طفل. ويمكن إضافة صفة: «像花一样漂亮».
+e:像 + thing + 一样 makes a comparison: 像孩子一样, like a child. Add an adjective for the quality: 像花一样漂亮.
+>他高兴得像孩子一样。|Tā gāoxìng de xiàng háizi yíyàng.|فرح مثل طفل.|He was as happy as a child.
+>她长得像她妈妈。|Tā zhǎng de xiàng tā māma.|تشبه أمها.|She looks like her mother.
+>这里的冬天像春天一样暖和。|Zhèlǐ de dōngtiān xiàng chūntiān yíyàng nuǎnhuo.|الشتاء هنا دافئ كالربيع.|Winter here is as warm as spring.
+#g3-yiqian|Time/Event + 以前/以后|以前,以后|«以前» و«以后»: قبل وبعد|以前 and 以后: before and after
+a:«以前» و«以后» تأتيان بعد الحدث أو الزمن، عكس العربية: «吃饭以前» قبل الأكل. ووحدهما: «以前» سابقًا، «以后» لاحقًا.
+e:以前 and 以后 come after the event or time, the reverse of English: 吃饭以前, before eating. On their own they mean "in the past" and "later".
+>吃饭以前要洗手。|Chī fàn yǐqián yào xǐ shǒu.|يجب غسل اليدين قبل الأكل.|Wash your hands before eating.
+>下课以后我们去打球吧。|Xiàkè yǐhòu wǒmen qù dǎ qiú ba.|بعد الدرس لنذهب للعب الكرة.|Let's play ball after class.
+>我以前住在上海。|Wǒ yǐqián zhù zài Shànghǎi.|كنت أسكن في شنغهاي سابقًا.|I used to live in Shanghai.
+x:以前吃饭要洗手。|吃饭以前要洗手。
+#g3-gang|刚 + V / 刚才|刚,刚才|«刚» و«刚才»: للتو|刚 and 刚才: just
+a:«刚» ظرف قبل الفعل: حدث للتو. «刚才» اسم زمن: قبل قليل، ويمكن أن يأتي في أول الجملة. مع «刚» لا نستعمل «了» غالبًا.
+e:刚 is an adverb before the verb: just happened. 刚才 is a time word, "a moment ago", and can open the sentence. 刚 usually takes no 了.
+>我刚到。|Wǒ gāng dào.|وصلتُ للتو.|I've just arrived.
+>他刚才给你打电话了。|Tā gāngcái gěi nǐ dǎ diànhuà le.|اتصل بك قبل قليل.|He called you a moment ago.
+>我刚来中国的时候，一句汉语也不会说。|Wǒ gāng lái Zhōngguó de shíhou, yí jù Hànyǔ yě bú huì shuō.|عندما وصلتُ إلى الصين لم أكن أعرف جملة صينية واحدة.|When I first came to China I couldn't say a word of Chinese.
+#g3-zhongyu|S + 终于 + V + 了|终于|«终于»: أخيرًا|终于: finally, at last
+a:«终于» قبل الفعل لنتيجة طال انتظارها، وغالبًا مع «了».
+e:终于 before the verb marks a long-awaited result, usually with 了.
+>我终于找到工作了。|Wǒ zhōngyú zhǎo dào gōngzuò le.|وجدتُ عملًا أخيرًا.|I've finally found a job.
+>雨终于停了。|Yǔ zhōngyú tíng le.|توقف المطر أخيرًا.|The rain has finally stopped.
+>他们终于结婚了。|Tāmen zhōngyú jiéhūn le.|تزوجا أخيرًا.|They finally got married.
+#g3-yizhi|一直 + V|一直|«一直»: باستمرار / دائمًا / مباشرة|一直: all along, continuously, straight
+a:«一直» تعني الاستمرار دون انقطاع: «一直在下雨» ما زالت تمطر طوال الوقت، أو الاتجاه المستقيم: «一直走».
+e:一直 means continuously, without a break: 一直在下雨, it's been raining non-stop; or straight on: 一直走.
+>我一直在等你。|Wǒ yìzhí zài děng nǐ.|كنتُ أنتظرك طوال الوقت.|I've been waiting for you all along.
+>从早上到现在一直下雨。|Cóng zǎoshang dào xiànzài yìzhí xià yǔ.|تمطر منذ الصباح حتى الآن.|It's been raining since this morning.
+>一直往前走就到了。|Yìzhí wǎng qián zǒu jiù dào le.|امشِ إلى الأمام مباشرة وستصل.|Go straight ahead and you're there.
+#g3-zongshi|总是/经常/常常 + V|总是,经常,常常|ظروف التكرار: دائمًا، كثيرًا|Frequency adverbs: always, often
+a:«总是» دائمًا، «经常/常常» كثيرًا، «有时候» أحيانًا. كلها قبل الفعل. النفي «不常».
+e:总是 always, 经常 / 常常 often, 有时候 sometimes. All go before the verb. Negative: 不常.
+>他总是迟到。|Tā zǒngshì chídào.|يتأخر دائمًا.|He's always late.
+>我经常去那家咖啡馆。|Wǒ jīngcháng qù nà jiā kāfēiguǎn.|أذهب إلى ذلك المقهى كثيرًا.|I often go to that café.
+>我们不常见面。|Wǒmen bù cháng jiànmiàn.|لا نلتقي كثيرًا.|We don't see each other often.
+#g3-yinggai|应该/必须/得 + V|应该,必须,得|الوجوب: ينبغي، يجب، لا بد|Obligation: should, must, have to
+a:«应该» ينبغي (نصيحة)، «必须» يجب (إلزام قوي)، «得 (děi)» لا بد في الكلام. النفي «不应该»، و«不用» لا داعي.
+e:应该 should (advice), 必须 must (strict), 得 (děi) have to (spoken). Negatives: 不应该; 不用 for "no need".
+>你应该多休息。|Nǐ yīnggāi duō xiūxi.|ينبغي أن ترتاح أكثر.|You should rest more.
+>明天八点前必须到。|Míngtiān bā diǎn qián bìxū dào.|يجب الوصول قبل الثامنة غدًا.|You must arrive before eight tomorrow.
+>太晚了，我得走了。|Tài wǎn le, wǒ děi zǒu le.|تأخر الوقت، يجب أن أذهب.|It's late, I have to go.
+!«得» بمعنى «يجب» تُقرأ děi.|得 meaning "have to" is read děi.
+#g3-yuanyi|S + 愿意 + V|愿意|«愿意»: يرغب / يقبل أن|愿意: be willing to
+a:«愿意» تعني الرغبة والاستعداد لفعل شيء. السؤال «你愿意…吗？» هل تقبل…؟
+e:愿意 means to be willing or happy to do something. Ask 你愿意…吗？, would you be willing to…?
+>我愿意帮助你。|Wǒ yuànyì bāngzhù nǐ.|أنا مستعد لمساعدتك.|I'm happy to help you.
+>你愿意跟我们一起去吗？|Nǐ yuànyì gēn wǒmen yìqǐ qù ma?|هل ترغب أن تذهب معنا؟|Would you like to come with us?
+>他不愿意说。|Tā bú yuànyì shuō.|لا يريد أن يتكلم.|He doesn't want to say.
+#g3-zenmeban|怎么办？|怎么办|«怎么办»: ماذا أفعل؟|怎么办: what should I do?
+a:«怎么办» تسأل عن الحل: ماذا نفعل الآن؟ وتأتي بعد وصف المشكلة.
+e:怎么办 asks what to do about a problem; it follows the description of the problem.
+>我的护照丢了，怎么办？|Wǒ de hùzhào diū le, zěnme bàn?|ضاع جوازي، ماذا أفعل؟|I've lost my passport, what should I do?
+>如果他不来，我们怎么办？|Rúguǒ tā bù lái, wǒmen zěnme bàn?|إذا لم يأتِ، ماذا نفعل؟|If he doesn't come, what do we do?
+>别着急，我们想想怎么办。|Bié zháojí, wǒmen xiǎngxiang zěnme bàn.|لا تقلق، لنفكر في الحل.|Don't worry, let's think about what to do.
+#g3-duo-a|多 + Adj + 啊！|多,啊|«多…啊!»: ما أجمل…!|多…啊！: how…!
+a:«多 + صفة + 啊» للتعجب: «多漂亮啊!» ما أجمله! يمكن قول «多么» في الكتابة.
+e:多 + adjective + 啊 is an exclamation: 多漂亮啊！, how beautiful! 多么 is used in writing.
+>这里的风景多美啊！|Zhèlǐ de fēngjǐng duō měi a!|ما أجمل المنظر هنا!|How beautiful the scenery is here!
+>你的女儿多可爱啊！|Nǐ de nǚ'ér duō kě'ài a!|ما أظرف ابنتك!|How cute your daughter is!
+>能来中国，我多高兴啊！|Néng lái Zhōngguó, wǒ duō gāoxìng a!|كم أنا سعيد لأنني استطعت المجيء إلى الصين!|How happy I am to be able to come to China!
+#g3-bushi-ma|不是…吗？|不是,吗|«不是…吗؟»: أليس…؟ (سؤال إنكاري)|不是…吗？: isn't it…? (rhetorical)
+a:«不是…吗» سؤال لا ينتظر جوابًا، يذكّر بشيء أو يعبّر عن استغراب: «你不是去北京了吗？» ألم تذهب إلى بكين؟
+e:不是…吗 is a rhetorical question that reminds someone or shows surprise: 你不是去北京了吗？, didn't you go to Beijing?
+>你不是不喝咖啡吗？|Nǐ bú shì bù hē kāfēi ma?|ألست لا تشرب القهوة؟|Don't you not drink coffee?
+>这不是你的书吗？|Zhè bú shì nǐ de shū ma?|أليس هذا كتابك؟|Isn't this your book?
+>他不是已经走了吗？|Tā bú shì yǐjīng zǒu le ma?|ألم يغادر بالفعل؟|Hadn't he already left?
+#g3-cai-only|才 + Num (only)|才|«才» مع الأعداد: فقط / ما زال|才 + number: only
+a:«才» قبل العدد تعني أن الرقم أقل من المتوقع: «才五块» بخمسة فقط، «才八岁» عمره ثماني سنوات فقط.
+e:才 before a number says it is less than expected: 才五块, only five yuan; 才八岁, only eight.
+>这件衣服才五十块。|Zhè jiàn yīfu cái wǔshí kuài.|هذا الثوب بخمسين يوانًا فقط.|This outfit is only fifty yuan.
+>他才八岁，就会说三种语言。|Tā cái bā suì, jiù huì shuō sān zhǒng yǔyán.|عمره ثماني سنوات فقط ويتكلم ثلاث لغات.|He's only eight and already speaks three languages.
+>现在才七点，还早呢。|Xiànzài cái qī diǎn, hái zǎo ne.|الساعة السابعة فقط، ما زال الوقت مبكرًا.|It's only seven, still early.
+#g3-ziji|自己 / 别人|自己,别人|«自己» و«别人»: نفسه والآخرون|自己 and 别人: oneself and others
+a:«自己» = نفسه/بنفسه: «我自己做» أفعله بنفسي. «别人» = الآخرون: «别人的事» شؤون الآخرين.
+e:自己 means oneself / by oneself: 我自己做, I'll do it myself. 别人 means other people: 别人的事, other people's business.
+>我自己来吧。|Wǒ zìjǐ lái ba.|دعني أفعلها بنفسي.|Let me do it myself.
+>他总是帮助别人。|Tā zǒngshì bāngzhù biérén.|يساعد الآخرين دائمًا.|He always helps others.
+>你要相信自己。|Nǐ yào xiāngxìn zìjǐ.|يجب أن تثق بنفسك.|You have to believe in yourself.
+#g3-bijiao|比较 + Adj|比较|«比较»: نسبيًا / إلى حد ما|比较: fairly, relatively
+a:«比较» قبل الصفة تعني «نسبيًا» دون ذكر ما نقارن به: «比较便宜» رخيص نسبيًا.
+e:比较 before an adjective means "relatively", without naming what you compare with: 比较便宜, fairly cheap.
+>这家店比较便宜。|Zhè jiā diàn bǐjiào piányi.|هذا المتجر رخيص نسبيًا.|This shop is fairly cheap.
+>今天比较忙。|Jīntiān bǐjiào máng.|اليوم مشغول نوعًا ما.|Today is rather busy.
+>我比较喜欢安静的地方。|Wǒ bǐjiào xǐhuan ānjìng de dìfang.|أفضّل الأماكن الهادئة.|I rather prefer quiet places.
+#g3-verbal-mw|V + Num + 遍/趟/下|遍,趟,下|كلمات قياس الأفعال|Verbal measure words: 遍, 趟, 下
+a:«遍» مرة من البداية إلى النهاية، «趟» رحلة ذهاب وعودة، «下» حركة قصيرة. تأتي بعد الفعل مثل «次».
+e:遍 is a time from start to finish, 趟 a round trip, 下 a quick movement. Like 次 they follow the verb.
+>请再读一遍。|Qǐng zài dú yí biàn.|اقرأها مرة أخرى كاملة من فضلك.|Please read it through once more.
+>我要去一趟银行。|Wǒ yào qù yí tàng yínháng.|يجب أن أمرّ على البنك.|I need to make a trip to the bank.
+>他敲了三下门。|Tā qiāo le sān xià mén.|طرق الباب ثلاث طرقات.|He knocked on the door three times.
+#g3-cunxian|Place + V + 着 + Num + M + N|着|جملة الوجود: «墙上挂着…»|Existence sentences: on the wall hangs…
+a:لوصف ما يوجد في مكان وكيف: المكان أولًا ثم الفعل + «着» ثم الشيء: «墙上挂着一张画» على الجدار لوحة معلّقة.
+e:To describe what is somewhere and how: place first, then verb + 着, then the thing: 墙上挂着一张画, a picture hangs on the wall.
+>墙上挂着一张地图。|Qiáng shang guà zhe yì zhāng dìtú.|على الجدار خريطة معلقة.|There's a map hanging on the wall.
+>桌子上放着很多书。|Zhuōzi shang fàng zhe hěn duō shū.|على الطاولة كتب كثيرة.|There are lots of books on the table.
+>门口站着一个人。|Ménkǒu zhàn zhe yí gè rén.|عند الباب يقف شخص.|Someone is standing at the door.
+#g3-le-seq|V1 + 了 + O + 就 + V2|了,就|«…了…就…»: بعد أن… مباشرة|V1了… 就 V2: right after doing
+a:«了» بعد الفعل الأول و«就» قبل الثاني: الثاني يأتي فور انتهاء الأول، في الماضي أو المستقبل.
+e:了 after the first verb and 就 before the second: the second follows as soon as the first is done, past or future.
+>我下了班就去找你。|Wǒ xià le bān jiù qù zhǎo nǐ.|بعد انتهاء دوامي آتي إليك مباشرة.|I'll come and find you right after work.
+>他吃了早饭就走了。|Tā chī le zǎofàn jiù zǒu le.|غادر بعد الفطور مباشرة.|He left right after breakfast.
+>你到了就给我发短信。|Nǐ dào le jiù gěi wǒ fā duǎnxìn.|أرسل لي رسالة فور وصولك.|Text me as soon as you arrive.
+#g3-qilai|V + 起来 / 下去 (extended)|起来,下去|«起来» و«下去» بمعناهما المجازي|起来 and 下去: start and continue
+a:«起来» بعد الفعل = يبدأ: «笑起来» انفجر ضاحكًا. «下去» = يواصل: «说下去» واصل الكلام.
+e:起来 after a verb means "start": 笑起来, burst out laughing. 下去 means "carry on": 说下去, keep talking.
+>大家都笑起来了。|Dàjiā dōu xiào qǐlai le.|ضحك الجميع.|Everyone burst out laughing.
+>天气热起来了。|Tiānqì rè qǐlai le.|بدأ الجو يسخن.|It's starting to get hot.
+>请你说下去。|Qǐng nǐ shuō xiàqu.|واصل كلامك من فضلك.|Please go on.
+#g3-kanqilai|看起来/听起来 + Adj|看起来,听起来|«看起来»: يبدو|看起来 / 听起来: it looks / sounds
+a:«看起来» يبدو للعين، «听起来» يبدو للسمع، و«吃起来» طعمه. للتعبير عن الانطباع.
+e:看起来 it looks, 听起来 it sounds, 吃起来 it tastes: for impressions.
+>你看起来很累。|Nǐ kàn qǐlai hěn lèi.|تبدو متعبًا.|You look tired.
+>这个主意听起来不错。|Zhège zhǔyi tīng qǐlai búcuò.|هذه الفكرة تبدو جيدة.|That idea sounds good.
+>这个菜吃起来有点儿甜。|Zhège cài chī qǐlai yǒudiǎnr tián.|طعم هذا الطبق حلو قليلًا.|This dish tastes a bit sweet.
+#g3-xuyao|S + 需要 + N/V|需要|«需要»: يحتاج|需要: to need
+a:«需要» + اسم أو + فعل: «需要帮助» يحتاج مساعدة، «需要休息» يحتاج أن يرتاح. النفي «不需要».
+e:需要 + noun or verb: 需要帮助 need help, 需要休息 need to rest. Negative: 不需要.
+>你需要帮助吗？|Nǐ xūyào bāngzhù ma?|هل تحتاج مساعدة؟|Do you need help?
+>我需要好好休息。|Wǒ xūyào hǎohǎo xiūxi.|أحتاج أن أرتاح جيدًا.|I need a good rest.
+>办签证需要什么材料？|Bàn qiānzhèng xūyào shénme cáiliào?|ما المستندات المطلوبة للتأشيرة؟|What documents do I need for a visa?
+#g3-zhaogu|S + 照顾/关心 + Person|照顾,关心|«照顾» و«关心»: يعتني ويهتم|照顾 and 关心: take care of, care about
+a:«照顾» رعاية عملية (يعتني)، و«关心» اهتمام وجداني (يهتم بـ). كلاهما مع مفعول مباشر.
+e:照顾 is practical care (look after), 关心 is concern (care about). Both take a direct object.
+>她在家照顾孩子。|Tā zài jiā zhàogù háizi.|تعتني بالأطفال في البيت.|She looks after the children at home.
+>谢谢你的关心。|Xièxie nǐ de guānxīn.|شكرًا لاهتمامك.|Thank you for your concern.
+>请多照顾自己。|Qǐng duō zhàogù zìjǐ.|اعتنِ بنفسك جيدًا.|Please take good care of yourself.
+#g3-dehua|…的话|的话|«…的话»: إن كان…|…的话: if…
+a:«的话» في آخر جملة الشرط تكفي وحدها في الكلام: «明天下雨的话» إن أمطرت غدًا.
+e:的话 at the end of a condition is enough on its own in speech: 明天下雨的话, if it rains tomorrow.
+>明天下雨的话，我们就在家。|Míngtiān xià yǔ de huà, wǒmen jiù zài jiā.|إن أمطرت غدًا نبقى في البيت.|If it rains tomorrow, we'll stay home.
+>你不舒服的话，就早点儿回去。|Nǐ bù shūfu de huà, jiù zǎo diǎnr huíqu.|إن كنت متوعكًا فارجع مبكرًا.|If you're not feeling well, go back early.
+>有问题的话，随时问我。|Yǒu wèntí de huà, suíshí wèn wǒ.|إن كان لديك سؤال فاسألني متى شئت.|If you have questions, ask me any time.
+#g3-adv-order|又/也/还 position with 都|也都,还都|ترتيب الظروف معًا|Order of several adverbs
+a:عند اجتماع الظروف الترتيب الشائع: الزمن ← «也» ← «都» ← النفي ← «很/太» ← الفعل: «我们明天也都不去».
+e:When adverbs combine, the usual order is time → 也 → 都 → negative → degree → verb: 我们明天也都不去.
+>我们明天也都不去。|Wǒmen míngtiān yě dōu bú qù.|نحن أيضًا كلنا لن نذهب غدًا.|None of us is going tomorrow either.
+>他们也都很喜欢这个电影。|Tāmen yě dōu hěn xǐhuan zhège diànyǐng.|هم أيضًا كلهم يحبون هذا الفيلم.|They all like this film too.
+>我们都不太喜欢喝酒。|Wǒmen dōu bú tài xǐhuan hē jiǔ.|كلنا لا نحب الكحول كثيرًا.|None of us really likes drinking.
+x:我们都也不去。|我们也都不去。
+#g3-haishi-still|S + 还是/仍然 + V|还是,仍然|«还是» بمعنى «مع ذلك»|还是: still, nevertheless
+a:«还是» قبل الفعل تعني «ومع ذلك ما زال»: بعد شرح طويل، ما زلت لا أفهم.
+e:还是 before the verb can mean "still, nevertheless": after all that, I still don't understand.
+>他解释了很多次，我还是不明白。|Tā jiěshì le hěn duō cì, wǒ háishi bù míngbai.|شرح مرات كثيرة، ومع ذلك لم أفهم.|He explained many times, but I still don't understand.
+>虽然很累，他还是去上班了。|Suīrán hěn lèi, tā háishi qù shàngbān le.|رغم تعبه، ذهب إلى العمل.|Although he was tired, he still went to work.
+>我还是觉得这个好。|Wǒ háishi juéde zhège hǎo.|ما زلت أرى أن هذا أفضل.|I still think this one is better.
+#g3-hao-xiang|好像 + Clause|好像|«好像»: يبدو أن / كأنّ|好像: seem, as if
+a:«好像» تعبّر عن انطباع غير مؤكد: «好像要下雨了» يبدو أنها ستمطر. و«好像…一样» كأنه.
+e:好像 gives an uncertain impression: 好像要下雨了, it looks like rain. 好像…一样 means "as if".
+>好像要下雨了。|Hǎoxiàng yào xià yǔ le.|يبدو أنها ستمطر.|It looks like it's going to rain.
+>他好像不太高兴。|Tā hǎoxiàng bú tài gāoxìng.|يبدو أنه ليس سعيدًا.|He doesn't seem very happy.
+>我好像在哪儿见过你。|Wǒ hǎoxiàng zài nǎr jiàn guo nǐ.|يبدو أنني رأيتك في مكان ما.|I think I've seen you somewhere.
+#g3-dangran|当然 / 一定|当然,一定|«当然» و«一定»: طبعًا وبالتأكيد|当然 and 一定: of course, definitely
+a:«当然» طبعًا (أمر بديهي)، «一定» بالتأكيد أو لا بد: «一定要来» لا بد أن تأتي. النفي «不一定» ليس بالضرورة.
+e:当然 "of course" (obvious), 一定 "definitely / must": 一定要来, you must come. 不一定 means "not necessarily".
+>你一定要来啊！|Nǐ yídìng yào lái a!|لا بد أن تأتي!|You must come!
+>当然可以。|Dāngrán kěyǐ.|طبعًا ممكن.|Of course you can.
+>贵的不一定好。|Guì de bù yídìng hǎo.|الغالي ليس بالضرورة جيدًا.|Expensive isn't necessarily good.
+#g3-guanxi|A + 对/跟 + B + 有关系|有关系,没关系|«有关系» و«没关系»|有关系 / 没关系: related, it doesn't matter
+a:«跟…有关系» مرتبط بـ. و«没关系» عبارة شائعة: لا بأس، جوابًا على الاعتذار.
+e:跟…有关系 means "related to". 没关系 is the everyday reply to an apology: it doesn't matter.
+>这件事跟你没有关系。|Zhè jiàn shì gēn nǐ méiyǒu guānxi.|هذا الأمر لا علاقة لك به.|This has nothing to do with you.
+>他的病跟天气有关系。|Tā de bìng gēn tiānqì yǒu guānxi.|مرضه مرتبط بالطقس.|His illness is related to the weather.
+>对不起！——没关系。|Duìbuqǐ! —— Méi guānxi.|آسف! — لا بأس.|Sorry! — That's all right.
