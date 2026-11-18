@@ -1,6 +1,6 @@
 # Grammar HSK 2. Format: see scripts/gram_build.py. Keys are stable ids: never rename them.
 @2
-#g2-le-change|Statement + 了 (new situation)|了|«了» في آخر الجملة: تغيّر الحال|Sentence-final 了: a change of state
+#g2-le-change|Statement + 了|了|«了» في آخر الجملة: تغيّر الحال|Sentence-final 了: a change of state
 a:«了» في آخر الجملة تعلن وضعًا جديدًا أو تغيّرًا: صار الجو ممطرًا، صرتُ جائعًا، لم أعد أدخّن (不…了).
 e:了 at the end of a sentence announces a new situation or a change: it's raining now, I'm hungry now, I no longer smoke (不…了).
 >下雨了。|Xià yǔ le.|بدأ المطر.|It's raining now.
@@ -320,7 +320,7 @@ e:先 goes before the first action, 然后 or 再 before the next, to order the 
 >我先洗手，然后吃饭。|Wǒ xiān xǐ shǒu, ránhòu chī fàn.|أغسل يدي أولًا، ثم آكل.|I wash my hands first, then eat.
 >你先走吧，我马上来。|Nǐ xiān zǒu ba, wǒ mǎshàng lái.|اذهب أنت أولًا، سآتي حالًا.|You go first, I'll be right there.
 >我们先坐地铁，然后打车。|Wǒmen xiān zuò dìtiě, ránhòu dǎchē.|نركب المترو أولًا ثم سيارة أجرة.|We'll take the metro first, then a taxi.
-#g2-hui-de|会 + V + 的 (prediction)|会,的|«会…的»: سيحدث بالتأكيد|会…的: will surely
+#g2-hui-de|会 + V + 的|会,的|«会…的»: سيحدث بالتأكيد|会…的: will surely
 a:«会 + فعل + 的» تعبّر عن ثقة بأن الشيء سيحدث: «他会来的» سيأتي بالتأكيد. تطمين لطيف.
 e:会 + verb + 的 expresses confidence that something will happen: 他会来的, he'll come for sure. Often reassuring.
 >别担心，他会来的。|Bié dānxīn, tā huì lái de.|لا تقلق، سيأتي.|Don't worry, he'll come.
@@ -332,7 +332,7 @@ e:好 before a sense verb makes an adjective: 好吃 tasty, 好看 good-looking,
 >这个菜很好吃。|Zhège cài hěn hǎochī.|هذا الطبق لذيذ.|This dish is tasty.
 >这首歌很好听。|Zhè shǒu gē hěn hǎotīng.|هذه الأغنية جميلة.|This song sounds lovely.
 >北京好玩吗？|Běijīng hǎowán ma?|هل بكين ممتعة؟|Is Beijing fun?
-#g2-ba-adv|吧 (guess) vs 吗|吧,吗|«吧» للتخمين و«吗» للسؤال المحايد|吧 for guesses vs 吗
+#g2-ba-adv|Statement + 吧？|吧,吗|«吧» للتخمين و«吗» للسؤال المحايد|吧 for guesses vs 吗
 a:«吗» سؤال محايد لا تعرف جوابه. «吧» سؤال تتوقع جوابه وتطلب تأكيده: «你累了吧؟» أنت متعب على ما أظن.
 e:吗 is a neutral question when you don't know. 吧 is a question when you expect the answer and want it confirmed: 你累了吧？ you must be tired.
 >你累了吧？|Nǐ lèi le ba?|أنت متعب على ما يبدو؟|You must be tired?

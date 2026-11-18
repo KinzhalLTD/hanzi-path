@@ -84,7 +84,7 @@ e:的 joins owner and owned: 我的书, my book. It is usually dropped with fami
 >他是我妈妈的朋友。|Tā shì wǒ māma de péngyou.|هو صديق أمي.|He is my mother's friend.
 >老师的名字是什么？|Lǎoshī de míngzi shì shénme?|ما اسم المعلم؟|What is the teacher's name?
 !المملوك يأتي بعد المالك دائمًا، عكس العربية: «妈妈的朋友» = صديق الأم.|The owned thing always comes last: 妈妈的朋友 = mother's friend.
-#g1-de-noun|Adj/Pron + 的 (noun omitted)|的|«的» مع حذف الاسم: «الذي لي»|的 with the noun left out
+#g1-de-noun|Adj/Pron + 的|的|«的» مع حذف الاسم: «الذي لي»|的 with the noun left out
 a:إذا كان الاسم معروفًا من السياق يمكن حذفه بعد «的»: «这本书是我的» هذا الكتاب لي. و«红的» = الأحمر (منها).
 e:When the noun is clear from context it can be dropped after 的: 这本书是我的, this book is mine. 红的 means "the red one".
 >这个杯子是谁的？|Zhège bēizi shì shéi de?|لمن هذا الكوب؟|Whose cup is this?
@@ -105,7 +105,7 @@ e:A measure word always sits between a number and a noun, chosen by the kind of 
 >这个十块钱。|Zhège shí kuài qián.|هذا بعشرة يوانات.|This is ten yuan.
 !إذا لم تعرف كلمة القياس المناسبة فـ «个» تُفهم غالبًا.|If you don't know the right measure word, 个 is usually understood.
 x:我有三朋友。|我有三个朋友。
-#g1-liang|两 + M vs 二|两,二|«两» و«二»: اثنان|两 vs 二: two
+#g1-liang|两 + M + N|两,二|«两» و«二»: اثنان|两 vs 二: two
 a:«二» للعدّ والأرقام (二、十二、第二). أمام كلمة القياس نقول «两»: «两个人»، «两点».
 e:二 is used for counting and in numbers (二, 十二, 第二). Before a measure word use 两: 两个人, 两点.
 >我有两个孩子。|Wǒ yǒu liǎng gè háizi.|عندي طفلان.|I have two children.

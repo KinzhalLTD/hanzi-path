@@ -98,7 +98,7 @@ e:一边 before each verb says the same person does both at the same time.
 >他一边吃饭一边看手机。|Tā yìbiān chī fàn yìbiān kàn shǒujī.|يأكل وهو ينظر إلى هاتفه.|He looks at his phone while eating.
 >我喜欢一边听音乐一边跑步。|Wǒ xǐhuan yìbiān tīng yīnyuè yìbiān pǎobù.|أحب الركض وأنا أستمع إلى الموسيقى.|I like listening to music while I run.
 >我们一边走一边聊吧。|Wǒmen yìbiān zǒu yìbiān liáo ba.|لنتحدث ونحن نمشي.|Let's chat as we walk.
-#g3-you|又 + V (past repetition)|又|«又»: مرة أخرى (تكرار حدث فعلًا)|又: again (it already happened again)
+#g3-you|又 + V + 了|又|«又»: مرة أخرى (تكرار حدث فعلًا)|又: again (it already happened again)
 a:«又» لتكرار حدث فعلًا، غالبًا مع «了»: «他又迟到了» تأخر مجددًا. قارن «再» للتكرار في المستقبل.
 e:又 is for a repetition that has already happened, usually with 了: 他又迟到了, he's late again. Compare 再 for future repetition.
 >他又迟到了。|Tā yòu chídào le.|تأخر مرة أخرى.|He's late again.
@@ -136,7 +136,7 @@ e:极了 after an adjective means "extremely", very common in speech: 好极了,
 >这个菜好吃极了。|Zhège cài hǎochī jí le.|هذا الطبق لذيذ للغاية.|This dish is absolutely delicious.
 >今天热极了。|Jīntiān rè jí le.|اليوم حار للغاية.|It's extremely hot today.
 >听到这个消息，我高兴极了。|Tīng dào zhège xiāoxi, wǒ gāoxìng jí le.|فرحتُ كثيرًا لسماع هذا الخبر.|I was overjoyed to hear the news.
-#g3-adj-redup|AA的 / AABB|干干净净,高高的|تكرار الصفة للوصف الحيّ|Doubled adjectives for vivid description
+#g3-adj-redup|Adj + Adj + 的|干干净净,高高的|تكرار الصفة للوصف الحيّ|Doubled adjectives for vivid description
 a:تكرار الصفة يجعل الوصف حيًّا ومحبّبًا: «高高的» طويل جدًا، «干干净净» نظيف تمامًا. لا يُستعمل معها «很» أو «不».
 e:Doubling an adjective makes a description vivid: 高高的 nice and tall, 干干净净 spotless. Don't use 很 or 不 with it.
 >她有一双大大的眼睛。|Tā yǒu yì shuāng dàdà de yǎnjing.|لها عينان كبيرتان.|She has big, big eyes.
@@ -277,7 +277,7 @@ e:不是…吗 is a rhetorical question that reminds someone or shows surprise: 
 >你不是不喝咖啡吗？|Nǐ bú shì bù hē kāfēi ma?|ألست لا تشرب القهوة؟|Don't you not drink coffee?
 >这不是你的书吗？|Zhè bú shì nǐ de shū ma?|أليس هذا كتابك؟|Isn't this your book?
 >他不是已经走了吗？|Tā bú shì yǐjīng zǒu le ma?|ألم يغادر بالفعل؟|Hadn't he already left?
-#g3-cai-only|才 + Num (only)|才|«才» مع الأعداد: فقط / ما زال|才 + number: only
+#g3-cai-only|才 + Num|才|«才» مع الأعداد: فقط / ما زال|才 + number: only
 a:«才» قبل العدد تعني أن الرقم أقل من المتوقع: «才五块» بخمسة فقط، «才八岁» عمره ثماني سنوات فقط.
 e:才 before a number says it is less than expected: 才五块, only five yuan; 才八岁, only eight.
 >这件衣服才五十块。|Zhè jiàn yīfu cái wǔshí kuài.|هذا الثوب بخمسين يوانًا فقط.|This outfit is only fifty yuan.
@@ -313,7 +313,7 @@ e:了 after the first verb and 就 before the second: the second follows as soon
 >我下了班就去找你。|Wǒ xià le bān jiù qù zhǎo nǐ.|بعد انتهاء دوامي آتي إليك مباشرة.|I'll come and find you right after work.
 >他吃了早饭就走了。|Tā chī le zǎofàn jiù zǒu le.|غادر بعد الفطور مباشرة.|He left right after breakfast.
 >你到了就给我发短信。|Nǐ dào le jiù gěi wǒ fā duǎnxìn.|أرسل لي رسالة فور وصولك.|Text me as soon as you arrive.
-#g3-qilai|V + 起来 / 下去 (extended)|起来,下去|«起来» و«下去» بمعناهما المجازي|起来 and 下去: start and continue
+#g3-qilai|V + 起来 / V + 下去|起来,下去|«起来» و«下去» بمعناهما المجازي|起来 and 下去: start and continue
 a:«起来» بعد الفعل = يبدأ: «笑起来» انفجر ضاحكًا. «下去» = يواصل: «说下去» واصل الكلام.
 e:起来 after a verb means "start": 笑起来, burst out laughing. 下去 means "carry on": 说下去, keep talking.
 >大家都笑起来了。|Dàjiā dōu xiào qǐlai le.|ضحك الجميع.|Everyone burst out laughing.
@@ -343,7 +343,7 @@ e:的话 at the end of a condition is enough on its own in speech: 明天下雨�
 >明天下雨的话，我们就在家。|Míngtiān xià yǔ de huà, wǒmen jiù zài jiā.|إن أمطرت غدًا نبقى في البيت.|If it rains tomorrow, we'll stay home.
 >你不舒服的话，就早点儿回去。|Nǐ bù shūfu de huà, jiù zǎo diǎnr huíqu.|إن كنت متوعكًا فارجع مبكرًا.|If you're not feeling well, go back early.
 >有问题的话，随时问我。|Yǒu wèntí de huà, suíshí wèn wǒ.|إن كان لديك سؤال فاسألني متى شئت.|If you have questions, ask me any time.
-#g3-adv-order|又/也/还 position with 都|也都,还都|ترتيب الظروف معًا|Order of several adverbs
+#g3-adv-order|S + Time + 也 + 都 + 不 + V|也都,还都|ترتيب الظروف معًا|Order of several adverbs
 a:عند اجتماع الظروف الترتيب الشائع: الزمن ← «也» ← «都» ← النفي ← «很/太» ← الفعل: «我们明天也都不去».
 e:When adverbs combine, the usual order is time → 也 → 都 → negative → degree → verb: 我们明天也都不去.
 >我们明天也都不去。|Wǒmen míngtiān yě dōu bú qù.|نحن أيضًا كلنا لن نذهب غدًا.|None of us is going tomorrow either.

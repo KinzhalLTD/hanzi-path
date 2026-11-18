@@ -28,7 +28,9 @@ const GR_SLOT={S:['الفاعل','subject'],V:['الفعل','verb'],O:['المف
   Vehicle:['وسيلة النقل','vehicle'],Name:['الاسم','name'],Surname:['اسم العائلة','surname'],Country:['البلد','country'],VP:['عبارة فعلية','verb phrase'],Dur:['المدة','duration'],
   R:['النتيجة','result'],Dir:['الاتجاه','direction'],Freq:['عدد المرات','frequency'],Deg:['الدرجة','degree'],Person:['الشخص','person'],Topic:['الموضوع','topic'],A:['أ','A'],B:['ب','B'],
   C1:['الجملة الأولى','clause 1'],C2:['الجملة الثانية','clause 2'],Reason:['السبب','reason'],Result:['النتيجة','result'],Cond:['الشرط','condition'],Prep:['حرف جر','preposition'],
-  Amount:['الكمية','amount'],Event:['الحدث','event'],X:['X','X'],Y:['Y','Y']};
+  Amount:['الكمية','amount'],Event:['الحدث','event'],X:['X','X'],Y:['Y','Y'],C:['ج','C'],V1:['الفعل الأول','verb 1'],V2:['الفعل الثاني','verb 2'],
+  Adj1:['الصفة الأولى','adjective 1'],Adj2:['الصفة الثانية','adjective 2'],Thing:['الشيء','thing'],Other:['مكمّل','complement'],Agent:['الفاعل الحقيقي','doer'],
+  Purpose:['الغرض','purpose'],How:['الطريقة','how'],Chance:['الفرصة','opportunity'],Role:['الدور','role'],Example:['المثال','example']};
 function grPatternHTML(pt){ return `<div class="grpat" dir="ltr">${pt.split(/([A-Za-z][A-Za-z0-9]*)/).map(x=>{ if(!x) return '';
     const s=GR_SLOT[x]; if(s) return `<span class="grslot" title="${esc(isAr()?s[0]:s[1])}">${esc(isAr()?s[0]:s[1])}</span>`;
     if(/^[A-Za-z]/.test(x)) return `<span class="grslot">${esc(x)}</span>`;

@@ -1,0 +1,295 @@
+# Grammar HSK 6 (formal and written Chinese). Format: see scripts/gram_build.py. Keys are stable ids: never rename them.
+@6
+#g6-jibian|即便…，也…|即便,也|«即便… فـ…»: حتى وإن|即便…也…: even if (formal)
+a:«即便» = «即使» بأسلوب أكثر رسمية، للكتابة والخطابة.
+e:即便 is a more formal 即使, used in writing and speeches.
+>即便困难再大，我们也要按时完成。|Jíbiàn kùnnan zài dà, wǒmen yě yào ànshí wánchéng.|مهما عظمت الصعوبات، سننجز في الموعد.|However great the difficulties, we will finish on time.
+>即便他道歉了，我也不会原谅他。|Jíbiàn tā dàoqiàn le, wǒ yě bú huì yuánliàng tā.|حتى لو اعتذر، لن أسامحه.|Even if he apologises, I won't forgive him.
+#g6-guran|固然…，但/也…|固然,但|«固然…لكن…»: صحيح أن… إلا أن|固然…但…: admittedly… but…
+a:«固然» تعترف بنقطة صحيحة، ثم «但/可是» تقدّم نقطة أهم، أو «也» نقطة مقبولة أخرى.
+e:固然 concedes a valid point, then 但 / 可是 brings a more important one, or 也 another acceptable one.
+>钱固然重要，但健康更重要。|Qián gùrán zhòngyào, dàn jiànkāng gèng zhòngyào.|المال مهم بلا شك، لكن الصحة أهم.|Money is admittedly important, but health matters more.
+>这个方法固然好，那个方法也不错。|Zhège fāngfǎ gùrán hǎo, nàge fāngfǎ yě búcuò.|صحيح أن هذه الطريقة جيدة، لكن تلك أيضًا لا بأس بها.|This method is certainly good, but that one isn't bad either.
+#g6-tangruo|倘若…，就/便…|倘若|«倘若»: إن / لو (أدبية)|倘若: if (literary)
+a:«倘若» شرط أدبي يعادل «如果»، يكثر في الكتابة الرسمية والأدب.
+e:倘若 is a literary "if", equal to 如果, common in formal writing and literature.
+>倘若有任何问题，请及时与我们联系。|Tǎngruò yǒu rènhé wèntí, qǐng jíshí yǔ wǒmen liánxì.|إن كانت لديكم أي أسئلة، فتواصلوا معنا فورًا.|Should you have any questions, please contact us promptly.
+>倘若没有大家的支持，这个项目便无法完成。|Tǎngruò méiyǒu dàjiā de zhīchí, zhège xiàngmù biàn wúfǎ wánchéng.|لولا دعم الجميع لما أُنجز هذا المشروع.|Without everyone's support, this project could not be completed.
+#g6-yibian|…，以便…|以便|«以便»: كي / بغية|以便: so that, in order to
+a:«以便» في أول الجزء الثاني تذكر الغرض، بأسلوب رسمي.
+e:以便 opens the second part with the purpose, in a formal style.
+>请提前通知我们，以便做好准备。|Qǐng tíqián tōngzhī wǒmen, yǐbiàn zuò hǎo zhǔnbèi.|أبلغونا مسبقًا كي نستعد جيدًا.|Please notify us in advance so we can prepare.
+>请留下电话，以便我们联系您。|Qǐng liúxià diànhuà, yǐbiàn wǒmen liánxì nín.|اترك رقم هاتفك كي نتواصل معك.|Please leave your number so we can contact you.
+#g6-jiner|…，进而…|进而|«进而»: ومن ثمّ / بل وأكثر|进而: and then further
+a:«进而» تنتقل خطوة أبعد على أساس ما سبق: أولًا… ثم بناءً عليه…
+e:进而 moves a step further on the basis of what came before: first…, and then going further….
+>先了解客户需求，进而制定合适的方案。|Xiān liǎojiě kèhù xūqiú, jìn'ér zhìdìng héshì de fāng'àn.|نفهم احتياجات العميل أولًا، ثم نضع الخطة المناسبة.|First understand the client's needs, then go on to draw up a suitable plan.
+>技术的进步提高了效率，进而降低了成本。|Jìshù de jìnbù tígāo le xiàolǜ, jìn'ér jiàngdī le chéngběn.|رفع التقدم التقني الكفاءة، ومن ثمّ خفّض التكاليف.|Technical progress raised efficiency and in turn cut costs.
+#g6-naizhi|A、B，乃至 C|乃至|«乃至»: بل وحتى|乃至: and even, up to
+a:«乃至» تمدّ القائمة إلى أبعد نطاق: المدينة والبلد، بل والعالم كله.
+e:乃至 extends a list to the widest scope: the city, the country, and even the whole world.
+>这个发现对中国乃至世界都有重要意义。|Zhège fāxiàn duì Zhōngguó nǎizhì shìjiè dōu yǒu zhòngyào yìyì.|لهذا الاكتشاف أهمية للصين بل وللعالم كله.|This discovery matters to China and even to the world.
+>他的作品影响了几代人乃至整个社会。|Tā de zuòpǐn yǐngxiǎng le jǐ dài rén nǎizhì zhěnggè shèhuì.|أثّرت أعماله في أجيال بل في المجتمع كله.|His work influenced generations and even society as a whole.
+#g6-jianyu|鉴于…，…|鉴于|«鉴于»: نظرًا إلى|鉴于: in view of
+a:«鉴于» تقدّم معطى يُبنى عليه قرار، أسلوب إداري ورسمي.
+e:鉴于 introduces a fact on which a decision is based; formal and administrative.
+>鉴于天气原因，活动推迟到下周举行。|Jiànyú tiānqì yuányīn, huódòng tuīchí dào xià zhōu jǔxíng.|نظرًا لأحوال الطقس، تأجل النشاط إلى الأسبوع المقبل.|In view of the weather, the event is postponed to next week.
+>鉴于他的出色表现，公司决定给他升职。|Jiànyú tā de chūsè biǎoxiàn, gōngsī juédìng gěi tā shēngzhí.|نظرًا لأدائه المتميز قررت الشركة ترقيته.|In view of his outstanding performance, the company decided to promote him.
+#g6-jiu-eryan|就 + N + 而言|就,而言|«就… 而言»: فيما يتعلق بـ|就…而言: as far as… is concerned
+a:«就 + موضوع + 而言» تحدد زاوية الحكم بأسلوب رسمي، مثل «对…来说».
+e:就 + topic + 而言 sets the angle of a judgement, formally, like 对…来说.
+>就价格而言，这款手机很有优势。|Jiù jiàgé ér yán, zhè kuǎn shǒujī hěn yǒu yōushì.|من ناحية السعر، لهذا الهاتف ميزة واضحة.|In terms of price, this phone has a clear edge.
+>就我个人而言，我更喜欢安静的生活。|Jiù wǒ gèrén ér yán, wǒ gèng xǐhuan ānjìng de shēnghuó.|بالنسبة لي شخصيًا، أفضّل الحياة الهادئة.|Speaking for myself, I prefer a quiet life.
+#g6-yuxiangbi|与 + N + 相比，…|与,相比|«与… 相比»: مقارنةً بـ|与…相比: compared with
+a:«与/和 + اسم + 相比» تقدّم أساس المقارنة في أول الجملة.
+e:与 / 和 + noun + 相比 opens the sentence with the basis of comparison.
+>与去年相比，今年的销售额增长了百分之二十。|Yǔ qùnián xiāngbǐ, jīnnián de xiāoshòu'é zēngzhǎng le bǎi fēn zhī èrshí.|مقارنةً بالعام الماضي، ارتفعت المبيعات بنسبة عشرين بالمئة.|Compared with last year, sales rose by 20%.
+>与城市相比，农村的空气更新鲜。|Yǔ chéngshì xiāngbǐ, nóngcūn de kōngqì gèng xīnxiān.|مقارنةً بالمدينة، هواء الريف أنقى.|Compared with the city, the countryside air is fresher.
+#g6-congkan|从 + N + 来看/看来，…|从,来看|«من منظور…»: «从…来看»|从…来看: judging from
+a:«从 + أساس + 来看» يقدّم الدليل أو المنظور الذي نستنتج منه.
+e:从 + basis + 来看 gives the evidence or angle a conclusion is drawn from.
+>从目前的情况来看，问题不大。|Cóng mùqián de qíngkuàng lái kàn, wèntí bú dà.|بالنظر إلى الوضع الحالي، المشكلة ليست كبيرة.|Judging from the current situation, it's not a big problem.
+>从长远来看，这项投资是值得的。|Cóng chángyuǎn lái kàn, zhè xiàng tóuzī shì zhíde de.|على المدى البعيد، هذا الاستثمار يستحق.|In the long run, this investment is worth it.
+#g6-hebi|何必 + V + 呢？|何必,呢|«何必…؟»: ما الداعي إلى…؟|何必…呢？: why bother…?
+a:«何必» سؤال إنكاري: لا داعي لذلك. «何必生气呢؟» ما الداعي للغضب؟
+e:何必 is a rhetorical question meaning there's no need: 何必生气呢？, why get angry?
+>一点儿小事，何必生气呢？|Yìdiǎnr xiǎo shì, hébì shēngqì ne?|أمر صغير، فما الداعي للغضب؟|It's such a small thing, why get angry?
+>离得这么近，何必打车呢？|Lí de zhème jìn, hébì dǎchē ne?|المكان قريب جدًا، فما الداعي لسيارة أجرة؟|It's so close, why bother with a taxi?
+#g6-hechang|何尝 + 不/没 + V|何尝|«何尝»: وهل… لا؟ (بلى)|何尝: how could… not (of course)
+a:«何尝不» سؤال إنكاري يعني «بلى، بالطبع»: «我何尝不想去» وهل لا أريد الذهاب؟ بالطبع أريد.
+e:何尝不 is rhetorical, meaning "of course": 我何尝不想去, do you think I don't want to go? Of course I do.
+>我何尝不想休息，可是工作太多了。|Wǒ hécháng bù xiǎng xiūxi, kěshì gōngzuò tài duō le.|وهل لا أريد الراحة؟ لكن العمل كثير جدًا.|Of course I'd like a rest, but there's too much work.
+>他何尝不知道这个道理？|Tā hécháng bù zhīdào zhège dàolǐ?|وهل هو لا يعرف هذا؟ بالطبع يعرف.|How could he not understand that?
+#g6-qi|岂 + 不/能 + V|岂不是,岂能|«岂»: أليس…؟ / كيف يُعقل…؟|岂: how could, wouldn't it be
+a:«岂» أداة إنكارية أدبية: «岂不是» أليس ذلك…؟ «岂能» كيف يمكن…؟
+e:岂 is a literary rhetorical word: 岂不是, wouldn't that be…? 岂能, how could one…?
+>这样做岂不是浪费时间？|Zhèyàng zuò qǐ bú shì làngfèi shíjiān?|أليس هذا إضاعة للوقت؟|Wouldn't that be a waste of time?
+>这么重要的事，岂能随便决定？|Zhème zhòngyào de shì, qǐ néng suíbiàn juédìng?|أمر بهذه الأهمية، كيف يُقرّر بتسرّع؟|How can something so important be decided casually?
+#g6-weimian|未免 + Adj + (了)|未免|«未免»: فيه شيء من المبالغة|未免: rather, a bit too
+a:«未免» تلطّف النقد: «未免太早了» أبكر قليلًا مما ينبغي.
+e:未免 softens a criticism: 未免太早了, rather too early.
+>你这样说未免太绝对了。|Nǐ zhèyàng shuō wèimiǎn tài juéduì le.|كلامك هذا فيه شيء من الإطلاق.|Saying that is a bit too absolute.
+>现在就下结论，未免太早了。|Xiànzài jiù xià jiélùn, wèimiǎn tài zǎo le.|الاستنتاج الآن مبكر بعض الشيء.|It's rather too early to draw conclusions.
+#g6-bujin|不禁/不由得 + V|不禁,不由得|«不禁»: لم يتمالك نفسه من|不禁 / 不由得: can't help (doing)
+a:«不禁» و«不由得» قبل الفعل: ردّ فعل عفوي لا إرادي: «不禁笑了» لم يتمالك نفسه من الضحك.
+e:不禁 and 不由得 before a verb describe an involuntary reaction: 不禁笑了, couldn't help laughing.
+>听到这个笑话，大家不禁笑了起来。|Tīng dào zhège xiàohua, dàjiā bùjīn xiào le qǐlai.|لما سمعوا النكتة لم يتمالكوا أنفسهم من الضحك.|Hearing the joke, everyone couldn't help laughing.
+>看到老照片，他不由得想起了童年。|Kàn dào lǎo zhàopiàn, tā bùyóude xiǎng qǐ le tóngnián.|لما رأى الصور القديمة تذكّر طفولته رغمًا عنه.|Seeing the old photos, he couldn't help recalling his childhood.
+#g6-wubi|务必 + V|务必|«务必»: يجب حتمًا|务必: must be sure to
+a:«务必» تشدد على ضرورة الفعل في التعليمات الرسمية: «请务必准时».
+e:务必 insists that something must be done, in formal instructions: 请务必准时.
+>请务必在周五之前提交报告。|Qǐng wùbì zài zhōuwǔ zhīqián tíjiāo bàogào.|يُرجى حتمًا تسليم التقرير قبل الجمعة.|Be sure to submit the report before Friday.
+>出发前务必检查护照和机票。|Chūfā qián wùbì jiǎnchá hùzhào hé jīpiào.|تحقق حتمًا من الجواز والتذكرة قبل الانطلاق.|Be sure to check your passport and ticket before leaving.
+#g6-chizao|迟早 + V|迟早|«迟早»: عاجلًا أم آجلًا|迟早: sooner or later
+a:«迟早» قبل الفعل: سيحدث حتمًا مع الوقت.
+e:迟早 before the verb: it's bound to happen sooner or later.
+>真相迟早会大白。|Zhēnxiàng chízǎo huì dàbái.|ستظهر الحقيقة عاجلًا أم آجلًا.|The truth will come out sooner or later.
+>你迟早要面对这个问题。|Nǐ chízǎo yào miànduì zhège wèntí.|ستواجه هذه المشكلة عاجلًا أم آجلًا.|Sooner or later you'll have to face this problem.
+#g6-yiran|依然/仍然 + V|依然,仍然|«依然» و«仍然»: لا يزال|依然 / 仍然: still (formal)
+a:«依然» و«仍然» = «还是» في الكتابة: رغم التغيرات بقي الأمر كما هو.
+e:依然 and 仍然 are the written equivalents of 还是: despite changes, it stays the same.
+>多年过去了，这里依然那么美。|Duō nián guòqu le, zhèlǐ yīrán nàme měi.|مضت سنوات، والمكان لا يزال بهذا الجمال.|Years have passed, and it's still as beautiful here.
+>虽然失败了很多次，他仍然没有放弃。|Suīrán shībài le hěn duō cì, tā réngrán méiyǒu fàngqì.|رغم إخفاقه مرات كثيرة، لم يستسلم.|Though he failed many times, he still didn't give up.
+#g6-haowu|毫无 + N / 毫不 + V|毫无,毫不|«毫无» و«毫不»: لا… إطلاقًا|毫无 / 毫不: not in the least
+a:«毫无 + اسم» لا يوجد أي…: «毫无疑问» بلا أدنى شك. «毫不 + فعل/صفة»: «毫不犹豫» دون أي تردد.
+e:毫无 + noun means "without any…": 毫无疑问, without a doubt. 毫不 + verb/adjective: 毫不犹豫, without the slightest hesitation.
+>毫无疑问，他是最合适的人选。|Háowú yíwèn, tā shì zuì héshì de rénxuǎn.|لا شك أنه المرشح الأنسب.|Without a doubt, he's the best candidate.
+>她毫不犹豫地答应了。|Tā háobù yóuyù de dāying le.|وافقت دون أي تردد.|She agreed without hesitation.
+#g6-buzhiyu|不至于 + V|不至于|«不至于»: لن يبلغ حدّ|不至于: not go so far as to
+a:«不至于» = الأمر لن يصل إلى هذا الحد السيئ.
+e:不至于 means things won't go as far as that (bad) extreme.
+>他虽然生气，但不至于不理你。|Tā suīrán shēngqì, dàn búzhìyú bù lǐ nǐ.|رغم غضبه، لن يصل إلى حد تجاهلك.|He's angry, but not to the point of ignoring you.
+>这点小病不至于住院。|Zhè diǎn xiǎo bìng búzhìyú zhùyuàn.|هذا المرض البسيط لا يستدعي دخول المستشفى.|Such a minor illness won't need a hospital stay.
+#g6-yizhiyu|…，以至(于)/以致…|以至于,以致|«以至» و«以致»: إلى حد أن / مما أدى إلى|以至于 / 以致: to the point that, so that
+a:«以至于» تصف درجة بلغت حدًّا ما، و«以致» نتيجة سلبية غالبًا.
+e:以至于 shows a degree reaching some point; 以致 a result, usually a bad one.
+>他工作太投入，以至于忘了吃饭。|Tā gōngzuò tài tóurù, yǐzhìyú wàng le chī fàn.|انغمس في العمل إلى حد أنه نسي الأكل.|He was so absorbed in work that he forgot to eat.
+>他没有认真检查，以致出现了严重错误。|Tā méiyǒu rènzhēn jiǎnchá, yǐzhì chūxiàn le yánzhòng cuòwù.|لم يدقق جيدًا، مما أدى إلى خطأ جسيم.|He didn't check carefully, which led to a serious error.
+#g6-zhishi|…，致使…|致使|«致使»: مما تسبب في|致使: causing, resulting in
+a:«致使» تربط سببًا بنتيجة سلبية في التقارير الرسمية.
+e:致使 links a cause to a negative result in formal reports.
+>大雨致使多条道路被淹。|Dà yǔ zhìshǐ duō tiáo dàolù bèi yān.|تسببت الأمطار الغزيرة في غمر عدة طرق.|Heavy rain flooded several roads.
+>设备老化致使生产停止。|Shèbèi lǎohuà zhìshǐ shēngchǎn tíngzhǐ.|أدى تقادم المعدات إلى توقف الإنتاج.|Ageing equipment caused production to stop.
+#g6-wufei|无非 + 是…|无非|«无非»: لا يعدو أن يكون|无非: nothing more than
+a:«无非» تقلل من شأن الأمر: لا يتجاوز كذا.
+e:无非 plays something down: it's nothing more than….
+>他说了半天，无非是想借钱。|Tā shuō le bàntiān, wúfēi shì xiǎng jiè qián.|تكلم طويلًا، وكل ما يريده هو الاقتراض.|He talked for ages, but all he wanted was to borrow money.
+>周末无非就是看看书、做做饭。|Zhōumò wúfēi jiù shì kànkan shū, zuòzuo fàn.|عطلتي لا تعدو القراءة والطبخ.|My weekends are just a bit of reading and cooking.
+#g6-yejiushishuo|也就是说 / 换句话说，…|也就是说,换句话说|«أي» و«بعبارة أخرى»|也就是说 / 换句话说: that is to say
+a:«也就是说» تشرح ما قيل بصيغة أوضح، و«换句话说» تعيد صياغته.
+e:也就是说 explains what was said more plainly; 换句话说 restates it in other words.
+>会议推迟了，也就是说我们今天不用去了。|Huìyì tuīchí le, yě jiù shì shuō wǒmen jīntiān bú yòng qù le.|تأجل الاجتماع، أي أننا لسنا مضطرين للذهاب اليوم.|The meeting's postponed, which means we don't need to go today.
+>换句话说，我们必须重新开始。|Huàn jù huà shuō, wǒmen bìxū chóngxīn kāishǐ.|بعبارة أخرى، يجب أن نبدأ من جديد.|In other words, we have to start over.
+#g6-guigen|归根到底，…|归根到底|«归根到底»: في المحصلة النهائية|归根到底: in the final analysis
+a:«归根到底» تصل إلى السبب الجذري أو الخلاصة الأساسية.
+e:归根到底 gets to the root cause or the essential conclusion.
+>归根到底，问题出在管理上。|Guīgēn dàodǐ, wèntí chū zài guǎnlǐ shang.|في المحصلة، المشكلة في الإدارة.|In the final analysis, the problem lies in management.
+>归根到底，成功靠的是坚持。|Guīgēn dàodǐ, chénggōng kào de shì jiānchí.|في نهاية المطاف، النجاح يعتمد على المثابرة.|Ultimately, success depends on perseverance.
+#g6-yilai|一来…，二来…|一来,二来|«أولًا… وثانيًا…» (لتعداد الأسباب)|一来…二来…: for one thing…, for another…
+a:«一来…二来…» تعدّد سببين أو غرضين بأسلوب طبيعي في الكلام والكتابة.
+e:一来…二来… lists two reasons or purposes, natural in speech and writing.
+>我走路上班，一来锻炼身体，二来节省时间。|Wǒ zǒulù shàngbān, yī lái duànliàn shēntǐ, èr lái jiéshěng shíjiān.|أمشي إلى العمل، أولًا للرياضة وثانيًا لتوفير الوقت.|I walk to work, partly for exercise and partly to save time.
+>这次出差一来见客户，二来了解市场。|Zhè cì chūchāi yī lái jiàn kèhù, èr lái liǎojiě shìchǎng.|هذه الرحلة للقاء العملاء أولًا، ولفهم السوق ثانيًا.|This trip is to meet clients and also to learn about the market.
+#g6-shier|时而 A，时而 B|时而|«时而… وتارة…»|时而…时而…: now… now…
+a:«时而» قبل كل حالة: تتناوب الحالتان بشكل غير منتظم.
+e:时而 before each state: they alternate irregularly.
+>天气时而晴，时而雨。|Tiānqì shí'ér qíng, shí'ér yǔ.|الجو تارة مشمس وتارة ممطر.|The weather is sunny one moment, rainy the next.
+>他的情绪时而高兴，时而难过。|Tā de qíngxù shí'ér gāoxìng, shí'ér nánguò.|مزاجه يتقلب بين الفرح والحزن.|His mood swings between happy and sad.
+#g6-zai-ye|再 + Adj，也…|再,也|«再… فـ…»: مهما بلغ|再…也…: no matter how…
+a:«再 + صفة، 也 + فعل» = مهما بلغ الأمر فالنتيجة ثابتة: «再忙也要吃饭».
+e:再 + adjective, 也 + verb means however much…, the result stands: 再忙也要吃饭.
+>再忙也要注意身体。|Zài máng yě yào zhùyì shēntǐ.|مهما انشغلت اعتنِ بصحتك.|However busy you are, look after your health.
+>东西再好，太贵了也没人买。|Dōngxi zài hǎo, tài guì le yě méi rén mǎi.|مهما كانت السلعة جيدة، إن كانت غالية جدًا فلن يشتريها أحد.|However good a product is, if it's too expensive nobody buys it.
+#g6-feidan|非但 + 不/没…，反而…|非但,反而|«非但لم… بل على العكس…»|非但不…反而…: far from… actually…
+a:«非但» = «不但» مع نفي، والجزء الثاني بـ «反而» نتيجة معاكسة.
+e:非但 is a formal 不但 used with a negative; the second part with 反而 gives the opposite result.
+>他非但没有帮忙，反而添了麻烦。|Tā fēidàn méiyǒu bāngmáng, fǎn'ér tiān le máfan.|لم يساعد، بل على العكس زاد المتاعب.|Far from helping, he only made more trouble.
+>雨非但没停，反而越下越大。|Yǔ fēidàn méi tíng, fǎn'ér yuè xià yuè dà.|لم يتوقف المطر، بل اشتد أكثر.|Far from stopping, the rain got heavier.
+#g6-bingfei|并非 + N/V|并非|«并非»: ليس في الحقيقة|并非: is by no means
+a:«并非» = «并不是» بأسلوب رسمي، لتصحيح فكرة شائعة.
+e:并非 is a formal 并不是, used to correct a common belief.
+>事实并非如此。|Shìshí bìngfēi rúcǐ.|الحقيقة ليست كذلك.|That is not the case.
+>成功并非一朝一夕的事。|Chénggōng bìngfēi yì zhāo yì xī de shì.|النجاح لا يأتي بين ليلة وضحاها.|Success doesn't come overnight.
+#g6-mofei|莫非 + Clause？|莫非|«莫非»: أيُعقل أن…؟|莫非: could it be that…?
+a:«莫非» تطرح تخمينًا مندهشًا: أيمكن أن…؟ وغالبًا مع «吗» أو «不成».
+e:莫非 puts forward a surprised guess: could it be that…? often with 吗 or 不成.
+>他还没来，莫非出了什么事？|Tā hái méi lái, mòfēi chū le shénme shì?|لم يأتِ بعد، أيُعقل أن شيئًا حدث؟|He's still not here; could something have happened?
+>莫非你早就知道了？|Mòfēi nǐ zǎo jiù zhīdào le?|أيُعقل أنك كنت تعرف منذ زمن؟|Could it be you knew all along?
+#g6-suo|(为/被) + Agent + 所 + V / 所 + V + 的 + N|所|«所»: أداة المفعول في الأسلوب الرسمي|所: formal object marker
+a:«所 + فعل + 的» = ما يُفعل: «我所知道的» ما أعرفه. و«为…所…» صيغة مجهول رسمية: «为人们所喜爱» محبوب لدى الناس.
+e:所 + verb + 的 means "what is …ed": 我所知道的, what I know. 为…所… is a formal passive: 为人们所喜爱, loved by people.
+>这就是我所知道的情况。|Zhè jiù shì wǒ suǒ zhīdào de qíngkuàng.|هذا كل ما أعرفه عن الوضع.|That's all I know about the situation.
+>这首歌为年轻人所喜爱。|Zhè shǒu gē wéi niánqīngrén suǒ xǐ'ài.|هذه الأغنية محبوبة لدى الشباب.|This song is loved by young people.
+>他的作品为世人所熟知。|Tā de zuòpǐn wéi shìrén suǒ shúzhī.|أعماله معروفة لدى الناس جميعًا.|His work is known to the world.
+#g6-zhi|A + 之 + B|之|«之» الأداة الأدبية للإضافة|之: literary "of"
+a:«之» تعادل «的» في الأسلوب الأدبي والعبارات الثابتة: «之一» أحد، «之间» بين، «三分之一» الثلث.
+e:之 equals 的 in literary style and set phrases: 之一 one of, 之间 between, 三分之一 one third.
+>长城是世界七大奇迹之一。|Chángchéng shì shìjiè qī dà qíjì zhī yī.|سور الصين العظيم أحد عجائب الدنيا السبع.|The Great Wall is one of the seven wonders of the world.
+>三分之一的员工选择了远程工作。|Sān fēn zhī yī de yuángōng xuǎnzé le yuǎnchéng gōngzuò.|اختار ثلث الموظفين العمل عن بُعد.|A third of the staff chose to work remotely.
+>朋友之间应该互相信任。|Péngyou zhī jiān yīnggāi hùxiāng xìnrèn.|بين الأصدقاء ينبغي أن تسود الثقة.|Friends should trust each other.
+#g6-zhisuoyi|之所以…，是因为…|之所以,是因为|«إنما… لأن…»|之所以…是因为…: the reason why… is that…
+a:النتيجة أولًا مع «之所以»، ثم السبب مع «是因为»: لإبراز السبب في الشرح والكتابة.
+e:The result comes first with 之所以, then the reason with 是因为, to highlight the cause.
+>他之所以成功，是因为一直很努力。|Tā zhīsuǒyǐ chénggōng, shì yīnwèi yìzhí hěn nǔlì.|إنما نجح لأنه كان مجتهدًا دائمًا.|The reason he succeeded is that he always worked hard.
+>我之所以选择这家公司，是因为它的发展空间大。|Wǒ zhīsuǒyǐ xuǎnzé zhè jiā gōngsī, shì yīnwèi tā de fāzhǎn kōngjiān dà.|اخترتُ هذه الشركة لأن فرص التطور فيها كبيرة.|I chose this company because it offers great room for growth.
+#g6-yi-means|以 + N + V|以|«以»: بـ / عن طريق (رسمية)|以: by means of, with
+a:«以» تذكر الوسيلة أو الطريقة رسميًا: «以…的方式» بطريقة…، «以优惠的价格» بسعر مخفّض.
+e:以 gives the means or manner formally: 以…的方式 in a … way, 以优惠的价格 at a discounted price.
+>我们以最快的速度完成了任务。|Wǒmen yǐ zuì kuài de sùdù wánchéng le rènwu.|أنجزنا المهمة بأقصى سرعة.|We completed the task as fast as possible.
+>公司以优惠的价格向会员提供服务。|Gōngsī yǐ yōuhuì de jiàgé xiàng huìyuán tígōng fúwù.|تقدّم الشركة خدماتها للأعضاء بأسعار مخفضة.|The company offers services to members at discounted prices.
+#g6-jiayi|对 + N + 加以/予以 + V|加以,予以|«加以» و«予以»: فعل رسمي قبل فعل ثنائي|加以 / 予以: give (formal verb before a verb)
+a:«加以» و«予以» يأتيان قبل فعل ثنائي المقطع في الأسلوب الإداري: «加以解决» يعالج، «予以支持» يقدّم الدعم.
+e:加以 and 予以 come before a two-syllable verb in administrative style: 加以解决 deal with, 予以支持 give support.
+>这个问题必须加以解决。|Zhège wèntí bìxū jiāyǐ jiějué.|يجب معالجة هذه المشكلة.|This problem must be dealt with.
+>对表现突出的员工予以奖励。|Duì biǎoxiàn tūchū de yuángōng yǔyǐ jiǎnglì.|يُكافأ الموظفون المتميزون.|Outstanding staff will be rewarded.
+#g6-yousuo|有所 + V|有所|«有所»: إلى حد ما (رسمية)|有所: to some extent
+a:«有所 + فعل ثنائي» تعني حدوث الفعل بدرجة ما: «有所提高» تحسّن نوعًا ما.
+e:有所 + a two-syllable verb means the action happened to some degree: 有所提高, improved somewhat.
+>今年的收入比去年有所增加。|Jīnnián de shōurù bǐ qùnián yǒusuǒ zēngjiā.|زاد دخل هذا العام بعض الشيء عن العام الماضي.|This year's income has risen somewhat over last year's.
+>他的身体状况有所好转。|Tā de shēntǐ zhuàngkuàng yǒusuǒ hǎozhuǎn.|تحسّنت حالته الصحية بعض الشيء.|His health has improved a little.
+#g6-yu|V/Adj + 于 + N|于|«于»: في / من / أكثر من (رسمية)|于: at, in, than (formal)
+a:«于» بعد الفعل أو الصفة رسمية: المكان «位于» يقع في، المقارنة «大于» أكبر من، الفائدة «有利于» في صالح.
+e:于 after a verb or adjective is formal: place 位于 located in, comparison 大于 greater than, benefit 有利于 good for.
+>北京位于中国北部。|Běijīng wèiyú Zhōngguó běibù.|تقع بكين في شمال الصين.|Beijing is in the north of China.
+>收入必须大于支出。|Shōurù bìxū dàyú zhīchū.|يجب أن يكون الدخل أكبر من الإنفاق.|Income must exceed spending.
+>多运动有利于身体健康。|Duō yùndòng yǒulìyú shēntǐ jiànkāng.|الرياضة الكثيرة في صالح الصحة.|Exercising more is good for your health.
+#g6-er|A + 而 + B|而|«而»: و / بينما / لكن|而: and, whereas, but
+a:«而» تربط صفتين أو فعلين بأسلوب رسمي، أو تعبّر عن التباين: «我喜欢安静，而他喜欢热闹».
+e:而 links two adjectives or verbs formally, or shows contrast: 我喜欢安静，而他喜欢热闹.
+>这个设计简单而实用。|Zhège shèjì jiǎndān ér shíyòng.|هذا التصميم بسيط وعملي.|This design is simple and practical.
+>我喜欢安静，而他喜欢热闹。|Wǒ xǐhuan ānjìng, ér tā xǐhuan rènao.|أنا أحب الهدوء، بينما هو يحب الصخب.|I like quiet, whereas he likes a lively atmosphere.
+#g6-ze|…，S + 则 + V|则|«则»: أما… فـ / إذن (رسمية)|则: whereas, then (formal)
+a:«则» تأتي بعد الفاعل الثاني لعرض التباين، أو بمعنى «就» في الشرط الرسمي.
+e:则 follows the second subject to show contrast, or means 就 in a formal condition.
+>南方多雨，北方则比较干燥。|Nánfāng duō yǔ, běifāng zé bǐjiào gānzào.|الجنوب كثير المطر، أما الشمال فجاف نسبيًا.|The south is rainy, whereas the north is fairly dry.
+>如不及时处理，则后果严重。|Rú bù jíshí chǔlǐ, zé hòuguǒ yánzhòng.|إن لم يُعالج فورًا فالعواقب وخيمة.|If not dealt with promptly, the consequences will be serious.
+#g6-jie|皆/均 + V|皆,均|«皆» و«均»: جميعًا (رسمية)|皆 / 均: all (formal)
+a:«均» و«皆» = «都» في الكتابة الرسمية والإعلانات.
+e:均 and 皆 are written equivalents of 都, in formal texts and notices.
+>以上价格均包括税费。|Yǐshàng jiàgé jūn bāokuò shuìfèi.|جميع الأسعار أعلاه تشمل الضرائب.|All prices above include tax.
+>此事人人皆知。|Cǐ shì rénrén jiē zhī.|هذا أمر يعرفه الجميع.|Everyone knows about this.
+#g6-bude|不得 + V|不得|«不得»: لا يجوز|不得: must not
+a:«不得» منع رسمي في اللوائح واللافتات: «不得吸烟» يُمنع التدخين.
+e:不得 is a formal prohibition in rules and signs: 不得吸烟, no smoking.
+>室内不得吸烟。|Shìnèi bùdé xīyān.|يُمنع التدخين في الداخل.|Smoking is not permitted indoors.
+>未经允许，不得进入。|Wèi jīng yǔnxǔ, bùdé jìnrù.|لا يجوز الدخول دون إذن.|No entry without permission.
+#g6-weiyou|唯有…，才…|唯有,才|«唯有… فقط حينها…»|唯有…才…: only by… can…
+a:«唯有» = «只有» بأسلوب أدبي، ويتبعه «才».
+e:唯有 is a literary 只有, followed by 才.
+>唯有坚持，才能成功。|Wéiyǒu jiānchí, cái néng chénggōng.|لا نجاح إلا بالمثابرة.|Only through perseverance can you succeed.
+>唯有不断学习，才能跟上时代。|Wéiyǒu búduàn xuéxí, cái néng gēn shang shídài.|لا مواكبة للعصر إلا بالتعلم المستمر.|Only by learning constantly can you keep up with the times.
+#g6-yufou|V/Adj + 与否|与否|«…与否»: سواء… أم لا|与否: whether or not
+a:«与否» بعد فعل أو صفة تعني «أم لا» في الكتابة: «成功与否» النجاح من عدمه.
+e:与否 after a verb or adjective means "or not" in writing: 成功与否, whether it succeeds or not.
+>成功与否，取决于我们的努力。|Chénggōng yǔfǒu, qǔjué yú wǒmen de nǔlì.|النجاح من عدمه يتوقف على جهدنا.|Whether we succeed depends on our effort.
+>参加与否，请尽快告诉我们。|Cānjiā yǔfǒu, qǐng jǐnkuài gàosu wǒmen.|أخبرونا سريعًا إن كنتم ستشاركون أم لا.|Please let us know soon whether you'll take part.
+#g6-qijian|为了 + N + 起见，…|起见|«…起见»: حرصًا على|为…起见: for the sake of
+a:«为 + اسم + 起见» = حرصًا على: «为安全起见» حرصًا على السلامة.
+e:为 + noun + 起见 means "to be on the safe side for…": 为安全起见, for safety's sake.
+>为安全起见，请系好安全带。|Wèi ānquán qǐjiàn, qǐng jì hǎo ānquándài.|حرصًا على السلامة، اربطوا أحزمة الأمان.|For safety's sake, please fasten your seatbelts.
+>为了慎重起见，我们再检查一遍。|Wèile shènzhòng qǐjiàn, wǒmen zài jiǎnchá yí biàn.|من باب الحيطة، لنراجع مرة أخرى.|To be careful, let's check once more.
+#g6-buxi|不惜 + V|不惜|«不惜»: لا يتوانى عن|不惜: not hesitate to, spare no
+a:«不惜» = مستعد لدفع ثمن كبير: «不惜一切代价» مهما كلّف الأمر.
+e:不惜 means ready to pay a high price: 不惜一切代价, at any cost.
+>他们不惜一切代价保护环境。|Tāmen bùxī yíqiè dàijià bǎohù huánjìng.|يحمون البيئة مهما كلّف الأمر.|They protect the environment at any cost.
+>为了孩子，她不惜辞去工作。|Wèile háizi, tā bùxī cíqù gōngzuò.|من أجل أطفالها لم تتردد في ترك عملها.|For her children she didn't hesitate to quit her job.
+#g6-yiwei|一味 + V|一味|«一味»: بإصرار أعمى|一味: blindly, persistently
+a:«一味» قبل الفعل: يستمر في شيء دون مراعاة لغيره، غالبًا نقد.
+e:一味 before the verb: keeps doing something without regard to anything else; usually critical.
+>不能一味地追求速度，还要保证质量。|Bù néng yíwèi de zhuīqiú sùdù, hái yào bǎozhèng zhìliàng.|لا يمكن السعي وراء السرعة فقط، بل يجب ضمان الجودة.|You can't just chase speed; quality must be ensured too.
+>他一味地抱怨，却不想办法。|Tā yíwèi de bàoyuàn, què bù xiǎng bànfǎ.|يشكو باستمرار ولا يبحث عن حل.|He keeps complaining but won't look for a solution.
+#g6-yixiang|一向 + V/Adj|一向|«一向»: دائمًا على الدوام|一向: always, consistently
+a:«一向» = دائمًا من قبل حتى الآن، تصف طبعًا ثابتًا.
+e:一向 means "always, all along", describing a consistent trait.
+>他一向很守时。|Tā yíxiàng hěn shǒushí.|هو دقيق في مواعيده دائمًا.|He's always punctual.
+>我们公司一向重视客户的意见。|Wǒmen gōngsī yíxiàng zhòngshì kèhù de yìjiàn.|شركتنا تهتم دائمًا بآراء العملاء.|Our company has always valued customers' opinions.
+#g6-shibi|势必 + V|势必|«势必»: لا بد أن (نتيجة حتمية)|势必: is bound to
+a:«势必» = نتيجة حتمية بحكم الوضع: «势必会影响…» سيؤثر حتمًا.
+e:势必 means a result is inevitable given the situation: 势必会影响…, is bound to affect….
+>价格上涨势必会影响销量。|Jiàgé shàngzhǎng shìbì huì yǐngxiǎng xiāoliàng.|ارتفاع الأسعار سيؤثر حتمًا في المبيعات.|Rising prices are bound to affect sales.
+>不改革势必落后。|Bù gǎigé shìbì luòhòu.|من لا يصلح سيتخلّف لا محالة.|Without reform, falling behind is inevitable.
+#g6-bian|…，便 + V|便|«便»: فـ / حينئذٍ (رسمية)|便: then (formal 就)
+a:«便» = «就» في الكتابة: «一到家便睡了» ما إن وصل حتى نام.
+e:便 is the written 就: 一到家便睡了, fell asleep as soon as he got home.
+>他一到家便睡着了。|Tā yí dào jiā biàn shuìzháo le.|ما إن وصل إلى البيت حتى نام.|He fell asleep as soon as he got home.
+>如有问题，便可随时咨询。|Rú yǒu wèntí, biàn kě suíshí zīxún.|إن كانت لديكم أسئلة فيمكنكم الاستفسار في أي وقت.|If you have questions, you may ask at any time.
+#g6-yi|S + 亦 + V|亦|«亦»: أيضًا (أدبية)|亦: also (literary)
+a:«亦» = «也» في الأسلوب الأدبي والعبارات الثابتة: «亦是如此» وكذلك الحال.
+e:亦 is a literary 也, used in set phrases: 亦是如此, it is likewise.
+>学习如此，工作亦是如此。|Xuéxí rúcǐ, gōngzuò yì shì rúcǐ.|هكذا الدراسة، وكذلك العمل.|So it is with study, and likewise with work.
+>此方法简单，亦十分有效。|Cǐ fāngfǎ jiǎndān, yì shífēn yǒuxiào.|هذه الطريقة بسيطة وفعالة جدًا أيضًا.|This method is simple and also very effective.
+#g6-shang|尚 + 未/不 + V|尚未,尚|«尚»: ما زال / بعد (رسمية)|尚: still, yet (formal)
+a:«尚未» = «还没» بأسلوب رسمي: «尚未确定» لم يُحدَّد بعد.
+e:尚未 is a formal 还没: 尚未确定, not yet decided.
+>会议时间尚未确定。|Huìyì shíjiān shàngwèi quèdìng.|لم يُحدَّد موعد الاجتماع بعد.|The meeting time has not yet been decided.
+>这个问题尚需进一步研究。|Zhège wèntí shàng xū jìn yí bù yánjiū.|ما زالت هذه المسألة تحتاج إلى مزيد من الدراسة.|This question still needs further study.
+#g6-ji-ji|既 A，又/也 B|既,又|«既… و…»: جامع بين صفتين (رسمي)|既…又…: both… and…
+a:«既…又/也…» يجمع صفتين أو فعلين بأسلوب أكثر رسمية من «又…又…».
+e:既…又/也… combines two qualities or actions, more formally than 又…又….
+>这个方案既省钱又省时间。|Zhège fāng'àn jì shěng qián yòu shěng shíjiān.|هذه الخطة توفر المال والوقت معًا.|This plan saves both money and time.
+>他既是我的老师，也是我的朋友。|Tā jì shì wǒ de lǎoshī, yě shì wǒ de péngyou.|هو معلمي وصديقي في آن.|He's both my teacher and my friend.
+#g6-yuqi-shuo|与其说 A，不如说 B|与其说,不如说|«ليس… بقدر ما هو…»|与其说A，不如说B: it's less A than B
+a:«与其说…不如说…» تصحح الوصف: الأدق أن نقول B لا A.
+e:与其说…不如说… corrects a description: it's more accurate to say B than A.
+>与其说他是老板，不如说他是我们的朋友。|Yǔqí shuō tā shì lǎobǎn, bùrú shuō tā shì wǒmen de péngyou.|هو صديق لنا أكثر منه رئيسًا.|He's less our boss than our friend.
+>与其说这是失败，不如说是一次宝贵的经验。|Yǔqí shuō zhè shì shībài, bùrú shuō shì yí cì bǎoguì de jīngyàn.|هذه ليست فشلًا بقدر ما هي تجربة ثمينة.|This is less a failure than a valuable experience.
+#g6-jiu-shi|就是…，也…|就是,也|«حتى لو…» (كلامية قوية)|就是…也…: even if
+a:«就是…也…» = «即使…也…» في الكلام، بنبرة حازمة.
+e:就是…也… is the spoken 即使…也…, with a firm tone.
+>就是下大雨，我也要去。|Jiùshì xià dà yǔ, wǒ yě yào qù.|حتى لو هطل المطر بغزارة سأذهب.|Even if it pours, I'm going.
+>就是再难，我们也不能放弃。|Jiùshì zài nán, wǒmen yě bù néng fàngqì.|مهما بلغت الصعوبة لا يمكننا الاستسلام.|However hard it gets, we can't give up.
+#g6-shiwei|被视为 / 被称为 + N|被视为,称为|التسمية الرسمية: «يُعدّ» و«يُسمّى»|被视为 / 称为: be regarded as, be called
+a:«被视为» يُعدّ، «被称为» يُسمّى/يُلقّب، «被誉为» يُشاد به بوصفه. شائعة في الأخبار والتعريفات.
+e:被视为 be regarded as, 被称为 be called, 被誉为 be hailed as: common in news and definitions.
+>长江被称为中国的母亲河。|Chángjiāng bèi chēngwéi Zhōngguó de mǔqīn hé.|يُلقّب نهر اليانغتسي بالنهر الأم للصين.|The Yangtze is called China's mother river.
+>他被视为这个领域的专家。|Tā bèi shìwéi zhège lǐngyù de zhuānjiā.|يُعدّ خبيرًا في هذا المجال.|He is regarded as an expert in this field.
+#g6-ruhe|如何 / 何时 / 何地|如何,何时|أدوات الاستفهام الأدبية|Literary question words: 如何, 何时
+a:في الكتابة الرسمية: «如何» = «怎么»، «何时» = «什么时候»، «何地» = «哪里».
+e:In formal writing 如何 = 怎么, 何时 = 什么时候, 何地 = 哪里.
+>如何提高工作效率？|Rúhé tígāo gōngzuò xiàolǜ?|كيف نرفع كفاءة العمل؟|How can work efficiency be improved?
+>会议何时开始？|Huìyì héshí kāishǐ?|متى يبدأ الاجتماع؟|When does the meeting begin?
+#g6-ci|此 / 该 / 本 + N|此,该,本|أسماء الإشارة الرسمية: «此» و«该» و«本»|Formal demonstratives: 此, 该, 本
+a:«此» = هذا، «该» = المذكور، «本» = هذا/الخاص بنا: «本公司» شركتنا، «该产品» المنتج المذكور.
+e:此 = this, 该 = the said / the aforementioned, 本 = this / our own: 本公司 our company, 该产品 the said product.
+>此事由本公司负责。|Cǐ shì yóu běn gōngsī fùzé.|شركتنا مسؤولة عن هذا الأمر.|Our company is responsible for this matter.
+>该产品已通过质量检测。|Gāi chǎnpǐn yǐ tōngguò zhìliàng jiǎncè.|اجتاز المنتج المذكور فحص الجودة.|The said product has passed quality inspection.

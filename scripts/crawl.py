@@ -35,7 +35,7 @@ LIST = r"""()=>{ const vis=e=>{ const r=e.getBoundingClientRect(), cs=getCompute
 
 def states(js):
     out = ["go('home')", "go('dict')", "go('games')", "go('culture')", "go('me')", "go('review')", "go('sectors')", "go('accents')",
-           "go('code')", "go('writehub')", "go('talk')", "go('placement')", "go('builder',{mode:'rad'})", "go('builder',{mode:'book'})",
+           "go('code')", "go('writehub')", "go('talk')", "go('grammar')", "go('gpoint',{k:'g1-shi'})", "go('gpoint',{k:'g3-ba'})", "go('gpractice',{k:'g1-hen'})", "go('placement')", "go('builder',{mode:'rad'})", "go('builder',{mode:'book'})",
            "go('write',{chars:['你','好']})", "go('word',W[3].id)", "go('word',W.find(w=>w.l===5).id)"]
     out += [f"go('level',{l})" for l in range(1, 7)]
     out += ["go('lesson',{l:1,i:0})", "go('lesson',{l:3,i:2})", "go('lesson',{l:6,i:10})"]

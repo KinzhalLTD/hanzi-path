@@ -221,7 +221,7 @@ a:«随着» + تغيّر، ثم نتيجته: «随着经济的发展» مع ت
 e:随着 + a change, then its effect: 随着经济的发展, as the economy develops. A formal pattern.
 >随着经济的发展，人们的生活越来越好。|Suízhe jīngjì de fāzhǎn, rénmen de shēnghuó yuèláiyuè hǎo.|مع تطور الاقتصاد تتحسن حياة الناس.|As the economy develops, people's lives get better.
 >随着年龄的增长，他变得更成熟了。|Suízhe niánlíng de zēngzhǎng, tā biàn de gèng chéngshú le.|مع تقدمه في السن أصبح أكثر نضجًا.|As he got older, he became more mature.
-#g4-xiangqilai|V + 起来 (recall/assess)|想起来,说起来|«想起来»: تذكّر / «说起来»: إذا تحدثنا عن|想起来 / 说起来: recall, speaking of
+#g4-xiangqilai|想起来 / V + 起来|想起来,说起来|«想起来»: تذكّر / «说起来»: إذا تحدثنا عن|想起来 / 说起来: recall, speaking of
 a:«想起来» تذكّر، و«说起来» عندما نتحدث عن الأمر. و«起来» بعد فعل حسّي تقييم: «做起来很难» صعب عند التنفيذ.
 e:想起来 means "remember / recall"; 说起来 "speaking of it". After an action verb 起来 assesses it: 做起来很难, hard to actually do.
 >我想起来了，他叫李明。|Wǒ xiǎng qǐlai le, tā jiào Lǐ Míng.|تذكرتُ، اسمه لي مينغ.|Now I remember, his name is Li Ming.
@@ -287,13 +287,13 @@ a:«来» قبل فعل آخر تعني المبادرة: «我来做» دعني
 e:来 before another verb shows taking something on: 我来做, let me do it. 你来 means "your turn".
 >我来帮你吧。|Wǒ lái bāng nǐ ba.|دعني أساعدك.|Let me help you.
 >今天我来请客。|Jīntiān wǒ lái qǐngkè.|اليوم الدعوة عليّ.|Today it's my treat.
-#g4-notional-passive|O + V + Result (no 被)|好了,完了|المجهول بلا «被»|Passive without 被
+#g4-notional-passive|O + V + R|好了,完了|المجهول بلا «被»|Passive without 被
 a:في الصينية تكثر جمل المجهول بلا علامة: الشيء أولًا ثم الفعل: «作业做完了» أُنجز الواجب. هذا أكثر طبيعية من «被» للأمور المحايدة.
 e:Chinese often makes passives with no marker: the thing first, then the verb: 作业做完了, the homework is done. This is more natural than 被 for neutral events.
 >饭做好了，快来吃吧。|Fàn zuò hǎo le, kuài lái chī ba.|الطعام جاهز، تعالوا كلوا.|Dinner's ready, come and eat.
 >票已经卖完了。|Piào yǐjīng mài wán le.|نفدت التذاكر.|The tickets are sold out.
 >信写好了吗？|Xìn xiě hǎo le ma?|هل كُتبت الرسالة؟|Is the letter written?
-#g4-yiwei|以为 vs 认为|以为,认为|«以为» و«认为»: ظنّ خطأ ويرى|以为 vs 认为: wrongly thought vs believe
+#g4-yiwei|以为 / 认为 + Clause|以为,认为|«以为» و«认为»: ظنّ خطأ ويرى|以为 vs 认为: wrongly thought vs believe
 a:«以为» = ظننتُ (وتبيّن أنني مخطئ)، «认为» = أرى/أعتقد، رأي مدروس.
 e:以为 means "I thought" (and was wrong); 认为 means "I believe", a considered opinion.
 >我以为你是中国人。|Wǒ yǐwéi nǐ shì Zhōngguó rén.|ظننتك صينيًا.|I thought you were Chinese.
@@ -309,7 +309,7 @@ e:正好 and 刚好 mean "just right" or "as it happens": 你来得正好, you c
 >你来得正好，我们正要吃饭。|Nǐ lái de zhènghǎo, wǒmen zhèng yào chī fàn.|جئت في الوقت المناسب، كنا على وشك الأكل.|You've come at just the right time, we're about to eat.
 >这双鞋我穿正好。|Zhè shuāng xié wǒ chuān zhènghǎo.|هذا الحذاء على مقاسي تمامًا.|These shoes fit me perfectly.
 >我刚好有空。|Wǒ gānghǎo yǒu kòng.|صادف أنني متفرغ.|As it happens, I'm free.
-#g4-jiuyao-hai|S + 还 + 是 (tone softener)|还,还是|«还» لتلطيف الحكم: لا بأس به|还 to soften: fairly, passably
+#g4-hai-soft|还 + Adj|还,还是|«还» لتلطيف الحكم: لا بأس به|还 to soften: fairly, passably
 a:«还» قبل صفة إيجابية تلطّف الحكم: «还可以» لا بأس، «还不错» جيد نوعًا ما.
 e:还 before a positive adjective softens it: 还可以 not bad, 还不错 pretty good.
 >这家饭馆的菜还不错。|Zhè jiā fànguǎn de cài hái búcuò.|طعام هذا المطعم جيد نوعًا ما.|The food here is pretty good.
