@@ -69,7 +69,9 @@ SCREENS.level=(m,L)=>{
   m.insertAdjacentHTML('beforeend',`<div class="row"><button class="icon-btn" id="bk">${isAr()?'›':'‹'}</button><div class="grow"><h2>HSK ${L}</h2><div class="sub"><span class="num">${(byLevel[L]||[]).length}</span> ${t('words')} · <span class="num">${u.length}</span> ${t('units')}</div></div><span class="brush" style="font-size:30px;color:var(--gold)">${['','一','二','三','四','五','六'][L]}级</span></div>
    ${photo('hsk'+L,130,`<span class="brush" style="font-size:44px;color:var(--gold2);text-shadow:0 2px 14px #000">${['','一','二','三','四','五','六'][L]}级</span>`)}
    ${!S.pro&&L>1?`<button class="paper row" id="pw" style="cursor:pointer;text-align:start"><span class="brush" style="font-size:30px;color:var(--red)">锁</span><div class="grow"><b>${t('proTitle')}</b><div class="sub">${t('freeSample')}: ${t('unit')} 1–${FREE_SAMPLE_UNITS}</div></div><span class="btn sm red">PRO</span></button>`:''}
+   <button class="card grlvl" id="glk"><span class="tb">语</span><div class="grow" style="min-width:0;text-align:start"><b>HSK ${L} · ${t('grTitle')}</b><div class="sub"><span class="num">${grDoneIn(L)}/${grLv(L).length}</span> ${t('grDone')}</div></div><span aria-hidden="true">${isAr()?'‹':'›'}</span></button>
    ${journeyHTML(L)}`);
+  $('#glk',m).onclick=()=>{ SFX.tap(); go('grammar',{l:L}); };
   $('#bk',m).onclick=()=>go('home'); const pw=$('#pw',m); if(pw) pw.onclick=paywall;
   bindJourney(m,L);
 };
@@ -285,7 +287,7 @@ function shop(){
 function paywall(src='general'){ let plan='yearly'; track('paywall_view',{src});
   const plans=[['monthly',price('monthly'),t('perMonth')],['yearly',price('yearly'),t('perYear')],['lifetime',price('lifetime'),t('once')]];
   sheet(`<div style="text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center"><div class="seal" style="width:62px;height:62px;font-size:38px;border-radius:16px">汉</div><h1>${t('proTitle')}</h1><div class="sub">${t('proSub')}</div></div>
-    <ul class="perks"><li><i>六</i>${t('perk1')}</li><li><i>写</i>${t('perk6')}</li><li><i>码</i>${t('perk7')}</li><li><i>谈</i>${t('perk8')}</li><li><i>戏</i>${t('perk2')}</li><li><i>静</i>${t('perk3')}</li><li><i>金</i>${t('perk4')}</li></ul>
+    <ul class="perks"><li><i>六</i>${t('perk1')}</li><li><i>写</i>${t('perk6')}</li><li><i>码</i>${t('perk7')}</li><li><i>谈</i>${t('perk8')}</li><li><i>语</i>${t('perk9')}</li><li><i>戏</i>${t('perk2')}</li><li><i>静</i>${t('perk3')}</li><li><i>金</i>${t('perk4')}</li></ul>
     <div class="plans" style="margin-top:8px">${plans.map(([k,p,per])=>`<button class="plan" data-k="${k}" aria-pressed="${k===plan}">${k==='yearly'?`<span class="tag">${t('best')}</span>`:''}<b>${t(k)}</b><span class="price num">${p}</span><span class="per">${per}</span></button>`).join('')}</div>
     <div class="sub" style="text-align:center" id="tr"></div>
     <button class="btn block" id="buy"></button><button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost sm" id="lt" style="align-self:center;border:0">${t('later')}</button>

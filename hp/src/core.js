@@ -142,12 +142,12 @@ function bindTop(m){ $$('[data-act="shop"]',m).forEach(b=>b.onclick=shop); $$('[
   $$('[data-act="bell"]',m).forEach(b=>b.onclick=inboxSheet);
   $$('[data-act="streak"]',m).forEach(b=>b.onclick=checkinSheet); }
 /* which tab owns a route (the tab bar stays mounted between screens; only its highlight changes) */
-function tabOf(n){ return TABS.some(x=>x[0]===n)?n:['level','review','writehub','code','codeunit','talk'].includes(n)?'home':['word','builder','sectors','sector','accents'].includes(n)?'dict':['section','recipe'].includes(n)?'culture':''; }
+function tabOf(n){ return TABS.some(x=>x[0]===n)?n:['level','review','writehub','code','codeunit','talk','grammar','gpoint'].includes(n)?'home':['word','builder','sectors','sector','accents'].includes(n)?'dict':['section','recipe'].includes(n)?'culture':''; }
 function render(){
   applyLang(); rollDay();
   const app=$('#app'); let tb=$('#app > .tabbar'); [...app.children].forEach(c=>{ if(c!==tb) c.remove(); });
   if(!S.lang){ if(tb) tb.remove(); SCREENS.onboard(app); musPlay('home'); return; }
-  const full=['lesson','game','reader','recipe','write','placement','talkscene'].includes(route.name);
+  const full=['lesson','game','reader','recipe','write','placement','talkscene','gpractice'].includes(route.name);
   const m=document.createElement('main'); m.className='screen'+(full?' full':''); app.insertBefore(m,tb);
   if(!full){ m.insertAdjacentHTML('afterbegin','<div class="glow"></div>'); }
   (SCREENS[route.name]||SCREENS.home)(m,route.arg); bindTop(m);
