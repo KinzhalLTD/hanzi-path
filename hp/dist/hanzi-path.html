@@ -1442,7 +1442,7 @@ function endGame(m,k,score,{win=true,note=''}={}){
   $('#again',m).onclick=async()=>{ await interstitial(); startGame(k); };
   $('#bk',m).onclick=async()=>{ await interstitial(); go('games'); };
 }
-SCREENS.game=(m,k)=>GAME[k](m);
+SCREENS.game=(m,k)=>GAME[k]?GAME[k](m):SCREENS.games(m);   // unknown key (old link, renamed game): show the games list
 const GAME={};
 /* ---------- profile ---------- */
 SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);

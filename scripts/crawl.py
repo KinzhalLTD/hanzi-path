@@ -62,9 +62,11 @@ async def main():
         await pg.click(f'.lang button[data-l="{LANG}"]'); await pg.wait_for_timeout(200)
         if await pg.locator('#onew').count(): await pg.click('#onew')
         meta = await pg.evaluate("({culture:CULTURE.length,cards:CULTURE.map(c=>c.cards.length),recipes:RECIPES.length,games:GAMES.map(g=>g[1]||g[0]),sectors:SECTORS.length,code:CODE_UNITS.length,talk:TALK.map(d=>[d.k,d.scenes.length])})")
-        meta['games'] = await pg.evaluate("GAMES.map(g=>Object.values(g)[1])")
+        meta['games'] = await pg.evaluate("GAMES.map(g=>Object.values(g)[0])")   # internal key (mahjong, xiangqi, ...)
+        ONLY = sys.argv[6] if len(sys.argv) > 6 else ''
         core = ["go('home')", "go('dict')", "go('games')", "go('culture')", "go('me')", "go('sectors')", "go('talk')", "go('level',2)", "go('sector',1)"]
         plan = [(False, st) for st in core] + [(True, st) for st in states(meta)]
+        if ONLY: plan = [x for x in plan if re.search(ONLY, x[1])]
         plan = [x for k, x in enumerate(plan) if k % NSH == SH]
         def dump():
             r = dict(report); r['issues'] = {k: sorted(v)[:8] + ([f'... {len(v)} total'] if len(v) > 8 else []) for k, v in report['issues'].items()}
