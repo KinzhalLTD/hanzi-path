@@ -50,7 +50,10 @@ JS = r"""() => {
     if ((r.right > vw + 1 || r.left < -1) && cs.position !== 'fixed' && !inScrollX(el) && r.width < vw * 3)
       out.push(['offscreen-x', name(el), `${Math.round(r.left)}..${Math.round(r.right)} “${txt(el)}”`]);
     // tap targets
-    if ((el.tagName === 'BUTTON' || el.getAttribute('role') === 'button' || el.tagName === 'A') && (r.width < 30 || r.height < 30) && !el.closest('.seg-sent') && !el.classList.contains('tok'))
+    // an absolutely positioned ::after with negative insets enlarges the touch area without moving the layout
+    const pa = getComputedStyle(el, '::after'), ext = pa.position === 'absolute' && pa.content !== 'none' ? k => Math.max(0, -parseFloat(pa[k]) || 0) : () => 0;
+    const tw = r.width + ext('left') + ext('right'), th = r.height + ext('top') + ext('bottom');
+    if ((el.tagName === 'BUTTON' || el.getAttribute('role') === 'button' || el.tagName === 'A') && (tw < 30 || th < 30) && !el.closest('.seg-sent') && !el.classList.contains('tok'))
       out.push(['small-tap', name(el), `${Math.round(r.width)}x${Math.round(r.height)} “${txt(el)}”`]);
   }
   // text overflowing its button (single-line labels pushed out)

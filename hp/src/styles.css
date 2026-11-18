@@ -325,7 +325,7 @@ html[dir=rtl] .wordhead{text-align:right!important}
 pre.code,textarea.code{margin:0;padding:14px;border-radius:14px;background:#0b0f0d;border:1px solid rgba(123,227,176,.18);color:#d9e6df;font:500 14px/1.6 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;text-align:left;direction:ltr}
 textarea.code{width:100%;min-height:150px;resize:vertical;box-sizing:border-box}
 .c-kw{color:#ff8f7a}.c-st{color:#f7d894}.c-nu{color:#7be3b0}.c-cm{color:#7d8a83;font-style:italic}.c-id{color:#9cc9ff}.c-zh{color:#ffd0a8}
-.ztok{all:unset;cursor:pointer;border-bottom:1px dashed rgba(247,216,148,.6);padding:8px 7px;margin:-8px -7px;background-clip:content-box}.ztok.c-zh{color:#ffd0a8}
+.ztok{all:unset;position:relative;cursor:pointer;border-bottom:1px dashed rgba(247,216,148,.6);padding:8px 7px;margin:-8px -7px;background-clip:content-box}.ztok::after{content:'';position:absolute;inset:-2px -8px}  /* touch area ≥ 44×43 without moving the code text */.ztok.c-zh{color:#ffd0a8}
 .copt{font:600 15px ui-monospace,Menlo,monospace!important;text-align:left;white-space:normal}
 .term{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);direction:ltr}
 .term .tbar{display:flex;gap:6px;align-items:center;padding:6px 10px;background:#1a1d1c;font:600 11px Inter;color:#8a958f}.term .tbar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.term .tbar i:nth-child(2){background:#febc2e}.term .tbar i:nth-child(3){background:#28c840}.term .tbar span{margin-inline-start:6px}
