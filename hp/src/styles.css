@@ -508,3 +508,25 @@ html[dir=rtl] .tkmsg{direction:ltr}
 .screen.tkchat .tklog{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-inline:2px;scroll-padding-bottom:12px}
 .screen.tkchat .tkpanel{flex:0 0 auto;max-height:58%;overflow-y:auto;overscroll-behavior:contain;margin-inline:-4px;padding-inline:4px}
 .screen.tkchat .tkpanel:empty{display:flex;min-height:8px}
+/* ===== feel: pressed states, screen transitions, offscreen rendering (feel.js) ===== */
+button,.ptile,.gcard,.seccard,.chip,.tab,.ttab,.opt,.tile,.card.feature,[role=button]{touch-action:manipulation;-webkit-touch-callout:none}
+.tabbar,.topbar,.chip,.tab,.ttab,.seg button,.eyebrow{-webkit-user-select:none;user-select:none}
+.ptile,.gcard,.seccard,.chip,.card.feature,.lang button,.seg button,.ttab,.tab b{transition:transform .14s cubic-bezier(.2,.8,.2,1),filter .14s,background-color .14s}
+.ptile:active,.gcard:active,.seccard:active,.card.feature:active,.lang button:active{transform:scale(.975);filter:brightness(1.08)}
+.chip:active,.seg button:active,.ttab:active{transform:scale(.94)}
+.tab:active b{transform:scale(.86)}
+.btn{transition:transform .14s cubic-bezier(.2,.8,.2,1),filter .14s}
+.btn:active{transform:scale(.965);filter:brightness(.94);transition-duration:.06s}
+@keyframes scrIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes scrBack{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.screen.enter>:not(.glow):nth-child(-n+7){animation:scrIn .32s cubic-bezier(.2,.8,.2,1) both}
+.screen.enter-back>:not(.glow):nth-child(-n+7){animation:scrBack .26s cubic-bezier(.2,.8,.2,1) both}
+.screen.enter>:nth-child(3),.screen.enter-back>:nth-child(3){animation-delay:.03s}
+.screen.enter>:nth-child(4),.screen.enter-back>:nth-child(4){animation-delay:.06s}
+.screen.enter>:nth-child(5),.screen.enter-back>:nth-child(5){animation-delay:.09s}
+.screen.enter>:nth-child(n+6),.screen.enter-back>:nth-child(n+6){animation-delay:.12s}
+/* long lists: rows below the fold skip layout and paint until they scroll near the screen */
+.list>li,.seclist>li,.secgrid>*{content-visibility:auto;contain-intrinsic-size:auto 74px}
+.secgrid>*{contain-intrinsic-size:auto 170px}
+.screen.cvoff .list>li,.screen.cvoff .seclist>li,.screen.cvoff .secgrid>*{content-visibility:visible}  /* back navigation: real sizes first, then auto remembers them */
+@media (prefers-reduced-motion:reduce){.screen.enter>*,.screen.enter-back>*{animation:none!important}}

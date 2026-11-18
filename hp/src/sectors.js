@@ -67,11 +67,11 @@ SCREENS.sector=(m,i)=>{ const s=SECTORS[i]; track('sector_open',{sector:s.k}); S
     $('#learn',m).innerHTML=can.length?`📖 ${t('secLearn')} · <span class="num">${Math.min(10,can.length)}</span> / <span class="num">${can.length}</span>`:(S.pro?'—':`🔒 ${t('secUnlock')} · PRO`); $('#learn',m).disabled=!can.length&&S.pro;
     $('#lock',m).innerHTML=S.pro?'':`<div class="sub" style="text-align:center">🔒 ${t('secFreeNote')}</div>`;
     $$('li[data-id]',$('#sl',m)).forEach(li=>li.onclick=()=>{ if(li.classList.contains('lk')) return paywall('sector'); S._wback={name:'sector',arg:i}; go('word',+li.dataset.id); }); };
-  draw(); try{ $('#tt .ttab.on',m).scrollIntoView({inline:'center',block:'nearest'}); }catch(e){}
+  draw(); requestAnimationFrame(()=>hCenter($('#tt',m),$('#tt .ttab.on',m)));
   $$('#tt .ttab',m).forEach(b=>b.onclick=()=>{ SFX.tap(); ti=+b.dataset.t; S._secT[s.k]=ti; q=''; $('#sq',m).value=''; $$('#tt .ttab',m).forEach(x=>x.classList.toggle('on',x===b)); draw(); });
   $$('#tg button',m).forEach(b=>b.onclick=()=>{ SFX.tap(); const g=(SEC_GROUPS[s.k]||[]).find(x=>x[0]===b.dataset.g); $$('#tg button',m).forEach(x=>x.classList.toggle('on',x===b));
     $$('#tt .ttab',m).forEach(x=>{ x.hidden=!!g&&!g[4].includes(s.topics[+x.dataset.t].k); });
-    const first=$$('#tt .ttab',m).find(x=>!x.hidden); if(first&&first.hidden===false&&!first.classList.contains('on')&&g) first.click(); try{ (first||{}).scrollIntoView&&first.scrollIntoView({inline:'start',block:'nearest'}); }catch(e){} });
+    const first=$$('#tt .ttab',m).find(x=>!x.hidden); if(first&&first.hidden===false&&!first.classList.contains('on')&&g) first.click(); hCenter($('#tt',m),first,true); });
   $$('#lvf button',m).forEach(b=>b.onclick=()=>{ lv=+b.dataset.l; $$('#lvf button',m).forEach(x=>x.classList.toggle('on',x===b)); draw(); });
   $('#sq',m).oninput=e=>{ q=e.target.value.trim(); draw(); };
   $('#bk',m).onclick=()=>go('sectors'); bindTokens(m); const tk=$('#stk',m); if(tk) tk.onclick=()=>go('talk',{d:TALK.find(d=>d.sec===s.k).k}); if(s.codeLink) $('#tocode',m).onclick=()=>go('code');

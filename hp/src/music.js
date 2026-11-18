@@ -23,8 +23,11 @@ function musInit(){ const c=ac(); if(!c) return null; if(MUS.master) return c;
   for(let ch=0;ch<2;ch++){ const d=ir.getChannelData(ch); for(let i=0;i<len;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3.2)*(i<c.sampleRate*.012?i/(c.sampleRate*.012):1); }
   MUS.rev=c.createConvolver(); MUS.rev.buffer=ir; const rg=c.createGain(); rg.gain.value=.3; MUS.rev.connect(rg); rg.connect(MUS.master); MUS.revFx=c.createGain(); MUS.revFx.gain.value=.18; MUS.rev.connect(MUS.revFx); MUS.revFx.connect(MUS.fx);
   return c; }
+/* samples decode without blocking taps: fetch() turns each data: URI into bytes natively (no atob loop on the main
+   thread) and decodeAudioData runs off-thread; the first touch only resumes audio, loading starts a moment later */
+function b64async(u){ try{ return fetch(u).then(r=>r.arrayBuffer()).catch(()=>b64buf(u)); }catch(e){ return Promise.resolve(b64buf(u)); } }
 function loadSamples(){ if(MUS.loading) return MUS.loading; const c=musInit(); if(!c) return Promise.resolve();
-  const jobs=[]; for(const inst in SAMPLES) for(const m in SAMPLES[inst]) jobs.push(new Promise(res=>{ try{ c.decodeAudioData(b64buf(SAMPLES[inst][m]),b=>{ (MUS.buf[inst]=MUS.buf[inst]||{})[m]=b; res(); },()=>res()); }catch(e){ res(); } }));
+  const jobs=[]; for(const inst in SAMPLES) for(const m in SAMPLES[inst]) jobs.push(b64async(SAMPLES[inst][m]).then(buf=>new Promise(res=>{ try{ c.decodeAudioData(buf,b=>{ (MUS.buf[inst]=MUS.buf[inst]||{})[m]=b; res(); },()=>res()); }catch(e){ res(); } })).catch(()=>{}));
   MUS.loading=Promise.all(jobs).then(()=>{ MUS.ready=true; }); return MUS.loading; }
 const SUSTAIN={fiddle:1,shakuhachi:1};
 const MIXV={koto:1,shamisen:.8,fiddle:.75,shakuhachi:.85,pizzicato:.55,taiko:.6,woodblock:.32,agogo:.3,glockenspiel:.5,tinkle:.6,tubular:.6,timpani:.7};
@@ -197,7 +200,7 @@ function trackFor(r){ const n=r.name;
   return 'home'; }
 /* a manual pick holds until the learner moves to a different part of the app */
 document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('.tab'); if(t) MUS.manual=null; },true);
-function musUnlock(){ if(MUS.unlocked) return; MUS.unlocked=true; const c=ac(); if(c&&c.state==='suspended') c.resume(); loadSamples(); const k=MUS.want||trackFor(route); MUS.key=null; musPlay(k); ambStart(S.amb||'none'); }
+function musUnlock(){ if(MUS.unlocked) return; MUS.unlocked=true; const c=ac(); if(c&&c.state==='suspended') c.resume(); setTimeout(loadSamples,60); const k=MUS.want||trackFor(route); MUS.key=null; musPlay(k); ambStart(S.amb||'none'); }
 ['pointerdown','keydown','touchstart'].forEach(ev=>document.addEventListener(ev,musUnlock,{passive:true}));
 document.addEventListener('visibilitychange',()=>{ if(!AC) return; if(document.hidden) AC.suspend(); else if(MUS.unlocked) AC.resume(); });
 /* ---------- ambient soundscapes (synthesised live, never loop-identical) ---------- */

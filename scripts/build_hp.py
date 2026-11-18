@@ -8,15 +8,30 @@ keep=('id','h','t','p','l','l3','en','ar','ex','mw')
 W=[{k:w[k] for k in keep if k in w and w[k] not in (None,[],'')} for w in W]
 art=json.load(open(S+'/art/art.json')); art['klotski']=KL_ART; tg=json.load(open(S+'/tangram/figures.json',encoding='utf-8'))
 J=lambda o:json.dumps(o,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
+# Big data tables ship as <script type="application/json"> blocks instead of JS literals. The JS engine never
+# compiles them; __json parses one at startup (JSON.parse is much faster than a literal), __lazy parses on
+# first use (stroke paths, photos, instrument samples, art, character analysis are only needed on some screens).
+DATA=[]
+def blk(name,text,lazy):
+    text=text.strip()
+    json.loads(text)                                   # fail the build on bad JSON
+    DATA.append(f'<script type="application/json" id="d-{name}">'+text.replace('</','<\\/')+'</script>')
+    return f'__lazy("d-{name}")' if lazy else f'__json("d-{name}")'
+rd=lambda f:open(f,encoding='utf-8').read()
+PRELUDE='''function __json(id){ const e=document.getElementById(id); const v=JSON.parse(e.textContent); e.remove(); return v; }
+function __lazy(id){ let v; const g=()=>v||(v=__json(id));
+  return new Proxy({},{get:(t,k)=>g()[k],has:(t,k)=>k in g(),ownKeys:()=>Reflect.ownKeys(g()),
+    getOwnPropertyDescriptor:(t,k)=>{ const d=Reflect.getOwnPropertyDescriptor(g(),k); if(d) d.configurable=true; return d; }}); }'''
 content=open(src+'/content.js',encoding='utf-8').read().replace('__TANGRAMS__',J(tg))
-js='\n'.join(['const W='+J(W)+';','const ART='+J(art)+';',open(src+'/i18n.js',encoding='utf-8').read(),open(src+'/core.js',encoding='utf-8').read(),open(src+'/fun.js',encoding='utf-8').read(),open(src+'/music.js',encoding='utf-8').read().replace('__SAMPLES__',open(S+'/out/samples.json',encoding='utf-8').read()),open(src+'/photos.js',encoding='utf-8').read().replace('__PHOTOS__',open(S+'/art/photos.json',encoding='utf-8').read() if os.path.exists(S+'/art/photos.json') else '{}'),content,
-  open(src+'/screens.js',encoding='utf-8').read(),open(src+'/games1.js',encoding='utf-8').read(),open(src+'/games2.js',encoding='utf-8').read(),open(src+'/culture_data.js',encoding='utf-8').read(),open(src+'/culture_more.js',encoding='utf-8').read(),open(src+'/culture_legends.js',encoding='utf-8').read(),open(src+'/culture.js',encoding='utf-8').read().replace('__KL__',open(S+'/hp/klotski_levels.json',encoding='utf-8').read()),open(src+'/tools.js',encoding='utf-8').read().replace('__CHARS__',open(S+'/out/chars.json',encoding='utf-8').read()),open(src+'/learn.js',encoding='utf-8').read(),open(src+'/journey.js',encoding='utf-8').read(),open(src+'/talk.js',encoding='utf-8').read().replace('__TALK__',open(S+'/out/talk.json',encoding='utf-8').read().replace('</','<\\/')),open(src+'/writing.js',encoding='utf-8').read().replace('__STROKES__',open(S+'/out/strokes.json',encoding='utf-8').read()),open(src+'/code_data.js',encoding='utf-8').read(),open(src+'/code_adv.js',encoding='utf-8').read(),open(src+'/code.js',encoding='utf-8').read(),open(src+'/sectors_data.js',encoding='utf-8').read(),open(src+'/sectors.js',encoding='utf-8').read().replace('__SECEXT__',open(S+'/out/sectors_ext.json',encoding='utf-8').read()),open(src+'/weave.js',encoding='utf-8').read(),open(src+'/account.js',encoding='utf-8').read(),open(src+'/icons.js',encoding='utf-8').read(),'render();'])
+js='\n'.join([PRELUDE,'const W='+blk('w',J(W),False)+';','const ART='+blk('art',J(art),True)+';',open(src+'/i18n.js',encoding='utf-8').read(),open(src+'/core.js',encoding='utf-8').read(),open(src+'/fun.js',encoding='utf-8').read(),open(src+'/music.js',encoding='utf-8').read().replace('__SAMPLES__',blk('samples',rd(S+'/out/samples.json'),True)),open(src+'/photos.js',encoding='utf-8').read().replace('__PHOTOS__',blk('photos',rd(S+'/art/photos.json'),True) if os.path.exists(S+'/art/photos.json') else '{}'),content,
+  open(src+'/screens.js',encoding='utf-8').read(),open(src+'/games1.js',encoding='utf-8').read(),open(src+'/games2.js',encoding='utf-8').read(),open(src+'/culture_data.js',encoding='utf-8').read(),open(src+'/culture_more.js',encoding='utf-8').read(),open(src+'/culture_legends.js',encoding='utf-8').read(),open(src+'/culture.js',encoding='utf-8').read().replace('__KL__',open(S+'/hp/klotski_levels.json',encoding='utf-8').read()),open(src+'/tools.js',encoding='utf-8').read().replace('__CHARS__',blk('chars',rd(S+'/out/chars.json'),True)),open(src+'/learn.js',encoding='utf-8').read(),open(src+'/journey.js',encoding='utf-8').read(),open(src+'/talk.js',encoding='utf-8').read().replace('__TALK__',blk('talk',rd(S+'/out/talk.json'),False)),open(src+'/writing.js',encoding='utf-8').read().replace('__STROKES__',blk('strokes',rd(S+'/out/strokes.json'),True)),open(src+'/code_data.js',encoding='utf-8').read(),open(src+'/code_adv.js',encoding='utf-8').read(),open(src+'/code.js',encoding='utf-8').read(),open(src+'/sectors_data.js',encoding='utf-8').read(),open(src+'/sectors.js',encoding='utf-8').read().replace('__SECEXT__',blk('secext',rd(S+'/out/sectors_ext.json'),False)),open(src+'/weave.js',encoding='utf-8').read(),open(src+'/account.js',encoding='utf-8').read(),open(src+'/feel.js',encoding='utf-8').read(),open(src+'/icons.js',encoding='utf-8').read(),'render();'])
 hwjs=open(S+'/vendor/hanzi-writer.min.js',encoding='utf-8').read().replace('</script','<\\/script')
 html=f'''<title>Hanzi Path</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@500&family=Long+Cang&family=Liu+Jian+Mao+Cao&family=Zhi+Mang+Xing&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&display=swap">
 <style>{open(src+'/styles.css',encoding='utf-8').read()}</style>
 <div id="app"></div>
+{''.join(DATA)}
 <script>{hwjs}</script>
 <script>{js.replace("</script","<\\/script")}</script>'''
 open(S+'/hp/dist/hanzi-path.html','w',encoding='utf-8').write(html)

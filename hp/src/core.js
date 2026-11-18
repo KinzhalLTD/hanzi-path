@@ -115,7 +115,24 @@ const coinHTML='<span class="coin">金</span>';
 const lampImg=()=>`<img class="lamp" src="${ART.lamp}" alt="">`;
 /* ---------- router ---------- */
 let route={name:'home'}; let cleanup=null;
-function go(name,arg){ if(cleanup){try{cleanup();}catch(e){} cleanup=null;} $$('.feedback').forEach(f=>f.remove()); closeSheet(); route={name,arg}; render(); window.scrollTo(0,0); }
+/* navigation keeps a small history: going back to the previous screen (back button, tab of the parent list)
+   restores where the learner was scrolled; every screen change gets a short enter animation (see feel.js) */
+const NAV={stack:[]};
+/* scroll a horizontal strip so el is centred (or at the start edge) without moving the page vertically; RTL-safe */
+function hCenter(box,el,start){ if(!box||!el) return; try{ const b=box.getBoundingClientRect(), r=el.getBoundingClientRect();
+  const d=start?(isAr()?r.right-b.right:r.left-b.left):(r.left+r.width/2)-(b.left+b.width/2); box.scrollBy({left:d,behavior:'auto'}); }catch(e){} }
+function navKey(n,a){ return JSON.stringify([n,a===undefined?null:a]); }
+function go(name,arg){ if(cleanup){try{cleanup();}catch(e){} cleanup=null;} $$('.feedback').forEach(f=>f.remove()); closeSheet();
+  const st=NAV.stack, k=navKey(name,arg), top=st[st.length-1]; if(top) top.y=window.scrollY;
+  let back=false, y=0;
+  if(st.length>1&&st[st.length-2].k===k){ st.pop(); back=true; y=st[st.length-1].y||0; }
+  else if(top&&top.k===k){ y=0; }
+  else if(TABS.some(x=>x[0]===name)&&arg===undefined) NAV.stack=[{k,y:0}];
+  else { st.push({k,y:0}); if(st.length>30) st.shift(); }
+  route={name,arg}; render();
+  if(y){ const sc=$('#app > .screen'); if(sc){ sc.classList.add('cvoff'); window.scrollTo(0,y); requestAnimationFrame(()=>sc.classList.remove('cvoff')); } else window.scrollTo(0,y); }
+  else window.scrollTo(0,0);
+  if(typeof screenEnter==='function') screenEnter(back); }
 const TABS=[['home','家'],['dict','词'],['culture','文'],['games','戏'],['me','我']];
 function updateTop(){ $$('[data-coins]').forEach(e=>e.textContent=fmt(S.coins)); $$('[data-xp]').forEach(e=>e.textContent=fmt(S.xp)); $$('[data-streak]').forEach(e=>e.textContent=S.streak); }
 function topbar(){ return `<div class="topbar"><div class="logo"><div class="seal">汉</div><div class="wordmark"><b>HANZI PATH</b><span>${isAr()?'مسار هانزي':'汉字之路'}</span></div></div>
@@ -124,17 +141,23 @@ function bindTop(m){ $$('[data-act="shop"]',m).forEach(b=>b.onclick=shop); $$('[
   $$('[data-act="mus"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); musicSheet(); });
   $$('[data-act="bell"]',m).forEach(b=>b.onclick=inboxSheet);
   $$('[data-act="streak"]',m).forEach(b=>b.onclick=checkinSheet); }
+/* which tab owns a route (the tab bar stays mounted between screens; only its highlight changes) */
+function tabOf(n){ return TABS.some(x=>x[0]===n)?n:['level','review','writehub','code','codeunit','talk'].includes(n)?'home':['word','builder','sectors','sector','accents'].includes(n)?'dict':['section','recipe'].includes(n)?'culture':''; }
 function render(){
   applyLang(); rollDay();
-  const app=$('#app'); app.innerHTML='';
-  if(!S.lang){ SCREENS.onboard(app); musPlay('home'); return; }
+  const app=$('#app'); let tb=$('#app > .tabbar'); [...app.children].forEach(c=>{ if(c!==tb) c.remove(); });
+  if(!S.lang){ if(tb) tb.remove(); SCREENS.onboard(app); musPlay('home'); return; }
   const full=['lesson','game','reader','recipe','write','placement','talkscene'].includes(route.name);
-  const m=document.createElement('main'); m.className='screen'+(full?' full':''); app.appendChild(m);
+  const m=document.createElement('main'); m.className='screen'+(full?' full':''); app.insertBefore(m,tb);
   if(!full){ m.insertAdjacentHTML('afterbegin','<div class="glow"></div>'); }
   (SCREENS[route.name]||SCREENS.home)(m,route.arg); bindTop(m);
-  if(!full){ const tb=document.createElement('div'); tb.className='tabbar';
-    tb.innerHTML=`<nav>${TABS.map(([k,h])=>`<button class="tab" data-k="${k}" ${route.name===k||(k==='home'&&['level','review','writehub','code','codeunit','talk'].includes(route.name))||(k==='dict'&&['word','builder','sectors','sector','accents'].includes(route.name))||(k==='culture'&&['section','recipe'].includes(route.name))?'aria-current="page"':''}><b>${h}</b>${t(k)}</button>`).join('')}</nav>`;
-    app.appendChild(tb); $$('.tab',tb).forEach(b=>b.onclick=()=>{SFX.tap(); go(b.dataset.k);}); }
+  if(full){ if(tb) tb.remove(); }
+  else {
+    if(!tb||tb.dataset.lang!==S.lang){ if(tb) tb.remove(); tb=document.createElement('div'); tb.className='tabbar'; tb.dataset.lang=S.lang;
+      tb.innerHTML=`<nav>${TABS.map(([k,h])=>`<button class="tab" data-k="${k}"><b>${h}</b>${t(k)}</button>`).join('')}</nav>`;
+      app.appendChild(tb); $$('.tab',tb).forEach(b=>b.onclick=()=>{SFX.tap(); go(b.dataset.k);}); }
+    const cur=tabOf(route.name); $$('.tab',tb).forEach(b=>{ if(b.dataset.k===cur) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current'); });
+  }
   musPlay(trackFor(route));
 }
 const SCREENS={};

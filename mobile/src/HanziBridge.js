@@ -111,7 +111,12 @@ export default function HanziBridge({ uri, onReady }) {
     // ---------- device ----------
     speak: async ({ text, lang = 'zh-CN', rate = 0.8 }) => { Speech.stop(); Speech.speak(text, { language: lang, rate }); },
     speakStop: async () => Speech.stop(),
-    haptic: async ({ kind }) => kind === 'error' ? Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error) : Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light),
+    haptic: async ({ kind }) => {
+      if (kind === 'error') return Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+      if (kind === 'success') return Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      if (kind === 'select') return Haptics.selectionAsync();
+      return Haptics.impactAsync(kind === 'medium' ? Haptics.ImpactFeedbackStyle.Medium : kind === 'heavy' ? Haptics.ImpactFeedbackStyle.Heavy : Haptics.ImpactFeedbackStyle.Light);
+    },
     share: async ({ text }) => Share.share({ message: text }),
     track: async ({ ev, props }) => { try { analytics && logEvent(analytics, ev, props || {}); } catch {} },
     // ---------- in-app purchases ----------
@@ -151,6 +156,9 @@ export default function HanziBridge({ uri, onReady }) {
       contentInsetAdjustmentBehavior="never" automaticallyAdjustContentInsets={false}
       bounces={false} overScrollMode="never" allowsBackForwardNavigationGestures={false}
       setSupportMultipleWindows={false} webviewDebuggingEnabled={__DEV__}
+      // native feel: no link-preview pop-ups on long press, no "‹ › Done" bar above the keyboard, and the app can
+      // focus the search field itself (dictionary search opens the keyboard directly)
+      allowsLinkPreview={false} hideKeyboardAccessoryView keyboardDisplayRequiresUserAction={false}
       style={{ flex: 1, backgroundColor: '#0d0908' }} />
   );
 }
