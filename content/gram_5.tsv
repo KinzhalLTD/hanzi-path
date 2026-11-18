@@ -1,0 +1,294 @@
+# Grammar HSK 5. Format: see scripts/gram_build.py. Keys are stable ids: never rename them.
+@5
+#g5-yaome|要么 A，要么 B|要么|«要么… وإما…»: خياران لا ثالث لهما|要么…要么…: either… or…
+a:«要么» قبل كل خيار: لا بد من أحدهما فقط، وغالبًا في قرار أو اقتراح.
+e:要么 before each option: it has to be one or the other, often in a decision or suggestion.
+>要么你去，要么我去。|Yàome nǐ qù, yàome wǒ qù.|إما أن تذهب أنت وإما أنا.|Either you go or I go.
+>要么今天做完，要么明天早上做。|Yàome jīntiān zuò wán, yàome míngtiān zǎoshang zuò.|إما أن ننهيه اليوم وإما صباح الغد.|Either we finish today or do it tomorrow morning.
+#g5-ningke|宁可 A，也不 B|宁可,也不|«宁可… ولا…»: أفضّل… على…|宁可…也不…: would rather… than…
+a:«宁可» قبل الخيار المؤلم المقبول، و«也不» قبل ما يرفضه المتكلم تمامًا.
+e:宁可 goes before the hard option you accept, 也不 before the one you refuse outright.
+>我宁可走路，也不坐他的车。|Wǒ nìngkě zǒulù, yě bú zuò tā de chē.|أفضّل المشي على الركوب في سيارته.|I'd rather walk than ride in his car.
+>他宁可少赚钱，也不做不喜欢的工作。|Tā nìngkě shǎo zhuàn qián, yě bú zuò bù xǐhuan de gōngzuò.|يفضّل أن يكسب أقل على أن يعمل عملًا لا يحبه.|He'd rather earn less than do a job he dislikes.
+#g5-yuqi|与其 A，不如 B|与其,不如|«与其… فالأفضل…»|与其…不如…: rather than A, better B
+a:«与其» قبل الخيار الأضعف، و«不如» قبل الخيار الأفضل: بدلًا من أن… الأفضل أن…
+e:与其 before the weaker option, 不如 before the better one: rather than…, better to….
+>与其在家睡觉，不如出去走走。|Yǔqí zài jiā shuìjiào, bùrú chūqu zǒuzou.|بدل النوم في البيت، الأفضل أن نخرج نتمشى.|Rather than sleeping at home, better to go out for a walk.
+>与其抱怨，不如想办法解决。|Yǔqí bàoyuàn, bùrú xiǎng bànfǎ jiějué.|بدل الشكوى، الأفضل أن نبحث عن حل.|Rather than complaining, better to find a solution.
+#g5-napa|哪怕…，也…|哪怕,也|«哪怕… فـ…»: ولو / حتى لو|哪怕…也…: even if
+a:«哪怕» مثل «即使» لكنها أكثر حيوية في الكلام، وتقدّم حالة متطرفة.
+e:哪怕 is like 即使 but livelier in speech, introducing an extreme case.
+>哪怕只有一点儿希望，我们也要试试。|Nǎpà zhǐ yǒu yìdiǎnr xīwàng, wǒmen yě yào shìshi.|ولو كان هناك أمل ضئيل، سنحاول.|Even if there's only a little hope, we'll try.
+>哪怕再忙，他也会给妈妈打电话。|Nǎpà zài máng, tā yě huì gěi māma dǎ diànhuà.|مهما انشغل، يتصل بأمه.|However busy he is, he'll call his mum.
+#g5-jiaru|假如/要是…，(就)…|假如,要是|«假如» و«要是»: لو / إن|假如 / 要是: if, suppose
+a:«要是» شرط في الكلام اليومي، و«假如» افتراض أكثر رسمية أو خيالي. الجواب بـ «就».
+e:要是 is an everyday "if"; 假如 is a more formal or hypothetical "suppose". The result takes 就.
+>要是明天不下雨，我们就去爬山。|Yàoshi míngtiān bú xià yǔ, wǒmen jiù qù pá shān.|إن لم تمطر غدًا نذهب لتسلق الجبل.|If it doesn't rain tomorrow, we'll go hiking.
+>假如你是我，你会怎么做？|Jiǎrú nǐ shì wǒ, nǐ huì zěnme zuò?|لو كنتَ مكاني، ماذا كنت ستفعل؟|If you were me, what would you do?
+#g5-yidan|一旦…，就…|一旦,就|«一旦… فإنّ…»: متى ما / حالما|一旦…就…: once, as soon as (if ever)
+a:«一旦» شرط لحدث مهم أو خطير قد يقع: إذا وقع مرة فالنتيجة حتمية.
+e:一旦 introduces an important or serious event that may happen: once it does, the result follows.
+>一旦决定了，就不要改变。|Yídàn juédìng le, jiù bú yào gǎibiàn.|متى ما قررت فلا تغيّر.|Once you've decided, don't change your mind.
+>密码一旦忘了，就很麻烦。|Mìmǎ yídàn wàng le, jiù hěn máfan.|إذا نُسيت كلمة السر مرة فالأمر مزعج جدًا.|Once you forget the password, it's a real hassle.
+#g5-wanyi|万一…，…|万一|«万一»: في حال / لا قدّر الله|万一: in case, if by any chance
+a:«万一» لاحتمال ضعيف وغير مرغوب: احتياطًا لو حدث كذا.
+e:万一 is for an unlikely, unwelcome possibility: just in case….
+>带把伞吧，万一下雨呢。|Dài bǎ sǎn ba, wànyī xià yǔ ne.|خذ مظلة، في حال أمطرت.|Take an umbrella in case it rains.
+>万一他不来，我们怎么办？|Wànyī tā bù lái, wǒmen zěnme bàn?|إن لم يأتِ لا سمح الله، ماذا نفعل؟|What if he doesn't come?
+#g5-hekuang|…，何况…|何况|«何况»: فما بالك بـ|何况: let alone, not to mention
+a:«何况» تضيف حالة أقوى بعد حالة أسهل: إن كان هذا صعبًا فما بالك بذاك.
+e:何况 adds a stronger case after an easier one: if this is hard, let alone that.
+>这个问题老师都不会，何况我们呢？|Zhège wèntí lǎoshī dōu bú huì, hékuàng wǒmen ne?|إن كان المعلم لا يعرف حلها فما بالك بنا؟|Even the teacher can't solve it, let alone us.
+>平时都堵车，何况周末呢。|Píngshí dōu dǔchē, hékuàng zhōumò ne.|الزحام موجود عادة، فما بالك بعطلة الأسبوع.|There's traffic even on normal days, never mind weekends.
+#g5-kuangqie|…，况且…|况且|«况且»: وفوق ذلك|况且: besides, moreover
+a:«况且» تضيف سببًا آخر يدعم القرار: لن أذهب؛ الوقت متأخر، وفوق ذلك أنا متعب.
+e:况且 adds a further reason supporting a decision: I won't go; it's late, and besides I'm tired.
+>太晚了，况且我也很累，明天再说吧。|Tài wǎn le, kuàngqiě wǒ yě hěn lèi, míngtiān zài shuō ba.|الوقت متأخر، وفوق ذلك أنا متعب؛ لنؤجله إلى الغد.|It's late, and besides I'm tired; let's talk tomorrow.
+>这个房子很贵，况且离公司太远。|Zhège fángzi hěn guì, kuàngqiě lí gōngsī tài yuǎn.|هذا البيت غالٍ، وفوق ذلك بعيد عن الشركة.|This flat is expensive, and anyway it's too far from work.
+#g5-yimian|…，以免…|以免,免得|«以免» و«免得»: تجنّبًا لـ|以免 / 免得: so as not to
+a:«以免» (رسمية) و«免得» (كلامية) في أول الجزء الثاني: افعل الأول كي لا يحدث الثاني.
+e:以免 (formal) and 免得 (spoken) open the second part: do the first so the second doesn't happen.
+>出门前检查一下，以免忘带东西。|Chūmén qián jiǎnchá yíxià, yǐmiǎn wàng dài dōngxi.|تحقق قبل الخروج كي لا تنسى شيئًا.|Check before you leave so you don't forget anything.
+>早点儿走，免得堵车。|Zǎo diǎnr zǒu, miǎnde dǔchē.|اذهب مبكرًا كي لا تعلق في الزحام.|Leave early to avoid the traffic.
+#g5-conger|…，从而…|从而|«从而»: وبذلك|从而: thereby
+a:«从而» تربط الوسيلة بنتيجتها في الكتابة: بفعل كذا… وبذلك حققنا…
+e:从而 links a means to its result in writing: by doing this…, thereby….
+>公司改进了技术，从而提高了效率。|Gōngsī gǎijìn le jìshù, cóng'ér tígāo le xiàolǜ.|طوّرت الشركة التقنية، وبذلك رفعت الكفاءة.|The company improved its technology, thereby raising efficiency.
+>多读书可以开阔眼界，从而更好地理解世界。|Duō dú shū kěyǐ kāikuò yǎnjiè, cóng'ér gèng hǎo de lǐjiě shìjiè.|القراءة توسّع الأفق، وبذلك نفهم العالم أفضل.|Reading widens your horizons and so helps you understand the world.
+#g5-kejian|…，可见…|可见|«可见»: يتّضح من ذلك أن|可见: it can be seen that
+a:«可见» تستخلص نتيجة من دليل ذُكر قبلها.
+e:可见 draws a conclusion from evidence just given.
+>他每天都练习，可见他很认真。|Tā měi tiān dōu liànxí, kějiàn tā hěn rènzhēn.|يتدرب كل يوم، يتّضح أنه جادّ.|He practises every day, so clearly he's serious.
+>这么多人排队，可见这家店很有名。|Zhème duō rén páiduì, kějiàn zhè jiā diàn hěn yǒumíng.|كل هذا الطابور، يتضح أن المتجر مشهور.|So many people queuing shows this shop is famous.
+#g5-zongzhi|总之，…|总之|«总之»: خلاصة القول|总之: in short
+a:«总之» في أول الجملة تلخّص ما سبق أو تحسم الأمر.
+e:总之 opens a sentence that sums up or settles the matter.
+>总之，我们一定要按时完成。|Zǒngzhī, wǒmen yídìng yào ànshí wánchéng.|خلاصة القول، يجب أن ننهي في الموعد.|In short, we must finish on time.
+>总之，这次旅行非常成功。|Zǒngzhī, zhè cì lǚxíng fēicháng chénggōng.|باختصار، كانت الرحلة ناجحة جدًا.|All in all, the trip was a great success.
+#g5-bijing|毕竟 + Clause|毕竟|«毕竟»: في نهاية المطاف / مهما يكن|毕竟: after all
+a:«毕竟» تذكّر بحقيقة أساسية تفسّر الموقف: لا تلمه، فهو في النهاية طفل.
+e:毕竟 recalls a basic fact that explains the situation: don't blame him, he's only a child after all.
+>别怪他了，他毕竟还是个孩子。|Bié guài tā le, tā bìjìng hái shì ge háizi.|لا تلمه، فهو طفل في نهاية المطاف.|Don't blame him; he's still a child after all.
+>毕竟是第一次，有点儿紧张很正常。|Bìjìng shì dì yī cì, yǒudiǎnr jǐnzhāng hěn zhèngcháng.|إنها المرة الأولى، فمن الطبيعي أن تتوتر قليلًا.|It's the first time after all; being a bit nervous is normal.
+#g5-guoran|S + 果然 + V|果然|«果然»: كما توقعت تمامًا|果然: sure enough
+a:«果然» حين يحدث ما توقعه المتكلم أو قيل له.
+e:果然 is used when something happens just as expected or as you were told.
+>天气预报说有雨，果然下雨了。|Tiānqì yùbào shuō yǒu yǔ, guǒrán xià yǔ le.|قالت النشرة إنها ستمطر، وأمطرت فعلًا.|The forecast said rain, and sure enough it rained.
+>大家都说这儿的菜好吃，果然不错。|Dàjiā dōu shuō zhèr de cài hǎochī, guǒrán búcuò.|الجميع قالوا إن الطعام هنا لذيذ، وهو كذلك فعلًا.|Everyone said the food here was good, and it really is.
+#g5-juran|S + 居然 + V|居然|«居然»: يا للعجب (على غير المتوقع)|居然: actually, unexpectedly
+a:«居然» مثل «竟然» تعبّر عن دهشة من أمر غير متوقع، شائعة في الكلام.
+e:居然, like 竟然, expresses surprise at the unexpected; it's common in speech.
+>他居然一个人去了西藏。|Tā jūrán yí gè rén qù le Xīzàng.|ذهب إلى التبت وحده، يا للعجب!|He actually went to Tibet on his own.
+>这么贵的手机，你居然买了？|Zhème guì de shǒujī, nǐ jūrán mǎi le?|اشتريت هاتفًا بهذا الغلاء؟|You actually bought such an expensive phone?
+#g5-xingkui|幸亏…，(才/不然)…|幸亏|«幸亏»: لحسن الحظ|幸亏: fortunately
+a:«幸亏» تذكر الظرف الذي أنقذ الموقف، ويتبعها «才» أو «不然/否则» (وإلا).
+e:幸亏 names the lucky circumstance that saved the day, followed by 才 or 不然 / 否则 (otherwise).
+>幸亏你提醒我，不然我就忘了。|Xìngkuī nǐ tíxǐng wǒ, bùrán wǒ jiù wàng le.|لحسن الحظ ذكّرتني، وإلا لنسيت.|Luckily you reminded me, or I'd have forgotten.
+>幸亏我们早出发了，才赶上了飞机。|Xìngkuī wǒmen zǎo chūfā le, cái gǎn shàng le fēijī.|لحسن الحظ انطلقنا مبكرًا فلحقنا بالطائرة.|Fortunately we set off early, so we caught the plane.
+#g5-pianpian|S + 偏偏 + V|偏偏|«偏偏»: لسوء الحظ بالذات / عمدًا عكس المطلوب|偏偏: just, contrary to what was wanted
+a:«偏偏» تعني أن الأمر حدث عكس الرغبة بالضبط، أو أن الشخص يصرّ على العكس.
+e:偏偏 says something happened exactly against what was wanted, or someone insists on the opposite.
+>我想早点儿到，偏偏路上堵车。|Wǒ xiǎng zǎo diǎnr dào, piānpiān lùshang dǔchē.|أردتُ الوصول مبكرًا، فإذا بالطريق مزدحم.|I wanted to get there early, but of course there was traffic.
+>让他别去，他偏偏要去。|Ràng tā bié qù, tā piānpiān yào qù.|طلبنا منه ألا يذهب، فأصرّ على الذهاب.|We told him not to go, but he insisted on going.
+#g5-faner|…，反而…|反而|«反而»: بل على العكس|反而: on the contrary, instead
+a:«反而» تقدّم نتيجة معاكسة للمتوقع: أخذ الدواء فساءت حاله بدلًا من أن تتحسن.
+e:反而 introduces a result opposite to what was expected: he took the medicine and got worse instead.
+>吃了药，病不但没好，反而更重了。|Chī le yào, bìng búdàn méi hǎo, fǎn'ér gèng zhòng le.|تناول الدواء فلم يتحسن بل ساءت حاله.|After the medicine he didn't get better; he got worse.
+>我帮了他，他反而不高兴。|Wǒ bāng le tā, tā fǎn'ér bù gāoxìng.|ساعدته، فإذا به منزعج.|I helped him, and instead he was annoyed.
+#g5-dao|S + 倒 + V/Adj|倒|«倒»: على عكس المتوقع / أما…|倒: actually, contrary to expectation
+a:«倒» تدل على تباين أو مفاجأة: «东西倒不贵» الأشياء على العكس ليست غالية. وتلطّف الاعتراض: «这倒是».
+e:倒 shows contrast or surprise: 东西倒不贵, things are actually not expensive. It also softens agreement: 这倒是, that's true.
+>这个地方不大，东西倒挺全的。|Zhège dìfang bú dà, dōngxi dào tǐng quán de.|المكان ليس كبيرًا، لكن فيه كل شيء.|The place isn't big, but it actually has everything.
+>你说的倒也有道理。|Nǐ shuō de dào yě yǒu dàolǐ.|ما تقوله له وجه من الصحة فعلًا.|What you say does make sense, actually.
+#g5-jianzhi|简直 + V/Adj|简直|«简直»: حقًا / بكل معنى الكلمة|简直: simply, practically
+a:«简直» للمبالغة: الأمر يكاد يكون كذلك تمامًا. غالبًا مع «太…了» أو تشبيه.
+e:简直 exaggerates: it's practically, simply…. Often with 太…了 or a comparison.
+>这里的风景简直太美了！|Zhèlǐ de fēngjǐng jiǎnzhí tài měi le!|المنظر هنا رائع بكل معنى الكلمة!|The scenery here is simply stunning!
+>他简直像变了一个人。|Tā jiǎnzhí xiàng biàn le yí gè rén.|كأنه صار شخصًا آخر تمامًا.|He's practically a different person.
+#g5-weibi|未必 + V/Adj|未必|«未必»: ليس بالضرورة|未必: not necessarily
+a:«未必» = «不一定» بأسلوب أكثر أدبية: الأمر قد لا يكون كذلك.
+e:未必 is a more literary 不一定: it may not be so.
+>贵的东西未必好。|Guì de dōngxi wèibì hǎo.|الشيء الغالي ليس بالضرورة جيدًا.|Expensive things aren't necessarily good.
+>他说的未必是真的。|Tā shuō de wèibì shì zhēn de.|ما قاله ليس بالضرورة صحيحًا.|What he said isn't necessarily true.
+#g5-nanmian|难免 + V|难免|«难免»: لا مفر من / من الطبيعي أن|难免: hard to avoid, bound to
+a:«难免» = أمر طبيعي يصعب تجنبه: «刚开始难免会出错» من الطبيعي أن تخطئ في البداية.
+e:难免 means something is natural and hard to avoid: 刚开始难免会出错, you're bound to make mistakes at first.
+>刚开始工作，难免会遇到问题。|Gāng kāishǐ gōngzuò, nánmiǎn huì yù dào wèntí.|في بداية العمل من الطبيعي أن تواجه مشكلات.|When you've just started a job, problems are bound to come up.
+>人难免会犯错误。|Rén nánmiǎn huì fàn cuòwù.|الإنسان معرّض للخطأ لا محالة.|Everyone makes mistakes.
+#g5-jinliang|尽量 + V|尽量|«尽量»: قدر الإمكان|尽量: as much as possible
+a:«尽量» قبل الفعل: ابذل أقصى ما يمكن. «尽量少» أقل ما يمكن.
+e:尽量 before the verb: do it as far as possible. 尽量少 means "as little as possible".
+>我会尽量早点儿到。|Wǒ huì jǐnliàng zǎo diǎnr dào.|سأحاول الوصول مبكرًا قدر الإمكان.|I'll try my best to arrive early.
+>晚上尽量少吃甜的。|Wǎnshang jǐnliàng shǎo chī tián de.|قلّل الحلويات ليلًا قدر الإمكان.|Eat as few sweets as possible in the evening.
+#g5-zhiyu|至于 + Topic，…|至于|«至于»: أما بخصوص|至于: as for
+a:«至于» تنقل الحديث إلى موضوع جديد متصل: أما فيما يخص…
+e:至于 shifts to a related new topic: as for….
+>我们先定时间，至于地点，以后再说。|Wǒmen xiān dìng shíjiān, zhìyú dìdiǎn, yǐhòu zài shuō.|نحدد الوقت أولًا، أما المكان فنتكلم عنه لاحقًا.|Let's fix the time first; as for the place, we'll discuss it later.
+>他去不去我不知道，至于我，肯定去。|Tā qù bu qù wǒ bù zhīdào, zhìyú wǒ, kěndìng qù.|لا أعرف إن كان سيذهب، أما أنا فسأذهب بالتأكيد.|I don't know if he's going; as for me, I definitely am.
+#g5-yi-wei|以 + A + 为 + B|以,为|«以… 为…»: يتخذ… كـ|以A为B: take A as B
+a:«以 A 为 B» تعبير رسمي: يجعل A هو B: «以学生为中心» يجعل الطالب المحور.
+e:以A为B is a formal pattern: take A as B: 以学生为中心, student-centred.
+>这家公司以客户为中心。|Zhè jiā gōngsī yǐ kèhù wéi zhōngxīn.|تجعل هذه الشركة العميل محورها.|This company puts the customer at the centre.
+>我们以安全为第一。|Wǒmen yǐ ānquán wéi dì yī.|نجعل السلامة أولًا.|We put safety first.
+#g5-weier|为 + Purpose/Reason + 而 + V|为,而|«为… 而…»: من أجل… / بسبب…|为…而…: for the sake of / because of
+a:«为 + هدف أو سبب + 而 + فعل» أسلوب رسمي: «为理想而奋斗» يكافح من أجل حلمه.
+e:为 + purpose or cause + 而 + verb is formal: 为理想而奋斗, strive for one's ideals.
+>我们为共同的目标而努力。|Wǒmen wèi gòngtóng de mùbiāo ér nǔlì.|نعمل من أجل هدف مشترك.|We work hard for a common goal.
+>他为这件事而感到难过。|Tā wèi zhè jiàn shì ér gǎndào nánguò.|حزن بسبب هذا الأمر.|He felt sad because of this.
+#g5-ping|凭 + N + V|凭|«凭»: بالاعتماد على / بموجب|凭: by virtue of, with
+a:«凭» تذكر ما يعتمد عليه الفعل: مهارة أو وثيقة: «凭票入场» الدخول بالتذكرة.
+e:凭 names what an action relies on, a skill or a document: 凭票入场, admission by ticket.
+>他凭自己的能力找到了好工作。|Tā píng zìjǐ de nénglì zhǎo dào le hǎo gōngzuò.|وجد عملًا جيدًا بقدراته الذاتية.|He found a good job through his own ability.
+>请凭票入场。|Qǐng píng piào rùchǎng.|الدخول بالتذكرة.|Admission by ticket only.
+#g5-chen|趁 + Time/Chance + V|趁|«趁»: اغتنامًا لـ|趁: take advantage of (a moment)
+a:«趁» = اغتنم الفرصة أو الوقت قبل فواته: «趁热吃» كُلها وهي ساخنة.
+e:趁 means use a chance or moment before it passes: 趁热吃, eat it while it's hot.
+>趁热吃吧。|Chèn rè chī ba.|كُلها وهي ساخنة.|Eat it while it's hot.
+>趁年轻，多出去看看。|Chèn niánqīng, duō chūqu kànkan.|اغتنم شبابك وسافر كثيرًا.|See the world while you're young.
+#g5-zicong|自从 + Event + 以后，…|自从,以后|«自从»: منذ أن|自从: ever since
+a:«自从» حدث في الماضي غيّر الوضع حتى الآن، ويقترن غالبًا بـ «以后/以来».
+e:自从 marks a past event that changed things up to now, usually with 以后 / 以来.
+>自从来了中国，他的汉语进步很快。|Zìcóng lái le Zhōngguó, tā de Hànyǔ jìnbù hěn kuài.|منذ أن جاء إلى الصين، تقدمت لغته الصينية بسرعة.|Since coming to China, his Chinese has improved fast.
+>自从生了孩子以后，她就不上班了。|Zìcóng shēng le háizi yǐhòu, tā jiù bú shàngbān le.|منذ أن أنجبت لم تعد تعمل.|Since having the baby she's stopped working.
+#g5-zai-xia|在 + N + 下/上/中|在…下,在…上,在…中|«在…下/上/中»: في ظل / من ناحية / خلال|在…下 / 上 / 中: under, in terms of, during
+a:«在…下» تحت ظرف أو بمساعدة: «在老师的帮助下». «在…上» من ناحية: «在工作上». «在…中» خلال: «在学习中».
+e:在…下 under a condition or with help: 在老师的帮助下. 在…上 in terms of: 在工作上. 在…中 during: 在学习中.
+>在大家的帮助下，我完成了任务。|Zài dàjiā de bāngzhù xià, wǒ wánchéng le rènwu.|بمساعدة الجميع أنجزتُ المهمة.|With everyone's help, I completed the task.
+>他在工作上很认真。|Tā zài gōngzuò shang hěn rènzhēn.|هو جادّ في عمله.|He's very conscientious at work.
+>在学习中遇到问题很正常。|Zài xuéxí zhōng yù dào wèntí hěn zhèngcháng.|من الطبيعي مواجهة مشكلات أثناء الدراسة.|It's normal to hit problems while studying.
+#g5-zuowei|作为 + Role，…|作为|«作为»: بصفتي…|作为: as (in the role of)
+a:«作为 + صفة أو دور» في أول الجملة: بصفتي مديرًا… يجب علي…
+e:作为 + role at the start: as a manager, I….
+>作为经理，我应该对结果负责。|Zuòwéi jīnglǐ, wǒ yīnggāi duì jiéguǒ fùzé.|بصفتي مديرًا يجب أن أتحمل مسؤولية النتيجة.|As the manager, I should take responsibility for the result.
+>作为学生，学习是最重要的。|Zuòwéi xuésheng, xuéxí shì zuì zhòngyào de.|بالنسبة للطالب، الدراسة أهم شيء.|As a student, studying matters most.
+#g5-duilaishuo|对 + Person + 来说，…|对,来说|«对… 来说»: بالنسبة لـ|对…来说: for (someone)
+a:«对 + شخص + 来说» يحدد وجهة النظر: بالنسبة لي، هذا صعب.
+e:对 + person + 来说 sets the point of view: for me, this is hard.
+>对我来说，汉字最难。|Duì wǒ lái shuō, Hànzì zuì nán.|بالنسبة لي، الحروف الصينية أصعب شيء.|For me, characters are the hardest.
+>对老人来说，健康比钱重要。|Duì lǎorén lái shuō, jiànkāng bǐ qián zhòngyào.|بالنسبة للمسنين، الصحة أهم من المال.|For older people, health matters more than money.
+#g5-nalaishuo|拿 + Example + 来说，…|拿,来说|«拿… 来说»: خذ مثلًا…|拿…来说: take… for example
+a:«拿 + مثال + 来说» تقدّم مثالًا يوضّح الفكرة.
+e:拿 + example + 来说 brings in an example to illustrate a point.
+>拿我来说，我每天都学一个小时汉语。|Ná wǒ lái shuō, wǒ měi tiān dōu xué yí gè xiǎoshí Hànyǔ.|خذني مثالًا، أدرس الصينية ساعة كل يوم.|Take me, for example: I study Chinese an hour a day.
+>拿北京来说，冬天非常干燥。|Ná Běijīng lái shuō, dōngtiān fēicháng gānzào.|خذ بكين مثلًا، شتاؤها جاف جدًا.|Take Beijing: its winters are very dry.
+#g5-xialai|V + 下来|下来|«V + 下来»: تثبيت أو توقف أو بقاء|V + 下来: settle, record, stop
+a:«下来» بعد الفعل تعني تثبيت شيء أو بقاءه أو توقفه: «记下来» دوّنه، «停下来» توقف، «留下来» ابقَ، «安静下来» هدأ.
+e:下来 after a verb means fixing, keeping or stopping something: 记下来 write it down, 停下来 come to a stop, 留下来 stay on, 安静下来 calm down.
+>请把电话号码记下来。|Qǐng bǎ diànhuà hàomǎ jì xiàlai.|دوّن رقم الهاتف من فضلك.|Please write down the phone number.
+>车慢慢停下来了。|Chē mànman tíng xiàlai le.|توقفت السيارة ببطء.|The car slowly came to a stop.
+>大家安静下来吧。|Dàjiā ānjìng xiàlai ba.|اهدؤوا جميعًا.|Let's all calm down.
+#g5-guolai|V + 过来|过来|«V + 过来»: العودة إلى الحالة الطبيعية / التصحيح|V + 过来: come round, correct
+a:«过来» بعد الفعل تعني العودة إلى الحالة الطبيعية أو التصحيح: «醒过来» استفاق، «改过来» صحّح، «忙不过来» لا أستطيع ملاحقة العمل.
+e:过来 after a verb means returning to normal or correcting: 醒过来 come round, 改过来 correct it, 忙不过来 can't keep up.
+>他终于醒过来了。|Tā zhōngyú xǐng guòlai le.|استفاق أخيرًا.|He finally came round.
+>请把错字改过来。|Qǐng bǎ cuò zì gǎi guòlai.|صحّح الحرف الخاطئ من فضلك.|Please correct the wrong character.
+>工作太多，我一个人忙不过来。|Gōngzuò tài duō, wǒ yí gè rén máng bu guòlai.|العمل كثير، لا أستطيع إنجازه وحدي.|There's too much work for me to cope with alone.
+#g5-vshang|V + 上|上|«V + 上»: الوصول إلى الهدف / الإغلاق|V + 上: reach a goal, close, start to
+a:«上» بعد الفعل: بلوغ هدف «考上» نجح والتحق، أو الإغلاق «关上»، أو بداية شعور «爱上» وقع في الحب.
+e:上 after a verb: reaching a goal 考上 get into (by exam), closing 关上, or starting a feeling 爱上 fall in love with.
+>他考上了北京大学。|Tā kǎo shàng le Běijīng Dàxué.|نجح والتحق بجامعة بكين.|He got into Peking University.
+>请把窗户关上。|Qǐng bǎ chuānghu guānshang.|أغلق النافذة من فضلك.|Please close the window.
+>她爱上了这个城市。|Tā ài shàng le zhège chéngshì.|وقعت في حب هذه المدينة.|She fell in love with this city.
+#g5-diao|V + 掉|掉|«V + 掉»: الإزالة والتخلص|V + 掉: get rid of, away
+a:«掉» بعد الفعل تعني الإزالة: «卖掉» باعه وتخلص منه، «忘掉» نسيه تمامًا، «扔掉» رماه.
+e:掉 after a verb means removal: 卖掉 sell off, 忘掉 forget completely, 扔掉 throw away.
+>他把旧车卖掉了。|Tā bǎ jiù chē mài diào le.|باع سيارته القديمة.|He sold off his old car.
+>忘掉不愉快的事吧。|Wàng diào bù yúkuài de shì ba.|انسَ الأمور المزعجة.|Forget the unpleasant things.
+>别把吃的扔掉。|Bié bǎ chī de rēng diào.|لا ترمِ الطعام.|Don't throw food away.
+#g5-kai|V + 开|开|«V + 开»: الفتح والانفصال|V + 开: open up, apart
+a:«开» بعد الفعل: الفتح «打开» افتح، الانفصال «离开» غادر، «分开» افترقا، «走开» ابتعد.
+e:开 after a verb: opening 打开, separating 离开 leave, 分开 split up, 走开 go away.
+>请打开书。|Qǐng dǎkāi shū.|افتحوا الكتب.|Please open your books.
+>他昨天离开了上海。|Tā zuótiān líkāi le Shànghǎi.|غادر شنغهاي أمس.|He left Shanghai yesterday.
+#g5-buliao|V + 不了/得了|不了,得了|«V不了»: لا يمكن (لسبب ما)|V + 不了: can't (be able to)
+a:«不了 (liǎo)» بعد الفعل: لا يمكن حدوثه، و«得了» ممكن: «来不了» لن يستطيع المجيء، «吃不了» لا أستطيع أكل كل هذا.
+e:不了 (liǎo) after a verb says it can't happen, 得了 that it can: 来不了 can't come, 吃不了 can't eat all that.
+>我明天有事，来不了了。|Wǒ míngtiān yǒu shì, lái bu liǎo le.|عندي شغل غدًا، لن أستطيع المجيء.|I've got something on tomorrow, I can't come.
+>这么多菜，我们吃不了。|Zhème duō cài, wǒmen chī bu liǎo.|كل هذا الطعام، لن نستطيع أكله.|We can't eat all these dishes.
+#g5-qibuqi|V + 得起/不起|得起,不起|«V不起»: لا يقدر على (ماليًا أو معنويًا)|V + 不起: can't afford
+a:«买不起» لا يقدر على شرائه، «住不起» لا يقدر على السكن فيه، و«看不起» يحتقر.
+e:买不起 can't afford to buy, 住不起 can't afford to live there; 看不起 means "look down on".
+>这么贵的房子，我买不起。|Zhème guì de fángzi, wǒ mǎi bu qǐ.|لا أقدر على شراء بيت بهذا الغلاء.|I can't afford such an expensive flat.
+>你不应该看不起别人。|Nǐ bù yīnggāi kànbuqǐ biérén.|لا ينبغي أن تحتقر الآخرين.|You shouldn't look down on others.
+#g5-feibuke|非 + V + 不可|非,不可|«非… 不可»: لا بد من|非…不可: must, simply have to
+a:نفي مزدوج قوي: «非去不可» لا بد أن أذهب مهما كان.
+e:A strong double negative: 非去不可, I absolutely have to go.
+>这件事我非告诉他不可。|Zhè jiàn shì wǒ fēi gàosu tā bùkě.|لا بد أن أخبره بهذا الأمر.|I simply must tell him about this.
+>要学好汉语，非多练习不可。|Yào xué hǎo Hànyǔ, fēi duō liànxí bùkě.|لإتقان الصينية لا بد من تدريب كثير.|To learn Chinese well, you have to practise a lot.
+#g5-meiyoubu|没有 + N + 不 + V|没有,不|نفي مزدوج: «لا يوجد مَن لا…»|没有…不…: there's no one who doesn't
+a:«没有 + اسم + 不 + فعل» = الكل بلا استثناء: «没有人不喜欢他» الجميع يحبه.
+e:没有 + noun + 不 + verb means everyone without exception: 没有人不喜欢他, everyone likes him.
+>没有人不喜欢她。|Méiyǒu rén bù xǐhuan tā.|لا يوجد أحد لا يحبها.|There's no one who doesn't like her.
+>这里没有一家饭馆不好吃。|Zhèlǐ méiyǒu yì jiā fànguǎn bù hǎochī.|ليس هنا مطعم واحد طعامه سيئ.|There isn't a single restaurant here that's bad.
+#g5-qw-pair|Q … Q …|谁,哪儿,什么|أداة استفهام مكررة: «مَن… فهو…»|Paired question words: whoever… (he)…
+a:تكرار أداة الاستفهام في جزأين يربطهما: «谁先到谁买票» من يصل أولًا يشتري التذاكر.
+e:A question word repeated in two clauses links them: 谁先到谁买票, whoever arrives first buys the tickets.
+>谁先到谁买票。|Shéi xiān dào shéi mǎi piào.|من يصل أولًا يشتري التذاكر.|Whoever gets there first buys the tickets.
+>你想去哪儿就去哪儿。|Nǐ xiǎng qù nǎr jiù qù nǎr.|اذهب إلى حيث تشاء.|Go wherever you want.
+>你想吃什么就点什么。|Nǐ xiǎng chī shénme jiù diǎn shénme.|اطلب ما تشاء أن تأكل.|Order whatever you like.
+#g5-youren|有 + N + V|有人,有的|«有人…»: هناك مَن…|有人 / 有的: some people, someone
+a:«有 + اسم + فعل» يقدّم فاعلًا غير محدد: «有人说» هناك من يقول. و«有的…有的…» بعضهم… وبعضهم…
+e:有 + noun + verb introduces an unspecified subject: 有人说, some say. 有的…有的… means "some…, others…".
+>有人在敲门。|Yǒu rén zài qiāo mén.|هناك من يطرق الباب.|Someone is knocking at the door.
+>同学们有的唱歌，有的跳舞。|Tóngxuémen yǒude chàng gē, yǒude tiàowǔ.|بعض الزملاء يغنّون وبعضهم يرقصون.|Some classmates sing, others dance.
+#g5-shi-ling|S + 使/令 + Person + Adj/V|使,令|«使» و«令»: يجعل (رسمي)|使 / 令: make, cause (formal)
+a:«使» و«令» مثل «让» لكن بأسلوب رسمي: «令人难忘» لا يُنسى، «使我们明白» جعلنا نفهم.
+e:使 and 令 work like 让 but are formal: 令人难忘 unforgettable, 使我们明白 made us understand.
+>这次旅行令人难忘。|Zhè cì lǚxíng lìng rén nánwàng.|كانت هذه الرحلة لا تُنسى.|This trip was unforgettable.
+>他的话使我很感动。|Tā de huà shǐ wǒ hěn gǎndòng.|أثّر فيّ كلامه كثيرًا.|His words moved me deeply.
+#g5-lai-approx|Num + 来 + M|来|«来» بعد العدد: نحو / ونيّف|Num + 来: about, some
+a:«来» بعد العدد المستدير = تقريبًا وأكثر قليلًا: «十来个人» نحو عشرة أشخاص، «二十来岁» في العشرين تقريبًا.
+e:来 after a round number means "about, or a little more": 十来个人 ten or so people, 二十来岁 about twenty.
+>来了十来个人。|Lái le shí lái gè rén.|جاء نحو عشرة أشخاص.|About ten people came.
+>他看起来三十来岁。|Tā kàn qǐlai sānshí lái suì.|يبدو في نحو الثلاثين.|He looks about thirty.
+#g5-yi-mm|一 + M + M / 一 + M + 一 + M|一步步,一天天|«一步一步»: تدريجيًا|一步步 / 一天天: step by step
+a:«一 + كلمة قياس مكررة» تصف تقدمًا تدريجيًا: «一天天» يومًا بعد يوم، «一步一步» خطوة خطوة.
+e:一 + a doubled measure word describes gradual progress: 一天天 day by day, 一步一步 step by step.
+>孩子一天天长大了。|Háizi yì tiāntiān zhǎng dà le.|كبر الطفل يومًا بعد يوم.|The child grew up day by day.
+>我们要一步一步地来。|Wǒmen yào yí bù yí bù de lái.|علينا أن نتقدم خطوة خطوة.|We need to take it step by step.
+#g5-dongbudong|动不动就 + V|动不动就|«动不动就»: لأتفه سبب|动不动就: at the slightest thing
+a:«动不动就» تصف عادة سلبية متكررة لأقل سبب: «动不动就生气» يغضب لأتفه الأسباب.
+e:动不动就 describes a bad habit that happens at the slightest excuse: 动不动就生气, gets angry over nothing.
+>他动不动就生气。|Tā dòngbudòng jiù shēngqì.|يغضب لأتفه سبب.|He gets angry at the slightest thing.
+>这孩子动不动就哭。|Zhè háizi dòngbudòng jiù kū.|هذا الطفل يبكي لأقل شيء.|This child cries at the drop of a hat.
+#g5-shuobuding|说不定 + Clause|说不定|«说不定»: ربما / لا يُستبعد|说不定: maybe, you never know
+a:«说不定» = ربما، مع احتمال وارد: «说不定他已经到了» ربما وصل بالفعل.
+e:说不定 means "perhaps, it may well be": 说不定他已经到了, he may already be there.
+>说不定他已经到了。|Shuōbudìng tā yǐjīng dào le.|ربما وصل بالفعل.|He may already be there.
+>带上伞吧，说不定会下雨。|Dài shàng sǎn ba, shuōbudìng huì xià yǔ.|خذ المظلة، فقد تمطر.|Take your umbrella, it might rain.
+#g5-guaibude|怪不得 + Clause|怪不得|«怪不得»: لا عجب أن|怪不得: no wonder
+a:«怪不得» عند فهم سبب شيء كان مستغربًا: لا عجب إذن!
+e:怪不得 when you suddenly understand the reason for something: no wonder!
+>原来他是老师，怪不得汉语说得这么好。|Yuánlái tā shì lǎoshī, guàibude Hànyǔ shuō de zhème hǎo.|إذن هو معلم، لا عجب أن صينيته بهذه الجودة.|So he's a teacher, no wonder his Chinese is so good.
+>怪不得这么冷，原来下雪了。|Guàibude zhème lěng, yuánlái xià xuě le.|لا عجب أن الجو بارد، فقد تساقط الثلج.|No wonder it's so cold, it's snowing.
+#g5-yuanlai|原来…|原来|«原来»: إذن… / في الأصل|原来: so it turns out / originally
+a:«原来» تعلن اكتشاف حقيقة: «原来是你!» إذن أنت! وتعني أيضًا «في الأصل/سابقًا»: «我原来住在这儿».
+e:原来 announces a discovery: 原来是你！, so it's you! It also means "originally": 我原来住在这儿.
+>原来是你啊！|Yuánlái shì nǐ a!|إذن أنت!|Oh, it's you!
+>我原来在银行工作。|Wǒ yuánlái zài yínháng gōngzuò.|كنت أعمل في بنك في الأصل.|I originally worked in a bank.
+#g5-suibian|随便 / 随时 + V|随便,随时|«随便» و«随时»: كما تشاء ومتى شئت|随便 / 随时: as you like, any time
+a:«随便» = كما تشاء أو بلا اكتراث: «随便坐» اجلس حيث شئت. «随时» = في أي وقت: «随时联系我».
+e:随便 means "as you like" or "casually": 随便坐, sit anywhere. 随时 means "at any time": 随时联系我.
+>请随便坐。|Qǐng suíbiàn zuò.|اجلس حيث شئت.|Sit wherever you like.
+>有问题随时联系我。|Yǒu wèntí suíshí liánxì wǒ.|تواصل معي في أي وقت إن كان لديك سؤال.|Contact me any time if you have a question.
+>别随便乱说。|Bié suíbiàn luàn shuō.|لا تتكلم كيفما اتفق.|Don't talk nonsense.
+#g5-yi-v|一 + V，就…|一看,一听|«一 + فعل»: بمجرد النظر/السماع|一看 / 一听: at a glance, on hearing
+a:«一 + فعل حسّي» يعني أن النتيجة واضحة فورًا: «一看就知道» يكفي أن تنظر لتعرف.
+e:一 + a perception verb means the result is obvious at once: 一看就知道, you can tell at a glance.
+>一看就知道他是新来的。|Yí kàn jiù zhīdào tā shì xīn lái de.|يكفي أن تنظر لتعرف أنه جديد.|You can tell at a glance he's new.
+>我一听就明白了。|Wǒ yì tīng jiù míngbai le.|فهمت بمجرد أن سمعت.|I understood as soon as I heard it.
+#g5-zhide|值得 + V|值得|«值得»: يستحق|值得: be worth
+a:«值得» + فعل = يستحق أن يُفعل: «值得一看» يستحق المشاهدة. النفي «不值得».
+e:值得 + verb means "worth doing": 值得一看, worth seeing. Negative: 不值得.
+>这本书很值得一读。|Zhè běn shū hěn zhíde yì dú.|هذا الكتاب يستحق القراءة.|This book is well worth reading.
+>为这点小事生气，不值得。|Wèi zhè diǎn xiǎo shì shēngqì, bù zhíde.|لا يستحق الأمر الغضب من أجل شيء صغير.|It's not worth getting angry over something so small.
+#g5-jiu-only|就 + N/Num (only)|就|«就» بمعنى «فقط»|就: only, just
+a:«就» قبل اسم أو عدد قد تعني «فقط» في الكلام: «就他一个人» هو وحده فقط.
+e:就 before a noun or number can mean "only" in speech: 就他一个人, just him alone.
+>我们班就他一个人去过中国。|Wǒmen bān jiù tā yí gè rén qù guo Zhōngguó.|في صفنا هو الوحيد الذي زار الصين.|He's the only one in our class who has been to China.
+>我就有五十块钱。|Wǒ jiù yǒu wǔshí kuài qián.|معي خمسون يوانًا فقط.|I've only got fifty yuan.
+#g5-shi-emph|是 + Adj/V (emphatic 是)|是|«是» للتأكيد: فعلًا|Stressed 是: really, indeed
+a:«是» قبل الصفة أو الفعل وتُنطق بقوة تؤكد الموافقة أو الاعتراف: «他是很聪明» هو ذكي فعلًا (لكن…).
+e:A stressed 是 before an adjective or verb confirms or concedes: 他是很聪明, he IS clever (but…).
+>这个地方是很漂亮，可是太远了。|Zhège dìfang shì hěn piàoliang, kěshì tài yuǎn le.|المكان جميل فعلًا، لكنه بعيد جدًا.|This place is beautiful, sure, but it's too far.
+>我是去过，不过记不清了。|Wǒ shì qù guo, búguò jì bu qīng le.|ذهبتُ فعلًا، لكنني لا أتذكر جيدًا.|I have been, but I don't remember it clearly.
