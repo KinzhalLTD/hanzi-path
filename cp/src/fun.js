@@ -3,8 +3,8 @@
 
 /* ---------- 龙宝: a small red dragon drawn in SVG; moods: happy, cool, wow, sad, think ---------- */
 /* Canva artwork (art/canva/longbao_<mood>.png) wins over the drawn SVG when it exists */
-const DRAGON_ART={happy:'longbao_happy',cool:'longbao_cool',wow:'longbao_win',sad:'longbao_sad',think:'longbao_happy'};
-function dragon(mood='happy',size=96){ const a=ART[DRAGON_ART[mood]];
+const DRAGON_ART={happy:['longbao_happy'],cool:['longbao_cool','longbao_win'],wow:['longbao_win'],sad:['longbao_sad'],think:['longbao_happy']};
+function dragon(mood='happy',size=96){ const a=(DRAGON_ART[mood]||[]).map(k=>ART[k]).find(Boolean);
   if(a) return `<img class="dragon art ${mood}" src="${a}" width="${size}" height="${size}" alt="" draggable="false">`;
   return dragonSvg(mood,size); }
 function dragonSvg(mood='happy',size=96){ const eyes={happy:'<path d="M37 47q4-5 8 0M55 47q4-5 8 0" stroke="#2a0d08" stroke-width="3.2" fill="none" stroke-linecap="round"/>',
