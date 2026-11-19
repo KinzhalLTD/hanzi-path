@@ -10,9 +10,19 @@ def blk(name, obj):
     DATA.append(f'<script type="application/json" id="d-{name}">' + text.replace('</', '<\\/') + '</script>')
     return f'__json("d-{name}")'
 PRELUDE = 'function __json(id){ const e=document.getElementById(id); const v=JSON.parse(e.textContent); e.remove(); return v; }'
+def art():
+    # Canva-generated artwork in art/canva/*.png → compressed WebP data URIs (key = file name without extension)
+    import glob, base64, io
+    from PIL import Image
+    out = {}
+    for f in sorted(glob.glob(R + '/art/canva/*.png')):
+        im = Image.open(f).convert('RGB'); im.thumbnail((360, 360))
+        b = io.BytesIO(); im.save(b, 'WEBP', quality=82, method=6)
+        out[os.path.splitext(os.path.basename(f))[0]] = 'data:image/webp;base64,' + base64.b64encode(b.getvalue()).decode()
+    return out
 curr = json.load(open(R + '/out/curr.json', encoding='utf-8')); talk = json.load(open(R + '/out/talk.json', encoding='utf-8'))
 order = ['soft', 'sec']; talk.sort(key=lambda d: order.index(d['k']) if d['k'] in order else 9)
-js = '\n'.join([PRELUDE, 'const CURR=' + blk('curr', curr) + ';', 'const TALK=' + blk('talk', talk) + ';'] +
+js = '\n'.join([PRELUDE, 'const CURR=' + blk('curr', curr) + ';', 'const TALK=' + blk('talk', talk) + ';', 'const ART=' + blk('art', art()) + ';'] +
                [open(f'{src}/{n}.js', encoding='utf-8').read() for n in ORDER] + ['render();'])
 css = open(src + '/styles.css', encoding='utf-8').read()
 fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@600;700&family=Ma+Shan+Zheng&display=swap'

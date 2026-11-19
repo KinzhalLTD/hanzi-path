@@ -2,7 +2,12 @@
    combo streaks with firecrackers, kung-fu ranks, seal achievements (印章) and a bug boss for every module. ===== */
 
 /* ---------- 龙宝: a small red dragon drawn in SVG; moods: happy, cool, wow, sad, think ---------- */
-function dragon(mood='happy',size=96){ const eyes={happy:'<path d="M37 47q4-5 8 0M55 47q4-5 8 0" stroke="#2a0d08" stroke-width="3.2" fill="none" stroke-linecap="round"/>',
+/* Canva artwork (art/canva/longbao_<mood>.png) wins over the drawn SVG when it exists */
+const DRAGON_ART={happy:'longbao_happy',cool:'longbao_cool',wow:'longbao_win',sad:'longbao_sad',think:'longbao_happy'};
+function dragon(mood='happy',size=96){ const a=ART[DRAGON_ART[mood]];
+  if(a) return `<img class="dragon art ${mood}" src="${a}" width="${size}" height="${size}" alt="" draggable="false">`;
+  return dragonSvg(mood,size); }
+function dragonSvg(mood='happy',size=96){ const eyes={happy:'<path d="M37 47q4-5 8 0M55 47q4-5 8 0" stroke="#2a0d08" stroke-width="3.2" fill="none" stroke-linecap="round"/>',
   wow:'<circle cx="41" cy="46" r="4.6" fill="#2a0d08"/><circle cx="59" cy="46" r="4.6" fill="#2a0d08"/><circle cx="42.5" cy="44.5" r="1.5" fill="#fff"/><circle cx="60.5" cy="44.5" r="1.5" fill="#fff"/>',
   sad:'<path d="M37 45q4 4 8 1M55 46q4 3 8-1" stroke="#2a0d08" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M68 40q3 6 0 8q-3-2 0-8z" fill="#8fd3ff"/>',
   think:'<circle cx="41" cy="46" r="3.6" fill="#2a0d08"/><path d="M55 46h8" stroke="#2a0d08" stroke-width="3.2" stroke-linecap="round"/>',

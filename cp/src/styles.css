@@ -376,3 +376,7 @@ html[dir="rtl"] .bubble::after{transform:rotate(-45deg)}
 .tab .zhi{font-family:var(--f-brush);font-weight:400;font-size:22px}
 @media (max-width:360px){.seals{grid-template-columns:repeat(3,minmax(0,1fr))}.moon.sm{width:82px;height:82px}}
 @media (prefers-reduced-motion:reduce){.dragon,.lanterns i,.treat,.hongbao,.bossface,.pnode.here{animation:none!important}}
+
+/* Canva artwork: the mascot sits in a round medallion with a gold rim */
+img.dragon.art{display:block;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px rgba(var(--gold-rgb),.75),0 8px 20px rgba(0,0,0,.35);background:#9c1a12}
+.pnode .phere img.dragon.art{box-shadow:0 0 0 2px rgba(242,193,78,.9),0 4px 10px rgba(0,0,0,.4)}
