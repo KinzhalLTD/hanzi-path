@@ -116,7 +116,7 @@ GAME.klotski=m=>{ S.kl=S.kl||0; let lv=Math.min(S.kl,KL_LEVELS.length-1); let P,
     <button class="btn sm ghost" id="rs" style="align-self:center">↺ ${t('restart')}</button>`;
   bindGameX(m); const kb=$('#kb',m);
   function draw(){ kb.innerHTML=P.map((p,i)=>`<div data-i="${i}" style="position:absolute;left:${p.x*25}%;top:${p.y*20}%;width:${p.w*25}%;height:${p.h*20}%;padding:3px;transition:left .14s,top .14s">
-      <div style="width:100%;height:100%;border-radius:10px;display:grid;place-items:center;cursor:grab;${p.cc?'background:linear-gradient(150deg,var(--red2),var(--red-deep));color:var(--gold2);box-shadow:inset 0 0 0 2px rgba(247,216,148,.5),0 5px 0 #3b0a07':p.n==='兵'?'background:linear-gradient(160deg,#f3e9d6,#d9c39a);color:#3b2408;box-shadow:0 4px 0 #6b4320':'background:linear-gradient(160deg,#e8b65c,#b9852c);color:#2a1a07;box-shadow:0 4px 0 #6b4320'}">
+      <div class="${p.cc?'ondark':''}" style="width:100%;height:100%;border-radius:10px;display:grid;place-items:center;cursor:grab;${p.cc?'background:linear-gradient(150deg,var(--red2),var(--red-deep));color:var(--gold2);box-shadow:inset 0 0 0 2px rgba(247,216,148,.5),0 5px 0 #3b0a07':p.n==='兵'?'background:linear-gradient(160deg,#f3e9d6,#d9c39a);color:#3b2408;box-shadow:0 4px 0 #6b4320':'background:linear-gradient(160deg,#e8b65c,#b9852c);color:#2a1a07;box-shadow:0 4px 0 #6b4320'}">
       <span class="han" style="font-weight:700;font-size:${p.cc?'clamp(26px,9vw,40px)':'clamp(14px,4.6vw,20px)'};${p.h>p.w?'writing-mode:vertical-rl;':''}">${p.n}</span></div></div>`).join('');
     $('#mv',m).textContent=moves; }
   let start=null;

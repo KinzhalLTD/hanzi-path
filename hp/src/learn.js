@@ -218,5 +218,5 @@ SCREENS.placement=m=>{
 };
 /** levels up to `best` count as known: units done, words enter spaced review gently (spread over 6 weeks) */
 function applyPlacement(best){ const now=Date.now(); for(let L=1;L<=best;L++){ unitsOf(L).forEach((u,i)=>{ S.units[L+'-'+i]=1; u.forEach((w,j)=>{ if(!S.srs[w.id]) S.srs[w.id]={b:3,d:now+(1+((w.id*7+j)%42))*864e5}; }); }); } save(); }
-function placementCard(){ if(S.placed||S.xp>300) return ''; return `<button class="card row" id="plc" style="cursor:pointer;text-align:start;width:100%;background:linear-gradient(120deg,rgba(63,174,127,.22),rgba(26,19,17,1) 65%)"><span class="brush" style="font-size:34px;color:var(--jade)">定级</span><div class="grow"><h3>${t('plCard')}</h3><div class="sub">${t('plCardSub')}</div></div>›</button>`; }
+function placementCard(){ if(S.placed||S.xp>300) return ''; return `<button class="card row" id="plc" style="cursor:pointer;text-align:start;width:100%;background:linear-gradient(120deg,rgba(63,174,127,.22),var(--surface) 65%)"><span class="brush" style="font-size:34px;color:var(--jade)">定级</span><div class="grow"><h3>${t('plCard')}</h3><div class="sub">${t('plCardSub')}</div></div>›</button>`; }
 function bindPlacementCard(m){ const b=$('#plc',m); if(b) b.onclick=()=>{ SFX.tap(); go('placement'); }; }

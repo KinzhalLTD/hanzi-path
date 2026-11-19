@@ -30,7 +30,7 @@ async function pronCheck(target){ if(!S.pro){ const c=dayCount('pronDay'); if(c.
   const {score,heard}=pronScore(target,h); const g=score>=85?['🌟',t('pronGreat'),'cool']:score>=60?['👍',t('pronGood'),'happy']:['🔁',t('pronAgain'),'oops'];
   if(score>=85){ SFX.ok(); addXP(2); } else if(score<60) SFX.bad();
   S.pron=(S.pron||0)+1; dayCount('pronAll').n++; save();
-  sheet(`<div class="col" style="align-items:center;text-align:center;gap:10px">${bao(g[2],80)}<div style="font:800 46px Inter;color:${score>=85?'#7be3b0':score>=60?'var(--gold2)':'#ff9a8f'}">${score}<span style="font-size:20px">%</span></div><h3>${g[0]} ${g[1]}</h3>
+  sheet(`<div class="col" style="align-items:center;text-align:center;gap:10px">${bao(g[2],80)}<div style="font:800 46px Inter;color:${score>=85?'var(--p-7be3b0)':score>=60?'var(--gold2)':'var(--p-ff9a8f)'}">${score}<span style="font-size:20px">%</span></div><h3>${g[0]} ${g[1]}</h3>
     <div class="sub">${t('weHeard')}</div><div class="han" style="font-size:24px">${heard?esc(heard):'—'}</div>
     <div class="row" style="gap:8px;width:100%"><button class="btn ghost grow" id="pl">🔊 ${t('listenAgain')}</button><button class="btn grow" id="ag">🎤 ${t('tryAgain')}</button></div></div>`,s=>{ $('#pl',s).onclick=()=>speak(target); $('#ag',s).onclick=()=>pronCheck(target); }); }
 /* --- character breakdown --- */

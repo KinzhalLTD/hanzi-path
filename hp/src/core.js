@@ -6,6 +6,13 @@ const DEFAULT={lang:null,goal:50,sound:true,xp:0,coins:100,todayXP:0,day:today()
 let S=Object.assign({},DEFAULT);
 try{const j=JSON.parse(localStorage.getItem(KEY)||'null'); if(j) S=Object.assign(S,j);}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+/* theme: S.theme 'dark' (default) | 'light'. Sets <html data-theme>, the browser bar colour and the native status bar. */
+function applyTheme(){ const light=S.theme==='light'; const r=document.documentElement; if(light) r.dataset.theme='light'; else delete r.dataset.theme;
+  let m=document.querySelector('meta[name="theme-color"]'); if(!m){ m=document.createElement('meta'); m.name='theme-color'; document.head.appendChild(m); } m.content=light?'#f3eadb':'#0d0908';
+  try{ if(window.ReactNativeWebView) window.ReactNativeWebView.postMessage(JSON.stringify({type:'theme',theme:light?'light':'dark'})); }catch(e){} }
+function toggleTheme(){ S.theme=S.theme==='light'?'dark':'light'; save(); const r=document.documentElement; r.classList.add('theming'); applyTheme(); setTimeout(()=>r.classList.remove('theming'),420);
+  $$('[data-act="theme"]').forEach(b=>{ b.textContent=S.theme==='light'?'🌙':'☀️'; b.setAttribute('aria-pressed',S.theme==='light'); }); return S.theme; }
+applyTheme();
 function rollDay(){ const d=today(); if(S.day===d) return;
   // streak protection: if a day was missed and a freeze is owned, keep the streak
   const y=new Date(Date.now()-864e5); const yd=y.getFullYear()+'-'+String(y.getMonth()+1).padStart(2,'0')+'-'+String(y.getDate()).padStart(2,'0');
@@ -30,6 +37,8 @@ const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random(
 const pick=(a,n)=>shuffle(a).slice(0,n);
 const learnedIds=()=>Object.keys(S.srs).map(Number);
 const fmt=n=>Number(n).toLocaleString('en-US');
+/* compact for the top bar: 9,999 → 12.5k → 1.2M (the six chips must fit a small phone) */
+const fmtK=n=>{ n=Number(n)||0; const f=(v,u)=>(v>=100?Math.floor(v):Math.floor(v*10)/10)+u; return n<10000?fmt(n):n<1e6?f(n/1e3,'k'):f(n/1e6,'M'); };
 const $=(sel,root=document)=>root.querySelector(sel);
 const $$=(sel,root=document)=>[...root.querySelectorAll(sel)];
 /* tones */
@@ -87,7 +96,7 @@ function confetti(n=70){ const c=document.createElement('canvas'); c.style.cssTe
     if(p.sh){x.font=`${p.s*3}px "Ma Shan Zheng",serif`;x.fillText('福',-p.s,p.s);} else x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); x.restore();});
     if(++f<120) requestAnimationFrame(step); else c.remove(); })(); }
 function floatText(txt,el){ const r=el?el.getBoundingClientRect():{left:innerWidth/2,top:innerHeight/2,width:0}; const d=document.createElement('div');
-  d.textContent=txt; d.style.cssText=`position:fixed;left:${r.left+r.width/2}px;top:${r.top}px;transform:translate(-50%,0);z-index:96;font:800 20px Inter;color:#f7d894;text-shadow:0 2px 10px rgba(0,0,0,.8);pointer-events:none;transition:transform .9s ease-out,opacity .9s`;
+  d.textContent=txt; d.style.cssText=`position:fixed;left:${r.left+r.width/2}px;top:${r.top}px;transform:translate(-50%,0);z-index:96;font:800 20px Inter;color:var(--gold2);text-shadow:0 2px 10px rgba(0,0,0,.8);pointer-events:none;transition:transform .9s ease-out,opacity .9s`;
   document.body.appendChild(d); requestAnimationFrame(()=>{d.style.transform='translate(-50%,-60px)';d.style.opacity='0';}); setTimeout(()=>d.remove(),950); }
 /* ---------- progress, coins, quests ---------- */
 const rankOf=xp=>{let r=0; RANK_XP.forEach((v,i)=>{if(xp>=v) r=i;}); return r;};
@@ -134,12 +143,15 @@ function go(name,arg){ if(cleanup){try{cleanup();}catch(e){} cleanup=null;} $$('
   else window.scrollTo(0,0);
   if(typeof screenEnter==='function') screenEnter(back); }
 const TABS=[['home','家'],['dict','词'],['culture','文'],['games','戏'],['me','我']];
-function updateTop(){ $$('[data-coins]').forEach(e=>e.textContent=fmt(S.coins)); $$('[data-xp]').forEach(e=>e.textContent=fmt(S.xp)); $$('[data-streak]').forEach(e=>e.textContent=S.streak); }
+function fitTop(){ const tb=$('.topbar'); if(!tb) return; tb.classList.remove('t1','t2','t3'); for(const c of ['t1','t2','t3']){ if(tb.scrollWidth<=tb.clientWidth+1) break; tb.classList.add(c); } }
+addEventListener('resize',()=>fitTop());
+function updateTop(){ setTimeout(fitTop,0); $$('[data-coins]').forEach(e=>e.textContent=e.dataset.k!=null?fmtK(S.coins):fmt(S.coins)); $$('[data-xp]').forEach(e=>e.textContent=fmt(S.xp)); $$('[data-streak]').forEach(e=>e.textContent=S.streak); }
 function topbar(){ return `<div class="topbar"><div class="logo"><div class="seal">汉</div><div class="wordmark"><b>HANZI PATH</b><span>${isAr()?'مسار هانزي':'汉字之路'}</span></div></div>
-  <div class="chips"><button class="chip bellc" data-act="bell" aria-label="notifications">🔔${typeof unread==='function'&&unread()?`<i class="badge num">${unread()}</i>`:''}</button><button class="chip" data-act="mus" aria-label="music">${musVol()?'🎶':'🔇'}</button><button class="chip" data-act="streak">🔥 <span class="num" data-streak>${S.streak}</span></button><button class="chip" data-act="shop">${coinHTML} <span class="num" data-coins>${fmt(S.coins)}</span></button>${S.pro?'<span class="chip" style="color:var(--gold2)">PRO</span>':`<button class="chip" data-act="pro" style="color:#2a1a07;background:linear-gradient(180deg,var(--gold2),var(--gold3));border:0">PRO</button>`}</div></div>`; }
-function bindTop(m){ $$('[data-act="shop"]',m).forEach(b=>b.onclick=shop); $$('[data-act="pro"]',m).forEach(b=>b.onclick=paywall);
+  <div class="chips"><button class="chip themec" data-act="theme" aria-label="${isAr()?'الوضع الفاتح أو الداكن':'Light or dark theme'}" aria-pressed="${S.theme==='light'}">${S.theme==='light'?'🌙':'☀️'}</button><button class="chip bellc" data-act="bell" aria-label="notifications">🔔${typeof unread==='function'&&unread()?`<i class="badge num">${unread()}</i>`:''}</button><button class="chip" data-act="mus" aria-label="music">${musVol()?'🎶':'🔇'}</button><button class="chip" data-act="streak">🔥 <span class="num" data-streak>${S.streak}</span></button><button class="chip" data-act="shop">${coinHTML} <span class="num" data-coins data-k>${fmtK(S.coins)}</span></button>${S.pro?'<span class="chip" style="color:var(--gold2)">PRO</span>':`<button class="chip" data-act="pro" style="color:#2a1a07;background:linear-gradient(180deg,var(--gold-fill2),var(--gold3));border:0">PRO</button>`}</div></div>`; }
+function bindTop(m){ fitTop(); $$('[data-act="shop"]',m).forEach(b=>b.onclick=shop); $$('[data-act="pro"]',m).forEach(b=>b.onclick=paywall);
   $$('[data-act="mus"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); musicSheet(); });
   $$('[data-act="bell"]',m).forEach(b=>b.onclick=inboxSheet);
+  $$('[data-act="theme"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); toggleTheme(); if(route.name==='me') render(); });
   $$('[data-act="streak"]',m).forEach(b=>b.onclick=checkinSheet); }
 /* which tab owns a route (the tab bar stays mounted between screens; only its highlight changes) */
 function tabOf(n){ return TABS.some(x=>x[0]===n)?n:['level','review','writehub','code','codeunit','talk','grammar','gpoint'].includes(n)?'home':['word','builder','sectors','sector','accents'].includes(n)?'dict':['section','recipe'].includes(n)?'culture':''; }

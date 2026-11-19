@@ -58,7 +58,7 @@ SCREENS.home=m=>{
   $('#bao',m).onclick=()=>{ SFX.ok(); $('#baoq',m).textContent=quip('idle'); const b=$('#bao',m); b.classList.remove('spin'); void b.offsetWidth; b.classList.add('spin'); };
 };
 function chestCard(){ const open=S.chestDay===today();
-  return `<div class="card row" style="background:linear-gradient(120deg,rgba(179,38,30,.35),rgba(26,19,17,1) 60%)"><div style="font-size:40px;line-height:1">${open?'🧧':'🎁'}</div><div class="grow"><h3>${t('chest')}</h3><div class="sub">${open?t('chestDone'):'🔥 '+S.streak+' · '+t('streak')}</div></div>${open?'':`<button class="btn sm" id="chest">${t('chestOpen')}</button>`}</div>`; }
+  return `<div class="card row" style="background:linear-gradient(120deg,rgba(179,38,30,calc(.35*var(--tint))),var(--surface) 60%)"><div style="font-size:40px;line-height:1">${open?'🧧':'🎁'}</div><div class="grow"><h3>${t('chest')}</h3><div class="sub">${open?t('chestDone'):'🔥 '+S.streak+' · '+t('streak')}</div></div>${open?'':`<button class="btn sm" id="chest">${t('chestOpen')}</button>`}</div>`; }
 function bindChest(m){ const b=$('#chest',m); if(!b) return; b.onclick=()=>{ const base=20+Math.min(S.streak,10)*5+(Math.random()*20|0); S.chestDay=today(); const got=addCoins(base); const fz=(S.streak>0&&S.streak%7===0)?1:0; S.freezes+=fz; save();
   SFX.win(); confetti(60); sheet(`<div class="result"><div class="bigseal">福</div><h2>${t('chestGot')}</h2><div class="row" style="justify-content:center;font:800 34px Inter">${coinHTML} +${got}</div>${fz?`<div class="sub">❄ +1 ${t('freeze')}</div>`:''}
    ${S.pro?'':`<button class="btn red block" id="dbl">▶ ${t('doubleIt')}</button>`}<button class="btn block" id="ok">${t('done')}</button></div>`,s=>{
@@ -129,7 +129,7 @@ function runQuiz(m,{intro,questions,onDone,back,gate}){
       if(!(w.id in m0)) m0[w.id]=mastery(w.id); srsMark(w.id,ok); save();
       const f=document.createElement('div'); f.className='feedback rise '+(ok?'good':'bad');
       const mood=ok?(streak>=5?'cool':quick?'wow':'happy'):'oops', line=ok?(streak>=3&&streak%3===0?quip('streak'):quip('ok')):quip('bad');
-      f.innerHTML=`<div>${extra}<div class="row" style="gap:12px;align-items:center"><div class="bao-hop">${bao(mood,58)}</div><div class="grow"><h3 style="color:${ok?'#7be3b0':'#ff9a8f'}">${ok?t('correct')+(streak>=3?` 🔥${streak}`:'')+(quick?' ⚡':''):t('wrong')}</h3><div class="bubble">${esc(line)}</div></div></div>${ok||extra?'':`<div class="row"><span class="han" style="font-size:26px">${esc(w.h)}</span><span class="py">${esc(w.p)}</span><span class="grow">${mean(w)}</span></div>${storyOf(w.h)?`<div class="sub" style="color:var(--ivory)">😄 ${esc(isAr()?storyOf(w.h)[2]:storyOf(w.h)[1])}</div>`:''}${extrasHTML(w)}`}<button class="btn block ${ok?'jade':'red'}" id="nx">${t('next')}</button></div>`;
+      f.innerHTML=`<div>${extra}<div class="row" style="gap:12px;align-items:center"><div class="bao-hop">${bao(mood,58)}</div><div class="grow"><h3 style="color:${ok?'var(--p-7be3b0)':'var(--p-ff9a8f)'}">${ok?t('correct')+(streak>=3?` 🔥${streak}`:'')+(quick?' ⚡':''):t('wrong')}</h3><div class="bubble">${esc(line)}</div></div></div>${ok||extra?'':`<div class="row"><span class="han" style="font-size:26px">${esc(w.h)}</span><span class="py">${esc(w.p)}</span><span class="grow">${mean(w)}</span></div>${storyOf(w.h)?`<div class="sub" style="color:var(--ivory)">😄 ${esc(isAr()?storyOf(w.h)[2]:storyOf(w.h)[1])}</div>`:''}${extrasHTML(w)}`}<button class="btn block ${ok?'jade':'red'}" id="nx">${t('next')}</button></div>`;
       document.body.appendChild(f); bindExtras(f,w); $('#ck',m).hidden=true;
       $('#nx',f).onclick=()=>{ f.remove(); i++; i<questions.length?ask():finish(); }; }
   function gateFinish(){ const r=gate.onFinish(firstOK); const p=gate.place; let xp=0,c=0;
@@ -245,6 +245,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
      <div><div class="sub">${t('hanFont')}</div><div class="seg" id="hf">${Object.entries(HAN_FONTS).map(([k,[zh,f]])=>`<button data-v="${k}" aria-pressed="${(S.hanFont||'song')===k}" style="font-family:${f.replace(/"/g,"'")};font-size:20px">${zh} 汉字</button>`).join('')}</div></div>
      <div><div class="sub">🎶 ${t('musicVol')} <span style="opacity:.6">· ${MUS.cur?MUS.cur.name:''}</span></div><div class="seg" id="mvol">${[[0,'off'],[.35,'soft'],[.6,'normal'],[.9,'loud']].map(([v,k])=>`<button data-v="${v}" aria-pressed="${musVol()===v}">${t(k)}</button>`).join('')}</div></div>
      <div><div class="sub">${t('sound')}</div><div class="seg" id="snd"><button data-v="1" aria-pressed="${S.sound}">${t('on')}</button><button data-v="0" aria-pressed="${!S.sound}">${t('off')}</button></div></div>
+     <div><div class="sub">🌗 ${t('themeT')}</div><div class="seg" id="thm">${[['dark','🌙 '+t('themeDark')],['light','☀️ '+t('themeLight')]].map(([v,l])=>`<button data-v="${v}" aria-pressed="${(S.theme||'dark')===v}">${l}</button>`).join('')}</div></div>
      <div><div class="sub">🗣️ ${t('vSpeed')} <span id="vst" style="opacity:.7"></span></div><div class="seg" id="vsp">${[['slow','vSlow'],['normal','vNorm'],['fast','vFast']].map(([v,k])=>`<button data-v="${v}" aria-pressed="${(S.vSpeed||'normal')===v}">${t(k)}</button>`).join('')}</div>
        <button class="btn ghost sm" id="vtest" style="margin-top:8px">🔊 ${t('vTest')}</button></div>
      <button class="btn ghost block" id="revb">复 ${t('review')} · <span class="num">${dueIds().length}</span></button>
@@ -263,6 +264,7 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
   $$('#snd button',m).forEach(b=>b.onclick=()=>{S.sound=b.dataset.v==='1';save();render();});
   $$('#vsp button',m).forEach(b=>b.onclick=()=>{ S.vSpeed=b.dataset.v; save(); $$('#vsp button',m).forEach(x=>x.setAttribute('aria-pressed',x===b)); say(VOICE_TEST); });
   $('#vtest',m).onclick=()=>{ SFX.tap(); say(VOICE_TEST); };
+  $$('#thm button',m).forEach(b=>b.onclick=()=>{ SFX.tap(); if((S.theme||'dark')!==b.dataset.v) toggleTheme(); render(); });
   voiceInfo().then(r=>{ const el=$('#vst',m); if(el) el.textContent='· '+(r.studio?t('vStudio').replace('{n}',r.clips.toLocaleString()):t('vPhone')); });
   $('#shopb',m).onclick=shop; $('#revb',m).onclick=()=>go('review');
   $('#rs',m).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();toast(t('proOn'));render();} else toast(t('restored')); };

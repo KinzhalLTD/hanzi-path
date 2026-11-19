@@ -1,6 +1,6 @@
 /* ===== Sector vocabulary 行业词汇 + Chinese accents 方言 ===== */
 const SECTOR_EXT=__SECEXT__;
-const SEC_LV={1:{zh:'基础',ar:'أساسي',en:'Core',c:'#7fbf8e'},2:{zh:'专业',ar:'مهني',en:'Professional',c:'#e2b75a'},3:{zh:'高级',ar:'متقدّم',en:'Advanced',c:'#e07a6a'}};
+const SEC_LV={1:{zh:'基础',ar:'أساسي',en:'Core',c:'var(--lv1)'},2:{zh:'专业',ar:'مهني',en:'Professional',c:'var(--lv2)'},3:{zh:'高级',ar:'متقدّم',en:'Advanced',c:'var(--lv3)'}};
 const SEC_META={};
 // term index -> id: the first 1000 terms of a sector keep the original range; later terms use a wider range (no collisions)
 const secId=(si,j)=>j<1000?95000+si*1000+j:300000+si*10000+j;
@@ -27,13 +27,13 @@ const secLearned=s=>s._w.filter(w=>S.srs[w.id]).length;
 function speakIn(text,lang){ return say(text,{lang,rate:lang.startsWith('zh')?.8:.9}); }
 const ACC_LANG={yue:'zh-HK',tw:'zh-TW'};
 if(!document.getElementById('secCSS')) document.head.insertAdjacentHTML('beforeend',`<style id="secCSS">
-.secbar{height:4px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:6px}.secbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
+.secbar{height:4px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:6px}.secbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold-fill2))}
 .sstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.sstats div{background:rgba(255,255,255,.04);border:1px solid rgba(226,183,90,.18);border-radius:14px;padding:10px;text-align:center}.sstats b{display:block;font-size:20px;color:var(--gold2)}
 .ttabs{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;scrollbar-width:none}.ttabs::-webkit-scrollbar{display:none}
 .ttab{flex:0 0 auto;min-width:118px;text-align:start;border:1px solid rgba(226,183,90,.22);background:rgba(255,255,255,.03);color:var(--ivory);border-radius:14px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}
 .ttab .tz{font-family:var(--hanfont,'Noto Serif SC'),serif;font-size:17px;color:var(--gold2)}.ttab small{opacity:.7;font-size:11.5px}
 .ttab.on{background:linear-gradient(180deg,rgba(226,183,90,.25),rgba(226,183,90,.08));border-color:var(--gold2)}
-.lvf{display:flex;gap:6px;flex-wrap:wrap}.lvf button{border:1px solid rgba(255,255,255,.14);background:transparent;color:var(--ivory);border-radius:999px;padding:5px 12px;font-size:13px}.lvf button.on{background:var(--gold2);color:#2a1a07;border-color:var(--gold2)}
+.lvf{display:flex;gap:6px;flex-wrap:wrap}.lvf button{border:1px solid rgba(255,255,255,.14);background:transparent;color:var(--ivory);border-radius:999px;padding:5px 12px;font-size:13px}.lvf button.on{background:var(--gold-fill2);color:#2a1a07;border-color:var(--gold2)}
 .lvb{font-size:10.5px;border-radius:6px;padding:1px 6px;border:1px solid currentColor;white-space:nowrap}
 .ssearch{width:100%;box-sizing:border-box;background:rgba(255,255,255,.05);border:1px solid rgba(226,183,90,.25);color:var(--ivory);border-radius:12px;padding:10px 12px;font-size:15px}
 .seclist li .lvb{margin-inline-start:6px}.seclist li.done .han{color:var(--gold2)}

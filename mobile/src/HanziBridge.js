@@ -2,10 +2,11 @@
 // Handles: Sign in with Apple / Google (Firebase Auth), cloud sync (Firestore), account deletion,
 // in-app purchases (RevenueCat), ads (AdMob + consent), local notifications, speech, haptics, sharing and analytics events.
 // Messages arrive from the web app as JSON: {type, id?, ...payload}; replies go back via window.__fromNative({id, ...}).
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Share, Platform, Linking } from 'react-native';
 import { WebView } from 'react-native-webview';
 import * as Speech from 'expo-speech';
+import { setStatusBarStyle } from 'expo-status-bar';
 import { voiceClip, voiceInfo, speakNative } from './voice';
 import * as Haptics from 'expo-haptics';
 import * as Notifications from 'expo-notifications';
@@ -29,6 +30,8 @@ const dirOf = (u) => u.slice(0, u.lastIndexOf('/') + 1);
 
 export default function HanziBridge({ uri, onReady }) {
   const web = useRef(null);
+  // theme chosen in the web app ('dark' | 'light'): status-bar icons and the colour behind the web view follow it
+  const [light, setLight] = useState(false);
   const reply = (id, data) => web.current?.injectJavaScript(`window.__fromNative(${JSON.stringify({ id, ...data })});true;`);
   const push = (data) => web.current?.injectJavaScript(`window.__fromNative&&window.__fromNative(${JSON.stringify(data)});true;`);
   // last known purchase state, re-sent whenever the page (re)loads
@@ -110,6 +113,7 @@ export default function HanziBridge({ uri, onReady }) {
       return { ok: true };
     },
     // ---------- device ----------
+    theme: async ({ theme }) => { const l = theme === 'light'; setLight(l); setStatusBarStyle(l ? 'dark' : 'light', true); },
     speak: (p) => speakNative(p),
     voice: (p) => voiceClip(p),
     voiceInfo: async () => voiceInfo(),
@@ -162,6 +166,6 @@ export default function HanziBridge({ uri, onReady }) {
       // native feel: no link-preview pop-ups on long press, no "‹ › Done" bar above the keyboard, and the app can
       // focus the search field itself (dictionary search opens the keyboard directly)
       allowsLinkPreview={false} hideKeyboardAccessoryView keyboardDisplayRequiresUserAction={false}
-      style={{ flex: 1, backgroundColor: '#0d0908' }} />
+      style={{ flex: 1, backgroundColor: light ? '#f3eadb' : '#0d0908' }} />
   );
 }

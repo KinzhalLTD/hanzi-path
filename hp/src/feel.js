@@ -22,3 +22,5 @@ function screenEnter(back) {
   sc.classList.remove('enter', 'enter-back'); sc.classList.add(back ? 'enter-back' : 'enter');
   setTimeout(() => sc.classList.remove('enter', 'enter-back'), 520);
 }
+Object.assign(T.ar,{themeT:'المظهر',themeDark:'داكن',themeLight:'فاتح'});
+Object.assign(T.en,{themeT:'Appearance',themeDark:'Dark',themeLight:'Light'});
