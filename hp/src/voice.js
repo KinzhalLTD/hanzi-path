@@ -10,12 +10,12 @@ function cyrb53(str,seed=0){ let h1=0xdeadbeef^seed, h2=0x41c6ce57^seed;
   h1=Math.imul(h1^(h1>>>16),2246822507); h1^=Math.imul(h2^(h2>>>13),3266489909);
   h2=Math.imul(h2^(h2>>>16),2246822507); h2^=Math.imul(h1^(h1>>>13),3266489909);
   return 4294967296*(2097151&h2)+(h1>>>0); }
-const voiceKey=(v,t)=>cyrb53(v+'|'+String(t).replace(/\s+/g,'')).toString(36);
+const voiceKey=(v,t,py)=>cyrb53(v+'|'+String(t).replace(/[\s·・]+/g,'')+(py?'#'+py:'')).toString(36);   // py: a reading-specific recording (车 'ju1')
 const VOICE={cache:new Map(), cur:null, gen:0, studio:null, clips:0, web:{}};
 const vSpeedMul=()=>S.vSpeed==='slow'?0.72:S.vSpeed==='fast'?1.15:1;
 async function voiceInfo(){ if(!RN) return {studio:false,clips:0}; if(VOICE.studio!==null) return {studio:VOICE.studio,clips:VOICE.clips};
   const r=await native('voiceInfo',{}); VOICE.studio=!!(r&&r.ok&&r.clips>0); VOICE.clips=(r&&r.clips)||0; return {studio:VOICE.studio,clips:VOICE.clips}; }
-async function studioClip(v,text){ if(!RN||VOICE.studio===false) return null; const k=voiceKey(v,text);
+async function studioClip(v,text,py){ if(!RN||VOICE.studio===false) return null; const k=voiceKey(v,text,py);
   if(VOICE.cache.has(k)){ const u=VOICE.cache.get(k); VOICE.cache.delete(k); VOICE.cache.set(k,u); return u; }
   const r=await native('voice',{k}); if(!r||r.unsupported){ VOICE.studio=false; return null; } if(!r.b64) return null;
   const bin=atob(r.b64), u8=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i);
@@ -40,13 +40,27 @@ function stopVoice(){ VOICE.gen++; if(VOICE.cur){ try{ VOICE.cur.pause(); }catch
 function say(text,o={}){ if(!S.sound||!text) return Promise.resolve(); text=String(text).trim(); if(!text) return Promise.resolve();
   const v=o.voice||'f', lang=o.lang||'zh-CN', rate=o.rate||.8, g=++VOICE.gen;
   if(VOICE.cur){ try{ VOICE.cur.pause(); }catch(e){} VOICE.cur=null; }
-  return (async()=>{ const url=lang.startsWith('zh')?await studioClip(v,text):null; if(g!==VOICE.gen) return;
+  return (async()=>{ const url=lang==='zh-CN'?await studioClip(v,text,o.py):null;   // studio = Mandarin; regional voices (zh-HK, zh-TW) stay on the phone if(g!==VOICE.gen) return;
+    const el=lang.startsWith('zh')?sayTarget(text,o.hl):null; let unhl=()=>{};
     if(url){ const a=new Audio(url); a.preservesPitch=true; a.webkitPreservesPitch=true; a.playbackRate=Math.max(.5,Math.min(1.5,vSpeedMul()*rate/.8));
-      VOICE.cur=a; a.onloadedmetadata=()=>{ try{ musDuck((a.duration||2)/a.playbackRate+.4); }catch(e){} };
+      VOICE.cur=a; a.onloadedmetadata=()=>{ const s=(a.duration||2)/a.playbackRate; try{ musDuck(s+.4); }catch(e){} unhl(); unhl=karaoke(el,s); };
       await new Promise(res=>{ a.onended=a.onerror=a.onpause=()=>res(); a.play().catch(()=>res()); });
-      if(VOICE.cur===a) VOICE.cur=null; return; }
-    try{ musDuck((1.4+text.length*.35)*.8/rate/vSpeedMul()); }catch(e){}
-    await ttsSay(text,{voice:v,rate,lang}); })(); }
+      unhl(); if(VOICE.cur===a) VOICE.cur=null; return; }
+    const est=(.35+[...hanOf(text)].length*.27)*.8/rate/vSpeedMul();
+    try{ musDuck(est+1); }catch(e){} unhl=karaoke(el,est);
+    await ttsSay(text,{voice:v,rate,lang}); unhl(); })(); }
+/* karaoke: while a line plays, light up its words in the sentence on screen (found automatically: the visible token
+   group whose characters spell the line; o.hl can name the element). Word timing = clip length split by character count. */
+const hanOf=s=>[...String(s)].filter(c=>/[\u3400-\u9fff〇]/.test(c)).join('');
+function sayTarget(text,hl){ if(hl) return hl; const want=hanOf(text); if([...want].length<3) return null; let best=null;
+  const groups=new Set(); document.querySelectorAll('.tok').forEach(t=>{ if(t.parentElement) groups.add(t.parentElement); });
+  groups.forEach(g=>{ if(!g.isConnected||!g.getClientRects().length) return; if(hanOf([...g.querySelectorAll(':scope > .tok')].map(t=>(t.querySelector('.han')||t).textContent).join(''))===want) best=g; });
+  return best; }
+function karaoke(el,secs){ const toks=el?[...el.querySelectorAll(':scope > .tok')]:[]; if(!toks.length||!(secs>0)) return ()=>{};
+  const w=toks.map(t=>Math.max(.4,[...hanOf((t.querySelector('.han')||t).textContent)].length)); const tot=w.reduce((a,b)=>a+b,0); let acc=0;
+  const off=()=>toks.forEach(x=>x.classList.remove('say-on'));
+  const tm=toks.map((t,i)=>{ const at=acc/tot*secs*1000; acc+=w[i]; return setTimeout(()=>{ off(); t.classList.add('say-on'); },at); });
+  tm.push(setTimeout(off,secs*1000+250)); return ()=>{ tm.forEach(clearTimeout); off(); }; }
 /* play several lines in order, alternating voices: [[text,'m'],[text,'f'],…]; returns a stop function */
 function sayAll(lines,gap=350){ let stop=false; (async()=>{ for(const [t,v] of lines){ if(stop) return; await say(t,{voice:v}); if(stop) return; await new Promise(r=>setTimeout(r,gap)); } })(); return ()=>{ stop=true; stopVoice(); }; }
 const VOICE_TEST='你好！我们一起学习中文吧。';

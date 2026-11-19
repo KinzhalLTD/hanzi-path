@@ -558,3 +558,7 @@ html[dir="rtl"] .grpat{justify-content:flex-end}
 .grpair:has(.grx) .han{text-decoration:line-through;text-decoration-color:rgba(255,110,95,.7);opacity:.8}
 .grlvl{display:flex;align-items:center;gap:12px;width:100%;cursor:pointer;font:inherit;color:inherit}
 .grlvl .tb{font:700 30px 'Ma Shan Zheng',serif;color:var(--gold2);line-height:1}
+/* voice karaoke (voice.js): the word being spoken */
+.tok.say-on .han{color:var(--gold2)!important;text-shadow:0 0 14px rgba(232,182,92,.45)}
+.tok.say-on .py{color:var(--gold2)!important}
+.tok .han,.tok .py{transition:color .12s,text-shadow .12s}

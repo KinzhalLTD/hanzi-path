@@ -31,12 +31,17 @@ def b36(n):
     while True:
         n, r = divmod(n, 36); o = d[r] + o
         if not n: return o
-def norm(t): return re.sub(r'\s+', '', t)
-def voice_key(v, t): return b36(cyrb53(v + '|' + norm(t)))
+def norm(t): return re.sub(r'[\s·・]+', '', t)
+def voice_key(v, t, py=None): return b36(cyrb53(v + '|' + norm(t) + ('#' + py if py else '')))
 
 HAN = re.compile(r'[㐀-鿿]')
 OK = re.compile(r'^[㐀-鿿　-〿！-～0-9％%·…—“”‘’、\s]+$')   # Chinese text with Chinese punctuation only
-def speakable(t): return bool(t) and HAN.search(t) and OK.match(t) and len(t) <= 90
+CH_OK = OK.pattern[2:-3]   # the allowed character class without brackets
+def speakable(t):   # Chinese, or a term with a short Latin part (Y型过滤器, C35混凝土), never code
+    if not t or not HAN.search(t) or len(t) > 90: return False
+    if OK.match(t): return True
+    rest = re.sub('[' + CH_OK + ']', '', t)
+    return bool(re.fullmatch(r'[A-Za-z0-9]*', rest)) and len(HAN.findall(t)) >= 2 and all(len(x) <= 4 for x in re.findall(r'[A-Za-z]+', t))
 def numbered(zh, py):
     """'xuésheng' for 学生 -> 'xue2 sheng5'; None when syllables don't line up one-to-one with characters."""
     if not py: return None
@@ -54,6 +59,7 @@ JS = r"""() => { const out = []; const add = (t, v, pk, py, src) => { if (typeof
   SECTORS.forEach(s => { add(s.zh, 'f', 'sec', '', 'sector'); s.topics.forEach(tp => { add(tp.zh, 'f', 'sec', '', 'topic'); (tp._w || []).forEach(w => { add(w.h, 'f', 'sec', w.p, 'term'); if (w.ex) add(w.ex.zh, 'f', 'sec', '', 'term-ex'); }); });
     (s.ex || []).forEach(e => add(Array.isArray(e) ? e[0] : e.zh, 'f', 'sec', '', 'sec-ex')); });
   add(typeof VOICE_TEST==='string'?VOICE_TEST:'你好！我们一起学习中文吧。', 'f', 'misc', '', 'settings');
+  try { for (const side of ['r', 'b']) for (const k in XQ_CH[side]) out.push([XQ_CH[side][k], 'f', 'misc', XQ_PY[k][side], 'xiangqi', 1]); } catch (e) {}
   try { IDIOMS.forEach(x => Array.isArray(x) ? add(x[0], 'f', 'misc', x[1], 'idiom') : add(x.h, 'f', 'misc', x.p, 'idiom')); } catch (e) {}
   // generic sweep of the remaining data tables (culture, recipes, places, stories, riddles, code units …)
   const seen = new WeakSet(); const sweep = (o, d) => { if (o == null || d > 9) return; if (typeof o === 'string') { add(o, 'f', 'misc', '', 'sweep'); return; }
@@ -66,7 +72,11 @@ async def collect(html):
     async with async_playwright() as p:
         b = await p.chromium.launch(); pg = await b.new_page(); await pg.goto('file://' + os.path.abspath(html)); await pg.wait_for_timeout(600)
         rows = await pg.evaluate(JS)
-        js_ids = await pg.evaluate("(x)=>x.map(([v,t])=>voiceKey(v,t))", [[v, t] for t, v, *_ in rows[:400]]) if await pg.evaluate("typeof voiceKey==='function'") else None
+        js_ids = await pg.evaluate("(x)=>x.map(([v,t])=>voiceKey(v,t))", [[r[1], r[0]] for r in rows[:400]]) if await pg.evaluate("typeof voiceKey==='function'") else None
+        alt = [r for r in rows if len(r) > 5][:5]
+        if alt and js_ids:
+            ja = await pg.evaluate("(x)=>x.map(([v,t,p])=>voiceKey(v,t,p))", [[r[1], r[0], r[3]] for r in alt])
+            if any(voice_key(r[1], r[0], r[3]) != j for r, j in zip(alt, ja)): sys.exit('hash mismatch for reading-specific keys')
         await b.close()
     return rows, js_ids
 
@@ -77,8 +87,13 @@ def main():
         bad = [i for i, (r, j) in enumerate(zip(rows[:400], js_ids)) if voice_key(r[1], r[0]) != j]
         if bad: sys.exit(f'hash mismatch between Python and JS for {len(bad)} rows, first: {rows[bad[0]][:2]}')
     out, seen = [], {}
-    for t, v, pk, py, src in rows:
+    for row in rows:
+        t, v, pk, py, src = row[:5]; alt = len(row) > 5
         if not speakable(t): continue
+        if alt:   # a reading-specific recording: key includes the reading, py is already numbered
+            k = voice_key(v, t, py)
+            if k not in seen: seen[k] = {'id': k, 'v': v, 't': t, 'pk': pk, 'src': src, 'py': py}; out.append(seen[k])
+            continue
         k = voice_key(v, t)
         if k in seen:
             e = seen[k]

@@ -95,6 +95,8 @@ GAME.checkers=m=>{
 };
 /* ===== Xiangqi 象棋 (you are red) ===== */
 const XQ_CH={r:{K:'帅',A:'仕',E:'相',H:'马',R:'车',C:'炮',P:'兵'},b:{K:'将',A:'士',E:'象',H:'马',R:'车',C:'炮',P:'卒'}};
+/* chess readings (车 is jū and 将 is jiàng on the board): the studio voice has a recording per reading */
+const XQ_PY={K:{r:'shuai4',b:'jiang4'},A:{r:'shi4',b:'shi4'},E:{r:'xiang4',b:'xiang4'},H:{r:'ma3',b:'ma3'},R:{r:'ju1',b:'ju1'},C:{r:'pao4',b:'pao4'},P:{r:'bing1',b:'zu2'}};
 const XQ_INFO={K:{p:{r:'shuài',b:'jiàng'},ar:'القائد العام',en:'general'},A:{p:{r:'shì',b:'shì'},ar:'المستشار',en:'advisor'},E:{p:{r:'xiàng',b:'xiàng'},ar:'الوزير (الفيل)',en:'elephant / minister'},
   H:{p:{r:'mǎ',b:'mǎ'},ar:'الحصان',en:'horse'},R:{p:{r:'jū',b:'jū'},ar:'العربة الحربية',en:'chariot'},C:{p:{r:'pào',b:'pào'},ar:'المدفع',en:'cannon'},P:{p:{r:'bīng',b:'zú'},ar:'الجندي',en:'soldier'}};
 const XQ_VAL={K:10000,R:600,C:300,H:280,E:120,A:120,P:40};
@@ -152,8 +154,8 @@ GAME.xiangqi=m=>{
     bd.innerHTML=h; }
   bd.onclick=e=>{ if(busy) return; const el=e.target.closest('[data-r]'); if(!el) return; const r=+el.dataset.r, c=+el.dataset.c;
     if(el.dataset.m){ const mv=legal.find(x=>x[2]===r&&x[3]===c); if(mv) play(mv); return; }
-    const p=b[r][c]; if(p&&p[0]==='r'){ sel=[r,c]; legal=xqLegal(b,'r').filter(x=>x[0]===r&&x[1]===c); SFX.tap(); speak(XQ_CH.r[p[1]]); info(p); draw(); }
-    else if(p){ info(p); speak(XQ_CH.b[p[1]]); } };
+    const p=b[r][c]; if(p&&p[0]==='r'){ sel=[r,c]; legal=xqLegal(b,'r').filter(x=>x[0]===r&&x[1]===c); SFX.tap(); speak(XQ_CH.r[p[1]],{py:XQ_PY[p[1]].r}); info(p); draw(); }
+    else if(p){ info(p); speak(XQ_CH.b[p[1]],{py:XQ_PY[p[1]].b}); } };
   function status(){ const chk=xqInCheck(b,'r'); $('#st',m).innerHTML=busy?t('aiTurn'):(chk?`<b style="color:var(--bad)">${t('check_')}</b> · `:'')+(busy?'':t('yourTurn')); }
   function play(mv){ hist.push(b); const cap=b[mv[2]][mv[3]]; b=xqApply(b,mv); last=mv; sel=null; legal=[]; plies++; if(cap){ SFX.ok(); floatText(XQ_CH[cap[0]][cap[1]],bd); } else SFX.tap(); draw();
     if(!xqLegal(b,'b').length) return over(true); busy=true; status();
