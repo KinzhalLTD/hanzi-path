@@ -1,0 +1,107 @@
+# Cybersecurity conversations (format in hanzi-path content/talk_eng.tsv: @domain, #scene, then 5 turns of P/A/B/X)
+@sec|网络安全|الأمن السيبراني|Cybersecurity|cy|🛡️
+#phish|报告钓鱼邮件|الإبلاغ عن رسالة تصيّد|Reporting a phishing email|小王|وانغ مهندس الأمن|Security engineer Wang|موظف|Employee|اتصلت بمهندس الأمن وانغ لأن رسالة مشبوهة وصلتك.|You call security engineer Wang about a suspicious email.|3
+P|你好，我是安全部的小王。有什么问题？|Nǐ hǎo, wǒ shì ānquánbù de Xiǎo Wáng. Yǒu shénme wèntí?|مرحبًا، أنا وانغ من قسم الأمن. ما المشكلة؟|Hi, I’m Wang from security. What’s the problem?
+A|我收到一封邮件，说我的账号要过期了，让我点链接。|Wǒ shōudào yì fēng yóujiàn, shuō wǒ de zhànghào yào guòqī le, ràng wǒ diǎn liànjiē.|وصلتني رسالة تقول إن حسابي سينتهي، وتطلب الضغط على رابط.|I got an email saying my account is about to expire and asking me to click a link.
+B|我的电脑有问题。|Wǒ de diànnǎo yǒu wèntí.|حاسوبي فيه مشكلة.|My computer has a problem.|كن محددًا: صف الرسالة.|Be specific: describe the email.
+X|没什么，我打错了。|Méi shénme, wǒ dǎ cuò le.|لا شيء، اتصلت خطأً.|Nothing, wrong number.|الإبلاغ عن الرسائل المشبوهة واجب.|Reporting suspicious emails matters.
+P|你点链接了吗？|Nǐ diǎn liànjiē le ma?|هل ضغطت الرابط؟|Did you click the link?
+A|没有点，我觉得发件人的地址很奇怪。|Méiyǒu diǎn, wǒ juéde fājiànrén de dìzhǐ hěn qíguài.|لم أضغطه، شعرت أن عنوان المرسل غريب.|No, I thought the sender’s address looked strange.
+B|好像没有吧。|Hǎoxiàng méiyǒu ba.|لا أظن.|I don’t think so.|أجب بوضوح؛ الدقة مهمة للتحقيق.|Answer clearly; precision matters for the investigation.
+X|点了，可是没关系吧？|Diǎn le, kěshì méi guānxi ba?|ضغطته، لكن لا مشكلة، أليس كذلك؟|I did, but it’s fine, right?|إن ضغطت فقل ذلك فورًا ولا تقلّل من الأمر.|If you clicked, say so at once and don’t downplay it.
+P|做得很好。能把邮件转发给我吗？|Zuò de hěn hǎo. Néng bǎ yóujiàn zhuǎnfā gěi wǒ ma?|أحسنت. هل يمكنك إعادة توجيه الرسالة إليّ؟|Well done. Can you forward me the email?
+A|可以，我用报告按钮发给你，然后删掉原邮件。|Kěyǐ, wǒ yòng bàogào ànniǔ fā gěi nǐ, ránhòu shān diào yuán yóujiàn.|نعم، سأرسلها بزر الإبلاغ ثم أحذف الأصل.|Sure, I’ll send it with the report button and then delete the original.
+B|我直接删了。|Wǒ zhíjiē shān le.|حذفتها مباشرة.|I just deleted it.|فريق الأمن يحتاج الرسالة لحجب الحملة.|Security needs the email to block the campaign.
+X|我转发给全公司提醒大家。|Wǒ zhuǎnfā gěi quán gōngsī tíxǐng dàjiā.|سأرسلها لكل الشركة لتنبيههم.|I’ll forward it to the whole company as a warning.|قد يضغط غيرك الرابط؛ دع فريق الأمن يتولى التنبيه.|Someone else might click it; let security send the warning.
+P|收到了。这是一个钓鱼网站，专门偷密码。|Shōudào le. Zhè shì yí ge diàoyú wǎngzhàn, zhuānmén tōu mìmǎ.|وصلت. هذا موقع تصيّد مخصص لسرقة كلمات المرور.|Got it. It’s a phishing site built to steal passwords.
+A|还好我没输入密码。需要我改密码吗？|Háihǎo wǒ méi shūrù mìmǎ. Xūyào wǒ gǎi mìmǎ ma?|من حسن الحظ أنني لم أُدخل كلمة المرور. هل أغيّرها؟|Good thing I didn’t enter my password. Should I change it?
+B|太可怕了！|Tài kěpà le!|هذا مخيف جدًا!|That’s terrifying!|الهدوء والخطوة التالية أهم من القلق.|Calm and a next step beat alarm.
+X|那我用同一个密码也没事。|Nà wǒ yòng tóng yí ge mìmǎ yě méishì.|إذن لا بأس أن أستخدم كلمة المرور نفسها في كل مكان.|Then it’s fine to use the same password everywhere.|إعادة استخدام كلمة المرور خطر كبير.|Reusing passwords is a big risk.
+P|不用，不过建议你开启多因素认证。|Búyòng, búguò jiànyì nǐ kāiqǐ duō yīnsù rènzhèng.|لا داعي، لكن أنصحك بتفعيل المصادقة متعددة العوامل.|No need, but I recommend turning on multi-factor authentication.
+A|好的，我今天就开。谢谢你！|Hǎo de, wǒ jīntiān jiù kāi. Xièxie nǐ!|حسنًا، سأفعّلها اليوم. شكرًا لك!|OK, I’ll turn it on today. Thank you!
+B|以后再说吧。|Yǐhòu zài shuō ba.|لاحقًا.|Maybe later.|التأجيل يترك الحساب مكشوفًا.|Putting it off leaves the account exposed.
+X|太麻烦了，我不想开。|Tài máfan le, wǒ bù xiǎng kāi.|مزعجة جدًا، لا أريد تفعيلها.|Too much hassle; I don’t want it.|المصادقة متعددة العوامل توقف معظم سرقات الحسابات.|MFA stops most account takeovers.
+#incident|勒索软件应急会议|اجتماع طارئ لحادثة فدية|Ransomware incident call|陈经理|المدير تشن، قائد الاستجابة|Incident lead Chen|محلل الأمن|Security analyst|اجتماع طارئ بعد اكتشاف برنامج فدية على خوادم الشركة.|An emergency call after ransomware was found on company servers.|4
+P|大家好，现在开始应急会议。先说一下目前的情况。|Dàjiā hǎo, xiànzài kāishǐ yìngjí huìyì. Xiān shuō yíxià mùqián de qíngkuàng.|مرحبًا جميعًا، نبدأ الاجتماع الطارئ. لنبدأ بالوضع الحالي.|Hello all, starting the incident call. First, the current situation.
+A|早上六点发现两台文件服务器被加密，勒索信要求比特币。|Zǎoshang liù diǎn fāxiàn liǎng tái wénjiàn fúwùqì bèi jiāmì, lèsuǒxìn yāoqiú bǐtèbì.|في السادسة صباحًا اكتشفنا تشفير خادمَي ملفات، ورسالة الفدية تطلب بيتكوين.|At 6 a.m. we found two file servers encrypted; the ransom note demands bitcoin.
+B|情况很糟糕，很多东西都坏了。|Qíngkuàng hěn zāogāo, hěn duō dōngxi dōu huài le.|الوضع سيئ جدًا، أشياء كثيرة تعطلت.|It’s really bad; lots of things are broken.|قدّم وقائع محددة: ماذا ومتى وأين.|Give specific facts: what, when, where.
+X|我们付钱吧，最快。|Wǒmen fù qián ba, zuì kuài.|لندفع، هذا الأسرع.|Let’s pay; it’s quickest.|الدفع لا يضمن الاستعادة وقراره ليس لك.|Paying guarantees nothing and isn’t your call.
+P|有没有扩散到其他系统？|Yǒu méiyǒu kuòsàn dào qítā xìtǒng?|هل انتشر إلى أنظمة أخرى؟|Has it spread to other systems?
+A|我们已经把这两台服务器断网隔离了，正在检查其他服务器。|Wǒmen yǐjīng bǎ zhè liǎng tái fúwùqì duàn wǎng gélí le, zhèngzài jiǎnchá qítā fúwùqì.|عزلنا الخادمين عن الشبكة، ونفحص بقية الخوادم.|We’ve isolated those two servers and are checking the others.
+B|应该没有吧。|Yīnggāi méiyǒu ba.|غالبًا لا.|Probably not.|التخمين خطير في الحادثة؛ قل ما تم فحصه.|Guessing is dangerous in an incident; say what was checked.
+X|我们把所有服务器都关机了。|Wǒmen bǎ suǒyǒu fúwùqì dōu guānjī le.|أطفأنا كل الخوادم.|We shut down every server.|الإطفاء يمحو أدلة الذاكرة ويوقف الأعمال بلا داعٍ.|Shutting down wipes memory evidence and halts business needlessly.
+P|很好。知道攻击者是怎么进来的吗？|Hěn hǎo. Zhīdào gōngjīzhě shì zěnme jìnlái de ma?|جيد. هل نعرف كيف دخل المهاجم؟|Good. Do we know how the attacker got in?
+A|日志显示有人通过一个没有多因素认证的远程桌面账号登录。|Rìzhì xiǎnshì yǒu rén tōngguò yí ge méiyǒu duō yīnsù rènzhèng de yuǎnchéng zhuōmiàn zhànghào dēnglù.|السجلات تُظهر دخولًا عبر حساب سطح مكتب بعيد بلا مصادقة متعددة العوامل.|The logs show a login through a remote desktop account without MFA.
+B|可能是黑客吧。|Kěnéng shì hēikè ba.|ربما هاكر.|Maybe a hacker.|هذا لا يضيف معلومة؛ اذكر الدليل.|That adds nothing; cite the evidence.
+X|这个不重要，先恢复吧。|Zhège bú zhòngyào, xiān huīfù ba.|ليس مهمًا، لنستعد أولًا.|That doesn’t matter; let’s restore first.|إن لم تُسد الثغرة سيعود المهاجم.|If the hole isn’t closed the attacker comes back.
+P|那个账号处理了吗？|Nàge zhànghào chǔlǐ le ma?|هل عولج ذلك الحساب؟|Has that account been dealt with?
+A|已经禁用了，也重置了所有管理员的密码。|Yǐjīng jìnyòng le, yě chóngzhì le suǒyǒu guǎnlǐyuán de mìmǎ.|عُطّل، وأعدنا تعيين كلمات مرور كل المديرين.|It’s disabled, and we’ve reset all admin passwords.
+B|我明天再处理。|Wǒ míngtiān zài chǔlǐ.|سأعالجه غدًا.|I’ll handle it tomorrow.|في الحادثة كل ساعة مهمة.|In an incident every hour counts.
+X|我把密码发到群里了。|Wǒ bǎ mìmǎ fā dào qún lǐ le.|أرسلت كلمات المرور في المجموعة.|I posted the passwords in the group chat.|لا تشارك كلمات المرور في الدردشة أبدًا.|Never share passwords in chat.
+P|好。备份情况怎么样？什么时候能恢复？|Hǎo. Bèifèn qíngkuàng zěnmeyàng? Shénme shíhou néng huīfù?|جيد. ما وضع النسخ الاحتياطية؟ متى نستعيد؟|Good. How are the backups? When can we restore?
+A|离线备份是完好的，预计今天下午可以恢复，恢复后我们会继续监控。|Líxiàn bèifèn shì wánhǎo de, yùjì jīntiān xiàwǔ kěyǐ huīfù, huīfù hòu wǒmen huì jìxù jiānkòng.|النسخ غير المتصلة سليمة، ونتوقع الاستعادة عصر اليوم، ثم نواصل المراقبة.|The offline backups are intact; we expect to restore this afternoon and will keep monitoring.
+B|应该很快。|Yīnggāi hěn kuài.|يُفترض قريبًا.|Should be soon.|الإدارة تحتاج تقديرًا واضحًا.|Management needs a clear estimate.
+X|备份我没检查过。|Bèifèn wǒ méi jiǎnchá guo.|لم أفحص النسخ الاحتياطية.|I never checked the backups.|اختبار الاستعادة جزء من التحضير.|Testing restores is part of preparation.
+#audit|合规审计面谈|مقابلة تدقيق الامتثال|Compliance audit interview|刘老师|المدقّقة ليو|Auditor Liu|مسؤول أمن المعلومات|Information security officer|المدققة ليو تراجع ضوابط الأمن في شركتك.|Auditor Liu is reviewing your company’s security controls.|4
+P|您好，今天我想了解一下你们的访问控制。|Nín hǎo, jīntiān wǒ xiǎng liǎojiě yíxià nǐmen de fǎngwèn kòngzhì.|مرحبًا، أود اليوم فهم ضوابط الوصول لديكم.|Hello, today I’d like to understand your access controls.
+A|好的。我们按角色分配权限，每个季度审查一次。|Hǎo de. Wǒmen àn juésè fēnpèi quánxiàn, měi ge jìdù shěnchá yí cì.|حسنًا. نوزّع الصلاحيات حسب الأدوار ونراجعها كل ربع سنة.|Certainly. We assign permissions by role and review them every quarter.
+B|我们的权限都没问题。|Wǒmen de quánxiàn dōu méi wèntí.|صلاحياتنا كلها سليمة.|Our permissions are all fine.|المدقق يحتاج وصف الضابط لا الطمأنة.|The auditor needs the control described, not reassurance.
+X|这个您不用看。|Zhège nín búyòng kàn.|لا داعي أن تنظري في هذا.|You don’t need to look at that.|التهرب من المدقق علامة سيئة.|Dodging the auditor is a bad sign.
+P|能给我看一下上次审查的记录吗？|Néng gěi wǒ kàn yíxià shàng cì shěnchá de jìlù ma?|هل يمكنني رؤية سجل المراجعة الأخيرة؟|Could I see the record of the last review?
+A|当然，这是九月份的审查报告，有部门经理的签字。|Dāngrán, zhè shì jiǔ yuèfèn de shěnchá bàogào, yǒu bùmén jīnglǐ de qiānzì.|بالطبع، هذا تقرير مراجعة سبتمبر وعليه توقيعات مديري الأقسام.|Of course, here is September’s review report, signed by the department managers.
+B|我找一下，可能没有。|Wǒ zhǎo yíxià, kěnéng méiyǒu.|سأبحث، ربما غير موجود.|I’ll look; maybe there isn’t one.|ضابط بلا دليل يُعد غير مطبق.|A control without evidence counts as not implemented.
+X|我们口头审查的。|Wǒmen kǒutóu shěnchá de.|نراجع شفهيًا.|We review verbally.|التدقيق يتطلب دليلًا موثقًا.|Audits require documented evidence.
+P|员工离职以后，账号多久会禁用？|Yuángōng lízhí yǐhòu, zhànghào duōjiǔ huì jìnyòng?|بعد مغادرة الموظف، متى يُعطَّل حسابه؟|When an employee leaves, how soon is their account disabled?
+A|人事系统会自动通知，我们在离职当天禁用账号。|Rénshì xìtǒng huì zìdòng tōngzhī, wǒmen zài lízhí dàngtiān jìnyòng zhànghào.|نظام الموارد البشرية يُبلغ تلقائيًا، ونعطّل الحساب يوم المغادرة.|The HR system notifies us automatically and we disable the account the same day.
+B|一般很快。|Yìbān hěn kuài.|عادة بسرعة.|Usually quickly.|حدد المدة والآلية.|State the timeframe and the mechanism.
+X|有时候一直不禁用。|Yǒu shíhou yìzhí bú jìnyòng.|أحيانًا لا يُعطَّل أبدًا.|Sometimes it never gets disabled.|الحسابات اليتيمة ثغرة شائعة يجب علاجها.|Orphaned accounts are a common gap to fix.
+P|我发现有两个离职员工的账号还是启用的。|Wǒ fāxiàn yǒu liǎng ge lízhí yuángōng de zhànghào háishi qǐyòng de.|وجدت حسابين لموظفين غادروا ما زالا مفعّلين.|I found two leavers’ accounts that are still enabled.
+A|谢谢指出。我们今天就禁用，并且查一下流程哪里出了问题。|Xièxie zhǐchū. Wǒmen jīntiān jiù jìnyòng, bìngqiě chá yíxià liúchéng nǎlǐ chū le wèntí.|شكرًا للتنبيه. سنعطّلهما اليوم ونفحص أين أخفقت العملية.|Thanks for pointing it out. We’ll disable them today and find where the process failed.
+B|这不是我的责任。|Zhè bú shì wǒ de zérèn.|هذه ليست مسؤوليتي.|That’s not my responsibility.|تقبّل الملاحظة وعالج السبب الجذري.|Accept the finding and fix the root cause.
+X|这两个账号不重要。|Zhè liǎng ge zhànghào bú zhòngyào.|هذان الحسابان غير مهمين.|Those two accounts don’t matter.|أي حساب مفعّل بلا مالك هدف للمهاجمين.|Any live account without an owner is a target.
+P|好的，我会把它写进审计发现，给你们一个整改期限。|Hǎo de, wǒ huì bǎ tā xiě jìn shěnjì fāxiàn, gěi nǐmen yí ge zhěnggǎi qīxiàn.|حسنًا، سأدرجها في نتائج التدقيق وأمنحكم مهلة للمعالجة.|OK, I’ll record it as an audit finding and give you a remediation deadline.
+A|明白，我们会在期限前提交整改证据。|Míngbai, wǒmen huì zài qīxiàn qián tíjiāo zhěnggǎi zhèngjù.|مفهوم، سنقدّم دليل المعالجة قبل الموعد.|Understood; we’ll submit evidence of the fix before the deadline.
+B|能不能不写？|Néng bu néng bù xiě?|هل يمكن ألا تكتبيها؟|Could you leave it out?|طلب إخفاء نتيجة غير مهني.|Asking to hide a finding is unprofessional.
+X|期限越长越好。|Qīxiàn yuè cháng yuè hǎo.|كلما طالت المهلة كان أفضل.|The longer the deadline the better.|الهدف إغلاق الثغرة لا كسب الوقت.|The goal is closing the gap, not buying time.
+#pentest|确定渗透测试范围|تحديد نطاق اختبار الاختراق|Scoping a penetration test|赵总|السيد تشاو، مدير تقنية المعلومات|IT director Zhao|مستشار الأمن|Security consultant|تلتقي مدير تقنية المعلومات تشاو لتحديد نطاق اختبار اختراق.|You meet IT director Zhao to scope a penetration test.|4
+P|我们想做一次渗透测试，你们一般怎么开始？|Wǒmen xiǎng zuò yí cì shèntòu cèshì, nǐmen yìbān zěnme kāishǐ?|نريد إجراء اختبار اختراق، كيف تبدؤون عادة؟|We’d like a penetration test. How do you usually start?
+A|首先要确定测试范围和目标，然后签授权书。|Shǒuxiān yào quèdìng cèshì fànwéi hé mùbiāo, ránhòu qiān shòuquánshū.|أولًا نحدد النطاق والأهداف، ثم نوقّع خطاب التفويض.|First we agree on the scope and goals, then sign an authorisation letter.
+B|我们马上就开始测。|Wǒmen mǎshàng jiù kāishǐ cè.|نبدأ الاختبار فورًا.|We’ll start testing right away.|الاختبار بلا تفويض مكتوب غير قانوني.|Testing without written authorisation is illegal.
+X|范围不重要，我们测所有东西。|Fànwéi bú zhòngyào, wǒmen cè suǒyǒu dōngxi.|النطاق غير مهم، سنختبر كل شيء.|Scope doesn’t matter; we’ll test everything.|نطاق غير محدد قد يمس أنظمة أطراف أخرى.|An undefined scope may hit third-party systems.
+P|我们最担心的是网上商城和支付接口。|Wǒmen zuì dānxīn de shì wǎngshàng shāngchéng hé zhīfù jiēkǒu.|أكثر ما يقلقنا المتجر الإلكتروني وواجهة الدفع.|Our biggest worry is the online store and the payment API.
+A|好的，那我们把这两个系统放在范围里，支付服务商的系统要先得到他们的同意。|Hǎo de, nà wǒmen bǎ zhè liǎng ge xìtǒng fàng zài fànwéi lǐ, zhīfù fúwùshāng de xìtǒng yào xiān dédào tāmen de tóngyì.|حسنًا، ندرج هذين النظامين، وأنظمة مزوّد الدفع تحتاج موافقته أولًا.|OK, those two go in scope; the payment provider’s systems need their consent first.
+B|支付接口我们随便测。|Zhīfù jiēkǒu wǒmen suíbiàn cè.|سنختبر واجهة الدفع كما نشاء.|We’ll test the payment API however we like.|أنظمة الطرف الثالث تحتاج إذنه.|Third-party systems need their owner’s permission.
+X|只测首页就够了。|Zhǐ cè shǒuyè jiù gòu le.|يكفي اختبار الصفحة الرئيسية.|Testing the home page is enough.|المخاطر الأكبر في الدفع وليس الصفحة الرئيسية.|The biggest risk is in payments, not the home page.
+P|测试会不会影响我们的业务？|Cèshì huì bu huì yǐngxiǎng wǒmen de yèwù?|هل سيؤثر الاختبار على أعمالنا؟|Will testing affect our business?
+A|我们不做拒绝服务测试，高风险的操作会在晚上进行，并提前通知你们。|Wǒmen bú zuò jùjué fúwù cèshì, gāo fēngxiǎn de cāozuò huì zài wǎnshang jìnxíng, bìng tíqián tōngzhī nǐmen.|لن نجري اختبار حجب الخدمة، والعمليات الخطرة ليلًا مع إشعار مسبق.|We won’t run denial-of-service tests; risky steps happen at night with advance notice.
+B|不会的，放心吧。|Bú huì de, fàngxīn ba.|لن يؤثر، اطمئن.|It won’t, don’t worry.|اشرح ضوابط تقليل الأثر بدل الطمأنة.|Explain the safeguards instead of just reassuring.
+X|可能会停几天。|Kěnéng huì tíng jǐ tiān.|قد يتوقف بضعة أيام.|It might be down for a few days.|اختبار مهني يُخطط ليتجنب التوقف.|A professional test is planned to avoid outages.
+P|如果你们发现严重漏洞怎么办？|Rúguǒ nǐmen fāxiàn yánzhòng lòudòng zěnme bàn?|ماذا إن وجدتم ثغرة خطيرة؟|What if you find a serious vulnerability?
+A|严重漏洞我们会马上电话通知你们，不会等到最后的报告。|Yánzhòng lòudòng wǒmen huì mǎshàng diànhuà tōngzhī nǐmen, bú huì děng dào zuìhòu de bàogào.|نتصل بكم فورًا للثغرات الخطيرة، ولا ننتظر التقرير النهائي.|We’ll phone you at once for serious flaws rather than waiting for the final report.
+B|都写在报告里。|Dōu xiě zài bàogào lǐ.|كل شيء في التقرير.|It’ll all be in the report.|الثغرات الحرجة تحتاج إبلاغًا فوريًا.|Critical flaws need immediate notice.
+X|我们会把漏洞发到网上。|Wǒmen huì bǎ lòudòng fā dào wǎng shàng.|سننشر الثغرة على الإنترنت.|We’ll post the vulnerability online.|نتائج الاختبار سرية للعميل.|Test results are confidential to the client.
+P|最后的报告包括什么内容？|Zuìhòu de bàogào bāokuò shénme nèiróng?|ماذا يتضمن التقرير النهائي؟|What does the final report include?
+A|管理层摘要、每个漏洞的风险等级、复现步骤和修复建议，修复后我们还会复测。|Guǎnlǐcéng zhāiyào, měi ge lòudòng de fēngxiǎn děngjí, fùxiàn bùzhòu hé xiūfù jiànyì, xiūfù hòu wǒmen hái huì fùcè.|ملخص للإدارة، ودرجة خطورة كل ثغرة، وخطوات إعادة الإنتاج، وتوصيات الإصلاح، ونعيد الاختبار بعد الإصلاح.|An executive summary, each flaw’s risk rating, reproduction steps and fixes, and we retest after you fix them.
+B|一个漏洞列表。|Yí ge lòudòng lièbiǎo.|قائمة ثغرات.|A list of vulnerabilities.|القائمة وحدها لا تكفي لاتخاذ القرار.|A bare list isn’t enough to act on.
+X|报告不重要，测试才重要。|Bàogào bú zhòngyào, cèshì cái zhòngyào.|التقرير غير مهم، الاختبار هو المهم.|The report doesn’t matter; the testing does.|قيمة الاختبار تظهر في التقرير والإصلاحات.|A test’s value shows in the report and the fixes.
+#vulnfix|和开发讨论漏洞|مناقشة ثغرة مع مطوّر|Discussing a flaw with a developer|小李|المطوّر لي|Developer Li|مهندس أمن التطبيقات|Application security engineer|تشرح للمطوّر لي ثغرة وجدتها في كوده.|You explain a flaw you found in developer Li’s code.|4
+P|听说你在我的代码里找到了一个漏洞？|Tīngshuō nǐ zài wǒ de dàimǎ lǐ zhǎodào le yí ge lòudòng?|سمعت أنك وجدت ثغرة في كودي؟|I hear you found a vulnerability in my code?
+A|对，订单查询接口有越权问题，改一下订单号就能看到别人的订单。|Duì, dìngdān cháxún jiēkǒu yǒu yuèquán wèntí, gǎi yíxià dìngdānhào jiù néng kàndào biérén de dìngdān.|نعم، واجهة الاستعلام عن الطلبات فيها تجاوز صلاحيات؛ بتغيير رقم الطلب ترى طلبات غيرك.|Yes, the order lookup API has an access-control flaw: change the order number and you see other people’s orders.
+B|你的代码写得太差了。|Nǐ de dàimǎ xiě de tài chà le.|كودك سيئ جدًا.|Your code is terrible.|انتقد المشكلة لا الشخص.|Critique the issue, not the person.
+X|没什么大问题。|Méi shénme dà wèntí.|ليست مشكلة كبيرة.|It’s no big deal.|كشف بيانات العملاء مشكلة كبيرة.|Exposing customer data is a big deal.
+P|可是用户要先登录才能访问啊。|Kěshì yònghù yào xiān dēnglù cái néng fǎngwèn a.|لكن المستخدم يجب أن يسجّل الدخول أولًا.|But users have to log in first.
+A|登录只证明他是谁，还要检查这个订单是不是属于他。|Dēnglù zhǐ zhèngmíng tā shì shéi, hái yào jiǎnchá zhège dìngdān shì bu shì shǔyú tā.|الدخول يثبت هويته فقط، ويجب التحقق أن الطلب يخصه.|Login only proves who they are; you also have to check the order belongs to them.
+B|对，登录就够了。|Duì, dēnglù jiù gòu le.|صحيح، الدخول يكفي.|Right, login is enough.|المصادقة ليست تفويضًا.|Authentication isn’t authorisation.
+X|那我们取消登录吧。|Nà wǒmen qǔxiāo dēnglù ba.|إذن لنلغِ تسجيل الدخول.|Then let’s remove login.|هذا يزيد المشكلة سوءًا.|That makes it worse.
+P|明白了。那应该怎么改？|Míngbai le. Nà yīnggāi zěnme gǎi?|فهمت. كيف أصلحها إذن؟|Got it. So how should I fix it?
+A|在服务端查询的时候加上当前用户的条件，只返回他自己的订单。|Zài fúwùduān cháxún de shíhou jiā shàng dāngqián yònghù de tiáojiàn, zhǐ fǎnhuí tā zìjǐ de dìngdān.|أضف شرط المستخدم الحالي في استعلام الخادم، فلا يُعاد إلا طلباته.|Add the current user as a condition in the server-side query so only their own orders return.
+B|在前端把按钮藏起来。|Zài qiánduān bǎ ànniǔ cáng qǐlái.|أخفِ الزر في الواجهة الأمامية.|Hide the button in the front end.|الواجهة الأمامية يمكن تجاوزها بسهولة.|The front end is easy to bypass.
+X|把订单号改成很长就行了。|Bǎ dìngdānhào gǎi chéng hěn cháng jiù xíng le.|يكفي جعل رقم الطلب طويلًا جدًا.|Just make the order numbers really long.|الإخفاء ليس ضابط وصول.|Obscurity is not access control.
+P|好，我今天改。还有别的地方有同样的问题吗？|Hǎo, wǒ jīntiān gǎi. Hái yǒu biéde dìfang yǒu tóngyàng de wèntí ma?|حسنًا، سأصلحها اليوم. هل توجد المشكلة نفسها في أماكن أخرى؟|OK, I’ll fix it today. Is the same problem anywhere else?
+A|发票和地址接口也要检查，我们可以写一个自动化测试覆盖所有接口。|Fāpiào hé dìzhǐ jiēkǒu yě yào jiǎnchá, wǒmen kěyǐ xiě yí ge zìdònghuà cèshì fùgài suǒyǒu jiēkǒu.|يجب فحص واجهتي الفواتير والعناوين، ويمكننا كتابة اختبار آلي يغطي كل الواجهات.|Check the invoice and address APIs too; we can write an automated test covering every endpoint.
+B|应该没有了。|Yīnggāi méiyǒu le.|غالبًا لا.|Probably not.|الأخطاء تتكرر بالنمط نفسه؛ افحص.|Bugs repeat in the same pattern; check.
+X|别的不是我写的。|Biéde bú shì wǒ xiě de.|البقية ليست من كتابتي.|I didn’t write the others.|الأمن مسؤولية الفريق كله.|Security is the whole team’s job.
+P|这个主意很好。修完以后请你帮我复测一下。|Zhège zhǔyi hěn hǎo. Xiū wán yǐhòu qǐng nǐ bāng wǒ fùcè yíxià.|فكرة ممتازة. بعد الإصلاح أرجو أن تعيد الاختبار.|Great idea. Please retest it for me after the fix.
+A|没问题，修完告诉我，我马上复测。|Méi wèntí, xiū wán gàosu wǒ, wǒ mǎshàng fùcè.|لا مشكلة، أخبرني عند الانتهاء وأعيد الاختبار فورًا.|No problem; tell me when it’s done and I’ll retest right away.
+B|下个月吧。|Xià ge yuè ba.|الشهر القادم.|Next month.|الثغرة مكشوفة طوال الانتظار.|The flaw stays exposed while you wait.
+X|你自己测吧，我很忙。|Nǐ zìjǐ cè ba, wǒ hěn máng.|اختبرها بنفسك، أنا مشغول.|Test it yourself; I’m busy.|التعاون يغلق الثغرات أسرع.|Working together closes flaws faster.

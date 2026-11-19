@@ -1,0 +1,15 @@
+# Cipher Path – notes for Claude sessions
+
+Sister app of Hanzi Path (same engine): software engineering + cybersecurity in Arabic and English, with a Chinese track for every topic.
+Lives on the `cipher-path` branch of KinzhalLTD/hanzi-path (its own history; not merged with `main`).
+
+- Source in `cp/src/*.js` + `cp/src/styles.css`; never edit `cp/dist/` by hand. Module order is `ORDER` in `scripts/build_cp.py`. Build: `bash scripts/build.sh` (must print "build OK").
+- Curriculum: `content/mod_*.tsv` (format in the header of `mod_1_se.tsv`: @module, L lesson, Q quiz, T Chinese term, D dialogue). Rebuild data with `python3 -I scripts/curr_build.py "$PWD" <cedict_base.json>` (must print `errors 0`; checks counts, distinct options, pinyin vs CC-CEDICT). Term ids are positional (`1000 + module index*100 + j`, SRS progress keyed by them): append new modules and terms at the END only.
+- Conversations: `content/talk_soft.tsv` (from Hanzi Path) and `content/talk_sec.tsv`; rebuild with `python3 -I scripts/talk_build.py "$PWD" <cedict_base.json>` (errors 0).
+- Code labs: `cp/src/labs_code.js` (tests are [expression, expected]; the reference solution must pass and the starter must fail – `scripts/test_app.py` checks every lab in the worker). Security labs content: `cp/src/labs_sec.js` (PHISH flags `[[text|why ar|why en]]`, LOGS `bad` line indexes, REVIEW `bad` line + `v` key in VULNS, CTF flags `CP{...}` solvable with the workbench tools).
+- Bilingual UI: every string in `cp/src/i18n.js` (both languages, same keys – the test checks) or inline `isAr()?…:…`. Check RTL.
+- Theme: dark default / light via `S.theme`, tokens in `styles.css`; dark-only surfaces (terminal, code, feedback, lab heroes) are in the `:is(...)` always-dark scope. Check with `python3 scripts/audit_theme.py mobile/assets/web/cipher-path.html OUT` → `hard {'dark': 0, 'light': 0}`.
+- Free tier: first 3 modules per track, first 3 code labs per track, first 3 rounds of phishing/logs/review, first 4 cipher challenges, firewall level 1, 1 exam a day, first conversation per field. PRO only from the native `{type:'pro'}` message (RevenueCat entitlement `pro`).
+- iPhone app: Expo SDK 58 in `mobile/` (bundle `space.kinzhal.cipherpath`). `npm run sync-web` adds the phone shell to `mobile/assets/web/cipher-path.html` – run tests/audits on that file. Before a build: `npm run check:store` and `npx expo export --platform ios`. Steps in `docs/BUILD_IOS.md`; ads `docs/ADS.md`; purchases `docs/IN_APP_PURCHASES.md`; store listing and review notes `docs/APP_STORE_SUBMISSION.md`; website (privacy/terms/support, app-ads.txt) in `website/` → Firebase Hosting site `cipher-path-kinzhal`.
+- Tests after changes: `python3 scripts/test_app.py mobile/assets/web/cipher-path.html OUT` (errors []), `python3 scripts/audit_layout.py mobile/assets/web/cipher-path.html OUT` (no overflow/clipping), `scripts/audit_theme.py`.
+- Owner works on Windows and prefers copy-paste commands (Google Cloud Shell).
