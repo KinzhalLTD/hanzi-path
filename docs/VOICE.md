@@ -1,8 +1,16 @@
 # Studio voice (Google Chirp 3 HD)
 
-Hanzi Path plays natural studio recordings for every Chinese word and sentence it speaks: words, word examples, grammar examples, conversation lines (narrator voice + a male partner voice), sector terms and culture words. Lines without a recording, and the web version, use the best voice installed on the phone (premium → enhanced → standard).
+Hanzi Path plays natural studio recordings for every Chinese word and sentence it speaks: words, word examples, grammar examples, conversation lines, sector terms and culture words. There are two voices. The narrator is a calm male voice matched to the owner's reference recording: a translation app reading 这里的画外音非常完美，完全符合要求，我们也必须做到同样完美, pitch about 125 Hz, about 4.6 characters per second, short pauses at commas. The conversation partner is a female voice, so dialogues have two speakers. Lines without a recording, and the web version, use the best voice installed on the phone (premium → enhanced → standard).
 
-## Record the voice (one command in Cloud Shell)
+## 1. Audition (about 2 minutes, optional but recommended)
+
+```bash
+cd ~/hanzi-path && git pull && gcloud config set project YOUR_PROJECT_ID && bash scripts/voice_cloudshell.sh --audition
+```
+
+Every Mandarin Chirp 3 HD voice reads the reference sentence. The script measures each voice's pitch and speed, ranks them by how close they are to the reference, and saves the closest male voice (narrator), a female partner voice and the matching speed to `~/.hanzi-voice/choice.json`. To listen, run `cloudshell download ~/voice-audition.zip`, unzip it and open `index.html`. If you prefer other voices, pass `--narrator NAME --partner NAME` to the next step.
+
+## 2. Record the voice (one command in Cloud Shell)
 
 Use a Google Cloud project **with billing enabled** (Text-to-Speech requires a billing account even inside the free tier).
 
@@ -34,7 +42,8 @@ New words, grammar or conversations need recordings too:
 ## Options
 
 ```bash
-bash scripts/voice_cloudshell.sh --female Aoede --male Orus   # other Chirp 3 HD voices
+bash scripts/voice_cloudshell.sh --narrator Charon --partner Kore   # other Chirp 3 HD voices
+bash scripts/voice_cloudshell.sh --rate 0.95                        # speed (cache is per voice and speed)
 bash scripts/voice_cloudshell.sh --limit 20                   # quick trial: 20 lines per pack
 python3 scripts/voice_gen.py --pack-only                      # repack from the cache without recording
 ```

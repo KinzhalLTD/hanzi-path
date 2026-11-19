@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # One command in Google Cloud Shell: record the Hanzi Path studio voice and push the voice packs to GitHub.
-#   cd ~/hanzi-path && bash scripts/voice_cloudshell.sh            (uses the current gcloud project)
+#   cd ~/hanzi-path && bash scripts/voice_cloudshell.sh --audition  (2 min: every voice reads the reference sentence,
+#                                                                   closest male voice + speed are chosen; listen first)
+#   cd ~/hanzi-path && bash scripts/voice_cloudshell.sh            (record everything; uses the current gcloud project)
 #   PROJECT=my-project bash scripts/voice_cloudshell.sh             (or name the project)
 # Safe to re-run: finished recordings are cached in ~/.hanzi-voice, so a re-run only records new or failed lines.
 set -euo pipefail
@@ -11,6 +13,7 @@ if [ -z "$PROJECT" ]; then echo "Set a project first: gcloud config set project 
 echo "== Project: $PROJECT"
 gcloud services enable texttospeech.googleapis.com --project "$PROJECT"
 command -v ffmpeg >/dev/null || { echo "== Installing ffmpeg (trims silence, compresses clips)"; sudo apt-get install -y -qq ffmpeg >/dev/null || true; }
+if [ "${1:-}" = "--audition" ]; then python3 scripts/voice_gen.py --project "$PROJECT" "$@"; exit 0; fi
 python3 scripts/voice_gen.py --project "$PROJECT" --yes "$@"
 du -sh mobile/assets/voice
 git add mobile/assets/voice mobile/src/voicePacks.js

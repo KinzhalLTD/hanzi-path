@@ -35,7 +35,7 @@ async def main():
             if r['played'] != 1 or any(x.startswith('speak') for x in r['log']): errs.append(f'studio clip not used for {t[:12]} ({v}): {r}')
         print('studio lines played', len(sample))
         # 2 decoding: the clip really is audio with a duration
-        d = await pg.evaluate("""async(t)=>{ const u=await studioClip('f',t); const a=new Audio(u); await new Promise(r=>{a.onloadedmetadata=r; a.onerror=r; a.load();}); return a.duration; }""", sample[0][0])
+        d = await pg.evaluate("""async(t)=>{ const u=await studioClip('n',t); const a=new Audio(u); await new Promise(r=>{a.onloadedmetadata=r; a.onerror=r; a.load();}); return a.duration; }""", sample[0][0])
         print('decoded duration', d)
         if not d or d != d or d <= 0: errs.append('clip does not decode as audio')
         # 3 speeds: slow plays at 0.72 with pitch kept
@@ -43,8 +43,8 @@ async def main():
         if not r or abs(r['rate'] - .72) > .01 or not r['pitch']: errs.append(f'slow speed wrong: {r}')
         await pg.evaluate("S.vSpeed='normal'")
         # 4 a line with no clip falls back to the phone voice, with the partner voice flag
-        r = await pg.evaluate("async()=>{ __log.length=0; await say('这句话没有录音。',{voice:'m'}); return __log.slice(); }")
-        if not any(x == 'speak:m' for x in r): errs.append(f'fallback did not ask the phone voice for the partner voice: {r}')
+        r = await pg.evaluate("async()=>{ __log.length=0; await say('这句话没有录音。',{voice:'p'}); return __log.slice(); }")
+        if not any(x == 'speak:p' for x in r): errs.append(f'fallback did not ask the phone voice for the partner voice: {r}')
         # 5 stop cuts a playing clip and resolves the promise
         r = await pg.evaluate("async(t)=>{ const p=say(t); setTimeout(stopVoice,30); const t0=performance.now(); await p; return performance.now()-t0; }", sample[-1][0])
         if r > 1500: errs.append(f'stop did not end playback quickly ({r:.0f} ms)')
@@ -58,13 +58,13 @@ async def main():
             if await pg.evaluate("__log.some(x=>x.startsWith('voice')||x.startsWith('speak'))"): break
             if await st.count(): await st.click(); await pg.wait_for_timeout(1500)
         lg = await pg.evaluate("__log.slice()")
-        if not any(x.startswith('voice') or x == 'speak:m' for x in lg): errs.append(f'conversation partner did not speak: {lg[:6]}')
+        if not any(x.startswith('voice') or x == 'speak:p' for x in lg): errs.append(f'conversation partner did not speak: {lg[:6]}')
         # 7b karaoke: words of the sentence on screen light up while it plays
         await pg.evaluate("go('gpoint',{k:'g1-shi'})"); await pg.wait_for_timeout(300)
         on = await pg.evaluate("async()=>{ const p=say('我是学生。'); let n=0; for(let i=0;i<12;i++){ await new Promise(r=>setTimeout(r,60)); n=Math.max(n,document.querySelectorAll('.tok.say-on').length); } await p; return [n, document.querySelectorAll('.tok.say-on').length]; }")
         if on[0] != 1 or on[1] != 0: errs.append(f'karaoke highlight wrong: max lit {on[0]}, left lit {on[1]}')
         # 7c chess: reading-specific key (车 as jū) differs from the plain word key
-        kk = await pg.evaluate("[voiceKey('f','车'), voiceKey('f','车','ju1'), voiceKey('f','夏 · 商'), voiceKey('f','夏商')]")
+        kk = await pg.evaluate("[voiceKey('n','车'), voiceKey('n','车','ju1'), voiceKey('n','夏 · 商'), voiceKey('n','夏商')]")
         if kk[0] == kk[1] or kk[2] != kk[3]: errs.append(f'voice keys wrong: {kk}')
         # 8 settings: voice speed + status + test button
         await pg.evaluate("go('me')"); await pg.wait_for_timeout(500)
@@ -78,7 +78,7 @@ async def main():
         pg2 = await b.new_page(); pg2.on('pageerror', lambda e: errs.append('web: ' + str(e)[:200]))
         await pg2.goto('file://' + H); await pg2.wait_for_timeout(300); await pg2.click('.lang button[data-l="en"]')
         if await pg2.locator('#onew').count(): await pg2.click('#onew')
-        await pg2.evaluate("S.sound=true; Promise.race([say('你好',{voice:'m'}), new Promise(r=>setTimeout(r,2500))])")
+        await pg2.evaluate("S.sound=true; Promise.race([say('你好',{voice:'p'}), new Promise(r=>setTimeout(r,2500))])")
         await b.close()
     print('errors', errs)
 asyncio.run(main())

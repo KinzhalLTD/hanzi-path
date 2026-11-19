@@ -4,7 +4,7 @@ scripts/voice_gen.py turns into studio recordings (Google Chirp 3 HD) in Cloud S
 
   id    voiceKey(v, text) = cyrb53(v + '|' + text without whitespace), base 36. hp/src/voice.js computes the same key
         at runtime, so any speak() call whose text is in the corpus plays the recording.
-  v     'f' narrator (female), 'm' conversation partner (male)
+  v     'n' narrator (male by default, matched to the owner's reference recording), 'p' conversation partner (female)
   pk    pack the clip goes into: h1..h6 (HSK words and examples by level), gram, talk, sec, misc
   py    numbered pinyin for words ("hai2 zi5"); sent as a custom pronunciation so polyphonic characters are read the
         way the app teaches them (行 háng/xíng, 还 hái/huán, 长 cháng/zhǎng …)
@@ -51,18 +51,18 @@ def numbered(zh, py):
     return ' '.join(PC.plain(s) + str(PC.tone(s)) for s in syl)
 
 JS = r"""() => { const out = []; const add = (t, v, pk, py, src) => { if (typeof t === 'string') out.push([t.trim(), v, pk, py || '', src]); };
-  W.slice().sort((a, b) => a.l - b.l).forEach(w => { add(w.h, 'f', 'h' + w.l, w.p, 'word'); });
-  W.slice().sort((a, b) => a.l - b.l).forEach(w => { if (w.ex) add(w.ex.zh, 'f', 'h' + w.l, '', 'example'); (w.mw || []).forEach(x => add(x, 'f', 'h' + w.l, '', 'mw')); });
-  try { GR().forEach(p => { p.ex.forEach(e => add(e[0], 'f', 'gram', '', 'grammar')); p.err.forEach(e => add(e[1], 'f', 'gram', '', 'grammar-right')); p.mk.forEach(m => add(m, 'f', 'gram', '', 'marker')); }); } catch (e) {}
-  TALK.forEach(d => { add(d.zh, 'f', 'talk', '', 'talk-title'); d.scenes.forEach(s => { add(s.zh, 'f', 'talk', '', 'scene'); if (s.pz) add(s.pz, 'f', 'talk', '', 'partner-name');
-    s.turns.forEach(tn => { if (tn.p) { add(tn.p[0], 'm', 'talk', '', 'partner'); add(tn.p[0], 'f', 'talk', '', 'partner-f'); } (tn.o || []).forEach(o => add(o.zh, 'f', 'talk', '', 'reply')); }); }); });
-  SECTORS.forEach(s => { add(s.zh, 'f', 'sec', '', 'sector'); s.topics.forEach(tp => { add(tp.zh, 'f', 'sec', '', 'topic'); (tp._w || []).forEach(w => { add(w.h, 'f', 'sec', w.p, 'term'); if (w.ex) add(w.ex.zh, 'f', 'sec', '', 'term-ex'); }); });
-    (s.ex || []).forEach(e => add(Array.isArray(e) ? e[0] : e.zh, 'f', 'sec', '', 'sec-ex')); });
-  add(typeof VOICE_TEST==='string'?VOICE_TEST:'你好！我们一起学习中文吧。', 'f', 'misc', '', 'settings');
-  try { for (const side of ['r', 'b']) for (const k in XQ_CH[side]) out.push([XQ_CH[side][k], 'f', 'misc', XQ_PY[k][side], 'xiangqi', 1]); } catch (e) {}
-  try { IDIOMS.forEach(x => Array.isArray(x) ? add(x[0], 'f', 'misc', x[1], 'idiom') : add(x.h, 'f', 'misc', x.p, 'idiom')); } catch (e) {}
+  W.slice().sort((a, b) => a.l - b.l).forEach(w => { add(w.h, 'n', 'h' + w.l, w.p, 'word'); });
+  W.slice().sort((a, b) => a.l - b.l).forEach(w => { if (w.ex) add(w.ex.zh, 'n', 'h' + w.l, '', 'example'); (w.mw || []).forEach(x => add(x, 'n', 'h' + w.l, '', 'mw')); });
+  try { GR().forEach(p => { p.ex.forEach(e => add(e[0], 'n', 'gram', '', 'grammar')); p.err.forEach(e => add(e[1], 'n', 'gram', '', 'grammar-right')); p.mk.forEach(m => add(m, 'n', 'gram', '', 'marker')); }); } catch (e) {}
+  TALK.forEach(d => { add(d.zh, 'n', 'talk', '', 'talk-title'); d.scenes.forEach(s => { add(s.zh, 'n', 'talk', '', 'scene'); if (s.pz) add(s.pz, 'n', 'talk', '', 'partner-name');
+    s.turns.forEach(tn => { if (tn.p) { add(tn.p[0], 'p', 'talk', '', 'partner'); add(tn.p[0], 'n', 'talk', '', 'partner-n'); } (tn.o || []).forEach(o => add(o.zh, 'n', 'talk', '', 'reply')); }); }); });
+  SECTORS.forEach(s => { add(s.zh, 'n', 'sec', '', 'sector'); s.topics.forEach(tp => { add(tp.zh, 'n', 'sec', '', 'topic'); (tp._w || []).forEach(w => { add(w.h, 'n', 'sec', w.p, 'term'); if (w.ex) add(w.ex.zh, 'n', 'sec', '', 'term-ex'); }); });
+    (s.ex || []).forEach(e => add(Array.isArray(e) ? e[0] : e.zh, 'n', 'sec', '', 'sec-ex')); });
+  add(typeof VOICE_TEST==='string'?VOICE_TEST:'你好！我们一起学习中文吧。', 'n', 'misc', '', 'settings');
+  try { for (const side of ['r', 'b']) for (const k in XQ_CH[side]) out.push([XQ_CH[side][k], 'n', 'misc', XQ_PY[k][side], 'xiangqi', 1]); } catch (e) {}
+  try { IDIOMS.forEach(x => Array.isArray(x) ? add(x[0], 'n', 'misc', x[1], 'idiom') : add(x.h, 'n', 'misc', x.p, 'idiom')); } catch (e) {}
   // generic sweep of the remaining data tables (culture, recipes, places, stories, riddles, code units …)
-  const seen = new WeakSet(); const sweep = (o, d) => { if (o == null || d > 9) return; if (typeof o === 'string') { add(o, 'f', 'misc', '', 'sweep'); return; }
+  const seen = new WeakSet(); const sweep = (o, d) => { if (o == null || d > 9) return; if (typeof o === 'string') { add(o, 'n', 'misc', '', 'sweep'); return; }
     if (typeof o !== 'object' || seen.has(o)) return; seen.add(o); for (const k in o) { if (k === 'py' || k === 'p' || k === 'en' || k === 'ar') continue; sweep(o[k], d + 1); } };
   ['CULTURE', 'RECIPES', 'RIDDLES', 'STORIES', 'PLACES', 'RULES7', 'OLD_SCRIPTS', 'GAMES', 'CODE_UNITS', 'QUESTS', 'QUEST_POOL', 'NEWS', 'XQ_INFO', 'PLAN'].forEach(n => { try { sweep(eval(n), 0); } catch (e) {} });
   return out; }"""
