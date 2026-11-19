@@ -85,8 +85,8 @@ function dialogSheet(x){ let playing=false;
   sheet(`<div class="row"><h2 class="grow">💬 ${t('dialog')}</h2><button class="btn sm ghost" id="pa">▶</button></div><span class="han" style="color:var(--zh)">${esc(x.zh)}</span>
     <div class="dlg">${x.D.map((d,i)=>`<div class="dl ${d.s}"><span class="who">${d.s}</span><div class="grow"><div class="zhline han">${esc(d.zh)}</div><div class="py" style="font-size:13px">${esc(d.py)}</div><div class="sub" dir="auto">${esc(L(d))}</div></div><button class="speak" data-i="${i}" aria-label="🔊">${ICON.speak}</button></div>`).join('')}</div>
     <button class="btn block" id="dd">${t('done')} ✓</button>`,el=>{
-    $$('.speak',el).forEach(b=>b.onclick=()=>{ const d=x.D[+b.dataset.i]; speak(d.zh,{voice:d.s==='A'?'n':'p'}); });
-    $('#pa',el).onclick=async()=>{ if(playing){ playing=false; stopVoice(); return; } playing=true; for(const d of x.D){ if(!playing) break; await speak(d.zh,{voice:d.s==='A'?'n':'p'}); await new Promise(r=>setTimeout(r,350)); } playing=false; };
+    $$('.speak',el).forEach(b=>b.onclick=()=>{ const d=x.D[+b.dataset.i]; speak(d.zh,{voice:dlgVoice(x.i,d.s)}); });
+    $('#pa',el).onclick=async()=>{ if(playing){ playing=false; stopVoice(); return; } playing=true; await speak(x.zh,{voice:'n'}); for(const d of x.D){ if(!playing) break; await new Promise(r=>setTimeout(r,300)); await speak(d.zh,{voice:dlgVoice(x.i,d.s)}); } playing=false; };
     $('#dd',el).onclick=()=>{ playing=false; stopVoice(); const s=mst(x.k); if(!s.D){ s.D=1; save(); addXP(5); } closeSheet(); const fin=checkModDone(x); render(); if(fin) moduleDone(x); }; }); }
 
 function moduleDone(x){ SFX.gong(); fireworks(4); confetti(110); const s=mst(x.k); checkBadges();

@@ -90,21 +90,21 @@ SCREENS.talk=(m,arg)=>{ let cur=Math.max(0,TALK.findIndex(d=>d.k===((arg&&arg.d)
   $('#bk',m).onclick=()=>goBack('zh'); $$('#ts button',m).forEach(b=>b.onclick=()=>{ cur=+b.dataset.i; $$('#ts button',m).forEach(x=>x.setAttribute('aria-pressed',x===b)); SFX.tap(); draw(); }); draw(); };
 
 SCREENS.talkscene=(m,{d:dk,i:si})=>{ const d=TALK.find(x=>x.k===dk), s=d&&d.scenes[si]; if(!s) return go('talk'); if(!tkFree(si)) return paywall('talk');
-  const face=(TK_FACE[d.k]||[])[si]||d.emo; let ti=0, score=0, timer=null; const prev=cleanup; cleanup=()=>{ clearTimeout(timer); prev&&prev(); };
-  const bubble=(who,zh,py,tr)=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?face:'🙂'}</span><div class="tkbub"><div class="zhline han">${esc(zh)}</div><div class="py" style="font-size:12.5px">${esc(py)}</div><div class="sub" dir="auto">${esc(tr)}</div></div><button class="speak" data-z="${esc(zh)}" data-v="${who==='them'?'p':'n'}" aria-label="🔊" style="width:30px;height:30px">🔊</button></div>`;
+  const face=(TK_FACE[d.k]||[])[si]||d.emo, pv=SCENE_CAST[d.k+'/'+s.k]||'p', me=myVoice(); let ti=0, score=0, timer=null; const prev=cleanup; cleanup=()=>{ clearTimeout(timer); prev&&prev(); };
+  const bubble=(who,zh,py,tr)=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?face:'🙂'}</span><div class="tkbub"><div class="zhline han">${esc(zh)}</div><div class="py" style="font-size:12.5px">${esc(py)}</div><div class="sub" dir="auto">${esc(tr)}</div></div><button class="speak" data-z="${esc(zh)}" data-v="${who==='them'?pv:me}" aria-label="🔊" style="width:30px;height:30px">🔊</button></div>`;
   m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><b>${esc(L(s))}</b><div class="sub">${esc(s.zh)}</div></div></div>
     <div class="card sub" style="padding:12px">${esc(L(s,'sa','se'))}</div><div class="tklog" id="lg"></div><div class="tkpanel" id="pn"></div>`;
   $('#qx',m).onclick=()=>go('talk',{d:d.k});
   const lg=$('#lg',m), pn=$('#pn',m); const bindSp=el=>$$('.speak',el).forEach(b=>b.onclick=()=>speak(b.dataset.z,{voice:b.dataset.v}));
   const end=()=>requestAnimationFrame(()=>{ window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}); });
   function partner(){ const tn=s.turns[ti]; lg.insertAdjacentHTML('beforeend',`<div class="tkmsg them" dir="ltr"><span class="tkface">${face}</span><div class="tkbub"><span class="dots"><i></i><i></i><i></i></span></div></div>`); end(); pn.innerHTML='';
-    timer=setTimeout(()=>{ lg.lastElementChild.remove(); lg.insertAdjacentHTML('beforeend',bubble('them',tn.p[0],tn.p[1],isAr()?tn.p[2]:tn.p[3])); bindSp(lg.lastElementChild); speak(tn.p[0],{voice:'p'}); choices(); end(); },600); }
+    timer=setTimeout(()=>{ lg.lastElementChild.remove(); lg.insertAdjacentHTML('beforeend',bubble('them',tn.p[0],tn.p[1],isAr()?tn.p[2]:tn.p[3])); bindSp(lg.lastElementChild); speak(tn.p[0],{voice:pv}); choices(); end(); },600); }
   function choices(){ const tn=s.turns[ti], opts=shuffle(tn.o); let tries=0, done=false;
     pn.innerHTML=`<div class="row"><b class="grow">${isAr()?'اختر ردّك':'Choose your reply'}</b><button class="btn ghost sm" id="hi">${ICON.hint}</button></div>${opts.map((o,j)=>`<button class="tkopt" data-j="${j}" dir="ltr"><span class="han" style="font-size:16px">${esc(o.zh)}</span><span class="py" style="font-size:12px">${esc(o.py)}</span><span class="tr2" dir="auto">${esc(isAr()?o.ar:o.en)}</span></button>`).join('')}<div id="fb"></div>`;
     $('#hi',pn).onclick=()=>{ pn.classList.add('hinted'); SFX.tap(); };
     $$('.tkopt',pn).forEach(b=>b.onclick=()=>{ if(done||b.disabled) return; const o=opts[+b.dataset.j]; tries++; b.disabled=true;
       if(o.t==='A'){ done=true; score+=tries===1?3:tries===2?1:0; b.classList.add('right'); SFX.ok(); haptic('success'); $$('.tkopt',pn).forEach(x=>{ if(x!==b) x.classList.add('dim'); });
-        lg.insertAdjacentHTML('beforeend',bubble('me',o.zh,o.py,isAr()?o.ar:o.en)); bindSp(lg.lastElementChild); speak(o.zh);
+        lg.insertAdjacentHTML('beforeend',bubble('me',o.zh,o.py,isAr()?o.ar:o.en)); bindSp(lg.lastElementChild); speak(o.zh,{voice:me});
         $('#fb',pn).innerHTML=`<button class="btn block" id="nx">${t('next')} →</button>`; $('#nx',pn).onclick=()=>{ SFX.tap(); pn.classList.remove('hinted'); ti++; ti<s.turns.length?partner():summary(); }; end(); }
       else { b.classList.add(o.t==='B'?'meh':'wrong'); SFX.bad(); haptic('error'); $('#fb',pn).innerHTML=`<div class="tkfb ${o.t==='B'?'meh':'bad'}"><b>${o.t==='B'?'≈':'✕'}</b> ${esc(isAr()?o.na:o.ne)}</div>`; } }); }
   function summary(){ questEvent('talk'); const max=s.turns.length*3, st=score/max>=.9?3:score/max>=.6?2:1, k=d.k+'/'+s.k; S.talk=S.talk||{}; S.talk[k]=Math.max(S.talk[k]||0,st); addXP(15+score); const c=addCoins(10+st*5); save(); SFX.win(); confetti(st===3?100:50); track('talk_done',{k,st});
@@ -112,4 +112,6 @@ SCREENS.talkscene=(m,{d:dk,i:si})=>{ const d=TALK.find(x=>x.k===dk), s=d&&d.scen
       <div class="row" style="width:100%"><button class="btn ghost grow" id="ag">↺</button>${d.scenes[si+1]?`<button class="btn grow" id="ns">${t('next')} →</button>`:`<button class="btn grow" id="dn">${t('finish')}</button>`}</div></div>`; end();
     $('#ag',pn).onclick=()=>go('talkscene',{d:d.k,i:si}); const ns=$('#ns',pn); if(ns) ns.onclick=async()=>{ await interstitial(); tkFree(si+1)?go('talkscene',{d:d.k,i:si+1}):paywall('talk'); };
     const dn=$('#dn',pn); if(dn) dn.onclick=async()=>{ await interstitial(); go('talk',{d:d.k}); }; }
-  partner(); };
+  /* voiceover: the narrator announces the scene, then the partner speaks */
+  (async()=>{ await new Promise(r=>timer=setTimeout(r,250)); if(route.name!=='talkscene') return; lg.insertAdjacentHTML('beforeend',`<div class="tknarr"><span class="nmic" aria-hidden="true">🎙</span><span class="han">${esc(s.zh)}</span> · ${esc(L(s))}<br><span class="sub">${face} <span class="han">${esc(s.pz)}</span> · ${esc(L(s,'pa','pe'))}</span></div>`);
+    await speak(s.zh,{voice:'n'}); if(route.name!=='talkscene') return; partner(); })(); };

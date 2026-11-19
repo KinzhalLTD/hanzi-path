@@ -15,15 +15,16 @@ SCREENS.me=m=>{ const r=rankOf(S.xp), nx=RANK_XP[r+1], labsN=Object.keys(S.labs)
     <div class="col" style="gap:6px"><b>${t('theme')}</b>${seg('thm',[['dark','🌙 '+t('dark')],['light','☀️ '+t('light')]],S.theme==='light'?'light':'dark')}</div>
     <div class="col" style="gap:6px"><b>${t('dailyGoal')}</b>${seg('gl',[[20,'20'],[30,'30'],[50,'50'],[80,'80']],S.goal)}</div>
     <div class="col" style="gap:6px"><b>${t('voiceSpeed')}</b>${seg('vsp',[['slow',t('slow')],['normal',t('normal')],['fast',t('fast')]],S.vSpeed||'normal')}<button class="btn ghost sm" id="vt" style="align-self:flex-start">🔊 网络安全</button></div>
+    <div class="col" style="gap:6px"><b>${isAr()?'صوتك في المحادثات':'Your voice in conversations'}</b>${seg('myv',[['m',isAr()?'رجل':'Male'],['f',isAr()?'امرأة':'Female']],S.myVoice==='f'?'f':'m')}</div>
     <div class="col" style="gap:6px"><b>🎵 ${isAr()?'موسيقى الغوجنغ':'Guzheng music'}</b>${seg('mus',[['off',t('off')],['low',isAr()?'هادئة':'Low'],['mid',isAr()?'متوسطة':'Medium']],S.music===false?'off':(S.mv||'low'))}</div>
     <div class="col" style="gap:6px"><b>${t('sound')}</b>${seg('snd',[['1',t('on')],['0',t('off')]],S.sound?'1':'0')}</div>
     <div class="col" style="gap:6px"><b>${t('reminder')}</b>${seg('rem',[['0',t('off')],['9','09:00'],['20','20:00']],S.remind||'0')}</div>
   </div>
   <div class="card col" style="gap:4px">${[['rs','restore'],['pv','privacy'],['tm','terms2'],['sp','support']].concat(window.__adPrivacy?[['ap','adPrivacy']]:[]).map(([id,k])=>`<button class="link" id="${id}" style="text-align:start">${t(k)}</button>`).join('<hr>')}</div>
-  <button class="btn danger block" id="rz">${t('resetAll')}</button><div class="sub" style="text-align:center">Cipher Path 1.0 · Kinzhal</div><div class="sub" style="text-align:center;font-size:11px">${isAr()?'الموسيقى: عينات من FluidR3 GM (رخصة CC BY 3.0)':'Music: samples from FluidR3 GM (CC BY 3.0)'}</div>`);
+  <button class="btn danger block" id="rz">${t('resetAll')}</button><div class="sub" style="text-align:center">Cipher Path 1.0 · Kinzhal</div><div class="sub" style="text-align:center;font-size:11px">${isAr()?'الموسيقى: غوجنغ حقيقي مسجّل (Pufermufin على Freesound، رخصة CC0)':'Music: real recorded guzheng (Pufermufin on Freesound, CC0)'}</div>`);
   const segBind=(id,fn)=>$$(`#${id} button`,m).forEach(b=>b.onclick=()=>{ SFX.tap(); fn(b.dataset.v); });
   segBind('lng',v=>{ S.lang=v; save(); render(); }); segBind('thm',v=>{ if((S.theme==='light'?'light':'dark')!==v) toggleTheme(); render(); });
-  segBind('gl',v=>{ S.goal=+v; save(); render(); }); segBind('vsp',v=>{ S.vSpeed=v; save(); render(); speak('网络安全'); }); segBind('mus',v=>{ musSet(v); render(); }); segBind('snd',v=>{ S.sound=v==='1'; save(); render(); });
+  segBind('gl',v=>{ S.goal=+v; save(); render(); }); segBind('vsp',v=>{ S.vSpeed=v; save(); render(); speak('网络安全'); }); segBind('myv',v=>{ S.myVoice=v; save(); render(); speak('你好，我是新来的工程师。',{voice:myVoice()}); }); segBind('mus',v=>{ musSet(v); render(); }); segBind('snd',v=>{ S.sound=v==='1'; save(); render(); });
   segBind('rem',v=>{ S.remind=v; save(); render(); if(RN&&v!=='0') native('notify:permission',{}).then(r=>{ if(r&&r.granted) native('notify:schedule',{items:[{id:'daily',repeat:'daily',hour:+v,minute:0,title:'Cipher Path',body:isAr()?'5 دقائق اليوم تحافظ على سلسلتك 🔥':'5 minutes today keeps your streak going 🔥'}]}); }); else if(RN) native('notify:schedule',{items:[]}); });
   $('#vt',m).onclick=()=>speak('网络安全');
   $$('[data-c]',m).forEach(b=>b.onclick=()=>go('track',b.dataset.c));

@@ -29,11 +29,16 @@ def art():
         if os.path.basename(f).startswith('bossgrid_'): continue
         im = Image.open(f).convert('RGB'); im.thumbnail((360, 360)); put(os.path.splitext(os.path.basename(f))[0], im)
     return out
+def gz():
+    import base64
+    idx = json.load(open(R + '/art/guzheng/index.json'))
+    for x in idx: x['d'] = 'data:audio/mpeg;base64,' + base64.b64encode(open(R + '/art/guzheng/' + x['f'], 'rb').read()).decode()
+    return idx
 curr = json.load(open(R + '/out/curr.json', encoding='utf-8')); talk = json.load(open(R + '/out/talk.json', encoding='utf-8'))
 order = ['soft', 'sec']; talk.sort(key=lambda d: order.index(d['k']) if d['k'] in order else 9)
 js = '\n'.join([PRELUDE, 'const CURR=' + blk('curr', curr) + ';', 'const TALK=' + blk('talk', talk) + ';', 'const ART=' + blk('art', art()) + ';',
-               # guzheng (koto) + pizzicato bass samples from the FluidR3 GM soundfont (CC BY 3.0), parsed only when music starts
-               'const SAMPLES=(()=>{let v;return ()=>v||(v=' + blk('samples', json.load(open(R + '/art/samples.json'))) + ');})();'] +
+               # real recorded guzheng plucks (art/guzheng, CC0), parsed only when music starts
+               'const GZ_SAMPLES=(()=>{let v;return ()=>v||(v=' + blk('gz', gz()) + ');})();'] +
                [open(f'{src}/{n}.js', encoding='utf-8').read() for n in ORDER] + ['render();'])
 css = open(src + '/styles.css', encoding='utf-8').read()
 fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@600;700&family=Ma+Shan+Zheng&display=swap'

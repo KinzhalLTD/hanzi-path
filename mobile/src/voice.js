@@ -43,20 +43,27 @@ async function ranked(lang, male) {
   const score = (v) => q(v) * 10 + (MALE.test(v.name) === male ? 1 : 0);
   return pool.sort((a, b) => score(b) - score(a)).map((v) => ({ id: v.identifier, q: q(v) }));
 }
-// narrator: best quality (male breaks ties); partner: a different voice of similar quality, else the narrator's with a higher pitch
+// The voice cast (same table as VOICE_CAST in cp/src/voice.js): gender + pitch/rate so every character sounds different.
+const CAST = { n: ['m', 1, 1], p: ['f', 1, 1], m1: ['m', 1.04, 1.04], m2: ['m', 0.88, 0.93], m3: ['m', 1.1, 1.08], m4: ['m', 0.95, 0.98], m5: ['m', 0.92, 1.02],
+  f1: ['f', 0.96, 0.95], f2: ['f', 1.12, 1.06], f3: ['f', 1.03, 1] };
+// narrator: best quality (male breaks ties); everyone else: a different voice of their gender and similar quality, spread over
+// the cast, else the narrator's voice with the character's pitch
 async function pickVoice(lang, role) {
+  const [g, pitch, rate] = CAST[role] || CAST.n;
   const nar = (await ranked(lang, true))[0];
-  if (role !== 'p') return { id: nar && nar.id, pitch: 1 };
-  const alt = (await ranked(lang, false)).find((v) => !nar || (v.id !== nar.id && v.q >= nar.q - 1));
-  return alt ? { id: alt.id, pitch: 1 } : { id: nar && nar.id, pitch: 1.18 };
+  if (role === 'n') return { id: nar && nar.id, pitch: 1, rate: 1 };
+  const pool = (await ranked(lang, g === 'm')).filter((v) => !nar || (v.id !== nar.id && v.q >= nar.q - 1));
+  const ids = Object.keys(CAST).filter((k) => k !== 'n' && CAST[k][0] === g), ix = Math.max(0, ids.indexOf(role));
+  if (pool.length) return { id: pool[ix % pool.length].id, pitch, rate };
+  return { id: nar && nar.id, pitch: pitch * (g === 'f' ? 1.18 : 1.08), rate };
 }
 
 export async function speakNative({ text, lang = 'zh-CN', rate = 0.8, voice = 'n' }) {
   Speech.stop();
-  const { id, pitch } = await pickVoice(lang, voice);
+  const { id, pitch, rate: r2 } = await pickVoice(lang, voice);
   return new Promise((res) => {
     const done = () => res({ ok: true });
-    Speech.speak(text, { language: lang, rate, pitch, voice: id, onDone: done, onStopped: done, onError: done });
+    Speech.speak(text, { language: lang, rate: Math.max(0.3, Math.min(1.5, rate * (r2 || 1))), pitch, voice: id, onDone: done, onStopped: done, onError: done });
     setTimeout(done, 4000 + String(text).length * 600); // never leave the web app waiting
   });
 }

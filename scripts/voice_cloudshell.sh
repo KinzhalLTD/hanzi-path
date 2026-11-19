@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# One command in Google Cloud Shell: record the Cipher Path studio voices (narrator + conversation cast) and push the packs.
+#   cd ~/cipher-path && bash scripts/voice_cloudshell.sh --audition  (2 min: every voice reads the reference sentence,
+#                                                                   closest male voice + speed are chosen; listen first)
+#   cd ~/cipher-path && bash scripts/voice_cloudshell.sh           (record everything; uses the current gcloud project)
+#   PROJECT=my-project bash scripts/voice_cloudshell.sh             (or name the project)
+# Safe to re-run: finished recordings are cached in ~/.cipher-voice, so a re-run only records new or failed lines.
+# The narrator matches the one chosen for Hanzi Path (~/.hanzi-voice/choice.json) when it exists.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+git pull --ff-only || echo "(git pull skipped)"
+PROJECT="${PROJECT:-$(gcloud config get-value project 2>/dev/null)}"
+if [ -z "$PROJECT" ]; then echo "Set a project first: gcloud config set project YOUR_PROJECT_ID"; exit 1; fi
+echo "== Project: $PROJECT"
+gcloud services enable texttospeech.googleapis.com --project "$PROJECT"
+command -v ffmpeg >/dev/null || { echo "== Installing ffmpeg (trims silence, compresses clips)"; sudo apt-get install -y -qq ffmpeg >/dev/null || true; }
+if [ "${1:-}" = "--audition" ]; then python3 scripts/voice_gen.py --project "$PROJECT" "$@"; exit 0; fi
+python3 scripts/voice_gen.py --project "$PROJECT" --yes "$@"
+du -sh mobile/assets/voice
+git add mobile/assets/voice mobile/src/voicePacks.js
+if git diff --cached --quiet; then echo "== Voice packs unchanged"; exit 0; fi
+git commit -q -m "Cipher Path studio voice packs (Google Chirp 3 HD, conversation cast)"
+if git push -q; then echo "== Done: voice packs pushed. Next EAS build includes the studio voice."
+else echo "== Recorded and committed, but git push failed here. Build from this folder (npx eas-cli build -p ios) or push with your GitHub token."; fi

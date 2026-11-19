@@ -97,7 +97,7 @@ async def main():
             await pg.click('#nm'); await pg.wait_for_timeout(100); check(await pg.evaluate("route.name==='module'&&route.arg==='se-algo'"), f'{L}: next module button')
             # ---- music: guzheng samples load and play; the switch turns it off
             await pg.evaluate("musStart()"); await pg.wait_for_timeout(2500)
-            mu = await pg.evaluate("({on:MUSIC.on,ready:MUSIC.ready,beats:MUSIC.beat,koto:Object.keys(MUSIC.buf.koto||{}).length})")
+            mu = await pg.evaluate("({on:MUSIC.on,ready:MUSIC.ready,beats:MUSIC.beat,koto:Object.keys(MUSIC.buf).length})")
             check(mu['on'] and mu['ready'] and mu['koto'] >= 10 and mu['beats'] > 0, f'{L}: music not playing {mu}')
             await pg.click('.topbar [data-act="mus"]'); check(await pg.evaluate("S.music===false&&!MUSIC.on"), f'{L}: music switch')
             # ---- account: demo sign-in from Me, sign-out

@@ -533,3 +533,5 @@ html[dir="rtl"] h2.sech::after{background:linear-gradient(270deg,var(--line2),tr
 .pack:disabled{opacity:.6}
 .feedback .revive{margin-bottom:8px;background:linear-gradient(180deg,#ff6b5c,#c9271e)}
 .cmp,.packs,.pwhero,.sso,#pl{flex-shrink:0}
+.tknarr{align-self:center;text-align:center;font-size:13px;padding:8px 14px;border-radius:14px;border:1px dashed var(--line2);background:rgba(var(--hl-rgb),.03);color:var(--text);max-width:92%}
+.tknarr .han{font-size:15px;color:var(--zh)}.tknarr .nmic{margin-inline-end:6px}
