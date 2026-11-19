@@ -380,3 +380,69 @@ html[dir="rtl"] .bubble::after{transform:rotate(-45deg)}
 /* Canva artwork: the mascot sits in a round medallion with a gold rim */
 img.dragon.art{display:block;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px rgba(var(--gold-rgb),.75),0 8px 20px rgba(0,0,0,.35);background:#9c1a12}
 .pnode .phere img.dragon.art{box-shadow:0 0 0 2px rgba(242,193,78,.9),0 4px 10px rgba(0,0,0,.4)}
+/* ===================== Polish layer ===================== */
+/* enamel medallion icons */
+.ico{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:13px;flex-shrink:0;color:#fff4e2;position:relative;
+  background:radial-gradient(circle at 30% 22%,rgba(255,255,255,.35),transparent 46%),var(--ico-bg);box-shadow:inset 0 0 0 1.5px rgba(255,220,150,.45),0 3px 0 var(--ico-sh),0 6px 14px rgba(0,0,0,.18)}
+.ico svg{width:22px;height:22px}.ico.sm{width:30px;height:30px;border-radius:10px}.ico.sm svg{width:17px;height:17px}
+.ico.lg{width:48px;height:48px;border-radius:15px}.ico.lg svg{width:26px;height:26px}
+.ico.red{--ico-bg:linear-gradient(160deg,#ee5a40,#b3221a);--ico-sh:#7a1610}.ico.gold{--ico-bg:linear-gradient(160deg,#ffd978,#d39a1c);--ico-sh:#8a5a00;color:#4a1a08}
+.ico.jade{--ico-bg:linear-gradient(160deg,#5fe0b2,#14936a);--ico-sh:#0b5a40;color:#062a1e}.ico.blue{--ico-bg:linear-gradient(160deg,#8fb8ff,#2f62c4);--ico-sh:#1c3c7c}
+.ico.ink{--ico-bg:linear-gradient(160deg,#5a4038,#2a1a16);--ico-sh:#140b0a;color:#f2c14e}
+.icotxt{font:700 15px var(--f-mono);letter-spacing:-.02em}.ico.red .icotxt{font:400 24px var(--f-brush)}
+.ltile{gap:10px;transition:transform .15s}.ltile .ico{margin-bottom:2px}
+.treat .ico{margin-bottom:2px}
+/* 3D press: buttons and answer options sink when tapped */
+.btn{box-shadow:inset 0 1px 0 rgba(255,220,150,.45),0 4px 0 var(--red-deep),0 8px 18px rgba(var(--red-rgb),calc(.28*var(--tint)));transform:translateY(0);transition:transform .08s,box-shadow .08s}
+.btn:active:not(:disabled){transform:translateY(3px)!important;box-shadow:inset 0 1px 0 rgba(255,220,150,.45),0 1px 0 var(--red-deep)}
+.btn.ghost{box-shadow:0 3px 0 var(--line2)}.btn.ghost:active:not(:disabled){box-shadow:0 1px 0 var(--line2)}
+.btn.danger{box-shadow:0 3px 0 rgba(var(--red-rgb),.5)}
+.opt{box-shadow:0 3px 0 var(--line2);transition:transform .08s,box-shadow .08s,border-color .15s,background .15s}
+.opt:active:not(:disabled){transform:translateY(2px)!important;box-shadow:0 1px 0 var(--line2)}
+.opt.right{box-shadow:0 3px 0 rgba(79,209,161,.55);animation:okpop .35s ease-out}.opt.wrong{box-shadow:0 3px 0 rgba(255,111,97,.5);animation:shake .35s}
+@keyframes okpop{40%{transform:scale(1.03)}}
+.opt .ol{background:rgba(var(--gold-rgb),.14);color:var(--acc);font-family:var(--f-brush);font-size:15px}
+/* shimmer on the main call-to-action */
+.contcard .btn{position:relative;overflow:hidden}
+.contcard .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,rgba(255,240,200,.45) 50%,transparent 60%) no-repeat;background-size:300% 100%;background-position:120% 0;animation:shine 3.2s ease-in-out infinite}
+@keyframes shine{0%{background-position:120% 0}60%,100%{background-position:-20% 0}}
+/* progress bars: gold tassel end + sheen */
+.bar>i{position:relative;background:linear-gradient(90deg,#b3221a,#e8503a 60%,#f2c14e)}
+.bar.se>i{background:linear-gradient(90deg,#2f62c4,#86b2ff)}.bar.cy>i{background:linear-gradient(90deg,#14936a,#5fe0b2)}
+.bar>i::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent 60%);border-radius:inherit}
+.bar.thin{height:6px;margin-top:5px}
+/* daily quests */
+.quests{display:flex;flex-direction:column;gap:10px}
+.qrow{display:flex;align-items:center;gap:10px}.qrow .qt{font-size:13.5px;font-weight:600}
+.qrow.done .qt{color:var(--good);text-decoration:line-through;text-decoration-color:rgba(var(--gold-rgb),.6)}
+.chestbtn{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border-radius:16px;border:1.5px dashed var(--line2);background:rgba(var(--hl-rgb),.03);text-align:start}
+.chestbtn.ready{border:1.5px solid var(--gold);background:linear-gradient(120deg,rgba(var(--red-rgb),calc(.22*var(--tint))),rgba(var(--gold-rgb),calc(.16*var(--tint))));animation:glowp 1.6s ease-in-out infinite}
+.chestbtn.ready .ico{animation:wiggle 1.4s ease-in-out infinite}
+.chestbtn.opened{opacity:.7}.chestbtn.nudge{animation:shake .35s}
+.chestbig{display:grid;place-items:center;width:110px;height:110px;border-radius:28px;color:#4a1a08;background:radial-gradient(circle at 30% 25%,#ffe7a8,#d39a1c);box-shadow:0 0 0 4px rgba(226,72,58,.6),0 0 50px rgba(242,193,78,.6);animation:stamp .6s cubic-bezier(.2,1.6,.4,1) both}
+.chestbig svg{width:66px;height:66px}
+/* week of lanterns */
+.week{display:flex;flex-direction:column;gap:10px}
+.lrow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.lday{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--muted)}
+.lday i{position:relative;width:24px;height:30px;border-radius:11px;background:rgba(var(--hl-rgb),.07);border:1.5px solid var(--line2)}
+.lday i::before{content:"";position:absolute;left:50%;top:-6px;width:2px;height:6px;background:var(--line2);transform:translateX(-50%)}
+.lday i::after{content:"";position:absolute;left:50%;bottom:-6px;width:6px;height:5px;border-radius:0 0 3px 3px;background:var(--line2);transform:translateX(-50%)}
+.lday.lit i{border-color:#f2c14e;background:radial-gradient(circle at 50% 40%,#ffb27a,#d8342a 72%);box-shadow:0 0 14px rgba(255,120,80,.6)}
+.lday.lit i::after,.lday.lit i::before{background:#f2c14e}
+.lday.today span{color:var(--acc);font-weight:700}.lday.today i{outline:2px dashed rgba(var(--gold-rgb),.6);outline-offset:3px}
+/* feedback: brush-stroke verdict seal */
+.feedback.good b.v::before,.feedback.bad b.v::before{display:inline-grid;place-items:center;width:30px;height:30px;margin-inline-end:8px;border-radius:8px;font:400 20px var(--f-brush);vertical-align:middle;transform:rotate(-6deg)}
+.feedback.good b.v::before{content:"对";background:#14936a;color:#eafff6}.feedback.bad b.v::before{content:"错";background:#b3221a;color:#ffe7a8}
+/* toasts become little scroll banners */
+.toast{border-radius:12px;border:1px solid rgba(var(--gold-rgb),.5);background:linear-gradient(180deg,var(--surface3),var(--surface2));box-shadow:0 10px 26px rgba(0,0,0,.35),inset 0 0 0 3px rgba(var(--red-rgb),.12)}
+/* section headers with a gold rule */
+h2.sech::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+html[dir="rtl"] h2.sech::after{background:linear-gradient(270deg,var(--line2),transparent)}
+/* module emoji in a lacquer medallion */
+.modc .mi,.step .sn{box-shadow:inset 0 0 0 1.5px var(--line2)}
+.modc .mi{background:radial-gradient(circle at 30% 25%,rgba(var(--gold-rgb),.2),rgba(var(--red-rgb),.12))}
+.coin svg{width:17px;height:17px}
+.tab svg{width:23px;height:23px}
+.icon-btn svg{width:20px;height:20px}.speak svg{width:17px;height:17px}
+@media (prefers-reduced-motion:reduce){.contcard .btn::after,.chestbtn.ready,.chestbtn.ready .ico{animation:none!important}}

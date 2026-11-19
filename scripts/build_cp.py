@@ -3,7 +3,7 @@ Curriculum and conversations are emitted as <script type="application/json"> blo
 Inputs: out/curr.json (scripts/curr_build.py), out/talk.json (scripts/talk_build.py), cp/src/*.js in ORDER."""
 import json, sys, os
 R = sys.argv[1]; src = R + '/cp/src'
-ORDER = ['i18n', 'core', 'voice', 'feel', 'labs_code', 'labs_sec', 'fun', 'learn', 'labs', 'zh', 'games', 'me']
+ORDER = ['i18n', 'core', 'polish', 'voice', 'feel', 'labs_code', 'labs_sec', 'fun', 'learn', 'labs', 'zh', 'games', 'me']
 DATA = []
 def blk(name, obj):
     text = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))

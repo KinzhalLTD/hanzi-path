@@ -93,7 +93,7 @@ function fireworks(n=3){ if(matchMedia('(prefers-reduced-motion: reduce)').match
 
 /* ---------- combo: consecutive right answers anywhere; milestones pop firecrackers ---------- */
 let COMBO=0;
-function comboHit(ok,anchor){ if(!ok){ COMBO=0; $$('.combo').forEach(e=>e.remove()); return 0; } COMBO++; S.bestCombo=Math.max(S.bestCombo||0,COMBO);
+function comboHit(ok,anchor){ if(!ok){ COMBO=0; $$('.combo').forEach(e=>e.remove()); return 0; } COMBO++; S.bestCombo=Math.max(S.bestCombo||0,COMBO); questEvent('combo',COMBO,true); if(COMBO>=2) setTimeout(()=>SFX.combo(COMBO),120);
   if(COMBO>=3){ $$('.combo').forEach(e=>e.remove()); const d=document.createElement('div'); d.className='combo'; d.innerHTML=`<b class="num">${COMBO}</b> ${isAr()?'ضربات متتالية':'连击 combo'} ${COMBO>=10?'🐉':COMBO>=5?'🧨':'🔥'}`; document.body.appendChild(d); setTimeout(()=>d.remove(),1600); }
   if([5,10,20,30].includes(COMBO)){ fireworks(COMBO>=10?4:2); toast(`${COMBO} ${isAr()?'متتالية! مكافأة':'in a row! Bonus'} +${COMBO} ${t('bitsCur')}`); addCoins(COMBO); }
   return COMBO>=5?2:1; }
@@ -137,6 +137,6 @@ function checkBadges(){ S.badges=S.badges||{}; const h=new Date().getHours(); if
   for(const b of BADGES){ if(!S.badges[b[0]]&&b[5]()){ S.badges[b[0]]=today(); got=b; } }
   if(got){ save(); setTimeout(()=>stampToast(got),500); } }
 function stampToast(b){ const d=document.createElement('div'); d.className='stamp'; d.setAttribute('role','status');
-  d.innerHTML=`<span class="sealbig">${b[1]}</span><div><span class="eyebrow">${isAr()?'ختم جديد':'New seal'}</span><b>${esc(isAr()?b[3]:b[4])}</b></div>`;
-  document.body.appendChild(d); SFX.gong(); haptic('success'); setTimeout(()=>d.classList.add('out'),2600); setTimeout(()=>d.remove(),3100); }
+  d.innerHTML=`<span class="sealbig">${b[1]}</span><div class="col"><span class="eyebrow">${isAr()?'ختم جديد':'New seal'}</span><b>${esc(isAr()?b[3]:b[4])}</b></div>`;
+  document.body.appendChild(d); SFX.stamp(); setTimeout(()=>SFX.gong(),180); haptic('success'); setTimeout(()=>d.classList.add('out'),2600); setTimeout(()=>d.remove(),3100); }
 const sealHTML=(b,on)=>`<div class="sealc ${on?'on':''}" title="${esc(isAr()?b[3]:b[4])}"><span class="sealbig">${b[1]}</span><span class="py" style="font-size:11px">${b[2]}</span><span class="sub">${esc(isAr()?b[3]:b[4])}</span></div>`;

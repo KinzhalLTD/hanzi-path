@@ -29,15 +29,17 @@ SCREENS.home=m=>{ const h=new Date().getHours(); const tr=S.focus==='cy'?'cy':'s
     <div class="row sub" style="gap:6px"><span style="font-size:20px">${bossOf(nm.k).e}</span><span>${isAr()?'الوحش في نهاية الوحدة':'Boss at the end'}: <b>${esc(bossOf(nm.k).name)}</b></span></div>
     <div class="bar"><i style="width:${modStepsDone(nm.k)*25}%"></i></div><span class="btn block">${modStepsDone(nm.k)?t('continue'):t('startTrack')} →</span></button>`:''}
   <div class="grid3 treats"><button class="treat ${hb?'done':''}" id="hb"><span class="ti hbmini">福</span><b>红包</b><span class="sub">${hb?'✓':(isAr()?'ظرف أحمر':'Red envelope')}</span></button>
-    <button class="treat ${qn?'done':''}" id="qn"><span class="ti">🥢</span><b>求签</b><span class="sub">${qn?'✓':(isAr()?'عود الحظ':'Fortune')}</span></button>
-    <button class="treat ${dailyDone?'done':''}" id="daily"><span class="ti">🧩</span><b>${isAr()?'تحدي':'Daily'}</b><span class="sub">${dailyDone?'✓':'+40'}</span></button></div>
+    <button class="treat ${qn?'done':''}" id="qn">${ico('sticks','gold')}<b>求签</b><span class="sub">${qn?'✓':(isAr()?'عود الحظ':'Fortune')}</span></button>
+    <button class="treat ${dailyDone?'done':''}" id="daily">${ico('puzzle','jade')}<b>${isAr()?'تحدي':'Daily'}</b><span class="sub">${dailyDone?'✓':'+40'}</span></button></div>
+  ${questWidget()}${weekWidget()}
   <div class="col" style="gap:10px">${['se','cy'].map(k=>{ const ms=TRACK(k), d=ms.filter(x=>modDone(x.k)).length; return `<button class="track ${k}" data-tr="${k}"><span class="ti">${TRK[k].ic}</span><div class="grow"><b>${TRK[k].name()}</b><div class="bar ${k}" style="margin-top:6px"><i style="width:${d/ms.length*100}%"></i></div></div><span class="sub num">${d}/${ms.length}</span></button>`; }).join('')}
     <button class="track zh" id="tzh"><span class="ti">中</span><div class="grow"><b>${t('trZH')}</b><div class="sub"><span class="num">${Object.keys(S.srs).length}</span> ${t('learned')}${due?` · <span class="num">${due}</span> ${t('due')}`:''}</div></div><span aria-hidden="true">›</span></button></div>
   <h2 class="sech"><span class="brushzh">练</span> ${t('labsT')}</h2>
-  <div class="grid2">${[['codelab','⌨️','codeLabs'],['ctf','🔓','ctf'],['phish','🎣','phish'],['logs','📜','logs']].map(([k,ic,n])=>`<button class="ltile" data-lab="${k}"><span class="li">${ic}</span><b>${t(n)}</b><span class="sub">${t(n+'B')}</span></button>`).join('')}</div>`);
+  <div class="grid2">${[['codelab','code:blue','codeLabs'],['ctf','key:gold','ctf'],['phish','fish:red','phish'],['logs','logs:jade','logs']].map(([k,ic,n])=>`<button class="ltile" data-lab="${k}">${ico(...ic.split(':'),'lg')}<b>${t(n)}</b><span class="sub">${t(n+'B')}</span></button>`).join('')}</div>`);
   const c=$('#cont',m); if(c) c.onclick=()=>{ SFX.tap(); go('module',nm.k); };
   const nextJoke=()=>{ jk=(jk+1)%JOKES.length; const lb=$('#lb',m); lb.classList.remove('hop'); void lb.offsetWidth; lb.classList.add('hop'); SFX.tap(); haptic('light'); $('#jt',m).textContent=isAr()?JOKES[jk][0]:JOKES[jk][1]; };
   $('#lb',m).onclick=nextJoke; $('#jb',m).onclick=nextJoke;
+  bindQuests(m);
   $('#hb',m).onclick=()=>{ SFX.tap(); hongbaoSheet(); }; $('#qn',m).onclick=()=>{ SFX.tap(); fortuneSheet(); };
   $('#daily',m).onclick=()=>{ SFX.tap(); go('daily'); };
   $$('[data-tr]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('track',b.dataset.tr); });
@@ -46,7 +48,7 @@ SCREENS.home=m=>{ const h=new Date().getHours(); const tr=S.focus==='cy'?'cy':'s
 
 SCREENS.learn=m=>{ m.insertAdjacentHTML('beforeend',`${topbar()}<div class="hero"><span class="eyebrow">${t('learn')} · 学 xué</span><h1>${t('trSE')} · ${t('trCY')}</h1></div>
   ${['se','cy'].map(k=>{ const ms=TRACK(k), d=ms.filter(x=>modDone(x.k)).length; return `<button class="track ${k} big" data-tr="${k}"><span class="ti">${TRK[k].ic}</span><div class="grow"><span class="brushzh" style="font-size:22px">${k==='se'?'软件工程':'网络安全'}</span><b style="display:block">${TRK[k].name()}</b><div class="sub"><span class="num">${ms.length}</span> ${t('modules')} · <span class="num">${ms.length}</span> ${isAr()?'وحوش':'bosses'} · <span class="num">${ms.reduce((a,x)=>a+x.L.length,0)}</span> ${t('lessons')}</div><div class="bar ${k}" style="margin-top:6px"><i style="width:${d/ms.length*100}%"></i></div></div><span class="sub num">${d}/${ms.length}</span></button>`; }).join('')}
-  <button class="card tap row" id="ex" style="gap:12px"><span class="sealchip">第</span><div class="grow"><b>${t('exam')}</b><div class="sub">${t('examB')}</div></div><span aria-hidden="true">›</span></button>`);
+  <button class="card tap row" id="ex" style="gap:12px">${ico('exam','gold','lg')}<div class="grow"><b>${t('exam')}</b><div class="sub">${t('examB')}</div></div><span aria-hidden="true">›</span></button>`);
   $$('[data-tr]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('track',b.dataset.tr); }); $('#ex',m).onclick=()=>{ SFX.tap(); go('exam'); }; };
 
 /* dashed river joining the stones: measured after layout, redrawn on resize */
@@ -61,7 +63,7 @@ SCREENS.track=(m,tr)=>{ tr=tr==='cy'?'cy':'se'; const ms=TRACK(tr), d=ms.filter(
     return `<div class="pstep" style="--x:${X[i%4]}%"><div class="pcol"><button class="pnode ${s.done?'done':''} ${free?'':'locked'} ${here?'here':''}" data-k="${x.k}" aria-label="${esc(L(x))}">
       <span class="pic">${s.done?'<span class="stampmark">斩</span>':free?x.ic:ICON.lock}</span>${here?`<span class="phere">${dragon('happy',44)}</span>`:''}<span class="pboss" title="${esc(b.name)}">${b.e}</span></button>
       <div class="plabel"><b>${esc(L(x))}</b><span class="zh">${esc(x.zh)}</span>${s.done?stars(s.stars||1):`<span class="sub">${modStepsDone(x.k)}/4</span>`}</div></div></div>`; };
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${isAr()?'→':'←'}</button><div class="grow"><span class="eyebrow">${t('learn')}</span><h1>${TRK[tr].ic} ${TRK[tr].name()}</h1></div></div>
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><div class="grow"><span class="eyebrow">${t('learn')}</span><h1>${TRK[tr].ic} ${TRK[tr].name()}</h1></div></div>
   <div class="seg" id="tsg"><button data-t="se" aria-pressed="${tr==='se'}">💻 ${t('trSE')}</button><button data-t="cy" aria-pressed="${tr==='cy'}">🛡️ ${t('trCY')}</button></div>
   <div class="row card"><div class="grow"><div class="bar ${tr}"><i style="width:${d/ms.length*100}%"></i></div><div class="sub" style="margin-top:6px"><span class="num">${d}/${ms.length}</span> ${t('done')} · <span class="num">${d}</span> ${isAr()?'وحوش هُزمت':'bosses defeated'}</div></div><button class="btn sm ghost" id="ex">📝 ${t('exam')}</button></div>
   <div class="pathmap">${ms.map(node).join('')}<div class="pend"><span class="brushzh">${tr==='se'?'毕业':'护法'}</span></div></div>
@@ -74,9 +76,9 @@ SCREENS.track=(m,tr)=>{ tr=tr==='cy'?'cy':'se'; const ms=TRACK(tr), d=ms.filter(
 SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modFree(x)){ m.insertAdjacentHTML('beforeend',topbar()); return paywall(); }
   const s=mst(x.k), lab=CODE_LABS.find(l=>l.mod===x.k);
   const step=(id,n,label,sub,done)=>`<button class="step ${done?'done':''}" data-s="${id}"><span class="sn">${done?'✓':n}</span><div class="grow"><b>${label}</b><div class="sub">${sub}</div></div><span aria-hidden="true">›</span></button>`;
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${isAr()?'→':'←'}</button><span class="tag ${x.tr}">${TRK[x.tr].name()} · <span class="num">${x.ti+1}</span></span><div class="grow"></div>${s.done?stars(s.stars||1):''}</div>
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><span class="tag ${x.tr}">${TRK[x.tr].name()} · <span class="num">${x.ti+1}</span></span><div class="grow"></div>${s.done?stars(s.stars||1):''}</div>
   <div class="mhero"><div class="row" style="align-items:flex-start"><div class="grow"><h1>${x.ic} ${esc(L(x))}</h1><p class="sub" style="margin-top:6px">${esc(L(x,'sa','se'))}</p></div></div>
-    <div class="row"><span class="zhbig">${esc(x.zh)}</span><button class="speak" id="say" aria-label="🔊">🔊</button></div><span class="py">${esc(x.py)}</span></div>
+    <div class="row"><span class="zhbig">${esc(x.zh)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div><span class="py">${esc(x.py)}</span></div>
   <div class="steps">${step('L',1,t('stepL'),`<span class="num">${x.L.length}</span> ${t('lessons')}`,s.L)}${step('Q',2,`${bossOf(x.k).e} ${isAr()?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}`,s.Qb!=null?`${t('score')}: <span class="num">${Math.round(s.Qb*100)}%</span>`:`<span class="num">${x.Q.length}</span> ${t('questions')}`,s.Q)}
     ${step('T',3,t('stepT'),`<span class="num">${x.T.length}</span> · ${x.T.slice(0,3).map(w=>`<span class="han">${esc(w.h)}</span>`).join(' · ')}`,s.T)}${step('D',4,t('stepD'),`<span class="num">${x.D.length}</span> · ${t('dialog')}`,s.D)}
     ${lab?step('lab','⌨',t('stepLab'),esc(L(lab))+' · <span class="han">'+esc(lab.zh)+'</span>',!!S.labs[lab.k]):''}</div>`);
@@ -86,7 +88,7 @@ SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modF
 
 function dialogSheet(x){ let playing=false;
   sheet(`<div class="row"><h2 class="grow">💬 ${t('dialog')}</h2><button class="btn sm ghost" id="pa">▶</button></div><span class="han" style="color:var(--zh)">${esc(x.zh)}</span>
-    <div class="dlg">${x.D.map((d,i)=>`<div class="dl ${d.s}"><span class="who">${d.s}</span><div class="grow"><div class="zhline han">${esc(d.zh)}</div><div class="py" style="font-size:13px">${esc(d.py)}</div><div class="sub" dir="auto">${esc(L(d))}</div></div><button class="speak" data-i="${i}" aria-label="🔊">🔊</button></div>`).join('')}</div>
+    <div class="dlg">${x.D.map((d,i)=>`<div class="dl ${d.s}"><span class="who">${d.s}</span><div class="grow"><div class="zhline han">${esc(d.zh)}</div><div class="py" style="font-size:13px">${esc(d.py)}</div><div class="sub" dir="auto">${esc(L(d))}</div></div><button class="speak" data-i="${i}" aria-label="🔊">${ICON.speak}</button></div>`).join('')}</div>
     <button class="btn block" id="dd">${t('done')} ✓</button>`,el=>{
     $$('.speak',el).forEach(b=>b.onclick=()=>{ const d=x.D[+b.dataset.i]; speak(d.zh,{voice:d.s==='A'?'n':'p'}); });
     $('#pa',el).onclick=async()=>{ if(playing){ playing=false; stopVoice(); return; } playing=true; for(const d of x.D){ if(!playing) break; await speak(d.zh,{voice:d.s==='A'?'n':'p'}); await new Promise(r=>setTimeout(r,350)); } playing=false; };
@@ -97,13 +99,13 @@ function moduleDone(x){ SFX.gong(); fireworks(4); confetti(110); const s=mst(x.k
     <button class="btn block" id="nx">${t('next')} →</button></div>`,el=>{ $('#nx',el).onclick=async()=>{ closeSheet(); await interstitial(); const n=nextMod(x.tr); n&&modFree(n)?go('module',n.k):go('track',x.tr); }; }); }
 
 SCREENS.lesson=(m,{k,i})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.min(n-1,i|0)); const l=x.L[i];
-  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar"><i style="width:${(i+1)/n*100}%"></i></div><span class="sub num">${i+1}/${n}</span></div>
+  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar"><i style="width:${(i+1)/n*100}%"></i></div><span class="sub num">${i+1}/${n}</span></div>
   <div class="lcard rise"><span class="eyebrow">${x.ic} ${esc(L(x))}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${rich(L(l,'a','e'))}</div>${l.c?codeHTML(l.c):''}</div>
-  ${i===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="🔊">🔊</button></div>`:''}
+  ${i===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div>`:''}
   <div class="grow"></div><div class="row">${i>0?`<button class="btn ghost" id="pv">${isAr()?'→':'←'}</button>`:''}<button class="btn grow" id="nx">${i<n-1?t('next')+' →':t('finish')+' ✓'}</button></div>`;
   $('#qx',m).onclick=()=>go('module',k); const sy=$('#say',m); if(sy) sy.onclick=()=>speak(x.zh);
   const pv=$('#pv',m); if(pv) pv.onclick=()=>{ SFX.tap(); route={name:'lesson',arg:{k,i:i-1}}; render(); window.scrollTo(0,0); };
-  $('#nx',m).onclick=()=>{ SFX.tap(); if(i<n-1){ route={name:'lesson',arg:{k,i:i+1}}; render(); window.scrollTo(0,0); return; }
+  $('#nx',m).onclick=()=>{ SFX.tap(); questEvent('lesson'); if(i<n-1){ SFX.open(); route={name:'lesson',arg:{k,i:i+1}}; render(); window.scrollTo(0,0); return; }
     const s=mst(k); if(!s.L){ s.L=1; save(); addXP(10); } const fin=checkModDone(x); go('module',k); if(fin) moduleDone(x); }; };
 
 /* ---------- quiz engine (learn mode: feedback after each answer; exam mode: feedback at the end; boss mode: HP and hearts) ---------- */
@@ -117,26 +119,26 @@ function runQuiz(m,{qs,title,exam,seconds,boss,onDone,onQuit}){ let i=0, right=0
       <div class="hp"><i id="hp" style="width:${100-right/qs.length*100}%"></i></div></div></div>
       <div class="row" style="justify-content:space-between"><span class="hearts" aria-label="${hearts}">${'❤️'.repeat(hearts)}${'🖤'.repeat(hearts0-hearts)}</span><span class="taunt" id="tn">${esc(pickL(TAUNTS))}</span></div></div>`;
   function draw(){ const q=qs[i]; $$('.feedback').forEach(f=>f.remove());
-    m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar"><i style="width:${i/qs.length*100}%"></i></div>${seconds?`<span class="timer num" id="qt">${fmtT(Math.round((end-Date.now())/1000))}</span>`:`<span class="sub num">${i+1}/${qs.length}</span>`}</div>
+    m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar"><i style="width:${i/qs.length*100}%"></i></div>${seconds?`<span class="timer num" id="qt">${fmtT(Math.round((end-Date.now())/1000))}</span>`:`<span class="sub num">${i+1}/${qs.length}</span>`}</div>
       ${boss?bossBox():`<span class="eyebrow">${esc(title)}${q.mod?' · '+esc(L(q.mod)):''}</span>`}<div class="qtext rise">${q.q}</div>
       <div class="col" style="gap:10px">${q.opts.map((o,j)=>`<button class="opt" data-j="${j}"><span class="ol">${'ABCD'[j]}</span><span class="grow">${o.h}</span></button>`).join('')}</div>`;
     $('#qx',m).onclick=()=>{ clearInterval(timer); COMBO=0; onQuit(); };
     $$('.opt',m).forEach(b=>b.onclick=()=>{ if(m.dataset.lock) return; const o=q.opts[+b.dataset.j]; log.push({q,ok:o.ok,pick:o}); if(o.ok){ right++; S.right=(S.right||0)+1; }
-      comboHit(o.ok);
+      comboHit(o.ok); if(o.ok) questEvent('right');
       if(exam){ SFX.tap(); i++; i<qs.length?draw():finish(); return; }
       m.dataset.lock=1; $$('.opt',m).forEach((x,j)=>{ x.disabled=true; if(q.opts[j].ok) x.classList.add('right'); else if(x===b) x.classList.add('wrong'); else x.classList.add('dim'); });
       o.ok?(SFX.ok(),haptic('success')):(SFX.bad(),haptic('error'));
       if(boss){ const bs=$('#bs',m); if(o.ok){ SFX.hit(); $('#hp',m).style.width=(100-right/qs.length*100)+'%'; $('#bf',m).classList.add('ouch'); $('#tn',m).textContent=pickL(HITS); floatText('-'+Math.round(100/qs.length)+' HP',$('#bf',m)); }
         else { hearts--; bs.classList.add('shake'); $('#tn',m).textContent=pickL(TAUNTS); $('.hearts',m).innerHTML='❤️'.repeat(hearts)+'🖤'.repeat(hearts0-hearts); } }
       const lost=boss&&hearts<=0, f=document.createElement('div'); f.className='feedback '+(o.ok?'good':'bad');
-      f.innerHTML=`<div><div class="row"><b class="v grow">${o.ok?'✓ '+t('correct'):'✕ '+t('wrong')}</b><span class="sub">${esc(pickL(o.ok?QUIP_OK:QUIP_BAD))}</span></div><div class="sub" style="color:var(--text)">${q.why}</div><button class="btn block" id="fn">${lost?(isAr()?'النتيجة':'See result'):t('next')+' →'}</button></div>`;
+      f.innerHTML=`<div><div class="row"><b class="v grow">${o.ok?t('correct'):t('wrong')}</b><span class="sub">${esc(pickL(o.ok?QUIP_OK:QUIP_BAD))}</span></div><div class="sub" style="color:var(--text)">${q.why}</div><button class="btn block" id="fn">${lost?(isAr()?'النتيجة':'See result'):t('next')+' →'}</button></div>`;
       document.body.appendChild(f); $('#fn',f).onclick=()=>{ f.remove(); delete m.dataset.lock; i++; (i<qs.length&&!lost)?draw():finish(); }; }); }
   function finish(){ clearInterval(timer); $$('.feedback').forEach(f=>f.remove()); save(); onDone(right,qs.length,log,hearts===hearts0); }
   draw(); }
 
 SCREENS.quizrun=(m,{k})=>{ const x=MOD[k], b=bossOf(k); const qs=shuffle(x.Q).map(q=>qFrom(q));
   runQuiz(m,{qs,title:t('quiz'),boss:b,onQuit:()=>go('module',k),onDone:(r,n,log,flawless)=>{ const p=r/n, s=mst(k); s.Qb=Math.max(s.Qb||0,p); const ok=quizPass(p);
-    if(ok){ s.Q=1; s.stars=Math.max(s.stars||0,quizStars(p)); if(flawless) S.flawless=1; } addXP(r*3); const c=ok?addCoins(10+r):0; save(); ok?(SFX.gong(),fireworks(3),confetti(60)):SFX.bad(); track('quiz',{k,p}); checkBadges();
+    if(ok){ s.Q=1; s.stars=Math.max(s.stars||0,quizStars(p)); if(flawless) S.flawless=1; questEvent('boss'); } addXP(r*3); const c=ok?addCoins(10+r):0; save(); ok?(SFX.gong(),fireworks(3),confetti(60)):SFX.bad(); track('quiz',{k,p}); checkBadges();
     m.innerHTML=`<div class="result rise">${ok?`<div class="bossdown"><span class="bossface gone">${b.e}</span><span class="stampmark big">斩</span></div><h1>${isAr()?'هزمت':'You defeated'} ${esc(b.name)}!</h1><span class="brushzh">${esc(b.zh)} · ${esc(b.py)}</span>${stars(quizStars(p))}`
       :`<div class="bossdown">${dragon('sad',96)}<span class="bossface laugh">${b.e}</span></div><h1>${esc(b.name)} ${isAr()?'فاز هذه المرة':'wins this round'}</h1><p class="sub">${esc(pickL(TAUNTS))} ${t('quizFail')}</p>`}
       <div class="kv"><div><span class="sub">${t('score')}</span><b class="num">${r}/${n}</b></div><div><span class="sub">${t('earned')}</span><b class="num">+${r*3}</b></div><div><span class="sub">${t('bitsCur')}</span><b class="num">+${c}</b></div></div>
@@ -144,7 +146,7 @@ SCREENS.quizrun=(m,{k})=>{ const x=MOD[k], b=bossOf(k); const qs=shuffle(x.Q).ma
     $('#ag',m).onclick=()=>go('quizrun',{k}); $('#nx',m).onclick=()=>{ const fin=checkModDone(x); go('module',k); if(fin) moduleDone(x); }; }}); };
 
 SCREENS.exam=(m,tr)=>{ tr=tr==='cy'?'cy':'se'; const best=S.exams[tr]; const used=S.examDay===today()&&!S.pro;
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${isAr()?'→':'←'}</button><div class="grow"><span class="eyebrow">${t('learn')}</span><h1>📝 ${t('exam')}</h1></div></div>
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><div class="grow"><span class="eyebrow">${t('learn')}</span><h1>📝 ${t('exam')}</h1></div></div>
   <div class="seg" id="esg"><button data-t="se" aria-pressed="${tr==='se'}">💻 ${t('trSE')}</button><button data-t="cy" aria-pressed="${tr==='cy'}">🛡️ ${t('trCY')}</button></div>
   <div class="card col" style="gap:10px"><p>${t('examB')}</p>${best!=null?`<div class="sub">${t('score')}: <b class="num">${Math.round(best*100)}%</b></div>`:''}${S.pro?'':`<div class="sub">${t('examFree')}</div>`}
   <button class="btn block" id="go">${used?ICON.lock+' ':''}${t('examStart')}</button></div>`);

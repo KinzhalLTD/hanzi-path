@@ -102,7 +102,7 @@ function floatText(txt,el){ const r=el?el.getBoundingClientRect():{left:innerWid
 /* ---------- progress, bits, ranks ---------- */
 const RANK_XP=[0,150,400,900,1700,2800,4300,6500];
 const rankOf=xp=>{let r=0; RANK_XP.forEach((v,i)=>{if(xp>=v) r=i;}); return r;};
-function addXP(n){ rollDay(); const before=S.todayXP, r0=rankOf(S.xp); S.xp+=n; S.todayXP+=n; S.days=S.days||{}; S.days[today()]=1;
+function addXP(n){ rollDay(); try{ questEvent('xp',n); }catch(e){} const before=S.todayXP, r0=rankOf(S.xp); S.xp+=n; S.todayXP+=n; S.days=S.days||{}; S.days[today()]=1;
   const d=today(); if(S.lastActive!==d){ const yd=ymd(new Date(Date.now()-864e5)); S.streak=(S.lastActive===yd)?S.streak+1:1; S.lastActive=d; track('streak_day',{streak:S.streak}); }
   save(); if(before<S.goal&&S.todayXP>=S.goal) toast('🎯 '+t('goalDone'));
   const r1=rankOf(S.xp); if(r1>r0) setTimeout(()=>{ SFX.gong(); fireworks(4); toast(`${t('rankUp')} ${RANK_ZH[r1]} · ${t('ranks')[r1]}`); },400);
@@ -119,8 +119,8 @@ function toast(msg){ $$('.toast').forEach(x=>x.remove()); const d=document.creat
 let sheetEl=null;
 function closeSheet(){ if(sheetEl){sheetEl.remove();sheetEl=null;} }
 function sheet(html,bind){ closeSheet(); sheetEl=document.createElement('div'); sheetEl.className='sheet'; sheetEl.innerHTML=`<div class="rise" role="dialog"><div class="grab"></div>${html}</div>`;
-  sheetEl.onclick=e=>{ if(e.target===sheetEl) closeSheet(); }; document.body.appendChild(sheetEl); bind&&bind(sheetEl.firstElementChild); }
-const coinHTML=`<span class="ltr" style="color:var(--amber);display:inline-flex">${ICON.bit}</span>`;
+  sheetEl.onclick=e=>{ if(e.target===sheetEl) closeSheet(); }; document.body.appendChild(sheetEl); try{ SFX.open(); }catch(e){} bind&&bind(sheetEl.firstElementChild); }
+let coinHTML=`<span class="ltr" style="color:var(--amber);display:inline-flex">${ICON.bit}</span>`;
 const stars=n=>`<span class="stars" aria-label="${n}/3">${[1,2,3].map(i=>`<i class="${i<=n?'on':''}">★</i>`).join('')}</span>`;
 function ring(p,label,size=72){ const r=30, c=2*Math.PI*r; return `<svg class="ring" viewBox="0 0 72 72" style="width:${size}px;height:${size}px"><circle class="bgc" cx="36" cy="36" r="${r}"/><circle class="fgc" cx="36" cy="36" r="${r}" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-Math.min(1,p))}" transform="rotate(-90 36 36)"/><text x="36" y="41" text-anchor="middle">${label}</text></svg>`; }
 /* light syntax colouring for JS/SQL/shell snippets (input is escaped first) */

@@ -14,14 +14,14 @@ const GAMES={
 };
 SCREENS.game=(m,k)=>{ if(!GAMES[k]) return go('labs'); let score=0, streak=0, end=Date.now()+60000, iv=null, started=false;
   const prev=cleanup; cleanup=()=>{ clearInterval(iv); prev&&prev(); }; S.best=S.best||{};
-  const intro=()=>{ m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><span class="eyebrow grow">${t('arcade')}</span></div>
+  const intro=()=>{ m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><span class="eyebrow grow">${t('arcade')}</span></div>
     <div class="gstage rise"><div class="gbig ${k==='sprint'?'han':''}" style="color:var(--acc)">${k==='sprint'?'中':k==='bits'?'01':'🔌'}</div><h1>${t(k)}</h1><p class="sub">${t(k+'B')}</p>${S.best[k]?`<div class="sub">★ <span class="num">${S.best[k]}</span></div>`:''}<button class="btn block" id="go">${t('start')} ▶</button></div>`;
     $('#qx',m).onclick=()=>go('labs'); $('#go',m).onclick=()=>{ started=true; end=Date.now()+60000; iv=setInterval(()=>{ const l=Math.max(0,Math.ceil((end-Date.now())/1000)); const el=$('#tm',m); if(el) el.textContent=l+'s'; if(!l) over(); },250); round(); }; };
   const round=()=>{ const r=GAMES[k]();
-    m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><span class="timer num" id="tm">${Math.ceil((end-Date.now())/1000)}s</span><div class="grow"></div><b class="num">★ ${score}</b>${streak>2?`<span class="tag" style="color:var(--amber)">×2</span>`:''}</div>
+    m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><span class="timer num" id="tm">${Math.ceil((end-Date.now())/1000)}s</span><div class="grow"></div><b class="num">★ ${score}</b>${streak>2?`<span class="tag" style="color:var(--amber)">×2</span>`:''}</div>
       <div class="gstage">${r.q}</div><div class="grid2">${r.opts.map((o,j)=>`<button class="opt" data-j="${j}" style="justify-content:center;min-height:64px">${o.h}</button>`).join('')}</div>`;
     $('#qx',m).onclick=()=>{ clearInterval(iv); go('labs'); }; if(r.say) speak(r.say);
-    $$('.opt',m).forEach(b=>b.onclick=()=>{ const o=r.opts[+b.dataset.j]; if(o.ok){ streak++; score+=streak>2?2:1; SFX.ok(); haptic('light'); b.classList.add('right'); setTimeout(round,180); }
+    $$('.opt',m).forEach(b=>b.onclick=()=>{ const o=r.opts[+b.dataset.j]; if(o.ok){ streak++; score+=streak>2?2:1; questEvent('right'); SFX.combo(Math.min(14,streak)); haptic('light'); b.classList.add('right'); setTimeout(round,180); }
       else { streak=0; SFX.bad(); haptic('error'); b.classList.add('wrong'); $$('.opt',m).forEach((x,j)=>{ if(r.opts[j].ok) x.classList.add('right'); }); setTimeout(round,650); } }); };
   const over=()=>{ clearInterval(iv); const best=score>(S.best[k]||0); if(best) S.best[k]=score; addXP(Math.min(30,score)); const c=addCoins(Math.min(25,score)); save(); SFX.win(); if(best&&score) confetti(70); track('game',{k,score});
     m.innerHTML=`<div class="result rise"><div class="big num">${score}</div><h1>${best&&score?'🏆 ★':t('score')}</h1><div class="sub">★ <span class="num">${S.best[k]||0}</span> · +${c} ${t('bitsCur')}</div>

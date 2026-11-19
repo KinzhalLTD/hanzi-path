@@ -9,13 +9,13 @@ function openLab(k){ if(k==='codelab') return go('labs'); if(k==='pw') return go
   const d=SEC_LABS[k].data, i=d.findIndex((x,j)=>!((S.sec||{})[k]||{})[j]); go('seclab',{lab:k,i:Math.max(0,i)}); }
 function openCodeLab(k){ const l=CODE_LABS.find(x=>x.k===k); if(!labFree(l)) return paywall(); go('codelab',k); }
 
-SCREENS.labs=m=>{ const tile=(k,ic,n,prog)=>`<button class="ltile" data-lab="${k}"><div class="row"><span class="li">${ic}</span><div class="grow"></div>${prog?`<span class="sub num">${prog}</span>`:''}</div><b>${t(n)}</b><span class="sub">${t(n+'B')}</span></button>`;
+SCREENS.labs=m=>{ const tile=(k,ic,n,prog)=>`<button class="ltile" data-lab="${k}"><div class="row">${ico(...ic.split(':'),'lg')}<div class="grow"></div>${prog?`<span class="sub num">${prog}</span>`:''}</div><b>${t(n)}</b><span class="sub">${t(n+'B')}</span></button>`;
   let tr=S._labTr||'se';
   m.insertAdjacentHTML('beforeend',`${topbar()}<div class="lhero"><span class="mono">$ sandbox --safe --local</span><h1>${t('labsT')}</h1><p class="sub">${t('labsB')}</p></div>
-  <h2>🛡️ ${t('trCY')}</h2><div class="grid2">${tile('phish','🎣','phish',secSolved('phish')+'/'+PHISH.length)}${tile('logs','📜','logs',secSolved('logs')+'/'+LOGS.length)}${tile('review','🔍','review',secSolved('review')+'/'+REVIEW.length)}${tile('ctf','🔓','ctf',secSolved('ctf')+'/'+CTF.length)}${tile('fw','🧱','fw',(S.fwBest||0)+'/3')}${tile('pw','🔑','pw','')}</div>
+  <h2 class="sech"><span class="brushzh">安</span> ${t('trCY')}</h2><div class="grid2">${tile('phish','fish:red','phish',secSolved('phish')+'/'+PHISH.length)}${tile('logs','logs:jade','logs',secSolved('logs')+'/'+LOGS.length)}${tile('review','review:blue','review',secSolved('review')+'/'+REVIEW.length)}${tile('ctf','key:gold','ctf',secSolved('ctf')+'/'+CTF.length)}${tile('fw','wall:red','fw',(S.fwBest||0)+'/3')}${tile('pw','lock2:ink','pw','')}</div>
   <h2>⌨️ ${t('codeLabs')}</h2><p class="sub">${t('codeLabsB')}</p>
   <div class="seg" id="lsg"><button data-t="se" aria-pressed="${tr==='se'}">💻 ${t('trSE')}</button><button data-t="cy" aria-pressed="${tr==='cy'}">🛡️ ${t('trCY')}</button></div><div class="col" id="cl" style="gap:8px"></div>
-  <h2>🎮 ${t('arcade')}</h2><div class="grid3">${[['sprint','中'],['bits','01'],['ports','🔌']].map(([k,ic])=>`<button class="ltile" data-g="${k}" style="min-height:110px"><span class="li ${k==='sprint'?'han':''}" style="${k==='sprint'?'color:var(--zh)':''}">${ic}</span><b style="font-size:13px">${t(k)}</b><span class="sub num">${S.best&&S.best[k]?'★ '+S.best[k]:''}</span></button>`).join('')}</div>`);
+  <h2 class="sech"><span class="brushzh">玩</span> ${t('arcade')}</h2><div class="grid3">${[['sprint','中'],['bits','01'],['ports','443']].map(([k,ic])=>`<button class="ltile" data-g="${k}" style="min-height:110px"><span class="ico lg ${k==='sprint'?'red':k==='bits'?'blue':'jade'}"><span class="icotxt">${ic}</span></span><b style="font-size:13px">${t(k)}</b><span class="sub num">${S.best&&S.best[k]?'★ '+S.best[k]:''}</span></button>`).join('')}</div>`);
   const drawList=()=>{ $('#cl',m).innerHTML=CODE_LABS.filter(l=>l.tr===tr).map(l=>{ const free=labFree(l), done=!!S.labs[l.k];
     return `<button class="modc ${done?'done':''} ${free?'':'locked'}" data-k="${l.k}"><span class="mi" style="font:600 15px var(--f-mono)">${done?'✓':'{ }'}</span><div class="grow"><b>${esc(L(l))}</b><div class="zh">${esc(l.zh)} <span class="py" style="font-size:11px">${esc(l.py)}</span></div><div class="sub">${esc(L(MOD[l.mod]))}</div></div>${free?'':`<span class="tag lock">${ICON.lock}</span>`}</button>`; }).join('');
     $$('#cl .modc',m).forEach(b=>b.onclick=()=>{ SFX.tap(); openCodeLab(b.dataset.k); }); };
@@ -42,12 +42,12 @@ const termHTML=(r,title)=>`<div class="term"><div class="tbar"><i></i><i></i><i>
 
 SCREENS.codelab=(m,k)=>{ const l=CODE_LABS.find(x=>x.k===k); if(!l) return go('labs'); if(!labFree(l)) return paywall();
   S.drafts=S.drafts||{}; let fails=0; const list=CODE_LABS.filter(x=>x.tr===l.tr), li=list.indexOf(l), nx=list[li+1];
-  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="grow"><span class="eyebrow">${t('codeLabs')} · <span class="num">${li+1}/${list.length}</span></span></div>${S.labs[k]?'<span class="tag ok">✓</span>':''}</div>
-  <div class="card col" style="gap:8px"><div class="row"><h2 class="grow">${esc(L(l))}</h2><span class="han" style="color:var(--zh)">${esc(l.zh)}</span><button class="speak" id="say" aria-label="🔊">🔊</button></div>
+  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><span class="eyebrow">${t('codeLabs')} · <span class="num">${li+1}/${list.length}</span></span></div>${S.labs[k]?'<span class="tag ok">✓</span>':''}</div>
+  <div class="card col" style="gap:8px"><div class="row"><h2 class="grow">${esc(L(l))}</h2><span class="han" style="color:var(--zh)">${esc(l.zh)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div>
     <div class="lbody"><p>${inl(L(l,'pa','pe'))}</p></div><div class="sub">${esc(L(MOD[l.mod]))}</div></div>
   <div class="editor"><textarea id="ed" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="code">${esc(S.drafts[k]||l.start)}</textarea>
     <div class="keys">${['(',')','{','}','[',']',';','"','=','=>','.','!','<','>','+','return','const','⇥'].map(c=>`<button data-c="${esc(c)}">${esc(c)}</button>`).join('')}</div></div>
-  <div class="row"><button class="btn grow" id="rt">▶ ${t('runTests')}</button><button class="btn ghost sm" id="hn">💡</button><button class="btn ghost sm" id="rs" aria-label="${t('reset')}">↺</button></div>
+  <div class="row"><button class="btn grow" id="rt">▶ ${t('runTests')}</button><button class="btn ghost sm" id="hn">${ICON.hint}</button><button class="btn ghost sm" id="rs" aria-label="${t('reset')}">↺</button></div>
   <div id="out">${termHTML({},t('tests'))}</div><div id="after"></div>`;
   const ed=$('#ed',m); ed.oninput=()=>{ S.drafts[k]=ed.value; save(); };
   ed.onkeydown=e=>{ if(e.key==='Tab'){ e.preventDefault(); ins('  '); } };
@@ -59,21 +59,21 @@ SCREENS.codelab=(m,k)=>{ const l=CODE_LABS.find(x=>x.k===k); if(!l) return go('l
     $('#sol',el).onclick=()=>{ if(!(S.pro||fails>=3)&&!spend(20)) return; $('#sv',el).innerHTML=codeHTML(l.sol)+`<button class="btn block" id="use" style="margin-top:10px">${t('reset')} → ${t('solution')}</button>`; $('#use',el).onclick=()=>{ ed.value=l.sol; S.drafts[k]=l.sol; save(); closeSheet(); }; }; }); };
   $('#rt',m).onclick=async()=>{ const b=$('#rt',m); b.disabled=true; SFX.scan(); const r=await runCode(ed.value,l.tests); b.disabled=false;
     $('#out',m).innerHTML=termHTML(r,t('tests')); const ok=r.tests&&r.tests.every(x=>x.ok);
-    if(ok){ SFX.win(); haptic('success'); confetti(70); const first=!S.labs[k]; S.labs[k]=1; save(); if(first){ addXP(25); addCoins(20); track('lab_done',{k}); }
+    if(ok){ SFX.win(); haptic('success'); confetti(70); const first=!S.labs[k]; S.labs[k]=1; save(); questEvent('lab'); if(first){ addXP(25); addCoins(20); track('lab_done',{k}); }
       $('#after',m).innerHTML=`<div class="card col" style="gap:10px;border-color:var(--good)"><b style="color:var(--good)">✓ ${t('passed')}</b>${first?`<div class="sub">+25 ${t('xp')} · +20 ${t('bitsCur')}</div>`:''}<div class="row"><button class="btn ghost grow" id="bl">${t('labsT')}</button>${nx?`<button class="btn grow" id="nl">${t('next')} →</button>`:''}</div></div>`;
       $('#bl',m).onclick=async()=>{ await interstitial(); go('labs'); }; const n2=$('#nl',m); if(n2) n2.onclick=async()=>{ await interstitial(); openCodeLab(nx.k); };
       requestAnimationFrame(()=>$('#after',m).scrollIntoView({block:'nearest',behavior:'smooth'})); }
     else { fails++; SFX.bad(); haptic('error'); $('#after',m).innerHTML=fails>=3?`<button class="btn ghost block" id="ss">${t('showSol')}</button>`:''; const ss=$('#ss',m); if(ss) ss.onclick=()=>$('#hn',m).click(); } }; };
 
 /* ---------- round navigation shared by the security labs ---------- */
-function roundHead(m,lab,i,n,title){ return `<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="grow"><span class="eyebrow">${SEC_LABS[lab]?SEC_LABS[lab].ic:''} ${esc(title)}</span>
+function roundHead(m,lab,i,n,title){ return `<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><span class="eyebrow">${SEC_LABS[lab]?SEC_LABS[lab].ic:''} ${esc(title)}</span>
   <div class="row" style="gap:5px;margin-top:4px;flex-wrap:wrap">${Array.from({length:n},(_,j)=>{ const sc=((S.sec||{})[lab]||{})[j]; return `<button class="chip" data-r="${j}" style="height:32px;min-width:32px;padding:0 8px;${j===i?'border-color:var(--acc);color:var(--acc)':''}${sc?';background:var(--good-soft)':''}">${roundFree(lab,j)?j+1:ICON.lock}</button>`; }).join('')}</div></div></div>`; }
 function bindRounds(m,lab,routeName){ $('#qx',m).onclick=()=>go('labs'); $$('[data-r]',m).forEach(b=>b.onclick=()=>{ const j=+b.dataset.r; if(!roundFree(lab,j)) return paywall(); SFX.tap(); routeName==='ctflab'?go('ctflab',{i:j}):go('seclab',{lab,i:j}); }); }
-function roundDone(m,{lab,i,ok,score,msg,daily,next}){ const first=ok&&secMark(lab,i,score); if(ok&&first){ addXP(15+score*5); addCoins(10+score*5); }
+function roundDone(m,{lab,i,ok,score,msg,daily,next}){ const first=ok&&secMark(lab,i,score); if(ok) questEvent('lab'); if(ok&&first){ addXP(15+score*5); addCoins(10+score*5); }
   if(daily&&ok) dailyReward();
   ok?(SFX.win(),haptic('success'),confetti(50)):(SFX.bad(),haptic('error'));
   const f=document.createElement('div'); f.className='feedback '+(ok?'good':'bad');
-  f.innerHTML=`<div><div class="row"><b class="v grow">${ok?'✓ '+t('correct'):'✕ '+t('wrong')}</b>${ok?stars(score):''}</div><div class="sub" style="color:var(--text)">${msg}</div>
+  f.innerHTML=`<div><div class="row"><b class="v grow">${ok?t('correct'):t('wrong')}</b>${ok?stars(score):''}</div><div class="sub" style="color:var(--text)">${msg}</div>
     <div class="row">${daily?`<button class="btn block" id="fd">${t('finish')}</button>`:`<button class="btn ghost" id="fa">↺</button><button class="btn grow" id="fn">${next!=null?t('next')+' →':t('finish')}</button>`}</div></div>`;
   document.body.appendChild(f);
   const fd=$('#fd',f); if(fd) fd.onclick=()=>{ f.remove(); go('home'); };
@@ -128,14 +128,14 @@ const rotN=(s,n)=>s.replace(/[a-z]/gi,c=>{ const b=c<='Z'?65:97; return String.f
 const xorHex=(s,k)=>{ const h=s.replace(/[^0-9a-f]/gi,''); return String.fromCharCode(...(h.match(/../g)||[]).map(x=>parseInt(x,16)^k)); };
 const TOOLS=[['b64d','Base64 → text',s=>b64dec(s)],['b64e','text → Base64',s=>b64enc(s)],['hexd','Hex → text',s=>hexdec(s)],['hexe','text → Hex',s=>hexenc(s)],['bind','Binary → text',s=>bindec(s)],['urld','URL decode',s=>decodeURIComponent(s)],['rev','Reverse',s=>[...s].reverse().join('')],['rot13','ROT13',s=>rotN(s,13)]];
 SCREENS.ctflab=(m,arg)=>{ const daily=arg&&arg.daily; let i=Math.max(0,Math.min(CTF.length-1,(arg&&arg.i)|0)); if(!daily&&!roundFree('ctf',i)) return paywall(); const c=CTF[i];
-  m.innerHTML=(daily?`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><span class="eyebrow grow">🧩 ${t('daily')}</span></div>`:roundHead(m,'ctf',i,CTF.length,t('ctf')))+
+  m.innerHTML=(daily?`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><span class="eyebrow grow">🧩 ${t('daily')}</span></div>`:roundHead(m,'ctf',i,CTF.length,t('ctf')))+
   `<div class="lhero"><span class="mono">ctf://${esc(c.k)}</span><h2>${esc(L(c,'ta','te'))}</h2><p class="sub">${esc(L(c,'sa','se'))}</p></div>
   <div class="wb"><label class="sub" for="wi">${t('input')}</label><textarea id="wi" spellcheck="false" autocapitalize="off">${esc(c.data)}</textarea>
     <div class="tools">${TOOLS.map(([k,n])=>`<button data-t="${k}">${n}</button>`).join('')}</div>
     <div class="row wrap"><span class="sub">${t('shift')} ROT</span><input type="range" id="sh" min="1" max="25" value="1" style="flex:1;min-width:120px" aria-label="${t('shift')}"><span class="num" id="shv">1</span><button class="btn sm ghost" id="sha">ROT-N</button></div>
     <div class="row wrap"><span class="sub">XOR ${t('key')}</span><input class="field mono" id="xk" type="number" min="0" max="255" value="42" style="width:90px;height:38px"><button class="btn sm ghost" id="xo">Hex ⊕ key</button></div>
     <label class="sub">${t('result')}</label><div class="hashout" id="wo" dir="ltr">…</div><button class="btn sm ghost" id="use">⇡ ${t('useResult')}</button></div>
-  <div class="card col" style="gap:8px"><label for="fl"><b>${t('flagIn')}</b></label><input class="field mono" id="fl" placeholder="CP{...}" autocapitalize="off" autocomplete="off" spellcheck="false"><div class="row"><button class="btn grow" id="sb">${t('submit')}</button><button class="btn ghost sm" id="hn">💡</button></div><span class="sub">${t('flagHint')}</span></div>`;
+  <div class="card col" style="gap:8px"><label for="fl"><b>${t('flagIn')}</b></label><input class="field mono" id="fl" placeholder="CP{...}" autocapitalize="off" autocomplete="off" spellcheck="false"><div class="row"><button class="btn grow" id="sb">${t('submit')}</button><button class="btn ghost sm" id="hn">${ICON.hint}</button></div><span class="sub">${t('flagHint')}</span></div>`;
   if(daily) $('#qx',m).onclick=()=>go('home'); else bindRounds(m,'ctf','ctflab');
   const wi=$('#wi',m), wo=$('#wo',m); let last='';
   const show=v=>{ last=v; wo.textContent=v; if(/CP\{[^}]+\}/.test(v)){ wo.innerHTML=esc(v).replace(/(CP\{[^}]+\})/,'<span class="d">$1</span>'); } };
@@ -145,7 +145,7 @@ SCREENS.ctflab=(m,arg)=>{ const daily=arg&&arg.daily; let i=Math.max(0,Math.min(
   $('#xo',m).onclick=()=>apply(s=>xorHex(s,(+$('#xk',m).value)&255)); $('#use',m).onclick=()=>{ if(last){ wi.value=last; SFX.tap(); } };
   $('#hn',m).onclick=()=>sheet(`<h2>💡 ${t('hint')}</h2><p>${esc(L(c,'ha','he'))}</p>`);
   $('#sb',m).onclick=()=>{ const v=$('#fl',m).value.trim(); const ok=v===c.flag; if(!ok&&!v) return;
-    if(!ok){ SFX.bad(); haptic('error'); toast('✕ '+t('wrong')); return; }
+    if(!ok){ SFX.bad(); haptic('error'); toast(t('wrong')); return; }
     roundDone(m,{lab:'ctf',i,ok:true,score:3,daily,msg:`<code>${esc(c.flag)}</code>`,next:i+1<CTF.length?i+1:null}); }; };
 
 /* ---------- firewall simulator: generated rules, first match wins, implicit deny ---------- */
@@ -162,7 +162,7 @@ function fwRound(rnd,lv){ const ri=n=>Math.floor(rnd()*n), srcNets=['10.0.1.0/24
 SCREENS.fwlab=(m,arg)=>{ const daily=arg&&arg.daily; const lv=daily?2:Math.max(1,Math.min(3,(arg&&arg.lv)|0||1)); if(!daily&&lv>1&&!S.pro) return paywall();
   const rnd=daily?seeded('fw'+today()):Math.random; const N=daily?5:10; let k=0, right=0;
   const draw=()=>{ const r=fwRound(rnd,lv); const svcName=p=>(FW_SVC.find(x=>x[0]===p)||[0,''])[1];
-    m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar"><i style="width:${k/N*100}%"></i></div><span class="sub num">${k+1}/${N}</span></div>
+    m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar"><i style="width:${k/N*100}%"></i></div><span class="sub num">${k+1}/${N}</span></div>
     ${daily?`<span class="eyebrow">🧩 ${t('daily')}</span>`:`<div class="seg" id="lvs">${[1,2,3].map(x=>`<button data-l="${x}" aria-pressed="${x===lv}">${t('level')} ${x}${x>1&&!S.pro?' 🔒':''}</button>`).join('')}</div>`}
     <p class="sub">${t('firstMatch')}</p>
     <div class="card" style="padding:8px;overflow-x:auto"><table class="fwtable"><thead><tr><th>#</th><th>action</th><th>proto</th><th>source</th><th>dest</th><th>port</th></tr></thead><tbody>
@@ -199,7 +199,7 @@ function crackTime(bits,rate){ const s=Math.pow(2,bits)/2/rate; const u=isAr()?[
   if(s<1) return isAr()?'أقل من ثانية':'under a second'; if(s>31557600*1e9) return isAr()?'أكثر من مليار سنة':'over a billion years';
   let k=0; for(let i=0;i<u.length;i++) if(s>=u[i][1]) k=i; const v=s/u[k][1]; return `${v>=100?fmt(Math.round(v)):v.toFixed(1)} ${u[k][0]}`; }
 SCREENS.pwlab=m=>{ const salt=[...crypto.getRandomValues(new Uint8Array(8))].map(b=>b.toString(16).padStart(2,'0')).join('');
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${isAr()?'→':'←'}</button><div class="grow"><span class="eyebrow">${t('labsT')}</span><h1>🔑 ${t('pw')}</h1></div></div>
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><div class="grow"><span class="eyebrow">${t('labsT')}</span><h1>🔑 ${t('pw')}</h1></div></div>
   <div class="card col" style="gap:10px"><label for="pw" class="sub">${t('pwType')}</label><input class="field mono" id="pw" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="correct-horse-battery-staple">
     <div class="meter"><i id="mt" style="width:0%"></i></div><div class="row"><b class="grow">${t('entropy')}</b><span class="num" id="en">0 bits</span></div><div id="cm"></div>
     <div class="col" style="gap:6px" id="ct"></div><span class="sub">🔒 ${t('pwLocal')}</span></div>
@@ -225,6 +225,6 @@ function dailyReward(){ if(S.dailyDone===today()) return; S.dailyDone=today(); s
 SCREENS.daily=m=>{ const {kind,i}=dailyPick();
   if(kind==='ctf'){ route={name:'ctflab',arg:{i,daily:1}}; return SCREENS.ctflab(m,{i,daily:1}); }
   if(kind==='fw'){ route={name:'fwlab',arg:{daily:1}}; return SCREENS.fwlab(m,{daily:1}); }
-  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><span class="eyebrow grow">🧩 ${t('daily')} · ${t(kind)}</span></div>`;
+  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><span class="eyebrow grow">🧩 ${t('daily')} · ${t(kind)}</span></div>`;
   const body=document.createElement('div'); body.className='col'; body.style.gap='14px'; m.appendChild(body); $('#qx',m).onclick=()=>go('home');
   ({phish:phishRound,logs:logRound,review:reviewRound})[kind](body,i,(ok,score,msg)=>roundDone(m,{lab:kind,i,ok,score,msg,daily:1})); };
