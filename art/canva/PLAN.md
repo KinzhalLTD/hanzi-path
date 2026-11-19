@@ -11,7 +11,7 @@ Common style line for every prompt: "cute funny 3D cartoon, same style as the re
 |---|---|---|---|
 | 1 | longbao_happy.png | Mascot hugging a laptop (reference image) | ✓ |
 | 2 | longbao_win.png | Mascot jumping, confetti and firecrackers | ✓ |
-| 3 | bossgrid_se-fund__se-ds__se-algo__se-oop.png | 2x2: white ghost made of question marks · tangled purple octopus juggling numbered blocks · dizzy blue spiral whirlwind demon · grumpy stone giant with a crown of code brackets | |
+| 3 | bossgrid_se-fund__se-ds__se-algo__se-oop.png | 2x2: white ghost made of question marks · tangled purple octopus juggling numbered blocks · dizzy blue spiral whirlwind demon · grumpy stone giant with a crown of code brackets | ✓ |
 | 4 | bossgrid_se-pat__se-git__se-test__se-web.png | 2x2: monster made of tangled spaghetti noodles · two-headed dragon whose heads argue (merge conflict) · see-through phantom ladybug · fiery beast bursting out of a smoking server rack | |
 | 5 | bossgrid_se-db__se-sys__se-ops__se-agile.png | 2x2: sleepy sloth hugging a slow database cylinder · giant pagoda tower balanced on one tiny pillar · cheeky imp hugging a laptop with a "works on my machine" grin · sly orange fox carrying a growing stack of sticky notes | |
 | 6 | bossgrid_cy-found__cy-crypto__cy-iam__cy-net.png | 2x2: rat holding a key labelled 123456 shape (no text) · fat toad with an open unlocked padlock · monkey grabbing a bunch of golden keys · crab with ports/sockets on its shell, claws open | |
