@@ -7,7 +7,7 @@ const labFree=l=>S.pro||CODE_LABS.filter(x=>x.tr===l.tr).indexOf(l)<FREE_LABS;
 function secMark(lab,i,score){ S.sec=S.sec||{}; S.sec[lab]=S.sec[lab]||{}; const first=!S.sec[lab][i]; S.sec[lab][i]=Math.max(S.sec[lab][i]||0,score); save(); return first; }
 function openLab(k){ if(k==='codelab') return go('labs'); if(k==='pw') return go('pwlab'); if(k==='fw') return go('fwlab',{lv:1}); if(k==='ctf'){ const i=CTF.findIndex((x,j)=>!(S.sec.ctf||{})[j]); return go('ctflab',{i:Math.max(0,i)}); }
   const d=SEC_LABS[k].data, i=d.findIndex((x,j)=>!((S.sec||{})[k]||{})[j]); go('seclab',{lab:k,i:Math.max(0,i)}); }
-function openCodeLab(k){ const l=CODE_LABS.find(x=>x.k===k); if(!labFree(l)) return paywall(); go('codelab',k); }
+function openCodeLab(k){ const l=CODE_LABS.find(x=>x.k===k); if(!labFree(l)) return paywall('lab'); go('codelab',k); }
 
 SCREENS.labs=m=>{ const tile=(k,ic,n,prog)=>`<button class="ltile" data-lab="${k}"><div class="row">${ico(...ic.split(':'),'lg')}<div class="grow"></div>${prog?`<span class="sub num">${prog}</span>`:''}</div><b>${t(n)}</b><span class="sub">${t(n+'B')}</span></button>`;
   let tr=S._labTr||'se';
@@ -40,7 +40,7 @@ function runCode(src,tests){ return new Promise(res=>{ let wk=null; try{ wk=new 
 const termHTML=(r,title)=>`<div class="term"><div class="tbar"><i></i><i></i><i></i><span>${esc(title)}</span></div><pre>${[...(r.out||[]).map(esc),r.err?`<span class="trow-bad">✖ ${esc(r.err)}: ${esc(r.msg||'')}</span>`:'',
   ...(r.tests||[]).map(x=>`<span class="${x.ok?'trow-ok':'trow-bad'}">${x.ok?'✔':'✖'} ${esc(x.c)}${x.ok?'':`\n   ${t('expected')}: ${esc(x.ex)}\n   ${t('got')}: ${esc(x.err||x.v)}`}</span>`)].filter(Boolean).join('\n')||'<span class="sub">…</span>'}</pre></div>`;
 
-SCREENS.codelab=(m,k)=>{ const l=CODE_LABS.find(x=>x.k===k); if(!l) return go('labs'); if(!labFree(l)) return paywall();
+SCREENS.codelab=(m,k)=>{ const l=CODE_LABS.find(x=>x.k===k); if(!l) return go('labs'); if(!labFree(l)) return paywall('lab');
   S.drafts=S.drafts||{}; let fails=0; const list=CODE_LABS.filter(x=>x.tr===l.tr), li=list.indexOf(l), nx=list[li+1];
   m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><span class="eyebrow">${t('codeLabs')} · <span class="num">${li+1}/${list.length}</span></span></div>${S.labs[k]?'<span class="tag ok">✓</span>':''}</div>
   <div class="card col" style="gap:8px"><div class="row"><h2 class="grow">${esc(L(l))}</h2><span class="han" style="color:var(--zh)">${esc(l.zh)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div>
@@ -68,7 +68,7 @@ SCREENS.codelab=(m,k)=>{ const l=CODE_LABS.find(x=>x.k===k); if(!l) return go('l
 /* ---------- round navigation shared by the security labs ---------- */
 function roundHead(m,lab,i,n,title){ return `<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><span class="eyebrow">${SEC_LABS[lab]?SEC_LABS[lab].ic:''} ${esc(title)}</span>
   <div class="row" style="gap:5px;margin-top:4px;flex-wrap:wrap">${Array.from({length:n},(_,j)=>{ const sc=((S.sec||{})[lab]||{})[j]; return `<button class="chip" data-r="${j}" style="height:32px;min-width:32px;padding:0 8px;${j===i?'border-color:var(--acc);color:var(--acc)':''}${sc?';background:var(--good-soft)':''}">${roundFree(lab,j)?j+1:ICON.lock}</button>`; }).join('')}</div></div></div>`; }
-function bindRounds(m,lab,routeName){ $('#qx',m).onclick=()=>go('labs'); $$('[data-r]',m).forEach(b=>b.onclick=()=>{ const j=+b.dataset.r; if(!roundFree(lab,j)) return paywall(); SFX.tap(); routeName==='ctflab'?go('ctflab',{i:j}):go('seclab',{lab,i:j}); }); }
+function bindRounds(m,lab,routeName){ $('#qx',m).onclick=()=>go('labs'); $$('[data-r]',m).forEach(b=>b.onclick=()=>{ const j=+b.dataset.r; if(!roundFree(lab,j)) return paywall('lab'); SFX.tap(); routeName==='ctflab'?go('ctflab',{i:j}):go('seclab',{lab,i:j}); }); }
 function roundDone(m,{lab,i,ok,score,msg,daily,next}){ const first=ok&&secMark(lab,i,score); if(ok) questEvent('lab'); if(ok&&first){ addXP(15+score*5); addCoins(10+score*5); }
   if(daily&&ok) dailyReward();
   ok?(SFX.win(),haptic('success'),confetti(50)):(SFX.bad(),haptic('error'));
@@ -78,9 +78,9 @@ function roundDone(m,{lab,i,ok,score,msg,daily,next}){ const first=ok&&secMark(l
   document.body.appendChild(f);
   const fd=$('#fd',f); if(fd) fd.onclick=()=>{ f.remove(); go('home'); };
   const fa=$('#fa',f); if(fa) fa.onclick=()=>{ f.remove(); render(); };
-  const fn=$('#fn',f); if(fn) fn.onclick=async()=>{ f.remove(); if(next==null){ await interstitial(); return go('labs'); } if(!roundFree(lab,next)) return paywall(); lab==='ctf'?go('ctflab',{i:next}):go('seclab',{lab,i:next}); }; }
+  const fn=$('#fn',f); if(fn) fn.onclick=async()=>{ f.remove(); if(next==null){ await interstitial(); return go('labs'); } if(!roundFree(lab,next)) return paywall('lab'); lab==='ctf'?go('ctflab',{i:next}):go('seclab',{lab,i:next}); }; }
 
-SCREENS.seclab=(m,{lab,i})=>{ const d=SEC_LABS[lab].data; i=Math.max(0,Math.min(d.length-1,i|0)); if(!roundFree(lab,i)) return paywall();
+SCREENS.seclab=(m,{lab,i})=>{ const d=SEC_LABS[lab].data; i=Math.max(0,Math.min(d.length-1,i|0)); if(!roundFree(lab,i)) return paywall('lab');
   m.innerHTML=roundHead(m,lab,i,d.length,t(lab)); const body=document.createElement('div'); body.className='col'; body.style.gap='14px'; m.appendChild(body); bindRounds(m,lab,'seclab');
   const next=i+1<d.length?i+1:null; ({phish:phishRound,logs:logRound,review:reviewRound})[lab](body,i,(ok,score,msg)=>roundDone(m,{lab,i,ok,score,msg,next})); };
 
@@ -127,7 +127,7 @@ const bindec=s=>new TextDecoder().decode(Uint8Array.from(s.trim().split(/\s+/).f
 const rotN=(s,n)=>s.replace(/[a-z]/gi,c=>{ const b=c<='Z'?65:97; return String.fromCharCode(((c.charCodeAt(0)-b+n)%26+26)%26+b); });
 const xorHex=(s,k)=>{ const h=s.replace(/[^0-9a-f]/gi,''); return String.fromCharCode(...(h.match(/../g)||[]).map(x=>parseInt(x,16)^k)); };
 const TOOLS=[['b64d','Base64 → text',s=>b64dec(s)],['b64e','text → Base64',s=>b64enc(s)],['hexd','Hex → text',s=>hexdec(s)],['hexe','text → Hex',s=>hexenc(s)],['bind','Binary → text',s=>bindec(s)],['urld','URL decode',s=>decodeURIComponent(s)],['rev','Reverse',s=>[...s].reverse().join('')],['rot13','ROT13',s=>rotN(s,13)]];
-SCREENS.ctflab=(m,arg)=>{ const daily=arg&&arg.daily; let i=Math.max(0,Math.min(CTF.length-1,(arg&&arg.i)|0)); if(!daily&&!roundFree('ctf',i)) return paywall(); const c=CTF[i];
+SCREENS.ctflab=(m,arg)=>{ const daily=arg&&arg.daily; let i=Math.max(0,Math.min(CTF.length-1,(arg&&arg.i)|0)); if(!daily&&!roundFree('ctf',i)) return paywall('lab'); const c=CTF[i];
   m.innerHTML=(daily?`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><span class="eyebrow grow">🧩 ${t('daily')}</span></div>`:roundHead(m,'ctf',i,CTF.length,t('ctf')))+
   `<div class="lhero"><span class="mono">ctf://${esc(c.k)}</span><h2>${esc(L(c,'ta','te'))}</h2><p class="sub">${esc(L(c,'sa','se'))}</p></div>
   <div class="wb"><label class="sub" for="wi">${t('input')}</label><textarea id="wi" spellcheck="false" autocapitalize="off">${esc(c.data)}</textarea>
@@ -159,7 +159,7 @@ function fwRound(rnd,lv){ const ri=n=>Math.floor(rnd()*n), srcNets=['10.0.1.0/24
   const inNet=(ip,net)=>net==='any'||ip.startsWith(net.split('.').slice(0,3).join('.')+'.');
   const hit=rules.findIndex(r=>(r.p==='any'||r.p===pk.p)&&inNet(pk.src,r.src)&&(r.dst==='any'||r.dst===pk.dst)&&(r.port==='any'||r.port===pk.port));
   return {rules,pk,hit,ans:hit<0?'deny':rules[hit].a}; }
-SCREENS.fwlab=(m,arg)=>{ const daily=arg&&arg.daily; const lv=daily?2:Math.max(1,Math.min(3,(arg&&arg.lv)|0||1)); if(!daily&&lv>1&&!S.pro) return paywall();
+SCREENS.fwlab=(m,arg)=>{ const daily=arg&&arg.daily; const lv=daily?2:Math.max(1,Math.min(3,(arg&&arg.lv)|0||1)); if(!daily&&lv>1&&!S.pro) return paywall('lab');
   const rnd=daily?seeded('fw'+today()):Math.random; const N=daily?5:10; let k=0, right=0;
   const draw=()=>{ const r=fwRound(rnd,lv); const svcName=p=>(FW_SVC.find(x=>x[0]===p)||[0,''])[1];
     m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar"><i style="width:${k/N*100}%"></i></div><span class="sub num">${k+1}/${N}</span></div>
@@ -170,7 +170,7 @@ SCREENS.fwlab=(m,arg)=>{ const daily=arg&&arg.daily; const lv=daily?2:Math.max(1
     <div class="packet"><b>${t('packet')}</b> → ${r.pk.p.toUpperCase()} ${r.pk.src} → ${r.pk.dst}:${r.pk.port} ${svcName(r.pk.port)}</div>
     <div class="grid2"><button class="btn" id="al">✓ ${t('allow')}</button><button class="btn danger" id="dn">✕ ${t('deny')}</button></div><div id="ex"></div>`;
     $('#qx',m).onclick=()=>go(daily?'home':'labs');
-    $$('#lvs button',m).forEach(b=>b.onclick=()=>{ const x=+b.dataset.l; if(x>1&&!S.pro) return paywall(); go('fwlab',{lv:x}); });
+    $$('#lvs button',m).forEach(b=>b.onclick=()=>{ const x=+b.dataset.l; if(x>1&&!S.pro) return paywall('lab'); go('fwlab',{lv:x}); });
     const answer=a=>{ $$('#al,#dn',m).forEach(b=>b.disabled=true); const ok=a===r.ans; if(ok) right++; ok?SFX.ok():SFX.bad(); haptic(ok?'success':'error');
       if(r.hit>=0) $(`tr[data-j="${r.hit}"]`,m).classList.add('hit');
       $('#ex',m).innerHTML=`<div class="card col" style="gap:8px;border-color:${ok?'var(--good)':'var(--bad)'}"><b style="color:${ok?'var(--good)':'var(--bad)'}">${ok?'✓ '+t('correct'):'✕ '+t('wrong')} · ${r.ans==='allow'?t('allow'):t('deny')}</b>

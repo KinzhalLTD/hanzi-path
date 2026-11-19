@@ -22,7 +22,7 @@ function termSheet(w){ const x=MOD[w.mod]; const ex=x.D.find(d=>d.zh.includes(w.
     ${ex?`<div class="card col" style="gap:4px"><div class="zhline han">${esc(ex.zh)}</div><div class="py" style="font-size:13px">${esc(ex.py)}</div><div class="sub" dir="auto">${esc(L(ex))}</div><button class="btn sm ghost" id="se" style="align-self:flex-start">🔊</button></div>`:''}
     <button class="btn ghost block" id="gm">${t('learn')}: ${esc(L(x))} →</button>`,el=>{
     $('#sp',el).onclick=()=>speak(w.h); const se=$('#se',el); if(se) se.onclick=()=>speak(ex.zh); speak(w.h);
-    $('#gm',el).onclick=()=>{ closeSheet(); modFree(x)?go('module',x.k):paywall(); }; }); }
+    $('#gm',el).onclick=()=>{ closeSheet(); modFree(x)?go('module',x.k):paywall('talk'); }; }); }
 
 SCREENS.terms=(m,arg)=>{ const mk=arg&&arg.k; let tr='all', q='';
   m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><div class="grow"><span class="eyebrow">${t('zhT')}</span><h1>${mk?esc(MOD[mk].zh):t('termBank')}</h1>${mk?`<div class="sub">${esc(L(MOD[mk]))}</div>`:''}</div></div>
@@ -52,8 +52,8 @@ SCREENS.practice=(m,arg)=>{ const mk=arg&&arg.k; let words;
   function card(){ const w=intro[ii];
     m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar zh"><i style="width:${ii/intro.length*100}%"></i></div><span class="sub num">${ii+1}/${intro.length}</span></div>
     <span class="eyebrow">${t('terms')}</span><div class="fcard rise"><div class="h">${esc(w.h)}</div><div class="py" style="font-size:20px">${esc(w.p)}</div><div style="font-size:18px">${esc(mean(w))}</div><button class="speak" id="sp" aria-label="🔊">${ICON.speak}</button></div>
-    <div class="grow"></div><button class="btn block" id="nx">${t('next')} →</button>`;
-    $('#qx',m).onclick=back; $('#sp',m).onclick=()=>speak(w.h); speak(w.h);
+    <div class="grow"></div>${navPair(ii>0?t('back'):'',ii<intro.length-1?t('next'):(isAr()?'إلى التمرين':'Practice'),{bid:'pv',nid:'nx'})}`;
+    $('#qx',m).onclick=back; $('#sp',m).onclick=()=>speak(w.h); speak(w.h); const pv=$('#pv',m); if(pv) pv.onclick=()=>{ SFX.tap(); ii--; card(); };
     $('#nx',m).onclick=()=>{ SFX.tap(); ii++; ii<intro.length?card():quiz(); }; }
   function quiz(){ const qs=makeQs(words,pool); let i=0, right=0;
     const draw=()=>{ const q=qs[i], w=q.w; $$('.feedback').forEach(f=>f.remove());
@@ -86,10 +86,10 @@ SCREENS.talk=(m,arg)=>{ let cur=Math.max(0,TALK.findIndex(d=>d.k===((arg&&arg.d)
     <div class="seg" id="ts">${TALK.map((d,i)=>`<button data-i="${i}" aria-pressed="${i===cur}">${d.emo} ${esc(L(d))}</button>`).join('')}</div><div class="col" id="sl" style="gap:10px"></div>`);
   const draw=()=>{ const d=TALK[cur]; S._tkD=d.k;
     $('#sl',m).innerHTML=d.scenes.map((s,i)=>{ const st=(S.talk||{})[d.k+'/'+s.k]||0; return `<button class="modc" data-i="${i}"><span class="mi">${(TK_FACE[d.k]||[])[i]||d.emo}</span><div class="grow"><div class="zh" style="font-size:14px">${esc(s.zh)}</div><b>${esc(L(s))}</b><div class="sub">${esc(s.pz)} · ${esc(L(s,'pa','pe'))}</div></div>${tkFree(i)?stars(st):`<span class="tag lock">${ICON.lock}</span>`}</button>`; }).join('');
-    $$('#sl .modc',m).forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; SFX.tap(); if(!tkFree(i)) return paywall(); go('talkscene',{d:TALK[cur].k,i}); }); };
+    $$('#sl .modc',m).forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; SFX.tap(); if(!tkFree(i)) return paywall('talk'); go('talkscene',{d:TALK[cur].k,i}); }); };
   $('#bk',m).onclick=()=>goBack('zh'); $$('#ts button',m).forEach(b=>b.onclick=()=>{ cur=+b.dataset.i; $$('#ts button',m).forEach(x=>x.setAttribute('aria-pressed',x===b)); SFX.tap(); draw(); }); draw(); };
 
-SCREENS.talkscene=(m,{d:dk,i:si})=>{ const d=TALK.find(x=>x.k===dk), s=d&&d.scenes[si]; if(!s) return go('talk'); if(!tkFree(si)) return paywall();
+SCREENS.talkscene=(m,{d:dk,i:si})=>{ const d=TALK.find(x=>x.k===dk), s=d&&d.scenes[si]; if(!s) return go('talk'); if(!tkFree(si)) return paywall('talk');
   const face=(TK_FACE[d.k]||[])[si]||d.emo; let ti=0, score=0, timer=null; const prev=cleanup; cleanup=()=>{ clearTimeout(timer); prev&&prev(); };
   const bubble=(who,zh,py,tr)=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?face:'🙂'}</span><div class="tkbub"><div class="zhline han">${esc(zh)}</div><div class="py" style="font-size:12.5px">${esc(py)}</div><div class="sub" dir="auto">${esc(tr)}</div></div><button class="speak" data-z="${esc(zh)}" data-v="${who==='them'?'p':'n'}" aria-label="🔊" style="width:30px;height:30px">🔊</button></div>`;
   m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><b>${esc(L(s))}</b><div class="sub">${esc(s.zh)}</div></div></div>
@@ -110,6 +110,6 @@ SCREENS.talkscene=(m,{d:dk,i:si})=>{ const d=TALK.find(x=>x.k===dk), s=d&&d.scen
   function summary(){ questEvent('talk'); const max=s.turns.length*3, st=score/max>=.9?3:score/max>=.6?2:1, k=d.k+'/'+s.k; S.talk=S.talk||{}; S.talk[k]=Math.max(S.talk[k]||0,st); addXP(15+score); const c=addCoins(10+st*5); save(); SFX.win(); confetti(st===3?100:50); track('talk_done',{k,st});
     pn.innerHTML=`<div class="card col" style="gap:10px;text-align:center;align-items:center"><h2>✓ ${isAr()?'أكملت المحادثة!':'Conversation complete!'}</h2>${stars(st)}<div class="sub">+${15+score} ${t('xp')} · +${c} ${t('bitsCur')}</div>
       <div class="row" style="width:100%"><button class="btn ghost grow" id="ag">↺</button>${d.scenes[si+1]?`<button class="btn grow" id="ns">${t('next')} →</button>`:`<button class="btn grow" id="dn">${t('finish')}</button>`}</div></div>`; end();
-    $('#ag',pn).onclick=()=>go('talkscene',{d:d.k,i:si}); const ns=$('#ns',pn); if(ns) ns.onclick=async()=>{ await interstitial(); tkFree(si+1)?go('talkscene',{d:d.k,i:si+1}):paywall(); };
+    $('#ag',pn).onclick=()=>go('talkscene',{d:d.k,i:si}); const ns=$('#ns',pn); if(ns) ns.onclick=async()=>{ await interstitial(); tkFree(si+1)?go('talkscene',{d:d.k,i:si+1}):paywall('talk'); };
     const dn=$('#dn',pn); if(dn) dn.onclick=async()=>{ await interstitial(); go('talk',{d:d.k}); }; }
   partner(); };

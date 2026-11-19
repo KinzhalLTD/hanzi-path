@@ -68,10 +68,14 @@ Cipher Path PRO unlocks every module, lab, exam and conversation and removes ads
 
 ## 4. Category, age rating, privacy
 - **Category:** Education (secondary: Developer Tools). **Age rating:** 4+ (no objectionable content; the security content is defensive education).
-- **App Privacy** (no accounts, progress stays on the device):
+- **App Privacy** (optional account with Sign in with Apple / Google; guests keep everything on the device):
 
 | Data type | Purpose | Linked to user | Tracking |
 |---|---|---|---|
+| Name, email address (only when signed in) | App functionality (account, sync) | Yes | No |
+| User ID (only when signed in) | App functionality (account, sync, PRO across devices) | Yes | No |
+| Other user content: learning progress (only when signed in) | App functionality (cloud sync) | Yes | No |
+| Product interaction (Firebase Analytics) | Analytics | No | No |
 | Device ID (IDFA, only after the ATT prompt) | Third-party advertising | No | Yes |
 | Product interaction, advertising data | Third-party advertising | No | Yes |
 | Coarse location (from IP, by the ad SDK) | Third-party advertising | No | Yes |
@@ -79,7 +83,7 @@ Cipher Path PRO unlocks every module, lab, exam and conversation and removes ads
 | Crash data (ad and purchase SDKs) | App functionality | No | No |
 
 ## 5. Notes for App Review
-> Cipher Path is an educational app. Everything runs on the device; there is no account and no server of ours.
+> Cipher Path is an educational app. An account is optional: Sign in with Apple or Google only backs up and syncs progress (Firebase); "Continue as guest" gives full access. Accounts can be deleted in the app: Me → Account → Delete account (guideline 5.1.1(v)).
 > The code labs let learners write JavaScript and run it against tests inside a sandboxed Web Worker in the app's web view (guideline 2.5.2 exception for educational apps that let students test code); the code cannot reach the network, other apps or device APIs, and it is never downloaded.
 > All security content is defensive education with fictional companies and data (phishing emails, logs, code snippets, encoded "flags"). The app contains no hacking tools and nothing connects to real systems; the ethical-hacking module teaches authorisation, scope, reporting and responsible disclosure.
 > To see PRO content, use the sandbox purchase on the paywall (PRO chip at the top of any screen).

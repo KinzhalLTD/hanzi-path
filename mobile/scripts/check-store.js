@@ -51,6 +51,16 @@ const rcKey = (pur.match(/RC_IOS_KEY = '([^']+)'/) || [])[1] || '';
 need(/^appl_[A-Za-z0-9]{10,}$/.test(rcKey), 'RevenueCat key not set (src/purchases.js RC_IOS_KEY must be the appl_… key of the Cipher Path app)');
 need(pur.includes("'space.kinzhal.cipherpath.pro.yearly'"), 'product ids must be space.kinzhal.cipherpath.pro.*');
 
+// accounts (docs/ACCOUNTS.md): Sign in with Apple capability + Google client of the Cipher Path iOS app
+need(ios.usesAppleSignIn === true, 'ios.usesAppleSignIn must be true (Sign in with Apple)');
+need(!!plugin('expo-apple-authentication'), 'expo-apple-authentication plugin missing');
+const gs = plugin('@react-native-google-signin/google-signin');
+const scheme = Array.isArray(gs) ? gs[1].iosUrlScheme || '' : '';
+need(/^com\.googleusercontent\.apps\.\d+-[a-z0-9]+$/.test(scheme), 'Google sign-in iosUrlScheme not set: paste REVERSED_CLIENT_ID of the Cipher Path iOS app (GoogleService-Info.plist) in app.json');
+const fb = read('src/firebase.js');
+need(/GOOGLE_IOS_CLIENT_ID = '\d+-[a-z0-9]+\.apps\.googleusercontent\.com'/.test(fb), 'GOOGLE_IOS_CLIENT_ID not set in src/firebase.js (CLIENT_ID of the Cipher Path iOS app)');
+need(fb.includes("USERS = 'cipher_users'"), "Firestore collection must be cipher_users (Hanzi Path uses users)");
+
 // web app
 const web = 'assets/web/cipher-path.html';
 need(exists(web), 'web app missing – run npm run sync-web');

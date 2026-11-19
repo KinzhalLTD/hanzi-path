@@ -6,14 +6,18 @@ function checkModDone(m){ const s=mst(m.k); if(!s.done&&s.L&&s.Q&&s.T&&s.D){ s.d
 
 SCREENS.onboard=app=>{ let step=0, lang=null;
   const draw=()=>{ app.innerHTML=`<main class="screen full onb" style="justify-content:center;gap:20px"><div class="glow"></div><div class="clouds" aria-hidden="true"></div>
-    <div class="col rise" style="align-items:center;gap:12px;text-align:center"><div class="moon">${dragon(step?'cool':'happy',120)}</div>
+    <div class="col rise" style="align-items:center;gap:12px;text-align:center"><div class="moon">${dragon(step===1?'cool':'happy',120)}</div>
       <div class="brushtitle">码道</div><h1 style="font-size:28px">Cipher Path · مسار الشيفرة</h1>
-      <p class="sub" style="max-width:36ch">${step?t('welcomeB'):'Code, security & Chinese with Lóngbǎo the debugging dragon · البرمجة والأمن والصينية مع التنين لونغ باو'}</p></div>
+      <p class="sub" style="max-width:36ch">${step===2?t('saveProgressB'):step?t('welcomeB'):'Code, security & Chinese with Lóngbǎo the debugging dragon · البرمجة والأمن والصينية مع التنين لونغ باو'}</p></div>
     ${step===0?`<div class="col" style="gap:10px"><div class="sub" style="text-align:center">Choose your language · اختر لغتك</div><div class="lang grid2"><button class="btn" data-l="ar">العربية</button><button class="btn" data-l="en">English</button></div></div>`
+    :step===2?`<div class="col onbacct" style="gap:10px"><h2 style="text-align:center">${t('signUpT')}</h2><p class="sub" style="text-align:center;margin:0">${t('signUpB')}</p>${loginButtons()}
+      <button class="btn ghost block" id="guest">${t('guest')}</button>${AUTH_DEMO?`<div class="fine">${t('authDemo')}</div>`:''}${legalLinks()}</div>`
     :`<div class="col" style="gap:10px"><h2 style="text-align:center">${t('pickGoal')}</h2>
       ${[['se','💻',t('goalSE')],['cy','🛡️',t('goalCY')],['zh','中',t('goalZH')]].map(([k,ic,txt])=>`<button class="track ${k}" data-g="${k}"><span class="ti">${ic}</span><b class="grow">${txt}</b><span aria-hidden="true">›</span></button>`).join('')}</div>`}</main>`;
     $$('[data-l]',app).forEach(b=>b.onclick=()=>{ lang=b.dataset.l; S.lang=lang; applyLang(); step=1; SFX.tap(); draw(); });
-    $$('[data-g]',app).forEach(b=>b.onclick=()=>{ S.focus=b.dataset.g; save(); track('onboard',{lang:S.lang,goal:S.focus}); SFX.gong(); route={name:'home'}; render(); }); };
+    const finish=()=>{ SFX.gong(); route={name:'home'}; render(); };
+    $$('[data-g]',app).forEach(b=>b.onclick=()=>{ S.focus=b.dataset.g; save(); track('onboard',{lang:S.lang,goal:S.focus}); SFX.tap(); step=2; draw(); });
+    if(step===2){ bindLogin(app,finish); bindLegal(app); $('#guest',app).onclick=()=>{ S.guest=true; save(); track('login_skip',{where:'onboard'}); finish(); }; } };
   draw(); };
 
 SCREENS.home=m=>{ const h=new Date().getHours(); const tr=S.focus==='cy'?'cy':'se'; const nm=nextMod(tr)||nextMod(tr==='se'?'cy':'se');
@@ -57,32 +61,23 @@ function drawPath(map){ if(!map) return; const go=()=>{ const r=map.getBoundingC
   let svgEl=$('svg.river',map); if(!svgEl){ map.insertAdjacentHTML('afterbegin','<svg class="river" aria-hidden="true"><path/></svg>'); svgEl=$('svg.river',map); }
   svgEl.setAttribute('width',r.width); svgEl.setAttribute('height',r.height); $('path',svgEl).setAttribute('d',d); };
   requestAnimationFrame(go); const ro=window.ResizeObserver?new ResizeObserver(go):null; if(ro){ ro.observe(map); const prev=cleanup; cleanup=()=>{ ro.disconnect(); prev&&prev(); }; } }
-/* the track is a winding path of seal-stamped stones; the next stone carries Lóngbǎo, every stone has a boss */
-SCREENS.track=(m,tr)=>{ tr=tr==='cy'?'cy':'se'; const ms=TRACK(tr), d=ms.filter(x=>modDone(x.k)).length, cur=nextMod(tr);
-  const X=[50,22,50,78]; const node=(x,i)=>{ const s=S.mods[x.k]||{}, free=modFree(x), here=cur&&cur.k===x.k, b=bossOf(x.k);
-    return `<div class="pstep" style="--x:${X[i%4]}%"><div class="pcol"><button class="pnode ${s.done?'done':''} ${free?'':'locked'} ${here?'here':''}" data-k="${x.k}" aria-label="${esc(L(x))}">
-      <span class="pic">${s.done?'<span class="stampmark">斩</span>':free?x.ic:ICON.lock}</span>${here?`<span class="phere">${dragon('happy',44)}</span>`:''}<span class="pboss" title="${esc(b.name)}">${b.h}</span></button>
-      <div class="plabel"><b>${esc(L(x))}</b><span class="zh">${esc(x.zh)}</span>${s.done?stars(s.stars||1):`<span class="sub">${modStepsDone(x.k)}/4</span>`}</div></div></div>`; };
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><div class="grow"><span class="eyebrow">${t('learn')}</span><h1>${TRK[tr].ic} ${TRK[tr].name()}</h1></div></div>
-  <div class="seg" id="tsg"><button data-t="se" aria-pressed="${tr==='se'}">💻 ${t('trSE')}</button><button data-t="cy" aria-pressed="${tr==='cy'}">🛡️ ${t('trCY')}</button></div>
-  <div class="row card"><div class="grow"><div class="bar ${tr}"><i style="width:${d/ms.length*100}%"></i></div><div class="sub" style="margin-top:6px"><span class="num">${d}/${ms.length}</span> ${t('done')} · <span class="num">${d}</span> ${isAr()?'وحوش هُزمت':'bosses defeated'}</div></div><button class="btn sm ghost" id="ex">📝 ${t('exam')}</button></div>
-  <div class="pathmap">${ms.map(node).join('')}<div class="pend"><span class="brushzh">${tr==='se'?'毕业':'护法'}</span></div></div>
-  ${certCard(tr)}`);
-  $('#bk',m).onclick=()=>goBack('learn'); $('#ex',m).onclick=()=>go('exam',tr);
-  $$('#tsg button',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('track',b.dataset.t); });
-  $$('.pnode',m).forEach(b=>b.onclick=()=>{ SFX.tap(); const x=MOD[b.dataset.k]; if(!modFree(x)) return paywall(); go('module',x.k); });
-  bindCert(m,tr); drawPath($('.pathmap',m)); const h=$('.pnode.here',m); if(h&&!NAV.stack.slice(-1)[0].y) setTimeout(()=>h.scrollIntoView({block:'center',behavior:'smooth'}),250); };
-
-SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modFree(x)){ m.insertAdjacentHTML('beforeend',topbar()); return paywall(); }
+SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modFree(x)){ m.insertAdjacentHTML('beforeend',topbar()); return paywall('module'); }
   const s=mst(x.k), lab=CODE_LABS.find(l=>l.mod===x.k);
   const step=(id,n,label,sub,done)=>`<button class="step ${done?'done':''}" data-s="${id}"><span class="sn">${done?'✓':n}</span><div class="grow"><b>${label}</b><div class="sub">${sub}</div></div><span aria-hidden="true">›</span></button>`;
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><span class="tag ${x.tr}">${TRK[x.tr].name()} · <span class="num">${x.ti+1}</span></span><div class="grow"></div>${s.done?stars(s.stars||1):''}</div>
+  const ms=TRACK(x.tr), pv=ms[x.ti-1], nx=ms[x.ti+1], ch=chapOf(x.tr)[Math.floor(x.ti/3)], nd=['L','Q','T','D'].find(q=>!s[q]);
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><span class="tag ${x.tr}">${TRK[x.tr].name()} · <span class="num">${x.ti+1}</span></span><span class="tag chtag" style="--ch:${ch.c[7]}"><span class="han">${ch.c[0]}</span> · ${t('jChapter')} <span class="num">${ch.ci+1}</span></span><div class="grow"></div>${s.done?stars(s.stars||1):''}</div>
   <div class="mhero"><div class="row" style="align-items:flex-start"><div class="grow"><h1>${x.ic} ${esc(L(x))}</h1><p class="sub" style="margin-top:6px">${esc(L(x,'sa','se'))}</p></div></div>
     <div class="row"><span class="zhbig">${esc(x.zh)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div><span class="py">${esc(x.py)}</span></div>
   <div class="steps">${step('L',1,t('stepL'),`<span class="num">${x.L.length}</span> ${t('lessons')}`,s.L)}${step('Q',2,`${bossOf(x.k).h} ${isAr()?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}`,s.Qb!=null?`${t('score')}: <span class="num">${Math.round(s.Qb*100)}%</span>`:`<span class="num">${x.Q.length}</span> ${t('questions')}`,s.Q)}
     ${step('T',3,t('stepT'),`<span class="num">${x.T.length}</span> · ${x.T.slice(0,3).map(w=>`<span class="han">${esc(w.h)}</span>`).join(' · ')}`,s.T)}${step('D',4,t('stepD'),`<span class="num">${x.D.length}</span> · ${t('dialog')}`,s.D)}
-    ${lab?step('lab','⌨',t('stepLab'),esc(L(lab))+' · <span class="han">'+esc(lab.zh)+'</span>',!!S.labs[lab.k]):''}</div>`);
+    ${lab?step('lab','⌨',t('stepLab'),esc(L(lab))+' · <span class="han">'+esc(lab.zh)+'</span>',!!S.labs[lab.k]):''}</div>
+  ${nd?`<button class="btn block" id="ns">${t('nextStep')}: ${{L:t('stepL'),Q:esc(bossOf(x.k).name),T:t('stepT'),D:t('stepD')}[nd]} ${fwdA()}</button>`:''}
+  ${navPair(pv?t('prevMod'):t('toPath'),nx?t('nextMod'):t('toPath'),{bid:'pm',nid:'nm',cls:'ghost'})}
+  <div class="navhint sub">${pv?`${pv.ic} ${esc(L(pv))}`:''}<span class="grow"></span>${nx?`${esc(L(nx))} ${modFree(nx)?nx.ic:ICON.lock}`:''}</div>`);
   $('#bk',m).onclick=()=>goBack('learn'); $('#say',m).onclick=()=>speak(x.zh);
+  const ns=$('#ns',m); if(ns) ns.onclick=()=>{ SFX.tap(); const b=$(`.step[data-s="${nd}"]`,m); b&&b.click(); };
+  $('#pm',m).onclick=()=>{ SFX.tap(); pv?go('module',pv.k):go('track',x.tr); };
+  $('#nm',m).onclick=()=>{ SFX.tap(); if(!nx) return go('track',x.tr); modFree(nx)?go('module',nx.k):paywall('module'); };
   $$('.step',m).forEach(b=>b.onclick=()=>{ SFX.tap(); const id=b.dataset.s;
     if(id==='L') go('lesson',{k,i:0}); if(id==='Q') go('quizrun',{k}); if(id==='T') go('practice',{k}); if(id==='D') dialogSheet(x); if(id==='lab') openCodeLab(lab.k); }); };
 
@@ -96,22 +91,25 @@ function dialogSheet(x){ let playing=false;
 
 function moduleDone(x){ SFX.gong(); fireworks(4); confetti(110); const s=mst(x.k); checkBadges();
   sheet(`<div class="result" style="padding-top:4px"><div class="moon">${dragon('cool',110)}</div><span class="brushzh">恭喜 gōngxǐ!</span><h1>${t('modDone')}</h1><h3>${x.ic} ${esc(L(x))}</h3>${stars(s.stars||1)}<div class="sub">+40 ${t('xp')} · +30 ${t('bitsCur')}</div>
-    <button class="btn block" id="nx">${t('next')} →</button></div>`,el=>{ $('#nx',el).onclick=async()=>{ closeSheet(); await interstitial(); const n=nextMod(x.tr); n&&modFree(n)?go('module',n.k):go('track',x.tr); }; }); }
+    ${S.pro?'':`<button class="btn ghost block" id="db">🎬 ${isAr()?'ضاعف البتات بمشاهدة إعلان':'Double the bits with an ad'} · +30</button>`}${navPair(t('toPath'),t('nextMod'),{bid:'tp',nid:'nx'})}</div>`,el=>{ $('#tp',el).onclick=()=>{ closeSheet(); breakPoint('module',()=>go('track',x.tr)); };
+    const db=$('#db',el); if(db) db.onclick=async()=>{ db.disabled=true; if(await rewarded('double')){ addCoins(30); db.remove(); toast('×2 '+t('bitsCur')); } else db.disabled=false; };
+    $('#nx',el).onclick=()=>{ closeSheet(); const n=nextMod(x.tr); if(n&&!modFree(n)){ go('track',x.tr); return paywall('next'); } breakPoint('module',()=>n?go('module',n.k):go('track',x.tr)); }; }); }
 
 SCREENS.lesson=(m,{k,i})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.min(n-1,i|0)); const l=x.L[i];
   m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar"><i style="width:${(i+1)/n*100}%"></i></div><span class="sub num">${i+1}/${n}</span></div>
   <div class="lcard rise"><span class="eyebrow">${x.ic} ${esc(L(x))}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${rich(L(l,'a','e'))}</div>${l.c?codeHTML(l.c):''}</div>
   ${i===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div>`:''}
-  <div class="grow"></div><div class="row">${i>0?`<button class="btn ghost" id="pv">${isAr()?'→':'←'}</button>`:''}<button class="btn grow" id="nx">${i<n-1?t('next')+' →':t('finish')+' ✓'}</button></div>`;
+  <div class="ldots" aria-hidden="true">${x.L.map((_,j)=>`<i class="${j<i?'on':j===i?'cur':''}"></i>`).join('')}</div>
+  <div class="grow"></div>${navPair(i>0?t('prevLesson'):t('back'),i<n-1?t('nextLesson'):t('finish')+' ✓',{bid:'pv',nid:'nx'})}`;
   $('#qx',m).onclick=()=>go('module',k); const sy=$('#say',m); if(sy) sy.onclick=()=>speak(x.zh);
-  const pv=$('#pv',m); if(pv) pv.onclick=()=>{ SFX.tap(); route={name:'lesson',arg:{k,i:i-1}}; render(); window.scrollTo(0,0); };
+  $('#pv',m).onclick=()=>{ SFX.tap(); if(i===0) return go('module',k); route={name:'lesson',arg:{k,i:i-1}}; render(); window.scrollTo(0,0); };
   $('#nx',m).onclick=()=>{ SFX.tap(); questEvent('lesson'); if(i<n-1){ SFX.open(); route={name:'lesson',arg:{k,i:i+1}}; render(); window.scrollTo(0,0); return; }
     const s=mst(k); if(!s.L){ s.L=1; save(); addXP(10); } const fin=checkModDone(x); go('module',k); if(fin) moduleDone(x); }; };
 
 /* ---------- quiz engine (learn mode: feedback after each answer; exam mode: feedback at the end; boss mode: HP and hearts) ---------- */
 const qFrom=(q,mod)=>{ const o=q.o.map((p,j)=>({h:inl(isAr()?p[0]:p[1]),ok:j===0})); return {q:inl(L(q,'qa','qe')),opts:shuffle(o),why:inl(L(q,'wa','we')),mod}; };
-function runQuiz(m,{qs,title,exam,seconds,boss,onDone,onQuit}){ let i=0, right=0, timer=null, end=seconds?Date.now()+seconds*1000:0; const log=[];
-  const hearts0=boss?qs.length-Math.ceil(qs.length*.7)+1:0; let hearts=hearts0;
+function runQuiz(m,{qs,title,exam,seconds,boss,hearts:H0,onDone,onQuit}){ let i=0, right=0, timer=null, end=seconds?Date.now()+seconds*1000:0; const log=[];
+  const hearts0=boss?(H0||qs.length-Math.ceil(qs.length*.7)+1):0; let hearts=hearts0, revived=false;
   const prev=cleanup; cleanup=()=>{ clearInterval(timer); prev&&prev(); };
   const fmtT=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
   if(seconds) timer=setInterval(()=>{ const left=Math.max(0,Math.round((end-Date.now())/1000)); const el=$('#qt',m); if(el) el.textContent=fmtT(left); if(!left){ clearInterval(timer); finish(); } },500);
@@ -130,9 +128,11 @@ function runQuiz(m,{qs,title,exam,seconds,boss,onDone,onQuit}){ let i=0, right=0
       o.ok?(SFX.ok(),haptic('success')):(SFX.bad(),haptic('error'));
       if(boss){ const bs=$('#bs',m); if(o.ok){ SFX.hit(); $('#hp',m).style.width=(100-right/qs.length*100)+'%'; $('#bf',m).classList.add('ouch'); $('#tn',m).textContent=pickL(HITS); floatText('-'+Math.round(100/qs.length)+' HP',$('#bf',m)); }
         else { hearts--; bs.classList.add('shake'); $('#tn',m).textContent=pickL(TAUNTS); $('.hearts',m).innerHTML='❤️'.repeat(hearts)+'🖤'.repeat(hearts0-hearts); } }
-      const lost=boss&&hearts<=0, f=document.createElement('div'); f.className='feedback '+(o.ok?'good':'bad');
-      f.innerHTML=`<div><div class="row"><b class="v grow">${o.ok?t('correct'):t('wrong')}</b><span class="sub">${esc(pickL(o.ok?QUIP_OK:QUIP_BAD))}</span></div><div class="sub" style="color:var(--text)">${q.why}</div><button class="btn block" id="fn">${lost?(isAr()?'النتيجة':'See result'):t('next')+' →'}</button></div>`;
-      document.body.appendChild(f); $('#fn',f).onclick=()=>{ f.remove(); delete m.dataset.lock; i++; (i<qs.length&&!lost)?draw():finish(); }; }); }
+      let lost=boss&&hearts<=0; const canRevive=lost&&!revived&&!exam, f=document.createElement('div'); f.className='feedback '+(o.ok?'good':'bad');
+      f.innerHTML=`<div><div class="row"><b class="v grow">${o.ok?t('correct'):t('wrong')}</b><span class="sub">${esc(pickL(o.ok?QUIP_OK:QUIP_BAD))}</span></div><div class="sub" style="color:var(--text)">${q.why}</div>
+        ${canRevive?`<button class="btn block revive" id="rv">❤️ ${t('reviveT')} · ${reviveLabel()}</button>`:''}<button class="btn ${canRevive?'ghost ':''}block" id="fn">${lost?(isAr()?'النتيجة':'See result'):t('next')+' '+fwdA()}</button></div>`;
+      document.body.appendChild(f); $('#fn',f).onclick=()=>{ f.remove(); delete m.dataset.lock; i++; (i<qs.length&&!lost)?draw():finish(); };
+      const rv=$('#rv',f); if(rv) rv.onclick=async()=>{ rv.disabled=true; if(await reviveUse()){ revived=true; lost=false; hearts=1; log.pop(); qs[i]=Object.assign({},q,{opts:shuffle(q.opts)}); f.remove(); delete m.dataset.lock; draw(); SFX.ok(); toast('❤️ '+t('reviveOn')); } else rv.disabled=false; }; }); }
   function finish(){ clearInterval(timer); $$('.feedback').forEach(f=>f.remove()); save(); onDone(right,qs.length,log,hearts===hearts0); }
   draw(); }
 
@@ -151,7 +151,7 @@ SCREENS.exam=(m,tr)=>{ tr=tr==='cy'?'cy':'se'; const best=S.exams[tr]; const use
   <div class="card col" style="gap:10px"><p>${t('examB')}</p>${best!=null?`<div class="sub">${t('score')}: <b class="num">${Math.round(best*100)}%</b></div>`:''}${S.pro?'':`<div class="sub">${t('examFree')}</div>`}
   <button class="btn block" id="go">${used?ICON.lock+' ':''}${t('examStart')}</button></div>`);
   $('#bk',m).onclick=()=>goBack('learn'); $$('#esg button',m).forEach(b=>b.onclick=()=>go('exam',b.dataset.t));
-  $('#go',m).onclick=()=>{ if(used) return paywall(); S.examDay=today(); save(); go('examrun',{tr}); }; };
+  $('#go',m).onclick=()=>{ if(used) return examLimitSheet(tr); S.examDay=today(); save(); go('examrun',{tr}); }; };
 
 SCREENS.examrun=(m,{tr})=>{ const pool=TRACK(tr).flatMap(x=>x.Q.map(q=>[q,x])); const qs=pick(pool,20).map(([q,x])=>qFrom(q,x)); track('exam_start',{tr});
   runQuiz(m,{qs,title:t('exam'),exam:true,seconds:20*60,onQuit:()=>go('exam',tr),onDone:(r,n,log)=>{ const p=r/n; S.exams[tr]=Math.max(S.exams[tr]||0,p); addXP(r*4); const c=addCoins(r*2); save(); SFX.win(); if(p>=.7) confetti(80);
@@ -166,7 +166,7 @@ SCREENS.examrun=(m,{tr})=>{ const pool=TRACK(tr).flatMap(x=>x.Q.map(q=>[q,x])); 
 /* ---------- certificates ---------- */
 function certCard(tr){ const ok=TRACK(tr).every(x=>modDone(x.k));
   return `<div class="card col" style="gap:10px"><b>🎓 ${t('certs')}</b>${ok?`<button class="btn block" id="cert">${t('certT')} · ${TRK[tr].name()}</button>`:`<div class="sub">${t('certLocked')} · <span class="num">${TRACK(tr).filter(x=>modDone(x.k)).length}/${TRACK(tr).length}</span></div>`}</div>`; }
-function bindCert(m,tr){ const b=$('#cert',m); if(!b) return; b.onclick=()=>{ if(!S.pro) return paywall();
+function bindCert(m,tr){ const b=$('#cert',m); if(!b) return; b.onclick=()=>{ if(!S.pro) return paywall('cert');
   const d=Object.values(S.mods).map(x=>x.done).filter(Boolean).sort().pop()||today();
   sheet(`<div class="cert ondark"><div class="seal" style="margin:0 auto">码</div><span class="eyebrow" style="color:#5eead4">${t('certT')}</span><h2 id="cn">${esc(S.certName||'—')}</h2>
     <div>${TRK[tr].name()}</div><div class="han">${tr==='se'?'软件工程':'网络安全'}</div><div class="sub num">${d} · Cipher Path</div></div>

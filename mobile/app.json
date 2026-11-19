@@ -42,7 +42,8 @@
             ]
           }
         ]
-      }
+      },
+      "usesAppleSignIn": true
     },
     "plugins": [
       [
@@ -54,6 +55,13 @@
         }
       ],
       "expo-notifications",
+      "expo-apple-authentication",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.PASTE_CIPHER_PATH_IOS_CLIENT_ID"
+        }
+      ],
       [
         "react-native-google-mobile-ads",
         {

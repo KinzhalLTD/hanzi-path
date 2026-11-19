@@ -59,9 +59,8 @@ function native(type,payload){ return new Promise(res=>{ const id=Math.random().
 window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];}
   if(m.type==='pro'){ const was=!!S.pro; S.pro=!!m.active; save(); if(was!==S.pro){ if(S.pro) toast(t('proOn')); render(); } }
   if(m.type==='ads'){ window.__adPrivacy=!!m.privacy; }
-  if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); }}catch(e){} };
+  if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); window.__trialOk=m.trial!==false; }}catch(e){} };
 function speak(text,opt){ return say(text,Object.assign({rate:.85},opt||{})); }
-function musDuck(){}   /* voice.js hook: this app has no background music */
 const PLAN={adsPerDay:6,freeExamsPerDay:1};
 function track(ev,props={}){ try{ S.kpi=S.kpi||{}; S.kpi[ev]=(S.kpi[ev]||0)+1; if(RN) RN.postMessage(JSON.stringify({type:'track',ev,props})); }catch(e){} }
 function dayCount(key){ const d=today(); S[key]=S[key]&&S[key].d===d?S[key]:{d,n:0}; return S[key]; }
@@ -72,7 +71,7 @@ function simAd(rewarded){ return new Promise(res=>{ const d=document.createEleme
   $('#adx',d).onclick=()=>{d.remove(); res({ok:true});}; }); }
 /* interstitials only at break points (end of a module, lab or game), every second time, at most 6 a day, never for PRO */
 function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return RN?native('interstitial',{}):simAd(false); }
-function rewarded(){ track('ad_rewarded'); return (RN?native('rewarded',{}):simAd(true)).then(r=>{ if(r&&r.unavailable) toast(t('adNone')); return !!(r&&r.ok!==false&&!r.unavailable); }); }
+function rewarded(placement='other'){ track('ad_rewarded',{placement}); return (RN?native('rewarded',{}):simAd(true)).then(r=>{ if(r&&r.unavailable) toast(t('adNone')); return !!(r&&r.ok!==false&&!r.unavailable); }); }
 /* In the native app PRO comes ONLY from a verified App Store purchase (RevenueCat entitlement "pro"). The web preview simulates it. */
 function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^pro_/.test(sku),demo:true}); }
 const LEGAL={terms:'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',privacy:'https://cipher-path-kinzhal.web.app/privacy.html',support:'https://cipher-path-kinzhal.web.app/support.html'};
@@ -153,12 +152,14 @@ addEventListener('resize',()=>fitTop());
 function updateTop(){ setTimeout(fitTop,0); $$('[data-coins]').forEach(e=>e.textContent=fmtK(S.coins)); $$('[data-streak]').forEach(e=>e.textContent=S.streak); }
 function topbar(){ return `<div class="topbar"><div class="logo"><div class="seal" aria-hidden="true">码</div><div class="wordmark"><b>CIPHER PATH</b><span>${isAr()?'مسار الشيفرة · 码道':'码道 · mǎdào'}</span></div></div>
   <div class="chips"><button class="chip" data-act="theme" aria-label="${isAr()?'الوضع الفاتح أو الداكن':'Light or dark theme'}" aria-pressed="${S.theme==='light'}">${ICON[S.theme==='light'?'moon':'sun']}</button>
+  <button class="chip" data-act="mus" aria-label="${isAr()?'الموسيقى':'Music'}" aria-pressed="${S.music!==false}">${S.music!==false?ICON.music:ICON.musicOff}</button>
   <button class="chip" data-act="streak" aria-label="${t('streak')}"><span style="color:var(--zh);display:inline-flex">${ICON.flame}</span><span class="num" data-streak>${S.streak}</span></button>
   <button class="chip" data-act="shop" aria-label="${t('shop')}">${coinHTML}<span class="num" data-coins>${fmtK(S.coins)}</span></button>
   ${S.pro?'<span class="chip pro">PRO</span>':`<button class="chip pro" data-act="pro">PRO</button>`}</div></div>`; }
-function bindTop(m){ fitTop(); $$('[data-act="shop"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); shop(); }); $$('[data-act="pro"]',m).forEach(b=>b.onclick=()=>paywall());
+function bindTop(m){ fitTop(); $$('[data-act="shop"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); shop(); }); $$('[data-act="pro"]',m).forEach(b=>b.onclick=()=>paywall('topbar'));
   $$('[data-act="theme"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); toggleTheme(); if(route.name==='me') render(); });
-  $$('[data-act="streak"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('me'); }); }
+  $$('[data-act="streak"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('me'); });
+  $$('[data-act="mus"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); musSet(S.music===false?(S.mv||'low'):'off'); toast((S.music!==false?'🎵 ':'🔇 ')+(isAr()?(S.music!==false?'موسيقى الغوجنغ':'الموسيقى متوقفة'):(S.music!==false?'Guzheng music on':'Music off'))); if(route.name==='me') render(); }); }
 function tabOf(n){ return TABS.some(x=>x[0]===n)?n:['track','module','exam'].includes(n)?'learn':['codelab','seclab','pwlab','fwlab','ctflab'].includes(n)?'labs':['terms','talk'].includes(n)?'zh':''; }
 function tabLabel(k){ return k==='zh'?`<span class="zhi" aria-hidden="true">中</span>`:ICON[k]; }
 function render(){

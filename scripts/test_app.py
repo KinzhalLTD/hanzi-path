@@ -25,6 +25,9 @@ async def main():
             pg.on('console', lambda m, L=L: m.type == 'error' and 'ERR_' not in m.text and 'fonts.g' not in m.text and errs.append(f'{L} console: {m.text[:160]}'))
             await pg.goto('file://' + H); await pg.wait_for_timeout(300)
             await pg.click(f'[data-l="{L}"]'); await pg.click('[data-g="se"]'); await pg.wait_for_timeout(200)
+            check(await pg.locator('[data-sso="apple"]').count() == 1 and await pg.locator('[data-sso="google"]').count() == 1, f'{L}: onboarding sign-up step missing')
+            await pg.screenshot(path=f'{O}/{L}_signup.png'); await pg.click('#guest'); await pg.wait_for_timeout(200)
+            check(await pg.evaluate("route.name==='home'&&S.guest===true"), f'{L}: guest did not reach home')
             check(await pg.evaluate("document.documentElement.dir") == ('rtl' if L == 'ar' else 'ltr'), f'{L}: wrong text direction')
             # mark the right option of every quiz question with <i data-ok> (test only; options are shuffled)
             await pg.evaluate("""(()=>{ const orig=runQuiz; window.runQuiz=runQuiz=function(m,o){ o.qs.forEach(q=>q.opts.forEach(x=>x.h=x.h+(x.ok?'<i data-ok></i>':''))); return orig(m,o); }; })()""")
@@ -64,6 +67,49 @@ async def main():
                 await pg.locator('.opt:not(:has(i[data-ok]))').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
             check(await pg.evaluate("!(S.mods['se-ds']||{}).Q"), f'{L}: failed quiz counted as passed')
             check(await pg.locator('.bossface.laugh').count() == 1, f'{L}: lost boss fight screen missing')
+            # ---- revive: a token gives one heart back and a retry of the missed question, so the fight can still be won
+            await pg.evaluate("S.reviveTok=1; go('quizrun',{k:'se-algo'})"); await pg.wait_for_timeout(100)
+            for i in range(2):
+                await pg.locator('.opt:not(:has(i[data-ok]))').first.click(); await pg.wait_for_timeout(40)
+                if i == 0: await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
+            check(await pg.locator('.feedback #rv').count() == 1, f'{L}: revive offer missing when the fight is lost')
+            await pg.click('.feedback #rv'); await pg.wait_for_timeout(150)
+            for i in range(6):
+                if not await pg.locator('.opt:not([disabled])').count(): break
+                await pg.locator('.opt:has(i[data-ok])').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
+            check(await pg.evaluate("S.reviveTok===0&&!!S.mods['se-algo'].Q"), f'{L}: revived boss fight not won')
+            # ---- journey: 4 chapters per track, a gate that can be passed
+            await pg.evaluate("go('track','se')"); await pg.wait_for_timeout(200)
+            check(await pg.locator('.chap').count() == 4 and await pg.locator('.gate2').count() == 4, f'{L}: journey chapters/gates missing')
+            await overflow(pg, L, 'journey'); await pg.screenshot(path=f'{O}/{L}_journey.png', full_page=True)
+            await pg.click('.gate2[data-g="0"]'); await pg.wait_for_timeout(150); await pg.click('.sheet #gg'); await pg.wait_for_timeout(150)
+            for i in range(10):
+                if not await pg.locator('.opt:not([disabled])').count(): break
+                await pg.locator('.opt:has(i[data-ok])').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
+            check(await pg.evaluate("!!(S.gates||{}).se0&&S.gates.se0.ok"), f'{L}: chapter gate not passed')
+            await pg.click('#nx'); await pg.wait_for_timeout(300); await clear(pg)
+            await pg.evaluate("go('track','se')"); await pg.click('.gate2[data-g="2"]'); await pg.wait_for_timeout(150)
+            check(await pg.locator('.sheet .cmp').count() == 1, f'{L}: locked gate did not open the paywall'); await clear(pg)
+            # ---- lesson back / next
+            await pg.evaluate("go('lesson',{k:'se-ds',i:1})"); await pg.click('#pv'); await pg.wait_for_timeout(100)
+            check(await pg.evaluate("route.name==='lesson'&&route.arg.i===0"), f'{L}: previous lesson button')
+            await pg.click('#pv'); await pg.wait_for_timeout(100); check(await pg.evaluate("route.name==='module'"), f'{L}: back from the first lesson')
+            await pg.click('#nm'); await pg.wait_for_timeout(100); check(await pg.evaluate("route.name==='module'&&route.arg==='se-algo'"), f'{L}: next module button')
+            # ---- music: guzheng samples load and play; the switch turns it off
+            await pg.evaluate("musStart()"); await pg.wait_for_timeout(2500)
+            mu = await pg.evaluate("({on:MUSIC.on,ready:MUSIC.ready,beats:MUSIC.beat,koto:Object.keys(MUSIC.buf.koto||{}).length})")
+            check(mu['on'] and mu['ready'] and mu['koto'] >= 10 and mu['beats'] > 0, f'{L}: music not playing {mu}')
+            await pg.click('.topbar [data-act="mus"]'); check(await pg.evaluate("S.music===false&&!MUSIC.on"), f'{L}: music switch')
+            # ---- account: demo sign-in from Me, sign-out
+            await pg.evaluate("go('me')"); await pg.wait_for_timeout(150); await pg.click('#acct [data-sso="google"]'); await pg.wait_for_timeout(200)
+            check(await pg.evaluate("!!S.user&&S.user.provider==='google'"), f'{L}: sign-in failed'); await pg.screenshot(path=f'{O}/{L}_account.png')
+            await pg.click('#acct #out'); await pg.wait_for_timeout(150); check(await pg.evaluate("!S.user"), f'{L}: sign-out failed')
+            # ---- shop: bit pack (demo purchase), revive token for bits; exam limit offers a ticket
+            c0 = await pg.evaluate("S.coins"); await pg.evaluate("shop()"); await pg.click('.pack[data-sku="coins_c1"]'); await pg.wait_for_timeout(200)
+            check(await pg.evaluate(f"S.coins==={c0}+600"), f'{L}: bit pack not added'); await pg.screenshot(path=f'{O}/{L}_shop.png')
+            await pg.click('.sheet #rt'); await pg.wait_for_timeout(100); check(await pg.evaluate("S.reviveTok===1"), f'{L}: revive token not bought'); await clear(pg)
+            await pg.evaluate("S.examDay=today(); go('exam','se')"); await pg.click('#go'); await pg.wait_for_timeout(150)
+            check(await pg.locator('.sheet #bt').count() == 1, f'{L}: exam limit sheet missing'); await clear(pg)
             # ---- PRO gating: module 4 locked, code lab 4 locked, round 4 locked
             await pg.evaluate("go('track','se')"); await pg.click('.pnode[data-k="se-oop"]'); await pg.wait_for_timeout(150)
             check(await pg.locator('.sheet #buy').count() == 1, f'{L}: locked module did not open the paywall')

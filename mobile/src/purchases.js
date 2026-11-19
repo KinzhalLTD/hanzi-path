@@ -12,9 +12,13 @@ export const SKU = {
   pro_monthly: 'space.kinzhal.cipherpath.pro.monthly',
   pro_yearly: 'space.kinzhal.cipherpath.pro.yearly',
   pro_lifetime: 'space.kinzhal.cipherpath.pro.lifetime',
+  // consumable bit packs (shop)
+  coins_c1: 'space.kinzhal.cipherpath.bits.600',
+  coins_c2: 'space.kinzhal.cipherpath.bits.1500',
+  coins_c3: 'space.kinzhal.cipherpath.bits.3500',
 };
 // Web price keys used by the paywall and shop.
-const PRICE_KEY = { pro_monthly: 'monthly', pro_yearly: 'yearly', pro_lifetime: 'lifetime' };
+const PRICE_KEY = { pro_monthly: 'monthly', pro_yearly: 'yearly', pro_lifetime: 'lifetime', coins_c1: 'c1', coins_c2: 'c2', coins_c3: 'c3' };
 
 const products = {};     // App Store product id → StoreProduct
 let configured = false;
@@ -34,7 +38,7 @@ export async function initPurchases({ onPro, onPrices }) {
 
 async function loadPrices() {
   const subs = await Purchases.getProducts([SKU.pro_monthly, SKU.pro_yearly], PRODUCT_CATEGORY.SUBSCRIPTION);
-  const other = await Purchases.getProducts([SKU.pro_lifetime], PRODUCT_CATEGORY.NON_SUBSCRIPTION);
+  const other = await Purchases.getProducts([SKU.pro_lifetime, SKU.coins_c1, SKU.coins_c2, SKU.coins_c3], PRODUCT_CATEGORY.NON_SUBSCRIPTION);
   const prices = {};
   for (const p of [...subs, ...other]) {
     products[p.identifier] = p;
@@ -51,7 +55,7 @@ async function loadPrices() {
   return { prices, trial };
 }
 
-/** sku is the web id, e.g. "pro_yearly". */
+/** sku is the web id, e.g. "pro_yearly" or "coins_c2". */
 export async function buy(sku) {
   const id = SKU[sku];
   if (!id) return { ok: false, error: 'unknown_sku' };
@@ -70,4 +74,13 @@ export async function buy(sku) {
 export async function restore() {
   try { const info = await Purchases.restorePurchases(); return { ok: true, active: isPro(info) }; }
   catch (e) { return { ok: false, error: String(e.message || e) }; }
+}
+
+/** Ties purchases to the Firebase account so PRO follows the learner to a new phone (null = back to anonymous). */
+export async function linkUser(uid) {
+  if (!configured) return;
+  try {
+    if (uid) await Purchases.logIn(uid);
+    else if (!(await Purchases.isAnonymous())) await Purchases.logOut();
+  } catch {}
 }

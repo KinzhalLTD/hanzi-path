@@ -15,8 +15,15 @@ Subscription group `Cipher Path Pro` (display name EN **Cipher Path PRO**, AR **
 | Type | Reference name | Product ID | Price (Saudi Arabia) |
 |---|---|---|---|
 | Auto-renewable, 1 month | Pro Monthly | `space.kinzhal.cipherpath.pro.monthly` | SAR 29.99 |
-| Auto-renewable, 1 year | Pro Yearly | `space.kinzhal.cipherpath.pro.yearly` | SAR 179.99 (optional 1-week free trial) |
+| Auto-renewable, 1 year | Pro Yearly | `space.kinzhal.cipherpath.pro.yearly` | SAR 179.99 (1-week free trial, see below) |
 | Non-consumable | Pro Lifetime | `space.kinzhal.cipherpath.pro.lifetime` | SAR 449.99 |
+| Consumable | Bits 600 | `space.kinzhal.cipherpath.bits.600` | SAR 7.99 (US $1.99) |
+| Consumable | Bits 1500 | `space.kinzhal.cipherpath.bits.1500` | SAR 14.99 (US $3.99) |
+| Consumable | Bits 3500 | `space.kinzhal.cipherpath.bits.3500` | SAR 29.99 (US $7.99) |
+
+**Free trial:** Pro Yearly → Subscription Prices → **Introductory Offers → +** → Free → 1 week → all countries. The paywall shows
+"7 days free" and "Start free trial" only when Apple reports that the learner is eligible; otherwise it shows the normal price.
+Bit packs: RevenueCat → Products → add the three ids (no entitlement; they are consumables). Pricing and the full money model: `docs/PROFITABILITY.md`.
 
 Localization (name ≤ 30, description ≤ 45 characters):
 
