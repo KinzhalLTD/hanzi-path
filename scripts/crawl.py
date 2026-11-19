@@ -102,8 +102,8 @@ async def main():
                         if 'Timeout' not in str(e) and 'not attached' not in str(e) and 'outside of the viewport' not in str(e):
                             report['pageerror'].append(cur['st'] + ' :: tap ' + str(e)[:140])
                 try: report['said'] = sorted(set(report.get('said', [])) | set(await pg.evaluate('[...(window.__said||[])]')))
-            except Exception: pass
-            dump(); print('done', report['states'], st, flush=True)
+                except Exception: pass
+                dump(); print('done', report['states'], st, flush=True)
         await b.close()
     dump()
     print('states', report['states'], 'taps', report['taps'], 'pageerrors', len(report['pageerror']), 'console', len(report['console']), 'issue types', len(report['issues']), 'dead', len(report['dead']))
