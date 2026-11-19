@@ -6,6 +6,7 @@ import React, { useRef, useEffect } from 'react';
 import { Share, Platform, Linking } from 'react-native';
 import { WebView } from 'react-native-webview';
 import * as Speech from 'expo-speech';
+import { voiceClip, voiceInfo, speakNative } from './voice';
 import * as Haptics from 'expo-haptics';
 import * as Notifications from 'expo-notifications';
 import * as AppleAuthentication from 'expo-apple-authentication';
@@ -109,7 +110,9 @@ export default function HanziBridge({ uri, onReady }) {
       return { ok: true };
     },
     // ---------- device ----------
-    speak: async ({ text, lang = 'zh-CN', rate = 0.8 }) => { Speech.stop(); Speech.speak(text, { language: lang, rate }); },
+    speak: (p) => speakNative(p),
+    voice: (p) => voiceClip(p),
+    voiceInfo: async () => voiceInfo(),
     speakStop: async () => Speech.stop(),
     haptic: async ({ kind }) => {
       if (kind === 'error') return Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);

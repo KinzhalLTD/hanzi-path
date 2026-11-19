@@ -57,11 +57,11 @@ SCREENS.talk=(m,arg)=>{ const di=Math.max(0,TALK.findIndex(d=>d.k===((arg&&arg.d
 SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.scenes[si]; if(!s) return go('talk');
   if(!tkFree(d,si)) return paywall('talk');
   const col=TK_COL[d.k], av=tkAv(d,si); S.tkPy=S.tkPy??1; S.tkTr=S.tkTr??0;
-  const line=(who,zh,py,tr,extra='')=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?av:'🙂'}</span><div class="tkbub"><div class="tkzh">${analyseHTML2(zh,py)}</div><div class="tktr" dir="auto">${esc(tr)}</div>${extra}<button class="tkplay" aria-label="🔊" data-zh="${esc(zh)}">🔊</button></div></div>`;
+  const line=(who,zh,py,tr,extra='')=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?av:'🙂'}</span><div class="tkbub"><div class="tkzh">${analyseHTML2(zh,py)}</div><div class="tktr" dir="auto">${esc(tr)}</div>${extra}<button class="tkplay" aria-label="🔊" data-zh="${esc(zh)}" data-v="${who==='them'?'m':'f'}">🔊</button></div></div>`;
   const toggles=()=>`<button class="chip tktg" id="tpy" aria-pressed="${!!S.tkPy}">拼 ${t('tkPy')}</button><button class="chip tktg" id="ttr" aria-pressed="${!!S.tkTr}">译 ${t('tkTr')}</button>`;
   const applyTg=()=>{ m.classList.toggle('tk-nopy',!S.tkPy); m.classList.toggle('tk-tr',!!S.tkTr); };
   const bindTg=()=>{ const a=$('#tpy',m), b=$('#ttr',m); if(a) a.onclick=()=>{ S.tkPy=S.tkPy?0:1; save(); a.setAttribute('aria-pressed',!!S.tkPy); applyTg(); }; if(b) b.onclick=()=>{ S.tkTr=S.tkTr?0:1; save(); b.setAttribute('aria-pressed',!!S.tkTr); applyTg(); }; };
-  let timer=null; const prevC=cleanup; cleanup=()=>{ clearTimeout(timer); try{speechSynthesis.cancel();}catch(e){} prevC&&prevC(); };
+  let timer=null; const prevC=cleanup; cleanup=()=>{ clearTimeout(timer); stopVoice(); prevC&&prevC(); };
 
   function intro(){ m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="grow"></div>${toggles()}</div>
     <div class="tkintro rise" style="--tc:${col}"><div class="tkbanner"><span class="tkbig">${av}</span><span class="brush" style="--n:${[...s.zh].length}">${esc(s.zh)}</span></div>
@@ -81,11 +81,11 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
   // scroll inside the chat panes only (never the page): newest line at the bottom of the log, latest feedback visible in the panel
   const paneEnd=el=>{ if(!el) return; try{ el.scrollTo({top:el.scrollHeight,behavior:'smooth'}); }catch(e){ el.scrollTop=el.scrollHeight; } };
   const scrollEnd=()=>requestAnimationFrame(()=>{ paneEnd(log()); paneEnd(panel()); });
-  const bindLine=el=>{ bindTokens(el); $$('.tkplay',el).forEach(b=>b.onclick=e=>{ e.stopPropagation(); speak(b.dataset.zh); }); };
+  const bindLine=el=>{ bindTokens(el); $$('.tkplay',el).forEach(b=>b.onclick=e=>{ e.stopPropagation(); speak(b.dataset.zh,{voice:b.dataset.v||'f'}); }); };
   function partner(){ const tn=s.turns[ti]; $('#tbar',m).style.width=(ti/s.turns.length*100)+'%';
     log().insertAdjacentHTML('beforeend',`<div class="tkmsg them typing" dir="ltr"><span class="tkface">${av}</span><div class="tkbub"><span class="tkdots"><i></i><i></i><i></i></span></div></div>`); scrollEnd();
     panel().innerHTML=''; timer=setTimeout(()=>{ log().lastElementChild.remove();
-      log().insertAdjacentHTML('beforeend',line('them',tn.p[0],tn.p[1],isAr()?tn.p[2]:tn.p[3])); bindLine(log().lastElementChild); speak(tn.p[0]); scrollEnd(); choices(); },650+Math.random()*350); }
+      log().insertAdjacentHTML('beforeend',line('them',tn.p[0],tn.p[1],isAr()?tn.p[2]:tn.p[3])); bindLine(log().lastElementChild); speak(tn.p[0],{voice:'m'}); scrollEnd(); choices(); },650+Math.random()*350); }
   function choices(){ const tn=s.turns[ti], opts=shuffle(tn.o); let tries=[], hinted=false, done=false;
     panel().innerHTML=`<div class="row" style="gap:8px"><b class="grow">${t('tkPick')}</b><button class="btn ghost sm" id="thint">💡 ${t('tkHint')}</button></div>
       <div class="col tkopts" style="gap:8px">${opts.map((o,j)=>`<button class="tkopt" data-j="${j}" dir="ltr"><span class="han">${esc(o.zh)}</span><span class="py">${esc(o.py)}</span><span class="tktr2" dir="auto">${esc(isAr()?o.ar:o.en)}</span></button>`).join('')}</div><div id="tfb"></div>`;
@@ -117,9 +117,10 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
       track('talk_terms',{scene:tkKey(d,s)}); route={name:'lesson'}; render(); runQuiz($('main'),{intro:ws.filter(w=>!S.srs[w.id]),questions:makeQuestions(ws,pool),back:()=>go('talkscene',{d:d.k,i:si}),onDone:()=>{ route={name:'talk',arg:{d:d.k}}; }}); };
     const ns=$('#tns',m); if(ns) ns.onclick=()=>leave(()=>tkFree(d,si+1)?go('talkscene',{d:d.k,i:si+1}):paywall('talk'));
     const dn=$('#tdn',m); if(dn) dn.onclick=()=>leave(()=>go('talk',{d:d.k}));
-    let playing=false; $('#trp',m).onclick=()=>{ const b=$('#trp',m); if(playing){ playing=false; clearTimeout(timer); b.textContent='▶ '+t('tkReplay'); return; }
-      playing=true; b.textContent='■ '+t('tkStop'); const seq=s.turns.flatMap(tn=>[tn.p[0],tn.o.find(o=>o.t==='A').zh]); let k2=0;
-      const next=()=>{ if(!playing||k2>=seq.length){ playing=false; b.textContent='▶ '+t('tkReplay'); return; } const z=seq[k2++]; speak(z); timer=setTimeout(next,900+[...z].length*260); }; next(); };
+    let playing=false; $('#trp',m).onclick=()=>{ const b=$('#trp',m); if(playing){ playing=false; clearTimeout(timer); stopVoice(); b.textContent='▶ '+t('tkReplay'); return; }
+      playing=true; b.textContent='■ '+t('tkStop'); const seq=s.turns.flatMap(tn=>[[tn.p[0],'m'],[tn.o.find(o=>o.t==='A').zh,'f']]);
+      (async()=>{ for(const [z,v] of seq){ if(!playing) return; await speak(z,{voice:v}); if(!playing) return; await new Promise(r=>{ timer=setTimeout(r,420); }); }
+        playing=false; const bb=$('#trp',m); if(bb) bb.textContent='▶ '+t('tkReplay'); })(); };
   }
   intro();
 };

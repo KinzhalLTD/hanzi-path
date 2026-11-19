@@ -34,7 +34,6 @@ function questsToday(){ const s=daySeed(); const extra=QUEST_POOL.slice(3); cons
 
 /* --- story narration in the learner's language (legends, culture cards) --- */
 let narrating=false;
-function narrate(text){ const lang=isAr()?'ar-SA':'en-US'; if(narrating){ narrating=false; try{ if(RN) RN.postMessage(JSON.stringify({type:'speakStop'})); else speechSynthesis.cancel(); }catch(e){} return; }
+function narrate(text){ const lang=isAr()?'ar-SA':'en-US'; if(narrating){ narrating=false; stopVoice(); return; }
   narrating=true; try{ musDuck(Math.min(60,2+text.length*.07)); }catch(e){}
-  if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang,rate:.95})); return; }
-  try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang=lang; u.rate=.95; u.onend=()=>narrating=false; speechSynthesis.speak(u); }catch(e){ narrating=false; } }
+  say(text,{lang,rate:.95}).then(()=>{ narrating=false; }); }

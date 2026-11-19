@@ -16,7 +16,8 @@ SETUP = """(()=>{ window.__calls=0; const wrap=n=>{ const f=window[n]; if(typeof
   ['speak','speakIn','pronCheck','toast','haptic','paywall','sheet','go','openUrl','confetti','musicSheet','interstitial','rewarded','purchase','native'].forEach(wrap);
   for(const k in SFX){ const f=SFX[k]; if(typeof f==='function') SFX[k]=function(){ window.__calls++; return f.apply(this,arguments); }; }
   window.__mut=0; new MutationObserver(m=>{ window.__mut+=m.length; }).observe(document.body,{subtree:true,childList:true,attributes:true,characterData:true});
-  window.open=()=>{ window.__calls++; return null; }; })()"""
+  window.open=()=>{ window.__calls++; return null; };
+  if(!window.__said){ window.__said=new Set(); const f=window.say; if(f) window.say=function(t,o){ try{ window.__said.add(((o&&o.voice)||'f')+'|'+((o&&o.lang)||'zh-CN')+'|'+String(t).trim()); }catch(e){} return f.apply(this,arguments); }; } })()"""
 CHECK = r"""(route)=>{ const issues=[]; const txt=document.body.innerText||'';
   const codeScreen=/^(code|codeunit)/.test(route);
   if(!codeScreen && /\bundefined\b/.test(txt)) issues.push('text:undefined');
@@ -69,7 +70,7 @@ async def main():
         if ONLY: plan = [x for x in plan if re.search(ONLY, x[1])]
         plan = [x for k, x in enumerate(plan) if k % NSH == SH]
         def dump():
-            r = dict(report); r['issues'] = {k: sorted(v)[:8] + ([f'... {len(v)} total'] if len(v) > 8 else []) for k, v in report['issues'].items()}
+            r = dict(report); r['said'] = report.get('said', []); r['issues'] = {k: sorted(v)[:8] + ([f'... {len(v)} total'] if len(v) > 8 else []) for k, v in report['issues'].items()}
             json.dump(r, open(f'{O}/crawl_{LANG}_{SH}.json', 'w'), ensure_ascii=False, indent=1)
         for pro, st in plan:
             await pg.evaluate(f"S.pro={'true' if pro else 'false'};S.coins=500;save()")
@@ -100,7 +101,9 @@ async def main():
                     except Exception as e:
                         if 'Timeout' not in str(e) and 'not attached' not in str(e) and 'outside of the viewport' not in str(e):
                             report['pageerror'].append(cur['st'] + ' :: tap ' + str(e)[:140])
-                dump(); print('done', report['states'], st, flush=True)
+                try: report['said'] = sorted(set(report.get('said', [])) | set(await pg.evaluate('[...(window.__said||[])]')))
+            except Exception: pass
+            dump(); print('done', report['states'], st, flush=True)
         await b.close()
     dump()
     print('states', report['states'], 'taps', report['taps'], 'pageerrors', len(report['pageerror']), 'console', len(report['console']), 'issue types', len(report['issues']), 'dead', len(report['dead']))

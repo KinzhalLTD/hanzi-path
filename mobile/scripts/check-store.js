@@ -62,6 +62,11 @@ if (exists(web)) {
   need(html.includes('hanzi-path-64170.web.app/privacy.html'), 'privacy policy link missing in the web app');
 }
 
+// studio voice packs (docs/VOICE.md): optional, the app falls back to the phone voice
+{ const vi = path.join(__dirname, '..', 'assets', 'voice', 'index.json');
+  let n = 0; try { n = Object.keys(JSON.parse(fs.readFileSync(vi, 'utf8')).e || {}).length; } catch (e) {}
+  warn(n > 0, 'studio voice not recorded yet: run `bash scripts/voice_cloudshell.sh` in Cloud Shell (docs/VOICE.md); the build will use the phone voice');
+  if (n) console.log(`voice: ${n} studio recordings bundled`); }
 for (const w of warnings) console.log('warning:', w);
 if (errors.length) { for (const e of errors) console.log('✗', e); console.log(`\ncheck:store – ${errors.length} problem(s)`); process.exit(1); }
 console.log('check:store OK – ready for: npx eas-cli@latest build -p ios --profile production');

@@ -44,8 +44,8 @@ function native(type,payload){ return new Promise(res=>{ const id=Math.random().
 window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){ const was=!!S.pro; S.pro=!!m.active; save(); if(was!==S.pro){ if(S.pro) toast(t('proOn')); render(); } }
   if(m.type==='ads'){ window.__adPrivacy=!!m.privacy; }
   if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); window.__trialOk=m.trial!==false; }}catch(e){} };
-function speak(text,rate=.8){ if(!S.sound) return; try{musDuck((1.4+text.length*.35)*.8/rate);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang:'zh-CN',rate})); return; }
-  try{const u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';u.rate=rate;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){} }
+/* speak(text) / speak(text, rate) / speak(text, {voice:'m'}): studio clip or best phone voice, see voice.js */
+function speak(text,rate=.8){ return say(text,typeof rate==='object'?rate:{rate}); }
 /* KPI events from the financial plan (Features sheet). The native app forwards them to analytics. */
 const PLAN={freePron:5,adsPerDay:6,freeCodeUnits:3,freeSampleUnits:2,freePlays:3};
 function track(ev,props={}){ try{ S.kpi=S.kpi||{}; S.kpi[ev]=(S.kpi[ev]||0)+1; if(RN) RN.postMessage(JSON.stringify({type:'track',ev,props})); }catch(e){} }

@@ -704,8 +704,8 @@ function native(type,payload){ return new Promise(res=>{ const id=Math.random().
 window.__fromNative=msg=>{ try{const m=typeof msg==='string'?JSON.parse(msg):msg; if(m.id&&pending[m.id]){pending[m.id](m); delete pending[m.id];} if(m.type==='pro'){ const was=!!S.pro; S.pro=!!m.active; save(); if(was!==S.pro){ if(S.pro) toast(t('proOn')); render(); } }
   if(m.type==='ads'){ window.__adPrivacy=!!m.privacy; }
   if(m.type==='prices'){ window.__prices=Object.assign({},window.__prices||{},m.prices||{}); window.__trialOk=m.trial!==false; }}catch(e){} };
-function speak(text,rate=.8){ if(!S.sound) return; try{musDuck((1.4+text.length*.35)*.8/rate);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang:'zh-CN',rate})); return; }
-  try{const u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';u.rate=rate;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){} }
+/* speak(text) / speak(text, rate) / speak(text, {voice:'m'}): studio clip or best phone voice, see voice.js */
+function speak(text,rate=.8){ return say(text,typeof rate==='object'?rate:{rate}); }
 /* KPI events from the financial plan (Features sheet). The native app forwards them to analytics. */
 const PLAN={freePron:5,adsPerDay:6,freeCodeUnits:3,freeSampleUnits:2,freePlays:3};
 function track(ev,props={}){ try{ S.kpi=S.kpi||{}; S.kpi[ev]=(S.kpi[ev]||0)+1; if(RN) RN.postMessage(JSON.stringify({type:'track',ev,props})); }catch(e){} }
@@ -821,6 +821,61 @@ function render(){
   musPlay(trackFor(route));
 }
 const SCREENS={};
+
+/* ===== Voice: studio recordings first, the best phone voice as fallback =====
+   Studio clips (Google Chirp 3 HD, recorded by scripts/voice_gen.py) ship inside the iPhone app in voice packs.
+   Every spoken line is looked up by voiceKey(voice, text) (same cyrb53 hash as scripts/voice_corpus.py); the native
+   side returns the clip bytes and it plays here with pitch-preserving speed control. Lines without a clip, and the
+   browser version, use the best installed system voice (premium/enhanced first; a male voice for 'm' when there is one).
+   say(text,{voice:'f'|'m', rate, lang}) returns a promise that settles when the line has finished (or was cut off),
+   so conversations can play turn by turn. Speeds: S.vSpeed = 'slow' | 'normal' (default) | 'fast'. */
+function cyrb53(str,seed=0){ let h1=0xdeadbeef^seed, h2=0x41c6ce57^seed;
+  for(let i=0,ch;i<str.length;i++){ ch=str.charCodeAt(i); h1=Math.imul(h1^ch,2654435761); h2=Math.imul(h2^ch,1597334677); }
+  h1=Math.imul(h1^(h1>>>16),2246822507); h1^=Math.imul(h2^(h2>>>13),3266489909);
+  h2=Math.imul(h2^(h2>>>16),2246822507); h2^=Math.imul(h1^(h1>>>13),3266489909);
+  return 4294967296*(2097151&h2)+(h1>>>0); }
+const voiceKey=(v,t)=>cyrb53(v+'|'+String(t).replace(/\s+/g,'')).toString(36);
+const VOICE={cache:new Map(), cur:null, gen:0, studio:null, clips:0, web:{}};
+const vSpeedMul=()=>S.vSpeed==='slow'?0.72:S.vSpeed==='fast'?1.15:1;
+async function voiceInfo(){ if(!RN) return {studio:false,clips:0}; if(VOICE.studio!==null) return {studio:VOICE.studio,clips:VOICE.clips};
+  const r=await native('voiceInfo',{}); VOICE.studio=!!(r&&r.ok&&r.clips>0); VOICE.clips=(r&&r.clips)||0; return {studio:VOICE.studio,clips:VOICE.clips}; }
+async function studioClip(v,text){ if(!RN||VOICE.studio===false) return null; const k=voiceKey(v,text);
+  if(VOICE.cache.has(k)){ const u=VOICE.cache.get(k); VOICE.cache.delete(k); VOICE.cache.set(k,u); return u; }
+  const r=await native('voice',{k}); if(!r||r.unsupported){ VOICE.studio=false; return null; } if(!r.b64) return null;
+  const bin=atob(r.b64), u8=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i);
+  const url=URL.createObjectURL(new Blob([u8],{type:'audio/mpeg'})); VOICE.cache.set(k,url);
+  if(VOICE.cache.size>80){ const [ok,ou]=VOICE.cache.entries().next().value; VOICE.cache.delete(ok); try{URL.revokeObjectURL(ou);}catch(e){} }
+  return url; }
+/* best browser voice per language (and a male one for 'm' when installed) */
+const VOICE_MALE=/(yunxi|yunyang|yunjian|kangkang|li-?mu|male|男|maged|hamed|shakir|tarik|daniel|aaron|arthur|fred|guy|david|mark|alex|tom)/i;
+function webVoice(lang,male){ try{ const vs=speechSynthesis.getVoices(); if(!vs.length) return null; const key=lang+(male?'m':'f'); if(VOICE.web[key]!==undefined) return VOICE.web[key];
+  const L=lang.toLowerCase(), base=L.split('-')[0]; let pool=vs.filter(v=>v.lang.toLowerCase().replace('_','-')===L); if(!pool.length) pool=vs.filter(v=>v.lang.toLowerCase().startsWith(base));
+  if(base==='zh') pool=pool.filter(v=>!/hk|tw|yue|cantonese|粤/i.test(v.lang+v.name)).concat(pool.filter(v=>/tw/i.test(v.lang))).filter((v,i,a)=>a.indexOf(v)===i);
+  const sc=v=>(/premium|neural|natural|enhanced|online|xiaoxiao|xiaoyi|yunxi|tingting|lili|google/i.test(v.name)?6:0)+(/premium|neural|natural/i.test(v.name)?4:0)+(v.localService?1:0)+(male?(VOICE_MALE.test(v.name)?8:0):(VOICE_MALE.test(v.name)?-8:0));
+  return VOICE.web[key]=pool.sort((a,b)=>sc(b)-sc(a))[0]||null; }catch(e){ return null; } }
+try{ speechSynthesis.onvoiceschanged=()=>{ VOICE.web={}; }; }catch(e){}
+function ttsSay(text,{voice='f',rate=.8,lang='zh-CN'}={}){ const r=Math.max(.35,Math.min(1.4,rate*vSpeedMul()));
+  if(RN) return native('speak',{text,lang,rate:r,voice}).then(()=>{});
+  return new Promise(res=>{ try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang=lang; u.rate=r;
+      const wv=webVoice(lang,voice==='m'); if(wv) u.voice=wv; if(voice==='m'&&!(wv&&VOICE_MALE.test(wv.name))) u.pitch=.82;
+      u.onend=u.onerror=()=>res(); speechSynthesis.speak(u); setTimeout(res,1500+[...text].length*450/r); }catch(e){ res(); } }); }
+function stopVoice(){ VOICE.gen++; if(VOICE.cur){ try{ VOICE.cur.pause(); }catch(e){} VOICE.cur=null; }
+  try{ if(RN) RN.postMessage(JSON.stringify({type:'speakStop'})); else speechSynthesis.cancel(); }catch(e){} }
+function say(text,o={}){ if(!S.sound||!text) return Promise.resolve(); text=String(text).trim(); if(!text) return Promise.resolve();
+  const v=o.voice||'f', lang=o.lang||'zh-CN', rate=o.rate||.8, g=++VOICE.gen;
+  if(VOICE.cur){ try{ VOICE.cur.pause(); }catch(e){} VOICE.cur=null; }
+  return (async()=>{ const url=lang.startsWith('zh')?await studioClip(v,text):null; if(g!==VOICE.gen) return;
+    if(url){ const a=new Audio(url); a.preservesPitch=true; a.webkitPreservesPitch=true; a.playbackRate=Math.max(.5,Math.min(1.5,vSpeedMul()*rate/.8));
+      VOICE.cur=a; a.onloadedmetadata=()=>{ try{ musDuck((a.duration||2)/a.playbackRate+.4); }catch(e){} };
+      await new Promise(res=>{ a.onended=a.onerror=a.onpause=()=>res(); a.play().catch(()=>res()); });
+      if(VOICE.cur===a) VOICE.cur=null; return; }
+    try{ musDuck((1.4+text.length*.35)*.8/rate/vSpeedMul()); }catch(e){}
+    await ttsSay(text,{voice:v,rate,lang}); })(); }
+/* play several lines in order, alternating voices: [[text,'m'],[text,'f'],…]; returns a stop function */
+function sayAll(lines,gap=350){ let stop=false; (async()=>{ for(const [t,v] of lines){ if(stop) return; await say(t,{voice:v}); if(stop) return; await new Promise(r=>setTimeout(r,gap)); } })(); return ()=>{ stop=true; stopVoice(); }; }
+const VOICE_TEST='你好！我们一起学习中文吧。';
+Object.assign(T.ar,{vSpeed:'سرعة النطق',vSlow:'بطيئة',vNorm:'عادية',vFast:'سريعة',vTest:'جرّب الصوت',vStudio:'صوت استوديو طبيعي · {n} تسجيل',vPhone:'صوت الجهاز'});
+Object.assign(T.en,{vSpeed:'Voice speed',vSlow:'Slow',vNorm:'Normal',vFast:'Fast',vTest:'Test the voice',vStudio:'studio voice · {n} recordings',vPhone:'phone voice'});
 
 /* ===== Bao 包包 — the app's mascot: a cheeky steamed bun ===== */
 function bao(mood='happy',size=72){
@@ -1550,6 +1605,8 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
      <div><div class="sub">${t('hanFont')}</div><div class="seg" id="hf">${Object.entries(HAN_FONTS).map(([k,[zh,f]])=>`<button data-v="${k}" aria-pressed="${(S.hanFont||'song')===k}" style="font-family:${f.replace(/"/g,"'")};font-size:20px">${zh} 汉字</button>`).join('')}</div></div>
      <div><div class="sub">🎶 ${t('musicVol')} <span style="opacity:.6">· ${MUS.cur?MUS.cur.name:''}</span></div><div class="seg" id="mvol">${[[0,'off'],[.35,'soft'],[.6,'normal'],[.9,'loud']].map(([v,k])=>`<button data-v="${v}" aria-pressed="${musVol()===v}">${t(k)}</button>`).join('')}</div></div>
      <div><div class="sub">${t('sound')}</div><div class="seg" id="snd"><button data-v="1" aria-pressed="${S.sound}">${t('on')}</button><button data-v="0" aria-pressed="${!S.sound}">${t('off')}</button></div></div>
+     <div><div class="sub">🗣️ ${t('vSpeed')} <span id="vst" style="opacity:.7"></span></div><div class="seg" id="vsp">${[['slow','vSlow'],['normal','vNorm'],['fast','vFast']].map(([v,k])=>`<button data-v="${v}" aria-pressed="${(S.vSpeed||'normal')===v}">${t(k)}</button>`).join('')}</div>
+       <button class="btn ghost sm" id="vtest" style="margin-top:8px">🔊 ${t('vTest')}</button></div>
      <button class="btn ghost block" id="revb">复 ${t('review')} · <span class="num">${dueIds().length}</span></button>
      <button class="btn ghost block" id="shopb">${coinHTML} ${t('shop')}</button>
      <button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost block" id="pv">${t('privacy')}</button>${RN&&window.__adPrivacy?`<button class="btn ghost block" id="adp">${t('adPrivacy')}</button>`:''}
@@ -1564,6 +1621,9 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
   $$('#hf button',m).forEach(b=>b.onclick=()=>{ S.hanFont=b.dataset.v; save(); SFX.tap(); render(); });
   $$('#mvol button',m).forEach(b=>b.onclick=()=>{ musSetVol(+b.dataset.v); render(); });
   $$('#snd button',m).forEach(b=>b.onclick=()=>{S.sound=b.dataset.v==='1';save();render();});
+  $$('#vsp button',m).forEach(b=>b.onclick=()=>{ S.vSpeed=b.dataset.v; save(); $$('#vsp button',m).forEach(x=>x.setAttribute('aria-pressed',x===b)); say(VOICE_TEST); });
+  $('#vtest',m).onclick=()=>{ SFX.tap(); say(VOICE_TEST); };
+  voiceInfo().then(r=>{ const el=$('#vst',m); if(el) el.textContent='· '+(r.studio?t('vStudio').replace('{n}',r.clips.toLocaleString()):t('vPhone')); });
   $('#shopb',m).onclick=shop; $('#revb',m).onclick=()=>go('review');
   $('#rs',m).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();toast(t('proOn'));render();} else toast(t('restored')); };
   $('#pv',m).onclick=()=>openUrl(LEGAL.privacy); const ap=$('#adp',m); if(ap) ap.onclick=()=>native('ads:privacy',{});
@@ -3050,11 +3110,11 @@ SCREENS.talk=(m,arg)=>{ const di=Math.max(0,TALK.findIndex(d=>d.k===((arg&&arg.d
 SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.scenes[si]; if(!s) return go('talk');
   if(!tkFree(d,si)) return paywall('talk');
   const col=TK_COL[d.k], av=tkAv(d,si); S.tkPy=S.tkPy??1; S.tkTr=S.tkTr??0;
-  const line=(who,zh,py,tr,extra='')=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?av:'🙂'}</span><div class="tkbub"><div class="tkzh">${analyseHTML2(zh,py)}</div><div class="tktr" dir="auto">${esc(tr)}</div>${extra}<button class="tkplay" aria-label="🔊" data-zh="${esc(zh)}">🔊</button></div></div>`;
+  const line=(who,zh,py,tr,extra='')=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?av:'🙂'}</span><div class="tkbub"><div class="tkzh">${analyseHTML2(zh,py)}</div><div class="tktr" dir="auto">${esc(tr)}</div>${extra}<button class="tkplay" aria-label="🔊" data-zh="${esc(zh)}" data-v="${who==='them'?'m':'f'}">🔊</button></div></div>`;
   const toggles=()=>`<button class="chip tktg" id="tpy" aria-pressed="${!!S.tkPy}">拼 ${t('tkPy')}</button><button class="chip tktg" id="ttr" aria-pressed="${!!S.tkTr}">译 ${t('tkTr')}</button>`;
   const applyTg=()=>{ m.classList.toggle('tk-nopy',!S.tkPy); m.classList.toggle('tk-tr',!!S.tkTr); };
   const bindTg=()=>{ const a=$('#tpy',m), b=$('#ttr',m); if(a) a.onclick=()=>{ S.tkPy=S.tkPy?0:1; save(); a.setAttribute('aria-pressed',!!S.tkPy); applyTg(); }; if(b) b.onclick=()=>{ S.tkTr=S.tkTr?0:1; save(); b.setAttribute('aria-pressed',!!S.tkTr); applyTg(); }; };
-  let timer=null; const prevC=cleanup; cleanup=()=>{ clearTimeout(timer); try{speechSynthesis.cancel();}catch(e){} prevC&&prevC(); };
+  let timer=null; const prevC=cleanup; cleanup=()=>{ clearTimeout(timer); stopVoice(); prevC&&prevC(); };
 
   function intro(){ m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="grow"></div>${toggles()}</div>
     <div class="tkintro rise" style="--tc:${col}"><div class="tkbanner"><span class="tkbig">${av}</span><span class="brush" style="--n:${[...s.zh].length}">${esc(s.zh)}</span></div>
@@ -3074,11 +3134,11 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
   // scroll inside the chat panes only (never the page): newest line at the bottom of the log, latest feedback visible in the panel
   const paneEnd=el=>{ if(!el) return; try{ el.scrollTo({top:el.scrollHeight,behavior:'smooth'}); }catch(e){ el.scrollTop=el.scrollHeight; } };
   const scrollEnd=()=>requestAnimationFrame(()=>{ paneEnd(log()); paneEnd(panel()); });
-  const bindLine=el=>{ bindTokens(el); $$('.tkplay',el).forEach(b=>b.onclick=e=>{ e.stopPropagation(); speak(b.dataset.zh); }); };
+  const bindLine=el=>{ bindTokens(el); $$('.tkplay',el).forEach(b=>b.onclick=e=>{ e.stopPropagation(); speak(b.dataset.zh,{voice:b.dataset.v||'f'}); }); };
   function partner(){ const tn=s.turns[ti]; $('#tbar',m).style.width=(ti/s.turns.length*100)+'%';
     log().insertAdjacentHTML('beforeend',`<div class="tkmsg them typing" dir="ltr"><span class="tkface">${av}</span><div class="tkbub"><span class="tkdots"><i></i><i></i><i></i></span></div></div>`); scrollEnd();
     panel().innerHTML=''; timer=setTimeout(()=>{ log().lastElementChild.remove();
-      log().insertAdjacentHTML('beforeend',line('them',tn.p[0],tn.p[1],isAr()?tn.p[2]:tn.p[3])); bindLine(log().lastElementChild); speak(tn.p[0]); scrollEnd(); choices(); },650+Math.random()*350); }
+      log().insertAdjacentHTML('beforeend',line('them',tn.p[0],tn.p[1],isAr()?tn.p[2]:tn.p[3])); bindLine(log().lastElementChild); speak(tn.p[0],{voice:'m'}); scrollEnd(); choices(); },650+Math.random()*350); }
   function choices(){ const tn=s.turns[ti], opts=shuffle(tn.o); let tries=[], hinted=false, done=false;
     panel().innerHTML=`<div class="row" style="gap:8px"><b class="grow">${t('tkPick')}</b><button class="btn ghost sm" id="thint">💡 ${t('tkHint')}</button></div>
       <div class="col tkopts" style="gap:8px">${opts.map((o,j)=>`<button class="tkopt" data-j="${j}" dir="ltr"><span class="han">${esc(o.zh)}</span><span class="py">${esc(o.py)}</span><span class="tktr2" dir="auto">${esc(isAr()?o.ar:o.en)}</span></button>`).join('')}</div><div id="tfb"></div>`;
@@ -3110,9 +3170,10 @@ SCREENS.talkscene=(m,arg)=>{ const d=TALK.find(x=>x.k===arg.d), si=arg.i, s=d.sc
       track('talk_terms',{scene:tkKey(d,s)}); route={name:'lesson'}; render(); runQuiz($('main'),{intro:ws.filter(w=>!S.srs[w.id]),questions:makeQuestions(ws,pool),back:()=>go('talkscene',{d:d.k,i:si}),onDone:()=>{ route={name:'talk',arg:{d:d.k}}; }}); };
     const ns=$('#tns',m); if(ns) ns.onclick=()=>leave(()=>tkFree(d,si+1)?go('talkscene',{d:d.k,i:si+1}):paywall('talk'));
     const dn=$('#tdn',m); if(dn) dn.onclick=()=>leave(()=>go('talk',{d:d.k}));
-    let playing=false; $('#trp',m).onclick=()=>{ const b=$('#trp',m); if(playing){ playing=false; clearTimeout(timer); b.textContent='▶ '+t('tkReplay'); return; }
-      playing=true; b.textContent='■ '+t('tkStop'); const seq=s.turns.flatMap(tn=>[tn.p[0],tn.o.find(o=>o.t==='A').zh]); let k2=0;
-      const next=()=>{ if(!playing||k2>=seq.length){ playing=false; b.textContent='▶ '+t('tkReplay'); return; } const z=seq[k2++]; speak(z); timer=setTimeout(next,900+[...z].length*260); }; next(); };
+    let playing=false; $('#trp',m).onclick=()=>{ const b=$('#trp',m); if(playing){ playing=false; clearTimeout(timer); stopVoice(); b.textContent='▶ '+t('tkReplay'); return; }
+      playing=true; b.textContent='■ '+t('tkStop'); const seq=s.turns.flatMap(tn=>[[tn.p[0],'m'],[tn.o.find(o=>o.t==='A').zh,'f']]);
+      (async()=>{ for(const [z,v] of seq){ if(!playing) return; await speak(z,{voice:v}); if(!playing) return; await new Promise(r=>{ timer=setTimeout(r,420); }); }
+        playing=false; const bb=$('#trp',m); if(bb) bb.textContent='▶ '+t('tkReplay'); })(); };
   }
   intro();
 };
@@ -3740,8 +3801,7 @@ const sstrip=x=>(x||'').normalize('NFD').replace(/[\u0300-\u036f\s']/g,'').toLow
 const secFree=(ti)=>S.pro||ti===0;
 const secM=(s,w)=>SEC_META[s.k+':'+w.id]||{ar:(w.ar||[])[0],en:(w.en||[])[0],lv:1,ti:0};
 const secLearned=s=>s._w.filter(w=>S.srs[w.id]).length;
-function speakIn(text,lang){ if(!S.sound) return; try{musDuck(2);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang})); return; }
-  try{ const u=new SpeechSynthesisUtterance(text); u.lang=lang; u.rate=.85; speechSynthesis.cancel(); speechSynthesis.speak(u); }catch(e){} }
+function speakIn(text,lang){ return say(text,{lang,rate:lang.startsWith('zh')?.8:.9}); }
 const ACC_LANG={yue:'zh-HK',tw:'zh-TW'};
 if(!document.getElementById('secCSS')) document.head.insertAdjacentHTML('beforeend',`<style id="secCSS">
 .secbar{height:4px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:6px}.secbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
@@ -3841,10 +3901,9 @@ function questsToday(){ const s=daySeed(); const extra=QUEST_POOL.slice(3); cons
 
 /* --- story narration in the learner's language (legends, culture cards) --- */
 let narrating=false;
-function narrate(text){ const lang=isAr()?'ar-SA':'en-US'; if(narrating){ narrating=false; try{ if(RN) RN.postMessage(JSON.stringify({type:'speakStop'})); else speechSynthesis.cancel(); }catch(e){} return; }
+function narrate(text){ const lang=isAr()?'ar-SA':'en-US'; if(narrating){ narrating=false; stopVoice(); return; }
   narrating=true; try{ musDuck(Math.min(60,2+text.length*.07)); }catch(e){}
-  if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang,rate:.95})); return; }
-  try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang=lang; u.rate=.95; u.onend=()=>narrating=false; speechSynthesis.speak(u); }catch(e){ narrating=false; } }
+  say(text,{lang,rate:.95}).then(()=>{ narrating=false; }); }
 
 /* ===== Notifications (in-app inbox + native push scheduling) and accounts (Sign in with Apple / Google
    via Firebase in the native app, with cloud sync). The web build runs a clearly labelled demo. ===== */

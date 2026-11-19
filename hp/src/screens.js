@@ -245,6 +245,8 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
      <div><div class="sub">${t('hanFont')}</div><div class="seg" id="hf">${Object.entries(HAN_FONTS).map(([k,[zh,f]])=>`<button data-v="${k}" aria-pressed="${(S.hanFont||'song')===k}" style="font-family:${f.replace(/"/g,"'")};font-size:20px">${zh} 汉字</button>`).join('')}</div></div>
      <div><div class="sub">🎶 ${t('musicVol')} <span style="opacity:.6">· ${MUS.cur?MUS.cur.name:''}</span></div><div class="seg" id="mvol">${[[0,'off'],[.35,'soft'],[.6,'normal'],[.9,'loud']].map(([v,k])=>`<button data-v="${v}" aria-pressed="${musVol()===v}">${t(k)}</button>`).join('')}</div></div>
      <div><div class="sub">${t('sound')}</div><div class="seg" id="snd"><button data-v="1" aria-pressed="${S.sound}">${t('on')}</button><button data-v="0" aria-pressed="${!S.sound}">${t('off')}</button></div></div>
+     <div><div class="sub">🗣️ ${t('vSpeed')} <span id="vst" style="opacity:.7"></span></div><div class="seg" id="vsp">${[['slow','vSlow'],['normal','vNorm'],['fast','vFast']].map(([v,k])=>`<button data-v="${v}" aria-pressed="${(S.vSpeed||'normal')===v}">${t(k)}</button>`).join('')}</div>
+       <button class="btn ghost sm" id="vtest" style="margin-top:8px">🔊 ${t('vTest')}</button></div>
      <button class="btn ghost block" id="revb">复 ${t('review')} · <span class="num">${dueIds().length}</span></button>
      <button class="btn ghost block" id="shopb">${coinHTML} ${t('shop')}</button>
      <button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost block" id="pv">${t('privacy')}</button>${RN&&window.__adPrivacy?`<button class="btn ghost block" id="adp">${t('adPrivacy')}</button>`:''}
@@ -259,6 +261,9 @@ SCREENS.me=m=>{ const L=learnedIds().length, r=rankOf(S.xp);
   $$('#hf button',m).forEach(b=>b.onclick=()=>{ S.hanFont=b.dataset.v; save(); SFX.tap(); render(); });
   $$('#mvol button',m).forEach(b=>b.onclick=()=>{ musSetVol(+b.dataset.v); render(); });
   $$('#snd button',m).forEach(b=>b.onclick=()=>{S.sound=b.dataset.v==='1';save();render();});
+  $$('#vsp button',m).forEach(b=>b.onclick=()=>{ S.vSpeed=b.dataset.v; save(); $$('#vsp button',m).forEach(x=>x.setAttribute('aria-pressed',x===b)); say(VOICE_TEST); });
+  $('#vtest',m).onclick=()=>{ SFX.tap(); say(VOICE_TEST); };
+  voiceInfo().then(r=>{ const el=$('#vst',m); if(el) el.textContent='· '+(r.studio?t('vStudio').replace('{n}',r.clips.toLocaleString()):t('vPhone')); });
   $('#shopb',m).onclick=shop; $('#revb',m).onclick=()=>go('review');
   $('#rs',m).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();toast(t('proOn'));render();} else toast(t('restored')); };
   $('#pv',m).onclick=()=>openUrl(LEGAL.privacy); const ap=$('#adp',m); if(ap) ap.onclick=()=>native('ads:privacy',{});

@@ -24,8 +24,7 @@ const sstrip=x=>(x||'').normalize('NFD').replace(/[\u0300-\u036f\s']/g,'').toLow
 const secFree=(ti)=>S.pro||ti===0;
 const secM=(s,w)=>SEC_META[s.k+':'+w.id]||{ar:(w.ar||[])[0],en:(w.en||[])[0],lv:1,ti:0};
 const secLearned=s=>s._w.filter(w=>S.srs[w.id]).length;
-function speakIn(text,lang){ if(!S.sound) return; try{musDuck(2);}catch(e){} if(RN){ RN.postMessage(JSON.stringify({type:'speak',text,lang})); return; }
-  try{ const u=new SpeechSynthesisUtterance(text); u.lang=lang; u.rate=.85; speechSynthesis.cancel(); speechSynthesis.speak(u); }catch(e){} }
+function speakIn(text,lang){ return say(text,{lang,rate:lang.startsWith('zh')?.8:.9}); }
 const ACC_LANG={yue:'zh-HK',tw:'zh-TW'};
 if(!document.getElementById('secCSS')) document.head.insertAdjacentHTML('beforeend',`<style id="secCSS">
 .secbar{height:4px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:6px}.secbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
