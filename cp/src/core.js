@@ -8,7 +8,7 @@ try{const j=JSON.parse(localStorage.getItem(KEY)||'null'); if(j) S=Object.assign
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 /* theme: S.theme 'dark' (default) | 'light' → <html data-theme>, browser bar colour and the native status bar */
 function applyTheme(){ const light=S.theme==='light'; const r=document.documentElement; if(light) r.dataset.theme='light'; else delete r.dataset.theme;
-  let m=document.querySelector('meta[name="theme-color"]'); if(!m){ m=document.createElement('meta'); m.name='theme-color'; document.head.appendChild(m); } m.content=light?'#f3f6fa':'#070b12';
+  let m=document.querySelector('meta[name="theme-color"]'); if(!m){ m=document.createElement('meta'); m.name='theme-color'; document.head.appendChild(m); } m.content=light?'#f6eddd':'#140b0a';
   try{ if(window.ReactNativeWebView) window.ReactNativeWebView.postMessage(JSON.stringify({type:'theme',theme:light?'light':'dark'})); }catch(e){} }
 function toggleTheme(){ S.theme=S.theme==='light'?'dark':'light'; save(); const r=document.documentElement; r.classList.add('theming'); applyTheme(); setTimeout(()=>r.classList.remove('theming'),420);
   $$('[data-act="theme"]').forEach(b=>{ b.innerHTML=ICON[S.theme==='light'?'moon':'sun']; b.setAttribute('aria-pressed',S.theme==='light'); }); return S.theme; }
@@ -87,12 +87,14 @@ function tone(freq,dur,type='sine',vol=.1,delay=0){ if(!S.sound) return; try{ AC
   g.gain.setValueAtTime(0,t0); g.gain.linearRampToValueAtTime(vol,t0+.01); g.gain.exponentialRampToValueAtTime(.0001,t0+dur); o.connect(g).connect(AC.destination); o.start(t0); o.stop(t0+dur+.05);}catch(e){} }
 const SFX={tap:()=>tone(880,.05,'square',.025),ok:()=>{tone(660,.12,'sine',.1);tone(990,.2,'sine',.08,.07);},bad:()=>{tone(200,.2,'sawtooth',.05);tone(150,.25,'sawtooth',.04,.08);},
   win:()=>[523,659,784,1047,1319].forEach((f,i)=>tone(f,.35,'triangle',.08,i*.08)),coin:()=>{tone(1320,.07,'square',.035);tone(1760,.12,'square',.035,.06);},
-  scan:()=>{for(let i=0;i<5;i++) tone(400+i*160,.05,'square',.02,i*.04);} };
+  scan:()=>{for(let i=0;i<5;i++) tone(400+i*160,.05,'square',.02,i*.04);},
+  gong:()=>{tone(98,1.6,'sine',.2);tone(147,1.2,'sine',.07,.02);tone(392,.8,'triangle',.035,.02);},
+  hit:()=>{tone(130,.12,'square',.08);tone(90,.2,'sawtooth',.05,.04);} };
 /* ---------- celebration ---------- */
 function confetti(n=70){ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; const c=document.createElement('canvas'); c.style.cssText='position:fixed;inset:0;z-index:95;pointer-events:none'; c.width=innerWidth*devicePixelRatio; c.height=innerHeight*devicePixelRatio; document.body.appendChild(c);
-  const x=c.getContext('2d'); x.scale(devicePixelRatio,devicePixelRatio); const cols=['#2dd4bf','#67e8f9','#60a5fa','#4ade80','#fbbf24','#fb7185'];
-  const P=Array.from({length:n},()=>({x:innerWidth/2+(Math.random()-.5)*80,y:innerHeight*.4,vx:(Math.random()-.5)*9,vy:-Math.random()*11-4,s:10+Math.random()*8,c:cols[Math.random()*cols.length|0],g:Math.random()<.5?'0':'1'}));
-  let f=0; (function step(){ x.clearRect(0,0,innerWidth,innerHeight); P.forEach(p=>{p.vy+=.32;p.vx*=.99;p.x+=p.vx;p.y+=p.vy; x.fillStyle=p.c; x.font=`700 ${p.s}px "JetBrains Mono",monospace`; x.fillText(p.g,p.x,p.y);});
+  const x=c.getContext('2d'); x.scale(devicePixelRatio,devicePixelRatio); const cols=['#e2483a','#f2c14e','#ffd978','#ff7a5c','#4fd1a1','#c9271e'];
+  const P=Array.from({length:n},()=>({x:innerWidth/2+(Math.random()-.5)*80,y:innerHeight*.4,vx:(Math.random()-.5)*9,vy:-Math.random()*11-4,s:10+Math.random()*8,c:cols[Math.random()*cols.length|0],g:'福码赢龙01'[Math.random()*6|0]}));
+  let f=0; (function step(){ x.clearRect(0,0,innerWidth,innerHeight); P.forEach(p=>{p.vy+=.32;p.vx*=.99;p.x+=p.vx;p.y+=p.vy; x.fillStyle=p.c; x.font=`700 ${p.s+4}px "Ma Shan Zheng","Noto Serif SC",serif`; x.fillText(p.g,p.x,p.y);});
     if(++f<110) requestAnimationFrame(step); else c.remove(); })(); }
 function floatText(txt,el){ const r=el?el.getBoundingClientRect():{left:innerWidth/2,top:innerHeight/2,width:0}; const d=document.createElement('div');
   d.textContent=txt; d.style.cssText=`position:fixed;left:${r.left+r.width/2}px;top:${r.top}px;transform:translate(-50%,0);z-index:96;font:800 20px Inter;color:var(--acc);pointer-events:none;transition:transform .9s ease-out,opacity .9s`;
@@ -103,7 +105,9 @@ const rankOf=xp=>{let r=0; RANK_XP.forEach((v,i)=>{if(xp>=v) r=i;}); return r;};
 function addXP(n){ rollDay(); const before=S.todayXP, r0=rankOf(S.xp); S.xp+=n; S.todayXP+=n; S.days=S.days||{}; S.days[today()]=1;
   const d=today(); if(S.lastActive!==d){ const yd=ymd(new Date(Date.now()-864e5)); S.streak=(S.lastActive===yd)?S.streak+1:1; S.lastActive=d; track('streak_day',{streak:S.streak}); }
   save(); if(before<S.goal&&S.todayXP>=S.goal) toast('🎯 '+t('goalDone'));
-  const r1=rankOf(S.xp); if(r1>r0) setTimeout(()=>{ SFX.win(); confetti(90); toast(`${t('rankUp')} ${t('ranks')[r1]}`); },400); }
+  const r1=rankOf(S.xp); if(r1>r0) setTimeout(()=>{ SFX.gong(); fireworks(4); toast(`${t('rankUp')} ${RANK_ZH[r1]} · ${t('ranks')[r1]}`); },400);
+  try{ checkBadges(); }catch(e){} }
+const RANK_ZH=['码徒','码农','程序猿','侠客','大侠','掌门','宗师','码圣'];
 function addCoins(n){ const m=S.pro?Math.round(n*1.5):n; S.coins+=m; save(); SFX.coin(); updateTop(); return m; }
 function spend(n){ if(S.pro) return true; if(S.coins<n){ toast(t('notEnough')); shop(); return false; } S.coins-=n; save(); updateTop(); return true; }
 /* ---------- spaced repetition for Chinese terms ---------- */
@@ -147,7 +151,7 @@ const TABS=[['home','home'],['learn','learn'],['labs','labs'],['zh','zh'],['me',
 function fitTop(){ const tb=$('.topbar'); if(!tb) return; tb.classList.remove('t1','t2','t3'); for(const c of ['t1','t2','t3']){ if(tb.scrollWidth<=tb.clientWidth+1) break; tb.classList.add(c); } }
 addEventListener('resize',()=>fitTop());
 function updateTop(){ setTimeout(fitTop,0); $$('[data-coins]').forEach(e=>e.textContent=fmtK(S.coins)); $$('[data-streak]').forEach(e=>e.textContent=S.streak); }
-function topbar(){ return `<div class="topbar"><div class="logo"><div class="seal" aria-hidden="true">码</div><div class="wordmark"><b>CIPHER PATH</b><span>${isAr()?'مسار الشيفرة':'码道 · mǎdào'}</span></div></div>
+function topbar(){ return `<div class="topbar"><div class="logo"><div class="seal" aria-hidden="true">码</div><div class="wordmark"><b>CIPHER PATH</b><span>${isAr()?'مسار الشيفرة · 码道':'码道 · mǎdào'}</span></div></div>
   <div class="chips"><button class="chip" data-act="theme" aria-label="${isAr()?'الوضع الفاتح أو الداكن':'Light or dark theme'}" aria-pressed="${S.theme==='light'}">${ICON[S.theme==='light'?'moon':'sun']}</button>
   <button class="chip" data-act="streak" aria-label="${t('streak')}"><span style="color:var(--zh);display:inline-flex">${ICON.flame}</span><span class="num" data-streak>${S.streak}</span></button>
   <button class="chip" data-act="shop" aria-label="${t('shop')}">${coinHTML}<span class="num" data-coins>${fmtK(S.coins)}</span></button>

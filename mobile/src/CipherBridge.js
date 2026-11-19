@@ -113,6 +113,6 @@ export default function CipherBridge({ uri, onReady }) {
       bounces={false} overScrollMode="never" allowsBackForwardNavigationGestures={false}
       setSupportMultipleWindows={false} webviewDebuggingEnabled={__DEV__}
       allowsLinkPreview={false} hideKeyboardAccessoryView={false} keyboardDisplayRequiresUserAction={false}
-      style={{ flex: 1, backgroundColor: light ? '#f3f6fa' : '#070b12' }} />
+      style={{ flex: 1, backgroundColor: light ? '#f6eddd' : '#140b0a' }} />
   );
 }

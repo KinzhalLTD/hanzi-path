@@ -10,7 +10,7 @@ SCREENS = ["go('home')", "go('learn')", "go('track','se')", "go('track','cy')", 
   "go('lesson',{k:'cy-grc',i:2})", "go('quizrun',{k:'cy-net'})", "go('exam','cy')", "go('labs')", "go('codelab','sum')", "go('codelab','jwt')", "go('seclab',{lab:'phish',i:2})", "go('seclab',{lab:'logs',i:5})",
   "go('seclab',{lab:'review',i:8})", "go('ctflab',{i:9})", "go('fwlab',{lv:3})", "go('pwlab')", "go('daily')", "go('zh')", "go('terms')", "go('terms',{k:'cy-soc'})", "go('practice',{k:'se-db'})",
   "go('talk')", "go('talkscene',{d:'sec',i:3})", "go('game','sprint')", "go('game','bits')", "go('game','ports')", "go('me')"]
-SHEETS = ["go('me');shop()", "go('me');paywall()", "go('module','cy-ir');dialogSheet(MOD['cy-ir'])", "go('terms');termSheet(TERMS[42])", "go('module','se-fund');moduleDone(MOD['se-fund'])"]
+SHEETS = ["go('home');hongbaoSheet()", "go('home');fortuneSheet()", "go('me');shop()", "go('me');paywall()", "go('module','cy-ir');dialogSheet(MOD['cy-ir'])", "go('terms');termSheet(TERMS[42])", "go('module','se-fund');moduleDone(MOD['se-fund'])"]
 
 JS = r"""() => {
   const vw = innerWidth, vh = innerHeight, out = [];

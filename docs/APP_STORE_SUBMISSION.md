@@ -37,6 +37,9 @@ Every scenario is fictional and runs on your phone; nothing touches real systems
 TECH CHINESE
 241 professional terms with pinyin and audio, spaced-repetition practice, and workplace conversations: stand-ups, code reviews, incident calls, audits and pen-test scoping.
 
+PLAYFUL BY DESIGN
+Meet Lóngbǎo, the debugging dragon who tells terrible programmer jokes. Every module ends with a boss fight against monsters like the Infinite Loop Demon and the Merge Conflict Dragon. Open a red envelope every day, draw your coding fortune, chain answers into firecracker combos, collect 17 imperial seals and rise from Code Apprentice to Code Sage.
+
 ALSO: practice exams with a breakdown by module, certificates, a daily challenge, quick games, streaks, dark and light themes, full Arabic and English.
 
 Cipher Path PRO unlocks every module, lab, exam and conversation and removes ads. Monthly and yearly subscriptions renew automatically unless cancelled at least 24 hours before the end of the period in your App Store account settings. Terms: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/ · Privacy: https://cipher-path-kinzhal.web.app/privacy.html

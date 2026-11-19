@@ -3,7 +3,7 @@ Curriculum and conversations are emitted as <script type="application/json"> blo
 Inputs: out/curr.json (scripts/curr_build.py), out/talk.json (scripts/talk_build.py), cp/src/*.js in ORDER."""
 import json, sys, os
 R = sys.argv[1]; src = R + '/cp/src'
-ORDER = ['i18n', 'core', 'voice', 'feel', 'labs_code', 'labs_sec', 'learn', 'labs', 'zh', 'games', 'me']
+ORDER = ['i18n', 'core', 'voice', 'feel', 'labs_code', 'labs_sec', 'fun', 'learn', 'labs', 'zh', 'games', 'me']
 DATA = []
 def blk(name, obj):
     text = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
@@ -15,7 +15,7 @@ order = ['soft', 'sec']; talk.sort(key=lambda d: order.index(d['k']) if d['k'] i
 js = '\n'.join([PRELUDE, 'const CURR=' + blk('curr', curr) + ';', 'const TALK=' + blk('talk', talk) + ';'] +
                [open(f'{src}/{n}.js', encoding='utf-8').read() for n in ORDER] + ['render();'])
 css = open(src + '/styles.css', encoding='utf-8').read()
-fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;700&display=swap'
+fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@600;700&family=Ma+Shan+Zheng&display=swap'
 html = f'''<title>Cipher Path</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

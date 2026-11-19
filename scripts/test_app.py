@@ -54,15 +54,18 @@ async def main():
             check(await pg.evaluate("!!S.mods['se-fund'].T&&Object.keys(S.srs).length===10"), f'{L}: terms step / SRS not recorded')
             await pg.click('.step[data-s="D"]'); await pg.wait_for_timeout(150); await pg.click('#dd'); await pg.wait_for_timeout(200)
             check(await pg.evaluate("!!S.mods['se-fund'].done"), f'{L}: module not completed after all steps')
+            check(await pg.evaluate("!!(S.badges||{}).first&&!!S.badges.boss&&!!S.flawless"), f'{L}: seals for first lesson / boss / flawless not awarded')
             check(await pg.locator('.sheet .result').count() == 1, f'{L}: module-complete sheet missing')
             await pg.screenshot(path=f'{O}/{L}_moddone.png'); await clear(pg)
             # ---- failing quiz does not pass
             await pg.evaluate("go('quizrun',{k:'se-ds'})")
-            for i in range(6):
-                await pg.wait_for_selector('.opt'); await pg.locator('.opt:not(:has(i[data-ok]))').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(40)
+            for i in range(6):   # boss fight: the second wrong answer loses the fight and ends the quiz early
+                if not await pg.locator('.opt:not([disabled])').count(): break
+                await pg.locator('.opt:not(:has(i[data-ok]))').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
             check(await pg.evaluate("!(S.mods['se-ds']||{}).Q"), f'{L}: failed quiz counted as passed')
+            check(await pg.locator('.bossface.laugh').count() == 1, f'{L}: lost boss fight screen missing')
             # ---- PRO gating: module 4 locked, code lab 4 locked, round 4 locked
-            await pg.evaluate("go('track','se')"); await pg.click('.modc[data-k="se-oop"]'); await pg.wait_for_timeout(150)
+            await pg.evaluate("go('track','se')"); await pg.click('.pnode[data-k="se-oop"]'); await pg.wait_for_timeout(150)
             check(await pg.locator('.sheet #buy').count() == 1, f'{L}: locked module did not open the paywall')
             await pg.screenshot(path=f'{O}/{L}_paywall.png')
             await pg.click('.sheet #buy'); await pg.wait_for_timeout(300)
@@ -163,6 +166,14 @@ async def main():
                 for k in range(3): await pg.locator('.opt').first.click(); await pg.wait_for_timeout(700)
                 await pg.evaluate("document.querySelectorAll('#tm').length"); await overflow(pg, L, f'game {g}')
                 await pg.evaluate("go('labs')")
+            # ---- red envelope and fortune: once a day, bits added once
+            await clear(pg); await pg.evaluate("go('home')"); c0 = await pg.evaluate("S.coins")
+            await pg.click('#hb'); await pg.click('#hbx'); await pg.wait_for_timeout(500); c1 = await pg.evaluate("S.coins")
+            await pg.click('#hbx'); await pg.wait_for_timeout(300)
+            check(c1 > c0 and await pg.evaluate("S.coins") == c1 and await pg.evaluate("S.hbDay===today()"), f'{L}: red envelope reward wrong {c0}->{c1}')
+            await clear(pg); await pg.evaluate("go('home')"); await pg.click('#qn'); await pg.click('#draw'); await pg.wait_for_timeout(1200)
+            check(await pg.locator('.fortune').count() == 1 and await pg.evaluate("S.fortuneDay===today()"), f'{L}: fortune not drawn')
+            await clear(pg)
             # ---- daily challenge renders and is solvable today
             await pg.evaluate("go('daily')"); await pg.wait_for_timeout(100); await overflow(pg, L, 'daily'); await pg.screenshot(path=f'{O}/{L}_daily.png'); await clear(pg)
             # ---- theme toggle + persistence

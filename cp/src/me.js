@@ -1,10 +1,11 @@
 /* ===== Me: progress, certificates, settings, PRO paywall, shop ===== */
 SCREENS.me=m=>{ const r=rankOf(S.xp), nx=RANK_XP[r+1], labsN=Object.keys(S.labs).length+['phish','logs','review','ctf'].reduce((a,k)=>a+secSolved(k),0);
   const seg=(id,opts,cur)=>`<div class="seg" id="${id}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${String(cur)===String(v)}">${l}</button>`).join('')}</div>`;
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="hero"><span class="eyebrow">${t('profile')}</span><h1>${t('ranks')[r]}</h1>
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="hero"><span class="eyebrow">${t('profile')}</span><div class="row" style="gap:12px"><span class="sealchip">${RANK_ZH[r]}</span><h1 class="grow">${t('ranks')[r]}</h1></div>
     <div class="bar"><i style="width:${nx?Math.min(100,(S.xp-RANK_XP[r])/(nx-RANK_XP[r])*100):100}%"></i></div><div class="sub"><span class="num">${fmt(S.xp)}</span> ${t('xp')}${nx?` · ${t('ranks')[r+1]} <span class="num">${fmt(nx)}</span>`:''}</div></div>
   <div class="grid2"><div class="stat"><b class="num">${MODS.filter(x=>modDone(x.k)).length}/${MODS.length}</b><span>${t('statMods')}</span></div><div class="stat"><b class="num">${labsN}</b><span>${t('statLabs')}</span></div>
     <div class="stat"><b class="num">${Object.keys(S.srs).length}</b><span>${t('statTerms')}</span></div><div class="stat"><b class="num">${S.right||0}</b><span>${t('statQs')}</span></div></div>
+  <div class="card col" style="gap:12px"><div class="row"><b class="grow">印章 · ${isAr()?'الأختام':'Seals'}</b><span class="sub num">${Object.keys(S.badges||{}).length}/${BADGES.length}</span></div><div class="seals">${BADGES.map(b=>sealHTML(b,!!(S.badges||{})[b[0]])).join('')}</div></div>
   <div class="card col" style="gap:10px"><b>🎓 ${t('certs')}</b>${['se','cy'].map(tr=>{ const d=TRACK(tr).filter(x=>modDone(x.k)).length, n=TRACK(tr).length; return `<button class="track ${tr}" data-c="${tr}"><span class="ti">${TRK[tr].ic}</span><div class="grow"><b>${TRK[tr].name()}</b><div class="bar ${tr}" style="margin-top:6px"><i style="width:${d/n*100}%"></i></div></div><span class="sub num">${d}/${n}</span></button>`; }).join('')}</div>
   ${S.pro?`<div class="card row"><span class="chip pro">PRO</span><span class="grow">${t('proOn')}</span></div>`:`<button class="contcard tap" id="gp" style="text-align:start"><b style="font-size:18px">⚡ ${t('payT')}</b><span class="sub">${t('payB')}</span><span class="btn block">${t('getPro')}</span></button>`}
   <h2>${t('settings')}</h2>

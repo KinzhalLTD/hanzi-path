@@ -39,7 +39,7 @@ ar:{appName:'مسار الشيفرة',tagline:'هندسة البرمجيات و�
  shop:'المتجر',bitsCur:'بت',notEnough:'رصيدك لا يكفي',freeze:'حماية السلسلة',freezeB:'تحفظ سلسلتك يومًا واحدًا',hintPack:'تلميح',buy:'شراء',watchAd:'شاهد إعلانًا',adReward:'+25 بت',ad:'إعلان',adNone:'لا يوجد إعلان الآن',
  payT:'مسار الشيفرة PRO',payB:'افتح كل الوحدات والمختبرات والاختبارات التجريبية، وبلا إعلانات.',perk1:'24 وحدة كاملة في المسارين',perk2:'كل المختبرات: 24 مختبر كود و39 تحديًا أمنيًا ومحاكي الجدار الناري',perk3:'اختبارات تجريبية بلا حدود وشهادات',perk4:'كل محادثات العمل بالصينية',perk5:'بلا إعلانات',
  monthly:'شهري',yearly:'سنوي',lifetime:'مدى الحياة',perMonth:'/شهر',best:'الأوفر',subscribe:'اشترك',cancelAny:'يمكنك الإلغاء في أي وقت من إعدادات App Store.',demo:'نسخة تجريبية: الشراء محاكى في المتصفح.',
- goalDone:'حققت هدف اليوم!',rankUp:'ترقيت إلى',ranks:['متدرّب','مطوّر مبتدئ','مطوّر','مهندس','مهندس أول','قائد تقني','معماري','خبير']},
+ goalDone:'حققت هدف اليوم!',rankUp:'ترقيت إلى',ranks:['تلميذ الكود','مزارع الكود','قرد البرمجة','فارس الكود','الفارس الأعظم','شيخ المدرسة','المعلّم الأكبر','حكيم الكود']},
 en:{appName:'Cipher Path',tagline:'Software engineering & cybersecurity · with Chinese',
  home:'Home',learn:'Learn',labs:'Labs',zh:'中文',me:'Me',
  chooseLang:'Choose your language',welcomeT:'Build real skills in code and security',welcomeB:'Short lessons, hands-on labs, practice exams, and professional Chinese for every topic.',
@@ -79,5 +79,5 @@ en:{appName:'Cipher Path',tagline:'Software engineering & cybersecurity · with 
  shop:'Shop',bitsCur:'bits',notEnough:'Not enough bits',freeze:'Streak freeze',freezeB:'Protects your streak for one day',hintPack:'Hint',buy:'Buy',watchAd:'Watch an ad',adReward:'+25 bits',ad:'Ad',adNone:'No ad available right now',
  payT:'Cipher Path PRO',payB:'Unlock every module, lab and practice exam, with no ads.',perk1:'All 24 modules in both tracks',perk2:'Every lab: 24 code labs, 39 security challenges and the firewall simulator',perk3:'Unlimited practice exams and certificates',perk4:'All Chinese workplace conversations',perk5:'No ads',
  monthly:'Monthly',yearly:'Yearly',lifetime:'Lifetime',perMonth:'/mo',best:'Best value',subscribe:'Subscribe',cancelAny:'Cancel any time in App Store settings.',demo:'Preview: purchases are simulated in the browser.',
- goalDone:'Daily goal reached!',rankUp:'Promoted to',ranks:['Trainee','Junior developer','Developer','Engineer','Senior engineer','Tech lead','Architect','Expert']}
+ goalDone:'Daily goal reached!',rankUp:'Promoted to',ranks:['Code apprentice','Code farmer','Code monkey','Code knight','Grand knight','Sect leader','Grandmaster','Code sage']}
 };

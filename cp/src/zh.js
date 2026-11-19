@@ -64,7 +64,7 @@ SCREENS.practice=(m,arg)=>{ const mk=arg&&arg.k; let words;
       m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">✕</button><div class="bar zh"><i style="width:${i/qs.length*100}%"></i></div><span class="sub num">${i+1}/${qs.length}</span></div>${prompt}
         <div class="col" style="gap:10px">${q.opts.map((o,j)=>`<button class="opt" data-j="${j}"><span class="ol">${'ABCD'[j]}</span><span class="grow">${o.h}</span></button>`).join('')}</div>`;
       $('#qx',m).onclick=back; const ls=$('#ls',m); if(ls){ ls.onclick=()=>speak(w.h); speak(w.h); }
-      $$('.opt',m).forEach(b=>b.onclick=()=>{ if(m.dataset.lock) return; m.dataset.lock=1; const o=q.opts[+b.dataset.j]; srsMark(w.id,o.ok); if(o.ok) right++;
+      $$('.opt',m).forEach(b=>b.onclick=()=>{ if(m.dataset.lock) return; m.dataset.lock=1; const o=q.opts[+b.dataset.j]; srsMark(w.id,o.ok); comboHit(o.ok); if(o.ok) right++;
         $$('.opt',m).forEach((x,j)=>{ x.disabled=true; x.classList.add(q.opts[j].ok?'right':x===b?'wrong':'dim'); }); o.ok?(SFX.ok(),haptic('success')):(SFX.bad(),haptic('error'));
         if(q.k!=='listen') speak(w.h);
         const f=document.createElement('div'); f.className='feedback '+(o.ok?'good':'bad');

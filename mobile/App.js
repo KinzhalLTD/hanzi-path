@@ -43,9 +43,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#070b12' },
+  root: { flex: 1, backgroundColor: '#140b0a' },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24 },
-  msg: { color: '#e6eef7', fontSize: 16, textAlign: 'center', marginBottom: 16 },
-  btn: { backgroundColor: '#0f766e', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 12 },
+  msg: { color: '#f8ede0', fontSize: 16, textAlign: 'center', marginBottom: 16 },
+  btn: { backgroundColor: '#c9271e', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 12 },
   btnT: { color: '#fff', fontSize: 16, fontWeight: '600' },
 });

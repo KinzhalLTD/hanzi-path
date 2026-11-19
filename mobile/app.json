@@ -7,7 +7,7 @@
     "orientation": "portrait",
     "icon": "./assets/app-icon-1024.png",
     "userInterfaceStyle": "dark",
-    "backgroundColor": "#070b12",
+    "backgroundColor": "#140b0a",
     "ios": {
       "bundleIdentifier": "space.kinzhal.cipherpath",
       "supportsTablet": true,
@@ -50,7 +50,7 @@
         {
           "image": "./assets/splash-icon.png",
           "imageWidth": 160,
-          "backgroundColor": "#070b12"
+          "backgroundColor": "#140b0a"
         }
       ],
       "expo-notifications",
