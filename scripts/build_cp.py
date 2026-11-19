@@ -15,10 +15,19 @@ def art():
     import glob, base64, io
     from PIL import Image
     out = {}
-    for f in sorted(glob.glob(R + '/art/canva/*.png')):
-        im = Image.open(f).convert('RGB'); im.thumbnail((360, 360))
+    def put(name, im):
         b = io.BytesIO(); im.save(b, 'WEBP', quality=82, method=6)
-        out[os.path.splitext(os.path.basename(f))[0]] = 'data:image/webp;base64,' + base64.b64encode(b.getvalue()).decode()
+        out[name] = 'data:image/webp;base64,' + base64.b64encode(b.getvalue()).decode()
+    for f in sorted(glob.glob(R + '/art/canva/bossgrid_*.png')):
+        # 2x2 boss sheet named bossgrid_<key>__<key>__<key>__<key>.png (top-left, top-right, bottom-left, bottom-right)
+        keys = os.path.splitext(os.path.basename(f))[0][len('bossgrid_'):].split('__')
+        im = Image.open(f).convert('RGB'); w, h = im.size; inset = .05
+        for i, k in enumerate(keys[:4]):
+            x0, y0 = (i % 2) * w / 2, (i // 2) * h / 2
+            put('boss_' + k, im.crop((int(x0 + w * inset / 2), int(y0 + h * inset / 2), int(x0 + w / 2 - w * inset / 2), int(y0 + h / 2 - h * inset / 2))))
+    for f in sorted(glob.glob(R + '/art/canva/*.png')):
+        if os.path.basename(f).startswith('bossgrid_'): continue
+        im = Image.open(f).convert('RGB'); im.thumbnail((360, 360)); put(os.path.splitext(os.path.basename(f))[0], im)
     return out
 curr = json.load(open(R + '/out/curr.json', encoding='utf-8')); talk = json.load(open(R + '/out/talk.json', encoding='utf-8'))
 order = ['soft', 'sec']; talk.sort(key=lambda d: order.index(d['k']) if d['k'] in order else 9)

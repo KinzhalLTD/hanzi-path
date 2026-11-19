@@ -446,3 +446,8 @@ html[dir="rtl"] h2.sech::after{background:linear-gradient(270deg,var(--line2),tr
 .tab svg{width:23px;height:23px}
 .icon-btn svg{width:20px;height:20px}.speak svg{width:17px;height:17px}
 @media (prefers-reduced-motion:reduce){.contcard .btn::after,.chestbtn.ready,.chestbtn.ready .ico{animation:none!important}}
+
+/* Canva boss portraits (cut from 2x2 sheets); emoji stays as the fallback */
+.bossimg{display:inline-block;width:1.15em;height:1.15em;border-radius:22%;object-fit:cover;vertical-align:middle;box-shadow:0 0 0 2px rgba(242,193,78,.7),0 4px 10px rgba(0,0,0,.4)}
+.bossface .bossimg{width:64px;height:64px}.bossdown .bossface .bossimg{width:96px;height:96px}
+.pnode .pboss .bossimg{width:28px;height:28px}

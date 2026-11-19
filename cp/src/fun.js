@@ -113,7 +113,7 @@ const BOSSES={'se-fund':['👻','未定义幽灵','wèidìngyì yōulíng','شب
  'cy-grc':['📜','审计饕餮','shěnjì tāotiè','تاوتيه آكل الأوراق','The Paper-Eating Taotie'],'cy-eh':['🥷','范围外幽灵','fànwéi wài yōulíng','نينجا خارج النطاق','The Out-of-Scope Ninja']};
 const TAUNTS=[['هاها! حتى المتدرّب يعرف هذه!','Ha! Even the intern knows that one!'],['هل جرّبت إطفاءه وتشغيله من جديد؟','Have you tried turning it off and on again?'],['هذا الخطأ سيذهب إلى الإنتاج يوم الخميس!','That bug ships to production on Thursday!'],['أشمّ رائحة كود بلا اختبارات…','I smell untested code…']];
 const HITS=[['ضربة مباشرة!','Direct hit!'],['الوحش يترنّح!','The monster staggers!'],['بوو! سطر نظيف!','Boom! Clean line!'],['ضربة التنين!','Dragon strike!']];
-const bossOf=k=>{ const b=BOSSES[k]||['🐛','小虫','xiǎo chóng','خلل صغير','A Small Bug']; return {e:b[0],zh:b[1],py:b[2],name:isAr()?b[3]:b[4]}; };
+const bossOf=k=>{ const b=BOSSES[k]||['🐛','小虫','xiǎo chóng','خلل صغير','A Small Bug']; const img=ART['boss_'+k]; return {k,e:b[0],zh:b[1],py:b[2],name:isAr()?b[3]:b[4],h:img?`<img class="bossimg" src="${img}" alt="" draggable="false">`:b[0]}; };
 
 /* ---------- seal achievements 印章 ---------- */
 const BADGES=[['first','初','chū','الخطوة الأولى','First step',()=>MODS.some(m=>(S.mods[m.k]||{}).L)],

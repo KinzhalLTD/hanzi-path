@@ -26,7 +26,7 @@ SCREENS.home=m=>{ const h=new Date().getHours(); const tr=S.focus==='cy'?'cy':'s
     <div class="row" style="gap:10px;margin-top:6px"><span class="sealchip">${RANK_ZH[r]}</span><div class="grow"><span class="eyebrow">${h<12?t('greetM'):t('greetA')}</span><b style="display:block">${t('ranks')[r]}</b></div>${ring(S.todayXP/S.goal,`${Math.min(100,Math.round(S.todayXP/S.goal*100))}%`,58)}</div></div>
   ${nm?`<button class="contcard scroll tap" id="cont" style="text-align:start"><div class="row"><span class="tag ${nm.tr}">${TRK[nm.tr].name()}</span><span class="sub grow num">${nm.ti+1}/${TRACK(nm.tr).length}</span>${modFree(nm)?'':`<span class="tag lock">${t('pro')}</span>`}</div>
     <div class="row" style="align-items:flex-start"><div class="grow"><h2>${nm.ic} ${esc(L(nm))}</h2><p class="sub" style="margin-top:4px">${esc(L(nm,'sa','se'))}</p></div><div class="zhbig">${esc(nm.zh)}</div></div>
-    <div class="row sub" style="gap:6px"><span style="font-size:20px">${bossOf(nm.k).e}</span><span>${isAr()?'الوحش في نهاية الوحدة':'Boss at the end'}: <b>${esc(bossOf(nm.k).name)}</b></span></div>
+    <div class="row sub" style="gap:6px"><span style="font-size:20px">${bossOf(nm.k).h}</span><span>${isAr()?'الوحش في نهاية الوحدة':'Boss at the end'}: <b>${esc(bossOf(nm.k).name)}</b></span></div>
     <div class="bar"><i style="width:${modStepsDone(nm.k)*25}%"></i></div><span class="btn block">${modStepsDone(nm.k)?t('continue'):t('startTrack')} →</span></button>`:''}
   <div class="grid3 treats"><button class="treat ${hb?'done':''}" id="hb"><span class="ti hbmini">福</span><b>红包</b><span class="sub">${hb?'✓':(isAr()?'ظرف أحمر':'Red envelope')}</span></button>
     <button class="treat ${qn?'done':''}" id="qn">${ico('sticks','gold')}<b>求签</b><span class="sub">${qn?'✓':(isAr()?'عود الحظ':'Fortune')}</span></button>
@@ -61,7 +61,7 @@ function drawPath(map){ if(!map) return; const go=()=>{ const r=map.getBoundingC
 SCREENS.track=(m,tr)=>{ tr=tr==='cy'?'cy':'se'; const ms=TRACK(tr), d=ms.filter(x=>modDone(x.k)).length, cur=nextMod(tr);
   const X=[50,22,50,78]; const node=(x,i)=>{ const s=S.mods[x.k]||{}, free=modFree(x), here=cur&&cur.k===x.k, b=bossOf(x.k);
     return `<div class="pstep" style="--x:${X[i%4]}%"><div class="pcol"><button class="pnode ${s.done?'done':''} ${free?'':'locked'} ${here?'here':''}" data-k="${x.k}" aria-label="${esc(L(x))}">
-      <span class="pic">${s.done?'<span class="stampmark">斩</span>':free?x.ic:ICON.lock}</span>${here?`<span class="phere">${dragon('happy',44)}</span>`:''}<span class="pboss" title="${esc(b.name)}">${b.e}</span></button>
+      <span class="pic">${s.done?'<span class="stampmark">斩</span>':free?x.ic:ICON.lock}</span>${here?`<span class="phere">${dragon('happy',44)}</span>`:''}<span class="pboss" title="${esc(b.name)}">${b.h}</span></button>
       <div class="plabel"><b>${esc(L(x))}</b><span class="zh">${esc(x.zh)}</span>${s.done?stars(s.stars||1):`<span class="sub">${modStepsDone(x.k)}/4</span>`}</div></div></div>`; };
   m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><div class="grow"><span class="eyebrow">${t('learn')}</span><h1>${TRK[tr].ic} ${TRK[tr].name()}</h1></div></div>
   <div class="seg" id="tsg"><button data-t="se" aria-pressed="${tr==='se'}">💻 ${t('trSE')}</button><button data-t="cy" aria-pressed="${tr==='cy'}">🛡️ ${t('trCY')}</button></div>
@@ -79,7 +79,7 @@ SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modF
   m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><span class="tag ${x.tr}">${TRK[x.tr].name()} · <span class="num">${x.ti+1}</span></span><div class="grow"></div>${s.done?stars(s.stars||1):''}</div>
   <div class="mhero"><div class="row" style="align-items:flex-start"><div class="grow"><h1>${x.ic} ${esc(L(x))}</h1><p class="sub" style="margin-top:6px">${esc(L(x,'sa','se'))}</p></div></div>
     <div class="row"><span class="zhbig">${esc(x.zh)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div><span class="py">${esc(x.py)}</span></div>
-  <div class="steps">${step('L',1,t('stepL'),`<span class="num">${x.L.length}</span> ${t('lessons')}`,s.L)}${step('Q',2,`${bossOf(x.k).e} ${isAr()?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}`,s.Qb!=null?`${t('score')}: <span class="num">${Math.round(s.Qb*100)}%</span>`:`<span class="num">${x.Q.length}</span> ${t('questions')}`,s.Q)}
+  <div class="steps">${step('L',1,t('stepL'),`<span class="num">${x.L.length}</span> ${t('lessons')}`,s.L)}${step('Q',2,`${bossOf(x.k).h} ${isAr()?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}`,s.Qb!=null?`${t('score')}: <span class="num">${Math.round(s.Qb*100)}%</span>`:`<span class="num">${x.Q.length}</span> ${t('questions')}`,s.Q)}
     ${step('T',3,t('stepT'),`<span class="num">${x.T.length}</span> · ${x.T.slice(0,3).map(w=>`<span class="han">${esc(w.h)}</span>`).join(' · ')}`,s.T)}${step('D',4,t('stepD'),`<span class="num">${x.D.length}</span> · ${t('dialog')}`,s.D)}
     ${lab?step('lab','⌨',t('stepLab'),esc(L(lab))+' · <span class="han">'+esc(lab.zh)+'</span>',!!S.labs[lab.k]):''}</div>`);
   $('#bk',m).onclick=()=>goBack('learn'); $('#say',m).onclick=()=>speak(x.zh);
@@ -115,7 +115,7 @@ function runQuiz(m,{qs,title,exam,seconds,boss,onDone,onQuit}){ let i=0, right=0
   const prev=cleanup; cleanup=()=>{ clearInterval(timer); prev&&prev(); };
   const fmtT=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
   if(seconds) timer=setInterval(()=>{ const left=Math.max(0,Math.round((end-Date.now())/1000)); const el=$('#qt',m); if(el) el.textContent=fmtT(left); if(!left){ clearInterval(timer); finish(); } },500);
-  const bossBox=()=>`<div class="boss" id="bs"><div class="row"><span class="bossface" id="bf">${boss.e}</span><div class="grow" style="min-width:0"><span class="brushzh" style="font-size:18px">${esc(boss.zh)}</span><b style="display:block">${esc(boss.name)}</b>
+  const bossBox=()=>`<div class="boss" id="bs"><div class="row"><span class="bossface" id="bf">${boss.h}</span><div class="grow" style="min-width:0"><span class="brushzh" style="font-size:18px">${esc(boss.zh)}</span><b style="display:block">${esc(boss.name)}</b>
       <div class="hp"><i id="hp" style="width:${100-right/qs.length*100}%"></i></div></div></div>
       <div class="row" style="justify-content:space-between"><span class="hearts" aria-label="${hearts}">${'❤️'.repeat(hearts)}${'🖤'.repeat(hearts0-hearts)}</span><span class="taunt" id="tn">${esc(pickL(TAUNTS))}</span></div></div>`;
   function draw(){ const q=qs[i]; $$('.feedback').forEach(f=>f.remove());
@@ -139,8 +139,8 @@ function runQuiz(m,{qs,title,exam,seconds,boss,onDone,onQuit}){ let i=0, right=0
 SCREENS.quizrun=(m,{k})=>{ const x=MOD[k], b=bossOf(k); const qs=shuffle(x.Q).map(q=>qFrom(q));
   runQuiz(m,{qs,title:t('quiz'),boss:b,onQuit:()=>go('module',k),onDone:(r,n,log,flawless)=>{ const p=r/n, s=mst(k); s.Qb=Math.max(s.Qb||0,p); const ok=quizPass(p);
     if(ok){ s.Q=1; s.stars=Math.max(s.stars||0,quizStars(p)); if(flawless) S.flawless=1; questEvent('boss'); } addXP(r*3); const c=ok?addCoins(10+r):0; save(); ok?(SFX.gong(),fireworks(3),confetti(60)):SFX.bad(); track('quiz',{k,p}); checkBadges();
-    m.innerHTML=`<div class="result rise">${ok?`<div class="bossdown"><span class="bossface gone">${b.e}</span><span class="stampmark big">斩</span></div><h1>${isAr()?'هزمت':'You defeated'} ${esc(b.name)}!</h1><span class="brushzh">${esc(b.zh)} · ${esc(b.py)}</span>${stars(quizStars(p))}`
-      :`<div class="bossdown">${dragon('sad',96)}<span class="bossface laugh">${b.e}</span></div><h1>${esc(b.name)} ${isAr()?'فاز هذه المرة':'wins this round'}</h1><p class="sub">${esc(pickL(TAUNTS))} ${t('quizFail')}</p>`}
+    m.innerHTML=`<div class="result rise">${ok?`<div class="bossdown"><span class="bossface gone">${b.h}</span><span class="stampmark big">斩</span></div><h1>${isAr()?'هزمت':'You defeated'} ${esc(b.name)}!</h1><span class="brushzh">${esc(b.zh)} · ${esc(b.py)}</span>${stars(quizStars(p))}`
+      :`<div class="bossdown">${dragon('sad',96)}<span class="bossface laugh">${b.h}</span></div><h1>${esc(b.name)} ${isAr()?'فاز هذه المرة':'wins this round'}</h1><p class="sub">${esc(pickL(TAUNTS))} ${t('quizFail')}</p>`}
       <div class="kv"><div><span class="sub">${t('score')}</span><b class="num">${r}/${n}</b></div><div><span class="sub">${t('earned')}</span><b class="num">+${r*3}</b></div><div><span class="sub">${t('bitsCur')}</span><b class="num">+${c}</b></div></div>
       <div class="row" style="width:100%"><button class="btn ghost grow" id="ag">↺ ${ok?t('again'):(isAr()?'جولة ثأر':'Rematch')}</button><button class="btn grow" id="nx">${t('next')} →</button></div></div>`;
     $('#ag',m).onclick=()=>go('quizrun',{k}); $('#nx',m).onclick=()=>{ const fin=checkModDone(x); go('module',k); if(fin) moduleDone(x); }; }}); };
