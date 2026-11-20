@@ -58,6 +58,7 @@ JS = r"""() => { const out = []; const add = (t, v, pk, py, src) => { if (typeof
     s.turns.forEach(tn => { if (tn.p) { add(tn.p[0], 'p', 'talk', '', 'partner'); add(tn.p[0], 'n', 'talk', '', 'partner-n'); } (tn.o || []).forEach(o => add(o.zh, 'n', 'talk', '', 'reply')); }); }); });
   SECTORS.forEach(s => { add(s.zh, 'n', 'sec', '', 'sector'); s.topics.forEach(tp => { add(tp.zh, 'n', 'sec', '', 'topic'); (tp._w || []).forEach(w => { add(w.h, 'n', 'sec', w.p, 'term'); if (w.ex) add(w.ex.zh, 'n', 'sec', '', 'term-ex'); }); });
     (s.ex || []).forEach(e => add(Array.isArray(e) ? e[0] : e.zh, 'n', 'sec', '', 'sec-ex')); });
+  try { for (const k in FEST) { add(FEST[k].g[0], 'n', 'misc', '', 'festival'); FEST[k].w.forEach(w => add(w[0], 'n', 'misc', '', 'festival')); } } catch (e) {}
   add(typeof VOICE_TEST==='string'?VOICE_TEST:'你好！我们一起学习中文吧。', 'n', 'misc', '', 'settings');
   try { for (const side of ['r', 'b']) for (const k in XQ_CH[side]) out.push([XQ_CH[side][k], 'n', 'misc', XQ_PY[k][side], 'xiangqi', 1]); } catch (e) {}
   try { IDIOMS.forEach(x => Array.isArray(x) ? add(x[0], 'n', 'misc', x[1], 'idiom') : add(x.h, 'n', 'misc', x.p, 'idiom')); } catch (e) {}

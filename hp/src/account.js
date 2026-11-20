@@ -27,7 +27,7 @@ function pushPlan(){ const n=nset(), [hh,mm]=n.time.split(':').map(Number), item
   if(n.on&&n.cats.reminder) items.push({id:'daily',repeat:'daily',hour:hh,minute:mm,title:'Hanzi Path 汉字之路',body:lines[daySeed()%lines.length].replace('{streak}',S.streak)});
   if(n.on&&n.cats.streak&&S.streak>0&&S.lastActive!==today()) items.push({id:'streak',at:new Date(new Date().setHours(21,30,0,0)).toISOString(),title:'🔥 '+S.streak,body:lines[1].replace('{streak}',S.streak)});
   if(n.on&&n.cats.review){ const next=Object.values(S.srs).map(r=>r.d).filter(x=>x>Date.now()).sort((a,b)=>a-b)[0]; if(next) items.push({id:'review',at:new Date(Math.max(next,Date.now()+36e5)).toISOString(),title:'复习 · '+t('review'),body:t('nReviewB').replace('{due}','')}); }
-  return items; }
+  return n.on?items.concat(festItems()):items; }
 function scheduleNative(){ if(!RN) return; RN.postMessage(JSON.stringify({type:'notify:schedule',items:pushPlan()})); }
 async function enablePush(){ const ok=await new Promise(res=>sheet(`<div class="col" style="align-items:center;text-align:center;gap:10px">${bao('happy',90)}<h2>${t('pushAskT')}</h2><p style="margin:0">${t('pushAskB')}</p><button class="btn block" id="y">🔔 ${t('pushYes')}</button><button class="btn ghost block" id="n">${t('later')}</button></div>`,s=>{ $('#y',s).onclick=()=>{ closeSheet(); res(true); }; $('#n',s).onclick=()=>{ closeSheet(); res(false); }; }));
   if(!ok) return; track('push_soft_yes'); if(RN){ const r=await native('notify:permission',{}); S.pushOk=!!(r&&r.granted); save(); if(S.pushOk){ scheduleNative(); toast('🔔 '+t('pushOn')); } else toast(t('pushDenied')); } else toast(t('pushWeb')); }

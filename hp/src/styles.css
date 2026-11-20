@@ -603,3 +603,27 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
 .topbar.t3 .chip[data-act="mus"]{display:none}
 /* 320 px phones (Display Zoom): feature tiles shrink instead of pushing the page wider */
 @media (max-width:360px){.ptiles{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px}.ptile{min-width:0;overflow-wrap:anywhere;padding:10px!important}.ptile b{font-size:12px}.ptile.talk .chip{flex-shrink:0}}
+/* ===== Chinese calendar & festivals ===== */
+.fbanner{gap:12px;align-items:center;border:1px solid rgba(var(--gold-rgb,242,193,78),.4);text-align:start;width:100%}
+.fbanner.today,.fitem.today{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}
+.fbi{font-size:30px;line-height:1}
+.fcd{min-width:34px;text-align:center;font-weight:800;color:var(--gold)}
+.fitem{gap:12px;align-items:center;width:100%}
+.fzod{display:flex;gap:14px;align-items:center}
+.fzi{font-size:52px;line-height:1}
+.fsheet{display:flex;flex-direction:column;gap:12px;position:relative}
+.flanterns{display:flex;justify-content:space-between;padding:0 8%;margin-bottom:-18px;pointer-events:none}
+.flanterns i{font-style:normal;font-size:26px;transform-origin:50% 0;animation:fswing 2.6s ease-in-out infinite}
+.flanterns i:nth-child(2){animation-delay:.4s;font-size:32px}
+.flanterns i:nth-child(3){animation-delay:.8s}
+.fbig{font-size:58px;line-height:1}
+.fzh{font-size:34px;color:var(--red)}
+.fgreet{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;border:1px dashed var(--gold)}
+.fwords{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+.fword{display:flex;flex-direction:column;gap:2px;padding:10px;border-radius:12px;border:1px solid var(--line2);background:transparent;color:var(--text);text-align:center;cursor:pointer;font:inherit}
+.fword .han{font-size:20px}
+.ftip{padding:12px 14px;border-radius:14px;border:1px solid var(--line2)}
+.ftip p{margin:6px 0 0;line-height:1.65}
+.fgot{text-align:center;font-weight:700;padding:12px;border-radius:14px;border:1px solid var(--gold)}
+@keyframes fswing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@media (prefers-reduced-motion: reduce){.flanterns i{animation:none}}
