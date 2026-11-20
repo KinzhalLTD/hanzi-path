@@ -7,11 +7,13 @@ import mobileAds, {
 } from 'react-native-google-mobile-ads';
 import { getTrackingPermissionsAsync, requestTrackingPermissionsAsync } from 'expo-tracking-transparency';
 
-export const ADMOB_APP_ID = 'ca-app-pub-3940256099942544~1458002511'; // Google's sample id: replace with the Cipher Path AdMob app id (also in app.json)
+export const ADMOB_APP_ID = 'ca-app-pub-5681105275743934~8491215486'; // Cipher Path AdMob app id (also in app.json)
 const UNITS = {
-  // Cipher Path ad units from the AdMob console (docs/ADS.md). Empty until created; npm run check:store fails while empty.
-  interstitial: '',
-  rewarded: '',
+  // Cipher Path ad units from the AdMob console (docs/ADS.md).
+  interstitial: 'ca-app-pub-5681105275743934/8163912423',
+  rewarded: 'ca-app-pub-5681105275743934/8607811739',
+  // Created in AdMob but not used by the app (ads only at break points + opt-in rewards):
+  // appOpen 'ca-app-pub-5681105275743934/2605957274', banner '…/1842046654', native '…/5981648395', rewardedInterstitial '…/5719205776'
 };
 // Google test ads in development builds – never click real ads while testing (it can suspend the account).
 const unit = (k) => (__DEV__ ? { interstitial: TestIds.INTERSTITIAL, rewarded: TestIds.REWARDED }[k] : UNITS[k]);

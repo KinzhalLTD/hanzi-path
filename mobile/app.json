@@ -65,7 +65,7 @@
       [
         "react-native-google-mobile-ads",
         {
-          "iosAppId": "ca-app-pub-3940256099942544~1458002511",
+          "iosAppId": "ca-app-pub-5681105275743934~8491215486",
           "delayAppMeasurementInit": true,
           "userTrackingUsageDescription": "This lets us show ads that are more relevant to you. Pro removes all ads.",
           "skAdNetworkItems": [

@@ -72,7 +72,7 @@ if (exists(web)) {
   const html = read(web);
   need(html.includes('viewport-fit=cover'), 'web app shell has no phone viewport');
   need(html.includes('cipher-path-kinzhal.web.app/privacy.html'), 'privacy policy link missing in the web app');
-  need(!/hanzi-path-64170|space\.kinzhal\.hanzipath/.test(html), 'web app still references Hanzi Path');
+  need(!/hanzi-path-64170\.web\.app\/(privacy|terms|support)|space\.kinzhal\.hanzipath/.test(html), 'web app still links Hanzi Path pages or its bundle id');   // the shared Firebase project id itself is expected
   warn(!/const APP_IDS=\{hp:'',cp:''\}/.test(html), 'sister-app cross-promo off: paste both Apple IDs in APP_IDS (src/growth.js of both apps), then rebuild');
 }
 for (const w of warnings) console.log('warning:', w);
