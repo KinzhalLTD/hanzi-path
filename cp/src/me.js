@@ -26,7 +26,7 @@ SCREENS.me=m=>{ const r=rankOf(S.xp), nx=RANK_XP[r+1], labsN=Object.keys(S.labs)
   const segBind=(id,fn)=>$$(`#${id} button`,m).forEach(b=>b.onclick=()=>{ SFX.tap(); fn(b.dataset.v); });
   segBind('lng',v=>{ S.lang=v; save(); render(); }); segBind('thm',v=>{ if((S.theme==='light'?'light':'dark')!==v) toggleTheme(); render(); });
   segBind('gl',v=>{ S.goal=+v; save(); render(); }); segBind('vsp',v=>{ S.vSpeed=v; save(); render(); speak('网络安全'); }); segBind('fs',v=>{ S.fs=+v; save(); applyTextSize(); render(); }); segBind('myv',v=>{ S.myVoice=v; save(); render(); speak('你好，我是新来的工程师。',{voice:myVoice()}); }); segBind('mus',v=>{ musSet(v); render(); }); segBind('snd',v=>{ S.sound=v==='1'; save(); render(); });
-  segBind('rem',v=>{ S.remind=v; save(); render(); if(RN&&v!=='0') native('notify:permission',{}).then(r=>{ if(r&&r.granted) native('notify:schedule',{items:[{id:'daily',repeat:'daily',hour:+v,minute:0,title:'Cipher Path',body:isAr()?'5 دقائق اليوم تحافظ على سلسلتك 🔥':'5 minutes today keeps your streak going 🔥'}]}); }); else if(RN) native('notify:schedule',{items:[]}); });
+  segBind('rem',v=>{ S.remind=v; save(); render(); if(RN&&v!=='0') native('notify:permission',{}).then(r=>{ S.pushOk=!!(r&&r.granted); save(); scheduleAll(); }); else scheduleAll(); });
   $('#vt',m).onclick=()=>speak('网络安全');
   $$('[data-c]',m).forEach(b=>b.onclick=()=>go('track',b.dataset.c));
   const gp=$('#gp',m); if(gp) gp.onclick=()=>paywall('me'); bindAccount(m);
@@ -35,3 +35,12 @@ SCREENS.me=m=>{ const r=rankOf(S.xp), nx=RANK_XP[r+1], labsN=Object.keys(S.labs)
   const ap=$('#ap',m); if(ap) ap.onclick=()=>RN&&native('ads:privacy',{});
   let armed=false; $('#rz',m).onclick=()=>{ if(!armed){ armed=true; toast(t('resetQ')); return; } const keep={lang:S.lang,theme:S.theme,pro:S.pro}; S=Object.assign({},DEFAULT,keep,{srs:{},mods:{},labs:{},sec:{},talk:{},exams:{}}); save(); go('home'); }; };
 
+
+/* ---------- local notifications: daily reminder, streak rescue, festivals (notify:schedule replaces the whole set) ---------- */
+function remindItems(){ const v=S.remind||'0', ar=isAr(), it=[]; if(v==='0') return it;
+  it.push({id:'daily',repeat:'daily',hour:+v,minute:0,title:'Cipher Path 码道',body:ar?'5 دقائق اليوم تحافظ على سلسلتك 🔥':'5 minutes today keeps your streak going 🔥'});
+  if(S.streak>0&&S.lastActive!==today()){ const at=new Date(); at.setHours(21,30,0,0); if(+at>Date.now()) it.push({id:'streak',at:at.toISOString(),title:'🔥 '+S.streak,body:ar?`سلسلة ${S.streak} يومًا ستنطفئ الليلة! سؤال واحد يكفي.`:`Your ${S.streak}-day streak ends tonight! One question saves it.`}); }
+  return it; }
+function scheduleAll(){ if(!RN) return; native('notify:schedule',{items:remindItems().concat(festItems())}); }
+setTimeout(()=>{ try{ scheduleAll(); }catch(e){} },600);
+document.addEventListener('visibilitychange',()=>{ if(document.hidden) try{ scheduleAll(); }catch(e){} });

@@ -61,6 +61,7 @@ JS = r"""() => { const out = []; const add = (t, v, pk, py, src) => { if (typeof
     s.turns.forEach(tn => { if (tn.p) add(tn.p[0], pv, 'talk', '', 'partner'); (tn.o || []).filter(o => o.t === 'A').forEach(o => { add(o.zh, 'n', 'talk', '', 'reply'); add(o.zh, 'f3', 'talk', '', 'reply-f'); }); }); }));
   CODE_LABS.forEach(l => add(l.zh, 'n', 'misc', '', 'lab'));
   add('网络安全', 'n', 'misc', '', 'settings'); add('你好，我是新来的工程师。', 'n', 'misc', '', 'settings'); add('你好，我是新来的工程师。', 'f3', 'misc', '', 'settings');
+  try { for (const k in FEST) add(FEST[k].g[0], 'n', 'misc', '', 'festival'); } catch (e) {}
   add(typeof VOICE_TEST === 'string' ? VOICE_TEST : '你好！我们一起学习中文吧。', 'n', 'misc', '', 'settings');
   return out; }"""
 
