@@ -17,7 +17,7 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { OAuthProvider, GoogleAuthProvider, signInWithCredential, signOut, deleteUser } from 'firebase/auth';
 import { doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { logEvent, setUser as setAnalyticsUser } from './analytics';
-import { auth, db, analytics, USERS, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID } from './firebase';
+import { auth, db, analytics, USERS, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID, TUTOR_URL } from './firebase';
 import { initPurchases, buy, restore, linkUser } from './purchases';
 import { initAds, showInterstitial, showRewarded, showPrivacyOptions } from './ads';
 
@@ -92,6 +92,15 @@ export default function CipherBridge({ uri, onReady }) {
       if (!auth.currentUser || auth.currentUser.uid !== uid) return { ok: false };
       const s = await getDoc(doc(db, USERS, uid));
       return s.exists() ? { ok: true, data: s.data().progress, updatedAt: s.data().updatedAt } : { ok: true, data: null };
+    },
+    // ---------- AI tutor: the learner's ID token proves who asks; the server checks the plan and the daily limit ----------
+    tutor: async ({ req }) => {
+      if (!auth.currentUser) return { ok: false, error: 'signin' };
+      try {
+        const token = await auth.currentUser.getIdToken();
+        const r = await fetch(TUTOR_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify(req || {}) });
+        return await r.json();
+      } catch { return { ok: false, error: 'net' }; }
     },
     'sync:push': async ({ uid, data, updatedAt }) => {
       if (!auth.currentUser || auth.currentUser.uid !== uid) return { ok: false };

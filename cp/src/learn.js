@@ -134,7 +134,8 @@ SCREENS.lesson=(m,{k,i,s})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.mi
         const Q=QUIP_OK[Math.random()*QUIP_OK.length|0]; fb.innerHTML=`<b>${ar?Q[0]:Q[1]}</b> ${inl(L(q,'wa','we'))}`; fb.className='lfb ok rise';
         if(tries===1){ confetti(40); addXP(3); } nx.disabled=false; nx.removeAttribute('aria-disabled'); nx.classList.add('pulse'); try{ questEvent('right'); }catch(e){} }
       else { b.classList.add('wrong'); b.disabled=true; SFX.bad(); try{ haptic('error'); }catch(e){} const Q=QUIP_BAD[Math.random()*QUIP_BAD.length|0];
-        fb.innerHTML=`<b>${ar?Q[0]:Q[1]}</b> ${ar?'جرّب خيارًا آخر.':'Try another option.'}`; fb.className='lfb bad rise'; } }); }
+        fb.innerHTML=`<b>${ar?Q[0]:Q[1]}</b> ${ar?'جرّب خيارًا آخر.':'Try another option.'} <button class="link tutwhy" id="tw">🐉 ${ar?'لماذا؟':'Why?'}</button>`; fb.className='lfb bad rise';
+        const tx=h=>{ const d=document.createElement('div'); d.innerHTML=h; return d.textContent; }; $('#tw',fb).onclick=()=>tutorExplain({question:tx(inl(L(q,'qa','qe'))),options:q.o.map(o=>tx(inl(ar?o[0]:o[1]))),right:tx(inl(ar?q.o[0][0]:q.o[0][1])),chosen:tx(b.querySelector('.grow').innerHTML),why:tx(inl(L(q,'wa','we')))}); } }); }
   $('#pv',m).onclick=()=>{ SFX.tap(); if(s>0) return goStep(i,s-1); if(i===0) return go('module',k); goStep(i-1,-1); };
   nx.onclick=()=>{ if(nx.disabled) return; SFX.tap(); if(!lastStep) return goStep(i,s+1);
     questEvent('lesson'); if(i<n-1){ SFX.open(); return goStep(i+1,0); }
@@ -164,8 +165,10 @@ function runQuiz(m,{qs,title,exam,seconds,boss,hearts:H0,onDone,onQuit}){ let i=
         else { hearts--; bs.classList.add('shake'); $('#tn',m).textContent=pickL(TAUNTS); $('.hearts',m).innerHTML='❤️'.repeat(hearts)+'🖤'.repeat(hearts0-hearts); } }
       let lost=boss&&hearts<=0; const canRevive=lost&&!revived&&!exam, f=document.createElement('div'); f.className='feedback '+(o.ok?'good':'bad');
       f.innerHTML=`<div><div class="row"><b class="v grow">${o.ok?t('correct'):t('wrong')}</b><span class="sub">${esc(pickL(o.ok?QUIP_OK:QUIP_BAD))}</span></div><div class="sub" style="color:var(--text)">${q.why}</div>
+        ${!o.ok&&!boss?`<button class="link tutwhy" id="tw">🐉 ${isAr()?'اسأل لونغباو: لماذا؟':'Ask Longbao why'}</button>`:''}
         ${canRevive?`<button class="btn block revive" id="rv">❤️ ${t('reviveT')} · ${reviveLabel()}</button>`:''}<button class="btn ${canRevive?'ghost ':''}block" id="fn">${lost?(isAr()?'النتيجة':'See result'):t('next')+' '+fwdA()}</button></div>`;
-      document.body.appendChild(f); $('#fn',f).onclick=()=>{ f.remove(); delete m.dataset.lock; i++; (i<qs.length&&!lost)?draw():finish(); };
+      document.body.appendChild(f); const tw=$('#tw',f); if(tw) tw.onclick=()=>{ const tx=h=>{ const d=document.createElement('div'); d.innerHTML=h; return d.textContent; }; tutorExplain({question:tx(q.q),options:q.opts.map(x=>tx(x.h)),right:tx(q.opts.find(x=>x.ok).h),chosen:tx(o.h),why:tx(q.why)}); };
+      $('#fn',f).onclick=()=>{ f.remove(); delete m.dataset.lock; i++; (i<qs.length&&!lost)?draw():finish(); };
       const rv=$('#rv',f); if(rv) rv.onclick=async()=>{ rv.disabled=true; if(await reviveUse()){ revived=true; lost=false; hearts=1; log.pop(); qs[i]=Object.assign({},q,{opts:shuffle(q.opts)}); f.remove(); delete m.dataset.lock; draw(); SFX.ok(); toast('❤️ '+t('reviveOn')); } else rv.disabled=false; }; }); }
   function finish(){ clearInterval(timer); $$('.feedback').forEach(f=>f.remove()); save(); onDone(right,qs.length,log,hearts===hearts0); }
   draw(); }
