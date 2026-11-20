@@ -25,7 +25,7 @@ async function syncNow(pull){ if(!S.user) return; if(!RN){ S.syncedAt=Date.now()
   const w=await native('sync:push',{uid:S.user.uid,data:syncData(),updatedAt:Date.now()}); if(w&&w.ok){ S.syncedAt=Date.now(); save(); } }
 /* merge: keep the best of both devices */
 function mergeRemote(R){ ['xp','coins','streak','freezes','right','bestCombo','hbCount','reviveTok','examTok'].forEach(k=>{ if(typeof R[k]==='number') S[k]=Math.max(S[k]||0,R[k]); });
-  ['mods','labs','sec','talk','exams','badges','gates','days'].forEach(k=>{ if(R[k]&&typeof R[k]==='object') S[k]=Object.assign({},R[k],S[k]||{}); });
+  ['mods','labs','sec','talk','exams','badges','gates','days','qa'].forEach(k=>{ if(R[k]&&typeof R[k]==='object') S[k]=Object.assign({},R[k],S[k]||{}); });
   if(R.mods) for(const k in R.mods){ const a=S.mods[k]||{}, b=R.mods[k]; S.mods[k]=Object.assign({},b,a,{stars:Math.max(a.stars||0,b.stars||0),Qb:Math.max(a.Qb||0,b.Qb||0)}); if(!a.done&&b.done) S.mods[k].done=b.done; }
   if(R.srs&&typeof R.srs==='object') for(const id in R.srs){ if(!S.srs[id]||R.srs[id].b>S.srs[id].b) S.srs[id]=R.srs[id]; }
   if(!RN) S.pro=S.pro||!!R.pro; save(); }

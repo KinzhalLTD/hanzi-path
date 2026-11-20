@@ -35,6 +35,7 @@ SCREENS.home=m=>{ const h=new Date().getHours(); const tr=S.focus==='cy'?'cy':'s
   <div class="grid3 treats"><button class="treat ${hb?'done':''}" id="hb"><span class="ti hbmini">福</span><b>红包</b><span class="sub">${hb?'✓':(isAr()?'ظرف أحمر':'Red envelope')}</span></button>
     <button class="treat ${qn?'done':''}" id="qn">${ico('sticks','gold')}<b>求签</b><span class="sub">${qn?'✓':(isAr()?'عود الحظ':'Fortune')}</span></button>
     <button class="treat ${dailyDone?'done':''}" id="daily">${ico('puzzle','jade')}<b>${isAr()?'تحدي':'Daily'}</b><span class="sub">${dailyDone?'✓':'+40'}</span></button></div>
+  ${weakCard()}
   ${questWidget()}${weekWidget()}
   <div class="col" style="gap:10px">${['se','cy'].map(k=>{ const ms=TRACK(k), d=ms.filter(x=>modDone(x.k)).length; return `<button class="track ${k}" data-tr="${k}"><span class="ti">${TRK[k].ic}</span><div class="grow"><b>${TRK[k].name()}</b><div class="bar ${k}" style="margin-top:6px"><i style="width:${d/ms.length*100}%"></i></div></div><span class="sub num">${d}/${ms.length}</span></button>`; }).join('')}
     <button class="track zh" id="tzh"><span class="ti">中</span><div class="grow"><b>${t('trZH')}</b><div class="sub"><span class="num">${Object.keys(S.srs).length}</span> ${t('learned')}${due?` · <span class="num">${due}</span> ${t('due')}`:''}</div></div><span aria-hidden="true">›</span></button></div>
@@ -45,7 +46,7 @@ SCREENS.home=m=>{ const h=new Date().getHours(); const tr=S.focus==='cy'?'cy':'s
   $('#lb',m).onclick=nextJoke; $('#jb',m).onclick=nextJoke;
   bindQuests(m);
   $('#hb',m).onclick=()=>{ SFX.tap(); hongbaoSheet(); }; $('#qn',m).onclick=()=>{ SFX.tap(); fortuneSheet(); };
-  $('#daily',m).onclick=()=>{ SFX.tap(); go('daily'); };
+  $('#daily',m).onclick=()=>{ SFX.tap(); go('daily'); }; bindWeak(m);
   $$('[data-tr]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('track',b.dataset.tr); });
   $('#tzh',m).onclick=()=>{ SFX.tap(); go('zh'); };
   $$('[data-lab]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); openLab(b.dataset.lab); }); checkBadges(); };
@@ -107,7 +108,7 @@ SCREENS.lesson=(m,{k,i})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.min(
     const s=mst(k); if(!s.L){ s.L=1; save(); addXP(10); } const fin=checkModDone(x); go('module',k); if(fin) moduleDone(x); }; };
 
 /* ---------- quiz engine (learn mode: feedback after each answer; exam mode: feedback at the end; boss mode: HP and hearts) ---------- */
-const qFrom=(q,mod)=>{ const o=q.o.map((p,j)=>({h:inl(isAr()?p[0]:p[1]),ok:j===0})); return {q:inl(L(q,'qa','qe')),opts:shuffle(o),why:inl(L(q,'wa','we')),mod}; };
+const qFrom=(q,mod)=>{ const o=q.o.map((p,j)=>({h:inl(isAr()?p[0]:p[1]),ok:j===0})); return {q:inl(L(q,'qa','qe')),opts:shuffle(o),why:inl(L(q,'wa','we')),mod,id:mod?mod.k+'#'+mod.Q.indexOf(q):null}; };
 function runQuiz(m,{qs,title,exam,seconds,boss,hearts:H0,onDone,onQuit}){ let i=0, right=0, timer=null, end=seconds?Date.now()+seconds*1000:0; const log=[];
   const hearts0=boss?(H0||qs.length-Math.ceil(qs.length*.7)+1):0; let hearts=hearts0, revived=false;
   const prev=cleanup; cleanup=()=>{ clearInterval(timer); prev&&prev(); };
@@ -121,7 +122,7 @@ function runQuiz(m,{qs,title,exam,seconds,boss,hearts:H0,onDone,onQuit}){ let i=
       ${boss?bossBox():`<span class="eyebrow">${esc(title)}${q.mod?' · '+esc(L(q.mod)):''}</span>`}<div class="qtext rise">${q.q}</div>
       <div class="col" style="gap:10px">${q.opts.map((o,j)=>`<button class="opt" data-j="${j}"><span class="ol">${'ABCD'[j]}</span><span class="grow">${o.h}</span></button>`).join('')}</div>`;
     $('#qx',m).onclick=()=>{ clearInterval(timer); COMBO=0; onQuit(); };
-    $$('.opt',m).forEach(b=>b.onclick=()=>{ if(m.dataset.lock) return; const o=q.opts[+b.dataset.j]; log.push({q,ok:o.ok,pick:o}); if(o.ok){ right++; S.right=(S.right||0)+1; }
+    $$('.opt',m).forEach(b=>b.onclick=()=>{ if(m.dataset.lock) return; const o=q.opts[+b.dataset.j]; log.push({q,ok:o.ok,pick:o}); qMark(q,o.ok); if(o.ok){ right++; S.right=(S.right||0)+1; }
       comboHit(o.ok); if(o.ok) questEvent('right');
       if(exam){ SFX.tap(); i++; i<qs.length?draw():finish(); return; }
       m.dataset.lock=1; $$('.opt',m).forEach((x,j)=>{ x.disabled=true; if(q.opts[j].ok) x.classList.add('right'); else if(x===b) x.classList.add('wrong'); else x.classList.add('dim'); });
@@ -136,7 +137,7 @@ function runQuiz(m,{qs,title,exam,seconds,boss,hearts:H0,onDone,onQuit}){ let i=
   function finish(){ clearInterval(timer); $$('.feedback').forEach(f=>f.remove()); save(); onDone(right,qs.length,log,hearts===hearts0); }
   draw(); }
 
-SCREENS.quizrun=(m,{k})=>{ const x=MOD[k], b=bossOf(k); const qs=shuffle(x.Q).map(q=>qFrom(q));
+SCREENS.quizrun=(m,{k})=>{ const x=MOD[k], b=bossOf(k); const qs=fightPick(x).map(q=>qFrom(q,x));
   runQuiz(m,{qs,title:t('quiz'),boss:b,onQuit:()=>go('module',k),onDone:(r,n,log,flawless)=>{ const p=r/n, s=mst(k); s.Qb=Math.max(s.Qb||0,p); const ok=quizPass(p);
     if(ok){ s.Q=1; s.stars=Math.max(s.stars||0,quizStars(p)); if(flawless) S.flawless=1; questEvent('boss'); } addXP(r*3); const c=ok?addCoins(10+r):0; save(); ok?(SFX.gong(),fireworks(3),confetti(60)):SFX.bad(); track('quiz',{k,p}); checkBadges();
     m.innerHTML=`<div class="result rise">${ok?`<div class="bossdown"><span class="bossface gone">${b.h}</span><span class="stampmark big">斩</span></div><h1>${isAr()?'هزمت':'You defeated'} ${esc(b.name)}!</h1><span class="brushzh">${esc(b.zh)} · ${esc(b.py)}</span>${stars(quizStars(p))}`

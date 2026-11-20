@@ -63,7 +63,7 @@ P|好的。这次要写故障报告吗？|Hǎo de. Zhè cì yào xiě gùzhàng 
 A|要写。我们明天开个复盘会，找到根本原因，避免再发生。|Yào xiě. Wǒmen míngtiān kāi ge fùpán huì, zhǎo dào gēnběn yuányīn, bìmiǎn zài fāshēng.|نعم. نعقد غدًا اجتماع مراجعة لنجد السبب الجذري ونمنع تكراره.|Yes. Tomorrow we hold a post-mortem to find the root cause and prevent a repeat.
 B|写一个简单的吧。|Xiě yí ge jiǎndān de ba.|لنكتب تقريرًا بسيطًا.|Let’s write a short one.|الأهم إيجاد السبب الجذري.|The key is finding the root cause.
 X|不用写，大家都忘了。|Búyòng xiě, dàjiā dōu wàng le.|لا داعي، الجميع سينسى.|No need, everyone’s forgotten.|بلا مراجعة سيتكرر العطل.|Without a review it will happen again.
-#product|需求讨论|مناقشة متطلبات المنتج|Product requirements|小王|وانغ الصغير|Wang (PM)|المهندس المسؤول|Tech lead|مديرة المنتج وانغ تريد إضافة واجهة عربية للتطبيق.|Product manager Wang wants to add an Arabic interface to the app.|5
+#product|需求讨论|مناقشة متطلبات المنتج|Product requirements|小王|وانغ الصغيرة|Wang (PM)|المهندس المسؤول|Tech lead|مديرة المنتج وانغ تريد إضافة واجهة عربية للتطبيق.|Product manager Wang wants to add an Arabic interface to the app.|5
 P|我们想在应用里加一个阿拉伯语版本。|Wǒmen xiǎng zài yìngyòng lǐ jiā yí ge Ālābóyǔ bǎnběn.|نريد إضافة نسخة عربية للتطبيق.|We want to add an Arabic version to the app.
 A|好主意。阿拉伯语从右往左写，界面布局需要调整。|Hǎo zhǔyi. Ālābóyǔ cóng yòu wǎng zuǒ xiě, jièmiàn bùjú xūyào tiáozhěng.|فكرة جيدة. العربية تُكتب من اليمين إلى اليسار، فنحتاج إلى تعديل تخطيط الواجهة.|Good idea. Arabic is written right to left, so the layout needs adjusting.
 B|只要翻译一下就行。|Zhǐyào fānyì yíxià jiù xíng.|تكفي الترجمة.|Just translate it.|الواجهة العربية تحتاج اتجاهًا معكوسًا لا ترجمة فقط.|Arabic needs a mirrored layout, not just translation.
@@ -105,3 +105,24 @@ P|你有什么问题想问我们吗？|Nǐ yǒu shénme wèntí xiǎng wèn wǒm
 A|有。请问团队现在最大的技术挑战是什么？|Yǒu. Qǐngwèn tuánduì xiànzài zuì dà de jìshù tiǎozhàn shì shénme?|نعم. ما أكبر تحدٍّ تقني يواجهه الفريق الآن؟|Yes. What’s the team’s biggest technical challenge right now?
 B|没有问题。|Méiyǒu wèntí.|لا أسئلة.|No questions.|فرصة ضائعة لإظهار اهتمامك.|A missed chance to show interest.
 X|什么时候可以放假？|Shénme shíhou kěyǐ fàngjià?|متى الإجازة؟|When can I go on holiday?|سؤال سيئ التوقيت في المقابلة.|Badly timed for an interview.
+#rollback|发布回滚|التراجع عن إصدار|Rolling back a release|张工|المهندسة تشانغ (العمليات)|Engineer Zhang (SRE)|مطوّر الخلفية|Back-end developer|بعد نشر إصدار جديد ارتفعت الأخطاء، والمهندسة تشانغ من فريق العمليات تتصل بك.|Errors jumped after a new release, and Engineer Zhang from the SRE team calls you.|4
+P|你好，我是运维的张工。新版本上线后错误率升高了。|Nǐ hǎo, wǒ shì yùnwéi de Zhāng gōng. Xīn bǎnběn shàngxiàn hòu cuòwùlǜ shēnggāo le.|مرحبًا، أنا المهندسة تشانغ من العمليات. ارتفعت نسبة الأخطاء بعد إطلاق الإصدار الجديد.|Hi, this is Zhang from operations. The error rate went up after the new release.
+A|我马上看一下监控。是从几点开始的？|Wǒ mǎshàng kàn yíxià jiānkòng. Shì cóng jǐ diǎn kāishǐ de?|سأنظر في المراقبة فورًا. متى بدأ ذلك؟|I’ll check the monitoring right away. When did it start?
+B|不是我的代码。|Bú shì wǒ de dàimǎ.|ليس الكود الخاص بي.|It’s not my code.|اللوم لا يحل شيئًا؛ ابدأ بالتحقيق.|Blame fixes nothing; start investigating.
+X|我现在下班了，明天再说。|Wǒ xiànzài xiàbān le, míngtiān zài shuō.|انتهى دوامي، لنتحدث غدًا.|I’m off work now; let’s talk tomorrow.|العطل في الإنتاج يكلّف العملاء الآن.|A production fault is costing customers now.
+P|十点二十分发布以后，支付接口的错误多了很多。|Shí diǎn èrshí fēn fābù yǐhòu, zhīfù jiēkǒu de cuòwù duō le hěn duō.|بعد النشر في العاشرة وعشرين دقيقة زادت أخطاء واجهة الدفع كثيرًا.|After the 10:20 release, the payment API errors went way up.
+A|那我们先回滚到上一个版本，再查原因。|Nà wǒmen xiān huígǔn dào shàng yí ge bǎnběn, zài chá yuányīn.|إذن لنتراجع إلى الإصدار السابق أولًا، ثم نبحث عن السبب.|Then let’s roll back to the previous version first and find the cause after.
+B|我们再观察一个小时吧。|Wǒmen zài guānchá yí ge xiǎoshí ba.|لنراقب ساعة أخرى.|Let’s watch it for another hour.|كل دقيقة انتظار تعني مدفوعات فاشلة؛ تراجع أولًا.|Every minute of waiting means failed payments; roll back first.
+X|我直接在服务器上改代码。|Wǒ zhíjiē zài fúwùqì shang gǎi dàimǎ.|سأعدّل الكود مباشرة على الخادم.|I’ll edit the code directly on the server.|التعديل في الإنتاج يدويًا خطير ولا يمكن تتبّعه.|Hand-editing production is dangerous and untraceable.
+P|好，回滚完成了，错误率已经恢复正常。|Hǎo, huígǔn wánchéng le, cuòwùlǜ yǐjīng huīfù zhèngcháng.|حسنًا، اكتمل التراجع، وعادت نسبة الأخطاء إلى طبيعتها.|OK, the rollback is done and the error rate is back to normal.
+A|我看了日志，新代码没有处理空的地址字段。|Wǒ kàn le rìzhì, xīn dàimǎ méiyǒu chǔlǐ kōng de dìzhǐ zìduàn.|راجعت السجلات: الكود الجديد لم يعالج حقل العنوان الفارغ.|I checked the logs: the new code didn’t handle an empty address field.
+B|可能是网络的问题。|Kěnéng shì wǎngluò de wèntí.|ربما مشكلة في الشبكة.|Maybe it’s a network problem.|التخمين بلا دليل يضيّع الوقت؛ السجلات تقول غير ذلك.|Guessing without evidence wastes time; the logs say otherwise.
+X|用户输入错了，不是我们的问题。|Yònghù shūrù cuò le, bú shì wǒmen de wèntí.|المستخدم أدخل بيانات خاطئة، ليست مشكلتنا.|The user entered it wrong; not our problem.|الكود يجب أن يتعامل مع المُدخلات الناقصة بأمان.|Code must handle missing input safely.
+P|修复以后要怎么防止再出现？|Xiūfù yǐhòu yào zěnme fángzhǐ zài chūxiàn?|بعد الإصلاح، كيف نمنع تكراره؟|After the fix, how do we stop it happening again?
+A|我会加一个单元测试，还会在测试环境先验证。|Wǒ huì jiā yí ge dānyuán cèshì, hái huì zài cèshì huánjìng xiān yànzhèng.|سأضيف اختبار وحدة، وسأتحقق في بيئة الاختبار أولًا.|I’ll add a unit test and verify in the test environment first.
+B|我以后会更小心。|Wǒ yǐhòu huì gèng xiǎoxīn.|سأكون أكثر حذرًا مستقبلًا.|I’ll be more careful from now on.|الحذر ليس ضابطًا؛ الاختبار الآلي هو الضابط.|Care is not a control; an automated test is.
+X|下次直接发布就行。|Xiàcì zhíjiē fābù jiù xíng.|في المرة القادمة ننشر مباشرة.|Next time we just release straight away.|النشر بلا اختبار يعيد الحادثة نفسها.|Releasing without tests repeats the same incident.
+P|好的。明天的复盘会你来讲一下吧。|Hǎo de. Míngtiān de fùpán huì nǐ lái jiǎng yíxià ba.|حسنًا. اعرض أنت الحادثة في اجتماع المراجعة غدًا.|OK. You present it at tomorrow’s post-incident review.
+A|没问题，我会准备时间线和改进措施。|Méi wèntí, wǒ huì zhǔnbèi shíjiānxiàn hé gǎijìn cuòshī.|لا مشكلة، سأجهّز التسلسل الزمني وإجراءات التحسين.|No problem, I’ll prepare the timeline and the improvements.
+B|我能不去吗？|Wǒ néng bú qù ma?|هل يمكنني ألا أحضر؟|Can I skip it?|المراجعة للتعلّم لا للّوم، وحضورك مهم.|The review is for learning, not blame, and you are needed there.
+X|这次就别写报告了。|Zhè cì jiù bié xiě bàogào le.|لنتجاوز التقرير هذه المرة.|Let’s skip the report this time.|بلا تقرير تضيع الدروس وتتكرر الأخطاء.|Without a report the lessons are lost and mistakes repeat.

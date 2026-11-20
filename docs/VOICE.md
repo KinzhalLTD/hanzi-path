@@ -4,7 +4,7 @@ Every character has a voice of their own:
 - **Narrator** (`n`) reads the terms, module titles and opens each conversation by announcing the scene.
 - **Conversation partners** each have their own voice, chosen to match the role (`SCENE_CAST` in `cp/src/voice.js`).
   Team lead Lin, senior engineer Zhou, Ma from ops, Wang the PM, Director Liu, security engineer Wang, incident lead Chen,
-  auditor Liu (female), IT director Zhao and developer Li all sound different.
+  auditor Liu (female), IT director Zhao, developer Li, SRE Zhang (female) and supervisor Li (female) all sound different.
 - **Module dialogues** use a different pair of voices per module (`DLG_CAST`).
 - **The learner's replies** use a male or a female voice (Me → Your voice in conversations).
 
@@ -19,7 +19,7 @@ Until the studio clips are recorded the app uses the phone's Chinese voices, spr
 pitch and speed per character, so the characters already sound different.
 
 ## Record the studio voices (Google Cloud Shell, copy-paste)
-The whole corpus is 625 clips and about 6,300 characters. That is far inside the Text-to-Speech free monthly quota for
+The whole corpus is 657 clips and about 6,900 characters. That is far inside the Text-to-Speech free monthly quota for
 Chirp 3 HD voices, so it should cost nothing, but check your quota on the Cloud console.
 ```bash
 cd ~ && (git clone -b cipher-path https://github.com/KinzhalLTD/hanzi-path.git cipher-path 2>/dev/null || (cd cipher-path && git pull --ff-only))

@@ -36,15 +36,17 @@ async def main():
             check(not miss, f'i18n keys missing in one language: {miss}')
             # ---- data sanity
             d = await pg.evaluate("({mods:MODS.length,se:TRACK('se').length,cy:TRACK('cy').length,terms:TERMS.length,labs:CODE_LABS.length,talk:TALK.map(x=>x.scenes.length)})")
-            check(d['mods'] == 24 and d['se'] == 12 and d['cy'] == 12 and d['terms'] >= 240 and d['labs'] == 24 and d['talk'] == [5, 5], f'data counts {d}')
+            check(d['mods'] == 24 and d['se'] == 12 and d['cy'] == 12 and d['terms'] >= 240 and d['labs'] == 24 and d['talk'] == [6, 6], f'data counts {d}')
             # ---- full module: se-fund
             await pg.evaluate("go('module','se-fund')"); await pg.wait_for_timeout(150)
             await pg.click('.step[data-s="L"]')
-            for i in range(4): await pg.click('#nx'); await pg.wait_for_timeout(80)
+            for i in range(12):
+                if not await pg.evaluate("route.name==='lesson'"): break
+                await pg.click('#nx'); await pg.wait_for_timeout(80)
             check(await pg.evaluate("!!S.mods['se-fund'].L"), f'{L}: lessons not marked done')
             await pg.click('.step[data-s="Q"]'); await pg.wait_for_timeout(100)
-            for i in range(6):
-                await pg.wait_for_selector('.opt')
+            for i in range(12):
+                if not await pg.locator('.opt:not([disabled])').count(): break
                 await pg.locator('.opt:has(i[data-ok])').first.click(); await pg.wait_for_timeout(60)
                 await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
             check(await pg.evaluate("S.mods['se-fund'].Q===1&&S.mods['se-fund'].stars===3"), f'{L}: perfect quiz not recorded')
@@ -69,15 +71,32 @@ async def main():
             check(await pg.locator('.bossface.laugh').count() == 1, f'{L}: lost boss fight screen missing')
             # ---- revive: a token gives one heart back and a retry of the missed question, so the fight can still be won
             await pg.evaluate("S.reviveTok=1; go('quizrun',{k:'se-algo'})"); await pg.wait_for_timeout(100)
-            for i in range(2):
+            for i in range(8):
                 await pg.locator('.opt:not(:has(i[data-ok]))').first.click(); await pg.wait_for_timeout(40)
-                if i == 0: await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
+                if await pg.locator('.feedback #rv').count(): break
+                await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
             check(await pg.locator('.feedback #rv').count() == 1, f'{L}: revive offer missing when the fight is lost')
             await pg.click('.feedback #rv'); await pg.wait_for_timeout(150)
-            for i in range(6):
+            for i in range(10):
                 if not await pg.locator('.opt:not([disabled])').count(): break
                 await pg.locator('.opt:has(i[data-ok])').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(60)
             check(await pg.evaluate("S.reviveTok===0&&!!S.mods['se-algo'].Q"), f'{L}: revived boss fight not won')
+            # ---- mastery: 8 questions per fight from the bigger bank, missed ones come back as weak spots
+            check(await pg.evaluate("MOD['se-algo'].Q.length>=16&&fightPick(MOD['se-algo']).length===8"), f'{L}: fight should draw 8 of 16+ questions')
+            check(await pg.evaluate("weakIds().length>=2"), f'{L}: missed questions not recorded as weak spots')
+            await pg.evaluate("go('home')"); await pg.wait_for_timeout(150)
+            check(await pg.locator('#weak').count() == 1, f'{L}: weak spots card missing on home')
+            await pg.click('#weak'); await pg.wait_for_timeout(150)
+            for i in range(12):
+                if not await pg.locator('.opt:not([disabled])').count(): break
+                await pg.locator('.opt:has(i[data-ok])').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(50)
+            await pg.screenshot(path=f'{O}/{L}_weak.png')
+            w1 = await pg.evaluate("weakIds().length")
+            await pg.click('#wn') if await pg.locator('#wn').count() else None
+            for i in range(12):
+                if not await pg.locator('.opt:not([disabled])').count(): break
+                await pg.locator('.opt:has(i[data-ok])').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(50)
+            check(await pg.evaluate("weakIds().length===0"), f'{L}: weak spots not cleared after two right answers (left {w1})')
             # ---- journey: 4 chapters per track, a gate that can be passed
             await pg.evaluate("go('track','se')"); await pg.wait_for_timeout(200)
             check(await pg.locator('.chap').count() == 4 and await pg.locator('.gate2').count() == 4, f'{L}: journey chapters/gates missing')

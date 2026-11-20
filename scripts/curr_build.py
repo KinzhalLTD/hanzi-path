@@ -17,6 +17,10 @@ def main():
         for ln, line in enumerate(open(f, encoding='utf-8'), 1):
             line = line.rstrip('\n'); where = f'{os.path.basename(f)}:{ln}'
             if not line or line.startswith('#'): continue
+            if line.startswith('+'):   # +key: continue adding items to a module defined in an earlier file
+                m = next((mm for mm in mods if mm['k'] == line[1:].strip()), None)
+                if m is None: errs.append(f'{where}: +{line[1:].strip()} extends an unknown module')
+                continue
             x = line.split('|'); tag = '@' if x[0].startswith('@') else x[0]
             n = NEED.get(tag)
             if n is None: errs.append(f'{where}: unknown line type {x[0][:12]}'); continue
@@ -36,6 +40,7 @@ def main():
             elif tag == 'Q':
                 pairs = [(x[i] if x[i] != '=' else x[i + 1], x[i + 1]) for i in (3, 5, 7, 9)]
                 if len({p[1] for p in pairs}) != 4 or len({p[0] for p in pairs}) != 4: errs.append(f'{where}: quiz options not distinct')
+                if any(q['qe'] == x[2] for mm in mods for q in mm['Q']): errs.append(f'{where}: duplicate question')
                 m['Q'].append({'qa': x[1] if x[1] != '=' else x[2], 'qe': x[2], 'o': [list(p) for p in pairs], 'wa': x[11], 'we': x[12]})
             elif tag == 'T':
                 PC.check_line(x[1], x[2], where, errs, warns)

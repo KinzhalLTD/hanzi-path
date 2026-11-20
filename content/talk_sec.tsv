@@ -105,3 +105,24 @@ P|这个主意很好。修完以后请你帮我复测一下。|Zhège zhǔyi hě
 A|没问题，修完告诉我，我马上复测。|Méi wèntí, xiū wán gàosu wǒ, wǒ mǎshàng fùcè.|لا مشكلة، أخبرني عند الانتهاء وأعيد الاختبار فورًا.|No problem; tell me when it’s done and I’ll retest right away.
 B|下个月吧。|Xià ge yuè ba.|الشهر القادم.|Next month.|الثغرة مكشوفة طوال الانتظار.|The flaw stays exposed while you wait.
 X|你自己测吧，我很忙。|Nǐ zìjǐ cè ba, wǒ hěn máng.|اختبرها بنفسك، أنا مشغول.|Test it yourself; I’m busy.|التعاون يغلق الثغرات أسرع.|Working together closes flaws faster.
+#cloudleak|云存储泄露|حاوية تخزين سحابية مكشوفة|Exposed cloud storage|李主管|المشرفة لي|Supervisor Li|مهندس السحابة|Cloud engineer|باحث أمني أبلغ أن حاوية تخزين للشركة مكشوفة للعامة، والمشرفة لي تتصل بك.|A security researcher reported that one of the company’s storage buckets is public, and Supervisor Li calls you.|4
+P|有一位安全研究员发邮件说，我们的一个存储桶是公开的。|Yǒu yí wèi ānquán yánjiūyuán fā yóujiàn shuō, wǒmen de yí ge cúnchǔtǒng shì gōngkāi de.|أرسل باحث أمني بريدًا يقول إن إحدى حاويات التخزين لدينا عامة.|A security researcher emailed to say one of our storage buckets is public.
+A|我马上查一下是哪个存储桶，里面放了什么数据。|Wǒ mǎshàng chá yíxià shì nǎge cúnchǔtǒng, lǐmiàn fàng le shénme shùjù.|سأتحقق فورًا من أي حاوية هي وما البيانات فيها.|I’ll check right away which bucket it is and what data is in it.
+B|研究员的邮件可能是骗人的。|Yánjiūyuán de yóujiàn kěnéng shì piàn rén de.|ربما بريد الباحث خدعة.|The researcher’s email might be a scam.|تحقق بسرعة من الادعاء بدل رفضه.|Check the claim quickly instead of dismissing it.
+X|我们先别理他。|Wǒmen xiān bié lǐ tā.|لنتجاهله الآن.|Let’s ignore him for now.|تجاهل البلاغ يترك البيانات مكشوفة.|Ignoring the report leaves the data exposed.
+P|查到了吗？|Chá dào le ma?|هل وجدتها؟|Did you find it?
+A|查到了，是去年的备份桶，里面有客户的姓名和电话。|Chá dào le, shì qùnián de bèifèn tǒng, lǐmiàn yǒu kèhù de xìngmíng hé diànhuà.|نعم، حاوية النسخ الاحتياطي للعام الماضي، وفيها أسماء العملاء وهواتفهم.|Yes, it’s last year’s backup bucket, with customers’ names and phone numbers.
+B|好像没什么重要的。|Hǎoxiàng méi shénme zhòngyào de.|لا يبدو فيها شيء مهم.|Doesn’t look like anything important.|الأسماء والهواتف بيانات شخصية يحميها القانون.|Names and phone numbers are personal data protected by law.
+X|我先把桶删掉，证据也就没了。|Wǒ xiān bǎ tǒng shān diào, zhèngjù yě jiù méi le.|سأحذف الحاوية، وتختفي الأدلة معها.|I’ll delete the bucket and the evidence goes with it.|الحذف يمحو الأدلة التي تكشف من وصل إلى البيانات.|Deleting wipes the evidence of who reached the data.
+P|现在应该怎么做？|Xiànzài yīnggāi zěnme zuò?|ماذا نفعل الآن؟|What should we do now?
+A|先关闭公开访问，再从访问日志看看有没有人下载过。|Xiān guānbì gōngkāi fǎngwèn, zài cóng fǎngwèn rìzhì kànkan yǒu méiyǒu rén xiàzài guo.|نغلق الوصول العام أولًا، ثم نفحص سجلات الوصول لنرى هل نزّل أحد الملفات.|First turn off public access, then check the access logs for any downloads.
+B|等老板回来再决定。|Děng lǎobǎn huílái zài juédìng.|ننتظر عودة المدير لنقرر.|Let’s wait for the boss to get back and decide.|كل ساعة وهي عامة تزيد الضرر؛ الإغلاق لا يحتاج انتظارًا.|Every hour it stays public adds damage; closing it needs no wait.
+X|把权限改成所有人可以写。|Bǎ quánxiàn gǎi chéng suǒyǒu rén kěyǐ xiě.|لنغيّر الصلاحية ليكتب فيها الجميع.|Let’s change it so everyone can write to it.|هذا يزيد المشكلة سوءًا.|That makes the problem much worse.
+P|日志里看到什么了？|Rìzhì lǐ kàn dào shénme le?|ماذا وجدت في السجلات؟|What did the logs show?
+A|除了研究员，还有两个陌生的地址下载过文件。|Chúle yánjiūyuán, hái yǒu liǎng ge mòshēng de dìzhǐ xiàzài guo wénjiàn.|إلى جانب الباحث، نزّل عنوانان غريبان الملفات.|Besides the researcher, two unknown addresses downloaded files.
+B|应该没事吧。|Yīnggāi méishì ba.|غالبًا لا بأس.|It’s probably fine.|تنزيلات من عناوين مجهولة تعني تسربًا محتملًا.|Downloads from unknown addresses mean a likely breach.
+X|日志太多了，我没看。|Rìzhì tài duō le, wǒ méi kàn.|السجلات كثيرة، لم أقرأها.|There were too many logs; I didn’t look.|السجلات هي الدليل الوحيد على من وصل إلى البيانات.|The logs are the only evidence of who reached the data.
+P|那这就是数据泄露了。下一步呢？|Nà zhè jiù shì shùjù xièlòu le. Xià yí bù ne?|إذن هذا تسرب بيانات. ما الخطوة التالية؟|So this is a data breach. What’s next?
+A|通知法务和隐私负责人，按照规定向主管机关报告，再通知受影响的客户。|Tōngzhī fǎwù hé yǐnsī fùzérén, ànzhào guīdìng xiàng zhǔguǎn jīguān bàogào, zài tōngzhī shòu yǐngxiǎng de kèhù.|نبلغ الشؤون القانونية ومسؤول الخصوصية، ونرفع بلاغًا للجهة المختصة حسب النظام، ثم نخطر العملاء المتأثرين.|Notify legal and the privacy officer, report to the authority as the rules require, then tell the affected customers.
+B|我们不说，没人会知道。|Wǒmen bù shuō, méi rén huì zhīdào.|إن لم نتكلم فلن يعرف أحد.|If we say nothing, nobody will know.|إخفاء التسرب مخالف للنظام ويدمر الثقة.|Hiding a breach breaks the law and destroys trust.
+X|发个朋友圈道歉就行。|Fā ge péngyouquān dàoqiàn jiù xíng.|يكفي اعتذار على وسائل التواصل.|A social media apology is enough.|المنشور لا يغني عن الإبلاغ الرسمي وإخطار العملاء.|A post does not replace the official report and customer notice.

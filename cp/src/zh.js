@@ -79,7 +79,7 @@ SCREENS.practice=(m,arg)=>{ const mk=arg&&arg.k; let words;
   intro.length?card():quiz(); };
 
 /* ---------- workplace conversations: the partner speaks, the learner chooses the best reply (A best, B weak, X wrong) ---------- */
-const TK_FACE={soft:['🧑‍💼','👨‍💻','🧑‍🔧','👩‍💻','👨‍💼'],sec:['🧑‍💻','👨‍💼','👩‍⚖️','👨‍💼','👨‍💻']};
+const TK_FACE={soft:['🧑‍💼','👨‍💻','🧑‍🔧','👩‍💻','👨‍💼','👩‍🔧'],sec:['🧑‍💻','👨‍💼','👩‍⚖️','👨‍💼','👨‍💻','👩‍💼']};
 const tkFree=i=>S.pro||i===0;
 SCREENS.talk=(m,arg)=>{ let cur=Math.max(0,TALK.findIndex(d=>d.k===((arg&&arg.d)||S._tkD||TALK[0].k)));
   m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><div class="grow"><span class="eyebrow">职场对话 · zhíchǎng duìhuà</span><h1>${t('talk')}</h1></div></div><p class="sub">${t('talkB')}</p>

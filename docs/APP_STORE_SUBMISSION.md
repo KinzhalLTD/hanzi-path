@@ -25,6 +25,9 @@ TWO TRACKS, 24 MODULES
 • Software engineering: fundamentals, data structures, algorithms and Big-O, object-oriented design, design patterns, Git, testing, web and APIs, databases and SQL, system design, DevOps and cloud, agile.
 • Cybersecurity: the CIA triad and risk, cryptography, identity and access, network security, the OWASP Top 10, secure coding, malware and phishing, security operations, incident response and forensics, cloud security and DevSecOps, governance and compliance (ISO 27001, NIST CSF, Saudi NCA controls, PDPL), and ethical hacking methodology.
 
+120 LESSONS, 384 BOSS QUESTIONS
+Every boss fight draws 8 questions from a bank of 16, so rematches stay fresh. Chapter gates test a whole chapter, and Weak Spots brings back every question you missed until you get it right twice.
+
 HANDS-ON LABS – SAFE AND LOCAL
 • 24 code labs: write real JavaScript, run automatic tests, see what failed and why.
 • Phishing detective: tap the red flags in realistic emails.
@@ -35,7 +38,7 @@ HANDS-ON LABS – SAFE AND LOCAL
 Every scenario is fictional and runs on your phone; nothing touches real systems.
 
 TECH CHINESE
-241 professional terms with pinyin and audio, spaced-repetition practice, and workplace conversations: stand-ups, code reviews, incident calls, audits and pen-test scoping.
+241 professional terms with pinyin and audio, spaced-repetition practice, and 12 voiced workplace conversations, each character with a voice of their own: stand-ups, code reviews, release rollbacks, incident calls, audits, a cloud data leak and pen-test scoping.
 
 PLAYFUL BY DESIGN
 Meet Lóngbǎo, the debugging dragon who tells terrible programmer jokes. Every module ends with a boss fight against monsters like the Infinite Loop Demon and the Merge Conflict Dragon. Open a red envelope every day, draw your coding fortune, chain answers into firecracker combos, collect 17 imperial seals and rise from Code Apprentice to Code Sage.
@@ -56,13 +59,16 @@ Cipher Path PRO unlocks every module, lab, exam and conversation and removes ads
 • هندسة البرمجيات: الأساسيات، وهياكل البيانات، والخوارزميات والتعقيد، والتصميم كائني التوجه، وأنماط التصميم، وGit، والاختبار، والويب والواجهات البرمجية، وقواعد البيانات وSQL، وتصميم الأنظمة، وDevOps والسحابة، والمنهجيات الرشيقة.
 • الأمن السيبراني: ثالوث السرية والسلامة والإتاحة، والتشفير، وإدارة الهوية، وأمن الشبكات، وقائمة OWASP العشرة، والبرمجة الآمنة، والبرمجيات الخبيثة والتصيد، والعمليات الأمنية، والاستجابة للحوادث، وأمن السحابة، والحوكمة والامتثال (ISO 27001 وNIST وضوابط الهيئة الوطنية للأمن السيبراني ونظام حماية البيانات الشخصية)، ومنهجية الاختراق الأخلاقي.
 
+120 درسًا و384 سؤال معركة
+كل معركة تختار 8 أسئلة من بنك من 16 سؤالًا، فلا تتكرر المواجهة. بوابات الفصول تختبر الفصل كاملًا، و«نقاط الضعف» تعيد كل سؤال أخطأت فيه حتى تجيبه صحيحًا مرتين.
+
 مختبرات عملية وآمنة
 • 24 مختبر كود: اكتب جافاسكربت حقيقية وشغّل الاختبارات الآلية.
 • محقق التصيد، وصائد السجلات، ومراجعة الكود الآمن، وورشة الشيفرات لالتقاط العلم، ومحاكي الجدار الناري، ومختبر كلمات المرور والتجزئة.
 كل السيناريوهات خيالية وتعمل على جهازك فقط، ولا تمس أي نظام حقيقي.
 
 الصينية التقنية
-241 مصطلحًا مهنيًا بالبينيين والنطق، ومراجعة متباعدة، ومحادثات عمل حقيقية.
+241 مصطلحًا مهنيًا بالبينيين والنطق، ومراجعة متباعدة، و12 محادثة عمل مسموعة لكل شخصية فيها صوتها الخاص.
 
 وأيضًا: اختبارات تجريبية، وشهادات، وتحدٍّ يومي، وألعاب سريعة، ومظهر داكن وفاتح، وعربية وإنجليزية كاملتان.
 

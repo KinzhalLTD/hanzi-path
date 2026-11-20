@@ -536,3 +536,4 @@ html[dir="rtl"] h2.sech::after{background:linear-gradient(270deg,var(--line2),tr
 .tknarr{align-self:center;text-align:center;font-size:13px;padding:8px 14px;border-radius:14px;border:1px dashed var(--line2);background:rgba(var(--hl-rgb),.03);color:var(--text);max-width:92%}
 .tknarr .han{font-size:15px;color:var(--zh)}.tknarr .nmic{margin-inline-end:6px}
 .bossdown:has(> .dragon){display:flex;gap:16px;justify-content:center;align-items:flex-end;height:auto;min-height:130px}.bossdown:has(> .dragon) .bossface .bossimg{width:84px;height:84px}
+.weakcard{border-color:rgba(var(--red-rgb),.45)}.weakcard .gbtn{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;background:rgba(var(--hl-rgb),.06);border:1px solid var(--line2);font-weight:700}

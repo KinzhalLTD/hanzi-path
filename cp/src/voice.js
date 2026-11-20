@@ -25,8 +25,8 @@ const castOf=v=>VOICE_CAST[v]||VOICE_CAST.n;
 /* the learner's own lines: male (narrator) or female voice, Me → Settings */
 const myVoice=()=>S.myVoice==='f'?'f3':'n';
 /* who speaks in each conversation scene (genders follow the Arabic/English role text) and in each module dialogue */
-const SCENE_CAST={'soft/standup':'m1','soft/review':'m2','soft/incident':'m3','soft/product':'m4','soft/interview':'m5',
-  'sec/phish':'m4','sec/incident':'m5','sec/audit':'f1','sec/pentest':'m2','sec/vulnfix':'m3'};
+const SCENE_CAST={'soft/standup':'m1','soft/review':'m2','soft/incident':'m3','soft/product':'f2','soft/interview':'m5','soft/rollback':'f3',
+  'sec/phish':'m4','sec/incident':'m5','sec/audit':'f1','sec/pentest':'m2','sec/vulnfix':'m3','sec/cloudleak':'p'};
 const DLG_CAST=[['m1','f1'],['f2','m3'],['m4','f3'],['f1','m2'],['m5','p'],['p','m1'],['m3','f2'],['f3','m4']];
 const dlgVoice=(modIndex,who)=>DLG_CAST[modIndex%DLG_CAST.length][who==='A'?0:1];
 async function voiceInfo(){ if(!RN) return {studio:false,clips:0}; if(VOICE.studio!==null) return {studio:VOICE.studio,clips:VOICE.clips};
