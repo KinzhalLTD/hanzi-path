@@ -645,3 +645,11 @@ html[dir="rtl"] h2.sech::after{background:linear-gradient(270deg,var(--line2),tr
 .trow .certname{flex:1;min-width:0}
 @media (prefers-reduced-motion: reduce){.tdots i{animation:none}}
 .tutwhy{background:none;border:0;color:var(--gold);font:inherit;font-weight:700;padding:8px 0;cursor:pointer;display:inline-block}
+/* ===== career paths & interview practice ===== */
+.careercard{gap:10px;width:100%;text-align:start}
+.cstep{gap:10px;align-items:center;width:100%}
+.cstep.done{opacity:.8}
+.cchk{width:28px;height:28px;flex:0 0 28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;border:1.5px solid var(--line2);color:var(--muted)}
+.cstep.done .cchk{background:var(--jade,#2f7d6b);border-color:var(--jade,#2f7d6b);color:#fff}
+.ivkey{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px dashed var(--gold)}
+.ivkey p{margin:6px 0 0;line-height:1.7}

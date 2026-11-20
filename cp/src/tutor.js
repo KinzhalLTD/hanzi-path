@@ -29,32 +29,32 @@ async function tutorExplain(q){ const ar=isAr(); track('tutor_explain');
 const tLeft=r=>r.demo?(isAr()?'عرض تجريبي':'Demo'):r.left!=null?(isAr()?`متبقٍ اليوم: ${r.left}`:`${r.left} left today`):'';
 const tutText=t=>esc(t).replace(/\n/g,'<br>');
 /* chat screen */
-SCREENS.tutor=(m,arg)=>{ const ar=isAr(); S.tutLog=S.tutLog||[]; if(arg&&arg.seed&&!arg.used){ arg.used=1; S.tutLog.push({role:'user',content:(ar?'لم أفهم: ':'I did not get this: ')+arg.seed.question+' → '+arg.seed.right}); }
-  const intro=TAPP==='hp'?(ar?'تحدّث مع باو بالصينية على مستواك. يكتب لك الصينية والبينيين والترجمة، ويصحّح أخطاءك بلطف.':'Chat with Bao in Chinese at your level. Bao writes Chinese, pinyin and a translation, and gently fixes your mistakes.')
+SCREENS.tutor=(m,arg)=>{ const ar=isAr(); const iv=arg&&arg.iv&&typeof CAREERS!=='undefined'&&CAREERS[arg.iv]?arg.iv:null, LK=iv?'ivLog_'+iv:'tutLog'; S[LK]=S[LK]||[]; const LOG=()=>S[LK]; if(arg&&arg.seed&&!arg.used){ arg.used=1; LOG().push({role:'user',content:(ar?'لم أفهم: ':'I did not get this: ')+arg.seed.question+' → '+arg.seed.right}); }
+  const intro=iv?(ar?`لونغباو يجري معك مقابلة لوظيفة «${CAREERS[iv].ar}». أجب كما في مقابلة حقيقية؛ بعد كل إجابة تحصل على ملاحظة، وبعد خمسة أسئلة على تقييم.`:`Longbao interviews you for a ${CAREERS[iv].en} role. Answer as you would in a real interview; you get feedback after each answer and a score after five questions.`):TAPP==='hp'?(ar?'تحدّث مع باو بالصينية على مستواك. يكتب لك الصينية والبينيين والترجمة، ويصحّح أخطاءك بلطف.':'Chat with Bao in Chinese at your level. Bao writes Chinese, pinyin and a translation, and gently fixes your mistakes.')
     :(ar?'اسأل لونغباو أي شيء عن البرمجة والأمن السيبراني.':'Ask Longbao anything about programming and cybersecurity.');
-  const chips=TAPP==='hp'?['你好！','我想点咖啡。','你周末做什么？']:(ar?['ما الفرق بين التشفير والتجزئة؟','اشرح لي REST API','كيف أحمي كلمة المرور؟']:['Hashing vs encryption?','Explain a REST API','How do I store passwords safely?']);
+  const chips=iv?[ar?'أنا مستعد، ابدأ المقابلة':'I am ready, start the interview']:TAPP==='hp'?['你好！','我想点咖啡。','你周末做什么？']:(ar?['ما الفرق بين التشفير والتجزئة؟','اشرح لي REST API','كيف أحمي كلمة المرور؟']:['Hashing vs encryption?','Explain a REST API','How do I store passwords safely?']);
   const bubble=x=>`<div class="tmsg ${x.role==='user'?'me':'them'}">${x.role==='user'?'':`<span class="tface" aria-hidden="true">${TAPP==='hp'?'🥟':'🐉'}</span>`}<div class="tbub"${TAPP==='hp'&&x.role!=='user'?' dir="auto"':''}>${tutText(x.content)}${TAPP==='hp'&&x.role!=='user'?`<button class="speak sm tsay" aria-label="${ar?'استمع':'Listen'}">🔊</button>`:''}</div></div>`;
-  m.innerHTML=`<div class="screen tutor"><div class="row" style="gap:10px"><button class="icon-btn" id="tb" aria-label="${ar?'رجوع':'Back'}">${ar?'›':'‹'}</button><h1 class="grow" style="margin:0">${ar?'المعلّم الذكي':'AI tutor'}</h1><button class="btn ghost sm" id="tclr">${ar?'محادثة جديدة':'New chat'}</button></div>
+  m.innerHTML=`<div class="screen tutor"><div class="row" style="gap:10px"><button class="icon-btn" id="tb" aria-label="${ar?'رجوع':'Back'}">${ar?'›':'‹'}</button><h1 class="grow" style="margin:0">${iv?(ar?'مقابلة تجريبية':'Mock interview'):(ar?'المعلّم الذكي':'AI tutor')}</h1><button class="btn ghost sm" id="tclr">${ar?'محادثة جديدة':'New chat'}</button></div>
     <div class="card row" style="gap:12px">${tFace('happy',56)}<p class="grow" style="margin:0">${intro}</p></div>
-    <div class="tlog" id="tlog">${S.tutLog.map(bubble).join('')}</div>
+    <div class="tlog" id="tlog">${LOG().map(bubble).join('')}</div>
     <div class="tchips">${chips.map(c=>`<button class="chip tchip">${esc(c)}</button>`).join('')}</div>
-    <form class="trow" id="tf"><input class="certname" id="tin" maxlength="300" autocomplete="off" placeholder="${TAPP==='hp'?(ar?'اكتب بالصينية أو البينيين…':'Type in Chinese or pinyin…'):(ar?'اكتب سؤالك…':'Type your question…')}" aria-label="${ar?'رسالتك':'Your message'}"><button class="btn" id="tsend">${ar?'أرسل':'Send'}</button></form>
+    <form class="trow" id="tf"><input class="certname" id="tin" maxlength="300" autocomplete="off" placeholder="${iv?(ar?'اكتب إجابتك…':'Type your answer…'):TAPP==='hp'?(ar?'اكتب بالصينية أو البينيين…':'Type in Chinese or pinyin…'):(ar?'اكتب سؤالك…':'Type your question…')}" aria-label="${ar?'رسالتك':'Your message'}"><button class="btn" id="tsend">${ar?'أرسل':'Send'}</button></form>
     <div class="sub" id="tl" style="text-align:center">${S.pro?'':(ar?'3 رسائل مجانية يوميًا · 40 مع PRO':'3 free messages a day · 40 with PRO')}</div></div>`;
   const log=$('#tlog',m), bindSay=()=>$$('.tsay',m).forEach(b=>b.onclick=()=>{ const zh=(b.parentElement.innerHTML.split('<br>')[0]||'').replace(/<[^>]+>/g,''); speak(zh.replace(/&[a-z]+;/g,'')); });
   bindSay();
-  const send=async txt=>{ txt=txt.trim(); if(!txt) return; S.tutLog.push({role:'user',content:txt}); S.tutLog=S.tutLog.slice(-20); save();
+  const send=async txt=>{ txt=txt.trim(); if(!txt) return; LOG().push({role:'user',content:txt}); S[LK]=LOG().slice(-20); save();
     log.insertAdjacentHTML('beforeend',bubble({role:'user',content:txt})+`<div class="tmsg them" id="ttyp"><span class="tface" aria-hidden="true">${TAPP==='hp'?'🥟':'🐉'}</span><div class="tbub"><span class="tdots"><i></i><i></i><i></i></span></div></div>`);
     window.scrollTo(0,document.body.scrollHeight); track('tutor_chat');
-    const r=await tutorAsk({mode:'chat',messages:S.tutLog}); const ty=$('#ttyp',m); if(ty) ty.remove();
-    if(!r.ok){ S.tutLog.pop(); save(); log.lastElementChild&&log.lastElementChild.remove(); tutorErr(r); return; }
-    S.tutLog.push({role:'assistant',content:r.text}); save(); log.insertAdjacentHTML('beforeend',bubble({role:'assistant',content:r.text})); bindSay();
+    const r=await tutorAsk(iv?{mode:'interview',role:iv,messages:LOG()}:{mode:'chat',messages:LOG()}); const ty=$('#ttyp',m); if(ty) ty.remove();
+    if(!r.ok){ LOG().pop(); save(); log.lastElementChild&&log.lastElementChild.remove(); tutorErr(r); return; }
+    LOG().push({role:'assistant',content:r.text}); save(); log.insertAdjacentHTML('beforeend',bubble({role:'assistant',content:r.text})); bindSay();
     $('#tl',m).textContent=tLeft(r); window.scrollTo(0,document.body.scrollHeight);
     if(TAPP==='hp'){ const zh=r.text.split('\n')[0]; if(/[一-鿿]/.test(zh)) speak(zh); } };
   $('#tf',m).onsubmit=e=>{ e.preventDefault(); const i=$('#tin',m); send(i.value); i.value=''; };
   $$('.tchip',m).forEach(c=>c.onclick=()=>send(c.textContent));
   $('#tb',m).onclick=()=>typeof goBack==='function'?goBack('home'):go('home');
-  $('#tclr',m).onclick=()=>{ S.tutLog=[]; save(); render(); };
-  if(arg&&arg.seed&&S.tutLog.length&&S.tutLog[S.tutLog.length-1].role==='user'&&arg.used===1){ arg.used=2; const last=S.tutLog.pop(); send(last.content); } };
+  $('#tclr',m).onclick=()=>{ S[LK]=[]; save(); render(); };
+  if(arg&&arg.seed&&LOG().length&&LOG()[LOG().length-1].role==='user'&&arg.used===1){ arg.used=2; const last=LOG().pop(); send(last.content); } };
 /* doors: Me and Home */
 { const _tm=SCREENS.me; SCREENS.me=(m,a)=>{ _tm(m,a); try{ const anchor=$('#certb',m)||$('#fcalb',m); if(!anchor||$('#tutb',m)) return; const ar=isAr();
   anchor.insertAdjacentHTML('afterend',`<button class="card row fbanner" id="tutb"><span class="fbi" aria-hidden="true">${TAPP==='hp'?'🥟':'🐉'}</span><div class="grow" style="text-align:start;min-width:0"><b>${ar?'المعلّم الذكي':'AI tutor'}</b><div class="sub">${TAPP==='hp'?(ar?'محادثة صينية مع باو':'Chinese conversation with Bao'):(ar?'اسأل لونغباو أي سؤال':'Ask Longbao anything')}</div></div><span class="chip">AI</span></button>`);
