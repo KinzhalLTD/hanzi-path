@@ -40,9 +40,20 @@ async def main():
             # ---- full module: se-fund
             await pg.evaluate("go('module','se-fund')"); await pg.wait_for_timeout(150)
             await pg.click('.step[data-s="L"]')
-            for i in range(12):
+            await pg.evaluate("S.lq={}"); kinds = []; blocked = 0; wrongs = 0
+            for i in range(60):
                 if not await pg.evaluate("route.name==='lesson'"): break
-                await pg.click('#nx'); await pg.wait_for_timeout(80)
+                kinds.append(await pg.evaluate("document.querySelector('.lfun')?'fun':document.querySelector('.lcheck')?'check':'info'"))
+                if kinds[-1] == 'check':
+                    blocked += await pg.evaluate("document.querySelector('#nx').disabled?1:0")
+                    if await pg.locator('.lcopt[data-ok="0"]:not([disabled])').count():
+                        await pg.locator('.lcopt[data-ok="0"]').first.click(); await pg.wait_for_timeout(40)
+                        wrongs += await pg.evaluate("document.querySelector('#nx').disabled&&document.querySelector('.lfb.bad')?1:0")
+                    await pg.locator('.lcopt[data-ok="1"]').click(); await pg.wait_for_timeout(40)
+                await pg.click('#nx'); await pg.wait_for_timeout(60)
+            nl = await pg.evaluate("MOD['se-fund'].L.length")
+            check(kinds.count('fun') == nl and kinds.count('check') == nl and kinds.count('info') >= nl and kinds[0] == 'info', f'{L}: lesson steps {kinds}')
+            check(blocked == nl and wrongs == nl, f'{L}: quick check must block Next until right (blocked {blocked}, wrong kept {wrongs})')
             check(await pg.evaluate("!!S.mods['se-fund'].L"), f'{L}: lessons not marked done')
             await pg.click('.step[data-s="Q"]'); await pg.wait_for_timeout(100)
             for i in range(12):
@@ -112,7 +123,11 @@ async def main():
             # ---- lesson back / next
             await pg.evaluate("go('lesson',{k:'se-ds',i:1})"); await pg.click('#pv'); await pg.wait_for_timeout(100)
             check(await pg.evaluate("route.name==='lesson'&&route.arg.i===0"), f'{L}: previous lesson button')
-            await pg.click('#pv'); await pg.wait_for_timeout(100); check(await pg.evaluate("route.name==='module'"), f'{L}: back from the first lesson')
+            for _ in range(10):
+                if not await pg.evaluate("route.name==='lesson'"): break
+                await pg.click('#pv'); await pg.wait_for_timeout(60)
+            check(await pg.evaluate("route.name==='module'"), f'{L}: back from the first lesson')
+            check(await pg.evaluate("MODS.every(m=>m.L.every(l=>l.f&&l.q&&l.q.o.length===3))"), 'every lesson has a fun card and a quick check')
             await pg.click('#nm'); await pg.wait_for_timeout(100); check(await pg.evaluate("route.name==='module'&&route.arg==='se-algo'"), f'{L}: next module button')
             # ---- music: guzheng samples load and play; the switch turns it off
             await pg.evaluate("musStart()"); await pg.wait_for_timeout(2500)

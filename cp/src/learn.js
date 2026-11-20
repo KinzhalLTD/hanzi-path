@@ -97,16 +97,48 @@ function moduleDone(x){ SFX.gong(); fireworks(4); confetti(110); const s=mst(x.k
     const db=$('#db',el); if(db) db.onclick=async()=>{ db.disabled=true; if(await rewarded('double')){ addCoins(30); db.remove(); toast('×2 '+t('bitsCur')); } else db.disabled=false; };
     $('#nx',el).onclick=()=>{ closeSheet(); const n=nextMod(x.tr); if(n&&!modFree(n)){ go('track',x.tr); return paywall('next'); } breakPoint('module',()=>n?go('module',n.k):go('track',x.tr)); }; }); }
 
-SCREENS.lesson=(m,{k,i})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.min(n-1,i|0)); const l=x.L[i];
-  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar"><i style="width:${(i+1)/n*100}%"></i></div><span class="sub num">${i+1}/${n}</span></div>
-  <div class="lcard rise"><span class="eyebrow">${x.ic} ${esc(L(x))}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${rich(L(l,'a','e'))}</div>${l.c?codeHTML(l.c):''}</div>
-  ${i===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div>`:''}
-  <div class="ldots" aria-hidden="true">${x.L.map((_,j)=>`<i class="${j<i?'on':j===i?'cur':''}"></i>`).join('')}</div>
-  <div class="grow"></div>${navPair(i>0?t('prevLesson'):t('back'),i<n-1?t('nextLesson'):t('finish')+' ✓',{bid:'pv',nid:'nx'})}`;
+/* ---------- lesson = bites: info card(s) → fun card → quick check (must be answered right to go on) ---------- */
+const FUNK={fact:['معلومة طريفة','Fun fact'],joke:['نكتة المبرمجين','Dev joke'],story:['قصة حقيقية','True story'],myth:['خرافة شائعة','Myth buster']};
+const FUNR={fact:['لم أكن أعرف هذا! 🤯','I did not know that! 🤯'],joke:['هههه، فهمتها 😄','Ha! Got it 😄'],story:['قصة لا تُنسى 📜','What a story 📜'],myth:['انكشفت الخرافة 🔍','Myth busted 🔍']};
+const lSteps=l=>{ const ps=L(l,'a','e').split(/\\n|\n/).filter(x=>x.trim()); const st=ps.map((p,j)=>({t:'info',p,last:j===ps.length-1})); if(l.f) st.push({t:'fun'}); if(l.q) st.push({t:'check'}); return st; };
+const lqId=(k,i)=>k+'#'+i;
+SCREENS.lesson=(m,{k,i,s})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.min(n-1,i|0)); const l=x.L[i], st=lSteps(l), ns=st.length;
+  s=s==null?0:Math.max(0,Math.min(ns-1,s<0?ns+(s|0):s|0)); const p=st[s]; S.lq=S.lq||{}; const solved=()=>!!S.lq[lqId(k,i)];
+  const ar=isAr(), lastStep=s===ns-1;
+  const goStep=(ii,ss)=>{ route={name:'lesson',arg:{k,i:ii,s:ss}}; render(); window.scrollTo(0,0); };
+  const seg=st.map((q,j)=>`<i class="${j<s?'on':j===s?'cur':''} k-${q.t}"></i>`).join('');
+  const kindLbl=p.t==='info'?(ar?'معلومة':'Learn'):p.t==='fun'?(ar?'استراحة مرح':'Fun break'):(ar?'فحص سريع':'Quick check');
+  let body='';
+  if(p.t==='info') body=`<div class="lcard rise"><span class="eyebrow">${x.ic} ${esc(L(x))}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${rich(p.p)}</div>${p.last&&l.c?codeHTML(l.c):''}</div>
+    ${i===0&&s===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="${ar?'استمع':'Listen'}">${ICON.speak}</button></div>`:''}`;
+  else if(p.t==='fun'){ const f=l.f, K=FUNK[f.k]||FUNK.fact, R=FUNR[f.k]||FUNR.fact;
+    body=`<div class="lfun rise k-${f.k}"><div class="lfun-top"><span class="lfun-ic" aria-hidden="true">${f.i}</span><span class="chip">${ar?K[0]:K[1]}</span></div>
+      <p class="lfun-t">${inl(L(f,'a','e'))}</p></div>
+      <div class="lreact rise" style="animation-delay:.15s">${dragon(f.k==='joke'?'happy':'cool',64)}<div class="bubble">${ar?R[0]:R[1]}</div></div>`; }
+  else { const q=l.q, ok0=solved(); const opts=shuffle(q.o.map((o,j)=>({h:inl(ar?o[0]:o[1]),ok:j===0})));
+    body=`<div class="lcheck rise"><span class="eyebrow">⚡ ${ar?'سؤال سريع قبل أن تكمل':'Quick one before you go on'}</span><h2 class="lq">${inl(L(q,'qa','qe'))}</h2>
+      <div class="col" style="gap:10px">${opts.map((o,j)=>`<button class="opt lcopt${ok0&&o.ok?' right':''}" data-ok="${o.ok?1:0}"${ok0?' disabled':''}><span class="ol">${'ABC'[j]}</span><span class="grow">${o.h}</span></button>`).join('')}</div>
+      <div id="lfb" class="lfb" role="status" aria-live="polite">${ok0?`<b>✓</b> ${inl(L(q,'wa','we'))}`:''}</div></div>`; }
+  const nextLbl=lastStep?(i<n-1?t('nextLesson'):t('finish')+' ✓'):p.t==='info'&&st[s+1]&&st[s+1].t==='fun'?(ar?'استراحة مرح':'Fun break'):st[s+1]&&st[s+1].t==='check'?(ar?'إلى السؤال':'To the question'):t('next');
+  const backLbl=s>0?t('back'):i>0?t('prevLesson'):t('back');
+  m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="lsteps" aria-hidden="true">${seg}</div><span class="sub num" aria-label="${ar?'الدرس':'Lesson'} ${i+1}/${n}">${i+1}/${n}</span></div>
+  <div class="lkind sub"><span>${kindLbl}</span><span class="num">${s+1}/${ns}</span></div>
+  ${body}
+  <div class="grow"></div>${navPair(backLbl,nextLbl,{bid:'pv',nid:'nx'})}`;
   $('#qx',m).onclick=()=>go('module',k); const sy=$('#say',m); if(sy) sy.onclick=()=>speak(x.zh);
-  $('#pv',m).onclick=()=>{ SFX.tap(); if(i===0) return go('module',k); route={name:'lesson',arg:{k,i:i-1}}; render(); window.scrollTo(0,0); };
-  $('#nx',m).onclick=()=>{ SFX.tap(); questEvent('lesson'); if(i<n-1){ SFX.open(); route={name:'lesson',arg:{k,i:i+1}}; render(); window.scrollTo(0,0); return; }
-    const s=mst(k); if(!s.L){ s.L=1; save(); addXP(10); } const fin=checkModDone(x); go('module',k); if(fin) moduleDone(x); }; };
+  const nx=$('#nx',m); if(p.t==='check'&&!solved()){ nx.disabled=true; nx.setAttribute('aria-disabled','true'); }
+  if(p.t==='fun'){ try{ SFX.open(); haptic('light'); }catch(e){} }
+  if(p.t==='check'){ const q=l.q; let tries=0;
+    $$('.lcopt',m).forEach(b=>b.onclick=()=>{ if(solved()) return; tries++; const fb=$('#lfb',m);
+      if(b.dataset.ok==='1'){ S.lq[lqId(k,i)]=1; save(); b.classList.add('right'); $$('.lcopt',m).forEach(o=>o.disabled=true); SFX.ok(); try{ haptic('success'); }catch(e){}
+        const Q=QUIP_OK[Math.random()*QUIP_OK.length|0]; fb.innerHTML=`<b>${ar?Q[0]:Q[1]}</b> ${inl(L(q,'wa','we'))}`; fb.className='lfb ok rise';
+        if(tries===1){ confetti(40); addXP(3); } nx.disabled=false; nx.removeAttribute('aria-disabled'); nx.classList.add('pulse'); try{ questEvent('right'); }catch(e){} }
+      else { b.classList.add('wrong'); b.disabled=true; SFX.bad(); try{ haptic('error'); }catch(e){} const Q=QUIP_BAD[Math.random()*QUIP_BAD.length|0];
+        fb.innerHTML=`<b>${ar?Q[0]:Q[1]}</b> ${ar?'جرّب خيارًا آخر.':'Try another option.'}`; fb.className='lfb bad rise'; } }); }
+  $('#pv',m).onclick=()=>{ SFX.tap(); if(s>0) return goStep(i,s-1); if(i===0) return go('module',k); goStep(i-1,-1); };
+  nx.onclick=()=>{ if(nx.disabled) return; SFX.tap(); if(!lastStep) return goStep(i,s+1);
+    questEvent('lesson'); if(i<n-1){ SFX.open(); return goStep(i+1,0); }
+    const ms=mst(k); if(!ms.L){ ms.L=1; save(); addXP(10); } const fin=checkModDone(x); go('module',k); if(fin) moduleDone(x); }; };
 
 /* ---------- quiz engine (learn mode: feedback after each answer; exam mode: feedback at the end; boss mode: HP and hearts) ---------- */
 const qFrom=(q,mod)=>{ const o=q.o.map((p,j)=>({h:inl(isAr()?p[0]:p[1]),ok:j===0})); return {q:inl(L(q,'qa','qe')),opts:shuffle(o),why:inl(L(q,'wa','we')),mod,id:mod?mod.k+'#'+mod.Q.indexOf(q):null}; };

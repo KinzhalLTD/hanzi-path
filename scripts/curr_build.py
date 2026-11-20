@@ -8,11 +8,11 @@ ROOT = sys.argv[1]; CED = sys.argv[2] if len(sys.argv) > 2 else None
 _spec = importlib.util.spec_from_file_location('pinyin_check', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pinyin_check.py'))
 PC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(PC)
 if CED: PC.load_ced(CED)
-NEED = {'@': 9, 'L': (5, 6), 'Q': 13, 'T': 5, 'D': 6}
+NEED = {'@': 9, 'L': (5, 6), 'Q': 13, 'T': 5, 'D': 6, 'F': 6, 'C': 12}
 def un(s): return s.replace('{pipe}', '|')
 def main():
     errs, warns, mods, terms = [], [], [], {}
-    for f in sorted(glob.glob(os.path.join(ROOT, 'content', 'mod_*.tsv'))):
+    for f in sorted(glob.glob(os.path.join(ROOT, 'content', 'mod_*.tsv'))) + sorted(glob.glob(os.path.join(ROOT, 'content', 'fun_*.tsv'))):
         m = None
         for ln, line in enumerate(open(f, encoding='utf-8'), 1):
             line = line.rstrip('\n'); where = f'{os.path.basename(f)}:{ln}'
@@ -42,6 +42,16 @@ def main():
                 if len({p[1] for p in pairs}) != 4 or len({p[0] for p in pairs}) != 4: errs.append(f'{where}: quiz options not distinct')
                 if any(q['qe'] == x[2] for mm in mods for q in mm['Q']): errs.append(f'{where}: duplicate question')
                 m['Q'].append({'qa': x[1] if x[1] != '=' else x[2], 'qe': x[2], 'o': [list(p) for p in pairs], 'wa': x[11], 'we': x[12]})
+            elif tag in ('F', 'C'):   # per-lesson fun card / quick check: F|lesson#|emoji|kind|ar|en  C|lesson#|ar q|en q|ar right|en right|ar w1|en w1|ar w2|en w2|ar why|en why
+                li = int(x[1]) if x[1].isdigit() else -1
+                if not 0 <= li < len(m['L']): errs.append(f'{where}: {tag} for unknown lesson {x[1]}'); continue
+                if tag == 'F':
+                    if x[3] not in ('fact', 'joke', 'story', 'myth'): errs.append(f'{where}: fun kind must be fact/joke/story/myth')
+                    m['L'][li]['f'] = {'i': x[2], 'k': x[3], 'a': un(x[4]), 'e': un(x[5])}
+                else:
+                    pairs = [(x[i] if x[i] != '=' else x[i + 1], x[i + 1]) for i in (4, 6, 8)]
+                    if len({p[1] for p in pairs}) != 3 or len({p[0] for p in pairs}) != 3: errs.append(f'{where}: check options not distinct')
+                    m['L'][li]['q'] = {'qa': x[2] if x[2] != '=' else x[3], 'qe': x[3], 'o': [list(p) for p in pairs], 'wa': x[10], 'we': x[11]}
             elif tag == 'T':
                 PC.check_line(x[1], x[2], where, errs, warns)
                 if x[1] in terms: errs.append(f'{where}: term {x[1]} already in {terms[x[1]]}')
@@ -52,6 +62,9 @@ def main():
                 PC.check_line(x[2], x[3], where, errs, warns)
                 m['D'].append({'s': x[1], 'zh': x[2], 'py': x[3], 'ar': x[4], 'en': x[5]})
     for m in mods:
+        for li, l in enumerate(m['L']):
+            if 'f' not in l: errs.append(f'{m["k"]}: lesson {li} has no fun card (F)')
+            if 'q' not in l: errs.append(f'{m["k"]}: lesson {li} has no quick check (C)')
         for k, lo in (('L', 4), ('Q', 6), ('T', 8), ('D', 4)):
             if len(m[k]) < lo: errs.append(f'{m["k"]}: only {len(m[k])} {k} items (need {lo})')
     os.makedirs(os.path.join(ROOT, 'out'), exist_ok=True)

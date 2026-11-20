@@ -16,7 +16,7 @@ args = [a for i, a in enumerate(sys.argv) if i and not a.startswith('--') and i 
 opt = lambda k, d: (sys.argv[sys.argv.index(k) + 1] if k in sys.argv else d)
 RX, MAXG = opt('--routes', ''), int(opt('--max', '12'))
 os.makedirs(O, exist_ok=True)
-ROUTES = ["go('home')", "go('learn')", "go('track','se')", "go('track','cy')", "go('module','se-fund')", "go('module','cy-web')", "go('lesson',{k:'se-fund',i:0})", "go('lesson',{k:'cy-web',i:1})",
+ROUTES = ["go('home')", "go('learn')", "go('track','se')", "go('track','cy')", "go('module','se-fund')", "go('module','cy-web')", "go('lesson',{k:'se-fund',i:0})", "go('lesson',{k:'cy-web',i:1})", "go('lesson',{k:'cy-web',i:1,s:-2})", "go('lesson',{k:'se-git',i:0,s:-1})", "S.lq['cy-iam#2']=1;go('lesson',{k:'cy-iam',i:2,s:-1})",
           "go('quizrun',{k:'cy-net'})", "go('exam','cy')", "go('labs')", "go('codelab','sum')", "go('seclab',{lab:'phish',i:0})", "go('seclab',{lab:'logs',i:0})", "go('seclab',{lab:'review',i:2})",
           "go('ctflab',{i:7})", "go('fwlab',{lv:2})", "go('pwlab')", "go('zh')", "go('terms')", "go('practice',{k:'cy-iam'})", "go('talk')", "go('talkscene',{d:'soft',i:0})", "go('game','ports')", "go('me')",
           "go('home');paywall()", "go('home');shop()", "go('module','se-git');dialogSheet(MOD['se-git'])"]

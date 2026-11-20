@@ -6,7 +6,7 @@ import os, sys, asyncio, json, os
 from playwright.async_api import async_playwright
 
 SIZES = [(375, 560), (390, 680), (430, 780), (390, 844)]   # SE / 15 / Pro Max inside the app viewer (top bar), full-screen 15
-SCREENS = ["go('home')", "go('learn')", "go('track','se')", "go('track','cy')", "go('module','se-fund')", "go('module','cy-eh')", "go('lesson',{k:'se-fund',i:0})", "go('lesson',{k:'se-ops',i:1})",
+SCREENS = ["go('home')", "go('learn')", "go('track','se')", "go('track','cy')", "go('module','se-fund')", "go('module','cy-eh')", "go('lesson',{k:'se-fund',i:0})", "go('lesson',{k:'se-ops',i:1})", "go('lesson',{k:'se-ops',i:1,s:-2})", "go('lesson',{k:'cy-eh',i:4,s:-1})", "S.lq['cy-iam#2']=1;go('lesson',{k:'cy-iam',i:2,s:-1})",
   "go('lesson',{k:'cy-grc',i:2})", "go('quizrun',{k:'cy-net'})", "go('exam','cy')", "go('labs')", "go('codelab','sum')", "go('codelab','jwt')", "go('seclab',{lab:'phish',i:2})", "go('seclab',{lab:'logs',i:5})",
   "go('seclab',{lab:'review',i:8})", "go('ctflab',{i:9})", "go('fwlab',{lv:3})", "go('pwlab')", "go('daily')", "go('zh')", "go('terms')", "go('terms',{k:'cy-soc'})", "go('practice',{k:'se-db'})",
   "go('talk')", "go('talkscene',{d:'sec',i:3})", "go('game','sprint')", "go('game','bits')", "go('game','ports')", "go('me')"]

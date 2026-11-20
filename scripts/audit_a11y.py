@@ -7,7 +7,7 @@ Usage: python3 scripts/audit_a11y.py HTML OUT   → prints the problems and `a11
 import sys, os, json, asyncio
 from playwright.async_api import async_playwright
 H, O = os.path.abspath(sys.argv[1]), sys.argv[2]
-ROUTES = ["go('home')", "go('learn')", "go('track','se')", "go('track','cy')", "go('module','se-fund')", "go('lesson',{k:'se-fund',i:0})",
+ROUTES = ["go('home')", "go('learn')", "go('track','se')", "go('track','cy')", "go('module','se-fund')", "go('lesson',{k:'se-fund',i:0})", "go('lesson',{k:'se-fund',i:0,s:-2})", "go('lesson',{k:'cy-ir',i:3,s:-1})",
           "go('quizrun',{k:'cy-net'})", "go('gaterun',{tr:'se',c:0})", "go('exam','cy')", "go('labs')", "go('codelab','sum')", "go('seclab',{lab:'phish',i:0})",
           "go('seclab',{lab:'logs',i:0})", "go('seclab',{lab:'review',i:2})", "go('ctflab',{i:7})", "go('fwlab',{lv:2})", "go('pwlab')", "go('zh')", "go('terms')",
           "go('practice',{k:'cy-iam'})", "go('talk')", "go('talkscene',{d:'soft',i:0})", "go('game','ports')", "go('game','bits')", "go('me')", "go('weak')",
