@@ -45,9 +45,9 @@ fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800
 html = f'''<title>Cipher Path</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{fonts}">
+<script>(function(){{var l=document.createElement('link');l.rel='stylesheet';l.href='{fonts}';document.head.appendChild(l);}})();</script>
 <style>{css}</style>
-<div id="app"></div>
+<div id="app"><div class="boot" role="status" aria-label="Loading · جارٍ التحميل"><div class="boot-zh" aria-hidden="true">码道</div><div class="boot-t">مسار الشيفرة · Cipher Path</div><div class="boot-bar" aria-hidden="true"><i></i></div></div></div>
 {''.join(DATA)}
 <script>{js.replace("</script", "<\\/script")}</script>'''
 os.makedirs(R + '/cp/dist', exist_ok=True)

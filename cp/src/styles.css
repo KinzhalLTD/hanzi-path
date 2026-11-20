@@ -575,3 +575,11 @@ html[dir="rtl"] h2.sech::after{background:linear-gradient(270deg,var(--line2),tr
 @keyframes funbob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-6deg)}}
 @keyframes btnpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 @media (prefers-reduced-motion: reduce){.lfun-ic,.btn.pulse{animation:none}}
+/* ===== boot splash (static HTML, replaced by the first render; paints while the 2 MB page is still arriving) ===== */
+.boot{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--bg);color:var(--text)}
+.boot-zh{font:400 64px/1 var(--f-brush);color:var(--red)}
+.boot-t{font:600 15px var(--f-ui);color:var(--muted)}
+.boot-bar{width:120px;height:4px;border-radius:2px;background:var(--line2);overflow:hidden}
+.boot-bar i{display:block;width:40%;height:100%;background:var(--gold);border-radius:2px;animation:bootbar 1.1s ease-in-out infinite}
+@keyframes bootbar{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion: reduce){.boot-bar i{animation:none;width:100%}}
