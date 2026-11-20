@@ -627,3 +627,18 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
 .fgot{text-align:center;font-weight:700;padding:12px;border-radius:14px;border:1px solid var(--gold)}
 @keyframes fswing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
 @media (prefers-reduced-motion: reduce){.flanterns i{animation:none}}
+/* ===== growth: sale banner, Kinzhal Pass, cross-promo ===== */
+.salebar{display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:10px;border-radius:14px;border:1px solid var(--gold);text-align:start;font-size:22px}
+.salebar b{font-size:15px}
+.salebar .sub{font-size:12.5px}
+.was{opacity:.6;font-weight:500;margin-inline-end:4px}
+.perday{display:block;font-size:11.5px;font-weight:600;color:var(--muted);margin-top:2px}
+.ordiv{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px}
+.ordiv::before,.ordiv::after{content:"";flex:1;height:1px;background:var(--line2)}
+.passcard{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;border-radius:16px;border:1.5px solid var(--gold);background:transparent;color:var(--text);font:inherit;cursor:pointer}
+.pseals{display:flex}
+.pseals i{font-style:normal;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:17px;color:#fff3e0;background:var(--red);border:1.5px solid var(--gold)}
+.pseals i+i{margin-inline-start:-8px;background:#7a1610}
+.pprice{font-weight:800;text-align:end;white-space:nowrap}
+.pprice .sub{font-weight:500;font-size:11px}
+.promoseal{width:64px;height:64px;font-size:38px;border-radius:16px;display:grid;place-items:center;background:var(--red);color:#fff3e0}

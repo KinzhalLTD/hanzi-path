@@ -6,23 +6,31 @@ import Purchases, { LOG_LEVEL, PRODUCT_CATEGORY, INTRO_ELIGIBILITY_STATUS } from
 // RevenueCat → Project → API keys → "App Store" public SDK key (starts with appl_). Safe to ship in the app.
 export const RC_IOS_KEY = 'appl_PASTE_PUBLIC_SDK_KEY';
 export const ENTITLEMENT = 'pro';
+// Kinzhal Pass: one subscription for Hanzi Path AND Cipher Path. Both apps live in the same RevenueCat project and
+// identify the learner with the same Firebase uid (shared project hanzi-path-64170), so a pass bought in one app
+// unlocks the other after sign-in. Setup: docs/GROWTH.md → "Kinzhal Pass".
+export const PASS_ENTITLEMENT = 'kinzhal_pass';
 
 // Web sku → App Store Connect product ID (must match exactly).
 export const SKU = {
   pro_monthly: 'space.kinzhal.hanzipath.pro.monthly',
   pro_yearly: 'space.kinzhal.hanzipath.pro.yearly',
   pro_lifetime: 'space.kinzhal.hanzipath.pro.lifetime',
+  // seasonal sale: a second yearly product in the same subscription group at a lower price (shown only during a sale)
+  pro_yearly_sale: 'space.kinzhal.hanzipath.pro.yearly.sale',
+  // Kinzhal Pass (entitlement kinzhal_pass) – both apps
+  pass_yearly: 'space.kinzhal.hanzipath.pass.yearly',
   coins_c1: 'space.kinzhal.hanzipath.coins.600',
   coins_c2: 'space.kinzhal.hanzipath.coins.1500',
   coins_c3: 'space.kinzhal.hanzipath.coins.3500',
 };
 // Web price keys used by the paywall and shop.
-const PRICE_KEY = { pro_monthly: 'monthly', pro_yearly: 'yearly', pro_lifetime: 'lifetime', coins_c1: 'c1', coins_c2: 'c2', coins_c3: 'c3' };
+const PRICE_KEY = { pro_monthly: 'monthly', pro_yearly: 'yearly', pro_lifetime: 'lifetime', pro_yearly_sale: 'yearlySale', pass_yearly: 'passYearly', coins_c1: 'c1', coins_c2: 'c2', coins_c3: 'c3' };
 
 const products = {};     // App Store product id → StoreProduct
 let configured = false;
 
-export const isPro = (info) => !!info?.entitlements?.active?.[ENTITLEMENT];
+export const isPro = (info) => !!(info?.entitlements?.active?.[ENTITLEMENT] || info?.entitlements?.active?.[PASS_ENTITLEMENT]);
 
 /** Call once at app start. onPro(active) fires now and whenever the entitlement changes. */
 export async function initPurchases({ onPro, onPrices }) {
@@ -36,7 +44,7 @@ export async function initPurchases({ onPro, onPrices }) {
 }
 
 async function loadPrices() {
-  const subs = await Purchases.getProducts([SKU.pro_monthly, SKU.pro_yearly], PRODUCT_CATEGORY.SUBSCRIPTION);
+  const subs = await Purchases.getProducts([SKU.pro_monthly, SKU.pro_yearly, SKU.pro_yearly_sale, SKU.pass_yearly], PRODUCT_CATEGORY.SUBSCRIPTION);
   const other = await Purchases.getProducts([SKU.pro_lifetime, SKU.coins_c1, SKU.coins_c2, SKU.coins_c3], PRODUCT_CATEGORY.NON_SUBSCRIPTION);
   const prices = {};
   for (const p of [...subs, ...other]) {

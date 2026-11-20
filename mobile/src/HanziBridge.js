@@ -15,7 +15,7 @@ import * as Crypto from 'expo-crypto';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { OAuthProvider, GoogleAuthProvider, signInWithCredential, signOut, deleteUser } from 'firebase/auth';
 import { doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
-import { logEvent } from 'firebase/analytics';
+import { logEvent, setUser as setAnalyticsUser } from './analytics';
 import { auth, db, analytics, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID } from './firebase';
 import { initPurchases, buy, restore, linkUser } from './purchases';
 import { initAds, showInterstitial, showRewarded, showPrivacyOptions } from './ads';
@@ -48,7 +48,7 @@ export default function HanziBridge({ uri, onReady }) {
         onPro: (active) => { store.current.pro = active; push({ type: 'pro', active }); },
         onPrices: (p) => { store.current.prices = p; push({ type: 'prices', ...p }); },
       });
-      if (auth.currentUser) linkUser(auth.currentUser.uid);
+      if (auth.currentUser) { setAnalyticsUser(auth.currentUser.uid); linkUser(auth.currentUser.uid); }
       const a = await initAds({ getPro: () => store.current.pro === true });   // consent form → ATT → AdMob
       store.current.ads = { type: 'ads', privacy: !!a.privacyRequired };
       push(store.current.ads);
@@ -65,7 +65,7 @@ export default function HanziBridge({ uri, onReady }) {
         const cred = new OAuthProvider('apple.com').credential({ idToken: r.identityToken, rawNonce });
         const { user } = await signInWithCredential(auth, cred);
         const name = [r.fullName?.givenName, r.fullName?.familyName].filter(Boolean).join(' ');
-        await linkUser(user.uid);
+        setAnalyticsUser(user.uid); await linkUser(user.uid);
         return { ok: true, user: { ...publicUser(user, 'apple'), name: user.displayName || name } };
       } catch (e) { return { ok: false, cancelled: e.code === 'ERR_REQUEST_CANCELED', error: String(e.message || e) }; }
     },
@@ -76,7 +76,7 @@ export default function HanziBridge({ uri, onReady }) {
         if (r.type === 'cancelled') return { ok: false, cancelled: true };
         const idToken = r.data?.idToken ?? r.idToken;
         const { user } = await signInWithCredential(auth, GoogleAuthProvider.credential(idToken));
-        await linkUser(user.uid);
+        setAnalyticsUser(user.uid); await linkUser(user.uid);
         return { ok: true, user: publicUser(user, 'google') };
       } catch (e) { return { ok: false, error: String(e.message || e) }; }
     },
@@ -125,7 +125,7 @@ export default function HanziBridge({ uri, onReady }) {
       return Haptics.impactAsync(kind === 'medium' ? Haptics.ImpactFeedbackStyle.Medium : kind === 'heavy' ? Haptics.ImpactFeedbackStyle.Heavy : Haptics.ImpactFeedbackStyle.Light);
     },
     share: async ({ text }) => Share.share({ message: text }),
-    track: async ({ ev, props }) => { try { analytics && logEvent(analytics, ev, props || {}); } catch {} },
+    track: async ({ ev, props }) => { try { logEvent(ev, props || {}); } catch {} },
     // ---------- in-app purchases ----------
     purchase: async ({ sku }) => buy(sku),
     restore: async () => restore(),

@@ -53,11 +53,16 @@ const pur = read('src/purchases.js');
 const rcKey = (pur.match(/RC_IOS_KEY = '([^']+)'/) || [])[1] || '';
 need(/^appl_[A-Za-z0-9]{10,}$/.test(rcKey), 'RevenueCat key not set (src/purchases.js RC_IOS_KEY must be the appl_… key)');
 
+// growth (docs/GROWTH.md): analytics keys, sister-app link
+const an = read('src/analytics.js');
+need(/GA4_MEASUREMENT_ID = 'G-[A-Z0-9]+'/.test(an) && !/PASTE_API_SECRET/.test(an), 'Analytics not set: paste the GA4 Measurement ID and API secret in src/analytics.js (docs/GROWTH.md)');
+
 // web app
 const web = 'assets/web/hanzi-path.html';
 need(exists(web), 'web app missing – run npm run sync-web');
 if (exists(web)) {
   const html = read(web);
+  warn(!/const APP_IDS=\{hp:'',cp:''\}/.test(html), 'sister-app cross-promo off: paste both Apple IDs in APP_IDS (src/growth.js of both apps), then rebuild');
   need(html.includes('viewport-fit=cover'), 'web app shell has no phone viewport');
   need(html.includes('hanzi-path-64170.web.app/privacy.html'), 'privacy policy link missing in the web app');
 }

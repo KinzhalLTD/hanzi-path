@@ -69,7 +69,7 @@ function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save()
 function adWrap(p){ try{ if(AC&&AC.state==='running') AC.suspend(); }catch(e){} return p.then(r=>{ try{ if(AC&&MUS.unlocked&&!document.hidden) AC.resume(); }catch(e){} return r; }); }
 function rewarded(){ track('ad_rewarded'); return adWrap(RN?native('rewarded',{}):simAd(true)).then(r=>{ if(r&&r.unavailable) toast(t('adNone')); return !!(r&&r.ok!==false&&!r.unavailable); }); }
 /* In the native app Pro comes ONLY from a verified App Store purchase (RevenueCat entitlement "pro"). The web preview simulates. */
-function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^pro_/.test(sku),demo:true}); }
+function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^(pro|pass)_/.test(sku),demo:true}); }
 const LEGAL={terms:'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',privacy:'https://hanzi-path-64170.web.app/privacy.html'};
 function openUrl(url){ if(RN) RN.postMessage(JSON.stringify({type:'openUrl',url})); else window.open(url,'_blank','noopener'); }
 function restorePurchases(){ return RN?native('restore',{}):Promise.resolve({ok:false}); }

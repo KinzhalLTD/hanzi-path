@@ -292,7 +292,7 @@ function shop(){
 }
 /* ---------- paywall ---------- */
 function paywall(src='general'){ let plan='yearly'; track('paywall_view',{src});
-  const plans=[['monthly',price('monthly'),t('perMonth')],['yearly',price('yearly'),t('perYear')],['lifetime',price('lifetime'),t('once')]];
+  const plans=[['monthly',price('monthly'),t('perMonth')],['yearly',yearlyLabel(),t('perYear')],['lifetime',price('lifetime'),t('once')]];
   sheet(`<div style="text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center"><div class="seal" style="width:62px;height:62px;font-size:38px;border-radius:16px">汉</div><h1>${t('proTitle')}</h1><div class="sub">${t('proSub')}</div></div>
     <ul class="perks"><li><i>六</i>${t('perk1')}</li><li><i>写</i>${t('perk6')}</li><li><i>码</i>${t('perk7')}</li><li><i>谈</i>${t('perk8')}</li><li><i>语</i>${t('perk9')}</li><li><i>戏</i>${t('perk2')}</li><li><i>静</i>${t('perk3')}</li><li><i>金</i>${t('perk4')}</li></ul>
     <div class="plans" style="margin-top:8px">${plans.map(([k,p,per])=>`<button class="plan" data-k="${k}" aria-pressed="${k===plan}">${k==='yearly'?`<span class="tag">${t('best')}</span>`:''}<b>${t(k)}</b><span class="price num">${p}</span><span class="per">${per}</span></button>`).join('')}</div>
@@ -300,9 +300,9 @@ function paywall(src='general'){ let plan='yearly'; track('paywall_view',{src});
     <button class="btn block" id="buy"></button><button class="btn ghost block" id="rs">${t('restore')}</button><button class="btn ghost sm" id="lt" style="align-self:center;border:0">${t('later')}</button>
     <div class="fine">${t('legal')}</div><div class="fine" style="display:flex;gap:14px;justify-content:center"><a href="#" class="legal-a" id="lterms">${t('termsL')}</a><a href="#" class="legal-a" id="lpriv">${t('privacy')}</a></div>`,s=>{
     $('#lterms',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.terms); }; $('#lpriv',s).onclick=e=>{ e.preventDefault(); openUrl(LEGAL.privacy); };
-    const upd=()=>{ $('#tr',s).innerHTML=plan==='yearly'&&window.__trialOk===false?`<span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:plan==='yearly'?`${t('trial')} <span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:''; $('#buy',s).textContent=plan==='yearly'&&window.__trialOk!==false?t('startTrial'):t('buy'); };
+    const upd=()=>{ $('#tr',s).innerHTML=plan==='yearly'&&(window.__trialOk===false||saleOn())?`<span class="num">${saleOn()?saleOn().p:price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:plan==='yearly'?`${t('trial')} <span class="num">${price('yearly')}</span> ${t('perYear')} (≈ <span class="num">${price('yearlyPm')}</span> ${t('perMonth')})`:''; $('#buy',s).textContent=plan==='yearly'&&window.__trialOk!==false&&!saleOn()?t('startTrial'):t('buy'); };
     upd(); $$('.plan',s).forEach(b=>b.onclick=()=>{ plan=b.dataset.k; SFX.tap(); $$('.plan',s).forEach(x=>x.setAttribute('aria-pressed',x===b)); upd(); });
-    $('#buy',s).onclick=async()=>{ const b=$('#buy',s); b.disabled=true; const r=await purchase('pro_'+plan); b.disabled=false;
-      if(r&&!r.ok&&!r.cancelled) toast(t('buyFail')); if(r&&r.ok&&r.active){ track(plan==='yearly'?'trial_start':'purchase',{plan,src}); S.pro=true; save(); closeSheet(); SFX.gong(); confetti(140); toast(t('proOn')); render(); } };
+    $('#buy',s).onclick=async()=>{ const b=$('#buy',s); b.disabled=true; const r=await purchase(saleSku('pro_'+plan)); b.disabled=false;
+      if(r&&!r.ok&&!r.cancelled) toast(t('buyFail')); if(r&&r.ok&&r.active){ track(plan==='yearly'&&window.__trialOk!==false&&!saleOn()?'trial_start':'purchase',{plan,src,sale:saleOn()?saleOn().k:''}); S.pro=true; save(); closeSheet(); SFX.gong(); confetti(140); toast(t('proOn')); render(); } };
     $('#rs',s).onclick=async()=>{ const r=await restorePurchases(); if(r&&r.active){S.pro=true;save();closeSheet();render();} else toast(t('restored')); };
     $('#lt',s).onclick=closeSheet; }); }
