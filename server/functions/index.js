@@ -30,6 +30,10 @@ Keep the conversation going with one question. Stay on everyday, study, work and
     explain: (L) => `You are Longbao (龙宝), the tutor dragon in Cipher Path, a software engineering and cybersecurity course.
 The learner answered a question wrongly. In ${L === 'ar' ? 'Modern Standard Arabic' : 'English'}, explain in at most 100 words why the right answer is right and why theirs is not,
 with one real-world example. Keep technical terms in English where they are normally used. No markdown headings.`,
+    interview: (L, role) => `You are a friendly but realistic interviewer hiring a ${role === 'soc' ? 'junior SOC analyst' : 'junior software developer'}.
+Interview in ${L === 'ar' ? 'Modern Standard Arabic (keep usual technical terms in English)' : 'English'}. Ask ONE question at a time, mixing behavioural and technical questions suited to a junior role.
+After each answer give 2 short lines – "✓" what was good, "↑" how to improve – then ask the next question.
+After the fifth answer, instead of a new question give a score out of 10 with three concrete tips. Keep every reply under 120 words.`,
     chat: (L) => `You are Longbao (龙宝), the tutor dragon in Cipher Path. Answer questions about programming, software engineering and defensive cybersecurity
 in ${L === 'ar' ? 'Modern Standard Arabic (keep usual technical terms in English)' : 'English'}, at a beginner-to-intermediate level, in at most 150 words, with a small example when it helps.
 Teach defence and understanding. Do not give step-by-step instructions for attacking systems the learner does not own, malware, or credential theft; explain the concept and the defence instead.
@@ -64,12 +68,13 @@ exports.tutor = onRequest({ secrets: [ANTHROPIC_API_KEY, REVENUECAT_SECRET], cor
   let uid;
   try { uid = (await admin.auth().verifyIdToken(String(req.get('Authorization') || '').replace(/^Bearer /, ''))).uid; }
   catch { return res.status(401).json({ ok: false, error: 'signin' }); }
-  const b = req.body || {}, app = b.app === 'cp' ? 'cp' : 'hp', mode = b.mode === 'chat' ? 'chat' : 'explain', L = b.lang === 'ar' ? 'ar' : 'en';
+  const b = req.body || {}, app = b.app === 'cp' ? 'cp' : 'hp', L = b.lang === 'ar' ? 'ar' : 'en';
+  const mode = b.mode === 'interview' && app === 'cp' ? 'interview' : b.mode === 'chat' ? 'chat' : 'explain';
   let messages;
   if (mode === 'explain') {
     const q = b.q || {};
     messages = [{ role: 'user', content: `Question: ${clip(q.question)}\nOptions: ${(q.options || []).slice(0, 6).map(clip).join(' | ')}\nRight answer: ${clip(q.right)}\nLearner chose: ${clip(q.chosen)}\nCourse note: ${clip(q.why)}` }];
-  } else {
+  } else {   // chat and interview
     messages = (Array.isArray(b.messages) ? b.messages : []).slice(-MAX_TURNS).map((m) => ({ role: m.role === 'assistant' ? 'assistant' : 'user', content: clip(m.content) })).filter((m) => m.content);
     while (messages.length && messages[0].role !== 'user') messages.shift();
     if (!messages.length) return res.status(400).json({ ok: false, error: 'empty' });
@@ -81,7 +86,7 @@ exports.tutor = onRequest({ secrets: [ANTHROPIC_API_KEY, REVENUECAT_SECRET], cor
     const r = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-api-key': ANTHROPIC_API_KEY.value(), 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: MODEL, max_tokens: mode === 'chat' ? 350 : 300, system: SYSTEM[app][mode](L, b.level), messages }),
+      body: JSON.stringify({ model: MODEL, max_tokens: mode === 'explain' ? 300 : 350, system: SYSTEM[app][mode](L, mode === 'interview' ? (b.role === 'soc' ? 'soc' : 'dev') : b.level), messages }),
     });
     const j = await r.json();
     if (!r.ok) { console.error('claude', r.status, JSON.stringify(j).slice(0, 300)); return res.status(502).json({ ok: false, error: 'ai' }); }

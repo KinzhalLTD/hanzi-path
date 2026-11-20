@@ -10,7 +10,8 @@ function certEarned(){ const out=[];
         if(all) out.push({id:`h${L}`,big:true,zh:`汉语水平考试 ${L} 级`,ar:`المستوى ${L} من HSK كاملًا`,en:`HSK level ${L}, complete`}); } }
     else { for(const tr of ['se','cy']){ const chs=chapOf(tr); let all=true; const trn=tr==='se'?['软件工程','هندسة البرمجيات','Software engineering']:['网络安全','الأمن السيبراني','Cybersecurity'];
         chs.forEach(ch=>{ const g=(S.gates||{})[gateKey(ch)]; if(g&&g.ok) out.push({id:`${tr}c${ch.ci}`,big:false,zh:`${trn[0]} · ${ch.c[0]}`,ar:`${trn[1]}: الفصل ${ch.ci+1}، ${ch.c[2]}`,en:`${trn[2]}, chapter ${ch.ci+1}: ${ch.c[3]}`}); else all=false; });
-        if(all) out.push({id:tr,big:true,zh:`${trn[0]} 结业`,ar:`مسار ${trn[1]} كاملًا`,en:`${trn[2]} track, complete`}); } } }catch(e){}
+        if(all) out.push({id:tr,big:true,zh:`${trn[0]} 结业`,ar:`مسار ${trn[1]} كاملًا`,en:`${trn[2]} track, complete`}); }
+      if(typeof careerCerts==='function') out.push(...careerCerts()); } }catch(e){}
   S.certAt=S.certAt||{}; let ch=false; out.forEach(c=>{ if(!S.certAt[c.id]){ S.certAt[c.id]=Date.now(); ch=true; } }); if(ch) save();
   return out.sort((a,b)=>S.certAt[b.id]-S.certAt[a.id]); }
 const certName=()=>S.certName||(S.user&&S.user.name)||'';

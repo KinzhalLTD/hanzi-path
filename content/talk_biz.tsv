@@ -126,3 +126,87 @@ P|好，我们会认真考虑。|Hǎo, wǒmen huì rènzhēn kǎolǜ.|حسنًا
 A|谢谢钱总的时间。我把财务模型发给您，下周跟您确认下一步。|Xièxie Qián zǒng de shíjiān. Wǒ bǎ cáiwù móxíng fā gěi nín, xià zhōu gēn nín quèrèn xià yí bù.|شكرًا على وقتك سيد تشيان. سأرسل النموذج المالي، ونؤكد الخطوة التالية الأسبوع القادم.|Thank you for your time, Mr Qian. I’ll send the financial model and confirm next steps with you next week.
 B|谢谢，再见。|Xièxie, zàijiàn.|شكرًا، مع السلامة.|Thanks, goodbye.|اختم بخطوة تالية واضحة.|End with a clear next step.
 X|请今天给我答复。|Qǐng jīntiān gěi wǒ dáfù.|أعطني الجواب اليوم.|Please answer me today.|الضغط على المستثمر يأتي بنتيجة عكسية.|Pressuring an investor backfires.
+#factory|参观工厂|زيارة المصنع|Factory visit|刘厂长|مدير المصنع ليو|Factory director Liu|مدير مشتريات|Purchasing manager|تزور مصنعًا في الصين قبل أول طلبية.|You visit a factory in China before your first order.|3
+P|欢迎来我们工厂！路上辛苦了。|Huānyíng lái wǒmen gōngchǎng! Lùshang xīnkǔ le.|مرحبًا بك في مصنعنا! أتعبك الطريق.|Welcome to our factory! It must have been a long trip.
+A|谢谢刘厂长。我想先看看你们的生产线。|Xièxie Liú chǎngzhǎng. Wǒ xiǎng xiān kànkan nǐmen de shēngchǎnxiàn.|شكرًا يا مدير ليو. أودّ أولًا أن أرى خط الإنتاج.|Thank you, Director Liu. I'd like to see your production line first.
+B|还好，不太累。|Hái hǎo, bú tài lèi.|لا بأس، لست متعبًا جدًا.|It was fine, not too tiring.|ردّ مهذب لكنه لا يدفع الزيارة إلى هدفها.|Polite, but it doesn't move the visit toward its purpose.
+X|我们直接签合同吧。|Wǒmen zhíjiē qiān hétong ba.|لنوقّع العقد مباشرة.|Let's sign the contract right away.|التوقيع قبل رؤية المصنع مخاطرة كبيرة.|Signing before seeing the factory is a big risk.
+P|这是我们的主要生产线，每天能生产五千件。|Zhè shì wǒmen de zhǔyào shēngchǎnxiàn, měitiān néng shēngchǎn wǔqiān jiàn.|هذا خط إنتاجنا الرئيسي، وينتج خمسة آلاف قطعة يوميًا.|This is our main production line; it makes five thousand pieces a day.
+A|很好。你们的质量检验是怎么做的？|Hěn hǎo. Nǐmen de zhìliàng jiǎnyàn shì zěnme zuò de?|ممتاز. كيف تُجرون فحص الجودة؟|Great. How do you do quality inspection?
+B|机器很多啊。|Jīqì hěn duō a.|الآلات كثيرة!|So many machines!|ملاحظة عامة؛ اسأل عن الجودة أو الطاقة الإنتاجية.|A general remark; ask about quality or capacity.
+X|五千件太少了，你们是小工厂吧？|Wǔqiān jiàn tài shǎo le, nǐmen shì xiǎo gōngchǎng ba?|خمسة آلاف قليلة جدًا، أأنتم مصنع صغير؟|Five thousand is too few, you're a small factory, right?|التقليل من شأن المضيف يضرّ العلاقة.|Belittling your host hurts the relationship.
+P|每批货出厂前都要抽检，我们也有质检报告。|Měi pī huò chūchǎng qián dōu yào chōujiǎn, wǒmen yě yǒu zhìjiǎn bàogào.|كل دفعة تُفحص بالعينات قبل خروجها من المصنع، ولدينا تقارير فحص الجودة.|Every batch is sample-checked before it leaves the factory, and we have QC reports.
+A|可以给我看一下上个月的质检报告吗？|Kěyǐ gěi wǒ kàn yíxià shàng ge yuè de zhìjiǎn bàogào ma?|هل يمكنني رؤية تقرير فحص الجودة للشهر الماضي؟|Could I see last month's QC report?
+B|那就好，我相信你们。|Nà jiù hǎo, wǒ xiāngxìn nǐmen.|جيد، أنا أثق بكم.|Good, I trust you.|الثقة جميلة، لكن اطلب دليلًا مكتوبًا.|Trust is nice, but ask for written proof.
+X|我们不需要质检。|Wǒmen bù xūyào zhìjiǎn.|لا نحتاج إلى فحص الجودة.|We don't need quality inspection.|فحص الجودة أساس أي طلبية.|Quality inspection is the basis of any order.
+P|当然可以。您对我们的样品满意吗？|Dāngrán kěyǐ. Nín duì wǒmen de yàngpǐn mǎnyì ma?|بالطبع. هل أنت راضٍ عن عيناتنا؟|Of course. Are you happy with our samples?
+A|样品不错，不过包装需要改进。|Yàngpǐn búcuò, búguò bāozhuāng xūyào gǎijìn.|العينات جيدة، لكن التغليف يحتاج إلى تحسين.|The samples are good, but the packaging needs improving.
+B|还可以吧。|Hái kěyǐ ba.|مقبولة.|They're okay.|ردّ غامض؛ وضّح ما يعجبك وما يجب تحسينه.|Vague; say what you like and what needs fixing.
+X|样品太差了，我要回国了。|Yàngpǐn tài chà le, wǒ yào huí guó le.|العينات سيئة جدًا، سأعود إلى بلدي.|The samples are terrible, I'm going home.|نقد قاسٍ بلا تفاصيل يغلق باب التفاوض.|Harsh criticism without details closes the door.
+P|没问题，包装可以按照您的要求做。|Méi wèntí, bāozhuāng kěyǐ ànzhào nín de yāoqiú zuò.|لا مشكلة، يمكننا صنع التغليف حسب طلبك.|No problem, we can make the packaging to your requirements.
+A|太好了。请把包装设计和报价一起发给我。|Tài hǎo le. Qǐng bǎ bāozhuāng shèjì hé bàojià yìqǐ fā gěi wǒ.|ممتاز. أرسل لي تصميم التغليف مع عرض السعر معًا.|Great. Please send me the packaging design together with the quote.
+B|好的，谢谢。|Hǎo de, xièxie.|حسنًا، شكرًا.|OK, thanks.|مهذّب، لكن حدّد الخطوة التالية.|Polite, but name the next step.
+X|包装不重要，越便宜越好。|Bāozhuāng bú zhòngyào, yuè piányi yuè hǎo.|التغليف غير مهم، الأرخص أفضل.|Packaging doesn't matter, the cheaper the better.|يناقض ما طلبته للتو.|Contradicts what you just asked for.
+#moq|起订量和价格|الحد الأدنى للطلب والسعر|Minimum order and price|陈经理|المديرة تشن|Manager Chen|مستورد|Importer|تتفاوض مع موردة صينية على أول طلبية.|You negotiate a first order with a Chinese supplier.|4
+P|您好！我们这款产品的起订量是一千件。|Nín hǎo! Wǒmen zhè kuǎn chǎnpǐn de qǐdìngliàng shì yìqiān jiàn.|مرحبًا! الحد الأدنى لطلب هذا المنتج ألف قطعة.|Hello! The minimum order for this product is one thousand pieces.
+A|第一次合作，能不能先订五百件试一试？|Dì yī cì hézuò, néng bu néng xiān dìng wǔbǎi jiàn shì yi shì?|هذا أول تعاون بيننا، هل يمكن أن نطلب خمسمئة قطعة أولًا للتجربة؟|It's our first deal; could we start with five hundred as a trial?
+B|一千件太多了。|Yìqiān jiàn tài duō le.|ألف قطعة كثيرة جدًا.|A thousand is too many.|اعتراض بلا اقتراح بديل.|An objection with no alternative offered.
+X|那我们订一件。|Nà wǒmen dìng yí jiàn.|إذن سنطلب قطعة واحدة.|Then we'll order one piece.|طلب غير واقعي لا يأخذه المورد بجدية.|Unrealistic; the supplier won't take it seriously.
+P|五百件也可以，但是单价要高一点。|Wǔbǎi jiàn yě kěyǐ, dànshì dānjià yào gāo yìdiǎn.|خمسمئة ممكن، لكن سعر الوحدة سيكون أعلى قليلًا.|Five hundred is possible, but the unit price will be a bit higher.
+A|可以理解。如果下次订三千件，价格能优惠多少？|Kěyǐ lǐjiě. Rúguǒ xià cì dìng sānqiān jiàn, jiàgé néng yōuhuì duōshao?|مفهوم. وإذا طلبنا ثلاثة آلاف في المرة القادمة، كم سيكون الخصم؟|Understood. If we order three thousand next time, how much discount can you give?
+B|高多少？|Gāo duōshao?|أعلى بكم؟|Higher by how much?|سؤال مقبول، لكن اربطه بالطلبات القادمة لتقوية موقفك.|Fair, but tie it to future orders to strengthen your position.
+X|那我不买了。|Nà wǒ bù mǎi le.|إذن لن أشتري.|Then I won't buy.|انسحاب سريع يضيّع الصفقة.|Walking away this fast loses the deal.
+P|三千件以上可以便宜百分之十。|Sānqiān jiàn yǐshàng kěyǐ piányi bǎi fēn zhī shí.|فوق ثلاثة آلاف قطعة يمكن خصم عشرة بالمئة.|Above three thousand we can take ten percent off.
+A|好的。付款方式呢？我们希望先付百分之三十定金。|Hǎo de. Fùkuǎn fāngshì ne? Wǒmen xīwàng xiān fù bǎi fēn zhī sānshí dìngjīn.|حسنًا. وما طريقة الدفع؟ نفضّل دفع ثلاثين بالمئة عربونًا أولًا.|OK. And the payment terms? We'd like to pay a thirty percent deposit first.
+B|百分之十有点少。|Bǎi fēn zhī shí yǒudiǎn shǎo.|عشرة بالمئة قليلة نوعًا ما.|Ten percent is a bit little.|محاولة تفاوض، لكن الأهم الآن شروط الدفع.|An attempt to negotiate, but payment terms matter more now.
+X|我们全部货到以后再付款。|Wǒmen quánbù huò dào yǐhòu zài fùkuǎn.|سندفع كل شيء بعد وصول البضاعة.|We'll pay everything after the goods arrive.|المورد الجديد نادرًا ما يقبل هذا في أول طلبية.|New suppliers rarely accept this on a first order.
+P|可以，百分之三十定金，发货前付清余款。|Kěyǐ, bǎi fēn zhī sānshí dìngjīn, fāhuò qián fùqīng yúkuǎn.|ممكن: ثلاثون بالمئة عربونًا، والباقي قبل الشحن.|Fine: thirty percent deposit, the balance before shipping.
+A|没问题。交货期大概多长时间？|Méi wèntí. Jiāohuòqī dàgài duō cháng shíjiān?|لا مشكلة. كم مدة التسليم تقريبًا؟|No problem. Roughly how long is the lead time?
+B|好吧。|Hǎo ba.|حسنًا.|Fine.|الموافقة صحيحة، لكن لا تنسَ موعد التسليم.|Fine to agree, but don't forget the delivery time.
+X|我们不付定金。|Wǒmen bú fù dìngjīn.|لن ندفع عربونًا.|We won't pay a deposit.|تتراجع عمّا اقترحته أنت.|You go back on what you proposed yourself.
+P|收到定金以后，二十五天左右可以出货。|Shōudào dìngjīn yǐhòu, èrshíwǔ tiān zuǒyòu kěyǐ chūhuò.|بعد استلام العربون، يمكن الشحن خلال خمسة وعشرين يومًا تقريبًا.|About twenty-five days after we receive the deposit, the goods can ship.
+A|好的，请发正式报价单和合同，我们确认后马上付款。|Hǎo de, qǐng fā zhèngshì bàojiàdān hé hétong, wǒmen quèrèn hòu mǎshàng fùkuǎn.|حسنًا، أرسلي عرض السعر الرسمي والعقد، وسندفع فور التأكيد.|OK, please send the formal quotation and contract; we'll pay as soon as we confirm.
+B|能不能快一点？|Néng bu néng kuài yìdiǎn?|هل يمكن أسرع قليلًا؟|Can it be a bit faster?|سؤال معقول، لكن اختم الاتفاق أولًا.|Reasonable, but close the deal first.
+X|二十五天？那就明年吧。|Èrshíwǔ tiān? Nà jiù míngnián ba.|خمسة وعشرون يومًا؟ إذن العام القادم.|Twenty-five days? Next year then.|ردّ ساخر بلا معنى.|A sarcastic, pointless reply.
+#ship|海运和清关|الشحن البحري والتخليص الجمركي|Shipping and customs|林先生|السيد لين|Mr Lin|مستورد|Importer|تنسّق مع وكيل الشحن لإرسال حاوية إلى ميناء الدمام.|You arrange with the freight forwarder to ship a container to Dammam port.|4
+P|您好，货已经准备好了。这次走海运还是空运？|Nín hǎo, huò yǐjīng zhǔnbèi hǎo le. Zhè cì zǒu hǎiyùn háishi kōngyùn?|مرحبًا، البضاعة جاهزة. هل نشحن هذه المرة بحرًا أم جوًا؟|Hello, the goods are ready. Sea or air freight this time?
+A|走海运，一个二十英尺的集装箱。|Zǒu hǎiyùn, yí ge èrshí yīngchǐ de jízhuāngxiāng.|بحرًا، حاوية واحدة بطول عشرين قدمًا.|Sea freight, one twenty-foot container.
+B|哪个便宜就用哪个。|Nǎge piányi jiù yòng nǎge.|الأرخص منهما.|Whichever is cheaper.|تترك القرار للوكيل؛ حدّد طريقة الشحن.|You leave the decision to them; name the mode.
+X|我自己去拿货。|Wǒ zìjǐ qù ná huò.|سآتي لأخذ البضاعة بنفسي.|I'll come and pick up the goods myself.|غير عملي لشحنة دولية.|Not practical for an international shipment.
+P|好的。价格是离岸价还是到岸价？|Hǎo de. Jiàgé shì lí'ànjià háishi dào'ànjià?|حسنًا. هل السعر تسليم ظهر السفينة أم شامل الشحن والتأمين؟|OK. Is the price FOB or CIF?
+A|到岸价，请帮我们买保险，运到达曼港。|Dào'ànjià, qǐng bāng wǒmen mǎi bǎoxiǎn, yùn dào Dámàn gǎng.|شامل الشحن والتأمين؛ اشترِ لنا التأمين من فضلك، والشحن إلى ميناء الدمام.|CIF; please buy insurance for us, shipping to Dammam port.
+B|都可以。|Dōu kěyǐ.|أيّهما.|Either is fine.|الشرط يحدد من يدفع الشحن والتأمين؛ لا تتركه مفتوحًا.|The term decides who pays freight and insurance; don't leave it open.
+X|什么是到岸价？我不管。|Shénme shì dào'ànjià? Wǒ bù guǎn.|ما هذا الشرط؟ لا يهمني.|What's CIF? I don't care.|على المستورد أن يفهم شروط التسليم.|An importer must understand delivery terms.
+P|明白。船期是下周五，大概二十天到港。|Míngbai. Chuánqī shì xià zhōuwǔ, dàgài èrshí tiān dào gǎng.|فهمت. موعد السفينة الجمعة القادمة، وتصل الميناء بعد عشرين يومًا تقريبًا.|Got it. The ship sails next Friday and arrives in about twenty days.
+A|好的。清关需要哪些单据？|Hǎo de. Qīngguān xūyào nǎxiē dānjù?|حسنًا. ما المستندات المطلوبة للتخليص الجمركي؟|OK. Which documents are needed for customs clearance?
+B|能早一点吗？|Néng zǎo yìdiǎn ma?|هل يمكن أبكر قليلًا؟|Can it be earlier?|سؤال طبيعي، لكن المستندات أهم لتجنب تأخير الجمارك.|Natural, but documents matter more to avoid customs delays.
+X|船期没关系，我们不急，明年也行。|Chuánqī méi guānxi, wǒmen bù jí, míngnián yě xíng.|لا يهم موعد السفينة، لسنا مستعجلين، حتى العام القادم.|The sailing date doesn't matter; next year is fine too.|غير جاد ويعطّل التخطيط.|Not serious and blocks planning.
+P|提单、发票、装箱单，还有原产地证书。|Tídān, fāpiào, zhuāngxiāngdān, hái yǒu yuánchǎndì zhèngshū.|بوليصة الشحن، والفاتورة، وقائمة التعبئة، وشهادة المنشأ.|The bill of lading, invoice, packing list, and certificate of origin.
+A|请先把单据的扫描件发给我，我们的清关代理要核对。|Qǐng xiān bǎ dānjù de sǎomiáojiàn fā gěi wǒ, wǒmen de qīngguān dàilǐ yào héduì.|أرسل لي نسخًا ممسوحة من المستندات أولًا؛ وكيل التخليص لدينا سيراجعها.|Please send me scans of the documents first; our customs broker will check them.
+B|好，知道了。|Hǎo, zhīdao le.|حسنًا، فهمت.|OK, got it.|صحيح، لكن اطلب نسخًا للمراجعة قبل الشحن.|Fine, but ask for copies to review before shipping.
+X|单据不重要，货到就行。|Dānjù bú zhòngyào, huò dào jiù xíng.|المستندات غير مهمة، المهم وصول البضاعة.|Documents don't matter as long as the goods arrive.|بدون مستندات صحيحة تبقى البضاعة في الميناء.|Without correct documents the goods stay at the port.
+P|没问题，今天下午发给您。还需要别的吗？|Méi wèntí, jīntiān xiàwǔ fā gěi nín. Hái xūyào bié de ma?|لا مشكلة، سأرسلها بعد ظهر اليوم. هل تحتاج شيئًا آخر؟|No problem, I'll send them this afternoon. Anything else?
+A|请把集装箱号和船名也告诉我，方便我们跟踪。|Qǐng bǎ jízhuāngxiāng hào hé chuán míng yě gàosu wǒ, fāngbiàn wǒmen gēnzōng.|أخبرني أيضًا برقم الحاوية واسم السفينة لنتمكن من التتبع.|Please also give me the container number and vessel name so we can track it.
+B|不用了，谢谢。|Bú yòng le, xièxie.|لا، شكرًا.|No, thanks.|مهذّب، لكن رقم الحاوية ضروري للتتبع.|Polite, but the container number is needed for tracking.
+X|你们自己看着办吧。|Nǐmen zìjǐ kànzhe bàn ba.|تصرّفوا كما ترون.|Handle it however you like.|يترك شحنتك بلا متابعة.|Leaves your shipment without follow-up.
+#claim|质量问题投诉|شكوى من مشكلة في الجودة|Quality complaint|郑经理|المدير تشنغ|Manager Zheng|مستورد|Importer|وصلت الشحنة وفيها قطع معيبة؛ تتصل بالمورد لحل المشكلة.|The shipment arrived with defective items; you call the supplier to sort it out.|5
+P|您好！货物收到了吗？|Nín hǎo! Huòwù shōudào le ma?|مرحبًا! هل استلمتم البضاعة؟|Hello! Did you receive the goods?
+A|收到了，但是有一部分产品有质量问题。|Shōudào le, dànshì yǒu yí bùfen chǎnpǐn yǒu zhìliàng wèntí.|استلمناها، لكن جزءًا من المنتجات فيه مشكلة جودة.|Yes, but some of the products have quality problems.
+B|收到了。|Shōudào le.|نعم استلمناها.|Yes, we did.|صحيح لكنه يخفي المشكلة التي اتصلت من أجلها.|True, but it hides the problem you called about.
+X|你们是骗子！|Nǐmen shì piànzi!|أنتم محتالون!|You're cheats!|الاتهام يغلق باب الحل.|Accusations shut the door on a solution.
+P|是吗？具体是什么问题？|Shì ma? Jùtǐ shì shénme wèntí?|حقًا؟ ما المشكلة تحديدًا؟|Really? What exactly is the problem?
+A|大约百分之五的产品表面有划痕，我们拍了照片。|Dàyuē bǎi fēn zhī wǔ de chǎnpǐn biǎomiàn yǒu huáhén, wǒmen pāi le zhàopiàn.|نحو خمسة بالمئة من المنتجات فيها خدوش على السطح، وقد صوّرناها.|About five percent of the products have scratches on the surface; we took photos.
+B|很多问题。|Hěn duō wèntí.|مشكلات كثيرة.|Lots of problems.|غامض؛ أعطِ النسبة والدليل.|Vague; give the rate and evidence.
+X|我也不知道，你们自己查吧。|Wǒ yě bù zhīdào, nǐmen zìjǐ chá ba.|لا أعرف، افحصوا بأنفسكم.|I don't know either, check it yourselves.|المورد يحتاج تفاصيل ليساعدك.|The supplier needs details to help.
+P|非常抱歉。请把照片和批号发给我。|Fēicháng bàoqiàn. Qǐng bǎ zhàopiàn hé pīhào fā gěi wǒ.|نعتذر كثيرًا. أرسل لي الصور ورقم الدفعة.|We're very sorry. Please send me the photos and the batch number.
+A|好的，马上发。我们希望你们补发或者退款。|Hǎo de, mǎshàng fā. Wǒmen xīwàng nǐmen bǔfā huòzhě tuìkuǎn.|حسنًا، سأرسلها فورًا. ونطلب إرسال بديل أو استرداد المبلغ.|OK, sending now. We'd like a replacement shipment or a refund.
+B|好的。|Hǎo de.|حسنًا.|OK.|ردّ صحيح، لكن اطلب حلًا محددًا.|Correct, but ask for a specific remedy.
+X|照片不用看了，直接赔钱。|Zhàopiàn bú yòng kàn le, zhíjiē péi qián.|لا داعي للصور، عوّضونا مباشرة.|No need to look at photos, just pay up.|بلا دليل لن يقبل المورد التعويض.|Without evidence the supplier won't compensate.
+P|我们核实以后，下批货免费补发这些产品，可以吗？|Wǒmen héshí yǐhòu, xià pī huò miǎnfèi bǔfā zhèxiē chǎnpǐn, kěyǐ ma?|بعد التحقق، سنرسل بدائل هذه المنتجات مجانًا مع الدفعة القادمة، هل يناسبك؟|After we verify, we'll replace these items free with the next batch. Is that OK?
+A|可以，但是请把这个写进下次的合同里。|Kěyǐ, dànshì qǐng bǎ zhège xiě jìn xià cì de hétong li.|موافق، لكن اكتبوا ذلك في عقد المرة القادمة.|OK, but please put that in the next contract.
+B|行吧。|Xíng ba.|ماشي.|Fine.|القبول جيد، لكن وثّق الاتفاق كتابيًا.|Agreeing is fine, but get it in writing.
+X|不行，下批货我们也不要了。|Bù xíng, xià pī huò wǒmen yě bú yào le.|لا، ولن نأخذ الدفعة القادمة أيضًا.|No, and we don't want the next batch either.|تصعيد يضيّع حلًا معقولًا.|Escalating throws away a fair solution.
+P|没问题。以后出货前我们会加强检验。|Méi wèntí. Yǐhòu chūhuò qián wǒmen huì jiāqiáng jiǎnyàn.|لا مشكلة. سنشدّد الفحص قبل الشحن مستقبلًا.|No problem. From now on we'll tighten inspection before shipping.
+A|谢谢。下次出货前，我们会请第三方验货。|Xièxie. Xià cì chūhuò qián, wǒmen huì qǐng dì sān fāng yànhuò.|شكرًا. قبل الشحنة القادمة سنطلب فحصًا من طرف ثالث.|Thanks. Before the next shipment we'll hire a third-party inspection.
+B|希望不要再有问题。|Xīwàng bú yào zài yǒu wèntí.|نأمل ألا تتكرر المشكلة.|We hope there are no more problems.|أمنية جيدة، لكن الإجراء العملي أقوى.|A good wish, but a concrete step is stronger.
+X|你们说的话我都不信。|Nǐmen shuō de huà wǒ dōu bú xìn.|لا أصدق أي كلمة تقولونها.|I don't believe a word you say.|يهدم الثقة بعد أن حُلّت المشكلة.|Destroys trust after the issue was solved.
