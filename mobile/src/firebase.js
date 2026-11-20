@@ -26,3 +26,5 @@ isSupported().then(ok => { if (ok) analytics = getAnalytics(app); }).catch(() =>
 
 // AI tutor Cloud Function (server/functions, docs/AI_TUTOR.md). Shared by both apps.
 export const TUTOR_URL = 'https://us-central1-hanzi-path-64170.cloudfunctions.net/tutor';
+// Teams/classes (orgs) Cloud Function – join codes and seats (server/functions, docs/TEAMS.md).
+export const ORG_URL = 'https://us-central1-hanzi-path-64170.cloudfunctions.net/org';

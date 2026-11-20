@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kinzhal Teams</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Noto+Serif+SC:wght@700&display=swap">
+<style>
+:root{--bg:#f6eddd;--surface:#fffaf0;--text:#21160f;--muted:#6b5a44;--line:rgba(120,82,22,.22);--red:#b01e17;--gold:#9a6b14;--ok:#1f7a55;--bad:#b3261e;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#140b0a;--surface:#221513;--text:#f6ead8;--muted:#c9b59a;--line:rgba(242,193,78,.2);--red:#cf3526;--gold:#e3b25a;--ok:#5fd1a0;--bad:#ff8a7f;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,"IBM Plex Sans Arabic",system-ui,sans-serif}
+[dir=rtl] body{font-family:"IBM Plex Sans Arabic",Inter,system-ui,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right)) 40px max(16px,env(safe-area-inset-left))}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.seal{width:44px;height:44px;border-radius:10px;background:var(--red);color:#fbf3e2;display:grid;place-items:center;font:700 24px "Noto Serif SC",serif}
+h1{font-size:22px;margin:0}h2{font-size:18px;margin:0}.grow{flex:1}.sub{color:var(--muted);font-size:13px}
+button,input,select{font:inherit;color:inherit}
+.btn{border:0;border-radius:10px;padding:9px 14px;background:var(--red);color:#fff;font-weight:700;cursor:pointer}.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+.btn:disabled{opacity:.5;cursor:default}.btn.sm{padding:5px 10px;font-size:13px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:10px 12px}.kpi b{display:block;font-size:22px}
+.code{font:800 20px ui-monospace,Menlo,monospace;letter-spacing:.18em;padding:6px 12px;border:1px dashed var(--gold);border-radius:10px;direction:ltr}
+.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:start;white-space:nowrap}
+th{cursor:pointer;color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}td.num,th.num{text-align:end;font-variant-numeric:tabular-nums}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.pill{display:inline-block;padding:1px 8px;border-radius:999px;border:1px solid var(--line);font-size:12px}
+input,select{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;align-items:end}.form label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.empty{text-align:center;padding:40px 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><div class="seal">队</div><div class="grow"><h1 data-t="title"></h1><div class="sub" data-t="sub"></div></div>
+    <button class="btn ghost sm" id="lang">العربية</button><button class="btn ghost sm" id="out" hidden></button></header>
+  <main id="main"></main>
+</div>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import { getAuth, GoogleAuthProvider, OAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+import { getFirestore, collection, query, where, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+const app = initializeApp({ apiKey:'AIzaSyD6UN6UNn-G_MUKvQwLY6wGUyTOkL7I5vc', authDomain:'hanzi-path-64170.firebaseapp.com', projectId:'hanzi-path-64170', appId:'1:745293456497:web:b1c0fbefee991611b767d0' });
+const auth = getAuth(app), db = getFirestore(app), ORG_URL = 'https://us-central1-hanzi-path-64170.cloudfunctions.net/org';
+const T = { en:{ title:'Kinzhal Teams', sub:'Progress dashboard for Hanzi Path and Cipher Path licences', in:'Sign in with Google', inA:'Sign in with Apple', out:'Sign out', intro:'Sign in with the account that administers your organisation.',
+    none:'No team yet. Licences for companies and schools are set up by Kinzhal; ask us from the support page.', seats:'Seats used', until:'Licence until', code:'Join code', newc:'New code', copy:'Copy', copied:'Copied', members:'Members', active7:'Active this week',
+    avgxp:'Average XP', csv:'Export CSV', remove:'Remove', name:'Name', joined:'Joined', seen:'Last active', xp:'XP', streak:'Streak', level:'HSK level', words:'Words', mock:'Best mock', mods:'Modules', labs:'Labs', soc:'SOC ready', dev:'Dev ready', certs:'Certificates',
+    sure:'Remove this member? Their seat becomes free.', confirm:'Yes, remove', cancel:'Cancel', super:'Seller tools', create:'Create licence', renew:'Renew', orgname:'Organisation', appk:'App', seatsN:'Seats', months:'Months', adminE:'Admin e-mail', done:'Done', fail:'Something went wrong', both:'Both apps', how:'Learners open the app → Me → Join a class or company → enter the code.' },
+  ar:{ title:'فرق كينجال', sub:'لوحة متابعة تراخيص مسار هانزي ومسار الشيفرة', in:'الدخول بحساب Google', inA:'الدخول بحساب Apple', out:'خروج', intro:'سجّل الدخول بالحساب المسؤول عن جهتك.',
+    none:'لا يوجد فريق بعد. تُجهّز تراخيص الشركات والمدارس من كينجال؛ تواصل معنا من صفحة الدعم.', seats:'المقاعد المستخدمة', until:'الترخيص حتى', code:'رمز الانضمام', newc:'رمز جديد', copy:'نسخ', copied:'تم النسخ', members:'الأعضاء', active7:'نشطون هذا الأسبوع',
+    avgxp:'متوسط النقاط', csv:'تصدير CSV', remove:'إزالة', name:'الاسم', joined:'انضم', seen:'آخر نشاط', xp:'النقاط', streak:'السلسلة', level:'مستوى HSK', words:'الكلمات', mock:'أفضل امتحان', mods:'الوحدات', labs:'المختبرات', soc:'جاهزية SOC', dev:'جاهزية التطوير', certs:'الشهادات',
+    sure:'إزالة هذا العضو؟ سيصبح مقعده متاحًا.', confirm:'نعم، أزِل', cancel:'إلغاء', super:'أدوات البائع', create:'إنشاء ترخيص', renew:'تجديد', orgname:'الجهة', appk:'التطبيق', seatsN:'المقاعد', months:'الأشهر', adminE:'بريد المسؤول', done:'تم', fail:'حدث خطأ', both:'التطبيقان', how:'يفتح المتعلّم التطبيق ← حسابي ← انضم إلى فصل أو شركة ← يكتب الرمز.' } };
+let L = (()=>{ try{ return localStorage.getItem('kt-lang')||((navigator.language||'').startsWith('ar')?'ar':'en'); }catch(e){ return 'en'; } })();
+const t = k => T[L][k], $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtD = ts => ts ? new Date(ts.toMillis ? ts.toMillis() : ts).toLocaleDateString(L==='ar'?'ar-SA-u-ca-gregory-nu-latn':'en-GB',{day:'numeric',month:'short',year:'numeric'}) : '—';
+async function call(action, payload) { const tok = await auth.currentUser.getIdToken(); const r = await fetch(ORG_URL, { method:'POST', headers:{'Content-Type':'application/json',Authorization:'Bearer '+tok}, body: JSON.stringify({ action, ...payload }) }); return r.json(); }
+let state = { orgs: [], members: {}, sort: { k:'xp', d:-1 }, super:false, confirm:null };
+function applyLang(){ document.documentElement.lang=L; document.documentElement.dir=L==='ar'?'rtl':'ltr'; document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t)); $('#lang').textContent=L==='ar'?'English':'العربية'; $('#out').textContent=t('out'); }
+$('#lang').onclick=()=>{ L=L==='ar'?'en':'ar'; try{ localStorage.setItem('kt-lang',L); }catch(e){} applyLang(); draw(); };
+$('#out').onclick=()=>signOut(auth);
+function cols(o){ const c=[['name','name'],['joined','joined'],['seen','seen'],['xp','xp',1],['streak','streak',1],['certs','certs',1]];
+  if(o.app!=='cp') c.push(['level','level',1],['words','words',1],['mock','mock',1]);
+  if(o.app!=='hp') c.push(['mods','mods',1],['labs','labs',1],['soc','soc',1],['dev','dev',1]);
+  return c; }
+function val(m,k){ const s=Object.assign({},m.shp||{},m.scp||{}); if(k==='name') return m.name||'—'; if(k==='joined') return m.joinedAt?.toMillis?.()||0; if(k==='seen') return m.seen?.toMillis?.()||0;
+  if(k==='xp') return (m.shp?.xp||0)+(m.scp?.xp||0); if(k==='streak') return Math.max(m.shp?.streak||0,m.scp?.streak||0); if(k==='certs') return (m.shp?.certs||0)+(m.scp?.certs||0);
+  if(k==='mock') return s.mock?s.mock.best:null; return s[k]??null; }
+function cell(m,k){ const v=val(m,k); if(k==='joined'||k==='seen') return v?fmtD(v):'—'; if(k==='mock'){ const s=m.shp||{}; return s.mock?`HSK${s.mock.l} · ${s.mock.best}`:'—'; } if(k==='soc'||k==='dev') return v==null?'—':v+'%'; return v==null?'—':esc(v); }
+function draw(){ const main=$('#main'); const u=auth.currentUser; $('#out').hidden=!u;
+  if(!u){ main.innerHTML=`<div class="card empty"><p>${t('intro')}</p><div class="row" style="justify-content:center"><button class="btn" id="g">${t('in')}</button><button class="btn ghost" id="a">${t('inA')}</button></div></div>`;
+    $('#g').onclick=()=>signInWithPopup(auth,new GoogleAuthProvider()).catch(()=>{}); $('#a').onclick=()=>signInWithPopup(auth,new OAuthProvider('apple.com')).catch(()=>{}); return; }
+  let h='';
+  if(!state.orgs.length) h+=`<div class="card empty"><p>${t('none')}</p></div>`;
+  for(const o of state.orgs){ const ms=state.members[o.id]||[], wk=Date.now()-7*864e5, c=cols(o), s=state.sort;
+    const act=ms.filter(m=>(m.seen?.toMillis?.()||0)>wk).length, avg=ms.length?Math.round(ms.reduce((a,m)=>a+val(m,'xp'),0)/ms.length):0;
+    const sorted=[...ms].sort((a,b)=>{ const x=val(a,s.k), y=val(b,s.k); return (x>y?1:x<y?-1:0)*s.d; });
+    h+=`<section class="card"><div class="row"><div class="grow"><h2>${esc(o.name)}</h2><div class="sub">${o.app==='both'?t('both'):o.app==='hp'?'Hanzi Path':'Cipher Path'} · ${t('until')} ${fmtD(o.until)}</div></div>
+      <span class="code" aria-label="${t('code')}">${esc(o.code)}</span><button class="btn ghost sm" data-copy="${esc(o.code)}">${t('copy')}</button><button class="btn ghost sm" data-newc="${o.id}">${t('newc')}</button></div>
+      <div class="sub" style="margin-top:6px">${t('how')}</div>
+      <div class="kpis"><div class="kpi"><span class="sub">${t('seats')}</span><b>${o.used||0} / ${o.seats}</b></div><div class="kpi"><span class="sub">${t('active7')}</span><b>${act}</b></div><div class="kpi"><span class="sub">${t('avgxp')}</span><b>${avg}</b></div></div>
+      <div class="row"><h2 class="grow" style="font-size:15px">${t('members')} (${ms.length})</h2><button class="btn ghost sm" data-csv="${o.id}">${t('csv')}</button></div>
+      <div class="tbl"><table><thead><tr>${c.map(([k,l,n])=>`<th class="${n?'num':''}" data-sort="${k}">${t(l)}${s.k===k?(s.d>0?' ▲':' ▼'):''}</th>`).join('')}<th></th></tr></thead>
+      <tbody>${sorted.map(m=>`<tr>${c.map(([k,,n])=>`<td class="${n?'num':''}">${cell(m,k)}</td>`).join('')}<td>${state.confirm===m.id?`<button class="btn sm" data-rm="${o.id}|${m.id}">${t('confirm')}</button> <button class="btn ghost sm" data-cx>${t('cancel')}</button>`:`<button class="btn ghost sm" data-ask="${m.id}">${t('remove')}</button>`}</td></tr>`).join('')}</tbody></table></div></section>`; }
+  if(state.super) h+=`<section class="card"><h2>${t('super')}</h2><div class="form" style="margin-top:10px">
+      <label>${t('orgname')}<input id="sn"></label><label>${t('appk')}<select id="sa"><option value="both">${t('both')}</option><option value="hp">Hanzi Path</option><option value="cp">Cipher Path</option></select></label>
+      <label>${t('seatsN')}<input id="ss" type="number" min="1" value="20"></label><label>${t('months')}<input id="sm" type="number" min="1" max="36" value="12"></label>
+      <label>${t('adminE')}<input id="se" type="email" dir="ltr"></label><button class="btn" id="sc">${t('create')}</button></div><div class="sub" id="sr" role="status"></div></section>`;
+  main.innerHTML=h;
+  main.querySelectorAll('[data-sort]').forEach(e=>e.onclick=()=>{ const k=e.dataset.sort; state.sort=state.sort.k===k?{k,d:-state.sort.d}:{k,d:k==='name'?1:-1}; draw(); });
+  main.querySelectorAll('[data-copy]').forEach(e=>e.onclick=async()=>{ try{ await navigator.clipboard.writeText(e.dataset.copy); e.textContent=t('copied'); }catch(x){} });
+  main.querySelectorAll('[data-newc]').forEach(e=>e.onclick=async()=>{ e.disabled=true; const r=await call('newcode',{orgId:e.dataset.newc}); if(r.ok) await load(); else e.disabled=false; });
+  main.querySelectorAll('[data-ask]').forEach(e=>e.onclick=()=>{ state.confirm=e.dataset.ask; draw(); });
+  main.querySelectorAll('[data-cx]').forEach(e=>e.onclick=()=>{ state.confirm=null; draw(); });
+  main.querySelectorAll('[data-rm]').forEach(e=>e.onclick=async()=>{ const [orgId,uid]=e.dataset.rm.split('|'); e.disabled=true; await call('remove',{orgId,uid}); state.confirm=null; await load(); });
+  main.querySelectorAll('[data-csv]').forEach(e=>e.onclick=()=>{ const o=state.orgs.find(x=>x.id===e.dataset.csv), c=cols(o), ms=state.members[o.id]||[];
+    const rows=[c.map(([,l])=>t(l))].concat(ms.map(m=>c.map(([k])=>{ const v=val(m,k); return (k==='joined'||k==='seen')?(v?new Date(v).toISOString().slice(0,10):''):(k==='mock'?(m.shp?.mock?m.shp.mock.best:''):(v??'')); })));
+    const csv='﻿'+rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
+    const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download=`${o.name}-progress.csv`; a.click(); });
+  const sc=$('#sc'); if(sc) sc.onclick=async()=>{ sc.disabled=true; const r=await call('create',{name:$('#sn').value,app:$('#sa').value,seats:+$('#ss').value,months:+$('#sm').value,adminEmail:$('#se').value.trim()||undefined}); sc.disabled=false; $('#sr').textContent=r.ok?t('done'):(t('fail')+(r.error?' · '+r.error:'')); if(r.ok) await load(); };
+}
+async function load(){ const u=auth.currentUser; if(!u) return draw();
+  const q=await getDocs(query(collection(db,'orgs'),where('admins','array-contains',u.uid)));
+  state.orgs=q.docs.map(d=>({id:d.id,...d.data()})); state.members={};
+  for(const o of state.orgs){ const ms=await getDocs(collection(db,'orgs',o.id,'members')); state.members[o.id]=ms.docs.map(d=>({id:d.id,...d.data()})); }
+  try{ state.super=!!(await call('whoami',{})).super; }catch(e){ state.super=false; }
+  draw(); }
+onAuthStateChanged(auth,()=>{ load().catch(()=>draw()); });
+applyLang(); draw();
+</script>
+</body>
+</html>

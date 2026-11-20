@@ -13,10 +13,10 @@ import * as Notifications from 'expo-notifications';
 import * as AppleAuthentication from 'expo-apple-authentication';
 import * as Crypto from 'expo-crypto';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { OAuthProvider, GoogleAuthProvider, signInWithCredential, signOut, deleteUser } from 'firebase/auth';
-import { doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
+import { OAuthProvider, GoogleAuthProvider, signInWithCredential, signOut, deleteUser, onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { logEvent, setUser as setAnalyticsUser } from './analytics';
-import { auth, db, analytics, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID, TUTOR_URL } from './firebase';
+import { auth, db, analytics, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID, TUTOR_URL, ORG_URL } from './firebase';
 import { initPurchases, buy, restore, linkUser } from './purchases';
 import { initAds, showInterstitial, showRewarded, showPrivacyOptions } from './ads';
 
@@ -35,17 +35,36 @@ export default function HanziBridge({ uri, onReady }) {
   const reply = (id, data) => web.current?.injectJavaScript(`window.__fromNative(${JSON.stringify({ id, ...data })});true;`);
   const push = (data) => web.current?.injectJavaScript(`window.__fromNative&&window.__fromNative(${JSON.stringify(data)});true;`);
   // last known purchase state, re-sent whenever the page (re)loads
-  const store = useRef({ pro: null, prices: null });
+  const store = useRef({ pro: null, rc: null, org: null, prices: null });
   const sendStore = () => {
     if (store.current.prices) push({ type: 'prices', ...store.current.prices });
     if (store.current.pro !== null) push({ type: 'pro', active: store.current.pro });
+    if (store.current.org) push({ type: 'org', org: store.current.org });
     if (store.current.ads) push(store.current.ads);
   };
+  // PRO = App Store purchase (RevenueCat: pro or kinzhal_pass) OR an active seat in a company/class licence
+  // (org_members/{uid}, written only by the org Cloud Function – App Store guideline 3.1.3(c) enterprise services).
+  const setPro = () => {
+    const s = store.current; if (s.rc === null && !(s.org && s.org.active)) return;   // wait for the App Store answer unless a seat already grants PRO
+    const active = !!s.rc || !!(s.org && s.org.active); s.pro = active; push({ type: 'pro', active, source: s.org && s.org.active && !s.rc ? 'org' : 'store' });
+  };
+  const checkOrg = async (uid) => {
+    let org = { active: false };
+    try {
+      const m = uid ? await getDoc(doc(db, 'org_members', uid)) : null;
+      const x = m && m.exists() ? m.data() : null;
+      if (x && x.active && (!x.until || x.until.toMillis() > Date.now()) && (x.app === 'both' || x.app === 'hp'))
+        org = { active: true, id: x.orgId, name: x.orgName || '' };
+      else if (x) org = { active: false, id: x.orgId, name: x.orgName || '', expired: true };
+    } catch {}
+    store.current.org = org; setPro(); push({ type: 'org', org });
+  };
+  useEffect(() => onAuthStateChanged(auth, (u) => { checkOrg(u ? u.uid : null); }), []);
   useEffect(() => {
     (async () => {
       // purchases first, so ads are never initialised for Pro users
       await initPurchases({
-        onPro: (active) => { store.current.pro = active; push({ type: 'pro', active }); },
+        onPro: (active) => { store.current.rc = active; setPro(); },
         onPrices: (p) => { store.current.prices = p; push({ type: 'prices', ...p }); },
       });
       if (auth.currentUser) { setAnalyticsUser(auth.currentUser.uid); linkUser(auth.currentUser.uid); }
@@ -100,6 +119,20 @@ export default function HanziBridge({ uri, onReady }) {
         const r = await fetch(TUTOR_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify(req || {}) });
         return await r.json();
       } catch { return { ok: false, error: 'net' }; }
+    },
+    // ---------- teams / classes ----------
+    'org:call': async ({ action, payload }) => {
+      if (!auth.currentUser) return { ok: false, error: 'signin' };
+      try {
+        const token = await auth.currentUser.getIdToken();
+        const r = await fetch(ORG_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ action, app: 'hp', ...(payload || {}) }) });
+        const j = await r.json(); await checkOrg(auth.currentUser.uid); return j;
+      } catch { return { ok: false, error: 'net' }; }
+    },
+    // progress summary for the team dashboard (only the learner's own member document; rules limit the fields)
+    'org:push': async ({ summary }) => {
+      const u = auth.currentUser, o = store.current.org; if (!u || !o || !o.id) return { ok: false };
+      try { await updateDoc(doc(db, 'orgs', o.id, 'members', u.uid), { shp: summary || {}, seen: serverTimestamp() }); return { ok: true }; } catch { return { ok: false }; }
     },
     'sync:push': async ({ uid, data, updatedAt }) => {
       await setDoc(doc(db, 'users', uid), { progress: data, updatedAt, serverTime: serverTimestamp() }, { merge: true });
