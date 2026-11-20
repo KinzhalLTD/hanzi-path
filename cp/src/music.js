@@ -36,9 +36,15 @@ function musGraph(){ const c=musCtx(); if(!c) return null; if(MUSIC.master) retu
   MUSIC.rev=c.createConvolver(); MUSIC.rev.buffer=ir; const wet=c.createGain(); wet.gain.value=.32; const wlp=c.createBiquadFilter(); wlp.type='lowpass'; wlp.frequency.value=3800;
   MUSIC.rev.connect(wlp); wlp.connect(wet); wet.connect(MUSIC.duck);
   return c; }
+/* samples are embedded as base64: decode them in place (no fetch(), which the artifact sandbox and some web views block) */
+function b64buf(d){ const s=atob(d.slice(d.indexOf(',')+1)), u=new Uint8Array(s.length); for(let i=0;i<s.length;i++) u[i]=s.charCodeAt(i); return u.buffer; }
+function decodeOne(c,ab){ return new Promise(res=>{ let done=false; const ok=b=>{ if(!done){ done=true; res(b); } }, bad=()=>{ if(!done){ done=true; res(null); } };
+  try{ const p=c.decodeAudioData(ab,ok,bad); if(p&&p.then) p.then(ok,bad); }catch(e){ bad(); } }); }
 function musLoad(){ if(MUSIC.loading) return MUSIC.loading; const c=musGraph(); if(!c) return Promise.resolve();
-  MUSIC.loading=Promise.all(GZ_SAMPLES().map(x=>fetch(x.d).then(r=>r.arrayBuffer()).then(ab=>new Promise(res=>{ try{ c.decodeAudioData(ab,b=>{ (MUSIC.buf[x.k]=MUSIC.buf[x.k]||[]).push({b,t:x.t,g:Math.pow(10,x.db/20),v:x.v}); res(); },()=>res()); }catch(e){ res(); } })).catch(()=>{})))
-    .then(()=>{ MUSIC.ready=Object.keys(MUSIC.buf).length>=10; }); return MUSIC.loading; }
+  MUSIC.loading=(async()=>{ for(const x of GZ_SAMPLES()){ let b=null; try{ b=await decodeOne(c,b64buf(x.d)); }catch(e){}
+      if(b) (MUSIC.buf[x.k]=MUSIC.buf[x.k]||[]).push({b,t:x.t,g:Math.pow(10,x.db/20),v:x.v}); }
+    MUSIC.ready=Object.keys(MUSIC.buf).length>=10; if(!MUSIC.ready) MUSIC.loading=null;   // try again on the next tap
+  })(); return MUSIC.loading; }
 /* one pluck: nearest recorded string, round robin, tuning corrected; optional press-bend (按音/滑音) and vibrato (吟) */
 function gzPluck(midi,t,vel,o={}){ const c=AC; if(!c||!MUSIC.ready) return; let k=null,bd=99;
   for(const key in MUSIC.buf){ const d=Math.abs(midi-key); if(d<bd||(d===bd&&+key<midi)){ bd=d; k=+key; } } if(k===null) return;
@@ -102,7 +108,7 @@ function musTick(){ const c=AC; if(!c||!MUSIC.on||!MUSIC.ready) return; const ah
   while(MUSIC.ei<MUSIC.ev.length){ const e=MUSIC.ev[MUSIC.ei], at=MUSIC.t0+e.t*MUSIC.spb*(1+.04*Math.max(0,e.t-(MUSIC.ev[MUSIC.ev.length-1].t-2))/2);   // slight ritardando at the end
     if(at>ahead) break; if(at>=c.currentTime-.05) gzPluck(e.p,Math.max(at,c.currentTime),e.v,e.o); MUSIC.ei++; } }
 async function musStart(){ if(MUSIC.on||S.music===false||document.hidden) return; const c=musGraph(); if(!c) return; MUSIC.on=true;
-  try{ if(c.state==='suspended') await c.resume(); }catch(e){} await musLoad(); if(!MUSIC.on) return;
+  try{ if(c.state!=='running') c.resume(); }catch(e){} await musLoad(); if(!MUSIC.on) return; if(!MUSIC.ready){ MUSIC.on=false; return; }
   MUSIC.master.gain.cancelScheduledValues(c.currentTime); MUSIC.master.gain.setTargetAtTime(musLevel(),c.currentTime,1.2);
   MUSIC.ev=[]; MUSIC.end=0; clearInterval(MUSIC.timer); MUSIC.timer=setInterval(musTick,200); musTick(); }
 function musStop(){ MUSIC.on=false; clearInterval(MUSIC.timer); MUSIC.timer=null; const c=AC; if(c&&MUSIC.master) MUSIC.master.gain.setTargetAtTime(0,c.currentTime,.4); MUSIC.ev=[]; MUSIC.end=0; }
@@ -114,5 +120,10 @@ function refreshMusChip(){ $$('[data-act="mus"]').forEach(b=>{ const on=S.music!
 ICON.music=svg('<path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',16);
 ICON.musicOff=svg('<path d="M9 18V9M9 5l11-2v9"/><circle cx="6.5" cy="18" r="2.5"/><path d="M3 3l18 18"/>',16);
 /* first tap anywhere starts the music (autoplay rules); background → pause, foreground → resume */
-addEventListener('pointerdown',()=>{ if(S.lang&&S.music!==false&&!MUSIC.on) musStart(); },{passive:true});
+/* iOS: let music play with the ring/silent switch like a media app, and unlock audio on the gestures WebKit accepts */
+try{ if(navigator.audioSession) navigator.audioSession.type='playback'; }catch(e){}
+function musUnlock(){ if(!S.lang||S.music===false) return; const c=musGraph(); if(!c) return;
+  if(c.state!=='running'){ try{ c.resume(); }catch(e){} try{ const b=c.createBuffer(1,1,22050), s=c.createBufferSource(); s.buffer=b; s.connect(c.destination); s.start(0); }catch(e){} }
+  if(!MUSIC.on) musStart(); }
+['pointerdown','touchend','click','keydown'].forEach(ev=>addEventListener(ev,musUnlock,{passive:true,capture:true}));
 document.addEventListener('visibilitychange',()=>{ if(document.hidden){ if(MUSIC.on){ musStop(); MUSIC.paused=true; } } else if(MUSIC.paused){ MUSIC.paused=false; musStart(); } });
