@@ -32,7 +32,8 @@
     "check:store": "node scripts/sync-web.js && node scripts/check-store.js",
     "eas-build-post-install": "node scripts/sync-web.js",
     "build:ios": "eas build -p ios --profile production",
-    "submit:ios": "eas submit -p ios --profile production --latest"
+    "submit:ios": "eas submit -p ios --profile production --latest",
+    "widget:enable": "node scripts/enable-widget.js"
   },
   "private": true,
   "main": "index.js"

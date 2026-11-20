@@ -16,6 +16,7 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { OAuthProvider, GoogleAuthProvider, signInWithCredential, signOut, deleteUser, onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { logEvent, setUser as setAnalyticsUser } from './analytics';
+import { saveWidget } from './widget';
 import { auth, db, analytics, GOOGLE_IOS_CLIENT_ID, GOOGLE_WEB_CLIENT_ID, TUTOR_URL, ORG_URL } from './firebase';
 import { initPurchases, buy, restore, linkUser } from './purchases';
 import { initAds, showInterstitial, showRewarded, showPrivacyOptions } from './ads';
@@ -160,6 +161,7 @@ export default function HanziBridge({ uri, onReady }) {
     voice: (p) => voiceClip(p),
     voiceInfo: async () => voiceInfo(),
     speakStop: async () => Speech.stop(),
+    widget: async ({ data }) => { saveWidget(data); return { ok: true }; },   // home-screen widget (docs/WIDGET.md)
     haptic: async ({ kind }) => {
       if (kind === 'error') return Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
       if (kind === 'success') return Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
