@@ -15,18 +15,9 @@ tutor_usage/{uid}) → Claude Messages API (model claude-haiku-5-5, ≤ 350 toke
 The Claude key and the RevenueCat secret live only in Google Secret Manager. One function serves both apps
 (`app: 'hp'|'cp'`), deployed once to Firebase project `hanzi-path-64170`.
 
-## Deploy (owner, Google Cloud Shell – copy-paste)
-Needs the Firebase **Blaze** (pay-as-you-go) plan, an Anthropic API key (console.anthropic.com → API keys) and the
-RevenueCat **secret** key (RevenueCat → Project → API keys → Secret API key).
-```bash
-gcloud config set project hanzi-path-64170
-npm i -g firebase-tools
-rm -rf ~/kz && git clone --depth 1 https://github.com/KinzhalLTD/hanzi-path ~/kz && cd ~/kz/server/functions && npm install && cd ..
-firebase login --no-localhost
-firebase functions:secrets:set ANTHROPIC_API_KEY --project hanzi-path-64170     # paste the Anthropic key when asked
-firebase functions:secrets:set REVENUECAT_SECRET --project hanzi-path-64170     # paste the RevenueCat secret key
-firebase deploy --only functions --project hanzi-path-64170
-```
+## Deploy (owner)
+One Cloud Shell block deploys the tutor, the teams function, the Firestore rules and the dashboard: see docs/SERVER.md.
+
 The URL it prints must match `TUTOR_URL` in `mobile/src/firebase.js` of both apps
 (`https://us-central1-hanzi-path-64170.cloudfunctions.net/tutor`).
 

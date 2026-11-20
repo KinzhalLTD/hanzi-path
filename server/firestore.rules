@@ -1,0 +1,24 @@
+rules_version = '2';
+// One rules file for the shared Firebase project hanzi-path-64170 (Hanzi Path + Cipher Path). Deploy from server/:
+//   firebase deploy --only firestore:rules --project hanzi-path-64170
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    // learner progress: Hanzi Path → users, Cipher Path → cipher_users (own document only)
+    match /users/{uid} { allow read, write, delete: if signedIn() && request.auth.uid == uid; }
+    match /cipher_users/{uid} { allow read, write, delete: if signedIn() && request.auth.uid == uid; }
+    // licence seat: the app reads its own seat; only the org Cloud Function writes
+    match /org_members/{uid} { allow read: if signedIn() && request.auth.uid == uid; }
+    // teams: admins read their org and its members (dashboard); a member may update only its own progress summary
+    match /orgs/{orgId} {
+      allow read: if signedIn() && request.auth.uid in resource.data.admins;
+      match /members/{uid} {
+        allow read: if signedIn() && request.auth.uid in get(/databases/$(database)/documents/orgs/$(orgId)).data.admins;
+        allow update: if signedIn() && request.auth.uid == uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['shp', 'scp', 'seen']);
+      }
+    }
+    // tutor_usage and everything else: server only
+    match /{document=**} { allow read, write: if false; }
+  }
+}
