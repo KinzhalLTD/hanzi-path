@@ -57,7 +57,8 @@ SCREENS.learn=m=>{ m.insertAdjacentHTML('beforeend',`${topbar()}<div class="hero
   $$('[data-tr]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('track',b.dataset.tr); }); $('#ex',m).onclick=()=>{ SFX.tap(); go('exam'); }; };
 
 /* dashed river joining the stones: measured after layout, redrawn on resize */
-function drawPath(map){ if(!map) return; const go=()=>{ const r=map.getBoundingClientRect(); const pts=$$('.pnode',map).map(n=>{ const b=n.getBoundingClientRect(); return [b.left+b.width/2-r.left,b.top+b.height/2-r.top]; }); if(pts.length<2) return;
+function drawPath(map){ if(!map) return; const go=()=>{ const r={width:map.offsetWidth,height:map.offsetHeight};   /* layout (offset) coordinates: unaffected by the text-size zoom */
+    const pts=$$('.pnode',map).map(n=>{ let x=n.offsetWidth/2,y=n.offsetHeight/2,e=n; while(e&&e!==map){ x+=e.offsetLeft; y+=e.offsetTop; e=e.offsetParent; } return [x,y]; }); if(pts.length<2) return;
   let d=`M${pts[0][0]} ${pts[0][1]}`; for(let i=1;i<pts.length;i++){ const [x0,y0]=pts[i-1],[x1,y1]=pts[i], my=(y0+y1)/2; d+=` C${x0} ${my} ${x1} ${my} ${x1} ${y1}`; }
   let svgEl=$('svg.river',map); if(!svgEl){ map.insertAdjacentHTML('afterbegin','<svg class="river" aria-hidden="true"><path/></svg>'); svgEl=$('svg.river',map); }
   svgEl.setAttribute('width',r.width); svgEl.setAttribute('height',r.height); $('path',svgEl).setAttribute('d',d); };
@@ -66,9 +67,9 @@ SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modF
   const s=mst(x.k), lab=CODE_LABS.find(l=>l.mod===x.k);
   const step=(id,n,label,sub,done)=>`<button class="step ${done?'done':''}" data-s="${id}"><span class="sn">${done?'✓':n}</span><div class="grow"><b>${label}</b><div class="sub">${sub}</div></div><span aria-hidden="true">›</span></button>`;
   const ms=TRACK(x.tr), pv=ms[x.ti-1], nx=ms[x.ti+1], ch=chapOf(x.tr)[Math.floor(x.ti/3)], nd=['L','Q','T','D'].find(q=>!s[q]);
-  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><span class="tag ${x.tr}">${TRK[x.tr].name()} · <span class="num">${x.ti+1}</span></span><span class="tag chtag" style="--ch:${ch.c[7]}"><span class="han">${ch.c[0]}</span> · ${t('jChapter')} <span class="num">${ch.ci+1}</span></span><div class="grow"></div>${s.done?stars(s.stars||1):''}</div>
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row mhead"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><span class="tag ${x.tr}">${TRK[x.tr].name()} · <span class="num">${x.ti+1}</span></span><span class="tag chtag" style="--ch:${ch.c[7]}"><span class="han">${ch.c[0]}</span> · ${t('jChapter')} <span class="num">${ch.ci+1}</span></span><div class="grow"></div>${s.done?stars(s.stars||1):''}</div>
   <div class="mhero"><div class="row" style="align-items:flex-start"><div class="grow"><h1>${x.ic} ${esc(L(x))}</h1><p class="sub" style="margin-top:6px">${esc(L(x,'sa','se'))}</p></div></div>
-    <div class="row"><span class="zhbig">${esc(x.zh)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div><span class="py">${esc(x.py)}</span></div>
+    <div class="row"><span class="zhbig">${esc(x.zh)}</span><button class="speak" id="say" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div><span class="py">${esc(x.py)}</span></div>
   <div class="steps">${step('L',1,t('stepL'),`<span class="num">${x.L.length}</span> ${t('lessons')}`,s.L)}${step('Q',2,`${bossOf(x.k).h} ${isAr()?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}`,s.Qb!=null?`${t('score')}: <span class="num">${Math.round(s.Qb*100)}%</span>`:`<span class="num">${x.Q.length}</span> ${t('questions')}`,s.Q)}
     ${step('T',3,t('stepT'),`<span class="num">${x.T.length}</span> · ${x.T.slice(0,3).map(w=>`<span class="han">${esc(w.h)}</span>`).join(' · ')}`,s.T)}${step('D',4,t('stepD'),`<span class="num">${x.D.length}</span> · ${t('dialog')}`,s.D)}
     ${lab?step('lab','⌨',t('stepLab'),esc(L(lab))+' · <span class="han">'+esc(lab.zh)+'</span>',!!S.labs[lab.k]):''}</div>
@@ -84,7 +85,7 @@ SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modF
 
 function dialogSheet(x){ let playing=false;
   sheet(`<div class="row"><h2 class="grow">💬 ${t('dialog')}</h2><button class="btn sm ghost" id="pa">▶</button></div><span class="han" style="color:var(--zh)">${esc(x.zh)}</span>
-    <div class="dlg">${x.D.map((d,i)=>`<div class="dl ${d.s}"><span class="who">${d.s}</span><div class="grow"><div class="zhline han">${esc(d.zh)}</div><div class="py" style="font-size:13px">${esc(d.py)}</div><div class="sub" dir="auto">${esc(L(d))}</div></div><button class="speak" data-i="${i}" aria-label="🔊">${ICON.speak}</button></div>`).join('')}</div>
+    <div class="dlg">${x.D.map((d,i)=>`<div class="dl ${d.s}"><span class="who">${d.s}</span><div class="grow"><div class="zhline han">${esc(d.zh)}</div><div class="py" style="font-size:13px">${esc(d.py)}</div><div class="sub" dir="auto">${esc(L(d))}</div></div><button class="speak" data-i="${i}" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div>`).join('')}</div>
     <button class="btn block" id="dd">${t('done')} ✓</button>`,el=>{
     $$('.speak',el).forEach(b=>b.onclick=()=>{ const d=x.D[+b.dataset.i]; speak(d.zh,{voice:dlgVoice(x.i,d.s)}); });
     $('#pa',el).onclick=async()=>{ if(playing){ playing=false; stopVoice(); return; } playing=true; await speak(x.zh,{voice:'n'}); for(const d of x.D){ if(!playing) break; await new Promise(r=>setTimeout(r,300)); await speak(d.zh,{voice:dlgVoice(x.i,d.s)}); } playing=false; };
@@ -99,7 +100,7 @@ function moduleDone(x){ SFX.gong(); fireworks(4); confetti(110); const s=mst(x.k
 SCREENS.lesson=(m,{k,i})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.min(n-1,i|0)); const l=x.L[i];
   m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar"><i style="width:${(i+1)/n*100}%"></i></div><span class="sub num">${i+1}/${n}</span></div>
   <div class="lcard rise"><span class="eyebrow">${x.ic} ${esc(L(x))}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${rich(L(l,'a','e'))}</div>${l.c?codeHTML(l.c):''}</div>
-  ${i===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div>`:''}
+  ${i===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div>`:''}
   <div class="ldots" aria-hidden="true">${x.L.map((_,j)=>`<i class="${j<i?'on':j===i?'cur':''}"></i>`).join('')}</div>
   <div class="grow"></div>${navPair(i>0?t('prevLesson'):t('back'),i<n-1?t('nextLesson'):t('finish')+' ✓',{bid:'pv',nid:'nx'})}`;
   $('#qx',m).onclick=()=>go('module',k); const sy=$('#say',m); if(sy) sy.onclick=()=>speak(x.zh);

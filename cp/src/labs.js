@@ -43,7 +43,7 @@ const termHTML=(r,title)=>`<div class="term"><div class="tbar"><i></i><i></i><i>
 SCREENS.codelab=(m,k)=>{ const l=CODE_LABS.find(x=>x.k===k); if(!l) return go('labs'); if(!labFree(l)) return paywall('lab');
   S.drafts=S.drafts||{}; let fails=0; const list=CODE_LABS.filter(x=>x.tr===l.tr), li=list.indexOf(l), nx=list[li+1];
   m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><span class="eyebrow">${t('codeLabs')} · <span class="num">${li+1}/${list.length}</span></span></div>${S.labs[k]?'<span class="tag ok">✓</span>':''}</div>
-  <div class="card col" style="gap:8px"><div class="row"><h2 class="grow">${esc(L(l))}</h2><span class="han" style="color:var(--zh)">${esc(l.zh)}</span><button class="speak" id="say" aria-label="🔊">${ICON.speak}</button></div>
+  <div class="card col" style="gap:8px"><div class="row"><h2 class="grow">${esc(L(l))}</h2><span class="han" style="color:var(--zh)">${esc(l.zh)}</span><button class="speak" id="say" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div>
     <div class="lbody"><p>${inl(L(l,'pa','pe'))}</p></div><div class="sub">${esc(L(MOD[l.mod]))}</div></div>
   <div class="editor"><textarea id="ed" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="code">${esc(S.drafts[k]||l.start)}</textarea>
     <div class="keys">${['(',')','{','}','[',']',';','"','=','=>','.','!','<','>','+','return','const','⇥'].map(c=>`<button data-c="${esc(c)}">${esc(c)}</button>`).join('')}</div></div>

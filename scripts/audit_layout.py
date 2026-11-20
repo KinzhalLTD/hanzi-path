@@ -1,8 +1,8 @@
 """Layout audit: opens every screen and sheet in Arabic and English at iPhone sizes and reports
 clipped text, horizontal overflow, elements outside the screen, tiny tap targets and overlaps with the tab bar.
-Usage: python3 scripts/audit_layout.py /abs/path/cipher-path.html [shots_dir]
+Usage: [FS=1.3] python3 scripts/audit_layout.py /abs/path/cipher-path.html [shots_dir]   (FS = in-app text size to test)
 """
-import sys, asyncio, json, os
+import os, sys, asyncio, json, os
 from playwright.async_api import async_playwright
 
 SIZES = [(375, 560), (390, 680), (430, 780), (390, 844)]   # SE / 15 / Pro Max inside the app viewer (top bar), full-screen 15
@@ -70,7 +70,7 @@ async def main():
         pg.on('pageerror', lambda e: errs.append(str(e)[:200]))
         await pg.goto('file://' + path); await pg.wait_for_timeout(300)
         await pg.click(f'[data-l="{lang}"]'); await pg.click('[data-g="se"]'); await pg.wait_for_timeout(200)
-        await pg.evaluate("S.pro=true;S.coins=999;save&&save()")
+        await pg.evaluate("S.pro=true;S.coins=999;S.music=false;S.fs=" + os.environ.get('FS', '1') + ";save&&save();typeof applyTextSize==='function'&&applyTextSize()")
         for i, st in enumerate(SCREENS + SHEETS):
           try:
             await pg.evaluate(st); await pg.wait_for_timeout(350)

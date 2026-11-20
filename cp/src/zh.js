@@ -17,7 +17,7 @@ SCREENS.zh=m=>{ const due=dueIds().length, learned=Object.keys(S.srs).length;
   $$('[data-k]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('terms',{k:b.dataset.k}); }); };
 
 function termSheet(w){ const x=MOD[w.mod]; const ex=x.D.find(d=>d.zh.includes(w.h));
-  sheet(`<div class="fcard"><div class="h">${esc(w.h)}</div><div class="py" style="font-size:18px">${esc(w.p)}</div><div style="font-size:17px">${esc(mean(w))}</div><button class="speak" id="sp" aria-label="🔊">${ICON.speak}</button></div>
+  sheet(`<div class="fcard"><div class="h">${esc(w.h)}</div><div class="py" style="font-size:18px">${esc(w.p)}</div><div style="font-size:17px">${esc(mean(w))}</div><button class="speak" id="sp" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div>
     <div class="row"><span class="tag ${x.tr}">${x.ic} ${esc(L(x))}</span><div class="grow"></div>${S.srs[w.id]?`<span class="tag ok">✓ ${t('learned')}</span>`:''}</div>
     ${ex?`<div class="card col" style="gap:4px"><div class="zhline han">${esc(ex.zh)}</div><div class="py" style="font-size:13px">${esc(ex.py)}</div><div class="sub" dir="auto">${esc(L(ex))}</div><button class="btn sm ghost" id="se" style="align-self:flex-start">🔊</button></div>`:''}
     <button class="btn ghost block" id="gm">${t('learn')}: ${esc(L(x))} →</button>`,el=>{
@@ -51,7 +51,7 @@ SCREENS.practice=(m,arg)=>{ const mk=arg&&arg.k; let words;
   const back=()=>mk?go('module',mk):go('zh');
   function card(){ const w=intro[ii];
     m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar zh"><i style="width:${ii/intro.length*100}%"></i></div><span class="sub num">${ii+1}/${intro.length}</span></div>
-    <span class="eyebrow">${t('terms')}</span><div class="fcard rise"><div class="h">${esc(w.h)}</div><div class="py" style="font-size:20px">${esc(w.p)}</div><div style="font-size:18px">${esc(mean(w))}</div><button class="speak" id="sp" aria-label="🔊">${ICON.speak}</button></div>
+    <span class="eyebrow">${t('terms')}</span><div class="fcard rise"><div class="h">${esc(w.h)}</div><div class="py" style="font-size:20px">${esc(w.p)}</div><div style="font-size:18px">${esc(mean(w))}</div><button class="speak" id="sp" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div>
     <div class="grow"></div>${navPair(ii>0?t('back'):'',ii<intro.length-1?t('next'):(isAr()?'إلى التمرين':'Practice'),{bid:'pv',nid:'nx'})}`;
     $('#qx',m).onclick=back; $('#sp',m).onclick=()=>speak(w.h); speak(w.h); const pv=$('#pv',m); if(pv) pv.onclick=()=>{ SFX.tap(); ii--; card(); };
     $('#nx',m).onclick=()=>{ SFX.tap(); ii++; ii<intro.length?card():quiz(); }; }
@@ -60,7 +60,7 @@ SCREENS.practice=(m,arg)=>{ const mk=arg&&arg.k; let words;
       const prompt=q.k==='mean'?`<div class="qtext">${t('qMean')}</div><div class="fcard" style="padding:18px"><div class="h">${esc(w.h)}</div><div class="py">${esc(w.p)}</div></div>`
         :q.k==='zh'?`<div class="qtext">${t('qZh')}</div><div class="fcard" style="padding:18px"><div style="font-size:20px;font-weight:600">${esc(mean(w))}</div></div>`
         :q.k==='py'?`<div class="qtext">${t('qPy')}</div><div class="fcard" style="padding:18px"><div class="h">${esc(w.h)}</div><div class="sub">${esc(mean(w))}</div></div>`
-        :`<div class="qtext">${t('qListen')}</div><div class="fcard" style="padding:18px"><button class="speak" id="ls" style="width:64px;height:64px;font-size:26px" aria-label="🔊">${ICON.speak}</button></div>`;
+        :`<div class="qtext">${t('qListen')}</div><div class="fcard" style="padding:18px"><button class="speak" id="ls" style="width:64px;height:64px;font-size:26px" aria-label="${isAr()?'استمع':'Listen'}">${ICON.speak}</button></div>`;
       m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="bar zh"><i style="width:${i/qs.length*100}%"></i></div><span class="sub num">${i+1}/${qs.length}</span></div>${prompt}
         <div class="col" style="gap:10px">${q.opts.map((o,j)=>`<button class="opt" data-j="${j}"><span class="ol">${'ABCD'[j]}</span><span class="grow">${o.h}</span></button>`).join('')}</div>`;
       $('#qx',m).onclick=back; const ls=$('#ls',m); if(ls){ ls.onclick=()=>speak(w.h); speak(w.h); }
@@ -91,7 +91,7 @@ SCREENS.talk=(m,arg)=>{ let cur=Math.max(0,TALK.findIndex(d=>d.k===((arg&&arg.d)
 
 SCREENS.talkscene=(m,{d:dk,i:si})=>{ const d=TALK.find(x=>x.k===dk), s=d&&d.scenes[si]; if(!s) return go('talk'); if(!tkFree(si)) return paywall('talk');
   const face=(TK_FACE[d.k]||[])[si]||d.emo, pv=SCENE_CAST[d.k+'/'+s.k]||'p', me=myVoice(); let ti=0, score=0, timer=null; const prev=cleanup; cleanup=()=>{ clearTimeout(timer); prev&&prev(); };
-  const bubble=(who,zh,py,tr)=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?face:'🙂'}</span><div class="tkbub"><div class="zhline han">${esc(zh)}</div><div class="py" style="font-size:12.5px">${esc(py)}</div><div class="sub" dir="auto">${esc(tr)}</div></div><button class="speak" data-z="${esc(zh)}" data-v="${who==='them'?pv:me}" aria-label="🔊" style="width:30px;height:30px">🔊</button></div>`;
+  const bubble=(who,zh,py,tr)=>`<div class="tkmsg ${who}" dir="ltr"><span class="tkface">${who==='them'?face:'🙂'}</span><div class="tkbub"><div class="zhline han">${esc(zh)}</div><div class="py" style="font-size:12.5px">${esc(py)}</div><div class="sub" dir="auto">${esc(tr)}</div></div><button class="speak" data-z="${esc(zh)}" data-v="${who==='them'?pv:me}" aria-label="${isAr()?'استمع':'Listen'}" style="width:30px;height:30px">🔊</button></div>`;
   m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button><div class="grow"><b>${esc(L(s))}</b><div class="sub">${esc(s.zh)}</div></div></div>
     <div class="card sub" style="padding:12px">${esc(L(s,'sa','se'))}</div><div class="tklog" id="lg"></div><div class="tkpanel" id="pn"></div>`;
   $('#qx',m).onclick=()=>go('talk',{d:d.k});
