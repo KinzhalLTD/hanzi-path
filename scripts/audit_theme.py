@@ -16,7 +16,7 @@ args = [a for i, a in enumerate(sys.argv) if i and not a.startswith('--') and i 
 opt = lambda k, d: (sys.argv[sys.argv.index(k) + 1] if k in sys.argv else d)
 RX, MAXG = opt('--routes', ''), int(opt('--max', '12'))
 os.makedirs(O, exist_ok=True)
-ROUTES = ["go('home')", "go('dict')", "go('games')", "go('culture')", "go('me')", "go('review')", "go('sectors')", "go('sector',1)", "go('accents')", "go('code')",
+ROUTES = ["go('festivals')", "go('certs')", "go('tutor')", "go('mock',{l:3})", "go('home');festSheet('spring')", "go('home');teamSheet()", "go('home')", "go('dict')", "go('games')", "go('culture')", "go('me')", "go('review')", "go('sectors')", "go('sector',1)", "go('accents')", "go('code')",
           "go('codeunit',{i:0})", "go('writehub')", "go('talk')", "go('talkscene',{d:'eng',i:0})", "go('grammar')", "go('gpoint',{k:'g1-shi'})", "go('gpoint',{k:'g3-ba'})",
           "go('gpractice',{k:'g1-hen'})", "go('level',1)", "go('level',4)", "go('lesson',{l:1,i:0})", "go('word',W[3].id)", "go('word',W.find(w=>w.l===5).id)",
           "go('write',{chars:['你','好']})", "go('builder',{mode:'rad'})", "go('section',0)", "go('section',3)", "go('reader',{i:0,start:0})", "go('recipe',0)", "go('placement')",

@@ -7,7 +7,7 @@ from playwright.async_api import async_playwright
 
 SIZES = [(375, 560), (390, 680), (430, 780), (390, 844)]   # SE / 15 / Pro Max inside the app viewer (top bar), full-screen 15
 SCREENS = [
-  "go('home')", "go('dict')", "go('games')", "go('culture')", "go('me')", "go('review')",
+  "go('festivals')", "go('certs')", "go('tutor')", "go('mock',{l:3})", "go('home');festSheet('spring')", "go('home');teamSheet()", "go('home')", "go('dict')", "go('games')", "go('culture')", "go('me')", "go('review')",
   "go('level',1)", "go('level',6)", "go('lesson',{l:1,i:0})", "go('word',W[40].id)", "go('word',W.find(w=>w.l===6).id)",
   "go('builder',{mode:'rad'})", "go('builder',{mode:'book'})", "go('sectors')", "go('sector',0)", "go('sector',5)",
   "go('accents')", "go('code')", "go('codeunit',{i:0})", "go('codeunit',{i:0,step:1})", "go('codeunit',{i:0,step:2})",
