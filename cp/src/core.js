@@ -73,7 +73,7 @@ function simAd(rewarded){ return new Promise(res=>{ const d=document.createEleme
 function interstitial(){ if(S.pro) return Promise.resolve(); S.adCount++; save(); if(S.adCount%2) return Promise.resolve(); const c=dayCount('adsDay'); if(c.n>=PLAN.adsPerDay) return Promise.resolve(); c.n++; save(); track('ad_shown',{format:'interstitial'}); return RN?native('interstitial',{}):simAd(false); }
 function rewarded(placement='other'){ track('ad_rewarded',{placement}); return (RN?native('rewarded',{}):simAd(true)).then(r=>{ if(r&&r.unavailable) toast(t('adNone')); return !!(r&&r.ok!==false&&!r.unavailable); }); }
 /* In the native app PRO comes ONLY from a verified App Store purchase (RevenueCat entitlement "pro"). The web preview simulates it. */
-function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^pro_/.test(sku),demo:true}); }
+function purchase(sku){ return RN?native('purchase',{sku}):Promise.resolve({ok:true,active:/^(pro|pass)_/.test(sku),demo:true}); }
 const LEGAL={terms:'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',privacy:'https://cipher-path-kinzhal.web.app/privacy.html',support:'https://cipher-path-kinzhal.web.app/support.html'};
 function openUrl(url){ if(RN) RN.postMessage(JSON.stringify({type:'openUrl',url})); else window.open(url,'_blank','noopener'); }
 function restorePurchases(){ return RN?native('restore',{}):Promise.resolve({ok:false}); }

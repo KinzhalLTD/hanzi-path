@@ -61,6 +61,10 @@ const fb = read('src/firebase.js');
 need(/GOOGLE_IOS_CLIENT_ID = '\d+-[a-z0-9]+\.apps\.googleusercontent\.com'/.test(fb), 'GOOGLE_IOS_CLIENT_ID not set in src/firebase.js (CLIENT_ID of the Cipher Path iOS app)');
 need(fb.includes("USERS = 'cipher_users'"), "Firestore collection must be cipher_users (Hanzi Path uses users)");
 
+// growth (docs/GROWTH.md): analytics keys, sister-app link
+const an = read('src/analytics.js');
+need(/GA4_MEASUREMENT_ID = 'G-[A-Z0-9]+'/.test(an) && !/PASTE_API_SECRET/.test(an), 'Analytics not set: paste the GA4 Measurement ID and API secret in src/analytics.js (docs/GROWTH.md)');
+
 // web app
 const web = 'assets/web/cipher-path.html';
 need(exists(web), 'web app missing – run npm run sync-web');
@@ -69,6 +73,7 @@ if (exists(web)) {
   need(html.includes('viewport-fit=cover'), 'web app shell has no phone viewport');
   need(html.includes('cipher-path-kinzhal.web.app/privacy.html'), 'privacy policy link missing in the web app');
   need(!/hanzi-path-64170|space\.kinzhal\.hanzipath/.test(html), 'web app still references Hanzi Path');
+  warn(!/const APP_IDS=\{hp:'',cp:''\}/.test(html), 'sister-app cross-promo off: paste both Apple IDs in APP_IDS (src/growth.js of both apps), then rebuild');
 }
 for (const w of warnings) console.log('warning:', w);
 if (errors.length) { for (const e of errors) console.log('✗', e); console.log(`\ncheck:store – ${errors.length} problem(s)`); process.exit(1); }

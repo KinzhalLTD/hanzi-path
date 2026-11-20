@@ -15,12 +15,12 @@ Object.assign(T.en,{reviveT:'Extra heart and retry',reviveOn:'Heart restored! Tr
   unlockAll:'Unlock the whole path',pwModule:'This module is part of PRO',pwGate:'Advanced chapter gates are part of PRO',pwMilestone:'3 modules done! Keep going without limits',pwExam:'Unlimited exams with PRO',pwLab:'This lab is part of PRO'});
 const PLAN2={rewardedPerDay:5,reviveTok:40,examTok:80,freeze:60,packs:[['coins_c1',600,'c1'],['coins_c2',1500,'c2',.25],['coins_c3',3500,'c3',.45]]};
 Object.assign(PRICES.ar,{c1:'7.99 ر.س',c2:'14.99 ر.س',c3:'29.99 ر.س'}); Object.assign(PRICES.en,{c1:'$1.99',c2:'$3.99',c3:'$7.99'});
-const trialOk=()=>window.__trialOk!==false;
+const trialOk=()=>window.__trialOk!==false&&!saleOn();
 const PW_SRC={module:'pwModule',next:'pwModule',gate:'pwGate',milestone:'pwMilestone',exam:'pwExam',lab:'pwLab'};
 /* ---------- paywall: Free vs PRO, yearly with a 7-day trial (when Apple says the learner is eligible) ---------- */
 function paywall(src='other'){ track('paywall_view',{src}); let plan='pro_yearly';
   const rows=[['rowMods','6','24'],['rowLabs',isAr()?'محدودة':'Starter',t('unlimited')],['rowGates','2','8'],['rowExams','1'+t('perDay'),t('unlimited')],['rowTalk','1',t('unlimited')],['rowRevive',t('adOrToken'),t('everyFight')],['rowBits','×1','×1.5'],['rowAds',t('yes'),t('noAds')]];
-  const plans=()=>[['pro_yearly',t('yearly'),price('yearly'),`≈ ${price('yearlyPm')}${t('perMonth')}`,trialOk()?t('trial7'):t('best')],['pro_monthly',t('monthly'),price('monthly'),'',''],['pro_lifetime',t('lifetime'),price('lifetime'),isAr()?'دفعة واحدة':'One payment','']];
+  const plans=()=>[['pro_yearly',t('yearly'),yearlyLabel(),`≈ ${price('yearlyPm')}${t('perMonth')}`,trialOk()?t('trial7'):t('best')],['pro_monthly',t('monthly'),price('monthly'),'',''],['pro_lifetime',t('lifetime'),price('lifetime'),isAr()?'دفعة واحدة':'One payment','']];
   const cta=()=>plan==='pro_yearly'&&trialOk()?t('startTrial'):t('subscribe');
   const fine=()=>plan==='pro_yearly'&&trialOk()?t('thenPrice').replace('{p}',price('yearly')):plan==='pro_lifetime'?(isAr()?'شراء لمرة واحدة، بلا اشتراك.':'One-time purchase, no subscription.'):t('cancelAny');
   sheet(`<div class="pwhero ondark"><div class="moon sm">${dragon('cool',74)}</div><div class="col" style="gap:4px;min-width:0"><span class="eyebrow">${PW_SRC[src]?t(PW_SRC[src]):t('unlockAll')}</span><h2>${t('payT')}</h2><p class="sub" style="margin:0">${t('payB')}</p></div></div>
@@ -29,7 +29,7 @@ function paywall(src='other'){ track('paywall_view',{src}); let plan='pro_yearly
     <button class="btn block" id="buy">${cta()}</button><div class="sub fineprint" id="fp" style="text-align:center">${fine()}${RN?'':' · '+t('demo')}</div>
     <div class="row" style="justify-content:center;gap:16px"><button class="link" id="rs">${t('restore')}</button><button class="link" id="tm">${t('terms2')}</button><button class="link" id="pv">${t('privacy')}</button></div>`,el=>{
     $$('.plan',el).forEach(b=>b.onclick=()=>{ plan=b.dataset.p; $$('.plan',el).forEach(x=>x.setAttribute('aria-pressed',x===b)); $('#buy',el).textContent=cta(); $('#fp',el).textContent=fine()+(RN?'':' · '+t('demo')); SFX.tap(); });
-    $('#buy',el).onclick=async()=>{ const b=$('#buy',el); b.disabled=true; track('purchase_start',{plan,src}); const r=await purchase(plan); b.disabled=false;
+    $('#buy',el).onclick=async()=>{ const b=$('#buy',el); b.disabled=true; track('purchase_start',{plan,src}); const r=await purchase(saleSku(plan)); b.disabled=false;
       if(r&&!r.ok&&!r.cancelled) toast(t('buyFail'));
       if(r&&r.ok&&r.active){ track(plan==='pro_yearly'&&trialOk()?'trial_start':'purchase',{plan,src}); if(!RN){ S.pro=true; save(); } closeSheet(); SFX.win(); confetti(140); fireworks(4); toast(t('proOn')); render(); } };
     $('#rs',el).onclick=async()=>{ const r=await restorePurchases(); toast(r&&r.active?t('proOn'):(isAr()?'لا توجد مشتريات':'No purchases found')); };
