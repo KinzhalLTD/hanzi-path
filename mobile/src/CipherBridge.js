@@ -126,7 +126,7 @@ export default function CipherBridge({ uri, onReady }) {
       if (kind === 'select') return Haptics.selectionAsync();
       return Haptics.impactAsync(kind === 'medium' ? Haptics.ImpactFeedbackStyle.Medium : kind === 'heavy' ? Haptics.ImpactFeedbackStyle.Heavy : Haptics.ImpactFeedbackStyle.Light);
     },
-    share: async ({ text }) => Share.share({ message: text }),
+    share: async ({ text, image }) => Share.share(image ? { url: image, message: text } : { message: text }),   // image: PNG data URL (certificates)
     track: async ({ ev, props }) => { try { logEvent(ev, props || {}); } catch {} },
     // ---------- in-app purchases ----------
     purchase: async ({ sku }) => buy(sku),
