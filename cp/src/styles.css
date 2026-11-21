@@ -653,3 +653,11 @@ html[dir="rtl"] h2.sech::after{background:linear-gradient(270deg,var(--line2),tr
 .cstep.done .cchk{background:var(--jade,#2f7d6b);border-color:var(--jade,#2f7d6b);color:#fff}
 .ivkey{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px dashed var(--gold)}
 .ivkey p{margin:6px 0 0;line-height:1.7}
+/* ===== Arabic typography: one Arabic face everywhere (bundled IBM Plex Sans Arabic), never letter-spaced
+   (tracking breaks the joined Arabic script), comfortable line height ===== */
+html[lang="ar"]{--f-ui:"IBM Plex Sans Arabic","Inter",system-ui,sans-serif;--f-head:"IBM Plex Sans Arabic","Space Grotesk",system-ui,sans-serif;--f-ar:"IBM Plex Sans Arabic","Geeza Pro",system-ui,sans-serif}
+input,textarea,select,button{font-family:inherit}
+html[lang="ar"] *,html[lang="ar"] *::placeholder,html[lang="ar"] *::before,html[lang="ar"] *::after{letter-spacing:0!important}
+html[lang="ar"] body{line-height:1.7}
+html[lang="ar"] :is(.eyebrow,.lkind,.cmp .cmph){text-transform:none}
+#tcode::placeholder{letter-spacing:0;font-weight:500}

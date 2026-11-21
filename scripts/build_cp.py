@@ -41,6 +41,13 @@ js = '\n'.join([PRELUDE, 'const CURR=' + blk('curr', curr) + ';', 'const TALK=' 
                'const GZ_SAMPLES=(()=>{let v;return ()=>v||(v=' + blk('gz', gz()) + ');})();'] +
                [open(f'{src}/{n}.js', encoding='utf-8').read() for n in ORDER] + ['render();'])
 css = open(src + '/styles.css', encoding='utf-8').read()
+# Arabic font bundled (IBM Plex Sans Arabic, OFL – art/fonts): the phone app works offline, so Arabic must not depend
+# on Google Fonts or the system fallback. Arabic glyph subset only (unicode-range), 4 weights, ~185 KB.
+import base64 as _b64
+_ff = ''.join("@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-display:swap;font-weight:%d;"
+              "src:url(data:font/woff2;base64,%s) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}"
+              % (w, _b64.b64encode(open(f'{R}/art/fonts/ibm-plex-sans-arabic-arabic-{w}-normal.woff2', 'rb').read()).decode()) for w in (400, 500, 600, 700))
+css = _ff + css
 fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@600;700&family=Ma+Shan+Zheng&display=swap'
 html = f'''<title>Cipher Path</title>
 <meta name="claude:viewport-fit-sides" content="cover">
