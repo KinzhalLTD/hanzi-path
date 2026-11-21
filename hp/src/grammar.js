@@ -105,7 +105,7 @@ SCREENS.gpractice=(m,arg)=>{ const one=arg&&arg.k?grByKey(arg.k):null; const L=o
     const f=document.createElement('div'); f.className='feedback rise '+(ok?'good':'bad');
     f.innerHTML=`<div>${extra||''}<div class="row" style="gap:12px;align-items:center"><div class="bao-hop">${bao(ok?'happy':'oops',58)}</div><div class="grow"><h3 style="color:${ok?'var(--p-7be3b0)':'var(--p-ff9a8f)'}">${ok?t('correct'):t('wrong')}</h3><div class="bubble">${esc(quip(ok?'ok':'bad'))}</div></div></div>
       ${ok?'':`<div class="sub" style="color:var(--ivory);margin-top:6px"><b>${esc(grT(q.p))}</b> · ${esc((isAr()?q.p.xa:q.p.xe).split(/(?<=[.。!?؟])\s/)[0])}</div>`}<button class="btn block ${ok?'jade':'red'}" id="nx">${t('next')}</button></div>`;
-    document.body.appendChild(f); const ck=$('#ck',m); if(ck) ck.hidden=true; $('#nx',f).onclick=()=>{ f.remove(); i++; i<qs.length?ask():finish(); }; };
+    document.body.appendChild(f); addReport(f,'g'+q.p.k+':'+(q.k||'')); const ck=$('#ck',m); if(ck) ck.hidden=true; $('#nx',f).onclick=()=>{ f.remove(); i++; i<qs.length?ask():finish(); }; };
   const choose=(q,label,body,opts,isRight,after)=>{ m.innerHTML=`${head()}<div class="prompt rise" style="padding-top:10px"><div class="sub">${label}</div>${body}</div>
       <div class="opts one">${opts.map((o,j)=>`<button class="opt" data-j="${j}" ${q.k==='mean'?'dir="auto"':'dir="ltr" lang="zh"'} style="${q.k==='mean'?'font-size:15.5px':'font-size:22px'};min-height:56px">${q.k==='mean'?esc(o):`<span class="han" style="font-size:${q.k==='gap'?26:22}px">${esc(o)}</span>`}</button>`).join('')}</div>
       <div class="grow"></div><button class="btn block" id="ck" disabled>${t('check')}</button>`;

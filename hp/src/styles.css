@@ -674,3 +674,9 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
 .mtile{width:auto;min-width:56px;font-size:22px;padding:10px 14px}
 .chip.ok{border-color:var(--p-7be3b0,#7be3b0)}
 .navpair{display:flex;gap:10px}.navpair>.btn{flex:1}
+
+/* Arabic typography: one bundled face everywhere, and no letter-spacing (it breaks the joined letters apart) */
+html[lang="ar"] *{letter-spacing:0!important}
+input,textarea,select,button{font-family:inherit}
+html[lang="ar"] :is(input,textarea,select,button,.btn){font-family:var(--f-ar)}
+.feedback .qrep{position:absolute;top:0;inset-inline-end:0;width:30px;height:30px;min-height:0;font-size:14px;opacity:.75}

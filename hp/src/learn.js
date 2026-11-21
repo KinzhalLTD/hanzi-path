@@ -118,7 +118,7 @@ function lessonPlan(words,pool,{review=false}={}){ const qs=[]; const others=w=>
   return out; }
 
 /* ---------- renderers (called from runQuiz.ask with its context) ---------- */
-function sentenceReveal(w){ const ex=w.ex; return `<div class="paper excard col" style="gap:4px;padding:14px">${analyseHTML2(ex.zh,ex.py)}<div class="sub" style="color:var(--ink2)">${esc(ex.py)}</div><div>${esc(exMeaning(ex))}</div></div>`; }
+function sentenceReveal(w){ const ex=w.ex; return `<div class="paper excard col" style="gap:4px;padding:14px">${analyseHTML2(ex.zh,ex.py)}<div class="sub" style="color:var(--ink2)"><bdi dir="ltr">${esc(ex.py)}</bdi></div><div>${esc(exMeaning(ex))}</div></div>`; }
 const LEARN_Q={
   gap(q,C){ const w=q.w, ex=w.ex, parts=ex.zh.split(w.h);
     C.m.innerHTML=`${C.head()}<div class="prompt rise" style="padding-top:10px"><div class="sub">✏️ ${t('qGap')}</div>

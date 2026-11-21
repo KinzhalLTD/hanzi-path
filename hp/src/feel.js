@@ -24,3 +24,11 @@ function screenEnter(back) {
 }
 Object.assign(T.ar,{themeT:'المظهر',themeDark:'داكن',themeLight:'فاتح'});
 Object.assign(T.en,{themeT:'Appearance',themeDark:'Dark',themeLight:'Light'});
+
+// Learners flag an exercise that looks wrong (pinyin, meaning, sentence, grammar): a small ⚑ in the feedback sheet.
+// Kept in S.reports and sent as GA4 event `content_report` (param id: w<wordId>:<kind> or g<grammarKey>:<kind>).
+function addReport(f,id){ const h=f.querySelector('h3'); if(!h||!id) return; const ar=isAr();
+  const b=document.createElement('button'); b.className='icon-btn qrep'; b.textContent='⚑'; b.setAttribute('aria-label',ar?'أبلغ عن خطأ في هذا التمرين':'Report a problem with this exercise');
+  if(S.reports&&S.reports[id]){ b.disabled=true; b.textContent='✓'; }
+  b.onclick=()=>{ S.reports=S.reports||{}; S.reports[id]=Date.now(); save(); try{ track('content_report',{id}); }catch(e){} b.disabled=true; b.textContent='✓'; toast(ar?'شكرًا! سنراجع هذا التمرين.':'Thanks! We will review this exercise.'); };
+  h.parentElement.style.position='relative'; h.insertAdjacentElement('afterend',b); }

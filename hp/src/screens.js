@@ -130,7 +130,7 @@ function runQuiz(m,{intro,questions,onDone,back,gate}){
       const f=document.createElement('div'); f.className='feedback rise '+(ok?'good':'bad');
       const mood=ok?(streak>=5?'cool':quick?'wow':'happy'):'oops', line=ok?(streak>=3&&streak%3===0?quip('streak'):quip('ok')):quip('bad');
       f.innerHTML=`<div>${extra}<div class="row" style="gap:12px;align-items:center"><div class="bao-hop">${bao(mood,58)}</div><div class="grow"><h3 style="color:${ok?'var(--p-7be3b0)':'var(--p-ff9a8f)'}">${ok?t('correct')+(streak>=3?` 🔥${streak}`:'')+(quick?' ⚡':''):t('wrong')}</h3><div class="bubble">${esc(line)}</div></div></div>${ok||extra?'':`<div class="row"><span class="han" style="font-size:26px">${esc(w.h)}</span><span class="py">${esc(w.p)}</span><span class="grow">${mean(w)}</span></div>${storyOf(w.h)?`<div class="sub" style="color:var(--ivory)">😄 ${esc(isAr()?storyOf(w.h)[2]:storyOf(w.h)[1])}</div>`:''}${extrasHTML(w)}`}<button class="btn block ${ok?'jade':'red'}" id="nx">${t('next')}</button></div>`;
-      document.body.appendChild(f); bindExtras(f,w); $('#ck',m).hidden=true;
+      document.body.appendChild(f); bindExtras(f,w); $('#ck',m).hidden=true; addReport(f,'w'+w.id+':'+q.k);
       if(!ok&&!gate){ f.firstElementChild.insertAdjacentHTML('beforeend',`<button class="tutwhy" id="tw">🥟 ${isAr()?'اسأل باو: لماذا؟':'Ask Bao why'}</button>`);
         $('#tw',f).onclick=()=>{ const st=x=>String(x||'').replace(/<[^>]+>/g,''); const ch=(($('.opt.wrong',m)||{}).textContent||'').trim();
           tutorExplain({question:`${q.k} · ${w.h}`,options:(q.opts||[]).map(o=>typeof o==='string'?o:st(o.h||'')),right:`${w.h} (${w.p}) = ${st(mean(w))}`,chosen:ch,why:''}); }; }
