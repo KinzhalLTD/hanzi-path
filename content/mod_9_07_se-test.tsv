@@ -74,9 +74,9 @@ T|前置条件|qiánzhì tiáojiàn|الشرط المسبق|precondition
 T|后置条件|hòuzhì tiáojiàn|الشرط اللاحق|postcondition
 T|预期结果|yùqī jiéguǒ|النتيجة المتوقعة|expected result
 T|实际结果|shíjì jiéguǒ|النتيجة الفعلية|actual result
-T|通过|tōngguò|النجاح|pass
-T|失败|shībài|الفشل|fail
-T|跳过|tiàoguò|التخطي|skip
+T|测试通过率|cèshì tōngguò lǜ|نسبة نجاح الاختبارات|test pass rate
+T|失败用例|shībài yòng lì|حالة الاختبار الفاشلة|failing test case
+T|跳过测试|tiàoguò cèshì|تخطي الاختبار|skipped test
 T|不稳定测试|bùwěn dìng cèshì|الاختبار المتقلّب|flaky test
 T|测试隔离|cèshì gélí|عزل الاختبارات|test isolation
 T|等价类|děngjià lèi|فئة التكافؤ|equivalence class
@@ -94,8 +94,8 @@ T|复现|fùxiàn|إعادة الإنتاج|reproduce
 T|根本原因|gēnběn yuányīn|السبب الجذري|root cause
 T|修复|xiūfù|الإصلاح|fix
 T|验证|yànzhèng|التحقق|verification
-T|确认|quèrèn|التأكيد|confirmation
-T|关闭|guānbì|الإغلاق|close
+T|确认测试|quèrèn cèshì|اختبار التأكيد|confirmation test
+T|关闭缺陷|guānbì quēxiàn|إغلاق العيب|close a defect
 T|重新打开|chóngxīn dǎkāi|إعادة الفتح|reopen
 T|测试左移|cèshì zuǒ yí|نقل الاختبار مبكرًا|shift-left testing
 T|行为驱动开发|xíngwéi qūdòng kāifā|التطوير الموجّه بالسلوك|behaviour-driven development

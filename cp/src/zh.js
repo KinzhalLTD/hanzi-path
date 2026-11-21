@@ -30,9 +30,15 @@ SCREENS.terms=(m,arg)=>{ const mk=arg&&arg.k; let tr='all', q='';
   <div class="seg" id="fs"><button data-t="all" aria-pressed="true">${t('all')}</button><button data-t="se" aria-pressed="false">💻 ${t('trSE')}</button><button data-t="cy" aria-pressed="false">🛡️ ${t('trCY')}</button></div>`}
   <div class="col" id="tl" style="gap:8px"></div>`);
   const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[\s']/g,'');
-  const draw=()=>{ const nq=norm(q); const list=TERMS.filter(w=>(mk?w.mod===mk:tr==='all'||w.tr===tr)&&(!nq||norm(w.h+w.p+w.ar+w.en).includes(nq)));
-    $('#tl',m).innerHTML=list.length?list.map(w=>`<button class="term-row" data-id="${w.id}"><span class="h">${esc(w.h)}</span><div class="grow"><div class="py" style="font-size:13px">${esc(w.p)}</div><div>${esc(mean(w))}</div></div>${S.srs[w.id]?'<span class="tag ok">✓</span>':''}</button>`).join(''):`<div class="empty">${t('noResults')}</div>`;
-    $$('.term-row',m).forEach(b=>b.onclick=()=>{ SFX.tap(); termSheet(byId[b.dataset.id]); }); };
+  // 2,400 terms: search text is normalised once, rows are rendered in pages of 80 as the list scrolls
+  const key=w=>w._n||(w._n=norm(w.h+w.p+w.ar+w.en)); const row=w=>`<button class="term-row" data-id="${w.id}"><span class="h">${esc(w.h)}</span><div class="grow"><div class="py" style="font-size:13px">${esc(w.p)}</div><div>${esc(mean(w))}</div></div>${S.srs[w.id]?'<span class="tag ok">✓</span>':''}</button>`;
+  let list=[], shown=0, io=null; const tl=$('#tl',m);
+  const more=()=>{ const sen=$('#tsen',tl); if(sen) sen.remove(); const n=io?80:list.length; tl.insertAdjacentHTML('beforeend',list.slice(shown,shown+n).map(row).join('')); shown+=n;
+    if(shown<list.length){ tl.insertAdjacentHTML('beforeend',`<div id="tsen" class="sub" style="text-align:center;padding:12px"><span class="num">${shown}</span> / <span class="num">${list.length}</span></div>`); if(io) io.observe($('#tsen',tl)); } };
+  if('IntersectionObserver' in window) io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ io.unobserve(e.target); more(); } }),{rootMargin:'600px'});
+  tl.onclick=e=>{ const b=e.target.closest('.term-row'); if(b){ SFX.tap(); termSheet(byId[b.dataset.id]); } };
+  const draw=()=>{ const nq=norm(q); list=TERMS.filter(w=>(mk?w.mod===mk:tr==='all'||w.tr===tr)&&(!nq||key(w).includes(nq))); shown=0;
+    if(!list.length){ tl.innerHTML=`<div class="empty">${t('noResults')}</div>`; return; } tl.innerHTML=''; more(); };
   $('#bk',m).onclick=()=>goBack('zh');
   const qi=$('#q',m); if(qi) qi.oninput=e=>{ q=e.target.value; draw(); };
   $$('#fs button',m).forEach(b=>b.onclick=()=>{ tr=b.dataset.t; $$('#fs button',m).forEach(x=>x.setAttribute('aria-pressed',x===b)); draw(); });

@@ -64,7 +64,7 @@ T|漏洞利用|lòudòng lìyòng|استغلال الثغرة|exploit
 T|漏洞库|lòudòng kù|قاعدة بيانات الثغرات|vulnerability database
 T|通用漏洞披露|tōngyòng lòudòng pīlù|معرّف الثغرات الشائعة|CVE
 T|通用漏洞评分系统|tōngyòng lòudòng píngfēn xìtǒng|نظام تقييم الثغرات|CVSS
-T|严重|yánzhòng|حرجة|critical
+T|严重漏洞|yánzhòng lòudòng|الثغرة الحرجة|critical vulnerability
 T|高危|gāowēi|عالية الخطورة|high severity
 T|中危|zhōng wēi|متوسطة الخطورة|medium severity
 T|低危|dī wēi|منخفضة الخطورة|low severity
@@ -94,7 +94,7 @@ T|漏洞生命周期|lòudòng shēngmìngzhōuqī|دورة حياة الثغر�
 T|漏洞披露政策|lòudòng pīlù zhèngcè|سياسة الإفصاح عن الثغرات|vulnerability disclosure policy
 T|协调披露|xiétiáo pīlù|الإفصاح المنسّق|coordinated disclosure
 T|安全应急响应中心|ānquán yìngjí xiǎngyìng zhōngxīn|مركز الاستجابة الأمنية|security response centre
-T|奖金|jiǎngjīn|المكافأة|bounty reward
+T|漏洞奖励计划|lòudòng jiǎnglì jìhuà|برنامج مكافآت الثغرات|bug bounty programme
 T|赏金猎人|shǎngjīnlièrén|صائد المكافآت|bounty hunter
 T|众测|zhòng cè|الاختبار الجماعي|crowdsourced testing
 T|测试范围外|cèshì fànwéi wài|خارج النطاق|out of scope
@@ -108,10 +108,10 @@ T|靶场|bǎchǎng|ساحة التدريب|cyber range
 T|靶机|bǎjī|جهاز الهدف للتدريب|target machine
 T|实验环境|shíyàn huánjìng|بيئة المختبر|lab environment
 T|虚拟实验室|xūnǐ shíyànshì|المختبر الافتراضي|virtual lab
-T|旗帜|qízhì|العلم|flag
+T|夺旗|duó qí|التقاط العلم|capture the flag (flag)
 T|解题|jiětí|حل التحدي|solve a challenge
 T|逆向|nìxiàng|الهندسة العكسية (اختصارًا)|reversing
-T|杂项|záxiàng|المتنوعات|miscellaneous
+T|取证题|qǔzhèng tí|تحدي التحليل الجنائي|forensics challenge
 T|二进制漏洞|èrjìnzhì lòudòng|ثغرات الملفات التنفيذية|binary exploitation
 T|密码学题|mìmǎxué tí|تحدي التشفير|crypto challenge
 T|网络安全竞赛|wǎngluò ānquán jìngsài|مسابقة الأمن السيبراني|cybersecurity competition

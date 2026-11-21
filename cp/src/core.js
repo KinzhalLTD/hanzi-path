@@ -160,7 +160,7 @@ function bindTop(m){ fitTop(); $$('[data-act="shop"]',m).forEach(b=>b.onclick=()
   $$('[data-act="theme"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); toggleTheme(); if(route.name==='me') render(); });
   $$('[data-act="streak"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); go('me'); });
   $$('[data-act="mus"]',m).forEach(b=>b.onclick=()=>{ SFX.tap(); musSet(S.music===false?(S.mv||'low'):'off'); toast((S.music!==false?'🎵 ':'🔇 ')+(isAr()?(S.music!==false?'موسيقى الغوجنغ':'الموسيقى متوقفة'):(S.music!==false?'Guzheng music on':'Music off'))); if(route.name==='me') render(); }); }
-function tabOf(n){ return TABS.some(x=>x[0]===n)?n:['track','module','exam'].includes(n)?'learn':['codelab','seclab','pwlab','fwlab','ctflab'].includes(n)?'labs':['terms','talk'].includes(n)?'zh':''; }
+function tabOf(n){ return TABS.some(x=>x[0]===n)?n:['track','module','exam','msum'].includes(n)?'learn':['codelab','seclab','pwlab','fwlab','ctflab'].includes(n)?'labs':['terms','talk'].includes(n)?'zh':''; }
 function tabLabel(k){ return k==='zh'?`<span class="zhi" aria-hidden="true">中</span>`:ICON[k]; }
 function render(){
   applyLang(); rollDay();

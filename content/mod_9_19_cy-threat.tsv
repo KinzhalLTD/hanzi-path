@@ -96,7 +96,7 @@ T|攻击载荷|gōngjī zàihè|حمولة الهجوم|attack payload
 T|侦察阶段|zhēnchá jiēduàn|مرحلة الاستطلاع|reconnaissance phase
 T|武器化|wǔqì huà|التسليح|weaponisation
 T|投递|tóudì|التسليم|delivery
-T|利用|lìyòng|الاستغلال|exploitation
+T|漏洞利用链|lòudòng lìyòng liàn|سلسلة الاستغلال|exploit chain
 T|安装|ānzhuāng|التثبيت|installation
 T|目标达成|mùbiāo dáchéng|تحقيق الهدف|actions on objectives
 T|杀伤链|shāshāng liàn|سلسلة القتل|kill chain
@@ -105,7 +105,7 @@ T|技术手段|jìshù shǒuduàn|الأسلوب التقني|technique
 T|攻击手法|gōngjī shǒufǎ|أسلوب الهجوم|attack method
 T|权限维持|quánxiàn wéichí|الحفاظ على الوصول|maintaining access
 T|凭据转储|píngjù zhuǎn chǔ|تفريغ بيانات الاعتماد|credential dumping
-T|提权|tíquán|رفع الصلاحية|escalate privileges
+T|本地提权|běndì tíquán|رفع الصلاحيات المحلي|local privilege escalation
 T|防御规避|fángyù guībì|التهرب من الدفاعات|defence evasion
 T|痕迹清除|hénjì qīngchú|محو الآثار|covering tracks
 T|加密通信|jiāmì tōngxìn|الاتصال المشفّر|encrypted communication

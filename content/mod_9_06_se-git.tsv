@@ -44,7 +44,7 @@ T|协作|xiézuò|تعاون|collaboration
 T|工作区|gōngzuò qū|مساحة العمل|working directory
 T|版本库|bǎnběn kù|مستودع الإصدارات|repository (version store)
 T|初始化仓库|chūshǐhuà cāngkù|تهيئة المستودع|initialize a repository
-T|添加|tiānjiā|الإضافة|add
+T|添加到暂存区|tiānjiā dào zàn cún qū|الإضافة إلى منطقة التهيئة|stage a change
 T|提交信息|tíjiāo xìnxī|رسالة الالتزام|commit message
 T|哈希值|hāxī zhí|قيمة التجزئة|hash value
 T|检出|jiǎnchū|السحب إلى العمل|checkout
@@ -115,9 +115,9 @@ T|代码冻结|dàimǎ dòngjié|تجميد الكود|code freeze
 T|合并窗口|hébìng chuāngkǒu|نافذة الدمج|merge window
 T|小步提交|xiǎo bù tíjiāo|الالتزامات الصغيرة|small commits
 T|原子提交|yuánzǐ tíjiāo|الالتزام الذري|atomic commit
-T|草稿|cǎogǎo|المسودة|draft
+T|草稿拉取请求|cǎogǎo lāqǔ qǐngqiú|طلب الدمج المسودة|draft pull request
 T|分叉|fēnchà|التشعب|divergence
 T|变更|biàngēng|التغيير|change
-T|文件夹|wénjiànjiā|المجلد|folder
-T|文件|wénjiàn|الملف|file
+T|仓库目录|cāngkù mùlù|مجلد المستودع|repository directory
+T|跟踪文件|gēnzōng wénjiàn|الملف المتتبَّع|tracked file
 T|补丁文件|bǔding wénjiàn|ملف الرقعة|patch file

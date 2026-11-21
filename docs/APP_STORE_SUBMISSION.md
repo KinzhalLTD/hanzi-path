@@ -15,11 +15,11 @@ URLs: `https://cipher-path-kinzhal.web.app/privacy.html` · `/terms.html` · `/s
 
 ## 2. Listing – English (U.S.)
 - **Name** (≤ 30): Cipher Path: Code & Security
-- **Subtitle** (≤ 30): Learn to code, defend, speak
-- **Promotional text** (≤ 170): Software engineering and cybersecurity in short lessons and real labs – plus the Chinese your global tech team speaks. New daily challenge every day.
+- **Subtitle** (≤ 30): Your tech career, step by step
+- **Promotional text** (≤ 170): Become a junior developer or SOC analyst: 168 short lessons, real code and security labs, mock interviews, plus bonus tech Chinese. New challenge daily.
 - **Keywords** (≤ 100 bytes): coding,cybersecurity,programming,javascript,ctf,pentest,security,learn,chinese,mandarin,exam
 - **Description:**
-Cipher Path teaches software engineering and cybersecurity the practical way: read a short lesson, prove it in a lab, and learn how professionals say it in Chinese.
+Cipher Path is a step-by-step path into a tech job, in Arabic and English. Pick a goal – junior developer or junior SOC analyst – then learn with short lessons, prove each skill in a real lab, and rehearse the interview. As a bonus, every topic comes with the Chinese terms global tech teams use.
 
 TWO TRACKS, 24 MODULES
 • Software engineering: fundamentals, data structures, algorithms and Big-O, object-oriented design, design patterns, Git, testing, web and APIs, databases and SQL, system design, DevOps and cloud, agile.
@@ -49,11 +49,11 @@ Cipher Path PRO unlocks every module, lab, exam and conversation and removes ads
 
 ## 3. Listing – Arabic
 - **الاسم** (≤ 30): مسار الشيفرة: برمجة وأمن
-- **العنوان الفرعي** (≤ 30): تعلّم البرمجة والأمن السيبراني
-- **النص الترويجي** (≤ 170): هندسة البرمجيات والأمن السيبراني في دروس قصيرة ومختبرات حقيقية، مع الصينية التي يتحدثها فريقك التقني. تحدٍّ جديد كل يوم.
+- **العنوان الفرعي** (≤ 30): طريقك إلى وظيفة تقنية
+- **النص الترويجي** (≤ 170): استعد لوظيفة مطوّر أو محلل أمن: 168 درسًا قصيرًا، ومختبرات كود وأمن حقيقية، ومقابلات تجريبية، والصينية التقنية مكافأة. تحدٍّ جديد يوميًا.
 - **الكلمات المفتاحية** (≤ 100 بايت): برمجة,أمن سيبراني,اختراق أخلاقي,جافاسكربت,صينية,كود
 - **الوصف:**
-يعلّمك مسار الشيفرة هندسة البرمجيات والأمن السيبراني بطريقة عملية: درس قصير، ثم مختبر يثبت فهمك، ثم المصطلح كما يقوله المحترفون بالصينية.
+مسار الشيفرة طريقك خطوة بخطوة إلى وظيفة تقنية، بالعربية والإنجليزية. اختر هدفك – مطوّر مبتدئ أو محلل مركز عمليات أمنية – ثم تعلّم بدروس قصيرة، وأثبت كل مهارة في مختبر حقيقي، وتدرّب على المقابلة. وكمكافأة، يأتي كل موضوع مع المصطلحات الصينية التي تستخدمها الفرق التقنية العالمية.
 
 مساران و24 وحدة
 • هندسة البرمجيات: الأساسيات، وهياكل البيانات، والخوارزميات والتعقيد، والتصميم كائني التوجه، وأنماط التصميم، وGit، والاختبار، والويب والواجهات البرمجية، وقواعد البيانات وSQL، وتصميم الأنظمة، وDevOps والسحابة، والمنهجيات الرشيقة.

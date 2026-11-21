@@ -73,10 +73,11 @@ SCREENS.module=(m,k)=>{ const x=MOD[k]; if(!x) return SCREENS.learn(m); if(!modF
   <div class="steps">${step('L',1,t('stepL'),`<span class="num">${x.L.length}</span> ${t('lessons')}`,s.L)}${step('Q',2,`${bossOf(x.k).h} ${isAr()?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}`,s.Qb!=null?`${t('score')}: <span class="num">${Math.round(s.Qb*100)}%</span>`:`<span class="num">${x.Q.length}</span> ${t('questions')}`,s.Q)}
     ${step('T',3,t('stepT'),`<span class="num">${x.T.length}</span> · ${x.T.slice(0,3).map(w=>`<span class="han">${esc(w.h)}</span>`).join(' · ')}`,s.T)}${step('D',4,t('stepD'),`<span class="num">${x.D.length}</span> · ${t('dialog')}`,s.D)}
     ${lab?step('lab','⌨',t('stepLab'),esc(L(lab))+' · <span class="han">'+esc(lab.zh)+'</span>',!!S.labs[lab.k]):''}</div>
+  <button class="card row sumbtn" id="sum"><span aria-hidden="true">📋</span><div class="grow" style="text-align:start"><b>${isAr()?'ملخص الوحدة':'Module summary'}</b><div class="sub">${isAr()?'الخلاصات والأخطاء الشائعة وأهم المصطلحات في صفحة واحدة':'Key takeaways, common mistakes and top terms on one page'}</div></div><span aria-hidden="true">›</span></button>
   ${nd?`<button class="btn block" id="ns">${t('nextStep')}: ${{L:t('stepL'),Q:esc(bossOf(x.k).name),T:t('stepT'),D:t('stepD')}[nd]} ${fwdA()}</button>`:''}
   ${navPair(pv?t('prevMod'):t('toPath'),nx?t('nextMod'):t('toPath'),{bid:'pm',nid:'nm',cls:'ghost'})}
   <div class="navhint sub">${pv?`${pv.ic} ${esc(L(pv))}`:''}<span class="grow"></span>${nx?`${esc(L(nx))} ${modFree(nx)?nx.ic:ICON.lock}`:''}</div>`);
-  $('#bk',m).onclick=()=>goBack('learn'); $('#say',m).onclick=()=>speak(x.zh);
+  $('#bk',m).onclick=()=>goBack('learn'); $('#say',m).onclick=()=>speak(x.zh); $('#sum',m).onclick=()=>{ SFX.tap(); go('msum',x.k); };
   const ns=$('#ns',m); if(ns) ns.onclick=()=>{ SFX.tap(); const b=$(`.step[data-s="${nd}"]`,m); b&&b.click(); };
   $('#pm',m).onclick=()=>{ SFX.tap(); pv?go('module',pv.k):go('track',x.tr); };
   $('#nm',m).onclick=()=>{ SFX.tap(); if(!nx) return go('track',x.tr); modFree(nx)?go('module',nx.k):paywall('module'); };
@@ -214,3 +215,18 @@ function bindCert(m,tr){ const b=$('#cert',m); if(!b) return; b.onclick=()=>{ if
     <input class="field" id="ci" maxlength="40" placeholder="${t('certName')}" value="${esc(S.certName||'')}"><button class="btn block" id="sh">${t('share')}</button>`,el=>{
     $('#ci',el).oninput=e=>{ S.certName=e.target.value; save(); $('#cn',el).textContent=S.certName||'—'; };
     $('#sh',el).onclick=()=>{ const txt=`${S.certName||''} · ${t('certT')}: ${TRK[tr].name()} · Cipher Path`; RN?RN.postMessage(JSON.stringify({type:'share',text:txt})):(navigator.clipboard&&navigator.clipboard.writeText(txt).then(()=>toast('✓')).catch(()=>{})); }; }); }; }
+
+// Module summary: every lesson's key takeaways and common mistake, plus the first terms – a one-page revision sheet.
+SCREENS.msum=(m,k)=>{ const x=MOD[k], ar=isAr(); if(!x) return SCREENS.learn(m);
+  const xd=(l,kd)=>{ const d=(l.x||[]).find(q=>q.k===kd); return d?L(d,'a','e'):''; };
+  const first=l=>{ const p=L(l,'a','e').split(/\\n|\n/)[0]||''; const m1=p.match(/^.*?[.!?؟](\s|$)/); return (m1?m1[0]:p).trim(); };
+  m.insertAdjacentHTML('beforeend',`${topbar()}<div class="row mhead"><button class="icon-btn" id="bk" aria-label="${t('back')}">${backIcon()}</button><span class="tag ${x.tr}">${x.ic} ${esc(L(x))}</span></div>
+  <h1>📋 ${ar?'ملخص الوحدة':'Module summary'}</h1><p class="sub">${ar?'راجع هذه الصفحة قبل قتال الوحش أو الاختبار.':'Review this page before the boss fight or an exam.'}</p>
+  <div class="col" style="gap:12px">${x.L.map((l,i)=>{ const key=xd(l,'key'), pit=xd(l,'pit');
+    return `<div class="card col sumcard" style="gap:8px"><div class="row" style="gap:8px"><span class="sn num">${i+1}</span><b class="grow">${esc(L(l,'ta','te'))}</b></div>
+      ${key?'<ul class="xkey">'+key.split(/\\n|\n/).filter(Boolean).map(q=>`<li>${inl(q)}</li>`).join('')+'</ul>':`<p style="margin:0">${inl(first(l))}</p>`}
+      ${pit?`<div class="sumpit"><b>⚠️ ${ar?'خطأ شائع':'Common mistake'}:</b> ${inl(pit)}</div>`:''}</div>`; }).join('')}
+    <div class="card col" style="gap:8px"><b>中 ${ar?'أهم المصطلحات':'Top terms'}</b>${x.T.slice(0,12).map(w=>`<div class="row" style="gap:10px"><span class="han" style="font-size:18px;min-width:5em">${esc(w.h)}</span><span class="py" style="font-size:13px">${esc(w.p)}</span><span class="grow" style="text-align:end">${esc(mean(w))}</span></div>`).join('')}</div></div>
+  <button class="btn block" id="fight">${bossOf(x.k).h} ${ar?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}</button>`);
+  $('#bk',m).onclick=()=>go('module',k); $('#fight',m).onclick=()=>{ SFX.tap(); go('quizrun',{k}); };
+};

@@ -59,7 +59,7 @@ T|主密钥|zhǔ mìyào|المفتاح الرئيسي|master key
 T|会话密钥|huìhuà mìyào|مفتاح الجلسة|session key
 T|密钥派生|mìyào pàishēng|اشتقاق المفاتيح|key derivation
 T|椭圆曲线|tuǒyuánqūxiàn|المنحنى الإهليلجي|elliptic curve
-T|素数|sùshù|العدد الأولي|prime
+T|密钥空间|mìyào kōngjiān|فضاء المفاتيح|key space
 T|模运算|mó yùnsuàn|الحساب النمطي|modular arithmetic
 T|离散对数|lísàn duìshù|اللوغاريتم المتقطع|discrete logarithm
 T|因数分解|yīnshù fēnjiě|التحليل إلى عوامل|factorisation

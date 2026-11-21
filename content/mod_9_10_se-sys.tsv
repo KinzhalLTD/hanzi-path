@@ -114,7 +114,7 @@ T|服务等级协议|fúwù děngjí xiéyì|اتفاقية مستوى الخد�
 T|服务等级目标|fúwù děngjí mùbiāo|هدف مستوى الخدمة|service level objective
 T|错误预算|cuòwù yùsuàn|ميزانية الأخطاء|error budget
 T|可维护|kě wéihù|قابل للصيانة|maintainable
-T|成本|chéngběn|التكلفة|cost
+T|每次请求成本|měicì qǐngqiú chéngběn|تكلفة الطلب الواحد|cost per request
 T|权衡取舍|quánhéng qǔshě|الموازنة بين الخيارات|making trade-offs
 T|性能指标|xìngnéng zhǐbiāo|مؤشر الأداء|performance metric
 T|尾延迟|wěi yánchí|زمن الاستجابة الطرفي|tail latency

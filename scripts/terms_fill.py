@@ -75,9 +75,29 @@ for ln in open(CAND, encoding='utf-8'):
     ln = ln.strip()
     if not ln or ln.startswith('#'): continue
     if ln.startswith('+'): cur = ln[1:]; plan.setdefault(cur, []); continue
-    plan[cur].append(ln.split('|'))
+    plan.setdefault(cur, []).append(ln.split('|'))
 
 bad = 0
+if '--replace' in sys.argv:
+    # lines 'OLD>NEW|ar|en' (no +module needed): swap a term in place, keeping its position (its id)
+    for k, rows in plan.items():
+        for r in rows:
+            old, zh = r[0].split('>'); ar, en = r[1], r[2]
+            if zh in seen: print('DUP', zh); bad += 1; continue
+            py, amb = (r[3], []) if len(r) > 3 else auto(zh)
+            if py is None: print('NOPY', zh); bad += 1; continue
+            if amb: print(f'AMB  {zh} {py}  [{"; ".join(amb)}]')
+            hit = 0
+            for f in glob.glob(os.path.join(ROOT, 'content/mod_*.tsv')):
+                L = open(f, encoding='utf-8').read().split('\n')
+                for i, ln in enumerate(L):
+                    if ln.startswith(f'T|{old}|'):
+                        L[i] = f'T|{zh}|{py}|{ar}|{en}'; hit += 1
+                if hit and WRITE: open(f, 'w', encoding='utf-8').write('\n'.join(L))
+                if hit: break
+            if hit != 1: print('NOT FOUND', old); bad += 1
+            seen.add(zh)
+    print('replace problems', bad); sys.exit(0)
 for k, rows in plan.items():
     need = TARGET - len(existing.get(k, []))
     out = []

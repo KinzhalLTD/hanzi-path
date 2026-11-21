@@ -70,7 +70,7 @@ T|监听|jiāntīng|الاستماع|listen
 T|连接|liánjiē|الاتصال|connection
 T|数据流|shùjùliú|تدفق البيانات|data stream
 T|报文|bào wén|الرسالة الشبكية|packet message
-T|包头|bāotóu|ترويسة الحزمة|packet header
+T|报文头部|bào wén tóubù|ترويسة الحزمة|packet header
 T|载荷|zàihè|الحمولة|payload
 T|网络拓扑|wǎngluò tuòpū|طوبولوجيا الشبكة|network topology
 T|非军事区|fēijūnshìqū|المنطقة منزوعة السلاح|DMZ

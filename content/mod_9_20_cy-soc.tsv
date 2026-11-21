@@ -104,7 +104,7 @@ T|登录失败|dēnglù shībài|فشل تسجيل الدخول|failed login
 T|暴力登录|bàolì dēnglù|تخمين تسجيل الدخول|brute-force login
 T|不可能旅行|bùkěnéng lǚxíng|السفر المستحيل|impossible travel
 T|异常流量|yìcháng liúliàng|حركة المرور غير الطبيعية|abnormal traffic
-T|数据外传|shùjù wàichuán|نقل البيانات إلى الخارج|data exfiltration (outbound)
+T|数据丢失防护|shùjù diūshī fánghù|منع فقدان البيانات|data loss prevention
 T|可疑进程|kěyí jìnchéng|العملية المشبوهة|suspicious process
 T|命令行审计|mìnglìngháng shěnjì|تدقيق سطر الأوامر|command-line auditing
 T|计划任务|jìhuà rènwu|المهمة المجدولة|scheduled task

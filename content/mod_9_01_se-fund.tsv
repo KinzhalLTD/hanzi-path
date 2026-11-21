@@ -63,18 +63,18 @@ T|标识符|biāozhì fú|المعرّف|identifier
 T|浮点数|fúdiǎnshù|العدد العشري|floating-point number
 T|字符|zìfú|المحرف|character
 T|数值|shùzhí|القيمة العددية|numeric value
-T|真|zhēn|صحيح (true)|true
-T|假|jiǎ|خطأ (false)|false
+T|布尔运算|bù ěr yùnsuàn|العمليات المنطقية البوليانية|Boolean operation
+T|布尔表达式|bù ěr biǎodáshì|التعبير المنطقي|Boolean expression
 T|空值|kōngzhí|القيمة الفارغة|null
 T|逻辑运算|luóji yùnsuàn|العملية المنطقية|logical operation
-T|比较|bǐjiào|المقارنة|comparison
-T|等于|děngyú|يساوي|equals
-T|大于|dàyú|أكبر من|greater than
-T|小于|xiǎoyú|أصغر من|less than
-T|加法|jiāfǎ|الجمع|addition
-T|减法|jiǎnfǎ|الطرح|subtraction
-T|乘法|chéngfǎ|الضرب|multiplication
-T|除法|chúfǎ|القسمة|division
+T|相等比较|xiāngděng bǐjiào|مقارنة التساوي|equality comparison
+T|严格相等|yángé xiāngděng|المساواة الصارمة|strict equality
+T|三元运算符|sānyuán yùnsuàn fú|العامل الثلاثي|ternary operator
+T|短路求值|duǎnlù qiúzhí|التقييم المختصر|short-circuit evaluation
+T|运算符优先级|yùnsuàn fú yōuxiānjí|أولوية العوامل|operator precedence
+T|作用域链|zuòyòng yù liàn|سلسلة النطاقات|scope chain
+T|变量提升|biànliàng tíshēng|رفع المتغيرات (hoisting)|hoisting
+T|整除|zhěngchú|القسمة الصحيحة|integer division
 T|取余|qǔ yú|باقي القسمة|modulo
 T|自增|zì zēng|الزيادة بواحد|increment
 T|嵌套|qiàntào|التداخل|nesting
@@ -84,7 +84,7 @@ T|继续|jìxù|المتابعة|continue
 T|无限循环|wúxiàn xúnhuán|الحلقة اللانهائية|infinite loop
 T|计数器|jìshùqì|العدّاد|counter
 T|索引值|suǒyǐn zhí|قيمة الفهرس|index value
-T|长度|chángdù|الطول|length
+T|数组长度|shùzǔ chángdù|طول المصفوفة|array length
 T|字符串拼接|zìfúchuàn pīnjiē|دمج النصوص|string concatenation
 T|格式化|géshìhuà|التنسيق|formatting
 T|类型转换|lèixíng zhuǎnhuàn|تحويل النوع|type conversion
@@ -97,8 +97,8 @@ T|全局变量|quánjú biànliàng|المتغير العام|global variable
 T|命名|mìngmíng|التسمية|naming
 T|命名规范|mìngmíng guīfàn|قواعد التسمية|naming convention
 T|缩进|suōjìn|الإزاحة|indentation
-T|括号|kuòhào|القوس|bracket
-T|分号|fēnhào|الفاصلة المنقوطة|semicolon
+T|花括号|huākuòhào|الأقواس المعقوفة|curly braces
+T|换行符|huànháng fú|محرف السطر الجديد|newline character
 T|代码块|dàimǎ kuài|كتلة الكود|code block
 T|语句|yǔjù|الجملة البرمجية|statement
 T|回调函数|huídiàohánshù|دالة الاستدعاء الراجع|callback function
@@ -109,7 +109,7 @@ T|抛出|pāochū|الرمي (للاستثناء)|throw
 T|捕获|bǔhuò|الالتقاط|catch
 T|断点|duàndiǎn|نقطة التوقف|breakpoint
 T|控制台|kòngzhìtái|وحدة التحكم|console
-T|打印|dǎyìn|الطباعة|print
+T|标准输出|biāozhǔn shūchū|المخرج القياسي|standard output
 T|日志输出|rìzhì shūchū|إخراج السجل|log output
 T|库|kù|المكتبة|library
 T|模块|mókuài|الوحدة|module

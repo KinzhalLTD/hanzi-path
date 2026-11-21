@@ -17,7 +17,7 @@
   --f-ui:"Inter","IBM Plex Sans Arabic",system-ui,-apple-system,sans-serif;
   --f-head:"Space Grotesk","IBM Plex Sans Arabic","Inter",system-ui,sans-serif;
   --f-ar:"IBM Plex Sans Arabic","Geeza Pro","Segoe UI",system-ui,sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,"IBM Plex Sans Arabic",monospace;
   --f-han:"Noto Serif SC","Songti SC","STSong","Noto Sans SC",serif;
   --f-brush:"Ma Shan Zheng","Noto Serif SC",serif;
   --r:18px; --r-sm:12px;
@@ -667,3 +667,8 @@ html[lang="ar"] :is(.eyebrow,.lkind,.cmp .cmph){text-transform:none}
 .xcard.x-key{border-color:var(--jade,#2f7d6b)}
 .xkey{margin:0;padding-inline-start:20px;display:flex;flex-direction:column;gap:8px;line-height:1.65}
 .xkey li::marker{color:var(--jade,#2f7d6b)}
+
+/* module summary */
+.sumbtn{margin-top:4px;gap:12px;align-items:center}.sumbtn>span:first-child{font-size:22px}
+.sumcard .sn{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--gold-fill,rgba(var(--hl-rgb),.08));font-weight:700;font-size:13px}
+.sumpit{font-size:14px;line-height:1.6;padding:8px 10px;border-radius:10px;background:rgba(var(--hl-rgb),.05);border-inline-start:3px solid var(--gold)}

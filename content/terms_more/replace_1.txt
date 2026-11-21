@@ -1,0 +1,52 @@
+# OLD>NEW|ar|en : generic words swapped for real tech terms (same position, so the same id)
+真>布尔运算|العمليات المنطقية البوليانية|Boolean operation
+假>布尔表达式|التعبير المنطقي|Boolean expression
+大于>三元运算符|العامل الثلاثي|ternary operator
+小于>短路求值|التقييم المختصر|short-circuit evaluation
+等于>严格相等|المساواة الصارمة|strict equality
+加法>运算符优先级|أولوية العوامل|operator precedence
+减法>作用域链|سلسلة النطاقات|scope chain
+乘法>变量提升|رفع المتغيرات (hoisting)|hoisting
+除法>整除|القسمة الصحيحة|integer division
+比较>相等比较|مقارنة التساوي|equality comparison
+括号>花括号|الأقواس المعقوفة|curly braces
+分号>换行符|محرف السطر الجديد|newline character
+打印>标准输出|المخرج القياسي|standard output
+长度>数组长度|طول المصفوفة|array length
+数学>数学归纳法|الاستقراء الرياضي|mathematical induction
+证明>正确性证明|إثبات صحة الخوارزمية|proof of correctness
+最大值>最大子数组|المصفوفة الفرعية العظمى|maximum subarray
+最小值>最小堆排序|ترتيب الكومة الصغرى|min-heap ordering
+平均值>平均复杂度|التعقيد المتوسط|average-case complexity
+中位数>快速选择|خوارزمية الاختيار السريع|quickselect
+文件夹>仓库目录|مجلد المستودع|repository directory
+草稿>草稿拉取请求|طلب الدمج المسودة|draft pull request
+文件>跟踪文件|الملف المتتبَّع|tracked file
+添加>添加到暂存区|الإضافة إلى منطقة التهيئة|stage a change
+按钮>前端组件库|مكتبة مكوّنات الواجهة|UI component library
+图片>图片懒加载|التحميل الكسول للصور|image lazy loading
+字体>网页字体|خطوط الويب|web fonts
+动画>过渡动画|حركة الانتقال|transition animation
+通过>测试通过率|نسبة نجاح الاختبارات|test pass rate
+失败>失败用例|حالة الاختبار الفاشلة|failing test case
+跳过>跳过测试|تخطي الاختبار|skipped test
+关闭>关闭缺陷|إغلاق العيب|close a defect
+确认>确认测试|اختبار التأكيد|confirmation test
+成本>每次请求成本|تكلفة الطلب الواحد|cost per request
+目标>冲刺回顾|مراجعة السباق الختامية|sprint retrospective
+愿景>产品愿景|رؤية المنتج|product vision
+节奏>迭代节奏|إيقاع التكرارات|iteration cadence
+浪费>价值流图|خريطة تدفق القيمة|value stream map
+客户>客户价值|قيمة العميل|customer value
+回调>回调地狱|جحيم الاستدعاءات الراجعة|callback hell
+停电>不间断电源|مزود الطاقة غير المنقطعة|uninterruptible power supply
+素数>密钥空间|فضاء المفاتيح|key space
+密钥轮转>硬编码密钥|المفتاح المكتوب في الكود|hard-coded key
+数据外传>数据丢失防护|منع فقدان البيانات|data loss prevention
+利用>漏洞利用链|سلسلة الاستغلال|exploit chain
+提权>本地提权|رفع الصلاحيات المحلي|local privilege escalation
+罚款>行政处罚|العقوبة الإدارية|administrative penalty
+严重>严重漏洞|الثغرة الحرجة|critical vulnerability
+旗帜>夺旗|التقاط العلم|capture the flag (flag)
+杂项>取证题|تحدي التحليل الجنائي|forensics challenge
+奖金>漏洞奖励计划|برنامج مكافآت الثغرات|bug bounty programme

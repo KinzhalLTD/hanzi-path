@@ -58,7 +58,7 @@ T|释放后使用|shìfàng hòu shǐyòng|الاستخدام بعد التحر�
 T|格式化字符串|géshìhuà zìfúchuàn|سلسلة التنسيق|format string
 T|安全函数|ānquán hánshù|الدالة الآمنة|safe function
 T|危险函数|wēixiǎn hánshù|الدالة الخطرة|dangerous function
-T|密钥轮转|mìyào lúnzhuàn|تدوير المفاتيح|key rotation
+T|硬编码密钥|yìngbiānmǎ mìyào|المفتاح المكتوب في الكود|hard-coded key
 T|环境配置|huánjìng pèizhì|إعداد البيئة|environment configuration
 T|配置泄露|pèizhì xièlù|تسرب الإعدادات|config leak
 T|凭证扫描|píngzhèng sǎomiáo|فحص بيانات الاعتماد|credential scanning

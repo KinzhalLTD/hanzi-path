@@ -77,9 +77,9 @@ T|哈希算法|hāxī suànfǎ|خوارزمية التجزئة|hashing algorithm
 T|加密算法|jiāmì suànfǎ|خوارزمية التشفير|encryption algorithm
 T|随机化|suíjī huà|العشوائية|randomization
 T|概率|gàilǜ|الاحتمال|probability
-T|数学|shùxué|الرياضيات|mathematics
+T|数学归纳法|shùxué guīnàfǎ|الاستقراء الرياضي|mathematical induction
 T|逻辑|luóji|المنطق|logic
-T|证明|zhèngmíng|البرهان|proof
+T|正确性证明|zhèngquè xìng zhèngmíng|إثبات صحة الخوارزمية|proof of correctness
 T|不变量|bùbiànliàng|الثابت (invariant)|invariant
 T|优化|yōuhuà|التحسين|optimization
 T|性能|xìngnéng|الأداء|performance
@@ -99,10 +99,10 @@ T|异或|yìhuò|أو الحصرية (XOR)|XOR
 T|前缀和|qiánzhuì hé|مجموع البادئة|prefix sum
 T|快慢指针|kuàimàn zhǐzhēn|المؤشران السريع والبطيء|fast and slow pointers
 T|单调栈|dāndiào zhàn|المكدس الرتيب|monotonic stack
-T|中位数|zhōngwèishù|الوسيط|median
-T|平均值|píngjūnzhí|المتوسط|average
-T|最大值|zuì dà zhí|القيمة العظمى|maximum
-T|最小值|zuìxiǎozhí|القيمة الصغرى|minimum
+T|快速选择|kuàisù xuǎnzé|خوارزمية الاختيار السريع|quickselect
+T|平均复杂度|píngjūn fùzá dù|التعقيد المتوسط|average-case complexity
+T|最大子数组|zuì dà zǐ shùzǔ|المصفوفة الفرعية العظمى|maximum subarray
+T|最小堆排序|zuì xiǎo duī páixù|ترتيب الكومة الصغرى|min-heap ordering
 T|区间|qūjiān|الفترة|interval
 T|重叠|chóngdié|التداخل|overlap
 T|合并区间|hébìng qūjiān|دمج الفترات|merge intervals

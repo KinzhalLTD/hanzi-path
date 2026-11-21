@@ -71,7 +71,7 @@ T|表示层|biǎoshìcéng|طبقة العرض|presentation layer
 T|控制器|kòngzhì qì|المتحكم|controller
 T|插件|chājiàn|الإضافة|plugin
 T|钩子|gōuzi|الخطّاف|hook
-T|回调|huídiào|الاستدعاء الراجع|callback
+T|回调地狱|huídiào dìyù|جحيم الاستدعاءات الراجعة|callback hell
 T|事件总线|shìjiàn zǒngxiàn|ناقل الأحداث|event bus
 T|订阅者|dìngyuè zhě|المشترك|subscriber
 T|发布者|fābù zhě|الناشر|publisher

@@ -53,13 +53,13 @@ T|服务端渲染|fúwù duān xuànrǎn|العرض من الخادم|server-sid
 T|静态网站|jìngtài wǎngzhàn|الموقع الثابت|static website
 T|动态网页|dòngtàiwǎngyè|الصفحة الديناميكية|dynamic page
 T|表单|biǎodān|النموذج|form
-T|按钮|ànniǔ|الزر|button
+T|前端组件库|qiánduān zǔjiàn kù|مكتبة مكوّنات الواجهة|UI component library
 T|链接|liànjiē|الرابط|link
-T|图片|túpiàn|الصورة|image
+T|图片懒加载|túpiàn lǎn jiāzài|التحميل الكسول للصور|image lazy loading
 T|样式|yàngshì|النمط|style
 T|布局|bùjú|التخطيط|layout
-T|字体|zìtǐ|الخط|font
-T|动画|dònghuà|الحركة|animation
+T|网页字体|wǎngyè zìtǐ|خطوط الويب|web fonts
+T|过渡动画|guòdù dònghuà|حركة الانتقال|transition animation
 T|路由|lùyóu|التوجيه|routing
 T|状态管理|zhuàngtài guǎnlǐ|إدارة الحالة|state management
 T|请求方法|qǐngqiú fāngfǎ|طريقة الطلب|request method
