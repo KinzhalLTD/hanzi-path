@@ -8,7 +8,7 @@ ROOT = sys.argv[1]; CED = sys.argv[2] if len(sys.argv) > 2 else None
 _spec = importlib.util.spec_from_file_location('pinyin_check', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pinyin_check.py'))
 PC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(PC)
 if CED: PC.load_ced(CED)
-NEED = {'@': 9, 'L': (5, 6), 'Q': 13, 'T': 5, 'D': 6, 'F': 6, 'C': 12}
+NEED = {'@': 9, 'L': (5, 6), 'Q': 13, 'T': 5, 'D': 6, 'F': 6, 'C': 12, 'X': 5}
 def un(s): return s.replace('{pipe}', '|')
 def main():
     errs, warns, mods, terms = [], [], [], {}
@@ -52,6 +52,12 @@ def main():
                     pairs = [(x[i] if x[i] != '=' else x[i + 1], x[i + 1]) for i in (4, 6, 8)]
                     if len({p[1] for p in pairs}) != 3 or len({p[0] for p in pairs}) != 3: errs.append(f'{where}: check options not distinct')
                     m['L'][li]['q'] = {'qa': x[2] if x[2] != '=' else x[3], 'qe': x[3], 'o': [list(p) for p in pairs], 'wa': x[10], 'we': x[11]}
+            elif tag == 'X':   # lesson depth: X|lesson#|ex (real-world example) / pit (common mistake) / key (key takeaways)|ar|en
+                li = int(x[1]) if x[1].isdigit() else -1
+                if not 0 <= li < len(m['L']): errs.append(f'{where}: X for unknown lesson {x[1]}'); continue
+                if x[2] not in ('ex', 'pit', 'key'): errs.append(f'{where}: X kind must be ex/pit/key')
+                if any(d['k'] == x[2] for d in m['L'][li].get('x', [])): errs.append(f'{where}: lesson {li} already has {x[2]}')
+                m['L'][li].setdefault('x', []).append({'k': x[2], 'a': un(x[3]), 'e': un(x[4])})
             elif tag == 'T':
                 PC.check_line(x[1], x[2], where, errs, warns)
                 if x[1] in terms: errs.append(f'{where}: term {x[1]} already in {terms[x[1]]}')

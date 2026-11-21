@@ -100,16 +100,20 @@ function moduleDone(x){ SFX.gong(); fireworks(4); confetti(110); const s=mst(x.k
 /* ---------- lesson = bites: info card(s) → fun card → quick check (must be answered right to go on) ---------- */
 const FUNK={fact:['معلومة طريفة','Fun fact'],joke:['نكتة المبرمجين','Dev joke'],story:['قصة حقيقية','True story'],myth:['خرافة شائعة','Myth buster']};
 const FUNR={fact:['لم أكن أعرف هذا! 🤯','I did not know that! 🤯'],joke:['هههه، فهمتها 😄','Ha! Got it 😄'],story:['قصة لا تُنسى 📜','What a story 📜'],myth:['انكشفت الخرافة 🔍','Myth busted 🔍']};
-const lSteps=l=>{ const ps=L(l,'a','e').split(/\\n|\n/).filter(x=>x.trim()); const st=ps.map((p,j)=>({t:'info',p,last:j===ps.length-1})); if(l.f) st.push({t:'fun'}); if(l.q) st.push({t:'check'}); return st; };
+const XK={ex:['🏢','في العالم الحقيقي','In the real world'],pit:['⚠️','خطأ شائع','Common mistake'],key:['✅','الخلاصة','Key takeaways']};
+const lSteps=l=>{ const ps=L(l,'a','e').split(/\\n|\n/).filter(x=>x.trim()); const st=ps.map((p,j)=>({t:'info',p,last:j===ps.length-1}));
+  ['ex','pit','key'].forEach(k=>{ const d=(l.x||[]).find(x=>x.k===k); if(d) st.push({t:'info',p:L(d,'a','e'),xk:k}); });
+  if(l.f) st.push({t:'fun'}); if(l.q) st.push({t:'check'}); return st; };
 const lqId=(k,i)=>k+'#'+i;
 SCREENS.lesson=(m,{k,i,s})=>{ const x=MOD[k], n=x.L.length; i=Math.max(0,Math.min(n-1,i|0)); const l=x.L[i], st=lSteps(l), ns=st.length;
   s=s==null?0:Math.max(0,Math.min(ns-1,s<0?ns+(s|0):s|0)); const p=st[s]; S.lq=S.lq||{}; const solved=()=>!!S.lq[lqId(k,i)];
   const ar=isAr(), lastStep=s===ns-1;
   const goStep=(ii,ss)=>{ route={name:'lesson',arg:{k,i:ii,s:ss}}; render(); window.scrollTo(0,0); };
   const seg=st.map((q,j)=>`<i class="${j<s?'on':j===s?'cur':''} k-${q.t}"></i>`).join('');
-  const kindLbl=p.t==='info'?(ar?'معلومة':'Learn'):p.t==='fun'?(ar?'استراحة مرح':'Fun break'):(ar?'فحص سريع':'Quick check');
+  const kindLbl=p.t==='info'?(p.xk?(ar?XK[p.xk][1]:XK[p.xk][2]):(ar?'معلومة':'Learn')):p.t==='fun'?(ar?'استراحة مرح':'Fun break'):(ar?'فحص سريع':'Quick check');
   let body='';
-  if(p.t==='info') body=`<div class="lcard rise"><span class="eyebrow">${x.ic} ${esc(L(x))}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${rich(p.p)}</div>${p.last&&l.c?codeHTML(l.c):''}</div>
+  if(p.t==='info'&&p.xk){ const K=XK[p.xk]; body=`<div class="lcard xcard x-${p.xk} rise"><span class="eyebrow"><span aria-hidden="true">${K[0]}</span> ${ar?K[1]:K[2]}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${p.xk==='key'?'<ul class="xkey">'+p.p.split(/\\n|\n|•/).map(t=>t.trim()).filter(Boolean).map(t=>`<li>${inl(t)}</li>`).join('')+'</ul>':rich(p.p)}</div></div>`; }
+  else if(p.t==='info') body=`<div class="lcard rise"><span class="eyebrow">${x.ic} ${esc(L(x))}</span><h2>${esc(L(l,'ta','te'))}</h2><div class="lbody">${rich(p.p)}</div>${p.last&&l.c?codeHTML(l.c):''}</div>
     ${i===0&&s===0?`<div class="card row" style="gap:10px"><span class="han" style="font-size:22px;color:var(--zh)">${esc(x.zh)}</span><span class="py grow">${esc(x.py)}</span><button class="speak" id="say" aria-label="${ar?'استمع':'Listen'}">${ICON.speak}</button></div>`:''}`;
   else if(p.t==='fun'){ const f=l.f, K=FUNK[f.k]||FUNK.fact, R=FUNR[f.k]||FUNR.fact;
     body=`<div class="lfun rise k-${f.k}"><div class="lfun-top"><span class="lfun-ic" aria-hidden="true">${f.i}</span><span class="chip">${ar?K[0]:K[1]}</span></div>

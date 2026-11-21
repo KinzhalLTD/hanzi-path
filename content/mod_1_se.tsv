@@ -3,6 +3,7 @@
 # L|ar title|en title|ar body|en body|code (optional; \n = new line, {pipe} = |)
 # Q|ar question|en question|ar right|en right|ar wrong1|en wrong1|ar wrong2|en wrong2|ar wrong3|en wrong3|ar why|en why   (ar "=" → same as en)
 # T|zh|pinyin|ar|en          Chinese term
+# X|lesson#|ex|pit|key|ar|en  lesson depth card: real-world example, common mistake, key takeaways (\n = new line)
 # D|A or B|zh|pinyin|ar|en   short workplace dialogue
 # Inline `code` is shown in a code font; \n inside bodies starts a new paragraph.
 @se-fund|se|🧱|编程基础|biānchéng jīchǔ|أساسيات البرمجة|Programming fundamentals|المتغيرات والأنواع والشروط والحلقات والدوال: اللبنات التي يُبنى منها كل برنامج.|Variables, types, conditions, loops and functions: the building blocks of every program.
