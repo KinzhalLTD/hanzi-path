@@ -1,0 +1,116 @@
+# Balanced distractors: key|en w1|en w2|en w3||ar w1|ar w2|ar w3   (quick checks: key@lesson|en w1|en w2||ar w1|ar w2)
+se-fund#5|The loop exits on its own after a timeout|The engine detects it and skips the loop|It runs once and then reports an error||تنتهي الحلقة وحدها بعد مهلة زمنية|يكتشفها المحرك ويتخطى الحلقة|تعمل مرة واحدة ثم تُظهر خطأ
+se-fund#7|It skips the first item of the array|It stops one item before the last one|It never enters the loop body at all||تتخطى العنصر الأول في المصفوفة|تتوقف قبل العنصر الأخير بعنصر|لا تدخل جسم الحلقة أبدًا
+se-fund#12|A `for` loop that checks both values|The `typeof` operator on each value|A `switch` statement with one case||حلقة `for` تفحص القيمتين|العامل `typeof` على كل قيمة|جملة `switch` بحالة واحدة
+se-fund#13|It can be read only once, then it is gone|It is copied every time you pass it around|Its type is fixed but its content can change||يمكن قراءتها مرة واحدة ثم تختفي|تُنسخ في كل مرة تُمرَّر فيها|نوعها ثابت لكن محتواها قابل للتغيير
+se-fund#17|Around every line so nothing ever crashes|Only inside loops, where errors repeat|Instead of `if` checks, since it is faster||حول كل سطر حتى لا يتوقف شيء|داخل الحلقات فقط حيث تتكرر الأخطاء|بدلًا من `if` لأنه أسرع
+se-fund#25|Pauses the whole browser until data arrives|Runs the promise again until it succeeds|Turns the promise into a normal sync value at once||يوقف المتصفح كله حتى تصل البيانات|يعيد تشغيل الوعد حتى ينجح|يحوّل الوعد فورًا إلى قيمة متزامنة عادية
+se-fund@6|It makes the program noticeably slower|Nothing, it keeps the app from crashing||يجعل البرنامج أبطأ بشكل ملحوظ|لا شيء، يمنع التطبيق من التوقف
+se-fund@3|Nothing, one function is easier to find|It should be split only if it gets slow||لا شيء، دالة واحدة أسهل في البحث|يجب تقسيمها فقط إن أصبحت بطيئة
+se-ds#2|Reading an item by its index is slow|You cannot loop over its items in order|It cannot hold items of different types||قراءة عنصر برقم الفهرس بطيئة|لا يمكن المرور على عناصرها بالترتيب|لا تستطيع حمل عناصر من أنواع مختلفة
+se-oop#3|JavaScript limits how deep inheritance can go|Composition always runs faster at runtime|Inheritance cannot share methods between classes||JavaScript تحدّ من عمق الوراثة|التركيب أسرع دائمًا وقت التشغيل|الوراثة لا تشارك الدوال بين الأصناف
+se-oop#4|A comment that the engine ignores|A constant that can never change|A field saved automatically to storage||تعليق يتجاهله المحرك|ثابت لا يمكن تغييره أبدًا|حقل يُحفظ تلقائيًا في التخزين
+se-oop#5|Many comments describing each function|Classes that share one database table|Code split into many small files||تعليقات كثيرة تشرح كل دالة|أصناف تتشارك جدولًا واحدًا|كود مقسّم إلى ملفات صغيرة كثيرة
+se-pat#1|It makes every call noticeably slower|It forbids subclasses of the class|It must always connect to a database||يجعل كل استدعاء أبطأ بوضوح|يمنع الأصناف الفرعية من الصنف|يجب أن يتصل دائمًا بقاعدة بيانات
+se-pat#3|Automatic encryption of every dependency|Shorter code because classes disappear|Automatic updates of the libraries you use||تشفير تلقائي لكل تبعية|كود أقصر لأن الأصناف تختفي|تحديث تلقائي للمكتبات المستخدمة
+se-git#4|Downloading a full copy of the repository|Deleting a branch after it is merged|Backing up the code to another server||تنزيل نسخة كاملة من المستودع|حذف الفرع بعد دمجه|نسخ الكود احتياطيًا إلى خادم آخر
+se-test#2|Yes, every line has been checked|Yes, as long as all the tests pass|Only if the tests are also fast||نعم، كل سطر تم التحقق منه|نعم، ما دامت كل الاختبارات تنجح|فقط إن كانت الاختبارات سريعة أيضًا
+se-test#3|Measuring how fast the server responds|Checking that new code follows the style guide|Making sure the new feature looks right||قياس سرعة استجابة الخادم|التأكد أن الكود الجديد يتبع الأسلوب|التأكد أن الميزة الجديدة تبدو صحيحة
+se-test#5|50 and 60|1 and 1,000|0 only||50 و60|1 و1,000|0 فقط
+se-web#5|Runs the back-end code close to the database|Stores user passwords in many places|Replaces the database with a faster copy||يشغّل كود الخادم قرب قاعدة البيانات|يخزن كلمات المرور في أماكن كثيرة|يستبدل قاعدة البيانات بنسخة أسرع
+se-db#3|An index on the accounts table|A unique primary key per row|A cache in front of the database||فهرس على جدول الحسابات|مفتاح أساسي فريد لكل صف|ذاكرة مؤقتة أمام قاعدة البيانات
+se-db#5|Slower reads on every query|Risk of losing rows on a crash|It costs nothing after it is built||قراءة أبطأ في كل استعلام|خطر فقدان صفوف عند التعطل|لا يكلف شيئًا بعد بنائه
+se-sys#2|Raise the request timeout to two minutes|Send the invoices from the user's browser|Generate the invoices once a month only||رفع مهلة الطلب إلى دقيقتين|إرسال الفواتير من متصفح المستخدم|إنشاء الفواتير مرة في الشهر فقط
+se-sys#4|Between speed and security|Between SQL and NoSQL|Between memory and disk||بين السرعة والأمان|بين SQL وNoSQL|بين الذاكرة والقرص
+se-sys#5|They cannot scale beyond one server|Every service must use the same language|They cannot use a database at all||لا تتوسع لأكثر من خادم واحد|يجب أن تستخدم كل خدمة اللغة نفسها|لا تستطيع استخدام قاعدة بيانات
+se-ops#0|Merging every branch once a month|Copying the database to a server daily|Updating the operating system weekly||دمج كل الفروع مرة شهريًا|نسخ قاعدة البيانات يوميًا إلى خادم|تحديث نظام التشغيل أسبوعيًا
+se-ops#1|Weak passwords on the servers|Slow networks between offices|Merge conflicts between branches||كلمات المرور الضعيفة على الخوادم|بطء الشبكات بين المكاتب|تعارضات الدمج بين الفروع
+se-ops#2|To make the image build faster|Because Node refuses to run otherwise|So npm can install packages||لتسريع بناء الصورة|لأن Node يرفض العمل بدونه|كي يستطيع npm تثبيت الحزم
+se-ops#3|Servers that cost nothing to run|No more need for any testing|Encryption added to every server||خوادم لا تكلف شيئًا|لا حاجة إلى أي اختبار بعد الآن|تشفير يُضاف إلى كل خادم
+se-ops#5|Users enjoy seeing new versions often|It removes the need for code review|Servers cost less with frequent deploys||المستخدمون يحبون الإصدارات المتكررة|يُغني عن مراجعة الكود|الخوادم أرخص مع النشر المتكرر
+se-agile#2|"Add a cards table to the database"|"Fix the payment code before Friday"|"The app should be fast and good"||"أضف جدول البطاقات إلى قاعدة البيانات"|"أصلح كود الدفع قبل الجمعة"|"يجب أن يكون التطبيق سريعًا وجيدًا"
+se-agile#4|Scrum forbids estimating in hours|Points are used to set salaries|Points are always exact, hours are not||Scrum يمنع التقدير بالساعات|النقاط تُستخدم لتحديد الرواتب|النقاط دقيقة دائمًا بخلاف الساعات
+se-agile#5|Waterfall has no testing phase at all|Agile writes no requirements at all|Waterfall always delivers faster||الشلال بلا مرحلة اختبار إطلاقًا|الرشيق لا يكتب أي متطلبات|الشلال يسلّم أسرع دائمًا
+se-ds#9|One key is stored twice by mistake|The table runs out of memory|An item is deleted by another key||مفتاح واحد يُخزَّن مرتين خطأً|الجدول تنفد ذاكرته|عنصر يُحذف بسبب مفتاح آخر
+se-ds#10|A tree is always faster to search|A graph can never have cycles|A tree must have at most two children||الشجرة أسرع دائمًا في البحث|الرسم لا يمكن أن يحتوي حلقات|الشجرة يجب أن يكون لها ابنان على الأكثر
+se-ds#12|Storing many different values|Using negative numbers as keys|Reading the root node too often||تخزين قيم مختلفة كثيرة|استخدام أعداد سالبة كمفاتيح|قراءة العقدة الجذرية كثيرًا
+se-ds#15|It uses no memory for its keys|It sorts keys alphabetically by itself|It is slower, so it is safer||لا يستهلك ذاكرة لمفاتيحه|يرتب المفاتيح أبجديًا وحده|أبطأ، لذلك أكثر أمانًا
+se-algo#8|It tries every possible option|It needs unlimited memory|It works only on sorted numbers||يجرب كل الخيارات الممكنة|يحتاج ذاكرة غير محدودة|يعمل على الأعداد المرتبة فقط
+se-algo#13|The size of the source code file|How many lines the function has|How fast data moves on the network||حجم ملف الكود المصدري|عدد أسطر الدالة|سرعة انتقال البيانات في الشبكة
+se-oop#6|Copying code from one class to another|Deleting classes that are never used|Making every field public for easy use||نسخ الكود من صنف إلى آخر|حذف الأصناف غير المستخدمة|جعل كل الحقول عامة لسهولة الاستخدام
+se-oop#7|A class that holds all the shared code|The screen the user interacts with|A table that stores the object data||صنف يحمل كل الكود المشترك|الشاشة التي يتعامل معها المستخدم|جدول يخزن بيانات الكائنات
+se-oop#9|Every class must be public to everyone|Files are closed for reading after release|You never write new classes after launch||يجب أن تكون كل الأصناف عامة للجميع|الملفات مغلقة للقراءة بعد الإطلاق|لا تكتب أصنافًا جديدة بعد الإطلاق
+se-oop#11|Adding default bodies to every method|Turning it into one abstract class|Removing all interfaces from the code||إضافة أجسام افتراضية لكل دالة|تحويلها إلى صنف مجرد واحد|حذف كل الواجهات من الكود
+se-oop#12|A file stored on the disk|A function that has no name|A loop that runs over data||ملف مخزن على القرص|دالة ليس لها اسم|حلقة تمر على البيانات
+se-oop#13|A method that removes the object from memory|A tool that compiles and builds the app|A test that checks new objects||دالة تحذف الكائن من الذاكرة|أداة تترجم التطبيق وتبنيه|اختبار يفحص الكائنات الجديدة
+se-oop#14|A method whose code can never change|A method only the class can call|A method that never returns a value||دالة لا يتغير كودها أبدًا|دالة لا يستدعيها إلا الصنف|دالة لا تُرجع أي قيمة
+se-pat#9|The database the server talks to|The user interface shown in the browser|A library for drawing graphics||قاعدة البيانات التي يتعامل معها الخادم|واجهة المستخدم في المتصفح|مكتبة لرسم الرسومات
+se-pat#10|A pattern that the law forbids|A pattern that does not work in JavaScript|A test that always fails on purpose||نمط يمنعه القانون|نمط لا يعمل في JavaScript|اختبار يفشل دائمًا عمدًا
+se-pat#11|Whenever the team has fewer than five people|In every new project from the start|Whenever the language is JavaScript||كلما كان الفريق أقل من خمسة|في كل مشروع جديد من البداية|كلما كانت اللغة JavaScript
+se-pat#14|They are two names for the same pattern|An adapter is faster, a facade is safer|A facade converts data, an adapter logs it||اسمان للنمط نفسه|المحوّل أسرع والواجهة أكثر أمانًا|الواجهة تحوّل البيانات والمحوّل يسجّلها
+se-pat#15|An error that stops the program|A comment that is too long|A file larger than 1,000 lines||خطأ يوقف البرنامج|تعليق طويل أكثر من اللازم|ملف أكبر من 1,000 سطر
+se-git#6|It deletes files from the repository|It hides branches from other people|It speeds up pushing to the server||يحذف الملفات من المستودع|يخفي الفروع عن الآخرين|يسرّع الدفع إلى الخادم
+se-git#7|Uploads your local commits to the server|Creates a new branch from the remote|Throws away your local changes||يرفع التزاماتك المحلية إلى الخادم|ينشئ فرعًا جديدًا من البعيد|يتخلص من تغييراتك المحلية
+se-git#8|They do the same thing with different names|`fetch` uploads, `pull` downloads|`pull` only downloads, `fetch` also merges||يفعلان الشيء نفسه باسمين|`fetch` يرفع و`pull` ينزّل|`pull` ينزّل فقط و`fetch` يدمج أيضًا
+se-git#11|A copy of the repository on the server|The branch that goes to production|The bin for files you deleted||نسخة المستودع على الخادم|الفرع الذي يذهب إلى الإنتاج|سلة الملفات التي حذفتها
+se-git#12|Deletes main and keeps only your branch|Merges every branch into yours|Pushes your branch to the server||يحذف main ويبقي فرعك فقط|يدمج كل الفروع في فرعك|يدفع فرعك إلى الخادم
+se-git#14|A new branch made for a release|A comment written inside the code|A settings file for the repository||فرع جديد يُنشأ للإصدار|تعليق مكتوب داخل الكود|ملف إعدادات للمستودع
+se-test#6|A test that takes many minutes to run|A test that has no assertions at all|A test written in a different language||اختبار يستغرق دقائق طويلة|اختبار بلا أي تأكيدات|اختبار مكتوب بلغة مختلفة
+se-test#7|To make the test run against the real network|To avoid writing any assertions at all|To test the user interface instead of code||ليعمل الاختبار على الشبكة الحقيقية|لتجنب كتابة أي تأكيدات|لاختبار الواجهة بدل الكود
+se-test#8|It tests a single function on its own|It only measures how fast code runs|It checks the code's formatting rules||يختبر دالة واحدة منفردة|يقيس سرعة الكود فقط|يفحص قواعد تنسيق الكود
+se-test#9|It checks one line of code alone|The customer writes it after release|It only measures performance||يفحص سطرًا واحدًا وحده|يكتبه العميل بعد الإطلاق|يقيس الأداء فقط
+se-test#10|A comment that explains what the code does|The step that fills the test database|The descriptive name given to the test||تعليق يشرح ما يفعله الكود|الخطوة التي تملأ قاعدة بيانات الاختبار|الاسم الوصفي الذي يُعطى للاختبار
+se-test#11|A full security scan of the servers|A test suite that runs all night|A check that the code style is followed||فحص أمني كامل للخوادم|حزمة اختبارات تعمل طوال الليل|فحص أن أسلوب الكود متبع
+se-test#12|Fix it quickly and skip the test this time|Remove the feature until next release|Wait until more users report it||أصلحه بسرعة وتخطَّ الاختبار هذه المرة|أزل الميزة حتى الإصدار القادم|انتظر حتى يبلغ عنه مستخدمون أكثر
+se-test#13|Checking spelling in the user interface|Checking the colours match the design|Cleaning out old rows in the database||فحص الإملاء في الواجهة|فحص تطابق الألوان مع التصميم|تنظيف الصفوف القديمة في قاعدة البيانات
+se-test#15|Run the test only on weekdays|Delete the test since it is unreliable|Increase the test timeout a lot||شغّل الاختبار في أيام العمل فقط|احذف الاختبار لأنه غير موثوق|زِد مهلة الاختبار كثيرًا
+se-web#6|In the page URL as a query value|In the name of the uploaded file|In the user's IP address field||في رابط الصفحة كقيمة استعلام|في اسم الملف المرفوع|في حقل عنوان IP للمستخدم
+se-web#7|How fast the server answers each request|How large the database is allowed to get|Which passwords users are allowed to pick||سرعة رد الخادم على كل طلب|الحجم المسموح لقاعدة البيانات|كلمات المرور المسموح للمستخدمين باختيارها
+se-web#11|401 is a server crash; 403 is a timeout|They mean the same thing in practice|401 means success; 403 means redirect||401 تعطل الخادم و403 انتهاء المهلة|يعنيان الشيء نفسه عمليًا|401 نجاح و403 إعادة توجيه
+se-web#12|A programming language for servers|A database for storing documents|A network protocol like HTTP||لغة برمجة للخوادم|قاعدة بيانات لتخزين المستندات|بروتوكول شبكة مثل HTTP
+se-web#14|A cookie the browser sends with every page|A compressed image format for the web|A secure place to store passwords||ملف تعريف يرسله المتصفح مع كل صفحة|صيغة صور مضغوطة للويب|مكان آمن لتخزين كلمات المرور
+se-web#15|To make every request faster to answer|To hide the API from normal users|Because HTTP requires a version number||لجعل الرد على كل طلب أسرع|لإخفاء الواجهة عن المستخدمين|لأن HTTP يتطلب رقم إصدار
+se-db#6|Compressing tables so they use less disk|Copying every table into a backup|Removing indexes to speed up writes||ضغط الجداول لتستهلك قرصًا أقل|نسخ كل جدول إلى نسخة احتياطية|حذف الفهارس لتسريع الكتابة
+se-db#7|A table with the wrong number of columns|A table that has no primary key|A backup that is missing one table||جدول بعدد أعمدة خاطئ|جدول بلا مفتاح أساسي|نسخة احتياطية ينقصها جدول
+se-db#10|They are the same; `HAVING` is older syntax|`HAVING` filters rows, `WHERE` sorts groups|`WHERE` works only on numeric columns||متطابقان و`HAVING` صيغة أقدم|`HAVING` يرشّح الصفوف و`WHERE` يرتب المجموعات|`WHERE` يعمل على الأعمدة الرقمية فقط
+se-db#13|Moving the database server to a new city|A script that deletes all old data|The nightly backup of the database||نقل خادم قاعدة البيانات إلى مدينة أخرى|سكربت يحذف كل البيانات القديمة|النسخة الاحتياطية الليلية لقاعدة البيانات
+se-db#14|A backup copy that is never switched on|A read-only sheet exported to Excel|A database used only for running tests||نسخة احتياطية لا تُشغَّل أبدًا|ورقة للقراءة فقط مصدّرة إلى Excel|قاعدة بيانات للاختبارات فقط
+se-db#15|SQL does not allow it in stored code|It locks and deletes the selected rows|It does not work together with JOIN||لا تسمح به SQL في الكود المخزن|يقفل الصفوف المختارة ويحذفها|لا يعمل مع JOIN
+se-sys#7|One bug somewhere in the code|One user who reports many errors|A spare server kept as backup||خطأ واحد في مكان ما بالكود|مستخدم واحد يبلغ عن أخطاء كثيرة|خادم احتياطي محفوظ للطوارئ
+se-sys#8|Backing up one database to several servers|Compressing tables to save space|Archiving old data to cheap storage||نسخ قاعدة واحدة احتياطيًا إلى عدة خوادم|ضغط الجداول لتوفير المساحة|أرشفة البيانات القديمة في تخزين رخيص
+se-sys#9|Slowing the whole network for everyone|Limiting how many staff can log in|Shrinking images before sending them||إبطاء الشبكة كلها للجميع|تحديد عدد الموظفين الذين يدخلون|تصغير الصور قبل إرسالها
+se-sys#10|Copies never agree with each other|Every write waits for every copy first|Data is deleted after a while||النسخ لا تتطابق أبدًا|كل كتابة تنتظر كل النسخ أولًا|البيانات تُحذف بعد فترة
+se-sys#12|A power switch inside the data centre|A security test run against a service|A tool that speeds up slow databases||مفتاح كهرباء داخل مركز البيانات|اختبار أمني يُشغَّل على خدمة|أداة تسرّع قواعد البيانات البطيئة
+se-sys#14|User passwords and session data|Bank transactions as they happen|Live server logs for debugging||كلمات مرور المستخدمين وبيانات الجلسات|المعاملات البنكية لحظة حدوثها|سجلات الخادم الحية للتصحيح
+se-sys#15|A server that has no database attached|A server that is switched off at night|A server running without an operating system||خادم بلا قاعدة بيانات مرتبطة|خادم يُطفأ ليلًا|خادم يعمل دون نظام تشغيل
+se-ops#6|Deploying only at midnight when traffic is low|Deploying straight to production without tests|Keeping the new version on one server forever||النشر عند منتصف الليل فقط لقلة الحركة|النشر للإنتاج مباشرة دون اختبار|إبقاء الإصدار الجديد على خادم واحد دائمًا
+se-ops#7|A faster database for new features|Automatic translation of the app|Extra servers for each new feature||قاعدة بيانات أسرع للميزات الجديدة|ترجمة تلقائية للتطبيق|خوادم إضافية لكل ميزة جديدة
+se-ops#8|A legal contract with the customer|The official name of the service|The number of engineers on call||عقد قانوني مع العميل|الاسم الرسمي للخدمة|عدد المهندسين المناوبين
+se-ops#9|The app's guide for end users|The full history of commits|The team's marketing plan||دليل التطبيق للمستخدمين|السجل الكامل للالتزامات|خطة التسويق للفريق
+se-ops#10|Two colour themes for the user interface|Releasing only to new users first|Copying files by hand to every server||سمتان لونيتان لواجهة المستخدم|الإطلاق للمستخدمين الجدد أولًا|نسخ الملفات يدويًا إلى كل خادم
+se-ops#12|They are the same data with two names|Metrics are long texts, logs are numbers|Logs are only for end users to read||بيانات واحدة باسمين|المقاييس نصوص طويلة والسجلات أرقام|السجلات للمستخدمين النهائيين فقط
+se-ops#13|The money set aside to buy servers|The number of bugs left in the code|A fine charged to the developer||المال المخصص لشراء الخوادم|عدد الأخطاء الباقية في الكود|غرامة على المطوّر
+se-ops#14|Hard-coded directly in the source|In the commit messages of each release|In a text file on someone's desktop||مكتوبة مباشرة في الكود|في رسائل الالتزام لكل إصدار|في ملف نصي على سطح مكتب أحدهم
+se-ops#15|Make the alert louder so people notice|Send it to more people on the team|Turn off every alert at night||اجعل التنبيه أعلى ليلاحظه الناس|أرسله إلى أشخاص أكثر في الفريق|أطفئ كل التنبيهات ليلًا
+se-agile#6|The number of hours worked each day|The maximum size of the team|The final deadline of the project||عدد ساعات العمل اليومية|الحد الأقصى لحجم الفريق|الموعد النهائي للمشروع
+se-agile#7|The length of one sprint|How old the project is|How long the code takes to run||طول السباق الواحد|عمر المشروع|الزمن الذي يستغرقه تشغيل الكود
+se-agile#8|The date the project officially ends|The customer's signature on the contract|The moment the developer closes the laptop||تاريخ انتهاء المشروع رسميًا|توقيع العميل على العقد|لحظة إغلاق المطور حاسوبه
+se-agile#9|How fast developers type code|How many meetings the team holds|How fast the server responds||سرعة كتابة المطورين للكود|عدد اجتماعات الفريق|سرعة استجابة الخادم
+se-agile#10|A loan taken to buy new hardware|The monthly bill for cloud servers|The number of bugs already closed||قرض لشراء أجهزة جديدة|الفاتورة الشهرية للخوادم السحابية|عدد الأخطاء التي أُغلقت
+se-agile#11|A version with no bugs at all|The complete final product|A pitch deck shown to investors||نسخة خالية تمامًا من الأخطاء|المنتج النهائي الكامل|عرض تقديمي للمستثمرين
+se-agile#12|The names of the developers on the story|The price the customer will pay|The number of files the change touches||أسماء المطورين على القصة|السعر الذي سيدفعه العميل|عدد الملفات التي يلمسها التغيير
+se-agile#13|They are the same method with two names|Kanban is only for design teams|Scrum has no meetings at all||طريقة واحدة باسمين|كانبان لفرق التصميم فقط|سكرم بلا اجتماعات إطلاقًا
+se-agile#15|Everyone starts new tasks to stay busy|Remove the Review column from the board|Extend the sprint by a week||الجميع يبدأ مهام جديدة ليبقى مشغولًا|احذف عمود المراجعة من اللوحة|مدد السباق أسبوعًا
+se-ds#18|Plain objects are always faster for lookups|Map cannot use strings as its keys|There is no real difference between them||الكائنات العادية أسرع دائمًا في البحث|Map لا يقبل النصوص مفاتيح|لا فرق حقيقي بينهما
+se-ds#21|To make the network calls faster|To sort the nodes alphabetically|Because every graph is a tree||لتسريع استدعاءات الشبكة|لترتيب العقد أبجديًا|لأن كل رسم هو شجرة
+se-ds#24|O(1) access to any item by its index|Storage with no pointers at all|A random order that is faster to scan||وصول O(1) لأي عنصر بفهرسه|تخزين بلا مؤشرات إطلاقًا|ترتيب عشوائي أسرع في المسح
+se-algo#19|It never crashes on any input|It always runs in constant time|It can sort only strings||لا يتوقف أبدًا مع أي مدخلات|يعمل دائمًا بزمن ثابت|يرتب النصوص فقط
+se-algo#23|Always, on every kind of problem|Whenever the input is small|Whenever it is written recursively||دائمًا وفي كل أنواع المسائل|كلما كانت المدخلات صغيرة|كلما كُتبت بطريقة عودية
+se-algo#24|Start typing code right away|Name the fastest algorithm you know|Ask how long the interview will last||ابدأ كتابة الكود فورًا|اذكر أسرع خوارزمية تعرفها|اسأل كم ستستغرق المقابلة
+se-oop#21|An object with its own unique database id|An object that holds exactly one value|An object that is deleted after one use||كائن له معرّف فريد في قاعدة البيانات|كائن يحمل قيمة واحدة فقط|كائن يُحذف بعد استخدام واحد
+se-oop#22|Deletes the object from memory|Encrypts the object's values|Makes a deep copy of the object||يحذف الكائن من الذاكرة|يشفّر قيم الكائن|ينشئ نسخة عميقة من الكائن
+se-oop#23|It makes most tests unnecessary|It makes the code run faster on the CPU|It stops every kind of bug in advance||يجعل أغلب الاختبارات غير ضرورية|يجعل الكود أسرع على المعالج|يمنع كل أنواع الأخطاء مسبقًا
+se-oop#24|A class that has exactly four properties|A class that uses too much memory|A class that cannot be instantiated||صنف له أربع خصائص بالضبط|صنف يستهلك ذاكرة كثيرة|صنف لا يمكن إنشاء نسخة منه
+se-pat#20|The subject stops sending events to anyone|The data the listener held gets deleted|Nothing, the listener is removed by itself||يتوقف الموضوع عن إرسال الأحداث لأي أحد|تُحذف البيانات التي يحملها المستمع|لا شيء، المستمع يُحذف وحده
+se-pat#21|An error message thrown by the server|A direct call from one function to another|A configuration file loaded at start-up||رسالة خطأ يرميها الخادم|استدعاء مباشر من دالة إلى أخرى|ملف إعدادات يُحمَّل عند البدء
+se-pat#22|A global variable holding the choice|A while loop over every strategy|A JSON file listing the options||متغير عام يحمل الاختيار|حلقة while على كل استراتيجية|ملف JSON يسرد الخيارات
