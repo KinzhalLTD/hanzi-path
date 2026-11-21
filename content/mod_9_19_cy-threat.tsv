@@ -41,3 +41,83 @@ T|数据外泄|shùjù wàixiè|تسريب البيانات للخارج|data ex
 T|后门|hòumén|الباب الخلفي|backdoor
 T|攻击链|gōngjī liàn|سلسلة الهجوم|attack chain
 T|深度伪造|shēndù wěizào|التزييف العميق|deepfake
+T|恶意代码|èyìdàimǎ|الكود الخبيث|malicious code
+T|恶意程序|èyì chéngxù|البرنامج الخبيث|malicious program
+T|样本|yàngběn|العيّنة|sample
+T|病毒样本|bìngdú yàngběn|عيّنة الفيروس|virus sample
+T|变种|biànzhǒng|المتحوّر|variant
+T|家族|jiāzú|العائلة|family
+T|感染|gǎnrǎn|الإصابة|infection
+T|传播|chuánbō|الانتشار|spread
+T|自我复制|zìwǒ fùzhì|النسخ الذاتي|self-replication
+T|载体|zàitǐ|الحامل|carrier
+T|宏病毒|hóngbìngdú|فيروس الماكرو|macro virus
+T|引导区病毒|yǐndǎo qū bìngdú|فيروس قطاع الإقلاع|boot sector virus
+T|无文件恶意软件|wú wénjiàn èyìruǎnjiàn|البرمجية الخبيثة بلا ملفات|fileless malware
+T|挖矿木马|wākuàng mùmǎ|حصان طروادة للتعدين|cryptojacking trojan
+T|远控木马|yuǎn kòng mùmǎ|حصان طروادة للتحكم عن بُعد|remote access trojan
+T|键盘记录器|jiànpán jìlùqì|مسجّل لوحة المفاتيح|keylogger
+T|根套件|gēn tàojiàn|مجموعة الجذر (rootkit)|rootkit
+T|下载器|xiàzǎi qì|المحمِّل|downloader
+T|投放器|tóufàng qì|القاذف (dropper)|dropper
+T|逻辑炸弹|luójízhàdàn|القنبلة المنطقية|logic bomb
+T|加密勒索|jiāmì lèsuǒ|الابتزاز بالتشفير|encryption extortion
+T|赎金要求|shújīn yāoqiú|طلب الفدية|ransom demand
+T|勒索信|lèsuǒ xìn|رسالة الفدية|ransom note
+T|双重勒索|shuāngchóng lèsuǒ|الابتزاز المزدوج|double extortion
+T|解密工具|jiěmì gōngjù|أداة فك التشفير|decryptor
+T|命令与控制服务器|mìnglìng yǔ kòngzhì fúwùqì|خادم القيادة والتحكم|command-and-control server
+T|回连|huí lián|الاتصال العكسي|beaconing
+T|肉鸡|ròujī|الجهاز المسخّر|zombie machine
+T|钓鱼邮件|diàoyú yóujiàn|بريد التصيد|phishing email
+T|钓鱼网站|diàoyú wǎngzhàn|موقع التصيد|phishing website
+T|鱼叉式网络钓鱼|yúchā shì wǎngluò diàoyú|التصيد الموجّه|spear phishing
+T|鲸钓|jīng diào|اصطياد الحيتان|whaling
+T|短信钓鱼|duǎnxìn diàoyú|التصيد بالرسائل النصية|smishing
+T|语音钓鱼|yǔyīn diàoyú|التصيد الصوتي|vishing
+T|二维码钓鱼|èrwéimǎ diàoyú|التصيد بالرمز QR|quishing
+T|仿冒网站|fǎngmào wǎngzhàn|الموقع المقلَّد|spoofed website
+T|仿冒邮件|fǎngmào yóujiàn|البريد المنتحل|spoofed email
+T|冒充|màochōng|الانتحال|impersonation
+T|商业邮件欺诈|shāngyè yóujiàn qīzhà|احتيال البريد التجاري|business email compromise
+T|诈骗|zhàpiàn|الاحتيال|fraud
+T|电信诈骗|diànxìnzhàpiàn|الاحتيال الهاتفي|telecom fraud
+T|社交媒体|shèjiāoméitǐ|وسائل التواصل الاجتماعي|social media
+T|假冒客服|jiǎmào kèfú|خدمة العملاء المزيفة|fake customer service
+T|诱饵|yòu'ěr|الطُّعم|lure
+T|附件|fùjiàn|المرفق|attachment
+T|恶意附件|èyì fùjiàn|المرفق الخبيث|malicious attachment
+T|恶意链接|èyì liànjiē|الرابط الخبيث|malicious link
+T|水坑攻击|shuǐkēng gōngjī|هجوم حفرة الماء|watering-hole attack
+T|路过式下载|lùguò shì xiàzǎi|التحميل العابر|drive-by download
+T|漏洞利用工具包|lòudòng lìyòng gōngjù bāo|عدة استغلال الثغرات|exploit kit
+T|零点击|língdiǎn jī|بلا نقرة|zero-click
+T|攻击载荷|gōngjī zàihè|حمولة الهجوم|attack payload
+T|侦察阶段|zhēnchá jiēduàn|مرحلة الاستطلاع|reconnaissance phase
+T|武器化|wǔqì huà|التسليح|weaponisation
+T|投递|tóudì|التسليم|delivery
+T|利用|lìyòng|الاستغلال|exploitation
+T|安装|ānzhuāng|التثبيت|installation
+T|目标达成|mùbiāo dáchéng|تحقيق الهدف|actions on objectives
+T|杀伤链|shāshāng liàn|سلسلة القتل|kill chain
+T|战术|zhànshù|التكتيك|tactic
+T|技术手段|jìshù shǒuduàn|الأسلوب التقني|technique
+T|攻击手法|gōngjī shǒufǎ|أسلوب الهجوم|attack method
+T|权限维持|quánxiàn wéichí|الحفاظ على الوصول|maintaining access
+T|凭据转储|píngjù zhuǎn chǔ|تفريغ بيانات الاعتماد|credential dumping
+T|提权|tíquán|رفع الصلاحية|escalate privileges
+T|防御规避|fángyù guībì|التهرب من الدفاعات|defence evasion
+T|痕迹清除|hénjì qīngchú|محو الآثار|covering tracks
+T|加密通信|jiāmì tōngxìn|الاتصال المشفّر|encrypted communication
+T|国家级黑客|guójiājí hēikè|المخترقون المدعومون من دول|state-sponsored hackers
+T|黑客组织|hēikè zǔzhī|مجموعة الاختراق|hacker group
+T|网络犯罪|wǎngluò fànzuì|الجريمة السيبرانية|cybercrime
+T|暗网|àn wǎng|الشبكة المظلمة|dark web
+T|地下市场|dìxià shìchǎng|السوق السوداء الرقمية|underground market
+T|初始访问经纪人|chūshǐ fǎngwèn jīngjìrén|سمسار الوصول الأولي|initial access broker
+T|勒索即服务|lèsuǒ jí fúwù|الفدية كخدمة|ransomware as a service
+T|黑客工具|hēikè gōngjù|أداة الاختراق|hacking tool
+T|供应链入侵|gōngyìngliàn rùqīn|اختراق سلسلة التوريد|supply-chain compromise
+T|网络间谍|wǎngluò jiàndié|التجسس السيبراني|cyber espionage
+T|网络战|wǎngluò zhàn|الحرب السيبرانية|cyber warfare
+T|关键基础设施|guānjiàn jīchǔshèshī|البنية التحتية الحيوية|critical infrastructure

@@ -41,3 +41,83 @@ T|分库分表|fēnkù fēnbiǎo|تقسيم قواعد البيانات والج
 T|数据迁移|shùjù qiānyí|ترحيل البيانات|data migration
 T|一致性|yízhìxìng|الاتساق|consistency
 T|冗余|rǒngyú|التكرار (الفائض)|redundancy
+T|结构化查询语言|jiégòu huà cháxún yǔyán|لغة الاستعلام المهيكلة|SQL
+T|非关系型数据库|fēi guānxi xíng shùjùkù|قاعدة البيانات غير العلائقية|NoSQL database
+T|文档数据库|wéndàng shùjùkù|قاعدة بيانات المستندات|document database
+T|键值数据库|jiàn zhí shùjùkù|قاعدة بيانات المفتاح والقيمة|key-value database
+T|图数据库|tú shùjùkù|قاعدة بيانات الرسوم|graph database
+T|时序数据库|shíxù shùjùkù|قاعدة بيانات السلاسل الزمنية|time-series database
+T|内存数据库|nèicún shùjùkù|قاعدة البيانات في الذاكرة|in-memory database
+T|数据仓库|shùjù cāngkù|مستودع البيانات|data warehouse
+T|数据湖|shùjù hú|بحيرة البيانات|data lake
+T|行|xíng|الصف|row
+T|列|liè|العمود|column
+T|记录|jìlù|السجل|record
+T|表|biǎo|الجدول|table
+T|唯一约束|wéiyī yuēshù|قيد التفرد|unique constraint
+T|非空约束|fēikōng yuēshù|قيد عدم الفراغ|not-null constraint
+T|约束|yuēshù|القيد|constraint
+T|默认约束|mòrèn yuēshù|القيد الافتراضي|default constraint
+T|复合主键|fùhé zhǔ jiàn|المفتاح الأساسي المركب|composite primary key
+T|自增主键|zì zēng zhǔ jiàn|المفتاح الأساسي التلقائي|auto-increment key
+T|插入数据|chārù shùjù|إدراج البيانات|insert data
+T|更新数据|gēngxīn shùjù|تحديث البيانات|update data
+T|删除数据|shānchú shùjù|حذف البيانات|delete data
+T|条件查询|tiáojiàn cháxún|الاستعلام الشرطي|conditional query
+T|排序查询|páixù cháxún|الاستعلام المرتب|sorted query
+T|分组|fēnzǔ|التجميع|grouping
+T|聚合函数|jùhé hánshù|الدالة التجميعية|aggregate function
+T|连接查询|liánjiē cháxún|استعلام الربط|join query
+T|内连接|nèi liánjiē|الربط الداخلي|inner join
+T|外连接|wài liánjiē|الربط الخارجي|outer join
+T|左连接|zuǒ liánjiē|الربط الأيسر|left join
+T|子查询|zǐ cháxún|الاستعلام الفرعي|subquery
+T|去重|qùchóng|إزالة التكرار|deduplicate
+T|范式|fànshì|الصيغة المعيارية|normal form
+T|规范化|guīfànhuà|التطبيع|normalization
+T|反规范化|fǎn guīfànhuà|إلغاء التطبيع|denormalization
+T|实体关系图|shítǐ guānxi tú|مخطط الكيانات والعلاقات|entity-relationship diagram
+T|一对多|yīduì duō|واحد إلى متعدد|one-to-many
+T|多对多|duō duì duō|متعدد إلى متعدد|many-to-many
+T|一对一|yīduìyī|واحد إلى واحد|one-to-one
+T|原子性|yuánzǐ xìng|الذرية|atomicity
+T|隔离性|gélí xìng|العزل|isolation
+T|持久性|chíjiǔ xìng|الديمومة|durability
+T|提交事务|tíjiāo shìwù|تثبيت المعاملة|commit a transaction
+T|回滚事务|huígǔn shìwù|التراجع عن المعاملة|roll back a transaction
+T|锁|suǒ|القفل|lock
+T|死锁|sǐsuǒ|الجمود (deadlock)|deadlock
+T|乐观锁|lèguān suǒ|القفل المتفائل|optimistic lock
+T|悲观锁|bēiguān suǒ|القفل المتشائم|pessimistic lock
+T|隔离级别|gélí jíbié|مستوى العزل|isolation level
+T|脏读|zāng dú|القراءة القذرة|dirty read
+T|幻读|huàn dú|القراءة الوهمية|phantom read
+T|执行计划|zhíxíng jìhuà|خطة التنفيذ|execution plan
+T|全表扫描|quán biǎo sǎomiáo|المسح الكامل للجدول|full table scan
+T|慢查询|màn cháxún|الاستعلام البطيء|slow query
+T|查询优化|cháxún yōuhuà|تحسين الاستعلام|query optimization
+T|复合索引|fùhé suǒyǐn|الفهرس المركب|composite index
+T|主从复制|zhǔcóng fùzhì|النسخ الرئيسي والتابع|primary-replica replication
+T|副本|fùběn|النسخة المتماثلة|replica
+T|分片|fēn piàn|التجزئة الأفقية|sharding
+T|分区|fēnqū|التقسيم|partitioning
+T|数据同步|shùjù tóngbù|مزامنة البيانات|data synchronization
+T|增量备份|zēngliàng bèifèn|النسخ الاحتياطي التزايدي|incremental backup
+T|全量备份|quán liàng bèifèn|النسخ الاحتياطي الكامل|full backup
+T|数据恢复|shùjù huīfù|استعادة البيانات|data recovery
+T|对象关系映射|duìxiàng guānxi yìngshè|ربط الكائنات بالعلاقات (ORM)|ORM
+T|迁移脚本|qiānyí jiǎoběn|سكربت الترحيل|migration script
+T|数据库管理员|shùjùkù guǎnlǐyuán|مدير قاعدة البيانات|database administrator
+T|数据字典|shùjù zìdiǎn|قاموس البيانات|data dictionary
+T|元数据管理|yuánshùjù guǎnlǐ|إدارة البيانات الوصفية|metadata management
+T|触发器|chùfāqì|المشغّل (trigger)|trigger
+T|游标|yóubiāo|المؤشر|cursor
+T|批量操作|pīliàng cāozuò|العمليات الجماعية|batch operation
+T|数据清洗|shùjù qīngxǐ|تنظيف البيانات|data cleaning
+T|数据质量|shùjù zhìliàng|جودة البيانات|data quality
+T|数据分析|shùjù fēnxī|تحليل البيانات|data analysis
+T|报表|bàobiǎo|التقرير|report
+T|提取转换加载|tíqǔ zhuǎnhuàn jiāzài|الاستخراج والتحويل والتحميل|ETL
+T|大数据|dàshùjù|البيانات الضخمة|big data
+T|数据管道|shùjù guǎndào|خط البيانات|data pipeline
+T|最终一致性|zuìzhōng yīzhìxìng|الاتساق النهائي|eventual consistency

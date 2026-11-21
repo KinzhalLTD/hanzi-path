@@ -41,3 +41,83 @@ T|灾难恢复|zāinàn huīfù|التعافي من الكوارث|disaster reco
 T|应急预案|yìngjí yù'àn|خطة الطوارئ|emergency plan
 T|时间戳|shíjiānchuō|الطابع الزمني|timestamp
 T|桌面演练|zhuōmiàn yǎnliàn|تمرين الطاولة|tabletop exercise
+T|响应计划|xiǎngyìng jìhuà|خطة الاستجابة|response plan
+T|响应团队|xiǎngyìng tuánduì|فريق الاستجابة|response team
+T|事件经理|shìjiàn jīnglǐ|مدير الحادث|incident manager
+T|事件分级|shìjiàn fēnjí|تصنيف الحادث|incident classification
+T|事件等级|shìjiàn děngjí|درجة الحادث|incident severity
+T|准备阶段|zhǔnbèi jiēduàn|مرحلة الاستعداد|preparation phase
+T|检测与分析|jiǎncè yǔ fēnxī|الكشف والتحليل|detection and analysis
+T|遏制阶段|èzhì jiēduàn|مرحلة الاحتواء|containment phase
+T|根除阶段|gēnchú jiēduàn|مرحلة الاستئصال|eradication phase
+T|恢复阶段|huīfù jiēduàn|مرحلة التعافي|recovery phase
+T|事后活动|shìhòu huódòng|أنشطة ما بعد الحادث|post-incident activity
+T|短期遏制|duǎnqī èzhì|الاحتواء قصير المدى|short-term containment
+T|长期遏制|chángqī èzhì|الاحتواء طويل المدى|long-term containment
+T|断网|duànwǎng|قطع الشبكة|disconnect from network
+T|关闭服务|guānbì fúwù|إيقاف الخدمة|shut down a service
+T|吊销令牌|diàoxiāo lìngpái|إلغاء الرموز|revoke tokens
+T|清除恶意软件|qīngchú èyìruǎnjiàn|إزالة البرمجيات الخبيثة|remove malware
+T|重装系统|chóngzhuāng xìtǒng|إعادة تثبيت النظام|reinstall the system
+T|修补漏洞|xiūbǔ lòudòng|سد الثغرة|patch the vulnerability
+T|恢复数据|huīfù shùjù|استعادة البيانات|restore data
+T|恢复业务|huīfù yèwù|استعادة العمل|restore operations
+T|恢复时间目标|huīfù shíjiān mùbiāo|الهدف الزمني للتعافي|recovery time objective
+T|恢复点目标|huīfù diǎn mùbiāo|هدف نقطة الاستعادة|recovery point objective
+T|数字取证|shùzì qǔzhèng|التحليل الجنائي الرقمي|digital forensics
+T|取证分析|qǔzhèng fēnxī|التحليل الجنائي|forensic analysis
+T|取证工具|qǔzhèng gōngjù|أداة التحليل الجنائي|forensic tool
+T|磁盘镜像|cípán jìngxiàng|صورة القرص|disk image
+T|内存镜像|nèicún jìngxiàng|صورة الذاكرة|memory image
+T|易失性数据|yì shī xìng shùjù|البيانات المتطايرة|volatile data
+T|易失性顺序|yì shī xìng shùnxù|ترتيب التطاير|order of volatility
+T|写保护|xiě bǎohù|الحماية من الكتابة|write protection
+T|哈希校验|hāxī jiàoyàn|التحقق بالبصمة|hash verification
+T|监管链|jiānguǎn liàn|سلسلة الحيازة|chain of custody
+T|证据保全|zhèngjù bǎoquán|حفظ الأدلة|evidence preservation
+T|法律取证|fǎlǜ qǔzhèng|الأدلة القانونية|legal evidence
+T|文件系统|wénjiàn xìtǒng|نظام الملفات|file system
+T|文件时间|wénjiàn shíjiān|توقيتات الملف|file timestamps
+T|删除文件恢复|shānchú wénjiàn huīfù|استرجاع الملفات المحذوفة|deleted file recovery
+T|浏览记录|liúlǎn jìlù|سجل التصفح|browsing history
+T|系统日志|xìtǒng rìzhì|سجل النظام|system log
+T|事件日志|shìjiàn rìzhì|سجل الأحداث|event log
+T|网络取证|wǎngluò qǔzhèng|التحليل الجنائي للشبكة|network forensics
+T|移动取证|yídòng qǔzhèng|التحليل الجنائي للهواتف|mobile forensics
+T|恶意软件分析|èyìruǎnjiàn fēnxī|تحليل البرمجيات الخبيثة|malware analysis
+T|静态分析法|jìngtài fēnxīfǎ|طريقة التحليل الثابت|static analysis method
+T|动态分析法|dòngtài fēnxīfǎ|طريقة التحليل الديناميكي|dynamic analysis method
+T|攻击者画像|gōngjī zhě huàxiàng|ملف المهاجم|attacker profile
+T|攻击归因|gōngjī guīyīn|نسب الهجوم|attack attribution
+T|影响范围|yǐngxiǎng fànwéi|نطاق الأثر|scope of impact
+T|受影响系统|shòu yǐngxiǎng xìtǒng|الأنظمة المتأثرة|affected systems
+T|受害者|shòuhàizhě|الضحية|victim
+T|利益相关方|lìyì xiāngguān fāng|أصحاب المصلحة|stakeholders
+T|管理层|guǎnlǐ céng|الإدارة|management
+T|法务部门|fǎwù bùmén|الإدارة القانونية|legal department
+T|公关|gōngguān|العلاقات العامة|public relations
+T|媒体声明|méitǐ shēngmíng|البيان الإعلامي|media statement
+T|客户通知|kèhù tōngzhī|إشعار العملاء|customer notification
+T|监管机构|jiānguǎn jīgòu|الجهة التنظيمية|regulator
+T|报告义务|bàogào yìwù|التزام الإبلاغ|reporting obligation
+T|报警|bàojǐng|إبلاغ الشرطة|report to police
+T|执法机构|zhífǎ jīgòu|جهات إنفاذ القانون|law enforcement
+T|网络保险|wǎngluò bǎoxiǎn|التأمين السيبراني|cyber insurance
+T|保险理赔|bǎoxiǎn lǐpéi|مطالبة التأمين|insurance claim
+T|外部顾问|wàibù gùwèn|المستشار الخارجي|external consultant
+T|事件报告|shìjiàn bàogào|تقرير الحادث|incident report
+T|总结报告|zǒngjié bàogào|التقرير الختامي|final report
+T|改进措施|gǎijìn cuòshī|إجراءات التحسين|improvement actions
+T|责任人|zérènrén|الشخص المسؤول|responsible person
+T|完成期限|wánchéng qīxiàn|موعد الإنجاز|due date
+T|无责复盘|wú zé fùpán|المراجعة بلا لوم|blameless review
+T|演练计划|yǎnliàn jìhuà|خطة التمارين|exercise plan
+T|模拟攻击|mónǐ gōngjī|الهجوم المحاكى|simulated attack
+T|联系人清单|liánxìrén qīngdān|قائمة جهات الاتصال|contact list
+T|备用通信|bèiyòng tōngxìn|قناة الاتصال البديلة|backup communication
+T|作战室|zuòzhàn shì|غرفة العمليات|war room
+T|状态更新|zhuàngtài gēngxīn|تحديث الحالة|status update
+T|决策日志|juécè rìzhì|سجل القرارات|decision log
+T|业务影响|yèwù yǐngxiǎng|الأثر على العمل|business impact
+T|损失评估|sǔnshī pínggū|تقييم الخسائر|loss assessment
+T|恢复验证|huīfù yànzhèng|التحقق من التعافي|recovery validation

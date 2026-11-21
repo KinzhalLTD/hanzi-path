@@ -1,0 +1,517 @@
+# zh|ar|en  (pinyin filled from CC-CEDICT by scripts/terms_fill.py)
++cy-threat
+恶意代码|الكود الخبيث|malicious code
+恶意程序|البرنامج الخبيث|malicious program
+样本|العيّنة|sample
+病毒样本|عيّنة الفيروس|virus sample
+变种|المتحوّر|variant
+家族|العائلة|family
+感染|الإصابة|infection
+传播|الانتشار|spread
+自我复制|النسخ الذاتي|self-replication
+载体|الحامل|carrier
+宏病毒|فيروس الماكرو|macro virus
+引导区病毒|فيروس قطاع الإقلاع|boot sector virus
+无文件恶意软件|البرمجية الخبيثة بلا ملفات|fileless malware
+挖矿木马|حصان طروادة للتعدين|cryptojacking trojan
+远控木马|حصان طروادة للتحكم عن بُعد|remote access trojan
+键盘记录器|مسجّل لوحة المفاتيح|keylogger
+根套件|مجموعة الجذر (rootkit)|rootkit
+下载器|المحمِّل|downloader
+投放器|القاذف (dropper)|dropper
+逻辑炸弹|القنبلة المنطقية|logic bomb
+加密勒索|الابتزاز بالتشفير|encryption extortion
+赎金要求|طلب الفدية|ransom demand
+勒索信|رسالة الفدية|ransom note
+双重勒索|الابتزاز المزدوج|double extortion
+解密工具|أداة فك التشفير|decryptor
+命令与控制服务器|خادم القيادة والتحكم|command-and-control server
+回连|الاتصال العكسي|beaconing
+肉鸡|الجهاز المسخّر|zombie machine
+钓鱼邮件|بريد التصيد|phishing email
+钓鱼网站|موقع التصيد|phishing website
+鱼叉式网络钓鱼|التصيد الموجّه|spear phishing
+鲸钓|اصطياد الحيتان|whaling
+短信钓鱼|التصيد بالرسائل النصية|smishing
+语音钓鱼|التصيد الصوتي|vishing
+二维码钓鱼|التصيد بالرمز QR|quishing
+仿冒网站|الموقع المقلَّد|spoofed website
+仿冒邮件|البريد المنتحل|spoofed email
+冒充|الانتحال|impersonation
+商业邮件欺诈|احتيال البريد التجاري|business email compromise
+诈骗|الاحتيال|fraud
+电信诈骗|الاحتيال الهاتفي|telecom fraud
+社交媒体|وسائل التواصل الاجتماعي|social media
+假冒客服|خدمة العملاء المزيفة|fake customer service
+诱饵|الطُّعم|lure
+附件|المرفق|attachment
+恶意附件|المرفق الخبيث|malicious attachment
+恶意链接|الرابط الخبيث|malicious link
+水坑攻击|هجوم حفرة الماء|watering-hole attack
+路过式下载|التحميل العابر|drive-by download
+漏洞利用工具包|عدة استغلال الثغرات|exploit kit
+零点击|بلا نقرة|zero-click
+攻击载荷|حمولة الهجوم|attack payload
+侦察阶段|مرحلة الاستطلاع|reconnaissance phase
+武器化|التسليح|weaponisation
+投递|التسليم|delivery
+利用|الاستغلال|exploitation
+安装|التثبيت|installation
+目标达成|تحقيق الهدف|actions on objectives
+杀伤链|سلسلة القتل|kill chain
+战术|التكتيك|tactic
+技术手段|الأسلوب التقني|technique
+攻击手法|أسلوب الهجوم|attack method
+权限维持|الحفاظ على الوصول|maintaining access
+凭据转储|تفريغ بيانات الاعتماد|credential dumping
+提权|رفع الصلاحية|escalate privileges
+防御规避|التهرب من الدفاعات|defence evasion
+痕迹清除|محو الآثار|covering tracks
+加密通信|الاتصال المشفّر|encrypted communication
+国家级黑客|المخترقون المدعومون من دول|state-sponsored hackers
+黑客组织|مجموعة الاختراق|hacker group
+网络犯罪|الجريمة السيبرانية|cybercrime
+暗网|الشبكة المظلمة|dark web
+地下市场|السوق السوداء الرقمية|underground market
+初始访问经纪人|سمسار الوصول الأولي|initial access broker
+勒索即服务|الفدية كخدمة|ransomware as a service
+黑客工具|أداة الاختراق|hacking tool
+供应链入侵|اختراق سلسلة التوريد|supply-chain compromise
+网络间谍|التجسس السيبراني|cyber espionage
+网络战|الحرب السيبرانية|cyber warfare
+关键基础设施|البنية التحتية الحيوية|critical infrastructure
+威胁态势|مشهد التهديدات|threat landscape
+威胁报告|تقرير التهديدات|threat report
+攻击趋势|اتجاهات الهجمات|attack trends
+人工智能诈骗|احتيال الذكاء الاصطناعي|AI fraud
+合成语音|الصوت المُصطنع|synthetic voice
+换脸|تبديل الوجه|face swap
+虚假信息|المعلومات المضللة|disinformation
+防钓鱼培训|التدريب على مكافحة التصيد|anti-phishing training
+举报|الإبلاغ|report (to security)
++cy-soc
+安全运营|العمليات الأمنية|security operations
+一线分析师|محلل المستوى الأول|tier-1 analyst
+二线分析师|محلل المستوى الثاني|tier-2 analyst
+值班分析师|المحلل المناوب|on-shift analyst
+交接班|تسليم الوردية|shift handover
+轮班|نظام الورديات|shift work
+告警分级|تصنيف التنبيهات|alert triage
+告警优先级|أولوية التنبيه|alert priority
+告警疲劳|إرهاق التنبيهات|alert fatigue
+告警降噪|تقليل ضجيج التنبيهات|alert noise reduction
+真阳性|الإيجابي الصحيح|true positive
+假阳性|الإيجابي الكاذب|false positive (FP)
+假阴性|السلبي الكاذب|false negative
+日志源|مصدر السجلات|log source
+日志格式|صيغة السجل|log format
+日志解析|تحليل السجلات|log parsing
+日志保留|الاحتفاظ بالسجلات|log retention
+日志完整性|سلامة السجلات|log integrity
+时间同步|مزامنة الوقت|time synchronisation
+事件关联|ربط الأحداث|event correlation
+规则引擎|محرك القواعد|rule engine
+检测逻辑|منطق الكشف|detection logic
+检测覆盖率|تغطية الكشف|detection coverage
+检测工程|هندسة الكشف|detection engineering
+攻击模拟|محاكاة الهجوم|attack simulation
+入侵指标|مؤشرات الاختراق|indicators of compromise
+攻击指标|مؤشرات الهجوم|indicators of attack
+情报源|مصدر المعلومات الاستخبارية|intelligence feed
+信誉库|قاعدة السمعة|reputation database
+恶意域名|النطاق الخبيث|malicious domain
+恶意地址|العنوان الخبيث|malicious IP
+文件哈希|بصمة الملف|file hash
+沙箱分析|التحليل في البيئة المعزولة|sandbox analysis
+威胁情报平台|منصة استخبارات التهديدات|threat intelligence platform
+狩猎假设|فرضية الصيد|hunting hypothesis
+主动防御|الدفاع الاستباقي|active defence
+终端检测与响应|الكشف والاستجابة لنقاط النهاية|EDR
+扩展检测与响应|الكشف والاستجابة الموسّع|XDR
+网络检测与响应|الكشف والاستجابة الشبكية|NDR
+安全编排|التنسيق الأمني|security orchestration
+自动化响应|الاستجابة المؤتمتة|automated response
+处置|المعالجة|handling
+封禁|الحظر|block (ban)
+隔离主机|عزل المضيف|isolate host
+重置密码|إعادة تعيين كلمة المرور|reset password
+升级处理|التصعيد|escalation
+案件|القضية|case
+调查|التحقيق|investigation
+证据收集|جمع الأدلة|evidence collection
+上下文|السياق|context
+资产信息|معلومات الأصول|asset information
+资产重要性|أهمية الأصل|asset criticality
+态势感知|الوعي بالوضع الأمني|situational awareness
+大屏|الشاشة الكبيرة|video wall
+安全报表|التقرير الأمني|security report
+平均检测时间|متوسط وقت الكشف|mean time to detect
+平均响应时间|متوسط وقت الاستجابة|mean time to respond
+服务水平|مستوى الخدمة|service level
+运营指标|مؤشرات التشغيل|operational metrics
+登录失败|فشل تسجيل الدخول|failed login
+暴力登录|تخمين تسجيل الدخول|brute-force login
+不可能旅行|السفر المستحيل|impossible travel
+异常流量|حركة المرور غير الطبيعية|abnormal traffic
+数据外传|نقل البيانات إلى الخارج|data exfiltration (outbound)
+可疑进程|العملية المشبوهة|suspicious process
+命令行审计|تدقيق سطر الأوامر|command-line auditing
+计划任务|المهمة المجدولة|scheduled task
+注册表|سجل النظام|registry
+服务创建|إنشاء خدمة|service creation
+横向渗透|التوغل الجانبي|lateral penetration
+域名查询|استعلام النطاق|domain lookup
+邮件网关|بوابة البريد|email gateway
+网络流量日志|سجل تدفق الشبكة|network flow log
+云审计日志|سجل التدقيق السحابي|cloud audit log
+身份日志|سجل الهوية|identity log
+安全基准|المرجع الأمني|security benchmark
+红蓝对抗|مواجهة الفريقين الأحمر والأزرق|red versus blue exercise
+紫队演练|تمرين الفريق البنفسجي|purple team exercise
+知识库|قاعدة المعرفة|knowledge base
+处置手册|دليل المعالجة|response playbook
+外包|الاستعانة بمصادر خارجية|outsourcing
+托管安全服务|الخدمات الأمنية المُدارة|managed security service
+安全运营平台|منصة العمليات الأمنية|security operations platform
+大数据分析|تحليل البيانات الضخمة|big data analytics
+机器学习|تعلم الآلة|machine learning
++cy-ir
+响应计划|خطة الاستجابة|response plan
+响应团队|فريق الاستجابة|response team
+事件经理|مدير الحادث|incident manager
+事件分级|تصنيف الحادث|incident classification
+事件等级|درجة الحادث|incident severity
+准备阶段|مرحلة الاستعداد|preparation phase
+检测与分析|الكشف والتحليل|detection and analysis
+遏制阶段|مرحلة الاحتواء|containment phase
+根除阶段|مرحلة الاستئصال|eradication phase
+恢复阶段|مرحلة التعافي|recovery phase
+事后活动|أنشطة ما بعد الحادث|post-incident activity
+短期遏制|الاحتواء قصير المدى|short-term containment
+长期遏制|الاحتواء طويل المدى|long-term containment
+断网|قطع الشبكة|disconnect from network
+关闭服务|إيقاف الخدمة|shut down a service
+吊销令牌|إلغاء الرموز|revoke tokens
+清除恶意软件|إزالة البرمجيات الخبيثة|remove malware
+重装系统|إعادة تثبيت النظام|reinstall the system
+修补漏洞|سد الثغرة|patch the vulnerability
+恢复数据|استعادة البيانات|restore data
+恢复业务|استعادة العمل|restore operations
+恢复时间目标|الهدف الزمني للتعافي|recovery time objective
+恢复点目标|هدف نقطة الاستعادة|recovery point objective
+数字取证|التحليل الجنائي الرقمي|digital forensics
+取证分析|التحليل الجنائي|forensic analysis
+取证工具|أداة التحليل الجنائي|forensic tool
+磁盘镜像|صورة القرص|disk image
+内存镜像|صورة الذاكرة|memory image
+易失性数据|البيانات المتطايرة|volatile data
+易失性顺序|ترتيب التطاير|order of volatility
+写保护|الحماية من الكتابة|write protection
+哈希校验|التحقق بالبصمة|hash verification
+监管链|سلسلة الحيازة|chain of custody
+证据保全|حفظ الأدلة|evidence preservation
+法律取证|الأدلة القانونية|legal evidence
+文件系统|نظام الملفات|file system
+文件时间|توقيتات الملف|file timestamps
+删除文件恢复|استرجاع الملفات المحذوفة|deleted file recovery
+浏览记录|سجل التصفح|browsing history
+系统日志|سجل النظام|system log
+事件日志|سجل الأحداث|event log
+网络取证|التحليل الجنائي للشبكة|network forensics
+移动取证|التحليل الجنائي للهواتف|mobile forensics
+恶意软件分析|تحليل البرمجيات الخبيثة|malware analysis
+静态分析法|طريقة التحليل الثابت|static analysis method
+动态分析法|طريقة التحليل الديناميكي|dynamic analysis method
+攻击者画像|ملف المهاجم|attacker profile
+攻击归因|نسب الهجوم|attack attribution
+影响范围|نطاق الأثر|scope of impact
+受影响系统|الأنظمة المتأثرة|affected systems
+受害者|الضحية|victim
+利益相关方|أصحاب المصلحة|stakeholders
+管理层|الإدارة|management
+法务部门|الإدارة القانونية|legal department
+公关|العلاقات العامة|public relations
+媒体声明|البيان الإعلامي|media statement
+客户通知|إشعار العملاء|customer notification
+监管机构|الجهة التنظيمية|regulator
+报告义务|التزام الإبلاغ|reporting obligation
+报警|إبلاغ الشرطة|report to police
+执法机构|جهات إنفاذ القانون|law enforcement
+网络保险|التأمين السيبراني|cyber insurance
+保险理赔|مطالبة التأمين|insurance claim
+外部顾问|المستشار الخارجي|external consultant
+事件报告|تقرير الحادث|incident report
+总结报告|التقرير الختامي|final report
+改进措施|إجراءات التحسين|improvement actions
+责任人|الشخص المسؤول|responsible person
+完成期限|موعد الإنجاز|due date
+无责复盘|المراجعة بلا لوم|blameless review
+演练计划|خطة التمارين|exercise plan
+模拟攻击|الهجوم المحاكى|simulated attack
+联系人清单|قائمة جهات الاتصال|contact list
+备用通信|قناة الاتصال البديلة|backup communication
+作战室|غرفة العمليات|war room
+状态更新|تحديث الحالة|status update
+决策日志|سجل القرارات|decision log
+业务影响|الأثر على العمل|business impact
+损失评估|تقييم الخسائر|loss assessment
+恢复验证|التحقق من التعافي|recovery validation
+加强监控|تعزيز المراقبة|enhanced monitoring
+再次入侵|الاختراق مجددًا|re-compromise
+入侵检测系统|نظام كشف التسلل|intrusion detection system
+勒索事件|حادثة الفدية|ransomware incident
+数据泄露事件|حادثة تسرب البيانات|data breach incident
++cy-cloud
+云服务|الخدمة السحابية|cloud service
+基础设施即服务|البنية التحتية كخدمة|IaaS
+平台即服务|المنصة كخدمة|PaaS
+软件即服务|البرمجيات كخدمة|SaaS
+云账号|الحساب السحابي|cloud account
+根账号|حساب الجذر|root account
+身份与访问管理|إدارة الهوية والوصول|identity and access management
+权限策略|سياسة الصلاحيات|permission policy
+角色扮演|تقمّص الدور|assume role
+临时凭证|بيانات الاعتماد المؤقتة|temporary credentials
+长期密钥|المفتاح طويل الأمد|long-lived key
+工作负载身份|هوية عبء العمل|workload identity
+元数据服务|خدمة البيانات الوصفية|metadata service
+存储桶策略|سياسة حاوية التخزين|bucket policy
+公开读取|القراءة العامة|public read
+阻止公共访问|حجب الوصول العام|block public access
+数据加密密钥|مفتاح تشفير البيانات|data encryption key
+客户管理密钥|المفتاح الذي يديره العميل|customer-managed key
+密钥保管库|خزنة المفاتيح|key vault
+密钥管理器|مدير الأسرار|secrets manager
+网络安全组|مجموعة أمان الشبكة|network security group
+私有子网|الشبكة الفرعية الخاصة|private subnet
+公有子网|الشبكة الفرعية العامة|public subnet
+私有终端节点|نقطة النهاية الخاصة|private endpoint
+云防火墙|الجدار الناري السحابي|cloud firewall
+审计跟踪|مسار التدقيق|audit trail
+配置审计|تدقيق الإعدادات|configuration audit
+合规检查|فحص الامتثال|compliance check
+资源清单|قائمة الموارد|resource inventory
+影子资产|الأصول الخفية|shadow IT
+多账号|الحسابات المتعددة|multi-account
+组织策略|سياسة المؤسسة|organisation policy
+防护栏|الحواجز الوقائية|guardrails
+落地区|منطقة الهبوط|landing zone
+基础设施模板|قالب البنية التحتية|infrastructure template
+模板扫描|فحص القوالب|template scanning
+策略即代码|السياسة ككود|policy as code
+开发安全运维|التطوير الآمن والعمليات|DevSecOps
+流水线安全|أمن خط النشر|pipeline security
+构建服务器|خادم البناء|build server
+构建产物|مخرجات البناء|build artefact
+产物签名|توقيع المخرجات|artefact signing
+来源证明|إثبات المنشأ|provenance
+软件供应链|سلسلة توريد البرمجيات|software supply chain
+可信构建|البناء الموثوق|trusted build
+容器镜像|صورة الحاوية|container image
+镜像签名|توقيع الصورة|image signing
+精简镜像|الصورة المصغّرة|minimal image
+特权容器|الحاوية المميزة|privileged container
+容器逃逸|الهروب من الحاوية|container escape
+运行时安全|الأمن وقت التشغيل|runtime security
+集群安全|أمن العنقود|cluster security
+网络策略|سياسة الشبكة|network policy
+准入控制|التحكم في القبول|admission control
+密钥对象|كائن السر|secret object
+服务网格安全|أمن شبكة الخدمات|service mesh security
+双向认证|المصادقة المتبادلة|mutual authentication
+无服务器函数|الدالة بلا خادم|serverless function
+函数权限|صلاحيات الدالة|function permissions
+事件触发|التشغيل بالأحداث|event trigger
+超时限制|حد المهلة|timeout limit
+并发限制|حد التزامن|concurrency limit
+费用告警|تنبيه التكاليف|billing alert
+资源滥用|إساءة استخدام الموارد|resource abuse
+挖矿|التعدين|cryptomining
+云原生安全|الأمن السحابي الأصلي|cloud-native security
+云工作负载保护|حماية أعباء العمل السحابية|cloud workload protection
+云访问安全代理|وسيط أمن الوصول السحابي|CASB
+多租户|تعدد المستأجرين|multi-tenancy
+租户隔离|عزل المستأجرين|tenant isolation
+数据驻留|إقامة البيانات|data residency
+数据主权|سيادة البيانات|data sovereignty
+退出策略|استراتيجية الخروج|exit strategy
+厂商锁定|الارتباط بالمورد|vendor lock-in
+服务水平协议|اتفاقية مستوى الخدمة|SLA
+共享资源|الموارد المشتركة|shared resources
+云迁移|الترحيل إلى السحابة|cloud migration
+云备份|النسخ الاحتياطي السحابي|cloud backup
+跨区域复制|النسخ عبر المناطق|cross-region replication
+快照|اللقطة|snapshot
+不可变备份|النسخة الاحتياطية غير القابلة للتعديل|immutable backup
++cy-grc
+信息安全管理体系|نظام إدارة أمن المعلومات|ISMS
+安全治理|الحوكمة الأمنية|security governance
+董事会|مجلس الإدارة|board of directors
+高级管理层|الإدارة العليا|senior management
+风险管理框架|إطار إدارة المخاطر|risk management framework
+风险识别|تحديد المخاطر|risk identification
+风险分析|تحليل المخاطر|risk analysis
+风险评价|تقدير المخاطر|risk evaluation
+风险接受|قبول المخاطر|risk acceptance
+风险转移|نقل المخاطر|risk transfer
+风险规避|تجنب المخاطر|risk avoidance
+风险缓解|تخفيف المخاطر|risk mitigation
+风险负责人|مالك الخطر|risk owner
+固有风险|الخطر الكامن|inherent risk
+定性分析|التحليل النوعي|qualitative analysis
+定量分析|التحليل الكمي|quantitative analysis
+年度损失期望|الخسارة السنوية المتوقعة|annualised loss expectancy
+控制目标|هدف الضابط|control objective
+控制有效性|فعالية الضوابط|control effectiveness
+适用性声明|بيان قابلية التطبيق|statement of applicability
+差距分析|تحليل الفجوات|gap analysis
+整改|المعالجة التصحيحية|remediation
+整改计划|خطة المعالجة|remediation plan
+不符合项|عدم المطابقة|nonconformity
+纠正措施|الإجراء التصحيحي|corrective action
+预防措施|الإجراء الوقائي|preventive action
+内部审计|التدقيق الداخلي|internal audit
+外部审计|التدقيق الخارجي|external audit
+审计员|المدقق|auditor
+审计证据|أدلة التدقيق|audit evidence
+审计发现|ملاحظة التدقيق|audit finding
+认证机构|جهة الاعتماد|certification body
+认证证书|شهادة الاعتماد|certification
+监督审核|تدقيق المراقبة|surveillance audit
+再认证|إعادة الاعتماد|recertification
+法律法规|القوانين والأنظمة|laws and regulations
+监管要求|المتطلبات التنظيمية|regulatory requirements
+国家标准|المعيار الوطني|national standard
+国际标准|المعيار الدولي|international standard
+行业标准|معيار الصناعة|industry standard
+最佳做法|أفضل الممارسات|best practice
+政策文件|وثيقة السياسة|policy document
+标准文件|وثيقة المعيار|standard document
+操作规程|إجراءات التشغيل|operating procedure
+指南|الدليل الإرشادي|guideline
+文件控制|ضبط الوثائق|document control
+记录管理|إدارة السجلات|records management
+保留期限|مدة الاحتفاظ|retention period
+数据处理|معالجة البيانات|data processing
+数据控制者|المتحكم بالبيانات|data controller
+数据处理者|معالج البيانات|data processor
+个人数据|البيانات الشخصية|personal data
+敏感个人信息|المعلومات الشخصية الحساسة|sensitive personal information
+数据最小化|تقليل البيانات|data minimisation
+目的限制|تحديد الغرض|purpose limitation
+同意撤回|سحب الموافقة|withdrawal of consent
+访问权|حق الوصول|right of access
+删除权|حق الحذف|right to erasure
+更正权|حق التصحيح|right to rectification
+数据保护官|مسؤول حماية البيانات|data protection officer
+隐私影响评估|تقييم الأثر على الخصوصية|privacy impact assessment
+隐私声明|إشعار الخصوصية|privacy notice
+数据出境|نقل البيانات للخارج|outbound data transfer
+安全评估报告|تقرير التقييم الأمني|security assessment report
+供应商管理|إدارة الموردين|vendor management
+第三方风险|مخاطر الأطراف الثالثة|third-party risk
+保密协议|اتفاقية عدم الإفصاح|non-disclosure agreement
+合同条款|بنود العقد|contract clauses
+业务影响分析|تحليل الأثر على الأعمال|business impact analysis
+连续性计划|خطة الاستمرارية|continuity plan
+危机管理|إدارة الأزمات|crisis management
+关键业务|الأعمال الحيوية|critical business functions
+培训记录|سجل التدريب|training record
+意识测评|قياس الوعي|awareness assessment
+可接受使用|الاستخدام المقبول|acceptable use
+处罚|العقوبة|penalty
+罚款|الغرامة|fine
+问责机制|آلية المساءلة|accountability mechanism
+管理评审|مراجعة الإدارة|management review
+持续监控|المراقبة المستمرة|continuous monitoring
+成熟度模型|نموذج النضج|maturity model
+网络安全法|قانون الأمن السيبراني|Cybersecurity Law
+数据安全法|قانون أمن البيانات|Data Security Law
+个人信息保护法|قانون حماية المعلومات الشخصية|Personal Information Protection Law
++cy-eh
+道德黑客|الاختراق الأخلاقي|ethical hacking
+安全研究员|الباحث الأمني|security researcher
+渗透测试员|مختبر الاختراق|penetration tester
+授权测试|الاختبار المصرّح|authorised testing
+测试协议|اتفاقية الاختبار|testing agreement
+交战规则|قواعد الاشتباك|rules of engagement
+测试窗口|نافذة الاختبار|testing window
+紧急联系人|جهة الاتصال للطوارئ|emergency contact
+禁止项|المحظورات|prohibited actions
+被动侦察|الاستطلاع السلبي|passive reconnaissance
+主动侦察|الاستطلاع النشط|active reconnaissance
+开源情报|المعلومات من المصادر المفتوحة|OSINT
+子域名|النطاق الفرعي|subdomain
+子域名枚举|تعداد النطاقات الفرعية|subdomain enumeration
+证书透明|شفافية الشهادات|certificate transparency
+指纹识别|تحديد البصمة التقنية|fingerprinting
+服务识别|تحديد الخدمات|service identification
+版本探测|كشف الإصدار|version detection
+漏洞验证|التحقق من الثغرة|vulnerability validation
+漏洞利用|استغلال الثغرة|exploit
+漏洞库|قاعدة بيانات الثغرات|vulnerability database
+通用漏洞披露|معرّف الثغرات الشائعة|CVE
+通用漏洞评分系统|نظام تقييم الثغرات|CVSS
+严重|حرجة|critical
+高危|عالية الخطورة|high severity
+中危|متوسطة الخطورة|medium severity
+低危|منخفضة الخطورة|low severity
+后渗透|ما بعد الاختراق|post-exploitation
+权限提升测试|اختبار رفع الصلاحيات|privilege escalation testing
+横向测试|الاختبار الجانبي|lateral movement testing
+密码破解|كسر كلمات المرور|password cracking
+社会工程测试|اختبار الهندسة الاجتماعية|social engineering test
+物理渗透|الاختراق المادي|physical penetration
+无线渗透|اختبار الشبكات اللاسلكية|wireless penetration test
+网页渗透|اختبار اختراق الويب|web penetration test
+移动应用测试|اختبار تطبيقات الجوال|mobile app testing
+接口渗透|اختبار اختراق الواجهات|API penetration test
+内网渗透|اختبار الشبكة الداخلية|internal network test
+外网渗透|اختبار الشبكة الخارجية|external network test
+白盒审计|التدقيق بالصندوق الأبيض|white-box audit
+测试方法论|منهجية الاختبار|testing methodology
+测试报告模板|قالب تقرير الاختبار|report template
+执行摘要|الملخص التنفيذي|executive summary
+技术细节|التفاصيل التقنية|technical details
+复现步骤|خطوات إعادة الإنتاج|reproduction steps
+截图|لقطة الشاشة|screenshot
+风险评级|تصنيف الخطر|risk rating
+业务风险|المخاطر التجارية|business risk
+复测|إعادة الاختبار|retest
+漏洞生命周期|دورة حياة الثغرة|vulnerability lifecycle
+漏洞披露政策|سياسة الإفصاح عن الثغرات|vulnerability disclosure policy
+协调披露|الإفصاح المنسّق|coordinated disclosure
+安全应急响应中心|مركز الاستجابة الأمنية|security response centre
+奖金|المكافأة|bounty reward
+赏金猎人|صائد المكافآت|bounty hunter
+众测|الاختبار الجماعي|crowdsourced testing
+测试范围外|خارج النطاق|out of scope
+重复提交|البلاغ المكرر|duplicate report
+有效漏洞|الثغرة الصالحة|valid vulnerability
+攻防演练|تمرين الهجوم والدفاع|attack-defence exercise
+攻击方|الطرف المهاجم|attacking side
+防守方|الطرف المدافع|defending side
+紫队|الفريق البنفسجي|purple team
+靶场|ساحة التدريب|cyber range
+靶机|جهاز الهدف للتدريب|target machine
+实验环境|بيئة المختبر|lab environment
+虚拟实验室|المختبر الافتراضي|virtual lab
+旗帜|العلم|flag
+解题|حل التحدي|solve a challenge
+逆向|الهندسة العكسية (اختصارًا)|reversing
+杂项|المتنوعات|miscellaneous
+二进制漏洞|ثغرات الملفات التنفيذية|binary exploitation
+密码学题|تحدي التشفير|crypto challenge
+网络安全竞赛|مسابقة الأمن السيبراني|cybersecurity competition
+战队|الفريق المتسابق|competition team
+积分榜|لوحة النتائج|scoreboard
+安全证书|الشهادة المهنية الأمنية|security certification
+职业发展|التطور المهني|career development
+作品集|ملف الأعمال|portfolio
+法律风险|المخاطر القانونية|legal risk
+网络犯罪法|قانون الجرائم المعلوماتية|cybercrime law
+职业道德|أخلاقيات المهنة|professional ethics
+保密义务|واجب السرية|duty of confidentiality
+攻击模拟平台|منصة محاكاة الهجمات|attack simulation platform
+安全工具箱|عدة الأدوات الأمنية|security toolkit
+端口扫描器|ماسح المنافذ|port scanner

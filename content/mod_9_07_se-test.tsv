@@ -41,3 +41,83 @@ T|自动化测试|zìdònghuà cèshì|الاختبار الآلي|automated tes
 T|质量保证|zhìliàng bǎozhèng|ضمان الجودة|quality assurance
 T|验收测试|yànshōu cèshì|اختبار القبول|acceptance test
 T|边界值|biānjièzhí|القيمة الحدية|boundary value
+T|测试计划|cèshì jìhuà|خطة الاختبار|test plan
+T|测试策略|cèshì cèlüè|استراتيجية الاختبار|test strategy
+T|测试套件|cèshì tàojiàn|حزمة الاختبارات|test suite
+T|测试数据集|cèshì shùjùjí|مجموعة بيانات الاختبار|test dataset
+T|测试报告|cèshì bàogào|تقرير الاختبار|test report
+T|测试人员|cèshì rényuán|المختبِر|tester
+T|测试工程师|cèshì gōngchéngshī|مهندس الاختبار|test engineer
+T|黑盒|hēihé|الصندوق الأسود|black box
+T|白盒|bái hé|الصندوق الأبيض|white box
+T|冒烟测试|màoyān cèshì|اختبار الدخان|smoke test
+T|健全性测试|jiànquán xìng cèshì|اختبار السلامة السريع|sanity test
+T|功能测试|gōngnéng cèshì|الاختبار الوظيفي|functional test
+T|非功能测试|fēi gōngnéng cèshì|الاختبار غير الوظيفي|non-functional test
+T|负载测试|fùzài cèshì|اختبار الحمل|load test
+T|安全测试|ānquán cèshì|الاختبار الأمني|security test
+T|兼容性测试|jiānróngxìng cèshì|اختبار التوافق|compatibility test
+T|可用性测试|kě yòng xìng cèshì|اختبار سهولة الاستخدام|usability test
+T|探索性测试|tànsuǒxìng cèshì|الاختبار الاستكشافي|exploratory test
+T|手工测试|shǒugōng cèshì|الاختبار اليدوي|manual testing
+T|接口测试|jiēkǒu cèshì|اختبار الواجهة البرمجية|API testing
+T|界面测试|jièmiàn cèshì|اختبار الواجهة|UI testing
+T|契约测试|qìyuē cèshì|اختبار العقد|contract testing
+T|快照测试|kuàizhào cèshì|اختبار اللقطة|snapshot testing
+T|变异测试|biànyì cèshì|اختبار الطفرات|mutation testing
+T|模糊测试|móhu cèshì|الاختبار العشوائي المكثف (fuzzing)|fuzz testing
+T|测试金字塔|cèshì jīnzìtǎ|هرم الاختبارات|test pyramid
+T|桩|zhuāng|الكعب البديل (stub)|stub
+T|替身|tìshēn|البديل الاختباري|test double
+T|夹具|jiājù|التجهيزات الثابتة (fixture)|fixture
+T|前置条件|qiánzhì tiáojiàn|الشرط المسبق|precondition
+T|后置条件|hòuzhì tiáojiàn|الشرط اللاحق|postcondition
+T|预期结果|yùqī jiéguǒ|النتيجة المتوقعة|expected result
+T|实际结果|shíjì jiéguǒ|النتيجة الفعلية|actual result
+T|通过|tōngguò|النجاح|pass
+T|失败|shībài|الفشل|fail
+T|跳过|tiàoguò|التخطي|skip
+T|不稳定测试|bùwěn dìng cèshì|الاختبار المتقلّب|flaky test
+T|测试隔离|cèshì gélí|عزل الاختبارات|test isolation
+T|等价类|děngjià lèi|فئة التكافؤ|equivalence class
+T|等价类划分|děngjià lèi huàfēn|تقسيم فئات التكافؤ|equivalence partitioning
+T|边界值分析|biānjiè zhí fēnxī|تحليل القيم الحدية|boundary value analysis
+T|决策表|juécè biǎo|جدول القرار|decision table
+T|语句覆盖|yǔjù fùgài|تغطية الجمل|statement coverage
+T|分支覆盖|fēnzhī fùgài|تغطية الفروع|branch coverage
+T|路径覆盖|lùjìng fùgài|تغطية المسارات|path coverage
+T|缺陷报告|quēxiàn bàogào|تقرير العيب|bug report
+T|缺陷跟踪|quēxiàn gēnzōng|تتبع العيوب|bug tracking
+T|严重级别|yánzhòng jíbié|مستوى الخطورة|severity level
+T|重现步骤|chóngxiàn bùzhòu|خطوات إعادة الإنتاج|steps to reproduce
+T|复现|fùxiàn|إعادة الإنتاج|reproduce
+T|根本原因|gēnběn yuányīn|السبب الجذري|root cause
+T|修复|xiūfù|الإصلاح|fix
+T|验证|yànzhèng|التحقق|verification
+T|确认|quèrèn|التأكيد|confirmation
+T|关闭|guānbì|الإغلاق|close
+T|重新打开|chóngxīn dǎkāi|إعادة الفتح|reopen
+T|测试左移|cèshì zuǒ yí|نقل الاختبار مبكرًا|shift-left testing
+T|行为驱动开发|xíngwéi qūdòng kāifā|التطوير الموجّه بالسلوك|behaviour-driven development
+T|红绿重构|hóng lǜ chónggòu|أحمر أخضر إعادة هيكلة|red-green-refactor
+T|质量|zhìliàng|الجودة|quality
+T|可靠性|kěkàoxìng|الموثوقية|reliability
+T|稳定性|wěndìngxìng|الاستقرار|stability
+T|基准测试|jīzhǔn cèshì|اختبار المعيار المرجعي|benchmark
+T|响应时间|xiǎngyìngshíjiān|زمن الاستجابة|response time
+T|并发用户|bìngfā yònghù|المستخدمون المتزامنون|concurrent users
+T|测试脚本|cèshì jiǎoběn|سكربت الاختبار|test script
+T|录制回放|lùzhì huífàng|التسجيل والإعادة|record and playback
+T|自动化框架|zìdònghuà kuàngjià|إطار الأتمتة|automation framework
+T|持续测试|chíxù cèshì|الاختبار المستمر|continuous testing
+T|测试覆盖|cèshì fùgài|تغطية الاختبار|test coverage
+T|静态检查|jìngtài jiǎnchá|الفحص الثابت|static check
+T|代码检查工具|dàimǎ jiǎnchá gōngjù|أداة فحص الكود|linter
+T|类型检查|lèixíng jiǎnchá|فحص الأنواع|type checking
+T|检查清单|jiǎnchá qīngdān|قائمة التحقق|checklist
+T|走查|zǒuchá|المراجعة المتسلسلة|walkthrough
+T|同行评审|tóngháng píngshěn|مراجعة الأقران|peer review
+T|用户验收测试|yònghù yànshōu cèshì|اختبار قبول المستخدم|user acceptance testing
+T|测试阶段|cèshì jiēduàn|مرحلة الاختبار|test phase
+T|预发布环境|yù fābù huánjìng|بيئة ما قبل الإطلاق|staging environment
+T|生产环境|shēngchǎn huánjìng|بيئة الإنتاج|production environment

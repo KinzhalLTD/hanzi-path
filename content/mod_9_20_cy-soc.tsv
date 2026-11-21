@@ -41,3 +41,83 @@ T|用户行为分析|yònghù xíngwéi fēnxī|تحليل سلوك المستخ
 T|时间线|shíjiānxiàn|الخط الزمني|timeline
 T|规则调优|guīzé tiáoyōu|ضبط القواعد|rule tuning
 T|安全信息和事件管理|ānquán xìnxī hé shìjiàn guǎnlǐ|إدارة المعلومات والأحداث الأمنية|SIEM
+T|安全运营|ānquán yùnyíng|العمليات الأمنية|security operations
+T|一线分析师|yīxiàn fēnxīshī|محلل المستوى الأول|tier-1 analyst
+T|二线分析师|èr xiàn fēnxīshī|محلل المستوى الثاني|tier-2 analyst
+T|值班分析师|zhíbān fēnxīshī|المحلل المناوب|on-shift analyst
+T|交接班|jiāojiēbān|تسليم الوردية|shift handover
+T|轮班|lúnbān|نظام الورديات|shift work
+T|告警分级|gào jǐng fēnjí|تصنيف التنبيهات|alert triage
+T|告警优先级|gào jǐng yōuxiānjí|أولوية التنبيه|alert priority
+T|告警疲劳|gào jǐng píláo|إرهاق التنبيهات|alert fatigue
+T|告警降噪|gào jǐng jiàngzào|تقليل ضجيج التنبيهات|alert noise reduction
+T|真阳性|zhēn yángxìng|الإيجابي الصحيح|true positive
+T|假阳性|jiǎyángxìng|الإيجابي الكاذب|false positive (FP)
+T|假阴性|jiǎyīnxìng|السلبي الكاذب|false negative
+T|日志源|rìzhì yuán|مصدر السجلات|log source
+T|日志格式|rìzhì géshì|صيغة السجل|log format
+T|日志解析|rìzhì jiěxī|تحليل السجلات|log parsing
+T|日志保留|rìzhì bǎoliú|الاحتفاظ بالسجلات|log retention
+T|日志完整性|rìzhì wánzhěngxìng|سلامة السجلات|log integrity
+T|时间同步|shíjiān tóngbù|مزامنة الوقت|time synchronisation
+T|事件关联|shìjiàn guānlián|ربط الأحداث|event correlation
+T|规则引擎|guīzé yǐnqíng|محرك القواعد|rule engine
+T|检测逻辑|jiǎncè luóji|منطق الكشف|detection logic
+T|检测覆盖率|jiǎncè fùgàilǜ|تغطية الكشف|detection coverage
+T|检测工程|jiǎncè gōngchéng|هندسة الكشف|detection engineering
+T|攻击模拟|gōngjī mónǐ|محاكاة الهجوم|attack simulation
+T|入侵指标|rùqīn zhǐbiāo|مؤشرات الاختراق|indicators of compromise
+T|攻击指标|gōngjī zhǐbiāo|مؤشرات الهجوم|indicators of attack
+T|情报源|qíngbào yuán|مصدر المعلومات الاستخبارية|intelligence feed
+T|信誉库|xìnyù kù|قاعدة السمعة|reputation database
+T|恶意域名|èyì yùmíng|النطاق الخبيث|malicious domain
+T|恶意地址|èyì dìzhǐ|العنوان الخبيث|malicious IP
+T|文件哈希|wénjiàn hāxī|بصمة الملف|file hash
+T|沙箱分析|shā xiāng fēnxī|التحليل في البيئة المعزولة|sandbox analysis
+T|威胁情报平台|wēixié qíngbào píngtái|منصة استخبارات التهديدات|threat intelligence platform
+T|狩猎假设|shòuliè jiǎshè|فرضية الصيد|hunting hypothesis
+T|主动防御|zhǔdòng fángyù|الدفاع الاستباقي|active defence
+T|终端检测与响应|zhōngduān jiǎncè yǔ xiǎngyìng|الكشف والاستجابة لنقاط النهاية|EDR
+T|扩展检测与响应|kuòzhǎn jiǎncè yǔ xiǎngyìng|الكشف والاستجابة الموسّع|XDR
+T|网络检测与响应|wǎngluò jiǎncè yǔ xiǎngyìng|الكشف والاستجابة الشبكية|NDR
+T|安全编排|ānquán biānpái|التنسيق الأمني|security orchestration
+T|自动化响应|zìdònghuà xiǎngyìng|الاستجابة المؤتمتة|automated response
+T|处置|chǔzhì|المعالجة|handling
+T|封禁|fēngjìn|الحظر|block (ban)
+T|隔离主机|gélí zhǔjī|عزل المضيف|isolate host
+T|重置密码|chóngzhì mìmǎ|إعادة تعيين كلمة المرور|reset password
+T|升级处理|shēngjí chǔlǐ|التصعيد|escalation
+T|案件|ànjiàn|القضية|case
+T|调查|diàochá|التحقيق|investigation
+T|证据收集|zhèngjù shōují|جمع الأدلة|evidence collection
+T|上下文|shàngxiàwén|السياق|context
+T|资产信息|zīchǎn xìnxī|معلومات الأصول|asset information
+T|资产重要性|zīchǎn zhòngyàoxìng|أهمية الأصل|asset criticality
+T|态势感知|tàishì gǎnzhī|الوعي بالوضع الأمني|situational awareness
+T|大屏|dà píng|الشاشة الكبيرة|video wall
+T|安全报表|ānquán bàobiǎo|التقرير الأمني|security report
+T|平均检测时间|píngjūn jiǎncè shíjiān|متوسط وقت الكشف|mean time to detect
+T|平均响应时间|píngjūn xiǎngyìngshíjiān|متوسط وقت الاستجابة|mean time to respond
+T|服务水平|fúwù shuǐpíng|مستوى الخدمة|service level
+T|运营指标|yùnyíng zhǐbiāo|مؤشرات التشغيل|operational metrics
+T|登录失败|dēnglù shībài|فشل تسجيل الدخول|failed login
+T|暴力登录|bàolì dēnglù|تخمين تسجيل الدخول|brute-force login
+T|不可能旅行|bùkěnéng lǚxíng|السفر المستحيل|impossible travel
+T|异常流量|yìcháng liúliàng|حركة المرور غير الطبيعية|abnormal traffic
+T|数据外传|shùjù wàichuán|نقل البيانات إلى الخارج|data exfiltration (outbound)
+T|可疑进程|kěyí jìnchéng|العملية المشبوهة|suspicious process
+T|命令行审计|mìnglìngháng shěnjì|تدقيق سطر الأوامر|command-line auditing
+T|计划任务|jìhuà rènwu|المهمة المجدولة|scheduled task
+T|注册表|zhùcèbiǎo|سجل النظام|registry
+T|服务创建|fúwù chuàngjiàn|إنشاء خدمة|service creation
+T|横向渗透|héngxiàng shèntòu|التوغل الجانبي|lateral penetration
+T|域名查询|yùmíng cháxún|استعلام النطاق|domain lookup
+T|邮件网关|yóujiàn wǎngguān|بوابة البريد|email gateway
+T|网络流量日志|wǎngluò liúliàng rìzhì|سجل تدفق الشبكة|network flow log
+T|云审计日志|yún shěnjì rìzhì|سجل التدقيق السحابي|cloud audit log
+T|身份日志|shēnfèn rìzhì|سجل الهوية|identity log
+T|安全基准|ānquán jīzhǔn|المرجع الأمني|security benchmark
+T|红蓝对抗|hóng lán duìkàng|مواجهة الفريقين الأحمر والأزرق|red versus blue exercise
+T|紫队演练|zǐ duì yǎnliàn|تمرين الفريق البنفسجي|purple team exercise
+T|知识库|zhīshikù|قاعدة المعرفة|knowledge base
+T|处置手册|chǔzhì shǒucè|دليل المعالجة|response playbook

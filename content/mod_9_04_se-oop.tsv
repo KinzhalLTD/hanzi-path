@@ -41,3 +41,83 @@ T|公有|gōngyǒu|عام (مكشوف)|public
 T|不可变|bùkěbiàn|غير قابل للتغيير|immutable
 T|实现|shíxiàn|تنفيذ، تطبيق|implementation
 T|内聚|nèijù|التماسك|cohesion
+T|属性值|shǔxìng zhí|قيمة الخاصية|attribute value
+T|成员变量|chéngyuán biànliàng|متغير العضو|member variable
+T|成员函数|chéngyuán hánshù|دالة العضو|member function
+T|静态方法|jìngtài fāngfǎ|الدالة الساكنة|static method
+T|实例方法|shílì fāngfǎ|دالة النسخة|instance method
+T|抽象类|chōuxiàng lèi|الصنف المجرد|abstract class
+T|具体类|jùtǐ lèi|الصنف الملموس|concrete class
+T|基类|jī lèi|الصنف الأساسي|base class
+T|派生类|pàishēng lèi|الصنف المشتق|derived class
+T|重写|chóng xiě|إعادة التعريف (override)|override
+T|重载|zhòngzài|التحميل الزائد|overload
+T|访问修饰符|fǎngwèn xiūshì fú|محدِّد الوصول|access modifier
+T|受保护|shòu bǎohù|محمي|protected
+T|实例化|shílì huà|إنشاء نسخة|instantiate
+T|析构函数|xī gòu hánshù|دالة الهدم|destructor
+T|初始化|chūshǐhuà|التهيئة|initialization
+T|包|bāo|الحزمة|package
+T|职责|zhízé|المسؤولية|responsibility
+T|单一职责原则|dānyī zhízé yuánzé|مبدأ المسؤولية الواحدة|single responsibility principle
+T|开闭原则|kāi bì yuánzé|مبدأ المفتوح والمغلق|open-closed principle
+T|里氏替换原则|lǐ shì tìhuàn yuánzé|مبدأ استبدال ليسكوف|Liskov substitution principle
+T|接口隔离原则|jiēkǒu gélí yuánzé|مبدأ فصل الواجهات|interface segregation principle
+T|依赖倒置原则|yīlài dàozhì yuánzé|مبدأ عكس الاعتماد|dependency inversion principle
+T|领域模型|lǐngyù móxíng|نموذج المجال|domain model
+T|实体|shítǐ|الكيان|entity
+T|值对象|zhí duìxiàng|كائن القيمة|value object
+T|聚合|jùhé|التجميع|aggregation
+T|关联|guānlián|الارتباط|association
+T|依赖|yīlài|الاعتماد|dependency
+T|泛型|fàn xíng|الأنواع العامة|generics
+T|类型参数|lèixíng cānshù|معامل النوع|type parameter
+T|枚举|méijǔ|التعداد|enumeration
+T|结构体|jiégòu tǐ|البنية|struct
+T|原型链|yuánxíng liàn|سلسلة النماذج الأولية|prototype chain
+T|委托|wěituō|التفويض|delegation
+T|混入|hùnrù|المزج (mixin)|mixin
+T|特征|tèzhēng|السمة|trait
+T|状态|zhuàngtài|الحالة|state
+T|行为|xíngwéi|السلوك|behaviour
+T|消息传递|xiāoxi chuándì|تمرير الرسائل|message passing
+T|对象模型|duìxiàng móxíng|نموذج الكائنات|object model
+T|类图|lèi tú|مخطط الأصناف|class diagram
+T|统一建模语言|tǒngyī jiànmó yǔyán|لغة النمذجة الموحدة|UML
+T|序列图|xùliè tú|مخطط التسلسل|sequence diagram
+T|用例图|yòng lì tú|مخطط حالات الاستخدام|use case diagram
+T|复用|fùyòng|إعادة الاستخدام|reuse
+T|扩展性|kuòzhǎn xìng|قابلية التوسعة|extensibility
+T|灵活性|línghuóxìng|المرونة|flexibility
+T|复杂性|fùzáxìng|التعقيد|complexity
+T|分层|fēncéng|الطبقات|layering
+T|领域驱动设计|lǐngyù qūdòng shèjì|التصميم الموجّه بالمجال|domain-driven design
+T|数据隐藏|shùjù yǐncáng|إخفاء البيانات|data hiding
+T|副作用|fùzuòyòng|الأثر الجانبي|side effect
+T|纯函数|chún hánshù|الدالة النقية|pure function
+T|函数式编程|hánshù shì biānchéng|البرمجة الوظيفية|functional programming
+T|过程式编程|guòchéng shì biānchéng|البرمجة الإجرائية|procedural programming
+T|编程范式|biānchéng fànshì|نموذج البرمجة|programming paradigm
+T|高阶函数|gāojiē hánshù|الدالة عالية الرتبة|higher-order function
+T|闭包|bìbāo|الإغلاق (closure)|closure
+T|柯里化|kēlǐhuà|الكَرّي (currying)|currying
+T|链式调用|liàn shì diàoyòng|الاستدعاء المتسلسل|method chaining
+T|签名|qiānmíng|التوقيع|signature
+T|契约|qìyuē|العقد|contract
+T|模型|móxíng|النموذج|model
+T|设计|shèjì|التصميم|design
+T|可测试性|kě cèshì xìng|قابلية الاختبار|testability
+T|对象池|duìxiàng chí|مجمع الكائنات|object pool
+T|深拷贝|shēn kǎobèi|النسخ العميق|deep copy
+T|浅拷贝|qiǎn kǎobèi|النسخ السطحي|shallow copy
+T|相等性|xiāngděng xìng|التساوي|equality
+T|哈希码|hāxī mǎ|رمز التجزئة|hash code
+T|序列化|xùliè huà|التسلسل (serialization)|serialization
+T|反序列化|fǎn xùliè huà|إلغاء التسلسل|deserialization
+T|反射|fǎnshè|الانعكاس|reflection
+T|注解|zhùjiě|التعليق التوضيحي (annotation)|annotation
+T|多重继承|duōchóng jìchéng|الوراثة المتعددة|multiple inheritance
+T|菱形问题|língxíng wèntí|مشكلة الماسة|diamond problem
+T|上转型|shàng zhuǎnxíng|التحويل للأعلى|upcasting
+T|向下转型|xiàngxià zhuǎnxíng|التحويل للأسفل|downcasting
+T|访问器|fǎngwèn qì|دالة الوصول|accessor

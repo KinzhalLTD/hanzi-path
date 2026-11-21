@@ -41,3 +41,83 @@ T|黑盒测试|hēihé cèshì|اختبار الصندوق الأسود|black-bo
 T|灰盒测试|huīhé cèshì|اختبار الصندوق الرمادي|grey-box testing
 T|概念验证|gàiniàn yànzhèng|إثبات المفهوم|proof of concept
 T|漏洞报告|lòudòng bàogào|تقرير الثغرة|vulnerability report
+T|道德黑客|dàodé hēikè|الاختراق الأخلاقي|ethical hacking
+T|安全研究员|ānquán yánjiūyuán|الباحث الأمني|security researcher
+T|渗透测试员|shèntòu cèshì yuán|مختبر الاختراق|penetration tester
+T|授权测试|shòuquán cèshì|الاختبار المصرّح|authorised testing
+T|测试协议|cèshì xiéyì|اتفاقية الاختبار|testing agreement
+T|交战规则|jiāozhàn guīzé|قواعد الاشتباك|rules of engagement
+T|测试窗口|cèshì chuāngkǒu|نافذة الاختبار|testing window
+T|紧急联系人|jǐnjí liánxìrén|جهة الاتصال للطوارئ|emergency contact
+T|禁止项|jìnzhǐ xiàng|المحظورات|prohibited actions
+T|被动侦察|bèidòng zhēnchá|الاستطلاع السلبي|passive reconnaissance
+T|主动侦察|zhǔdòng zhēnchá|الاستطلاع النشط|active reconnaissance
+T|开源情报|kāiyuán qíngbào|المعلومات من المصادر المفتوحة|OSINT
+T|子域名|zǐyù míng|النطاق الفرعي|subdomain
+T|子域名枚举|zǐyù míng méijǔ|تعداد النطاقات الفرعية|subdomain enumeration
+T|证书透明|zhèngshū tòumíng|شفافية الشهادات|certificate transparency
+T|指纹识别|zhǐwén shíbié|تحديد البصمة التقنية|fingerprinting
+T|服务识别|fúwù shíbié|تحديد الخدمات|service identification
+T|版本探测|bǎnběn tàncè|كشف الإصدار|version detection
+T|漏洞验证|lòudòng yànzhèng|التحقق من الثغرة|vulnerability validation
+T|漏洞利用|lòudòng lìyòng|استغلال الثغرة|exploit
+T|漏洞库|lòudòng kù|قاعدة بيانات الثغرات|vulnerability database
+T|通用漏洞披露|tōngyòng lòudòng pīlù|معرّف الثغرات الشائعة|CVE
+T|通用漏洞评分系统|tōngyòng lòudòng píngfēn xìtǒng|نظام تقييم الثغرات|CVSS
+T|严重|yánzhòng|حرجة|critical
+T|高危|gāowēi|عالية الخطورة|high severity
+T|中危|zhōng wēi|متوسطة الخطورة|medium severity
+T|低危|dī wēi|منخفضة الخطورة|low severity
+T|后渗透|hòu shèntòu|ما بعد الاختراق|post-exploitation
+T|权限提升测试|quánxiàn tíshēng cèshì|اختبار رفع الصلاحيات|privilege escalation testing
+T|横向测试|héngxiàng cèshì|الاختبار الجانبي|lateral movement testing
+T|密码破解|mìmǎ pòjiě|كسر كلمات المرور|password cracking
+T|社会工程测试|shèhuì gōngchéng cèshì|اختبار الهندسة الاجتماعية|social engineering test
+T|物理渗透|wùlǐ shèntòu|الاختراق المادي|physical penetration
+T|无线渗透|wúxiàn shèntòu|اختبار الشبكات اللاسلكية|wireless penetration test
+T|网页渗透|wǎngyè shèntòu|اختبار اختراق الويب|web penetration test
+T|移动应用测试|yídòng yìngyòng cèshì|اختبار تطبيقات الجوال|mobile app testing
+T|接口渗透|jiēkǒu shèntòu|اختبار اختراق الواجهات|API penetration test
+T|内网渗透|nèi wǎng shèntòu|اختبار الشبكة الداخلية|internal network test
+T|外网渗透|wàiwǎng shèntòu|اختبار الشبكة الخارجية|external network test
+T|白盒审计|bái hé shěnjì|التدقيق بالصندوق الأبيض|white-box audit
+T|测试方法论|cèshì fāngfǎlùn|منهجية الاختبار|testing methodology
+T|测试报告模板|cèshì bàogào múbǎn|قالب تقرير الاختبار|report template
+T|执行摘要|zhíxíng zhāiyào|الملخص التنفيذي|executive summary
+T|技术细节|jìshù xìjié|التفاصيل التقنية|technical details
+T|复现步骤|fùxiàn bùzhòu|خطوات إعادة الإنتاج|reproduction steps
+T|截图|jiétú|لقطة الشاشة|screenshot
+T|风险评级|fēngxiǎn píngjí|تصنيف الخطر|risk rating
+T|业务风险|yèwù fēngxiǎn|المخاطر التجارية|business risk
+T|复测|fù cè|إعادة الاختبار|retest
+T|漏洞生命周期|lòudòng shēngmìngzhōuqī|دورة حياة الثغرة|vulnerability lifecycle
+T|漏洞披露政策|lòudòng pīlù zhèngcè|سياسة الإفصاح عن الثغرات|vulnerability disclosure policy
+T|协调披露|xiétiáo pīlù|الإفصاح المنسّق|coordinated disclosure
+T|安全应急响应中心|ānquán yìngjí xiǎngyìng zhōngxīn|مركز الاستجابة الأمنية|security response centre
+T|奖金|jiǎngjīn|المكافأة|bounty reward
+T|赏金猎人|shǎngjīnlièrén|صائد المكافآت|bounty hunter
+T|众测|zhòng cè|الاختبار الجماعي|crowdsourced testing
+T|测试范围外|cèshì fànwéi wài|خارج النطاق|out of scope
+T|重复提交|chóngfù tíjiāo|البلاغ المكرر|duplicate report
+T|有效漏洞|yǒuxiào lòudòng|الثغرة الصالحة|valid vulnerability
+T|攻防演练|gōngfáng yǎnliàn|تمرين الهجوم والدفاع|attack-defence exercise
+T|攻击方|gōngjī fāng|الطرف المهاجم|attacking side
+T|防守方|fángshǒu fāng|الطرف المدافع|defending side
+T|紫队|zǐ duì|الفريق البنفسجي|purple team
+T|靶场|bǎchǎng|ساحة التدريب|cyber range
+T|靶机|bǎjī|جهاز الهدف للتدريب|target machine
+T|实验环境|shíyàn huánjìng|بيئة المختبر|lab environment
+T|虚拟实验室|xūnǐ shíyànshì|المختبر الافتراضي|virtual lab
+T|旗帜|qízhì|العلم|flag
+T|解题|jiětí|حل التحدي|solve a challenge
+T|逆向|nìxiàng|الهندسة العكسية (اختصارًا)|reversing
+T|杂项|záxiàng|المتنوعات|miscellaneous
+T|二进制漏洞|èrjìnzhì lòudòng|ثغرات الملفات التنفيذية|binary exploitation
+T|密码学题|mìmǎxué tí|تحدي التشفير|crypto challenge
+T|网络安全竞赛|wǎngluò ānquán jìngsài|مسابقة الأمن السيبراني|cybersecurity competition
+T|战队|zhàn duì|الفريق المتسابق|competition team
+T|积分榜|jīfēnbǎng|لوحة النتائج|scoreboard
+T|安全证书|ānquán zhèngshū|الشهادة المهنية الأمنية|security certification
+T|职业发展|zhíyè fāzhǎn|التطور المهني|career development
+T|作品集|zuòpǐn jí|ملف الأعمال|portfolio
+T|法律风险|fǎlǜ fēngxiǎn|المخاطر القانونية|legal risk

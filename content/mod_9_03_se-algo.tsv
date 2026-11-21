@@ -41,3 +41,83 @@ T|边界条件|biānjiè tiáojiàn|الحالات الحدية|edge case
 T|伪代码|wěidàimǎ|شبه كود|pseudocode
 T|剪枝|jiǎnzhī|التقليم (استبعاد الفروع غير المفيدة)|pruning
 T|穷举|qióngjǔ|التجربة الشاملة (القوة الغاشمة)|brute force
+T|线性查找|xiànxìng cházhǎo|البحث الخطي|linear search
+T|冒泡排序|mào pào páixù|فرز الفقاعات|bubble sort
+T|插入排序|chārù páixù|فرز الإدراج|insertion sort
+T|选择排序|xuǎnzé páixù|فرز الاختيار|selection sort
+T|计数排序|jìshù páixù|فرز العدّ|counting sort
+T|基数排序|jīshù páixù|الفرز بالأساس|radix sort
+T|稳定排序|wěndìng páixù|الفرز المستقر|stable sort
+T|原地|yuándì|في المكان|in place
+T|分治|fēnzhì|فرّق تسد|divide and conquer
+T|回溯|huísù|التراجع|backtracking
+T|暴力解法|bàolì jiěfǎ|الحل بالقوة الغاشمة|brute-force solution
+T|记忆化|jìyìhuà|التذكّر (memoization)|memoization
+T|状态转移|zhuàngtài zhuǎnyí|انتقال الحالة|state transition
+T|子问题|zǐ wèntí|المسألة الفرعية|subproblem
+T|最优子结构|zuìyōu zǐ jiégòu|البنية الفرعية المثلى|optimal substructure
+T|递推|dìtuī|العلاقة التكرارية|recurrence
+T|终止条件|zhōngzhǐ tiáojiàn|شرط التوقف|base case
+T|栈溢出|zhàn yìchū|فيضان المكدس|stack overflow
+T|迭代法|diédài fǎ|الطريقة التكرارية|iterative method
+T|最好情况|zuìhǎo qíngkuàng|أفضل حالة|best case
+T|平均情况|píngjūn qíngkuàng|الحالة المتوسطة|average case
+T|常数时间|chángshù shíjiān|الزمن الثابت|constant time
+T|线性时间|xiànxìng shíjiān|الزمن الخطي|linear time
+T|对数时间|duìshù shíjiān|الزمن اللوغاريتمي|logarithmic time
+T|指数时间|zhǐshù shíjiān|الزمن الأسي|exponential time
+T|渐进|jiànjìn|المقارب|asymptotic
+T|上界|shàngjiè|الحد الأعلى|upper bound
+T|下界|xiàjiè|الحد الأدنى|lower bound
+T|最短路径|zuì duǎnlù jìng|أقصر مسار|shortest path
+T|最小生成树|zuì xiǎo shēngchéngshù|الشجرة الممتدة الصغرى|minimum spanning tree
+T|拓扑排序|tuòpū páixù|الفرز الطوبولوجي|topological sort
+T|字符串匹配|zìfúchuàn pǐpèi|مطابقة النصوص|string matching
+T|哈希算法|hāxī suànfǎ|خوارزمية التجزئة|hashing algorithm
+T|加密算法|jiāmì suànfǎ|خوارزمية التشفير|encryption algorithm
+T|随机化|suíjī huà|العشوائية|randomization
+T|概率|gàilǜ|الاحتمال|probability
+T|数学|shùxué|الرياضيات|mathematics
+T|逻辑|luóji|المنطق|logic
+T|证明|zhèngmíng|البرهان|proof
+T|不变量|bùbiànliàng|الثابت (invariant)|invariant
+T|优化|yōuhuà|التحسين|optimization
+T|性能|xìngnéng|الأداء|performance
+T|效率|xiàolǜ|الكفاءة|efficiency
+T|瓶颈|píngjǐng|عنق الزجاجة|bottleneck
+T|权衡|quánhéng|المفاضلة|trade-off
+T|近似算法|jìnsì suànfǎ|الخوارزمية التقريبية|approximation algorithm
+T|启发式|qǐfāshì|الأسلوب الاستدلالي|heuristic
+T|贪心|tānxīn|الجشع|greedy
+T|背包问题|bēibāo wèntí|مسألة الحقيبة|knapsack problem
+T|斐波那契数列|fěi bō nà qì shùliè|متتالية فيبوناتشي|Fibonacci sequence
+T|阶乘|jiēchéng|المضروب|factorial
+T|质数|zhìshù|العدد الأولي|prime number
+T|最大公约数|zuìdàgōngyuēshù|القاسم المشترك الأكبر|greatest common divisor
+T|位运算|wèi yùnsuàn|العمليات على البتات|bitwise operation
+T|异或|yìhuò|أو الحصرية (XOR)|XOR
+T|前缀和|qiánzhuì hé|مجموع البادئة|prefix sum
+T|快慢指针|kuàimàn zhǐzhēn|المؤشران السريع والبطيء|fast and slow pointers
+T|单调栈|dāndiào zhàn|المكدس الرتيب|monotonic stack
+T|中位数|zhōngwèishù|الوسيط|median
+T|平均值|píngjūnzhí|المتوسط|average
+T|最大值|zuì dà zhí|القيمة العظمى|maximum
+T|最小值|zuìxiǎozhí|القيمة الصغرى|minimum
+T|区间|qūjiān|الفترة|interval
+T|重叠|chóngdié|التداخل|overlap
+T|合并区间|hébìng qūjiān|دمج الفترات|merge intervals
+T|排列|páiliè|التباديل|permutation
+T|组合数|zǔhé shù|عدد التوافيق|combinations
+T|子集|zǐjí|المجموعة الجزئية|subset
+T|子数组|zǐ shùzǔ|المصفوفة الفرعية|subarray
+T|子序列|zǐ xùliè|التسلسل الفرعي|subsequence
+T|回文|huíwén|المتناظر (palindrome)|palindrome
+T|反转|fǎnzhuǎn|العكس|reverse
+T|旋转|xuánzhuǎn|التدوير|rotate
+T|算法题|suànfǎ tí|مسألة خوارزمية|algorithm problem
+T|刷题|shuātí|حل المسائل للتدريب|practice problems
+T|面试题|miànshì tí|سؤال مقابلة|interview question
+T|思路|sīlù|طريقة التفكير|approach
+T|测试数据|cèshì shùjù|بيانات الاختبار|test data
+T|输入规模|shūrù guīmó|حجم المدخلات|input size
+T|超时|chāoshí|تجاوز الوقت|time limit exceeded

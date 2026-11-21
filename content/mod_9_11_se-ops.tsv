@@ -41,3 +41,83 @@ T|日志采集|rìzhì cǎijí|جمع السجلات|log collection
 T|链路追踪|liànlù zhuīzōng|التتبع الموزع|distributed tracing
 T|环境变量|huánjìng biànliàng|متغير البيئة|environment variable
 T|构建|gòujiàn|البناء (build)|build
+T|开发运维|kāifā yùnwéi|التطوير والعمليات (DevOps)|DevOps
+T|站点可靠性工程|zhàndiǎn kěkàoxìng gōngchéng|هندسة موثوقية المواقع|site reliability engineering
+T|基础设施|jīchǔshèshī|البنية التحتية|infrastructure
+T|虚拟机|xūnǐjī|الآلة الافتراضية|virtual machine
+T|虚拟化|xūnǐ huà|المحاكاة الافتراضية|virtualization
+T|容器编排|róngqì biānpái|تنسيق الحاويات|container orchestration
+T|集群管理|jíqún guǎnlǐ|إدارة العنقود|cluster management
+T|节点池|jiédiǎn chí|مجمع العقد|node pool
+T|服务账号|fúwù zhànghào|حساب الخدمة|service account
+T|镜像仓库|jìngxiàng cāngkù|مستودع الصور|image registry
+T|构建缓存|gòujiàn huǎncún|ذاكرة البناء المؤقتة|build cache
+T|制品|zhìpǐn|المنتج البرمجي (artifact)|artifact
+T|制品库|zhìpǐn kù|مستودع المنتجات البرمجية|artifact repository
+T|发布流程|fābù liúchéng|عملية الإطلاق|release process
+T|蓝绿部署|lán lǜ bùshǔ|النشر الأزرق والأخضر|blue-green deployment
+T|金丝雀发布|jīnsīquè fābù|إطلاق الكناري|canary release
+T|滚动更新|gǔndòng gēngxīn|التحديث المتدرج|rolling update
+T|回滚策略|huígǔn cèlüè|استراتيجية التراجع|rollback strategy
+T|功能开关|gōngnéng kāiguān|مفتاح الميزة|feature flag
+T|配置文件|pèizhì wénjiàn|ملف الإعداد|config file
+T|密钥管理服务|mìyào guǎnlǐ fúwù|خدمة إدارة المفاتيح|key management service
+T|自动扩缩容|zìdòng kuò suō róng|التوسع والتقليص التلقائي|autoscaling
+T|负载|fùzài|الحمل|load
+T|资源配额|zīyuán pèi'é|حصة الموارد|resource quota
+T|处理器|chǔlǐqì|المعالج|processor
+T|磁盘|cípán|القرص|disk
+T|网络|wǎngluò|الشبكة|network
+T|存储|cúnchǔ|التخزين|storage
+T|日志聚合|rìzhì jùhé|تجميع السجلات|log aggregation
+T|指标监控|zhǐbiāo jiānkòng|مراقبة المقاييس|metrics monitoring
+T|告警规则|gào jǐng guīzé|قاعدة التنبيه|alert rule
+T|告警通知|gào jǐng tōngzhī|إشعار التنبيه|alert notification
+T|值班表|zhíbān biǎo|جدول المناوبة|on-call rotation
+T|事故|shìgù|الحادث|incident
+T|事故复盘|shìgù fùpán|مراجعة ما بعد الحادث|post-incident review
+T|根因分析|gēn yīn fēnxī|تحليل السبب الجذري|root cause analysis
+T|平均修复时间|píngjūn xiūfù shíjiān|متوسط وقت الإصلاح|mean time to repair
+T|正常运行时间|zhèngcháng yùnxíngshí jiān|وقت التشغيل|uptime
+T|停机时间|tíngjīshíjiān|وقت التوقف|downtime
+T|维护窗口|wéihù chuāngkǒu|نافذة الصيانة|maintenance window
+T|变更管理|biàngēng guǎnlǐ|إدارة التغيير|change management
+T|运行手册|yùnxíng shǒucè|دليل التشغيل|runbook
+T|自动化脚本|zìdònghuà jiǎoběn|سكربت الأتمتة|automation script
+T|命令行工具|mìnglìngháng gōngjù|أداة سطر الأوامر|command-line tool
+T|操作系统|cāozuòxìtǒng|نظام التشغيل|operating system
+T|权限提升|quánxiàn tíshēng|رفع الصلاحيات|privilege escalation
+T|安全组|ānquán zǔ|مجموعة الأمان|security group
+T|专有网络|zhuānyǒu wǎngluò|الشبكة الافتراضية الخاصة|virtual private cloud
+T|弹性计算|tánxìng jìsuàn|الحوسبة المرنة|elastic compute
+T|函数计算|hánshù jìsuàn|حوسبة الدوال|function compute
+T|云服务商|yún fúwù shāng|مزود الخدمات السحابية|cloud provider
+T|公有云|gōngyǒu yún|السحابة العامة|public cloud
+T|私有云|sīyǒu yún|السحابة الخاصة|private cloud
+T|混合云|hùnhé yún|السحابة الهجينة|hybrid cloud
+T|多云|duōyún|السحابات المتعددة|multi-cloud
+T|成本优化|chéngběn yōuhuà|تحسين التكاليف|cost optimization
+T|账单|zhàngdān|الفاتورة|bill
+T|标签策略|biāoqiān cèlüè|سياسة الوسوم|tagging policy
+T|基础镜像|jīchǔ jìngxiàng|الصورة الأساسية|base image
+T|健康探针|jiànkāng tànzhēn|مسبار السلامة|health probe
+T|就绪|jiùxù|الجاهزية|readiness
+T|存活|cúnhuó|الحيوية|liveness
+T|资源限制|zīyuán xiànzhì|حدود الموارد|resource limits
+T|配置中心|pèizhì zhōngxīn|مركز الإعدادات|configuration centre
+T|证书管理|zhèngshū guǎnlǐ|إدارة الشهادات|certificate management
+T|域名解析|yùmíng jiěxī|تحليل أسماء النطاقات|DNS resolution
+T|内容分发|nèiróng fēnfā|توزيع المحتوى|content delivery
+T|备份策略|bèifèn cèlüè|سياسة النسخ الاحتياطي|backup policy
+T|灾备|zāi bèi|النسخ الاحتياطي للكوارث|disaster backup
+T|性能调优|xìngnéng diào yōu|ضبط الأداء|performance tuning
+T|容量评估|róngliàng pínggū|تقييم السعة|capacity assessment
+T|压测|yā cè|اختبار الضغط|stress testing
+T|自愈|zìyù|الإصلاح الذاتي|self-healing
+T|声明式|shēngmíng shì|التصريحي|declarative
+T|命令式|mìnglìng shì|الأمري|imperative
+T|状态文件|zhuàngtài wénjiàn|ملف الحالة|state file
+T|基础设施代码|jīchǔshèshī dàimǎ|كود البنية التحتية|infrastructure code
+T|平台工程|píngtái gōngchéng|هندسة المنصات|platform engineering
+T|开发者体验|kāifāzhě tǐyàn|تجربة المطوّر|developer experience
+T|内部平台|nèibù píngtái|المنصة الداخلية|internal platform

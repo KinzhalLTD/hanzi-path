@@ -41,3 +41,83 @@ T|指针|zhǐzhēn|مؤشر|pointer
 T|叶子节点|yèzi jiédiǎn|عقدة ورقية|leaf node
 T|根节点|gēn jiédiǎn|عقدة الجذر|root node
 T|键值对|jiànzhíduì|زوج مفتاح وقيمة|key–value pair
+T|线性表|xiànxìng biǎo|القائمة الخطية|linear list
+T|双向链表|shuāngxiàng liànbiǎo|القائمة المترابطة المزدوجة|doubly linked list
+T|循环链表|xúnhuán liànbiǎo|القائمة الدائرية|circular linked list
+T|头节点|tóu jiédiǎn|العقدة الرأسية|head node
+T|尾节点|wěi jiédiǎn|العقدة الذيلية|tail node
+T|前驱|qiánqū|العنصر السابق|predecessor
+T|后继|hòu jì|العنصر التالي|successor
+T|入栈|rù zhàn|الدفع إلى المكدس|push
+T|出栈|chū zhàn|السحب من المكدس|pop
+T|栈顶|zhàndǐng|قمة المكدس|top of stack
+T|入队|rù duì|الإدخال في الطابور|enqueue
+T|出队|chū duì|الإخراج من الطابور|dequeue
+T|双端队列|shuāng duān duìliè|الطابور ثنائي الطرف|deque
+T|循环队列|xúnhuán duìliè|الطابور الدائري|circular queue
+T|哈希函数|hāxī hánshù|دالة التجزئة|hash function
+T|哈希冲突|hāxī chōngtū|تصادم التجزئة|hash collision
+T|负载因子|fùzài yīnzǐ|معامل التحميل|load factor
+T|桶|tǒng|الدلو|bucket
+T|二叉搜索树|èr chā sōusuǒshù|شجرة البحث الثنائية|binary search tree
+T|平衡树|pínghéng shù|الشجرة المتوازنة|balanced tree
+T|红黑树|hóng hēi shù|الشجرة الحمراء والسوداء|red-black tree
+T|子树|zǐ shù|الشجرة الفرعية|subtree
+T|左子树|zuǒ zǐ shù|الشجرة الفرعية اليسرى|left subtree
+T|右子树|yòu zǐ shù|الشجرة الفرعية اليمنى|right subtree
+T|父节点|fù jiédiǎn|العقدة الأب|parent node
+T|子节点|zǐ jiédiǎn|العقدة الابن|child node
+T|兄弟节点|xiōngdì jiédiǎn|العقدة الشقيقة|sibling node
+T|深度|shēndù|العمق|depth
+T|高度|gāodù|الارتفاع|height
+T|层|céng|المستوى|level
+T|前序遍历|qián xù biànlì|العبور القبلي|pre-order traversal
+T|中序遍历|zhōng xù biànlì|العبور الوسطي|in-order traversal
+T|后序遍历|hòu xù biànlì|العبور البعدي|post-order traversal
+T|层序遍历|céng xù biànlì|العبور حسب المستوى|level-order traversal
+T|最大堆|zuì dà duī|الكومة العظمى|max-heap
+T|最小堆|zuì xiǎo duī|الكومة الصغرى|min-heap
+T|堆排序|duī páixù|الفرز بالكومة|heap sort
+T|字典树|zìdiǎn shù|شجرة البادئات|trie
+T|前缀|qiánzhuì|البادئة|prefix
+T|后缀|hòuzhuì|اللاحقة|suffix
+T|有向图|yǒu xiàng tú|الرسم الموجّه|directed graph
+T|无向图|wú xiàng tú|الرسم غير الموجّه|undirected graph
+T|顶点|dǐngdiǎn|الرأس|vertex
+T|边|biān|الحافة|edge
+T|权重|quánzhòng|الوزن|weight
+T|邻接表|línjiē biǎo|قائمة التجاور|adjacency list
+T|邻接矩阵|línjiē jǔzhèn|مصفوفة التجاور|adjacency matrix
+T|路径|lùjìng|المسار|path
+T|环|huán|الحلقة|cycle
+T|连通|liántōng|الاتصال|connected
+T|度|dù|الدرجة|degree
+T|树|shù|الشجرة|tree
+T|森林|sēnlín|الغابة|forest
+T|矩阵|jǔzhèn|المصفوفة الرياضية|matrix
+T|二维数组|èrwéi shùzǔ|المصفوفة ثنائية الأبعاد|two-dimensional array
+T|动态数组|dòngtài shùzǔ|المصفوفة الديناميكية|dynamic array
+T|容量|róngliàng|السعة|capacity
+T|扩容|kuòróng|توسيع السعة|resize
+T|元素|yuánsù|العنصر|element
+T|下标|xiàbiāo|الرقم السفلي (الفهرس)|subscript
+T|插入|chārù|الإدراج|insert
+T|删除|shānchú|الحذف|delete
+T|更新|gēngxīn|التحديث|update
+T|查找表|cházhǎo biǎo|جدول البحث|lookup table
+T|有序|yǒuxù|مرتّب|ordered
+T|无序|wúxù|غير مرتّب|unordered
+T|重复|chóngfù|التكرار|duplicate
+T|唯一|wéiyī|فريد|unique
+T|并查集|bìng chá jí|مجموعة الاتحاد والبحث|union-find
+T|线段树|xiànduàn shù|شجرة المقاطع|segment tree
+T|跳表|tiào biǎo|قائمة القفز|skip list
+T|布隆过滤器|bù lóng guòlǜqì|مرشح بلوم|Bloom filter
+T|位图|wèitú|خريطة البتات|bitmap
+T|元组|yuánzǔ|الصف (tuple)|tuple
+T|列表|lièbiǎo|القائمة|list
+T|字典|zìdiǎn|القاموس|dictionary
+T|序列|xùliè|التسلسل|sequence
+T|引用|yǐnyòng|المرجع|reference
+T|地址|dìzhǐ|العنوان|address
+T|空指针|kōng zhǐzhēn|المؤشر الفارغ|null pointer

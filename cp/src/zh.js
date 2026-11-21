@@ -44,7 +44,7 @@ function makeQs(words,pool){ return words.map(w=>{ const others=pick(pool.filter
   if(k==='mean') return {w,k,opts:shuffle([w,...others]).map(x=>({h:esc(mean(x)),ok:x===w}))};
   return {w,k,opts:shuffle([w,...others]).map(x=>({h:`<span class="han" style="font-size:22px">${esc(x.h)}</span>`,ok:x===w}))}; }); }
 SCREENS.practice=(m,arg)=>{ const mk=arg&&arg.k; let words;
-  if(mk) words=TERMS.filter(w=>w.mod===mk);
+  if(mk){ const all=TERMS.filter(w=>w.mod===mk), fresh=all.filter(w=>!S.srs[w.id]), dn=new Set(dueIds()), d=all.filter(w=>dn.has(w.id)); words=(fresh.length?fresh:d.length?d:shuffle(all.slice())).slice(0,10); }   // 100 terms per module: sets of 10, new terms first
   else { const due=dueIds().map(id=>byId[id]); const fresh=TERMS.filter(w=>!S.srs[w.id]&&modFree(MOD[w.mod])); words=(due.length?due:fresh).slice(0,12); if(due.length<8) words=words.concat(fresh.filter(w=>!words.includes(w)).slice(0,Math.max(0,8-words.length))); }
   if(!words.length){ m.innerHTML=`<div class="qhead"><button class="icon-btn" id="qx" aria-label="${t('close')}">${ICON.close}</button></div><div class="empty">✓</div>`; $('#qx',m).onclick=()=>go('zh'); return; }
   const pool=TERMS.filter(w=>w.tr===words[0].tr), intro=words.filter(w=>!S.srs[w.id]); let ii=0;

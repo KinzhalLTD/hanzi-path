@@ -41,3 +41,82 @@ T|随机数|suíjīshù|عدد عشوائي|random number
 T|证书颁发机构|zhèngshū bānfā jīgòu|سلطة إصدار الشهادات|certificate authority
 T|中间人攻击|zhōngjiānrén gōngjī|هجوم الرجل في المنتصف|man-in-the-middle attack
 T|校验和|jiàoyànhé|مجموع التحقق|checksum
+T|加密算法库|jiāmì suànfǎ kù|مكتبة خوارزميات التشفير|crypto library
+T|密码算法|mìmǎ suànfǎ|الخوارزمية التشفيرية|cryptographic algorithm
+T|分组密码|fēnzǔ mìmǎ|التشفير الكتلي|block cipher
+T|流密码|liú mìmǎ|التشفير التدفقي|stream cipher
+T|高级加密标准|gāojí jiāmì biāozhǔn|معيار التشفير المتقدم|AES
+T|数据加密标准|shùjù jiāmì biāozhǔn|معيار تشفير البيانات|DES
+T|初始化向量|chūshǐhuà xiàngliàng|متجه التهيئة|initialisation vector
+T|工作模式|gōngzuò móshì|نمط التشغيل|mode of operation
+T|填充|tiánchōng|الحشو|padding
+T|密钥长度|mìyào chángdù|طول المفتاح|key length
+T|密钥交换|mìyào jiāohuàn|تبادل المفاتيح|key exchange
+T|密钥生成|mìyào shēngchéng|توليد المفاتيح|key generation
+T|密钥存储|mìyào cúnchǔ|تخزين المفاتيح|key storage
+T|密钥销毁|mìyào xiāohuǐ|إتلاف المفاتيح|key destruction
+T|主密钥|zhǔ mìyào|المفتاح الرئيسي|master key
+T|会话密钥|huìhuà mìyào|مفتاح الجلسة|session key
+T|密钥派生|mìyào pàishēng|اشتقاق المفاتيح|key derivation
+T|椭圆曲线|tuǒyuánqūxiàn|المنحنى الإهليلجي|elliptic curve
+T|素数|sùshù|العدد الأولي|prime
+T|模运算|mó yùnsuàn|الحساب النمطي|modular arithmetic
+T|离散对数|lísàn duìshù|اللوغاريتم المتقطع|discrete logarithm
+T|因数分解|yīnshù fēnjiě|التحليل إلى عوامل|factorisation
+T|单向函数|dānxiàng hánshù|الدالة أحادية الاتجاه|one-way function
+T|抗碰撞|kàng pèngzhuàng|مقاومة التصادم|collision resistance
+T|碰撞|pèngzhuàng|التصادم|collision
+T|摘要|zhāiyào|الملخص|digest
+T|消息认证码|xiāoxi rènzhèng mǎ|رمز مصادقة الرسالة|message authentication code
+T|盐值|yán zhí|قيمة الملح|salt value
+T|彩虹表|cǎihóng biǎo|جدول قوس قزح|rainbow table
+T|暴力破解|bàolì pòjiě|الكسر بالقوة الغاشمة|brute-force cracking
+T|字典攻击|zìdiǎn gōngjī|هجوم القاموس|dictionary attack
+T|破解|pòjiě|الكسر|cracking
+T|密码分析|mìmǎ fēnxī|تحليل الشيفرات|cryptanalysis
+T|频率分析|pínlǜ fēnxī|تحليل التكرار|frequency analysis
+T|凯撒密码|kǎi sā mìmǎ|شيفرة قيصر|Caesar cipher
+T|替换密码|tìhuàn mìmǎ|شيفرة الاستبدال|substitution cipher
+T|置换|zhìhuàn|التبديل|permutation
+T|一次一密|yīcì yī mì|اللوحة لمرة واحدة|one-time pad
+T|异或运算|yìhuò yùnsuàn|عملية XOR|XOR operation
+T|编码方式|biānmǎ fāngshì|طريقة الترميز|encoding scheme
+T|签名验证|qiānmíng yànzhèng|التحقق من التوقيع|signature verification
+T|签发|qiānfā|الإصدار|issue
+T|吊销|diàoxiāo|الإلغاء|revocation
+T|证书吊销列表|zhèngshū diàoxiāo lièbiǎo|قائمة إلغاء الشهادات|certificate revocation list
+T|证书链|zhèngshū liàn|سلسلة الشهادات|certificate chain
+T|根证书|gēn zhèngshū|الشهادة الجذرية|root certificate
+T|中间证书|zhōngjiān zhèngshū|الشهادة الوسيطة|intermediate certificate
+T|自签名证书|zì qiānmíng zhèngshū|الشهادة الموقعة ذاتيًا|self-signed certificate
+T|公钥基础设施|gōngyào jīchǔshèshī|البنية التحتية للمفتاح العام|PKI
+T|信任链|xìnrèn liàn|سلسلة الثقة|chain of trust
+T|有效期|yǒuxiàoqī|مدة الصلاحية|validity period
+T|过期|guòqī|منتهي الصلاحية|expired
+T|握手|wòshǒu|المصافحة|handshake
+T|前向保密|qián xiàng bǎomì|السرية الأمامية|forward secrecy
+T|传输加密|chuánshū jiāmì|التشفير أثناء النقل|encryption in transit
+T|静态加密|jìngtài jiāmì|التشفير أثناء التخزين|encryption at rest
+T|全盘加密|quánpán jiāmì|تشفير القرص الكامل|full-disk encryption
+T|文件加密|wénjiàn jiāmì|تشفير الملفات|file encryption
+T|数据库加密|shùjùkù jiāmì|تشفير قاعدة البيانات|database encryption
+T|同态加密|tóngtài jiāmì|التشفير المتماثل الشكل|homomorphic encryption
+T|零知识证明|líng zhīshi zhèngmíng|إثبات المعرفة الصفرية|zero-knowledge proof
+T|后量子密码|hòu liàngzǐ mìmǎ|التشفير ما بعد الكمّي|post-quantum cryptography
+T|量子密钥分发|liàngzǐ mìyào fēnfā|توزيع المفاتيح الكمّي|quantum key distribution
+T|伪随机数|wěi suíjīshù|العدد شبه العشوائي|pseudo-random number
+T|熵|shāng|الإنتروبيا|entropy
+T|国密算法|guó mì suànfǎ|خوارزميات التشفير الصينية الوطنية|Chinese national crypto algorithms
+T|时间戳服务|shíjiānchuō fúwù|خدمة الطابع الزمني|timestamping service
+T|区块链|qūkuàiliàn|سلسلة الكتل|blockchain
+T|数字货币|shùzìhuòbì|العملة الرقمية|digital currency
+T|钱包|qiánbāo|المحفظة|wallet
+T|助记词|zhù jì cí|العبارة التذكيرية|seed phrase
+T|数字证书|shùzì zhèngshū|الشهادة الرقمية|digital certificate
+T|电子签名|diànzǐ qiānmíng|التوقيع الإلكتروني|electronic signature
+T|密码套件|mìmǎ tàojiàn|حزمة التشفير|cipher suite
+T|弱加密|ruò jiāmì|التشفير الضعيف|weak encryption
+T|降级攻击|jiàngjí gōngjī|هجوم خفض المستوى|downgrade attack
+T|重放攻击|chóng fàng gōngjī|هجوم الإعادة|replay attack
+T|侧信道攻击|cè xìndào gōngjī|هجوم القناة الجانبية|side-channel attack
+T|密钥托管|mìyào tuōguǎn|إيداع المفاتيح|key escrow

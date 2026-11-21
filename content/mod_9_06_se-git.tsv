@@ -41,3 +41,83 @@ T|历史记录|lìshǐ jìlù|السجل التاريخي|history
 T|忽略文件|hūlüè wénjiàn|ملف التجاهل|ignore file
 T|发布|fābù|إصدار، نشر|release
 T|协作|xiézuò|تعاون|collaboration
+T|工作区|gōngzuò qū|مساحة العمل|working directory
+T|版本库|bǎnběn kù|مستودع الإصدارات|repository (version store)
+T|初始化仓库|chūshǐhuà cāngkù|تهيئة المستودع|initialize a repository
+T|添加|tiānjiā|الإضافة|add
+T|提交信息|tíjiāo xìnxī|رسالة الالتزام|commit message
+T|哈希值|hāxī zhí|قيمة التجزئة|hash value
+T|检出|jiǎnchū|السحب إلى العمل|checkout
+T|切换分支|qiēhuàn fēnzhī|تبديل الفرع|switch branch
+T|新建分支|xīnjiàn fēnzhī|إنشاء فرع|create a branch
+T|删除分支|shānchú fēnzhī|حذف الفرع|delete a branch
+T|功能分支|gōngnéng fēnzhī|فرع الميزة|feature branch
+T|发布分支|fābù fēnzhī|فرع الإصدار|release branch
+T|热修复|rè xiūfù|الإصلاح العاجل|hotfix
+T|开发分支|kāifā fēnzhī|فرع التطوير|development branch
+T|快进合并|kuàijìn hébìng|الدمج السريع|fast-forward merge
+T|三方合并|sān fāng hébìng|الدمج الثلاثي|three-way merge
+T|合并冲突|hébìng chōngtū|تعارض الدمج|merge conflict
+T|解决冲突|jiějué chōngtū|حل التعارض|resolve a conflict
+T|挑选提交|tiāoxuǎn tíjiāo|انتقاء الالتزام|cherry-pick
+T|储藏|chǔcáng|التخزين المؤقت (stash)|stash
+T|重置|chóngzhì|إعادة الضبط|reset
+T|撤销|chèxiāo|التراجع|undo
+T|还原|huányuán|الاستعادة|revert
+T|差异|chāyì|الفرق|diff
+T|日志记录|rìzhì jìlù|سجل الأحداث|log
+T|责任追溯|zérèn zhuīsù|معرفة كاتب السطر|blame
+T|上游|shàngyóu|المنبع|upstream
+T|派生|pàishēng|التفرع (fork)|fork
+T|获取|huòqǔ|الجلب|fetch
+T|强制推送|qiángzhì tuīsòng|الدفع القسري|force push
+T|保护分支|bǎohù fēnzhī|الفرع المحمي|protected branch
+T|代码评审|dàimǎ píngshěn|مراجعة الكود|code review
+T|审批|shěnpī|الموافقة|approval
+T|评论|pínglùn|التعليق|comment
+T|建议修改|jiànyì xiūgǎi|اقتراح التعديل|suggested change
+T|持续集成检查|chíxù jíchéng jiǎnchá|فحوصات التكامل المستمر|CI checks
+T|钩子脚本|gōuzi jiǎoběn|سكربت الخطّاف|hook script
+T|子模块|zǐ mókuài|الوحدة الفرعية|submodule
+T|大文件|dà wénjiàn|الملفات الكبيرة|large files
+T|提交历史|tíjiāo lìshǐ|تاريخ الالتزامات|commit history
+T|压缩提交|yāsuō tíjiāo|ضغط الالتزامات|squash
+T|修改提交|xiūgǎi tíjiāo|تعديل الالتزام|amend
+T|分支策略|fēnzhī cèlüè|استراتيجية الفروع|branching strategy
+T|主干开发|zhǔgàn kāifā|التطوير على الجذع|trunk-based development
+T|语义化版本|yǔyì huà bǎnběn|الإصدار الدلالي|semantic versioning
+T|变更日志|biàngēng rìzhì|سجل التغييرات|changelog
+T|发布说明|fābù shuōmíng|ملاحظات الإصدار|release notes
+T|里程碑版本|lǐchéngbēi bǎnběn|إصدار المرحلة|milestone release
+T|开源|kāiyuán|المصدر المفتوح|open source
+T|许可证|xǔkězhèng|الترخيص|licence
+T|贡献者|gòngxiànzhě|المساهم|contributor
+T|维护者|wéihù zhě|المشرف على المشروع|maintainer
+T|问题跟踪|wèntí gēnzōng|تتبع المشكلات|issue tracking
+T|议题|yìtí|المسألة (issue)|issue
+T|文档|wéndàng|التوثيق|documentation
+T|说明文件|shuōmíng wénjiàn|ملف التعريف|README
+T|代码托管|dàimǎ tuōguǎn|استضافة الكود|code hosting
+T|权限管理|quánxiàn guǎnlǐ|إدارة الصلاحيات|permission management
+T|密钥对|mìyào duì|زوج المفاتيح|key pair
+T|签名提交|qiānmíng tíjiāo|الالتزام الموقّع|signed commit
+T|二分查找提交|èrfēn cházhǎo tíjiāo|البحث الثنائي في الالتزامات|bisect
+T|引用日志|yǐnyòng rìzhì|سجل المراجع|reflog
+T|游离头指针|yóulí tóu zhǐzhēn|المؤشر المنفصل|detached HEAD
+T|追踪分支|zhuīzōng fēnzhī|الفرع المتتبَّع|tracking branch
+T|本地仓库|běndì cāngkù|المستودع المحلي|local repository
+T|单仓库|dān cāngkù|المستودع الموحد|monorepo
+T|代码所有者|dàimǎ suǒyǒuzhě|مالك الكود|code owner
+T|提交规范|tíjiāo guīfàn|قواعد الالتزام|commit conventions
+T|版本发布|bǎnběn fābù|إطلاق الإصدار|version release
+T|回退版本|huítuì bǎnběn|الرجوع إلى إصدار|roll back a version
+T|代码冻结|dàimǎ dòngjié|تجميد الكود|code freeze
+T|合并窗口|hébìng chuāngkǒu|نافذة الدمج|merge window
+T|小步提交|xiǎo bù tíjiāo|الالتزامات الصغيرة|small commits
+T|原子提交|yuánzǐ tíjiāo|الالتزام الذري|atomic commit
+T|草稿|cǎogǎo|المسودة|draft
+T|分叉|fēnchà|التشعب|divergence
+T|变更|biàngēng|التغيير|change
+T|文件夹|wénjiànjiā|المجلد|folder
+T|文件|wénjiàn|الملف|file
+T|补丁文件|bǔding wénjiàn|ملف الرقعة|patch file

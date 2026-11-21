@@ -41,3 +41,83 @@ T|数据主体|shùjù zhǔtǐ|صاحب البيانات|data subject
 T|知情同意|zhīqíng tóngyì|الموافقة المستنيرة|informed consent
 T|跨境传输|kuàjìng chuánshū|النقل عبر الحدود|cross-border transfer
 T|隐私政策|yǐnsī zhèngcè|سياسة الخصوصية|privacy policy
+T|信息安全管理体系|xìnxī ānquán guǎnlǐ tǐxì|نظام إدارة أمن المعلومات|ISMS
+T|安全治理|ānquán zhìlǐ|الحوكمة الأمنية|security governance
+T|董事会|dǒngshìhuì|مجلس الإدارة|board of directors
+T|高级管理层|gāojí guǎnlǐ céng|الإدارة العليا|senior management
+T|风险管理框架|fēngxiǎnguǎnlǐ kuàngjià|إطار إدارة المخاطر|risk management framework
+T|风险识别|fēngxiǎn shíbié|تحديد المخاطر|risk identification
+T|风险分析|fēngxiǎn fēnxī|تحليل المخاطر|risk analysis
+T|风险评价|fēngxiǎn píngjià|تقدير المخاطر|risk evaluation
+T|风险接受|fēngxiǎn jiēshòu|قبول المخاطر|risk acceptance
+T|风险转移|fēngxiǎn zhuǎnyí|نقل المخاطر|risk transfer
+T|风险规避|fēngxiǎn guībì|تجنب المخاطر|risk avoidance
+T|风险缓解|fēngxiǎn huǎnjiě|تخفيف المخاطر|risk mitigation
+T|风险负责人|fēngxiǎn fùzérén|مالك الخطر|risk owner
+T|固有风险|gùyǒu fēngxiǎn|الخطر الكامن|inherent risk
+T|定性分析|dìngxìngfēnxī|التحليل النوعي|qualitative analysis
+T|定量分析|dìngliàngfēnxī|التحليل الكمي|quantitative analysis
+T|年度损失期望|niándù sǔnshī qīwàng|الخسارة السنوية المتوقعة|annualised loss expectancy
+T|控制目标|kòngzhì mùbiāo|هدف الضابط|control objective
+T|控制有效性|kòngzhì yǒuxiàoxìng|فعالية الضوابط|control effectiveness
+T|适用性声明|shìyòng xìng shēngmíng|بيان قابلية التطبيق|statement of applicability
+T|差距分析|chājù fēnxī|تحليل الفجوات|gap analysis
+T|整改|zhěnggǎi|المعالجة التصحيحية|remediation
+T|整改计划|zhěnggǎi jìhuà|خطة المعالجة|remediation plan
+T|不符合项|bùfú hé xiàng|عدم المطابقة|nonconformity
+T|纠正措施|jiūzhèng cuòshī|الإجراء التصحيحي|corrective action
+T|预防措施|yùfángcuòshī|الإجراء الوقائي|preventive action
+T|内部审计|nèibù shěnjì|التدقيق الداخلي|internal audit
+T|外部审计|wàibù shěnjì|التدقيق الخارجي|external audit
+T|审计员|shěnjìyuán|المدقق|auditor
+T|审计证据|shěnjì zhèngjù|أدلة التدقيق|audit evidence
+T|审计发现|shěnjì fāxiàn|ملاحظة التدقيق|audit finding
+T|认证机构|rènzhèng jīgòu|جهة الاعتماد|certification body
+T|认证证书|rènzhèng zhèngshū|شهادة الاعتماد|certification
+T|监督审核|jiāndū shěnhé|تدقيق المراقبة|surveillance audit
+T|再认证|zài rènzhèng|إعادة الاعتماد|recertification
+T|法律法规|fǎlǜ fǎguī|القوانين والأنظمة|laws and regulations
+T|监管要求|jiānguǎn yāoqiú|المتطلبات التنظيمية|regulatory requirements
+T|国家标准|guójiā biāozhǔn|المعيار الوطني|national standard
+T|国际标准|guójì biāozhǔn|المعيار الدولي|international standard
+T|行业标准|hángyè biāozhǔn|معيار الصناعة|industry standard
+T|最佳做法|zuìjiā zuòfǎ|أفضل الممارسات|best practice
+T|政策文件|zhèngcè wénjiàn|وثيقة السياسة|policy document
+T|标准文件|biāozhǔn wénjiàn|وثيقة المعيار|standard document
+T|操作规程|cāozuòguīchéng|إجراءات التشغيل|operating procedure
+T|指南|zhǐnán|الدليل الإرشادي|guideline
+T|文件控制|wénjiàn kòngzhì|ضبط الوثائق|document control
+T|记录管理|jìlù guǎnlǐ|إدارة السجلات|records management
+T|保留期限|bǎoliú qīxiàn|مدة الاحتفاظ|retention period
+T|数据处理|shùjùchǔlǐ|معالجة البيانات|data processing
+T|数据控制者|shùjù kòngzhì zhě|المتحكم بالبيانات|data controller
+T|数据处理者|shùjùchǔlǐ zhě|معالج البيانات|data processor
+T|个人数据|gèrén shùjù|البيانات الشخصية|personal data
+T|敏感个人信息|mǐngǎn gèrén xìnxī|المعلومات الشخصية الحساسة|sensitive personal information
+T|数据最小化|shùjù zuìxiǎohuà|تقليل البيانات|data minimisation
+T|目的限制|mùdì xiànzhì|تحديد الغرض|purpose limitation
+T|同意撤回|tóngyì chèhuí|سحب الموافقة|withdrawal of consent
+T|访问权|fǎngwèn quán|حق الوصول|right of access
+T|删除权|shānchú quán|حق الحذف|right to erasure
+T|更正权|gēngzhèng quán|حق التصحيح|right to rectification
+T|数据保护官|shùjù bǎohù guān|مسؤول حماية البيانات|data protection officer
+T|隐私影响评估|yǐnsī yǐngxiǎng pínggū|تقييم الأثر على الخصوصية|privacy impact assessment
+T|隐私声明|yǐnsī shēngmíng|إشعار الخصوصية|privacy notice
+T|数据出境|shùjù chūjìng|نقل البيانات للخارج|outbound data transfer
+T|安全评估报告|ānquán pínggū bàogào|تقرير التقييم الأمني|security assessment report
+T|供应商管理|gōngyìngshāng guǎnlǐ|إدارة الموردين|vendor management
+T|第三方风险|dìsānfāng fēngxiǎn|مخاطر الأطراف الثالثة|third-party risk
+T|保密协议|bǎomìxiéyì|اتفاقية عدم الإفصاح|non-disclosure agreement
+T|合同条款|hétong tiáokuǎn|بنود العقد|contract clauses
+T|业务影响分析|yèwù yǐngxiǎng fēnxī|تحليل الأثر على الأعمال|business impact analysis
+T|连续性计划|liánxùxìng jìhuà|خطة الاستمرارية|continuity plan
+T|危机管理|wēijī guǎnlǐ|إدارة الأزمات|crisis management
+T|关键业务|guānjiàn yèwù|الأعمال الحيوية|critical business functions
+T|培训记录|péixùn jìlù|سجل التدريب|training record
+T|意识测评|yìshí cèpíng|قياس الوعي|awareness assessment
+T|可接受使用|kě jiēshòu shǐyòng|الاستخدام المقبول|acceptable use
+T|处罚|chǔfá|العقوبة|penalty
+T|罚款|fákuǎn|الغرامة|fine
+T|问责机制|wènzé jīzhì|آلية المساءلة|accountability mechanism
+T|管理评审|guǎnlǐ píngshěn|مراجعة الإدارة|management review
+T|持续监控|chíxù jiānkòng|المراقبة المستمرة|continuous monitoring

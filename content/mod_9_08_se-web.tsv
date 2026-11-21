@@ -41,3 +41,83 @@ T|渲染|xuànrǎn|العرض والرسم|rendering
 T|长连接|cháng liánjiē|اتصال مستمر|persistent connection
 T|请求头|qǐngqiútóu|ترويسة الطلب|request header
 T|限流|xiànliú|تحديد معدل الطلبات|rate limiting
+T|超文本标记语言|chāowénběnbiāojìyǔyán|لغة ترميز النص التشعبي|HTML
+T|层叠样式表|céngdié yàngshì biǎo|أوراق الأنماط المتتالية|CSS
+T|网页设计|wǎngyèshèjì|تصميم الويب|web design
+T|响应式设计|xiǎngyìng shì shèjì|التصميم المتجاوب|responsive design
+T|用户界面|yònghùjièmiàn|واجهة المستخدم|user interface
+T|用户体验|yònghù tǐyàn|تجربة المستخدم|user experience
+T|组件|zǔjiàn|المكوّن|component
+T|单页应用|dān yè yìngyòng|تطبيق الصفحة الواحدة|single-page application
+T|服务端渲染|fúwù duān xuànrǎn|العرض من الخادم|server-side rendering
+T|静态网站|jìngtài wǎngzhàn|الموقع الثابت|static website
+T|动态网页|dòngtàiwǎngyè|الصفحة الديناميكية|dynamic page
+T|表单|biǎodān|النموذج|form
+T|按钮|ànniǔ|الزر|button
+T|链接|liànjiē|الرابط|link
+T|图片|túpiàn|الصورة|image
+T|样式|yàngshì|النمط|style
+T|布局|bùjú|التخطيط|layout
+T|字体|zìtǐ|الخط|font
+T|动画|dònghuà|الحركة|animation
+T|路由|lùyóu|التوجيه|routing
+T|状态管理|zhuàngtài guǎnlǐ|إدارة الحالة|state management
+T|请求方法|qǐngqiú fāngfǎ|طريقة الطلب|request method
+T|请求体|qǐngqiú tǐ|جسم الطلب|request body
+T|响应体|xiǎngyìng tǐ|جسم الاستجابة|response body
+T|查询参数|cháxún cānshù|معاملات الاستعلام|query parameters
+T|路径参数|lùjìng cānshù|معاملات المسار|path parameters
+T|重定向|chóngdìngxiàng|إعادة التوجيه|redirect
+T|未找到|wèi zhǎodào|غير موجود|not found
+T|服务器错误|fúwùqì cuòwù|خطأ الخادم|server error
+T|未授权|wèi shòuquán|غير مصرّح|unauthorized
+T|禁止访问|jìnzhǐ fǎngwèn|ممنوع الوصول|forbidden
+T|表述性状态转移|biǎoshù xìngzhuàng tài zhuǎnyí|نقل الحالة التمثيلي (REST)|REST
+T|资源|zīyuán|المورد|resource
+T|端点|duāndiǎn|نقطة النهاية|endpoint
+T|幂等|mìděng|عديم الأثر عند التكرار|idempotent
+T|数据格式|shùjù géshì|صيغة البيانات|data format
+T|网络钩子|wǎngluò gōuzi|خطّاف الويب|webhook
+T|套接字|tào jiē zì|المقبس|socket
+T|实时通信|shíshí tōngxìn|الاتصال الفوري|real-time communication
+T|轮询|lúnxún|الاستطلاع الدوري|polling
+T|推送通知|tuīsòng tōngzhī|الإشعار الفوري|push notification
+T|网络请求|wǎngluò qǐngqiú|طلب الشبكة|network request
+T|加载|jiāzài|التحميل|loading
+T|加载速度|jiāzài sùdù|سرعة التحميل|loading speed
+T|压缩|yāsuō|الضغط|compression
+T|缓存策略|huǎncún cèlüè|سياسة التخزين المؤقت|caching strategy
+T|浏览器缓存|liúlǎnqì huǎncún|ذاكرة المتصفح المؤقتة|browser cache
+T|本地存储|běndì cúnchǔ|التخزين المحلي|local storage
+T|网页存储|wǎngyè cúnchǔ|تخزين الويب|web storage
+T|安全传输|ānquán chuánshū|النقل الآمن|secure transport
+T|传输层安全|chuánshūcéng ānquán|أمن طبقة النقل|TLS
+T|加密连接|jiāmì liánjiē|الاتصال المشفّر|encrypted connection
+T|域名系统|yùmíng xìtǒng|نظام أسماء النطاقات|DNS
+T|主机|zhǔjī|المضيف|host
+T|托管|tuōguǎn|الاستضافة|hosting
+T|反向代理|fǎnxiàng dàilǐ|الوكيل العكسي|reverse proxy
+T|代理服务器|dàilǐ fúwùqì|الخادم الوكيل|proxy server
+T|网络服务器|wǎngluò fúwùqì|خادم الويب|web server
+T|应用服务器|yìngyòng fúwùqì|خادم التطبيقات|application server
+T|接口文档|jiēkǒu wéndàng|توثيق الواجهة البرمجية|API documentation
+T|版本控制接口|bǎnběn kòngzhì jiēkǒu|الواجهة البرمجية ذات الإصدارات|versioned API
+T|速率限制|sùlǜ xiànzhì|تحديد المعدل|rate limiting
+T|图形查询语言|túxíng cháxún yǔyán|لغة الاستعلام GraphQL|GraphQL
+T|序列化格式|xùliè huà géshì|صيغة التسلسل|serialization format
+T|可访问性|kě fǎngwèn xìng|إمكانية الوصول|accessibility
+T|搜索引擎优化|sōusuǒyǐnqíng yōuhuà|تحسين محركات البحث|SEO
+T|国际化|guójìhuà|التدويل|internationalization
+T|本地化|běndìhuà|التوطين|localization
+T|从右到左|cóng yòu dào zuǒ|من اليمين إلى اليسار|right-to-left
+T|移动端|yídòng duān|الأجهزة المحمولة|mobile
+T|桌面端|zhuōmiàn duān|سطح المكتب|desktop
+T|兼容性|jiānróngxìng|التوافق|compatibility
+T|脚本语言|jiǎoběn yǔyán|لغة السكربت|scripting language
+T|异步请求|yìbù qǐngqiú|الطلب غير المتزامن|asynchronous request
+T|承诺|chéngnuò|الوعد (Promise)|promise
+T|事件监听|shìjiàn jiāntīng|الاستماع للأحداث|event listener
+T|文档对象模型|wéndàng duìxiàng móxíng|نموذج كائن المستند|DOM
+T|虚拟节点|xūnǐ jiédiǎn|العقدة الافتراضية|virtual node
+T|前端框架|qiánduān kuàngjià|إطار الواجهة الأمامية|front-end framework
+T|打包工具|dǎbāo gōngjù|أداة التجميع|bundler

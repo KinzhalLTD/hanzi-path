@@ -41,3 +41,83 @@ T|子网|zǐwǎng|شبكة فرعية|subnet
 T|无线网络|wúxiàn wǎngluò|الشبكة اللاسلكية|wireless network
 T|带宽|dàikuān|عرض النطاق|bandwidth
 T|默认密码|mòrèn mìmǎ|كلمة المرور الافتراضية|default password
+T|网络协议|wǎngluòxiéyì|بروتوكول الشبكة|network protocol
+T|传输控制协议|chuánshūkòngzhì xiéyì|بروتوكول التحكم في النقل|TCP
+T|用户数据报协议|yònghù shùjù bào xiéyì|بروتوكول بيانات المستخدم|UDP
+T|网际协议|wǎngjì xiéyì|بروتوكول الإنترنت|IP
+T|互联网协议地址|hùlián wǎng xiéyì dìzhǐ|عنوان IP|IP address
+T|物理地址|wùlǐ dìzhǐ|العنوان المادي|MAC address
+T|三次握手|sāncì wòshǒu|المصافحة الثلاثية|three-way handshake
+T|数据链路层|shùjùliànlùcéng|طبقة ربط البيانات|data link layer
+T|物理层|wùlǐcéng|الطبقة المادية|physical layer
+T|会话层|huìhuà céng|طبقة الجلسة|session layer
+T|开放系统互连|kāifàngxìtǒnghùlián|نموذج الربط المفتوح|OSI model
+T|交换机|jiāohuànjī|المبدّل|switch
+T|集线器|jíxiànqì|الموزّع|hub
+T|无线接入点|wúxiàn jiērùdiǎn|نقطة الوصول اللاسلكية|wireless access point
+T|调制解调器|tiáozhìjiětiáoqì|المودم|modem
+T|网卡|wǎngkǎ|بطاقة الشبكة|network card
+T|局域网|júyùwǎng|الشبكة المحلية|local area network
+T|广域网|guǎngyùwǎng|الشبكة الواسعة|wide area network
+T|虚拟局域网|xūnǐ júyùwǎng|الشبكة المحلية الافتراضية|VLAN
+T|子网掩码|zǐwǎng yǎnmǎ|قناع الشبكة الفرعية|subnet mask
+T|默认网关|mòrèn wǎngguān|البوابة الافتراضية|default gateway
+T|动态主机配置协议|dòngtài zhǔjī pèizhì xiéyì|بروتوكول التهيئة الديناميكية|DHCP
+T|网络地址转换|wǎngluòdìzhǐzhuǎnhuàn|ترجمة عناوين الشبكة|NAT
+T|端口号|duānkǒu hào|رقم المنفذ|port number
+T|开放端口|kāifàng duānkǒu|المنفذ المفتوح|open port
+T|监听|jiāntīng|الاستماع|listen
+T|连接|liánjiē|الاتصال|connection
+T|数据流|shùjùliú|تدفق البيانات|data stream
+T|报文|bào wén|الرسالة الشبكية|packet message
+T|包头|bāotóu|ترويسة الحزمة|packet header
+T|载荷|zàihè|الحمولة|payload
+T|网络拓扑|wǎngluò tuòpū|طوبولوجيا الشبكة|network topology
+T|非军事区|fēijūnshìqū|المنطقة منزوعة السلاح|DMZ
+T|堡垒机|bǎolěijī|الخادم المحصّن|bastion host
+T|跳板机|tiàobǎn jī|خادم القفز|jump server
+T|入侵防御系统|rùqīn fángyù xìtǒng|نظام منع التسلل|intrusion prevention system
+T|下一代防火墙|xiàyīdài fánghuǒqiáng|جدار الحماية من الجيل التالي|next-generation firewall
+T|访问规则|fǎngwèn guīzé|قاعدة الوصول|access rule
+T|允许|yǔnxǔ|السماح|allow
+T|拒绝|jùjué|الرفض|deny
+T|入站|rù zhàn|الوارد|inbound
+T|出站|chū zhàn|الصادر|outbound
+T|白名单策略|báimíngdān cèlüè|سياسة القائمة البيضاء|allow-list policy
+T|流量分析|liúliàng fēnxī|تحليل حركة المرور|traffic analysis
+T|深度包检测|shēndù bāo jiǎncè|الفحص العميق للحزم|deep packet inspection
+T|网络监控|wǎngluò jiānkòng|مراقبة الشبكة|network monitoring
+T|网络嗅探|wǎngluò xiùtàn|التنصت على الشبكة|network sniffing
+T|嗅探器|xiùtàn qì|أداة التنصت|sniffer
+T|欺骗|qīpiàn|الانتحال|spoofing
+T|地址欺骗|dìzhǐ qīpiàn|انتحال العنوان|IP spoofing
+T|解析劫持|jiěxī jiéchí|اختطاف تحليل النطاق|DNS hijacking
+T|缓存投毒|huǎncún tóudú|تسميم الذاكرة المؤقتة|cache poisoning
+T|地址解析协议|dìzhǐjiěxīxiéyì|بروتوكول تحليل العناوين|ARP
+T|分布式拒绝服务|fēnbùshì jùjué fúwù|الحرمان الموزع من الخدمة|DDoS
+T|洪水攻击|hóngshuǐ gōngjī|هجوم الإغراق|flood attack
+T|流量清洗|liúliàng qīngxǐ|تنقية حركة المرور|traffic scrubbing
+T|黑洞路由|hēidòng lùyóu|التوجيه إلى الثقب الأسود|blackhole routing
+T|无线安全|wúxiàn ānquán|أمن الشبكات اللاسلكية|wireless security
+T|无线加密|wúxiàn jiāmì|التشفير اللاسلكي|wireless encryption
+T|热点|rèdiǎn|نقطة الاتصال|hotspot
+T|公共无线网|gōnggòng wúxiàn wǎng|الشبكة اللاسلكية العامة|public Wi-Fi
+T|恶意热点|èyì rèdiǎn|نقطة الاتصال الخبيثة|rogue access point
+T|蓝牙|lán yá|البلوتوث|Bluetooth
+T|物联网|wù liánwǎng|إنترنت الأشياء|internet of things
+T|工业控制系统|gōngyè kòngzhì xìtǒng|أنظمة التحكم الصناعي|industrial control system
+T|远程桌面|yuǎnchéng zhuōmiàn|سطح المكتب البعيد|remote desktop
+T|远程访问|yuǎnchéng fǎngwèn|الوصول عن بُعد|remote access
+T|安全外壳协议|ānquán wàiké xiéyì|بروتوكول الصدفة الآمنة|SSH
+T|文件传输协议|wénjiàn chuánshū xiéyì|بروتوكول نقل الملفات|FTP
+T|邮件服务器|yóujiàn fúwùqì|خادم البريد|mail server
+T|网络时间协议|wǎngluò shíjiān xiéyì|بروتوكول وقت الشبكة|NTP
+T|简单网络管理协议|jiǎndānwǎngluòguǎnlǐxiéyì|بروتوكول إدارة الشبكة البسيط|SNMP
+T|网络访问控制|wǎngluò fǎngwèn kòngzhì|التحكم في الوصول إلى الشبكة|network access control
+T|微隔离|wēi gélí|التجزئة الدقيقة|microsegmentation
+T|软件定义网络|ruǎnjiàn dìngyì wǎngluò|الشبكة المعرّفة بالبرمجيات|software-defined networking
+T|安全访问服务边缘|ānquán fǎngwèn fúwù biānyuán|حافة خدمة الوصول الآمن|SASE
+T|隧道|suìdào|النفق|tunnel
+T|加密隧道|jiāmì suìdào|النفق المشفّر|encrypted tunnel
+T|延迟时间|yánchí shíjiān|زمن التأخير|latency time
+T|丢包|diūbāo|فقدان الحزم|packet loss

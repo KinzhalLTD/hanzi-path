@@ -38,7 +38,7 @@ HANDS-ON LABS – SAFE AND LOCAL
 Every scenario is fictional and runs on your phone; nothing touches real systems.
 
 TECH CHINESE
-481 professional terms with pinyin and audio, spaced-repetition practice, and 12 voiced workplace conversations, each character with a voice of their own: stand-ups, code reviews, release rollbacks, incident calls, audits, a cloud data leak and pen-test scoping.
+2,400 professional terms (100 per module) with pinyin and audio, spaced-repetition practice, and 12 voiced workplace conversations, each character with a voice of their own: stand-ups, code reviews, release rollbacks, incident calls, audits, a cloud data leak and pen-test scoping.
 
 PLAYFUL BY DESIGN
 Meet Lóngbǎo, the debugging dragon who tells terrible programmer jokes. Every module ends with a boss fight against monsters like the Infinite Loop Demon and the Merge Conflict Dragon. Open a red envelope every day, draw your coding fortune, chain answers into firecracker combos, collect 17 imperial seals and rise from Code Apprentice to Code Sage.

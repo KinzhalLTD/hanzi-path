@@ -41,3 +41,83 @@ T|命名空间|mìngmíng kōngjiān|مساحة الأسماء|namespace
 T|配置漂移|pèizhì piāoyí|انحراف الإعدادات|configuration drift
 T|云原生|yúnyuánshēng|المصمم للسحابة أصلًا|cloud-native
 T|公开访问|gōngkāi fǎngwèn|الوصول العام|public access
+T|云服务|yún fúwù|الخدمة السحابية|cloud service
+T|基础设施即服务|jīchǔshèshījífúwù|البنية التحتية كخدمة|IaaS
+T|平台即服务|píngtáijífúwù|المنصة كخدمة|PaaS
+T|软件即服务|ruǎnjiànjífúwù|البرمجيات كخدمة|SaaS
+T|云账号|yún zhànghào|الحساب السحابي|cloud account
+T|根账号|gēn zhànghào|حساب الجذر|root account
+T|身份与访问管理|shēnfèn yǔ fǎngwèn guǎnlǐ|إدارة الهوية والوصول|identity and access management
+T|权限策略|quánxiàn cèlüè|سياسة الصلاحيات|permission policy
+T|角色扮演|juésè bànyǎn|تقمّص الدور|assume role
+T|临时凭证|línshí píngzhèng|بيانات الاعتماد المؤقتة|temporary credentials
+T|长期密钥|chángqī mìyào|المفتاح طويل الأمد|long-lived key
+T|工作负载身份|gōngzuò fùzài shēnfèn|هوية عبء العمل|workload identity
+T|元数据服务|yuánshùjù fúwù|خدمة البيانات الوصفية|metadata service
+T|存储桶策略|cúnchǔ tǒng cèlüè|سياسة حاوية التخزين|bucket policy
+T|公开读取|gōngkāi dúqǔ|القراءة العامة|public read
+T|阻止公共访问|zǔzhǐ gōnggòng fǎngwèn|حجب الوصول العام|block public access
+T|数据加密密钥|shùjù jiāmì mìyào|مفتاح تشفير البيانات|data encryption key
+T|客户管理密钥|kèhù guǎnlǐ mìyào|المفتاح الذي يديره العميل|customer-managed key
+T|密钥保管库|mìyào bǎoguǎn kù|خزنة المفاتيح|key vault
+T|密钥管理器|mìyào guǎnlǐ qì|مدير الأسرار|secrets manager
+T|网络安全组|wǎngluò ānquán zǔ|مجموعة أمان الشبكة|network security group
+T|私有子网|sīyǒu zǐwǎng|الشبكة الفرعية الخاصة|private subnet
+T|公有子网|gōngyǒu zǐwǎng|الشبكة الفرعية العامة|public subnet
+T|私有终端节点|sīyǒu zhōngduān jiédiǎn|نقطة النهاية الخاصة|private endpoint
+T|云防火墙|yún fánghuǒqiáng|الجدار الناري السحابي|cloud firewall
+T|审计跟踪|shěnjì gēnzōng|مسار التدقيق|audit trail
+T|配置审计|pèizhì shěnjì|تدقيق الإعدادات|configuration audit
+T|合规检查|héguī jiǎnchá|فحص الامتثال|compliance check
+T|资源清单|zīyuán qīngdān|قائمة الموارد|resource inventory
+T|影子资产|yǐngzi zīchǎn|الأصول الخفية|shadow IT
+T|多账号|duō zhànghào|الحسابات المتعددة|multi-account
+T|组织策略|zǔzhī cèlüè|سياسة المؤسسة|organisation policy
+T|防护栏|fánghù lán|الحواجز الوقائية|guardrails
+T|落地区|luòdì qū|منطقة الهبوط|landing zone
+T|基础设施模板|jīchǔshèshī múbǎn|قالب البنية التحتية|infrastructure template
+T|模板扫描|múbǎn sǎomiáo|فحص القوالب|template scanning
+T|策略即代码|cèlüè jí dàimǎ|السياسة ككود|policy as code
+T|开发安全运维|kāifā ānquán yùnwéi|التطوير الآمن والعمليات|DevSecOps
+T|流水线安全|liúshuǐxiàn ānquán|أمن خط النشر|pipeline security
+T|构建服务器|gòujiàn fúwùqì|خادم البناء|build server
+T|构建产物|gòujiàn chǎnwù|مخرجات البناء|build artefact
+T|产物签名|chǎnwù qiānmíng|توقيع المخرجات|artefact signing
+T|来源证明|láiyuán zhèngmíng|إثبات المنشأ|provenance
+T|软件供应链|ruǎnjiàn gōngyìngliàn|سلسلة توريد البرمجيات|software supply chain
+T|可信构建|kěxìn gòujiàn|البناء الموثوق|trusted build
+T|容器镜像|róngqì jìngxiàng|صورة الحاوية|container image
+T|镜像签名|jìngxiàng qiānmíng|توقيع الصورة|image signing
+T|精简镜像|jīngjiǎn jìngxiàng|الصورة المصغّرة|minimal image
+T|特权容器|tèquán róngqì|الحاوية المميزة|privileged container
+T|容器逃逸|róngqì táoyì|الهروب من الحاوية|container escape
+T|运行时安全|yùnxíngshí ānquán|الأمن وقت التشغيل|runtime security
+T|集群安全|jíqún ānquán|أمن العنقود|cluster security
+T|网络策略|wǎngluò cèlüè|سياسة الشبكة|network policy
+T|准入控制|zhǔnrù kòngzhì|التحكم في القبول|admission control
+T|密钥对象|mìyào duìxiàng|كائن السر|secret object
+T|服务网格安全|fúwù wǎnggé ānquán|أمن شبكة الخدمات|service mesh security
+T|双向认证|shuāngxiàng rènzhèng|المصادقة المتبادلة|mutual authentication
+T|无服务器函数|wú fúwùqì hánshù|الدالة بلا خادم|serverless function
+T|函数权限|hánshù quánxiàn|صلاحيات الدالة|function permissions
+T|事件触发|shìjiàn chùfā|التشغيل بالأحداث|event trigger
+T|超时限制|chāoshí xiànzhì|حد المهلة|timeout limit
+T|并发限制|bìngfā xiànzhì|حد التزامن|concurrency limit
+T|费用告警|fèiyòng gào jǐng|تنبيه التكاليف|billing alert
+T|资源滥用|zīyuán lànyòng|إساءة استخدام الموارد|resource abuse
+T|挖矿|wākuàng|التعدين|cryptomining
+T|云原生安全|yún yuánshēng ānquán|الأمن السحابي الأصلي|cloud-native security
+T|云工作负载保护|yún gōngzuò fùzài bǎohù|حماية أعباء العمل السحابية|cloud workload protection
+T|云访问安全代理|yún fǎngwèn ānquán dàilǐ|وسيط أمن الوصول السحابي|CASB
+T|多租户|duō zūhù|تعدد المستأجرين|multi-tenancy
+T|租户隔离|zūhù gélí|عزل المستأجرين|tenant isolation
+T|数据驻留|shùjù zhùliú|إقامة البيانات|data residency
+T|数据主权|shùjù zhǔquán|سيادة البيانات|data sovereignty
+T|退出策略|tuìchū cèlüè|استراتيجية الخروج|exit strategy
+T|厂商锁定|chǎngshāng suǒdìng|الارتباط بالمورد|vendor lock-in
+T|服务水平协议|fúwù shuǐpíng xiéyì|اتفاقية مستوى الخدمة|SLA
+T|共享资源|gòngxiǎng zīyuán|الموارد المشتركة|shared resources
+T|云迁移|yún qiānyí|الترحيل إلى السحابة|cloud migration
+T|云备份|yún bèifèn|النسخ الاحتياطي السحابي|cloud backup
+T|跨区域复制|kuà qūyù fùzhì|النسخ عبر المناطق|cross-region replication
+T|快照|kuàizhào|اللقطة|snapshot

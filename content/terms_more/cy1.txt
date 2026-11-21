@@ -1,0 +1,505 @@
+# zh|ar|en  (pinyin filled from CC-CEDICT by scripts/terms_fill.py)
++cy-found
+安全|الأمن|security
+安全性|مستوى الأمان|security (property)
+攻击|الهجوم|attack
+防御|الدفاع|defence
+保护|الحماية|protection
+资产|الأصل|asset
+数据资产|أصول البيانات|data assets
+信息资产|أصول المعلومات|information assets
+威胁源|مصدر التهديد|threat source
+威胁行为者|الجهة المهدِّدة|threat actor
+脆弱性|القابلية للاختراق|vulnerability (weakness)
+影响|الأثر|impact
+可能性|الاحتمالية|likelihood
+风险等级|مستوى الخطر|risk level
+风险矩阵|مصفوفة المخاطر|risk matrix
+安全目标|هدف أمني|security objective
+安全需求|المتطلبات الأمنية|security requirements
+安全架构|المعمارية الأمنية|security architecture
+安全设计|التصميم الآمن|secure design
+默认安全|الأمان افتراضيًا|secure by default
+安全基线|خط الأساس الأمني|security baseline
+加固|التحصين|hardening
+系统加固|تحصين النظام|system hardening
+攻击面管理|إدارة سطح الهجوم|attack surface management
+暴露面|المساحة المكشوفة|exposure
+职责分离|فصل المهام|separation of duties
+知其所需|الحاجة إلى المعرفة|need to know
+零信任架构|معمارية الثقة الصفرية|zero-trust architecture
+信任边界|حدود الثقة|trust boundary
+内网|الشبكة الداخلية|intranet
+外网|الشبكة الخارجية|external network
+互联网|الإنترنت|internet
+终端安全|أمن نقاط النهاية|endpoint security
+主机安全|أمن المضيف|host security
+应用安全|أمن التطبيقات|application security
+数据安全|أمن البيانات|data security
+网络空间|الفضاء السيبراني|cyberspace
+网络攻击|الهجوم السيبراني|cyber attack
+黑客|المخترق|hacker
+白帽|القبعة البيضاء|white hat
+黑帽|القبعة السوداء|black hat
+内部人员|المطّلعون الداخليون|insider
+内部威胁|التهديد الداخلي|insider threat
+外部威胁|التهديد الخارجي|external threat
+人为错误|الخطأ البشري|human error
+自然灾害|الكوارث الطبيعية|natural disaster
+停电|انقطاع الكهرباء|power outage
+门禁|التحكم بالدخول المادي|access gate
+监控摄像头|كاميرا المراقبة|surveillance camera
+访客登记|تسجيل الزوار|visitor log
+清洁桌面|المكتب النظيف|clean desk
+锁屏|قفل الشاشة|screen lock
+强密码|كلمة المرور القوية|strong password
+弱口令|كلمة المرور الضعيفة|weak password
+更新补丁|تثبيت التحديثات|apply patches
+杀毒软件|مضاد الفيروسات|antivirus software
+备份数据|نسخ البيانات احتياطيًا|back up data
+安全事件管理|إدارة الحوادث الأمنية|security incident management
+安全团队|الفريق الأمني|security team
+首席信息安全官|كبير مسؤولي أمن المعلومات|CISO
+安全分析师|محلل الأمن|security analyst
+安全工程师|مهندس الأمن|security engineer
+安全专家|خبير أمني|security expert
+安全文化|الثقافة الأمنية|security culture
+安全培训|التدريب الأمني|security training
+安全演练|التمرين الأمني|security drill
+安全评估|التقييم الأمني|security assessment
+安全检查|الفحص الأمني|security check
+安全标准|المعيار الأمني|security standard
+安全框架|الإطار الأمني|security framework
+安全产品|المنتج الأمني|security product
+安全厂商|مزود الحلول الأمنية|security vendor
+安全预算|الميزانية الأمنية|security budget
+安全投资|الاستثمار الأمني|security investment
+安全成熟度|نضج الأمن|security maturity
+信息泄露|تسرب المعلومات|information leak
+数据泄露|خرق البيانات|data breach
+隐私|الخصوصية|privacy
+不可否认性|عدم الإنكار|non-repudiation
+真实性|الأصالة|authenticity
+问责制|المساءلة|accountability
+可追溯性|إمكانية التتبع|traceability
+补偿控制|الضابط التعويضي|compensating control
+纠正控制|الضابط التصحيحي|corrective control
+技术控制|الضابط التقني|technical control
+管理控制|الضابط الإداري|administrative control
+物理控制|الضابط المادي|physical control
+安全意识宣传|التوعية الأمنية|security awareness campaign
+网络卫生|النظافة السيبرانية|cyber hygiene
++cy-crypto
+加密算法库|مكتبة خوارزميات التشفير|crypto library
+密码算法|الخوارزمية التشفيرية|cryptographic algorithm
+分组密码|التشفير الكتلي|block cipher
+流密码|التشفير التدفقي|stream cipher
+高级加密标准|معيار التشفير المتقدم|AES
+数据加密标准|معيار تشفير البيانات|DES
+初始化向量|متجه التهيئة|initialisation vector
+工作模式|نمط التشغيل|mode of operation
+填充|الحشو|padding
+密钥长度|طول المفتاح|key length
+密钥交换|تبادل المفاتيح|key exchange
+密钥生成|توليد المفاتيح|key generation
+密钥存储|تخزين المفاتيح|key storage
+密钥销毁|إتلاف المفاتيح|key destruction
+主密钥|المفتاح الرئيسي|master key
+会话密钥|مفتاح الجلسة|session key
+密钥派生|اشتقاق المفاتيح|key derivation
+椭圆曲线|المنحنى الإهليلجي|elliptic curve
+素数|العدد الأولي|prime
+模运算|الحساب النمطي|modular arithmetic
+离散对数|اللوغاريتم المتقطع|discrete logarithm
+因数分解|التحليل إلى عوامل|factorisation
+单向函数|الدالة أحادية الاتجاه|one-way function
+抗碰撞|مقاومة التصادم|collision resistance
+碰撞|التصادم|collision
+摘要|الملخص|digest
+消息认证码|رمز مصادقة الرسالة|message authentication code
+盐值|قيمة الملح|salt value
+彩虹表|جدول قوس قزح|rainbow table
+暴力破解|الكسر بالقوة الغاشمة|brute-force cracking
+字典攻击|هجوم القاموس|dictionary attack
+破解|الكسر|cracking
+密码分析|تحليل الشيفرات|cryptanalysis
+频率分析|تحليل التكرار|frequency analysis
+凯撒密码|شيفرة قيصر|Caesar cipher
+替换密码|شيفرة الاستبدال|substitution cipher
+置换|التبديل|permutation
+一次一密|اللوحة لمرة واحدة|one-time pad
+异或运算|عملية XOR|XOR operation
+编码方式|طريقة الترميز|encoding scheme
+签名验证|التحقق من التوقيع|signature verification
+签发|الإصدار|issue
+吊销|الإلغاء|revocation
+证书吊销列表|قائمة إلغاء الشهادات|certificate revocation list
+证书链|سلسلة الشهادات|certificate chain
+根证书|الشهادة الجذرية|root certificate
+中间证书|الشهادة الوسيطة|intermediate certificate
+自签名证书|الشهادة الموقعة ذاتيًا|self-signed certificate
+公钥基础设施|البنية التحتية للمفتاح العام|PKI
+信任链|سلسلة الثقة|chain of trust
+有效期|مدة الصلاحية|validity period
+过期|منتهي الصلاحية|expired
+握手|المصافحة|handshake
+前向保密|السرية الأمامية|forward secrecy
+传输加密|التشفير أثناء النقل|encryption in transit
+静态加密|التشفير أثناء التخزين|encryption at rest
+全盘加密|تشفير القرص الكامل|full-disk encryption
+文件加密|تشفير الملفات|file encryption
+数据库加密|تشفير قاعدة البيانات|database encryption
+同态加密|التشفير المتماثل الشكل|homomorphic encryption
+零知识证明|إثبات المعرفة الصفرية|zero-knowledge proof
+后量子密码|التشفير ما بعد الكمّي|post-quantum cryptography
+量子密钥分发|توزيع المفاتيح الكمّي|quantum key distribution
+伪随机数|العدد شبه العشوائي|pseudo-random number
+熵|الإنتروبيا|entropy
+国密算法|خوارزميات التشفير الصينية الوطنية|Chinese national crypto algorithms
+时间戳服务|خدمة الطابع الزمني|timestamping service
+区块链|سلسلة الكتل|blockchain
+数字货币|العملة الرقمية|digital currency
+钱包|المحفظة|wallet
+助记词|العبارة التذكيرية|seed phrase
+数字证书|الشهادة الرقمية|digital certificate
+电子签名|التوقيع الإلكتروني|electronic signature
+密码套件|حزمة التشفير|cipher suite
+弱加密|التشفير الضعيف|weak encryption
+降级攻击|هجوم خفض المستوى|downgrade attack
+重放攻击|هجوم الإعادة|replay attack
+侧信道攻击|هجوم القناة الجانبية|side-channel attack
+密钥托管|إيداع المفاتيح|key escrow
+加密强度|قوة التشفير|encryption strength
+密码学家|عالم التشفير|cryptographer
+隐写术|إخفاء المعلومات|steganography
++cy-iam
+身份|الهوية|identity
+数字身份|الهوية الرقمية|digital identity
+身份管理|إدارة الهوية|identity management
+身份提供商|مزود الهوية|identity provider
+服务提供商|مزود الخدمة|service provider
+用户名|اسم المستخدم|username
+账号|الحساب|account
+注册|التسجيل|sign up
+登录|تسجيل الدخول|log in
+登出|تسجيل الخروج|log out
+密码重置|إعادة تعيين كلمة المرور|password reset
+找回密码|استرجاع كلمة المرور|recover password
+密码策略|سياسة كلمات المرور|password policy
+密码管理器|مدير كلمات المرور|password manager
+口令|كلمة السر|passphrase
+无密码|بلا كلمة مرور|passwordless
+通行密钥|مفتاح المرور|passkey
+硬件密钥|المفتاح المادي|hardware key
+动态口令|كلمة المرور لمرة واحدة|one-time password
+短信验证码|رمز التحقق بالرسالة|SMS code
+认证器|تطبيق المصادقة|authenticator
+推送疲劳|إرهاق إشعارات المصادقة|MFA fatigue
+二次验证|التحقق بخطوتين|two-step verification
+联合身份|الهوية الموحّدة|federated identity
+开放授权|التفويض المفتوح (OAuth)|OAuth
+授权码|رمز التفويض|authorization code
+访问令牌|رمز الوصول|access token
+作用范围|نطاق الصلاحية|scope (OAuth)
+回调地址|عنوان الرجوع|redirect URI
+客户端密钥|سر العميل|client secret
+声明|الادعاء (claim)|claim
+签名令牌|الرمز الموقّع|signed token
+令牌过期|انتهاء صلاحية الرمز|token expiry
+会话管理|إدارة الجلسات|session management
+会话超时|انتهاء مهلة الجلسة|session timeout
+会话固定|تثبيت الجلسة|session fixation
+基于角色的访问控制|التحكم في الوصول القائم على الأدوار|role-based access control
+基于属性的访问控制|التحكم القائم على السمات|attribute-based access control
+自主访问控制|التحكم الاختياري في الوصول|discretionary access control
+强制访问控制|التحكم الإلزامي في الوصول|mandatory access control
+访问控制列表|قائمة التحكم في الوصول|access control list
+权限模型|نموذج الصلاحيات|permission model
+最小授权|أدنى تفويض|minimal authorisation
+权限蔓延|تضخم الصلاحيات|privilege creep
+特权访问管理|إدارة الوصول المميز|privileged access management
+管理员|المسؤول (admin)|administrator
+超级用户|المستخدم الخارق|superuser
+普通用户|المستخدم العادي|standard user
+访客|الزائر|guest
+共享账号|الحساب المشترك|shared account
+服务帐户|حساب خدمة|service account (identity)
+入职|الانضمام إلى العمل|onboarding
+调岗|النقل الوظيفي|role change
+账号回收|سحب الحساب|account deprovisioning
+开通|التفعيل|provisioning
+生命周期|دورة الحياة|lifecycle
+目录服务|خدمة الدليل|directory service
+域控制器|وحدة تحكم النطاق|domain controller
+组策略|سياسة المجموعة|group policy
+用户组|مجموعة المستخدمين|user group
+凭据|بيانات الاعتماد|credentials
+凭据窃取|سرقة بيانات الاعتماد|credential theft
+撞库|حشو بيانات الاعتماد|credential stuffing
+密码喷洒|رش كلمات المرور|password spraying
+锁定策略|سياسة القفل|lockout policy
+异常登录|تسجيل الدخول غير المعتاد|anomalous login
+登录日志|سجل الدخول|login log
+条件访问|الوصول المشروط|conditional access
+设备信任|الثقة بالجهاز|device trust
+地理位置|الموقع الجغرافي|geolocation
+风险评分|درجة الخطر|risk score
+自适应认证|المصادقة التكيفية|adaptive authentication
+声纹|بصمة الصوت|voiceprint
+虹膜|قزحية العين|iris
+活体检测|كشف الحيوية|liveness detection
+实名认证|التحقق بالاسم الحقيقي|real-name verification
+身份证|بطاقة الهوية|ID card
+冒用身份|انتحال الهوية|identity misuse
+身份盗窃|سرقة الهوية|identity theft
+访问请求|طلب الوصول|access request
+审批流程|مسار الموافقة|approval workflow
+定期审查|المراجعة الدورية|periodic review
++cy-net
+网络协议|بروتوكول الشبكة|network protocol
+传输控制协议|بروتوكول التحكم في النقل|TCP
+用户数据报协议|بروتوكول بيانات المستخدم|UDP
+网际协议|بروتوكول الإنترنت|IP
+互联网协议地址|عنوان IP|IP address
+物理地址|العنوان المادي|MAC address
+三次握手|المصافحة الثلاثية|three-way handshake
+数据链路层|طبقة ربط البيانات|data link layer
+物理层|الطبقة المادية|physical layer
+会话层|طبقة الجلسة|session layer
+开放系统互连|نموذج الربط المفتوح|OSI model
+交换机|المبدّل|switch
+集线器|الموزّع|hub
+无线接入点|نقطة الوصول اللاسلكية|wireless access point
+调制解调器|المودم|modem
+网卡|بطاقة الشبكة|network card
+局域网|الشبكة المحلية|local area network
+广域网|الشبكة الواسعة|wide area network
+虚拟局域网|الشبكة المحلية الافتراضية|VLAN
+子网掩码|قناع الشبكة الفرعية|subnet mask
+默认网关|البوابة الافتراضية|default gateway
+动态主机配置协议|بروتوكول التهيئة الديناميكية|DHCP
+网络地址转换|ترجمة عناوين الشبكة|NAT
+端口号|رقم المنفذ|port number
+开放端口|المنفذ المفتوح|open port
+监听|الاستماع|listen
+连接|الاتصال|connection
+数据流|تدفق البيانات|data stream
+报文|الرسالة الشبكية|packet message
+包头|ترويسة الحزمة|packet header
+载荷|الحمولة|payload
+网络拓扑|طوبولوجيا الشبكة|network topology
+非军事区|المنطقة منزوعة السلاح|DMZ
+堡垒机|الخادم المحصّن|bastion host
+跳板机|خادم القفز|jump server
+入侵防御系统|نظام منع التسلل|intrusion prevention system
+下一代防火墙|جدار الحماية من الجيل التالي|next-generation firewall
+访问规则|قاعدة الوصول|access rule
+允许|السماح|allow
+拒绝|الرفض|deny
+入站|الوارد|inbound
+出站|الصادر|outbound
+白名单策略|سياسة القائمة البيضاء|allow-list policy
+流量分析|تحليل حركة المرور|traffic analysis
+深度包检测|الفحص العميق للحزم|deep packet inspection
+网络监控|مراقبة الشبكة|network monitoring
+网络嗅探|التنصت على الشبكة|network sniffing
+嗅探器|أداة التنصت|sniffer
+欺骗|الانتحال|spoofing
+地址欺骗|انتحال العنوان|IP spoofing
+解析劫持|اختطاف تحليل النطاق|DNS hijacking
+缓存投毒|تسميم الذاكرة المؤقتة|cache poisoning
+地址解析协议|بروتوكول تحليل العناوين|ARP
+分布式拒绝服务|الحرمان الموزع من الخدمة|DDoS
+洪水攻击|هجوم الإغراق|flood attack
+流量清洗|تنقية حركة المرور|traffic scrubbing
+黑洞路由|التوجيه إلى الثقب الأسود|blackhole routing
+无线安全|أمن الشبكات اللاسلكية|wireless security
+无线加密|التشفير اللاسلكي|wireless encryption
+热点|نقطة الاتصال|hotspot
+公共无线网|الشبكة اللاسلكية العامة|public Wi-Fi
+恶意热点|نقطة الاتصال الخبيثة|rogue access point
+蓝牙|البلوتوث|Bluetooth
+物联网|إنترنت الأشياء|internet of things
+工业控制系统|أنظمة التحكم الصناعي|industrial control system
+远程桌面|سطح المكتب البعيد|remote desktop
+远程访问|الوصول عن بُعد|remote access
+安全外壳协议|بروتوكول الصدفة الآمنة|SSH
+文件传输协议|بروتوكول نقل الملفات|FTP
+邮件服务器|خادم البريد|mail server
+网络时间协议|بروتوكول وقت الشبكة|NTP
+简单网络管理协议|بروتوكول إدارة الشبكة البسيط|SNMP
+网络访问控制|التحكم في الوصول إلى الشبكة|network access control
+微隔离|التجزئة الدقيقة|microsegmentation
+软件定义网络|الشبكة المعرّفة بالبرمجيات|software-defined networking
+安全访问服务边缘|حافة خدمة الوصول الآمن|SASE
+隧道|النفق|tunnel
+加密隧道|النفق المشفّر|encrypted tunnel
+延迟时间|زمن التأخير|latency time
+丢包|فقدان الحزم|packet loss
+网络故障|عطل الشبكة|network fault
+扫描器|الماسح|scanner
+网络地图|خريطة الشبكة|network map
++cy-web
+网页漏洞|ثغرة الويب|web vulnerability
+结构化查询注入|حقن SQL|SQL injection
+盲注|الحقن الأعمى|blind injection
+联合查询|استعلام الاتحاد|UNION query
+命令注入|حقن الأوامر|command injection
+代码注入|حقن الكود|code injection
+模板注入|حقن القوالب|template injection
+反射型|الانعكاسي|reflected
+存储型|المخزّن|stored
+恶意脚本|السكربت الخبيث|malicious script
+弹窗|النافذة المنبثقة|pop-up
+目录遍历|اجتياز المجلدات|directory traversal
+文件包含|تضمين الملفات|file inclusion
+任意文件读取|قراءة ملف عشوائي|arbitrary file read
+远程代码执行|تنفيذ الكود عن بُعد|remote code execution
+不安全的反序列化|إلغاء التسلسل غير الآمن|insecure deserialization
+外部实体注入|حقن الكيانات الخارجية|XXE
+开放重定向|إعادة التوجيه المفتوحة|open redirect
+水平越权|التجاوز الأفقي للصلاحية|horizontal privilege escalation
+垂直越权|التجاوز العمودي للصلاحية|vertical privilege escalation
+不安全的直接对象引用|المرجع المباشر غير الآمن|IDOR
+业务逻辑漏洞|ثغرة منطق العمل|business logic flaw
+竞争条件|حالة السباق|race condition
+验证码绕过|تجاوز رمز التحقق|captcha bypass
+暴力枚举|التعداد بالقوة|brute-force enumeration
+用户枚举|تعداد المستخدمين|user enumeration
+敏感信息泄露|تسرب المعلومات الحساسة|sensitive data exposure
+错误页面|صفحة الخطأ|error page
+调试模式|وضع التصحيح|debug mode
+目录列表|عرض محتويات المجلد|directory listing
+备份文件泄露|تسرب ملفات النسخ الاحتياطي|backup file exposure
+后台|لوحة الإدارة|admin backend
+管理后台|لوحة التحكم الإدارية|admin panel
+弱口令登录|الدخول بكلمة مرور ضعيفة|weak-password login
+同源策略|سياسة نفس المصدر|same-origin policy
+跨域资源共享|مشاركة الموارد عبر المصادر|CORS
+严格传输安全|أمن النقل الصارم|HSTS
+安全标志|علامة الأمان|Secure flag
+同站属性|سمة SameSite|SameSite attribute
+防伪令牌|رمز مكافحة التزوير|anti-forgery token
+输入过滤|تنقية المدخلات|input filtering
+输出转义|تهريب المخرجات|output escaping
+富文本|النص المنسق|rich text
+文件类型校验|التحقق من نوع الملف|file type check
+图片木马|حصان طروادة في صورة|image trojan
+网页木马|حصان طروادة الويب|web shell
+网页篡改|تشويه الموقع|website defacement
+挂马|زرع البرمجيات الخبيثة في الموقع|drive-by malware planting
+爬虫|زاحف الويب|web crawler
+恶意爬虫|الزاحف الخبيث|malicious bot
+机器人流量|حركة الروبوتات|bot traffic
+接口安全|أمن الواجهات البرمجية|API security
+接口滥用|إساءة استخدام الواجهة البرمجية|API abuse
+批量赋值|الإسناد الجماعي|mass assignment
+过度暴露数据|كشف البيانات المفرط|excessive data exposure
+内容安全|أمن المحتوى|content security
+子资源完整性|سلامة الموارد الفرعية|subresource integrity
+第三方脚本|سكربت الطرف الثالث|third-party script
+浏览器扩展|إضافة المتصفح|browser extension
+浏览器安全|أمن المتصفح|browser security
+沙箱|البيئة المعزولة|sandbox
+网页应用防火墙|جدار حماية تطبيقات الويب|WAF
+漏洞扫描器|ماسح الثغرات|vulnerability scanner
+安全响应头|ترويسات الاستجابة الأمنية|security response headers
+防盗链|منع الربط الخارجي|hotlink protection
+会话令牌|رمز الجلسة|session token
+页面跳转|الانتقال بين الصفحات|page navigation
+超链接|الرابط التشعبي|hyperlink
+插件漏洞|ثغرة الإضافة|plugin vulnerability
+内容管理系统|نظام إدارة المحتوى|CMS
+电商网站|موقع التجارة الإلكترونية|e-commerce site
+支付页面|صفحة الدفع|payment page
+支付安全|أمن المدفوعات|payment security
+价格篡改|التلاعب بالسعر|price tampering
+参数篡改|التلاعب بالمعاملات|parameter tampering
+请求伪造|تزوير الطلب|request forgery
+抓包工具|أداة التقاط الحزم|packet capture tool
+代理拦截|الاعتراض بالوكيل|proxy interception
+安全编码规范|معايير البرمجة الآمنة|secure coding standard
+网页安全扫描|فحص أمن مواقع الويب|web security scan
+登录页面|صفحة تسجيل الدخول|login page
++cy-code
+不可信输入|المدخلات غير الموثوقة|untrusted input
+数据校验|التحقق من البيانات|data validation
+规范化处理|التطبيع|canonicalisation
+正则表达式|التعبير النمطي|regular expression
+长度限制|حد الطول|length limit
+类型校验|التحقق من النوع|type check
+范围检查|فحص المدى|range check
+边界检查|فحص الحدود|bounds check
+缓冲区溢出|فيضان المخزن المؤقت|buffer overflow
+整数溢出|فيضان الأعداد الصحيحة|integer overflow
+内存安全|أمان الذاكرة|memory safety
+内存泄漏|تسرب الذاكرة|memory leak
+空指针引用|الإشارة إلى مؤشر فارغ|null pointer dereference
+释放后使用|الاستخدام بعد التحرير|use after free
+格式化字符串|سلسلة التنسيق|format string
+安全函数|الدالة الآمنة|safe function
+危险函数|الدالة الخطرة|dangerous function
+密钥轮转|تدوير المفاتيح|key rotation
+环境配置|إعداد البيئة|environment configuration
+配置泄露|تسرب الإعدادات|config leak
+凭证扫描|فحص بيانات الاعتماد|credential scanning
+提交前检查|الفحص قبل الالتزام|pre-commit check
+第三方库|مكتبة طرف ثالث|third-party library
+开源组件|مكوّن مفتوح المصدر|open-source component
+组件漏洞|ثغرة المكوّن|component vulnerability
+版本锁定|تثبيت الإصدار|version pinning
+锁文件|ملف القفل|lock file
+依赖更新|تحديث التبعيات|dependency update
+依赖混淆|ارتباك التبعيات|dependency confusion
+仿冒包|الحزمة المقلَّدة|typosquatted package
+恶意包|الحزمة الخبيثة|malicious package
+软件成分分析|تحليل مكونات البرمجيات|software composition analysis
+静态应用安全测试|الاختبار الأمني الثابت|SAST
+动态应用安全测试|الاختبار الأمني الديناميكي|DAST
+交互式测试|الاختبار التفاعلي|interactive testing
+误报率|معدل الإنذارات الكاذبة|false-positive rate
+安全扫描|الفحص الأمني|security scan
+安全门禁|البوابة الأمنية|security gate
+安全评审|المراجعة الأمنية|security review
+安全需求分析|تحليل المتطلبات الأمنية|security requirements analysis
+滥用案例|حالة سوء الاستخدام|abuse case
+攻击树|شجرة الهجوم|attack tree
+数据流图|مخطط تدفق البيانات|data flow diagram
+信任区|منطقة الثقة|trust zone
+失败安全|الفشل الآمن|fail-safe
+安全默认值|القيم الافتراضية الآمنة|secure defaults
+最小功能|أقل الوظائف|least functionality
+异常处理|معالجة الاستثناءات|exception handling
+错误日志|سجل الأخطاء|error log
+日志注入|حقن السجلات|log injection
+审计日志|سجل التدقيق|audit log
+敏感字段|الحقل الحساس|sensitive field
+掩码|القناع|mask
+随机数生成器|مولد الأرقام العشوائية|random number generator
+安全随机数|الرقم العشوائي الآمن|secure random number
+时间攻击|هجوم التوقيت|timing attack
+常量时间比较|المقارنة بزمن ثابت|constant-time comparison
+密码哈希|تجزئة كلمات المرور|password hashing
+加密库|مكتبة التشفير|cryptography library
+自制加密|التشفير المصنوع يدويًا|homemade crypto
+反编译|إلغاء الترجمة البرمجية|decompilation
+代码混淆|تعمية الكود|code obfuscation
+逆向工程|الهندسة العكسية|reverse engineering
+完整性校验|فحص السلامة|integrity check
+代码签名证书|شهادة توقيع الكود|code signing certificate
+安全更新|التحديث الأمني|security update
+人工智能助手|المساعد الذكي|AI assistant
+提示词注入|حقن الأوامر النصية|prompt injection
+模型输出|مخرجات النموذج|model output
+安全教育|التعليم الأمني|security education
+安全冠军|بطل الأمن في الفريق|security champion
+漏洞修复|إصلاح الثغرة|vulnerability fix
+修复时间|زمن الإصلاح|time to fix
+技术债|الدين التقني|technical debt
+安全债务|الدين الأمني|security debt
+单元安全测试|اختبار الأمان للوحدات|security unit test
+代码所有权|ملكية الكود|code ownership
+权限检查|فحص الصلاحيات|permission check
+并发安全|أمان التزامن|concurrency safety
+文件权限|صلاحيات الملفات|file permissions
+临时文件|الملف المؤقت|temporary file

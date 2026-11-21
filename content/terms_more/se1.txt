@@ -1,0 +1,514 @@
+# zh|ar|en  (pinyin filled from CC-CEDICT by scripts/terms_fill.py)
++se-fund
+编程|البرمجة|programming
+程序|البرنامج|program
+程序员|المبرمج|programmer
+代码|الكود|code
+源代码|الكود المصدري|source code
+编程语言|لغة البرمجة|programming language
+编译器|المترجم (المصرّف)|compiler
+解释器|المفسّر|interpreter
+编译|الترجمة البرمجية|compile
+运行|التشغيل|run
+执行|التنفيذ|execute
+输入|الإدخال|input
+输出|الإخراج|output
+赋值|الإسناد|assignment
+声明|التصريح|declaration
+定义|التعريف|definition
+调用|الاستدعاء|call
+关键字|الكلمة المحجوزة|keyword
+标识符|المعرّف|identifier
+浮点数|العدد العشري|floating-point number
+字符|المحرف|character
+数值|القيمة العددية|numeric value
+真|صحيح (true)|true
+假|خطأ (false)|false
+空值|القيمة الفارغة|null
+逻辑运算|العملية المنطقية|logical operation
+比较|المقارنة|comparison
+等于|يساوي|equals
+大于|أكبر من|greater than
+小于|أصغر من|less than
+加法|الجمع|addition
+减法|الطرح|subtraction
+乘法|الضرب|multiplication
+除法|القسمة|division
+取余|باقي القسمة|modulo
+自增|الزيادة بواحد|increment
+分支|التفرّع|branching
+嵌套|التداخل|nesting
+条件|الشرط|condition
+跳出|الخروج من الحلقة|break out
+继续|المتابعة|continue
+无限循环|الحلقة اللانهائية|infinite loop
+计数器|العدّاد|counter
+索引值|قيمة الفهرس|index value
+长度|الطول|length
+字符串拼接|دمج النصوص|string concatenation
+格式化|التنسيق|formatting
+类型转换|تحويل النوع|type conversion
+强类型|النوع الصارم|strong typing
+弱类型|النوع المرن|weak typing
+静态类型|النوع الثابت|static typing
+动态类型|النوع الديناميكي|dynamic typing
+局部变量|المتغير المحلي|local variable
+全局变量|المتغير العام|global variable
+命名|التسمية|naming
+命名规范|قواعد التسمية|naming convention
+缩进|الإزاحة|indentation
+括号|القوس|bracket
+分号|الفاصلة المنقوطة|semicolon
+代码块|كتلة الكود|code block
+语句|الجملة البرمجية|statement
+回调函数|دالة الاستدعاء الراجع|callback function
+匿名函数|الدالة المجهولة|anonymous function
+箭头函数|الدالة السهمية|arrow function
+默认值|القيمة الافتراضية|default value
+抛出|الرمي (للاستثناء)|throw
+捕获|الالتقاط|catch
+断点|نقطة التوقف|breakpoint
+控制台|وحدة التحكم|console
+打印|الطباعة|print
+日志输出|إخراج السجل|log output
+库|المكتبة|library
+模块|الوحدة|module
+导入|الاستيراد|import
+导出|التصدير|export
+包管理器|مدير الحزم|package manager
+版本号|رقم الإصدار|version number
+开发环境|بيئة التطوير|development environment
+集成开发环境|بيئة التطوير المتكاملة|IDE
+编辑器|المحرر|editor
+命令行|سطر الأوامر|command line
+终端|الطرفية|terminal
+脚本|السكربت|script
+可读性|قابلية القراءة|readability
+简洁|البساطة والإيجاز|concise
+逻辑错误|الخطأ المنطقي|logic error
+语法错误|الخطأ النحوي|syntax error
+运行时错误|خطأ وقت التشغيل|runtime error
+内存|الذاكرة|memory
+二进制|النظام الثنائي|binary
+十六进制|النظام السداسي عشر|hexadecimal
+字节|البايت|byte
+位|البت|bit
++se-ds
+线性表|القائمة الخطية|linear list
+双向链表|القائمة المترابطة المزدوجة|doubly linked list
+循环链表|القائمة الدائرية|circular linked list
+头节点|العقدة الرأسية|head node
+尾节点|العقدة الذيلية|tail node
+前驱|العنصر السابق|predecessor
+后继|العنصر التالي|successor
+入栈|الدفع إلى المكدس|push
+出栈|السحب من المكدس|pop
+栈顶|قمة المكدس|top of stack
+入队|الإدخال في الطابور|enqueue
+出队|الإخراج من الطابور|dequeue
+双端队列|الطابور ثنائي الطرف|deque
+循环队列|الطابور الدائري|circular queue
+哈希函数|دالة التجزئة|hash function
+哈希冲突|تصادم التجزئة|hash collision
+负载因子|معامل التحميل|load factor
+桶|الدلو|bucket
+二叉搜索树|شجرة البحث الثنائية|binary search tree
+平衡树|الشجرة المتوازنة|balanced tree
+红黑树|الشجرة الحمراء والسوداء|red-black tree
+子树|الشجرة الفرعية|subtree
+左子树|الشجرة الفرعية اليسرى|left subtree
+右子树|الشجرة الفرعية اليمنى|right subtree
+父节点|العقدة الأب|parent node
+子节点|العقدة الابن|child node
+兄弟节点|العقدة الشقيقة|sibling node
+深度|العمق|depth
+高度|الارتفاع|height
+层|المستوى|level
+前序遍历|العبور القبلي|pre-order traversal
+中序遍历|العبور الوسطي|in-order traversal
+后序遍历|العبور البعدي|post-order traversal
+层序遍历|العبور حسب المستوى|level-order traversal
+最大堆|الكومة العظمى|max-heap
+最小堆|الكومة الصغرى|min-heap
+堆排序|الفرز بالكومة|heap sort
+字典树|شجرة البادئات|trie
+前缀|البادئة|prefix
+后缀|اللاحقة|suffix
+有向图|الرسم الموجّه|directed graph
+无向图|الرسم غير الموجّه|undirected graph
+顶点|الرأس|vertex
+边|الحافة|edge
+权重|الوزن|weight
+邻接表|قائمة التجاور|adjacency list
+邻接矩阵|مصفوفة التجاور|adjacency matrix
+路径|المسار|path
+环|الحلقة|cycle
+连通|الاتصال|connected
+度|الدرجة|degree
+树|الشجرة|tree
+森林|الغابة|forest
+矩阵|المصفوفة الرياضية|matrix
+二维数组|المصفوفة ثنائية الأبعاد|two-dimensional array
+动态数组|المصفوفة الديناميكية|dynamic array
+容量|السعة|capacity
+扩容|توسيع السعة|resize
+元素|العنصر|element
+下标|الرقم السفلي (الفهرس)|subscript
+插入|الإدراج|insert
+删除|الحذف|delete
+更新|التحديث|update
+查找表|جدول البحث|lookup table
+有序|مرتّب|ordered
+无序|غير مرتّب|unordered
+重复|التكرار|duplicate
+唯一|فريد|unique
+并查集|مجموعة الاتحاد والبحث|union-find
+线段树|شجرة المقاطع|segment tree
+跳表|قائمة القفز|skip list
+布隆过滤器|مرشح بلوم|Bloom filter
+位图|خريطة البتات|bitmap
+元组|الصف (tuple)|tuple
+列表|القائمة|list
+字典|القاموس|dictionary
+序列|التسلسل|sequence
+引用|المرجع|reference
+地址|العنوان|address
+空指针|المؤشر الفارغ|null pointer
+内存分配|تخصيص الذاكرة|memory allocation
+垃圾回收|جمع القمامة|garbage collection
+可变|قابل للتغيير|mutable
+迭代器|المكرِّر|iterator
+比较器|المقارِن|comparator
++se-algo
+线性查找|البحث الخطي|linear search
+冒泡排序|فرز الفقاعات|bubble sort
+插入排序|فرز الإدراج|insertion sort
+选择排序|فرز الاختيار|selection sort
+计数排序|فرز العدّ|counting sort
+基数排序|الفرز بالأساس|radix sort
+稳定排序|الفرز المستقر|stable sort
+原地|في المكان|in place
+分治|فرّق تسد|divide and conquer
+回溯|التراجع|backtracking
+暴力解法|الحل بالقوة الغاشمة|brute-force solution
+记忆化|التذكّر (memoization)|memoization
+状态转移|انتقال الحالة|state transition
+子问题|المسألة الفرعية|subproblem
+最优子结构|البنية الفرعية المثلى|optimal substructure
+递推|العلاقة التكرارية|recurrence
+终止条件|شرط التوقف|base case
+栈溢出|فيضان المكدس|stack overflow
+迭代法|الطريقة التكرارية|iterative method
+最好情况|أفضل حالة|best case
+平均情况|الحالة المتوسطة|average case
+常数时间|الزمن الثابت|constant time
+线性时间|الزمن الخطي|linear time
+对数时间|الزمن اللوغاريتمي|logarithmic time
+指数时间|الزمن الأسي|exponential time
+渐进|المقارب|asymptotic
+上界|الحد الأعلى|upper bound
+下界|الحد الأدنى|lower bound
+最短路径|أقصر مسار|shortest path
+最小生成树|الشجرة الممتدة الصغرى|minimum spanning tree
+拓扑排序|الفرز الطوبولوجي|topological sort
+字符串匹配|مطابقة النصوص|string matching
+哈希算法|خوارزمية التجزئة|hashing algorithm
+加密算法|خوارزمية التشفير|encryption algorithm
+随机化|العشوائية|randomization
+概率|الاحتمال|probability
+数学|الرياضيات|mathematics
+逻辑|المنطق|logic
+证明|البرهان|proof
+不变量|الثابت (invariant)|invariant
+优化|التحسين|optimization
+性能|الأداء|performance
+效率|الكفاءة|efficiency
+瓶颈|عنق الزجاجة|bottleneck
+权衡|المفاضلة|trade-off
+近似算法|الخوارزمية التقريبية|approximation algorithm
+启发式|الأسلوب الاستدلالي|heuristic
+贪心|الجشع|greedy
+背包问题|مسألة الحقيبة|knapsack problem
+斐波那契数列|متتالية فيبوناتشي|Fibonacci sequence
+阶乘|المضروب|factorial
+质数|العدد الأولي|prime number
+最大公约数|القاسم المشترك الأكبر|greatest common divisor
+位运算|العمليات على البتات|bitwise operation
+异或|أو الحصرية (XOR)|XOR
+前缀和|مجموع البادئة|prefix sum
+快慢指针|المؤشران السريع والبطيء|fast and slow pointers
+单调栈|المكدس الرتيب|monotonic stack
+中位数|الوسيط|median
+平均值|المتوسط|average
+最大值|القيمة العظمى|maximum
+最小值|القيمة الصغرى|minimum
+区间|الفترة|interval
+重叠|التداخل|overlap
+合并区间|دمج الفترات|merge intervals
+排列|التباديل|permutation
+组合数|عدد التوافيق|combinations
+子集|المجموعة الجزئية|subset
+子数组|المصفوفة الفرعية|subarray
+子序列|التسلسل الفرعي|subsequence
+回文|المتناظر (palindrome)|palindrome
+反转|العكس|reverse
+旋转|التدوير|rotate
+算法题|مسألة خوارزمية|algorithm problem
+刷题|حل المسائل للتدريب|practice problems
+面试题|سؤال مقابلة|interview question
+思路|طريقة التفكير|approach
+测试数据|بيانات الاختبار|test data
+输入规模|حجم المدخلات|input size
+超时|تجاوز الوقت|time limit exceeded
+内存限制|حد الذاكرة|memory limit
++se-oop
+属性值|قيمة الخاصية|attribute value
+成员变量|متغير العضو|member variable
+成员函数|دالة العضو|member function
+静态方法|الدالة الساكنة|static method
+实例方法|دالة النسخة|instance method
+抽象类|الصنف المجرد|abstract class
+具体类|الصنف الملموس|concrete class
+基类|الصنف الأساسي|base class
+派生类|الصنف المشتق|derived class
+重写|إعادة التعريف (override)|override
+重载|التحميل الزائد|overload
+访问修饰符|محدِّد الوصول|access modifier
+受保护|محمي|protected
+实例化|إنشاء نسخة|instantiate
+析构函数|دالة الهدم|destructor
+初始化|التهيئة|initialization
+命名空间|مساحة الأسماء|namespace
+包|الحزمة|package
+职责|المسؤولية|responsibility
+单一职责原则|مبدأ المسؤولية الواحدة|single responsibility principle
+开闭原则|مبدأ المفتوح والمغلق|open-closed principle
+里氏替换原则|مبدأ استبدال ليسكوف|Liskov substitution principle
+接口隔离原则|مبدأ فصل الواجهات|interface segregation principle
+依赖倒置原则|مبدأ عكس الاعتماد|dependency inversion principle
+领域模型|نموذج المجال|domain model
+实体|الكيان|entity
+值对象|كائن القيمة|value object
+聚合|التجميع|aggregation
+关联|الارتباط|association
+依赖|الاعتماد|dependency
+泛型|الأنواع العامة|generics
+类型参数|معامل النوع|type parameter
+枚举|التعداد|enumeration
+结构体|البنية|struct
+原型链|سلسلة النماذج الأولية|prototype chain
+委托|التفويض|delegation
+混入|المزج (mixin)|mixin
+特征|السمة|trait
+状态|الحالة|state
+行为|السلوك|behaviour
+消息传递|تمرير الرسائل|message passing
+对象模型|نموذج الكائنات|object model
+类图|مخطط الأصناف|class diagram
+统一建模语言|لغة النمذجة الموحدة|UML
+序列图|مخطط التسلسل|sequence diagram
+用例图|مخطط حالات الاستخدام|use case diagram
+复用|إعادة الاستخدام|reuse
+扩展性|قابلية التوسعة|extensibility
+灵活性|المرونة|flexibility
+复杂性|التعقيد|complexity
+分层|الطبقات|layering
+领域驱动设计|التصميم الموجّه بالمجال|domain-driven design
+数据隐藏|إخفاء البيانات|data hiding
+副作用|الأثر الجانبي|side effect
+纯函数|الدالة النقية|pure function
+函数式编程|البرمجة الوظيفية|functional programming
+过程式编程|البرمجة الإجرائية|procedural programming
+编程范式|نموذج البرمجة|programming paradigm
+高阶函数|الدالة عالية الرتبة|higher-order function
+闭包|الإغلاق (closure)|closure
+柯里化|الكَرّي (currying)|currying
+链式调用|الاستدعاء المتسلسل|method chaining
+签名|التوقيع|signature
+契约|العقد|contract
+模型|النموذج|model
+设计|التصميم|design
+可测试性|قابلية الاختبار|testability
+对象池|مجمع الكائنات|object pool
+深拷贝|النسخ العميق|deep copy
+浅拷贝|النسخ السطحي|shallow copy
+相等性|التساوي|equality
+哈希码|رمز التجزئة|hash code
+序列化|التسلسل (serialization)|serialization
+反序列化|إلغاء التسلسل|deserialization
+反射|الانعكاس|reflection
+注解|التعليق التوضيحي (annotation)|annotation
+多重继承|الوراثة المتعددة|multiple inheritance
+菱形问题|مشكلة الماسة|diamond problem
+上转型|التحويل للأعلى|upcasting
+向下转型|التحويل للأسفل|downcasting
+访问器|دالة الوصول|accessor
+修改器|دالة التعديل|mutator
++se-pat
+创建型模式|الأنماط الإنشائية|creational patterns
+结构型模式|الأنماط البنيوية|structural patterns
+行为型模式|الأنماط السلوكية|behavioural patterns
+抽象工厂|المصنع المجرد|abstract factory
+建造者模式|نمط الباني|builder pattern
+原型模式|نمط النموذج الأولي|prototype pattern
+代理模式|نمط الوكيل|proxy pattern
+桥接模式|نمط الجسر|bridge pattern
+组合模式|نمط المركّب|composite pattern
+享元模式|نمط وزن الذبابة|flyweight pattern
+命令模式|نمط الأمر|command pattern
+迭代器模式|نمط المكرِّر|iterator pattern
+模板方法|الدالة القالب|template method
+状态模式|نمط الحالة|state pattern
+责任链|سلسلة المسؤولية|chain of responsibility
+中介者模式|نمط الوسيط|mediator pattern
+备忘录模式|نمط المذكرة|memento pattern
+访问者模式|نمط الزائر|visitor pattern
+发布订阅|النشر والاشتراك|publish-subscribe
+模型视图控制器|النموذج والعرض والمتحكم|MVC
+分层架构|المعمارية الطبقية|layered architecture
+六边形架构|المعمارية السداسية|hexagonal architecture
+整洁架构|المعمارية النظيفة|clean architecture
+单体应用|التطبيق الأحادي|monolith
+服务层|طبقة الخدمات|service layer
+数据访问层|طبقة الوصول إلى البيانات|data access layer
+表示层|طبقة العرض|presentation layer
+控制器|المتحكم|controller
+视图|العرض|view
+插件|الإضافة|plugin
+钩子|الخطّاف|hook
+回调|الاستدعاء الراجع|callback
+事件总线|ناقل الأحداث|event bus
+订阅者|المشترك|subscriber
+发布者|الناشر|publisher
+工厂方法|دالة المصنع|factory method
+注入|الحقن|injection
+控制反转|عكس التحكم|inversion of control
+容器化|الاحتواء|containerization
+配置|الإعداد|configuration
+约定优于配置|العُرف قبل الإعداد|convention over configuration
+反模式|النمط المضاد|anti-pattern
+上帝对象|الكائن الإله|god object
+意大利面条代码|كود السباغيتي|spaghetti code
+重复代码|الكود المكرر|duplicated code
+魔法数字|الرقم السحري|magic number
+过度设计|الإفراط في التصميم|over-engineering
+简单原则|مبدأ البساطة|keep it simple
+不要重复自己|لا تكرر نفسك|don't repeat yourself
+你不会需要它|لن تحتاجه|you aren't gonna need it
+关注点分离|فصل الاهتمامات|separation of concerns
+高内聚|التماسك العالي|high cohesion
+低耦合|الترابط المنخفض|low coupling
+接口设计|تصميم الواجهة|interface design
+抽象层|طبقة التجريد|abstraction layer
+封装变化|تغليف التغيير|encapsulate what varies
+组合优于继承|التركيب قبل الوراثة|composition over inheritance
+可读代码|الكود المقروء|readable code
+代码规范|معايير الكود|coding standards
+代码风格|أسلوب الكتابة|code style
+技术选型|اختيار التقنية|technology selection
+扩展点|نقطة التوسعة|extension point
+惰性加载|التحميل الكسول|lazy loading
+线程安全|الأمان مع الخيوط|thread safety
+不可变对象|الكائن غير القابل للتغيير|immutable object
+空对象模式|نمط الكائن الفارغ|null object pattern
+规格模式|نمط المواصفة|specification pattern
+工作单元|وحدة العمل|unit of work
+命令查询分离|فصل الأوامر والاستعلامات|command-query separation
+事件溯源|مصدرية الأحداث|event sourcing
+领域事件|حدث المجال|domain event
+适配层|طبقة المواءمة|adapter layer
+网关模式|نمط البوابة|gateway pattern
+重试模式|نمط إعادة المحاولة|retry pattern
+断路器|قاطع الدائرة|circuit breaker
+设计原则|مبادئ التصميم|design principles
+架构师|المعماري|architect
+架构图|مخطط المعمارية|architecture diagram
+技术方案|الحل التقني|technical proposal
+设计评审|مراجعة التصميم|design review
+通用语言|اللغة الموحدة للمجال|ubiquitous language
+限界上下文|السياق المحدود|bounded context
+门面|الواجهة الأمامية (façade)|facade
++se-git
+工作区|مساحة العمل|working directory
+版本库|مستودع الإصدارات|repository (version store)
+初始化仓库|تهيئة المستودع|initialize a repository
+添加|الإضافة|add
+提交信息|رسالة الالتزام|commit message
+哈希值|قيمة التجزئة|hash value
+检出|السحب إلى العمل|checkout
+切换分支|تبديل الفرع|switch branch
+新建分支|إنشاء فرع|create a branch
+删除分支|حذف الفرع|delete a branch
+功能分支|فرع الميزة|feature branch
+发布分支|فرع الإصدار|release branch
+热修复|الإصلاح العاجل|hotfix
+开发分支|فرع التطوير|development branch
+快进合并|الدمج السريع|fast-forward merge
+三方合并|الدمج الثلاثي|three-way merge
+合并冲突|تعارض الدمج|merge conflict
+解决冲突|حل التعارض|resolve a conflict
+挑选提交|انتقاء الالتزام|cherry-pick
+储藏|التخزين المؤقت (stash)|stash
+重置|إعادة الضبط|reset
+撤销|التراجع|undo
+还原|الاستعادة|revert
+差异|الفرق|diff
+日志记录|سجل الأحداث|log
+责任追溯|معرفة كاتب السطر|blame
+上游|المنبع|upstream
+派生|التفرع (fork)|fork
+同步|المزامنة|sync
+获取|الجلب|fetch
+强制推送|الدفع القسري|force push
+保护分支|الفرع المحمي|protected branch
+代码评审|مراجعة الكود|code review
+审批|الموافقة|approval
+评论|التعليق|comment
+建议修改|اقتراح التعديل|suggested change
+持续集成检查|فحوصات التكامل المستمر|CI checks
+钩子脚本|سكربت الخطّاف|hook script
+子模块|الوحدة الفرعية|submodule
+大文件|الملفات الكبيرة|large files
+提交历史|تاريخ الالتزامات|commit history
+压缩提交|ضغط الالتزامات|squash
+修改提交|تعديل الالتزام|amend
+分支策略|استراتيجية الفروع|branching strategy
+主干开发|التطوير على الجذع|trunk-based development
+语义化版本|الإصدار الدلالي|semantic versioning
+变更日志|سجل التغييرات|changelog
+发布说明|ملاحظات الإصدار|release notes
+里程碑版本|إصدار المرحلة|milestone release
+开源|المصدر المفتوح|open source
+许可证|الترخيص|licence
+贡献者|المساهم|contributor
+维护者|المشرف على المشروع|maintainer
+问题跟踪|تتبع المشكلات|issue tracking
+议题|المسألة (issue)|issue
+文档|التوثيق|documentation
+说明文件|ملف التعريف|README
+代码托管|استضافة الكود|code hosting
+权限管理|إدارة الصلاحيات|permission management
+密钥对|زوج المفاتيح|key pair
+签名提交|الالتزام الموقّع|signed commit
+二分查找提交|البحث الثنائي في الالتزامات|bisect
+引用日志|سجل المراجع|reflog
+游离头指针|المؤشر المنفصل|detached HEAD
+追踪分支|الفرع المتتبَّع|tracking branch
+本地仓库|المستودع المحلي|local repository
+单仓库|المستودع الموحد|monorepo
+代码所有者|مالك الكود|code owner
+提交规范|قواعد الالتزام|commit conventions
+版本发布|إطلاق الإصدار|version release
+回退版本|الرجوع إلى إصدار|roll back a version
+代码冻结|تجميد الكود|code freeze
+合并窗口|نافذة الدمج|merge window
+小步提交|الالتزامات الصغيرة|small commits
+原子提交|الالتزام الذري|atomic commit
+草稿|المسودة|draft
+分叉|التشعب|divergence
+变更|التغيير|change
+文件夹|المجلد|folder
+文件|الملف|file
+补丁文件|ملف الرقعة|patch file
+差异对比|مقارنة الفروقات|diff comparison
+清理|التنظيف|clean up

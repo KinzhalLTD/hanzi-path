@@ -41,3 +41,83 @@ T|物理安全|wùlǐ ānquán|الأمن المادي|physical security
 T|安全体系|ānquán tǐxì|منظومة الأمن|security framework
 T|安全意识|ānquán yìshí|الوعي الأمني|security awareness
 T|身份验证|shēnfèn yànzhèng|التحقق من الهوية|identity verification
+T|安全|ānquán|الأمن|security
+T|安全性|ānquánxìng|مستوى الأمان|security (property)
+T|攻击|gōngjī|الهجوم|attack
+T|防御|fángyù|الدفاع|defence
+T|保护|bǎohù|الحماية|protection
+T|资产|zīchǎn|الأصل|asset
+T|数据资产|shùjù zīchǎn|أصول البيانات|data assets
+T|信息资产|xìnxī zīchǎn|أصول المعلومات|information assets
+T|威胁源|wēixié yuán|مصدر التهديد|threat source
+T|威胁行为者|wēixié xíngwéi zhě|الجهة المهدِّدة|threat actor
+T|脆弱性|cuìruò xìng|القابلية للاختراق|vulnerability (weakness)
+T|影响|yǐngxiǎng|الأثر|impact
+T|可能性|kěnéngxìng|الاحتمالية|likelihood
+T|风险等级|fēngxiǎn děngjí|مستوى الخطر|risk level
+T|风险矩阵|fēngxiǎn jǔzhèn|مصفوفة المخاطر|risk matrix
+T|安全目标|ānquán mùbiāo|هدف أمني|security objective
+T|安全需求|ānquán xūqiú|المتطلبات الأمنية|security requirements
+T|安全架构|ānquán jiàgòu|المعمارية الأمنية|security architecture
+T|安全设计|ānquán shèjì|التصميم الآمن|secure design
+T|默认安全|mòrèn ānquán|الأمان افتراضيًا|secure by default
+T|安全基线|ānquán jīxiàn|خط الأساس الأمني|security baseline
+T|加固|jiāgù|التحصين|hardening
+T|系统加固|xìtǒng jiāgù|تحصين النظام|system hardening
+T|攻击面管理|gōngjī miàn guǎnlǐ|إدارة سطح الهجوم|attack surface management
+T|暴露面|bàolù miàn|المساحة المكشوفة|exposure
+T|职责分离|zhízé fēnlí|فصل المهام|separation of duties
+T|知其所需|zhī qísuǒ xū|الحاجة إلى المعرفة|need to know
+T|零信任架构|líng xìnrèn jiàgòu|معمارية الثقة الصفرية|zero-trust architecture
+T|信任边界|xìnrèn biānjiè|حدود الثقة|trust boundary
+T|内网|nèi wǎng|الشبكة الداخلية|intranet
+T|外网|wàiwǎng|الشبكة الخارجية|external network
+T|互联网|hùlián wǎng|الإنترنت|internet
+T|终端安全|zhōngduān ānquán|أمن نقاط النهاية|endpoint security
+T|主机安全|zhǔjī ānquán|أمن المضيف|host security
+T|应用安全|yìngyòng ānquán|أمن التطبيقات|application security
+T|数据安全|shùjù ānquán|أمن البيانات|data security
+T|网络空间|wǎngluòkōngjiān|الفضاء السيبراني|cyberspace
+T|网络攻击|wǎngluò gōngjī|الهجوم السيبراني|cyber attack
+T|黑客|hēikè|المخترق|hacker
+T|白帽|bái mào|القبعة البيضاء|white hat
+T|黑帽|hēi mào|القبعة السوداء|black hat
+T|内部人员|nèibù rényuán|المطّلعون الداخليون|insider
+T|内部威胁|nèibù wēixié|التهديد الداخلي|insider threat
+T|外部威胁|wàibù wēixié|التهديد الخارجي|external threat
+T|人为错误|rénwéi cuòwù|الخطأ البشري|human error
+T|自然灾害|zìránzāihài|الكوارث الطبيعية|natural disaster
+T|停电|tíngdiàn|انقطاع الكهرباء|power outage
+T|门禁|ménjìn|التحكم بالدخول المادي|access gate
+T|监控摄像头|jiānkòng shèxiàngtóu|كاميرا المراقبة|surveillance camera
+T|访客登记|fǎngkè dēngjì|تسجيل الزوار|visitor log
+T|清洁桌面|qīngjié zhuōmiàn|المكتب النظيف|clean desk
+T|锁屏|suǒpíng|قفل الشاشة|screen lock
+T|强密码|qiáng mìmǎ|كلمة المرور القوية|strong password
+T|弱口令|ruò kǒulìng|كلمة المرور الضعيفة|weak password
+T|更新补丁|gēngxīn bǔding|تثبيت التحديثات|apply patches
+T|杀毒软件|shādúruǎnjiàn|مضاد الفيروسات|antivirus software
+T|备份数据|bèifèn shùjù|نسخ البيانات احتياطيًا|back up data
+T|安全事件管理|ānquán shìjiàn guǎnlǐ|إدارة الحوادث الأمنية|security incident management
+T|安全团队|ānquán tuánduì|الفريق الأمني|security team
+T|首席信息安全官|shǒuxí xìnxī ānquán guān|كبير مسؤولي أمن المعلومات|CISO
+T|安全分析师|ānquán fēnxīshī|محلل الأمن|security analyst
+T|安全工程师|ānquán gōngchéngshī|مهندس الأمن|security engineer
+T|安全专家|ānquán zhuānjiā|خبير أمني|security expert
+T|安全文化|ānquán wénhuà|الثقافة الأمنية|security culture
+T|安全培训|ānquán péixùn|التدريب الأمني|security training
+T|安全演练|ānquán yǎnliàn|التمرين الأمني|security drill
+T|安全评估|ānquán pínggū|التقييم الأمني|security assessment
+T|安全检查|ānquán jiǎnchá|الفحص الأمني|security check
+T|安全标准|ānquán biāozhǔn|المعيار الأمني|security standard
+T|安全框架|ānquán kuàngjià|الإطار الأمني|security framework
+T|安全产品|ānquán chǎnpǐn|المنتج الأمني|security product
+T|安全厂商|ānquán chǎngshāng|مزود الحلول الأمنية|security vendor
+T|安全预算|ānquán yùsuàn|الميزانية الأمنية|security budget
+T|安全投资|ānquán tóuzī|الاستثمار الأمني|security investment
+T|安全成熟度|ānquán chéngshú dù|نضج الأمن|security maturity
+T|信息泄露|xìnxī xièlù|تسرب المعلومات|information leak
+T|数据泄露|shùjù xièlù|خرق البيانات|data breach
+T|隐私|yǐnsī|الخصوصية|privacy
+T|不可否认性|bùkě fǒurèn xìng|عدم الإنكار|non-repudiation
+T|真实性|zhēnshíxìng|الأصالة|authenticity

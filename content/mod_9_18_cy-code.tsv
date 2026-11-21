@@ -41,3 +41,83 @@ T|动态分析|dòngtài fēnxī|التحليل الديناميكي|dynamic ana
 T|安全开发生命周期|ānquán kāifā shēngmìng zhōuqī|دورة حياة التطوير الآمن|secure development lifecycle
 T|软件物料清单|ruǎnjiàn wùliào qīngdān|قائمة مكونات البرمجيات|software bill of materials
 T|脱敏|tuōmǐn|حجب البيانات الحساسة|data masking
+T|不可信输入|bùkě xìn shūrù|المدخلات غير الموثوقة|untrusted input
+T|数据校验|shùjù jiàoyàn|التحقق من البيانات|data validation
+T|规范化处理|guīfànhuà chǔlǐ|التطبيع|canonicalisation
+T|正则表达式|zhèngzébiǎodáshì|التعبير النمطي|regular expression
+T|长度限制|chángdù xiànzhì|حد الطول|length limit
+T|类型校验|lèixíng jiàoyàn|التحقق من النوع|type check
+T|范围检查|fànwéi jiǎnchá|فحص المدى|range check
+T|边界检查|biānjiè jiǎnchá|فحص الحدود|bounds check
+T|缓冲区溢出|huǎnchōng qū yìchū|فيضان المخزن المؤقت|buffer overflow
+T|整数溢出|zhěngshù yìchū|فيضان الأعداد الصحيحة|integer overflow
+T|内存安全|nèicún ānquán|أمان الذاكرة|memory safety
+T|内存泄漏|nèicún xièlòu|تسرب الذاكرة|memory leak
+T|空指针引用|kōng zhǐzhēn yǐnyòng|الإشارة إلى مؤشر فارغ|null pointer dereference
+T|释放后使用|shìfàng hòu shǐyòng|الاستخدام بعد التحرير|use after free
+T|格式化字符串|géshìhuà zìfúchuàn|سلسلة التنسيق|format string
+T|安全函数|ānquán hánshù|الدالة الآمنة|safe function
+T|危险函数|wēixiǎn hánshù|الدالة الخطرة|dangerous function
+T|密钥轮转|mìyào lúnzhuàn|تدوير المفاتيح|key rotation
+T|环境配置|huánjìng pèizhì|إعداد البيئة|environment configuration
+T|配置泄露|pèizhì xièlù|تسرب الإعدادات|config leak
+T|凭证扫描|píngzhèng sǎomiáo|فحص بيانات الاعتماد|credential scanning
+T|提交前检查|tíjiāo qián jiǎnchá|الفحص قبل الالتزام|pre-commit check
+T|第三方库|dìsānfāng kù|مكتبة طرف ثالث|third-party library
+T|开源组件|kāiyuán zǔjiàn|مكوّن مفتوح المصدر|open-source component
+T|组件漏洞|zǔjiàn lòudòng|ثغرة المكوّن|component vulnerability
+T|版本锁定|bǎnběn suǒdìng|تثبيت الإصدار|version pinning
+T|锁文件|suǒ wénjiàn|ملف القفل|lock file
+T|依赖更新|yīlài gēngxīn|تحديث التبعيات|dependency update
+T|依赖混淆|yīlài hùnxiáo|ارتباك التبعيات|dependency confusion
+T|仿冒包|fǎngmào bāo|الحزمة المقلَّدة|typosquatted package
+T|恶意包|èyì bāo|الحزمة الخبيثة|malicious package
+T|软件成分分析|ruǎnjiàn chéngfèn fēnxī|تحليل مكونات البرمجيات|software composition analysis
+T|静态应用安全测试|jìngtài yìngyòng ānquán cèshì|الاختبار الأمني الثابت|SAST
+T|动态应用安全测试|dòngtài yìngyòng ānquán cèshì|الاختبار الأمني الديناميكي|DAST
+T|交互式测试|jiāohù shì cèshì|الاختبار التفاعلي|interactive testing
+T|误报率|wù bào lǜ|معدل الإنذارات الكاذبة|false-positive rate
+T|安全扫描|ānquán sǎomiáo|الفحص الأمني|security scan
+T|安全门禁|ānquán ménjìn|البوابة الأمنية|security gate
+T|安全评审|ānquán píngshěn|المراجعة الأمنية|security review
+T|安全需求分析|ānquán xūqiú fēnxī|تحليل المتطلبات الأمنية|security requirements analysis
+T|滥用案例|lànyòng ànlì|حالة سوء الاستخدام|abuse case
+T|攻击树|gōngjī shù|شجرة الهجوم|attack tree
+T|数据流图|shùjùliú tú|مخطط تدفق البيانات|data flow diagram
+T|信任区|xìnrèn qū|منطقة الثقة|trust zone
+T|失败安全|shībài ānquán|الفشل الآمن|fail-safe
+T|安全默认值|ānquán mòrèn zhí|القيم الافتراضية الآمنة|secure defaults
+T|最小功能|zuì xiǎo gōngnéng|أقل الوظائف|least functionality
+T|异常处理|yìcháng chǔlǐ|معالجة الاستثناءات|exception handling
+T|错误日志|cuòwù rìzhì|سجل الأخطاء|error log
+T|日志注入|rìzhì zhùrù|حقن السجلات|log injection
+T|审计日志|shěnjì rìzhì|سجل التدقيق|audit log
+T|敏感字段|mǐngǎn zìduàn|الحقل الحساس|sensitive field
+T|掩码|yǎnmǎ|القناع|mask
+T|随机数生成器|suíjīshù shēngchéng qì|مولد الأرقام العشوائية|random number generator
+T|安全随机数|ānquán suíjīshù|الرقم العشوائي الآمن|secure random number
+T|时间攻击|shíjiān gōngjī|هجوم التوقيت|timing attack
+T|常量时间比较|chángliàng shíjiān bǐjiào|المقارنة بزمن ثابت|constant-time comparison
+T|密码哈希|mìmǎ hāxī|تجزئة كلمات المرور|password hashing
+T|加密库|jiāmì kù|مكتبة التشفير|cryptography library
+T|自制加密|zìzhì jiāmì|التشفير المصنوع يدويًا|homemade crypto
+T|反编译|fǎn biānyì|إلغاء الترجمة البرمجية|decompilation
+T|代码混淆|dàimǎ hùnxiáo|تعمية الكود|code obfuscation
+T|逆向工程|nìxiànggōngchéng|الهندسة العكسية|reverse engineering
+T|完整性校验|wánzhěngxìng jiàoyàn|فحص السلامة|integrity check
+T|代码签名证书|dàimǎ qiānmíng zhèngshū|شهادة توقيع الكود|code signing certificate
+T|安全更新|ānquán gēngxīn|التحديث الأمني|security update
+T|人工智能助手|réngōngzhìnéng zhùshǒu|المساعد الذكي|AI assistant
+T|提示词注入|tíshì cí zhùrù|حقن الأوامر النصية|prompt injection
+T|模型输出|móxíng shūchū|مخرجات النموذج|model output
+T|安全教育|ānquán jiàoyù|التعليم الأمني|security education
+T|安全冠军|ānquán guànjūn|بطل الأمن في الفريق|security champion
+T|漏洞修复|lòudòng xiūfù|إصلاح الثغرة|vulnerability fix
+T|修复时间|xiūfù shíjiān|زمن الإصلاح|time to fix
+T|技术债|jìshù zhài|الدين التقني|technical debt
+T|安全债务|ānquán zhàiwù|الدين الأمني|security debt
+T|单元安全测试|dānyuán ānquán cèshì|اختبار الأمان للوحدات|security unit test
+T|代码所有权|dàimǎ suǒyǒuquán|ملكية الكود|code ownership
+T|权限检查|quánxiàn jiǎnchá|فحص الصلاحيات|permission check
+T|并发安全|bìngfā ānquán|أمان التزامن|concurrency safety
+T|文件权限|wénjiàn quánxiàn|صلاحيات الملفات|file permissions

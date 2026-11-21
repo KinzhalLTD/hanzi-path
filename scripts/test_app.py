@@ -68,7 +68,7 @@ async def main():
                 if await pg.locator('#dn').count(): break
                 await pg.wait_for_selector('.opt'); await pg.locator('.opt').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(40)
             await pg.click('#dn'); await pg.wait_for_timeout(150)
-            check(await pg.evaluate("!!S.mods['se-fund'].T&&Object.keys(S.srs).length===MOD['se-fund'].T.length"), f'{L}: terms step / SRS not recorded')
+            check(await pg.evaluate("!!S.mods['se-fund'].T&&Object.keys(S.srs).length===10"), f'{L}: terms step / SRS not recorded')
             await pg.click('.step[data-s="D"]'); await pg.wait_for_timeout(150); await pg.click('#dd'); await pg.wait_for_timeout(200)
             check(await pg.evaluate("!!S.mods['se-fund'].done"), f'{L}: module not completed after all steps')
             check(await pg.evaluate("!!(S.badges||{}).first&&!!S.badges.boss&&!!S.flawless"), f'{L}: seals for first lesson / boss / flawless not awarded')

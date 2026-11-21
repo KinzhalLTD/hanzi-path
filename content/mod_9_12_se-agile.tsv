@@ -41,3 +41,83 @@ T|反馈|fǎnkuì|الملاحظات الراجعة|feedback
 T|原型|yuánxíng|نموذج أولي|prototype
 T|技术债务|jìshù zhàiwù|الدين التقني|technical debt
 T|利益相关者|lìyì xiāngguānzhě|أصحاب المصلحة|stakeholder
+T|敏捷宣言|mǐnjié xuānyán|البيان الرشيق|Agile Manifesto
+T|敏捷教练|mǐnjié jiàoliàn|مدرب الرشاقة|agile coach
+T|产品负责人|chǎnpǐn fùzérén|مالك المنتج|product owner
+T|开发团队|kāifā tuánduì|فريق التطوير|development team
+T|跨职能团队|kuà zhínéng tuánduì|الفريق متعدد الوظائف|cross-functional team
+T|自组织|zì zǔzhī|التنظيم الذاتي|self-organising
+T|冲刺计划会|chōngcì jìhuà huì|اجتماع تخطيط السباق|sprint planning
+T|冲刺评审|chōngcì píngshěn|مراجعة السباق|sprint review
+T|每日站会|měirì zhàn huì|الاجتماع اليومي|daily stand-up
+T|冲刺目标|chōngcì mùbiāo|هدف السباق|sprint goal
+T|冲刺待办列表|chōngcì dài bàn lièbiǎo|قائمة مهام السباق|sprint backlog
+T|完成的定义|wánchéng de dìngyì|تعريف الإنجاز|definition of done
+T|就绪的定义|jiùxù de dìngyì|تعريف الجاهزية|definition of ready
+T|故事点|gùshì diǎn|نقاط القصة|story points
+T|速度|sùdù|السرعة|velocity
+T|燃尽图|rán jìn tú|مخطط الاحتراق|burndown chart
+T|燃起图|ránqǐ tú|مخطط الإنجاز التصاعدي|burn-up chart
+T|史诗|shǐshī|الملحمة (epic)|epic
+T|任务|rènwu|المهمة|task
+T|子任务|zǐ rènwu|المهمة الفرعية|subtask
+T|待办事项|dài bànshì xiàng|البند المعلّق|to-do item
+T|进行中|jìnxíng zhōng|قيد التنفيذ|in progress
+T|已完成|yǐ wánchéng|منجز|done
+T|阻塞|zǔsè|العائق|blocker
+T|依赖关系|yīlài guānxi|علاقة الاعتماد|dependency
+T|风险管理|fēngxiǎnguǎnlǐ|إدارة المخاطر|risk management
+T|范围蔓延|fànwéi mànyán|زحف النطاق|scope creep
+T|最小可行产品|zuì xiǎokě xíng chǎnpǐn|المنتج الأدنى القابل للتطبيق|minimum viable product
+T|产品路线图|chǎnpǐn lùxiàntú|خارطة طريق المنتج|product roadmap
+T|愿景|yuànjǐng|الرؤية|vision
+T|目标|mùbiāo|الهدف|goal
+T|关键结果|guānjiàn jiéguǒ|النتائج الرئيسية|key results
+T|目标与关键成果|mùbiāo yǔ guānjiàn chéngguǒ|الأهداف والنتائج الرئيسية|OKRs
+T|关键绩效指标|guānjiànjìxiàozhǐbiāo|مؤشر الأداء الرئيسي|key performance indicator
+T|用户画像|yònghù huàxiàng|شخصية المستخدم|user persona
+T|用户旅程|yònghù lǚchéng|رحلة المستخدم|user journey
+T|用户调研|yònghù diàoyán|بحث المستخدمين|user research
+T|用户反馈|yònghù fǎnkuì|ملاحظات المستخدم|user feedback
+T|需求文档|xūqiú wéndàng|وثيقة المتطلبات|requirements document
+T|功能需求|gōngnéng xūqiú|المتطلبات الوظيفية|functional requirements
+T|非功能需求|fēi gōngnéng xūqiú|المتطلبات غير الوظيفية|non-functional requirements
+T|优先排序|yōuxiān páixù|ترتيب الأولويات|prioritisation
+T|必须有|bìxū yǒu|ضروري|must have
+T|线框图|xiàn kuàngtú|المخطط الهيكلي|wireframe
+T|设计稿|shèjì gǎo|التصميم المرئي|design mockup
+T|评审会|píngshěn huì|اجتماع المراجعة|review meeting
+T|头脑风暴|tóunǎofēngbào|العصف الذهني|brainstorming
+T|工作坊|gōngzuòfāng|ورشة العمل|workshop
+T|时间盒|shíjiān hé|الصندوق الزمني|timebox
+T|节奏|jiézòu|الإيقاع|cadence
+T|持续改进|chíxù gǎijìn|التحسين المستمر|continuous improvement
+T|精益|jīng yì|الرشيق (lean)|lean
+T|浪费|làngfèi|الهدر|waste
+T|在制品限制|zài zhìpǐn xiànzhì|حد العمل الجاري|WIP limit
+T|周期时间|zhōuqī shíjiān|زمن الدورة|cycle time
+T|前置时间|qiánzhì shíjiān|زمن التسليم|lead time
+T|吞吐|tūntǔ|الإنتاجية|throughput
+T|瀑布模型|pùbù móxíng|نموذج الشلال|waterfall model
+T|规模化敏捷|guīmó huà mǐnjié|الرشاقة على نطاق واسع|scaled agile
+T|项目经理|xiàngmù jīnglǐ|مدير المشروع|project manager
+T|项目计划|xiàngmù jìhuà|خطة المشروع|project plan
+T|甘特图|gān tè tú|مخطط غانت|Gantt chart
+T|截止日期|jiézhǐrì qī|الموعد النهائي|deadline
+T|工作量|gōngzuòliàng|حجم العمل|workload
+T|人天|rén tiān|يوم عمل للفرد|person-day
+T|资源分配|zīyuán fēnpèi|تخصيص الموارد|resource allocation
+T|沟通|gōutōng|التواصل|communication
+T|透明度|tòumíngdù|الشفافية|transparency
+T|检视|jiǎnshì|الفحص|inspection
+T|调整|tiáozhěng|التكيّف|adaptation
+T|团队协作|tuánduì xiézuò|العمل الجماعي|teamwork
+T|心理安全|xīnlǐ ānquán|الأمان النفسي|psychological safety
+T|一对一会议|yīduìyī huìyì|الاجتماع الفردي|one-on-one meeting
+T|会议纪要|huìyì jìyào|محضر الاجتماع|meeting minutes
+T|行动项|xíngdòng xiàng|بند الإجراء|action item
+T|负责人|fùzérén|المسؤول|owner
+T|客户|kèhù|العميل|customer
+T|业务价值|yèwù jiàzhí|القيمة التجارية|business value
+T|投资回报率|tóuzīhuíbàolǜ|العائد على الاستثمار|return on investment
+T|上线计划|shàngxiàn jìhuà|خطة الإطلاق|launch plan

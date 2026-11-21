@@ -41,3 +41,83 @@ T|异步|yìbù|غير متزامن|asynchronous
 T|同步|tóngbù|متزامن|synchronous
 T|集群|jíqún|عنقود (مجموعة خوادم)|cluster
 T|可观测性|kěguāncèxìng|قابلية المراقبة|observability
+T|需求分析|xūqiú fēnxī|تحليل المتطلبات|requirements analysis
+T|容量规划|róngliàng guīhuà|تخطيط السعة|capacity planning
+T|估算流量|gūsuàn liúliàng|تقدير حركة المرور|traffic estimation
+T|每秒查询数|měi miǎo cháxún shù|الاستعلامات في الثانية|queries per second
+T|峰值|fēngzhí|ذروة الحمل|peak load
+T|并发|bìngfā|التزامن|concurrency
+T|线程|xiànchéng|الخيط|thread
+T|进程|jìnchéng|العملية|process
+T|线程池|xiànchéng chí|مجمع الخيوط|thread pool
+T|无状态|wúzhuàng tài|عديم الحالة|stateless
+T|有状态|yǒu zhuàngtài|ذو حالة|stateful
+T|负载均衡器|fùzǎijūnhéng qì|موازن الحمل|load balancer
+T|轮询算法|lúnxún suànfǎ|خوارزمية التناوب|round-robin
+T|一致性哈希|yīzhìxìng hāxī|التجزئة المتسقة|consistent hashing
+T|健康检查|jiànkāngjiǎnchá|فحص السلامة|health check
+T|故障转移|gùzhàng zhuǎnyí|التحويل عند العطل|failover
+T|冗余设计|rǒngyú shèjì|تصميم التكرار الاحتياطي|redundancy design
+T|多活|duō huó|التشغيل النشط المتعدد|active-active
+T|主备|zhǔ bèi|الرئيسي والاحتياطي|active-passive
+T|数据中心|shùjù zhōngxīn|مركز البيانات|data centre
+T|可用区|kě yòng qū|منطقة التوفر|availability zone
+T|地域|dìyù|المنطقة الجغرافية|region
+T|缓存击穿|huǎncún jī chuān|اختراق الذاكرة المؤقتة|cache breakdown
+T|缓存雪崩|huǎncún xuěbēng|انهيار الذاكرة المؤقتة|cache avalanche
+T|缓存穿透|huǎncún chuāntòu|تجاوز الذاكرة المؤقتة|cache penetration
+T|缓存失效|huǎncún shīxiào|انتهاء صلاحية التخزين المؤقت|cache invalidation
+T|命中率|mìngzhònglǜ|نسبة الإصابة|hit rate
+T|过期时间|guòqī shíjiān|وقت الانتهاء|expiry time
+T|写回|xiě huí|الكتابة المؤجلة|write-back
+T|写穿|xiě chuān|الكتابة المباشرة|write-through
+T|生产者|shēngchǎnzhě|المنتج|producer
+T|消费者|xiāofèizhě|المستهلك|consumer
+T|主题|zhǔtí|الموضوع (topic)|topic
+T|消息|xiāoxi|الرسالة|message
+T|死信队列|sǐxìn duìliè|طابور الرسائل الميتة|dead-letter queue
+T|重试|chóngshì|إعادة المحاولة|retry
+T|幂等性|mìděng xìng|عدم تأثر النتيجة بالتكرار|idempotency
+T|限流算法|xiànliú suànfǎ|خوارزمية تحديد المعدل|rate-limiting algorithm
+T|令牌桶|lìngpái tǒng|دلو الرموز|token bucket
+T|漏桶|lòu tǒng|الدلو المثقوب|leaky bucket
+T|超时控制|chāoshí kòngzhì|التحكم في المهلة|timeout control
+T|服务发现|fúwù fāxiàn|اكتشاف الخدمات|service discovery
+T|服务注册|fúwù zhùcè|تسجيل الخدمات|service registry
+T|接口网关|jiēkǒu wǎngguān|بوابة الواجهات البرمجية|API gateway
+T|服务网格|fúwù wǎnggé|شبكة الخدمات|service mesh
+T|远程过程调用|yuǎnchéng guòchéng diàoyòng|الاستدعاء الإجرائي عن بُعد|remote procedure call
+T|事件驱动架构|shìjiàn qūdòng jiàgòu|المعمارية الموجّهة بالأحداث|event-driven architecture
+T|分布式事务|fēnbùshì shìwù|المعاملة الموزعة|distributed transaction
+T|两阶段提交|liǎng jiēduàn tíjiāo|التثبيت على مرحلتين|two-phase commit
+T|共识算法|gòngshí suànfǎ|خوارزمية الإجماع|consensus algorithm
+T|分布式锁|fēnbùshì suǒ|القفل الموزع|distributed lock
+T|领导者选举|lǐngdǎozhě xuǎnjǔ|انتخاب القائد|leader election
+T|心跳|xīntiào|نبضة القلب|heartbeat
+T|网络分区|wǎngluò fēnqū|انقسام الشبكة|network partition
+T|数据复制|shùjù fùzhì|نسخ البيانات|data replication
+T|对象存储|duìxiàng cúnchǔ|تخزين الكائنات|object storage
+T|文件存储|wénjiàn cúnchǔ|تخزين الملفات|file storage
+T|块存储|kuài cúnchǔ|التخزين الكتلي|block storage
+T|搜索引擎|sōusuǒyǐnqíng|محرك البحث|search engine
+T|全文检索|quánwénjiǎnsuǒ|البحث في النص الكامل|full-text search
+T|倒排索引|dào pái suǒyǐn|الفهرس المقلوب|inverted index
+T|推荐系统|tuījiàn xìtǒng|نظام التوصيات|recommendation system
+T|短链接|duǎn liànjiē|الرابط المختصر|short link
+T|唯一标识|wéiyī biāozhì|المعرّف الفريد|unique identifier
+T|雪花算法|xuěhuā suànfǎ|خوارزمية رقاقة الثلج|Snowflake ID
+T|架构演进|jiàgòu yǎnjìn|تطور المعمارية|architecture evolution
+T|服务拆分|fúwù chāifēn|تقسيم الخدمات|service decomposition
+T|缩容|suō róng|التقليص|scale in
+T|弹性伸缩|tánxìng shēnsuō|التوسع المرن|auto-scaling
+T|服务等级协议|fúwù děngjí xiéyì|اتفاقية مستوى الخدمة|service level agreement
+T|服务等级目标|fúwù děngjí mùbiāo|هدف مستوى الخدمة|service level objective
+T|错误预算|cuòwù yùsuàn|ميزانية الأخطاء|error budget
+T|可维护|kě wéihù|قابل للصيانة|maintainable
+T|成本|chéngběn|التكلفة|cost
+T|权衡取舍|quánhéng qǔshě|الموازنة بين الخيارات|making trade-offs
+T|性能指标|xìngnéng zhǐbiāo|مؤشر الأداء|performance metric
+T|尾延迟|wěi yánchí|زمن الاستجابة الطرفي|tail latency
+T|带宽成本|dàikuān chéngběn|تكلفة النطاق الترددي|bandwidth cost
+T|边缘计算|biānyuán jìsuàn|الحوسبة الطرفية|edge computing
+T|白板面试|báibǎn miànshì|مقابلة السبورة|whiteboard interview

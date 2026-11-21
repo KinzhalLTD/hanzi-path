@@ -41,3 +41,83 @@ T|指纹|zhǐwén|بصمة الإصبع|fingerprint
 T|账户锁定|zhànghù suǒdìng|قفل الحساب|account lockout
 T|验证码|yànzhèngmǎ|رمز التحقق|verification code
 T|离职|lízhí|مغادرة العمل|leaving a job
+T|身份|shēnfèn|الهوية|identity
+T|数字身份|shùzì shēnfèn|الهوية الرقمية|digital identity
+T|身份管理|shēnfèn guǎnlǐ|إدارة الهوية|identity management
+T|身份提供商|shēnfèn tígōngshāng|مزود الهوية|identity provider
+T|服务提供商|fúwùtígōngshāng|مزود الخدمة|service provider
+T|用户名|yònghùmíng|اسم المستخدم|username
+T|账号|zhànghào|الحساب|account
+T|注册|zhùcè|التسجيل|sign up
+T|登录|dēnglù|تسجيل الدخول|log in
+T|登出|dēngchū|تسجيل الخروج|log out
+T|密码重置|mìmǎ chóngzhì|إعادة تعيين كلمة المرور|password reset
+T|找回密码|zhǎohuí mìmǎ|استرجاع كلمة المرور|recover password
+T|密码策略|mìmǎ cèlüè|سياسة كلمات المرور|password policy
+T|密码管理器|mìmǎ guǎnlǐ qì|مدير كلمات المرور|password manager
+T|口令|kǒulìng|كلمة السر|passphrase
+T|无密码|wú mìmǎ|بلا كلمة مرور|passwordless
+T|通行密钥|tōngxíng mìyào|مفتاح المرور|passkey
+T|硬件密钥|yìngjiàn mìyào|المفتاح المادي|hardware key
+T|动态口令|dòngtài kǒulìng|كلمة المرور لمرة واحدة|one-time password
+T|短信验证码|duǎnxìn yànzhèngmǎ|رمز التحقق بالرسالة|SMS code
+T|认证器|rènzhèng qì|تطبيق المصادقة|authenticator
+T|推送疲劳|tuīsòng píláo|إرهاق إشعارات المصادقة|MFA fatigue
+T|二次验证|èrcì yànzhèng|التحقق بخطوتين|two-step verification
+T|联合身份|liánhé shēnfèn|الهوية الموحّدة|federated identity
+T|开放授权|kāifàng shòuquán|التفويض المفتوح (OAuth)|OAuth
+T|授权码|shòuquán mǎ|رمز التفويض|authorization code
+T|访问令牌|fǎngwèn lìngpái|رمز الوصول|access token
+T|作用范围|zuòyòng fànwéi|نطاق الصلاحية|scope (OAuth)
+T|回调地址|huídiào dìzhǐ|عنوان الرجوع|redirect URI
+T|客户端密钥|kèhùduān mìyào|سر العميل|client secret
+T|签名令牌|qiānmíng lìngpái|الرمز الموقّع|signed token
+T|令牌过期|lìngpái guòqī|انتهاء صلاحية الرمز|token expiry
+T|会话管理|huìhuà guǎnlǐ|إدارة الجلسات|session management
+T|会话超时|huìhuà chāoshí|انتهاء مهلة الجلسة|session timeout
+T|会话固定|huìhuà gùdìng|تثبيت الجلسة|session fixation
+T|基于角色的访问控制|jīyú juésè de fǎngwèn kòngzhì|التحكم في الوصول القائم على الأدوار|role-based access control
+T|基于属性的访问控制|jīyú shǔxìng de fǎngwèn kòngzhì|التحكم القائم على السمات|attribute-based access control
+T|自主访问控制|zìzhǔ fǎngwèn kòngzhì|التحكم الاختياري في الوصول|discretionary access control
+T|强制访问控制|qiángzhì fǎngwèn kòngzhì|التحكم الإلزامي في الوصول|mandatory access control
+T|访问控制列表|fǎngwèn kòngzhì lièbiǎo|قائمة التحكم في الوصول|access control list
+T|权限模型|quánxiàn móxíng|نموذج الصلاحيات|permission model
+T|最小授权|zuì xiǎo shòuquán|أدنى تفويض|minimal authorisation
+T|权限蔓延|quánxiàn mànyán|تضخم الصلاحيات|privilege creep
+T|特权访问管理|tèquán fǎngwèn guǎnlǐ|إدارة الوصول المميز|privileged access management
+T|管理员|guǎnlǐyuán|المسؤول (admin)|administrator
+T|超级用户|chāojí yònghù|المستخدم الخارق|superuser
+T|普通用户|pǔtōng yònghù|المستخدم العادي|standard user
+T|访客|fǎngkè|الزائر|guest
+T|共享账号|gòngxiǎng zhànghào|الحساب المشترك|shared account
+T|服务帐户|fúwù zhànghù|حساب خدمة|service account (identity)
+T|入职|rùzhí|الانضمام إلى العمل|onboarding
+T|调岗|diàogǎng|النقل الوظيفي|role change
+T|账号回收|zhànghào huíshōu|سحب الحساب|account deprovisioning
+T|开通|kāitōng|التفعيل|provisioning
+T|生命周期|shēngmìngzhōuqī|دورة الحياة|lifecycle
+T|目录服务|mùlù fúwù|خدمة الدليل|directory service
+T|域控制器|yù kòngzhì qì|وحدة تحكم النطاق|domain controller
+T|组策略|zǔ cèlüè|سياسة المجموعة|group policy
+T|用户组|yònghù zǔ|مجموعة المستخدمين|user group
+T|凭据|píngjù|بيانات الاعتماد|credentials
+T|凭据窃取|píngjù qièqǔ|سرقة بيانات الاعتماد|credential theft
+T|撞库|zhuàng kù|حشو بيانات الاعتماد|credential stuffing
+T|密码喷洒|mìmǎ pēnsǎ|رش كلمات المرور|password spraying
+T|锁定策略|suǒdìng cèlüè|سياسة القفل|lockout policy
+T|异常登录|yìcháng dēnglù|تسجيل الدخول غير المعتاد|anomalous login
+T|登录日志|dēnglù rìzhì|سجل الدخول|login log
+T|条件访问|tiáojiàn fǎngwèn|الوصول المشروط|conditional access
+T|设备信任|shèbèi xìnrèn|الثقة بالجهاز|device trust
+T|地理位置|dìlǐwèizhi|الموقع الجغرافي|geolocation
+T|风险评分|fēngxiǎn píngfēn|درجة الخطر|risk score
+T|自适应认证|zìshìyìng rènzhèng|المصادقة التكيفية|adaptive authentication
+T|声纹|shēng wén|بصمة الصوت|voiceprint
+T|虹膜|hóngmó|قزحية العين|iris
+T|活体检测|huótǐ jiǎncè|كشف الحيوية|liveness detection
+T|实名认证|shímíng rènzhèng|التحقق بالاسم الحقيقي|real-name verification
+T|身份证|shēnfènzhèng|بطاقة الهوية|ID card
+T|冒用身份|màoyòng shēnfèn|انتحال الهوية|identity misuse
+T|身份盗窃|shēnfèndàoqiè|سرقة الهوية|identity theft
+T|访问请求|fǎngwèn qǐngqiú|طلب الوصول|access request
+T|审批流程|shěnpī liúchéng|مسار الموافقة|approval workflow

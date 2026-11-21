@@ -41,3 +41,83 @@ T|运算符|yùnsuànfú|عامل (رياضي أو منطقي)|operator
 T|表达式|biǎodáshì|تعبير|expression
 T|注释|zhùshì|تعليق في الكود|code comment
 T|调试|tiáoshì|تصحيح الأخطاء|debugging
+T|编程|biānchéng|البرمجة|programming
+T|程序|chéngxù|البرنامج|program
+T|程序员|chéngxùyuán|المبرمج|programmer
+T|代码|dàimǎ|الكود|code
+T|源代码|yuándàimǎ|الكود المصدري|source code
+T|编程语言|biānchéng yǔyán|لغة البرمجة|programming language
+T|编译器|biānyìqì|المترجم (المصرّف)|compiler
+T|解释器|jiěshìqì|المفسّر|interpreter
+T|编译|biānyì|الترجمة البرمجية|compile
+T|运行|yùnxíng|التشغيل|run
+T|执行|zhíxíng|التنفيذ|execute
+T|输入|shūrù|الإدخال|input
+T|输出|shūchū|الإخراج|output
+T|赋值|fùzhí|الإسناد|assignment
+T|声明|shēngmíng|التصريح|declaration
+T|定义|dìngyì|التعريف|definition
+T|调用|diàoyòng|الاستدعاء|call
+T|关键字|guānjiànzì|الكلمة المحجوزة|keyword
+T|标识符|biāozhì fú|المعرّف|identifier
+T|浮点数|fúdiǎnshù|العدد العشري|floating-point number
+T|字符|zìfú|المحرف|character
+T|数值|shùzhí|القيمة العددية|numeric value
+T|真|zhēn|صحيح (true)|true
+T|假|jiǎ|خطأ (false)|false
+T|空值|kōngzhí|القيمة الفارغة|null
+T|逻辑运算|luóji yùnsuàn|العملية المنطقية|logical operation
+T|比较|bǐjiào|المقارنة|comparison
+T|等于|děngyú|يساوي|equals
+T|大于|dàyú|أكبر من|greater than
+T|小于|xiǎoyú|أصغر من|less than
+T|加法|jiāfǎ|الجمع|addition
+T|减法|jiǎnfǎ|الطرح|subtraction
+T|乘法|chéngfǎ|الضرب|multiplication
+T|除法|chúfǎ|القسمة|division
+T|取余|qǔ yú|باقي القسمة|modulo
+T|自增|zì zēng|الزيادة بواحد|increment
+T|嵌套|qiàntào|التداخل|nesting
+T|条件|tiáojiàn|الشرط|condition
+T|跳出|tiàochū|الخروج من الحلقة|break out
+T|继续|jìxù|المتابعة|continue
+T|无限循环|wúxiàn xúnhuán|الحلقة اللانهائية|infinite loop
+T|计数器|jìshùqì|العدّاد|counter
+T|索引值|suǒyǐn zhí|قيمة الفهرس|index value
+T|长度|chángdù|الطول|length
+T|字符串拼接|zìfúchuàn pīnjiē|دمج النصوص|string concatenation
+T|格式化|géshìhuà|التنسيق|formatting
+T|类型转换|lèixíng zhuǎnhuàn|تحويل النوع|type conversion
+T|强类型|qiáng lèixíng|النوع الصارم|strong typing
+T|弱类型|ruò lèixíng|النوع المرن|weak typing
+T|静态类型|jìngtài lèixíng|النوع الثابت|static typing
+T|动态类型|dòngtài lèixíng|النوع الديناميكي|dynamic typing
+T|局部变量|júbù biànliàng|المتغير المحلي|local variable
+T|全局变量|quánjú biànliàng|المتغير العام|global variable
+T|命名|mìngmíng|التسمية|naming
+T|命名规范|mìngmíng guīfàn|قواعد التسمية|naming convention
+T|缩进|suōjìn|الإزاحة|indentation
+T|括号|kuòhào|القوس|bracket
+T|分号|fēnhào|الفاصلة المنقوطة|semicolon
+T|代码块|dàimǎ kuài|كتلة الكود|code block
+T|语句|yǔjù|الجملة البرمجية|statement
+T|回调函数|huídiàohánshù|دالة الاستدعاء الراجع|callback function
+T|匿名函数|nìmíng hánshù|الدالة المجهولة|anonymous function
+T|箭头函数|jiàntóu hánshù|الدالة السهمية|arrow function
+T|默认值|mòrèn zhí|القيمة الافتراضية|default value
+T|抛出|pāochū|الرمي (للاستثناء)|throw
+T|捕获|bǔhuò|الالتقاط|catch
+T|断点|duàndiǎn|نقطة التوقف|breakpoint
+T|控制台|kòngzhìtái|وحدة التحكم|console
+T|打印|dǎyìn|الطباعة|print
+T|日志输出|rìzhì shūchū|إخراج السجل|log output
+T|库|kù|المكتبة|library
+T|模块|mókuài|الوحدة|module
+T|导入|dǎorù|الاستيراد|import
+T|导出|dǎochū|التصدير|export
+T|包管理器|bāoguǎn lǐ qì|مدير الحزم|package manager
+T|版本号|bǎnběn hào|رقم الإصدار|version number
+T|开发环境|kāifā huánjìng|بيئة التطوير|development environment
+T|集成开发环境|jíchéng kāifā huánjìng|بيئة التطوير المتكاملة|IDE
+T|编辑器|biānjíqì|المحرر|editor
+T|命令行|mìnglìngháng|سطر الأوامر|command line

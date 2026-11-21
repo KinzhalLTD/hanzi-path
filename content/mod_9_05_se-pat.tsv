@@ -41,3 +41,83 @@ T|架构|jiàgòu|البنية المعمارية|architecture
 T|模块化|mókuàihuà|التقسيم إلى وحدات|modularity
 T|解耦|jiě'ǒu|فك الترابط|decoupling
 T|最佳实践|zuìjiā shíjiàn|أفضل الممارسات|best practice
+T|创建型模式|chuàngjiàn xíng móshì|الأنماط الإنشائية|creational patterns
+T|结构型模式|jiégòu xíng móshì|الأنماط البنيوية|structural patterns
+T|行为型模式|xíngwéi xíng móshì|الأنماط السلوكية|behavioural patterns
+T|抽象工厂|chōuxiàng gōngchǎng|المصنع المجرد|abstract factory
+T|建造者模式|jiànzào zhě móshì|نمط الباني|builder pattern
+T|原型模式|yuánxíng móshì|نمط النموذج الأولي|prototype pattern
+T|代理模式|dàilǐ móshì|نمط الوكيل|proxy pattern
+T|桥接模式|qiáojiē móshì|نمط الجسر|bridge pattern
+T|组合模式|zǔhé móshì|نمط المركّب|composite pattern
+T|享元模式|xiǎng yuán móshì|نمط وزن الذبابة|flyweight pattern
+T|命令模式|mìnglìng móshì|نمط الأمر|command pattern
+T|迭代器模式|diédài qì móshì|نمط المكرِّر|iterator pattern
+T|模板方法|múbǎn fāngfǎ|الدالة القالب|template method
+T|状态模式|zhuàngtài móshì|نمط الحالة|state pattern
+T|责任链|zérèn liàn|سلسلة المسؤولية|chain of responsibility
+T|中介者模式|zhōngjiè zhě móshì|نمط الوسيط|mediator pattern
+T|备忘录模式|bèiwànglù móshì|نمط المذكرة|memento pattern
+T|访问者模式|fǎngwènzhě móshì|نمط الزائر|visitor pattern
+T|发布订阅|fābù dìngyuè|النشر والاشتراك|publish-subscribe
+T|模型视图控制器|móxíng shìtú kòngzhì qì|النموذج والعرض والمتحكم|MVC
+T|分层架构|fēncéng jiàgòu|المعمارية الطبقية|layered architecture
+T|六边形架构|liùbiānxíng jiàgòu|المعمارية السداسية|hexagonal architecture
+T|整洁架构|zhěngjié jiàgòu|المعمارية النظيفة|clean architecture
+T|单体应用|dāntǐ yìngyòng|التطبيق الأحادي|monolith
+T|服务层|fúwù céng|طبقة الخدمات|service layer
+T|数据访问层|shùjù fǎngwèn céng|طبقة الوصول إلى البيانات|data access layer
+T|表示层|biǎoshìcéng|طبقة العرض|presentation layer
+T|控制器|kòngzhì qì|المتحكم|controller
+T|插件|chājiàn|الإضافة|plugin
+T|钩子|gōuzi|الخطّاف|hook
+T|回调|huídiào|الاستدعاء الراجع|callback
+T|事件总线|shìjiàn zǒngxiàn|ناقل الأحداث|event bus
+T|订阅者|dìngyuè zhě|المشترك|subscriber
+T|发布者|fābù zhě|الناشر|publisher
+T|工厂方法|gōngchǎng fāngfǎ|دالة المصنع|factory method
+T|注入|zhùrù|الحقن|injection
+T|控制反转|kòngzhì fǎnzhuǎn|عكس التحكم|inversion of control
+T|容器化|róngqì huà|الاحتواء|containerization
+T|配置|pèizhì|الإعداد|configuration
+T|约定优于配置|yuēdìng yōuyú pèizhì|العُرف قبل الإعداد|convention over configuration
+T|反模式|fǎn móshì|النمط المضاد|anti-pattern
+T|上帝对象|shàng dì duìxiàng|الكائن الإله|god object
+T|意大利面条代码|yìdàlìmiàn tiáo dàimǎ|كود السباغيتي|spaghetti code
+T|重复代码|chóngfù dàimǎ|الكود المكرر|duplicated code
+T|魔法数字|mófǎ shùzì|الرقم السحري|magic number
+T|过度设计|guòdù shèjì|الإفراط في التصميم|over-engineering
+T|简单原则|jiǎndān yuánzé|مبدأ البساطة|keep it simple
+T|不要重复自己|bùyào chóngfù zìjǐ|لا تكرر نفسك|don't repeat yourself
+T|你不会需要它|nǐ bùhuì xūyào tā|لن تحتاجه|you aren't gonna need it
+T|关注点分离|guānzhù diǎn fēnlí|فصل الاهتمامات|separation of concerns
+T|高内聚|gāo nèi jù|التماسك العالي|high cohesion
+T|低耦合|dī ǒuhé|الترابط المنخفض|low coupling
+T|接口设计|jiēkǒu shèjì|تصميم الواجهة|interface design
+T|抽象层|chōuxiàng céng|طبقة التجريد|abstraction layer
+T|封装变化|fēngzhuāng biànhuà|تغليف التغيير|encapsulate what varies
+T|组合优于继承|zǔhé yōuyú jìchéng|التركيب قبل الوراثة|composition over inheritance
+T|可读代码|kědú dàimǎ|الكود المقروء|readable code
+T|代码规范|dàimǎ guīfàn|معايير الكود|coding standards
+T|代码风格|dàimǎ fēnggé|أسلوب الكتابة|code style
+T|技术选型|jìshù xuǎn xíng|اختيار التقنية|technology selection
+T|扩展点|kuòzhǎn diǎn|نقطة التوسعة|extension point
+T|惰性加载|duòxìng jiāzài|التحميل الكسول|lazy loading
+T|线程安全|xiànchéng ānquán|الأمان مع الخيوط|thread safety
+T|不可变对象|bùkě biàn duìxiàng|الكائن غير القابل للتغيير|immutable object
+T|空对象模式|kōng duìxiàng móshì|نمط الكائن الفارغ|null object pattern
+T|规格模式|guīgé móshì|نمط المواصفة|specification pattern
+T|工作单元|gōngzuò dānyuán|وحدة العمل|unit of work
+T|命令查询分离|mìnglìng cháxún fēnlí|فصل الأوامر والاستعلامات|command-query separation
+T|事件溯源|shìjiàn sùyuán|مصدرية الأحداث|event sourcing
+T|领域事件|lǐngyù shìjiàn|حدث المجال|domain event
+T|适配层|shìpèicéng|طبقة المواءمة|adapter layer
+T|网关模式|wǎngguān móshì|نمط البوابة|gateway pattern
+T|重试模式|chóngshì móshì|نمط إعادة المحاولة|retry pattern
+T|断路器|duànlùqì|قاطع الدائرة|circuit breaker
+T|设计原则|shèjì yuánzé|مبادئ التصميم|design principles
+T|架构师|jiàgòushī|المعماري|architect
+T|架构图|jiàgòu tú|مخطط المعمارية|architecture diagram
+T|技术方案|jìshùfāng'àn|الحل التقني|technical proposal
+T|设计评审|shèjì píngshěn|مراجعة التصميم|design review
+T|通用语言|tōngyòngyǔ yán|اللغة الموحدة للمجال|ubiquitous language

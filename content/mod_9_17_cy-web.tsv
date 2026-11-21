@@ -41,3 +41,83 @@ T|过滤|guòlǜ|التنقية، الترشيح|filtering
 T|编码|biānmǎ|الترميز|encoding
 T|网站防火墙|wǎngzhàn fánghuǒqiáng|جدار حماية تطبيقات الويب|web application firewall
 T|元数据|yuánshùjù|البيانات الوصفية|metadata
+T|网页漏洞|wǎngyè lòudòng|ثغرة الويب|web vulnerability
+T|结构化查询注入|jiégòu huà cháxún zhùrù|حقن SQL|SQL injection
+T|盲注|máng zhù|الحقن الأعمى|blind injection
+T|联合查询|liánhé cháxún|استعلام الاتحاد|UNION query
+T|命令注入|mìnglìng zhùrù|حقن الأوامر|command injection
+T|代码注入|dàimǎ zhùrù|حقن الكود|code injection
+T|模板注入|múbǎn zhùrù|حقن القوالب|template injection
+T|反射型|fǎnshè xíng|الانعكاسي|reflected
+T|存储型|cúnchǔ xíng|المخزّن|stored
+T|恶意脚本|èyì jiǎoběn|السكربت الخبيث|malicious script
+T|弹窗|tánchuāng|النافذة المنبثقة|pop-up
+T|目录遍历|mùlù biànlì|اجتياز المجلدات|directory traversal
+T|文件包含|wénjiàn bāohán|تضمين الملفات|file inclusion
+T|任意文件读取|rènyì wénjiàn dúqǔ|قراءة ملف عشوائي|arbitrary file read
+T|远程代码执行|yuǎnchéng dàimǎ zhíxíng|تنفيذ الكود عن بُعد|remote code execution
+T|不安全的反序列化|bù'ān quán de fǎn xùliè huà|إلغاء التسلسل غير الآمن|insecure deserialization
+T|外部实体注入|wàibù shítǐ zhùrù|حقن الكيانات الخارجية|XXE
+T|开放重定向|kāifàng chóngdìngxiàng|إعادة التوجيه المفتوحة|open redirect
+T|水平越权|shuǐpíng yuèquán|التجاوز الأفقي للصلاحية|horizontal privilege escalation
+T|垂直越权|chuízhí yuèquán|التجاوز العمودي للصلاحية|vertical privilege escalation
+T|不安全的直接对象引用|bù'ān quán de zhíjiē duìxiàng yǐnyòng|المرجع المباشر غير الآمن|IDOR
+T|业务逻辑漏洞|yèwù luóji lòudòng|ثغرة منطق العمل|business logic flaw
+T|竞争条件|jìngzhēng tiáojiàn|حالة السباق|race condition
+T|验证码绕过|yànzhèngmǎ ràoguò|تجاوز رمز التحقق|captcha bypass
+T|暴力枚举|bàolì méijǔ|التعداد بالقوة|brute-force enumeration
+T|用户枚举|yònghù méijǔ|تعداد المستخدمين|user enumeration
+T|敏感信息泄露|mǐngǎn xìnxī xièlù|تسرب المعلومات الحساسة|sensitive data exposure
+T|错误页面|cuòwù yèmiàn|صفحة الخطأ|error page
+T|调试模式|tiáoshì móshì|وضع التصحيح|debug mode
+T|目录列表|mùlù lièbiǎo|عرض محتويات المجلد|directory listing
+T|备份文件泄露|bèifèn wénjiàn xièlù|تسرب ملفات النسخ الاحتياطي|backup file exposure
+T|后台|hòutái|لوحة الإدارة|admin backend
+T|管理后台|guǎnlǐ hòutái|لوحة التحكم الإدارية|admin panel
+T|弱口令登录|ruò kǒulìng dēnglù|الدخول بكلمة مرور ضعيفة|weak-password login
+T|同源策略|tóngyuán cèlüè|سياسة نفس المصدر|same-origin policy
+T|跨域资源共享|kuà yù zīyuán gòngxiǎng|مشاركة الموارد عبر المصادر|CORS
+T|严格传输安全|yángé chuánshū ānquán|أمن النقل الصارم|HSTS
+T|安全标志|ānquán biāozhì|علامة الأمان|Secure flag
+T|同站属性|tóng zhàn shǔxìng|سمة SameSite|SameSite attribute
+T|防伪令牌|fángwěi lìngpái|رمز مكافحة التزوير|anti-forgery token
+T|输入过滤|shūrù guòlǜ|تنقية المدخلات|input filtering
+T|输出转义|shūchū zhuǎnyì|تهريب المخرجات|output escaping
+T|富文本|fùwénběn|النص المنسق|rich text
+T|文件类型校验|wénjiàn lèixíng jiàoyàn|التحقق من نوع الملف|file type check
+T|图片木马|túpiàn mùmǎ|حصان طروادة في صورة|image trojan
+T|网页木马|wǎngyè mùmǎ|حصان طروادة الويب|web shell
+T|网页篡改|wǎngyè cuàngǎi|تشويه الموقع|website defacement
+T|挂马|guàmǎ|زرع البرمجيات الخبيثة في الموقع|drive-by malware planting
+T|爬虫|páchóng|زاحف الويب|web crawler
+T|恶意爬虫|èyì páchóng|الزاحف الخبيث|malicious bot
+T|机器人流量|jīqìrén liúliàng|حركة الروبوتات|bot traffic
+T|接口安全|jiēkǒu ānquán|أمن الواجهات البرمجية|API security
+T|接口滥用|jiēkǒu lànyòng|إساءة استخدام الواجهة البرمجية|API abuse
+T|批量赋值|pīliàng fùzhí|الإسناد الجماعي|mass assignment
+T|过度暴露数据|guòdù bàolù shùjù|كشف البيانات المفرط|excessive data exposure
+T|内容安全|nèiróng ānquán|أمن المحتوى|content security
+T|子资源完整性|zǐ zīyuán wánzhěngxìng|سلامة الموارد الفرعية|subresource integrity
+T|第三方脚本|dìsānfāng jiǎoběn|سكربت الطرف الثالث|third-party script
+T|浏览器扩展|liúlǎnqì kuòzhǎn|إضافة المتصفح|browser extension
+T|浏览器安全|liúlǎnqì ānquán|أمن المتصفح|browser security
+T|沙箱|shā xiāng|البيئة المعزولة|sandbox
+T|网页应用防火墙|wǎngyè yìngyòng fánghuǒqiáng|جدار حماية تطبيقات الويب|WAF
+T|漏洞扫描器|lòudòng sǎomiáoqì|ماسح الثغرات|vulnerability scanner
+T|安全响应头|ānquán xiǎngyìng tóu|ترويسات الاستجابة الأمنية|security response headers
+T|防盗链|fángdào liàn|منع الربط الخارجي|hotlink protection
+T|会话令牌|huìhuà lìngpái|رمز الجلسة|session token
+T|页面跳转|yèmiàn tiàozhuǎn|الانتقال بين الصفحات|page navigation
+T|超链接|chāoliànjiē|الرابط التشعبي|hyperlink
+T|插件漏洞|chājiàn lòudòng|ثغرة الإضافة|plugin vulnerability
+T|内容管理系统|nèiróngguǎnlǐxìtǒng|نظام إدارة المحتوى|CMS
+T|电商网站|diànshāng wǎngzhàn|موقع التجارة الإلكترونية|e-commerce site
+T|支付页面|zhīfù yèmiàn|صفحة الدفع|payment page
+T|支付安全|zhīfù ānquán|أمن المدفوعات|payment security
+T|价格篡改|jiàgé cuàngǎi|التلاعب بالسعر|price tampering
+T|参数篡改|cānshù cuàngǎi|التلاعب بالمعاملات|parameter tampering
+T|请求伪造|qǐngqiú wěizào|تزوير الطلب|request forgery
+T|抓包工具|zhuābāo gōngjù|أداة التقاط الحزم|packet capture tool
+T|代理拦截|dàilǐ lánjié|الاعتراض بالوكيل|proxy interception
+T|安全编码规范|ānquán biānmǎ guīfàn|معايير البرمجة الآمنة|secure coding standard
+T|网页安全扫描|wǎngyè ānquán sǎomiáo|فحص أمن مواقع الويب|web security scan

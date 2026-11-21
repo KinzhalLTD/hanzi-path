@@ -1,0 +1,515 @@
+# zh|ar|en  (pinyin filled from CC-CEDICT by scripts/terms_fill.py)
++se-test
+测试计划|خطة الاختبار|test plan
+测试策略|استراتيجية الاختبار|test strategy
+测试套件|حزمة الاختبارات|test suite
+测试数据集|مجموعة بيانات الاختبار|test dataset
+测试报告|تقرير الاختبار|test report
+测试人员|المختبِر|tester
+测试工程师|مهندس الاختبار|test engineer
+黑盒|الصندوق الأسود|black box
+白盒|الصندوق الأبيض|white box
+冒烟测试|اختبار الدخان|smoke test
+健全性测试|اختبار السلامة السريع|sanity test
+功能测试|الاختبار الوظيفي|functional test
+非功能测试|الاختبار غير الوظيفي|non-functional test
+负载测试|اختبار الحمل|load test
+安全测试|الاختبار الأمني|security test
+兼容性测试|اختبار التوافق|compatibility test
+可用性测试|اختبار سهولة الاستخدام|usability test
+探索性测试|الاختبار الاستكشافي|exploratory test
+手工测试|الاختبار اليدوي|manual testing
+接口测试|اختبار الواجهة البرمجية|API testing
+界面测试|اختبار الواجهة|UI testing
+契约测试|اختبار العقد|contract testing
+快照测试|اختبار اللقطة|snapshot testing
+变异测试|اختبار الطفرات|mutation testing
+模糊测试|الاختبار العشوائي المكثف (fuzzing)|fuzz testing
+测试金字塔|هرم الاختبارات|test pyramid
+桩|الكعب البديل (stub)|stub
+替身|البديل الاختباري|test double
+夹具|التجهيزات الثابتة (fixture)|fixture
+前置条件|الشرط المسبق|precondition
+后置条件|الشرط اللاحق|postcondition
+预期结果|النتيجة المتوقعة|expected result
+实际结果|النتيجة الفعلية|actual result
+通过|النجاح|pass
+失败|الفشل|fail
+跳过|التخطي|skip
+不稳定测试|الاختبار المتقلّب|flaky test
+测试隔离|عزل الاختبارات|test isolation
+等价类|فئة التكافؤ|equivalence class
+等价类划分|تقسيم فئات التكافؤ|equivalence partitioning
+边界值分析|تحليل القيم الحدية|boundary value analysis
+决策表|جدول القرار|decision table
+语句覆盖|تغطية الجمل|statement coverage
+分支覆盖|تغطية الفروع|branch coverage
+路径覆盖|تغطية المسارات|path coverage
+缺陷报告|تقرير العيب|bug report
+缺陷跟踪|تتبع العيوب|bug tracking
+严重级别|مستوى الخطورة|severity level
+重现步骤|خطوات إعادة الإنتاج|steps to reproduce
+复现|إعادة الإنتاج|reproduce
+根本原因|السبب الجذري|root cause
+修复|الإصلاح|fix
+验证|التحقق|verification
+确认|التأكيد|confirmation
+关闭|الإغلاق|close
+重新打开|إعادة الفتح|reopen
+测试左移|نقل الاختبار مبكرًا|shift-left testing
+行为驱动开发|التطوير الموجّه بالسلوك|behaviour-driven development
+红绿重构|أحمر أخضر إعادة هيكلة|red-green-refactor
+质量|الجودة|quality
+可靠性|الموثوقية|reliability
+稳定性|الاستقرار|stability
+基准测试|اختبار المعيار المرجعي|benchmark
+响应时间|زمن الاستجابة|response time
+并发用户|المستخدمون المتزامنون|concurrent users
+测试脚本|سكربت الاختبار|test script
+录制回放|التسجيل والإعادة|record and playback
+自动化框架|إطار الأتمتة|automation framework
+持续测试|الاختبار المستمر|continuous testing
+测试覆盖|تغطية الاختبار|test coverage
+静态检查|الفحص الثابت|static check
+代码检查工具|أداة فحص الكود|linter
+类型检查|فحص الأنواع|type checking
+检查清单|قائمة التحقق|checklist
+走查|المراجعة المتسلسلة|walkthrough
+同行评审|مراجعة الأقران|peer review
+用户验收测试|اختبار قبول المستخدم|user acceptance testing
+测试阶段|مرحلة الاختبار|test phase
+预发布环境|بيئة ما قبل الإطلاق|staging environment
+生产环境|بيئة الإنتاج|production environment
+测试账号|حساب الاختبار|test account
+假数据|البيانات الوهمية|fake data
+种子数据|البيانات الأولية|seed data
+回归|التراجع (regression)|regression
+发布标准|معايير الإطلاق|release criteria
+质量门禁|بوابة الجودة|quality gate
+零缺陷|صفر عيوب|zero defects
++se-web
+超文本标记语言|لغة ترميز النص التشعبي|HTML
+层叠样式表|أوراق الأنماط المتتالية|CSS
+网页设计|تصميم الويب|web design
+响应式设计|التصميم المتجاوب|responsive design
+用户界面|واجهة المستخدم|user interface
+用户体验|تجربة المستخدم|user experience
+组件|المكوّن|component
+单页应用|تطبيق الصفحة الواحدة|single-page application
+服务端渲染|العرض من الخادم|server-side rendering
+静态网站|الموقع الثابت|static website
+动态网页|الصفحة الديناميكية|dynamic page
+表单|النموذج|form
+按钮|الزر|button
+链接|الرابط|link
+图片|الصورة|image
+样式|النمط|style
+布局|التخطيط|layout
+字体|الخط|font
+动画|الحركة|animation
+路由|التوجيه|routing
+状态管理|إدارة الحالة|state management
+请求方法|طريقة الطلب|request method
+请求体|جسم الطلب|request body
+响应体|جسم الاستجابة|response body
+查询参数|معاملات الاستعلام|query parameters
+路径参数|معاملات المسار|path parameters
+重定向|إعادة التوجيه|redirect
+未找到|غير موجود|not found
+服务器错误|خطأ الخادم|server error
+未授权|غير مصرّح|unauthorized
+禁止访问|ممنوع الوصول|forbidden
+表述性状态转移|نقل الحالة التمثيلي (REST)|REST
+资源|المورد|resource
+端点|نقطة النهاية|endpoint
+幂等|عديم الأثر عند التكرار|idempotent
+数据格式|صيغة البيانات|data format
+网络钩子|خطّاف الويب|webhook
+套接字|المقبس|socket
+实时通信|الاتصال الفوري|real-time communication
+轮询|الاستطلاع الدوري|polling
+推送通知|الإشعار الفوري|push notification
+网络请求|طلب الشبكة|network request
+加载|التحميل|loading
+加载速度|سرعة التحميل|loading speed
+压缩|الضغط|compression
+缓存策略|سياسة التخزين المؤقت|caching strategy
+浏览器缓存|ذاكرة المتصفح المؤقتة|browser cache
+本地存储|التخزين المحلي|local storage
+网页存储|تخزين الويب|web storage
+安全传输|النقل الآمن|secure transport
+传输层安全|أمن طبقة النقل|TLS
+加密连接|الاتصال المشفّر|encrypted connection
+域名系统|نظام أسماء النطاقات|DNS
+主机|المضيف|host
+托管|الاستضافة|hosting
+反向代理|الوكيل العكسي|reverse proxy
+代理服务器|الخادم الوكيل|proxy server
+网络服务器|خادم الويب|web server
+应用服务器|خادم التطبيقات|application server
+接口文档|توثيق الواجهة البرمجية|API documentation
+版本控制接口|الواجهة البرمجية ذات الإصدارات|versioned API
+速率限制|تحديد المعدل|rate limiting
+图形查询语言|لغة الاستعلام GraphQL|GraphQL
+序列化格式|صيغة التسلسل|serialization format
+可访问性|إمكانية الوصول|accessibility
+搜索引擎优化|تحسين محركات البحث|SEO
+国际化|التدويل|internationalization
+本地化|التوطين|localization
+从右到左|من اليمين إلى اليسار|right-to-left
+移动端|الأجهزة المحمولة|mobile
+桌面端|سطح المكتب|desktop
+兼容性|التوافق|compatibility
+脚本语言|لغة السكربت|scripting language
+异步请求|الطلب غير المتزامن|asynchronous request
+承诺|الوعد (Promise)|promise
+事件监听|الاستماع للأحداث|event listener
+文档对象模型|نموذج كائن المستند|DOM
+虚拟节点|العقدة الافتراضية|virtual node
+前端框架|إطار الواجهة الأمامية|front-end framework
+打包工具|أداة التجميع|bundler
+全栈|المطوّر الشامل|full stack
+网站|الموقع الإلكتروني|website
+网络应用|تطبيق الويب|web application
+用户代理|وكيل المستخدم|user agent
+会话存储|تخزين الجلسة|session storage
++se-db
+结构化查询语言|لغة الاستعلام المهيكلة|SQL
+非关系型数据库|قاعدة البيانات غير العلائقية|NoSQL database
+文档数据库|قاعدة بيانات المستندات|document database
+键值数据库|قاعدة بيانات المفتاح والقيمة|key-value database
+图数据库|قاعدة بيانات الرسوم|graph database
+时序数据库|قاعدة بيانات السلاسل الزمنية|time-series database
+内存数据库|قاعدة البيانات في الذاكرة|in-memory database
+数据仓库|مستودع البيانات|data warehouse
+数据湖|بحيرة البيانات|data lake
+行|الصف|row
+列|العمود|column
+记录|السجل|record
+表|الجدول|table
+唯一约束|قيد التفرد|unique constraint
+非空约束|قيد عدم الفراغ|not-null constraint
+约束|القيد|constraint
+默认约束|القيد الافتراضي|default constraint
+复合主键|المفتاح الأساسي المركب|composite primary key
+自增主键|المفتاح الأساسي التلقائي|auto-increment key
+插入数据|إدراج البيانات|insert data
+更新数据|تحديث البيانات|update data
+删除数据|حذف البيانات|delete data
+条件查询|الاستعلام الشرطي|conditional query
+排序查询|الاستعلام المرتب|sorted query
+分组|التجميع|grouping
+聚合函数|الدالة التجميعية|aggregate function
+连接查询|استعلام الربط|join query
+内连接|الربط الداخلي|inner join
+外连接|الربط الخارجي|outer join
+左连接|الربط الأيسر|left join
+子查询|الاستعلام الفرعي|subquery
+去重|إزالة التكرار|deduplicate
+范式|الصيغة المعيارية|normal form
+规范化|التطبيع|normalization
+反规范化|إلغاء التطبيع|denormalization
+实体关系图|مخطط الكيانات والعلاقات|entity-relationship diagram
+一对多|واحد إلى متعدد|one-to-many
+多对多|متعدد إلى متعدد|many-to-many
+一对一|واحد إلى واحد|one-to-one
+原子性|الذرية|atomicity
+隔离性|العزل|isolation
+持久性|الديمومة|durability
+提交事务|تثبيت المعاملة|commit a transaction
+回滚事务|التراجع عن المعاملة|roll back a transaction
+锁|القفل|lock
+死锁|الجمود (deadlock)|deadlock
+乐观锁|القفل المتفائل|optimistic lock
+悲观锁|القفل المتشائم|pessimistic lock
+隔离级别|مستوى العزل|isolation level
+脏读|القراءة القذرة|dirty read
+幻读|القراءة الوهمية|phantom read
+执行计划|خطة التنفيذ|execution plan
+全表扫描|المسح الكامل للجدول|full table scan
+慢查询|الاستعلام البطيء|slow query
+查询优化|تحسين الاستعلام|query optimization
+复合索引|الفهرس المركب|composite index
+主从复制|النسخ الرئيسي والتابع|primary-replica replication
+副本|النسخة المتماثلة|replica
+分片|التجزئة الأفقية|sharding
+分区|التقسيم|partitioning
+数据同步|مزامنة البيانات|data synchronization
+增量备份|النسخ الاحتياطي التزايدي|incremental backup
+全量备份|النسخ الاحتياطي الكامل|full backup
+数据恢复|استعادة البيانات|data recovery
+对象关系映射|ربط الكائنات بالعلاقات (ORM)|ORM
+迁移脚本|سكربت الترحيل|migration script
+数据库管理员|مدير قاعدة البيانات|database administrator
+数据字典|قاموس البيانات|data dictionary
+元数据管理|إدارة البيانات الوصفية|metadata management
+触发器|المشغّل (trigger)|trigger
+游标|المؤشر|cursor
+批量操作|العمليات الجماعية|batch operation
+数据清洗|تنظيف البيانات|data cleaning
+数据质量|جودة البيانات|data quality
+数据分析|تحليل البيانات|data analysis
+报表|التقرير|report
+提取转换加载|الاستخراج والتحويل والتحميل|ETL
+大数据|البيانات الضخمة|big data
+数据管道|خط البيانات|data pipeline
+最终一致性|الاتساق النهائي|eventual consistency
+强一致性|الاتساق القوي|strong consistency
+数据加密|تشفير البيانات|data encryption
+访问日志|سجل الوصول|access log
+数据库连接|اتصال قاعدة البيانات|database connection
+连接字符串|نص الاتصال|connection string
++se-sys
+需求分析|تحليل المتطلبات|requirements analysis
+容量规划|تخطيط السعة|capacity planning
+估算流量|تقدير حركة المرور|traffic estimation
+每秒查询数|الاستعلامات في الثانية|queries per second
+峰值|ذروة الحمل|peak load
+并发|التزامن|concurrency
+线程|الخيط|thread
+进程|العملية|process
+线程池|مجمع الخيوط|thread pool
+无状态|عديم الحالة|stateless
+有状态|ذو حالة|stateful
+负载均衡器|موازن الحمل|load balancer
+轮询算法|خوارزمية التناوب|round-robin
+一致性哈希|التجزئة المتسقة|consistent hashing
+健康检查|فحص السلامة|health check
+故障转移|التحويل عند العطل|failover
+冗余设计|تصميم التكرار الاحتياطي|redundancy design
+多活|التشغيل النشط المتعدد|active-active
+主备|الرئيسي والاحتياطي|active-passive
+数据中心|مركز البيانات|data centre
+可用区|منطقة التوفر|availability zone
+地域|المنطقة الجغرافية|region
+缓存击穿|اختراق الذاكرة المؤقتة|cache breakdown
+缓存雪崩|انهيار الذاكرة المؤقتة|cache avalanche
+缓存穿透|تجاوز الذاكرة المؤقتة|cache penetration
+缓存失效|انتهاء صلاحية التخزين المؤقت|cache invalidation
+命中率|نسبة الإصابة|hit rate
+过期时间|وقت الانتهاء|expiry time
+写回|الكتابة المؤجلة|write-back
+写穿|الكتابة المباشرة|write-through
+生产者|المنتج|producer
+消费者|المستهلك|consumer
+主题|الموضوع (topic)|topic
+消息|الرسالة|message
+死信队列|طابور الرسائل الميتة|dead-letter queue
+重试|إعادة المحاولة|retry
+幂等性|عدم تأثر النتيجة بالتكرار|idempotency
+限流算法|خوارزمية تحديد المعدل|rate-limiting algorithm
+令牌桶|دلو الرموز|token bucket
+漏桶|الدلو المثقوب|leaky bucket
+超时控制|التحكم في المهلة|timeout control
+服务发现|اكتشاف الخدمات|service discovery
+服务注册|تسجيل الخدمات|service registry
+接口网关|بوابة الواجهات البرمجية|API gateway
+服务网格|شبكة الخدمات|service mesh
+远程过程调用|الاستدعاء الإجرائي عن بُعد|remote procedure call
+事件驱动架构|المعمارية الموجّهة بالأحداث|event-driven architecture
+分布式事务|المعاملة الموزعة|distributed transaction
+两阶段提交|التثبيت على مرحلتين|two-phase commit
+共识算法|خوارزمية الإجماع|consensus algorithm
+分布式锁|القفل الموزع|distributed lock
+领导者选举|انتخاب القائد|leader election
+心跳|نبضة القلب|heartbeat
+网络分区|انقسام الشبكة|network partition
+数据复制|نسخ البيانات|data replication
+对象存储|تخزين الكائنات|object storage
+文件存储|تخزين الملفات|file storage
+块存储|التخزين الكتلي|block storage
+搜索引擎|محرك البحث|search engine
+全文检索|البحث في النص الكامل|full-text search
+倒排索引|الفهرس المقلوب|inverted index
+推荐系统|نظام التوصيات|recommendation system
+短链接|الرابط المختصر|short link
+唯一标识|المعرّف الفريد|unique identifier
+雪花算法|خوارزمية رقاقة الثلج|Snowflake ID
+架构演进|تطور المعمارية|architecture evolution
+服务拆分|تقسيم الخدمات|service decomposition
+扩容|التوسيع|scale out
+缩容|التقليص|scale in
+弹性伸缩|التوسع المرن|auto-scaling
+服务等级协议|اتفاقية مستوى الخدمة|service level agreement
+服务等级目标|هدف مستوى الخدمة|service level objective
+错误预算|ميزانية الأخطاء|error budget
+可维护|قابل للصيانة|maintainable
+成本|التكلفة|cost
+权衡取舍|الموازنة بين الخيارات|making trade-offs
+性能指标|مؤشر الأداء|performance metric
+尾延迟|زمن الاستجابة الطرفي|tail latency
+带宽成本|تكلفة النطاق الترددي|bandwidth cost
+边缘计算|الحوسبة الطرفية|edge computing
+白板面试|مقابلة السبورة|whiteboard interview
++se-ops
+开发运维|التطوير والعمليات (DevOps)|DevOps
+站点可靠性工程|هندسة موثوقية المواقع|site reliability engineering
+基础设施|البنية التحتية|infrastructure
+虚拟机|الآلة الافتراضية|virtual machine
+虚拟化|المحاكاة الافتراضية|virtualization
+容器编排|تنسيق الحاويات|container orchestration
+集群管理|إدارة العنقود|cluster management
+节点池|مجمع العقد|node pool
+服务账号|حساب الخدمة|service account
+镜像仓库|مستودع الصور|image registry
+构建缓存|ذاكرة البناء المؤقتة|build cache
+制品|المنتج البرمجي (artifact)|artifact
+制品库|مستودع المنتجات البرمجية|artifact repository
+发布流程|عملية الإطلاق|release process
+蓝绿部署|النشر الأزرق والأخضر|blue-green deployment
+金丝雀发布|إطلاق الكناري|canary release
+滚动更新|التحديث المتدرج|rolling update
+回滚策略|استراتيجية التراجع|rollback strategy
+功能开关|مفتاح الميزة|feature flag
+配置文件|ملف الإعداد|config file
+密钥管理服务|خدمة إدارة المفاتيح|key management service
+自动扩缩容|التوسع والتقليص التلقائي|autoscaling
+负载|الحمل|load
+资源配额|حصة الموارد|resource quota
+处理器|المعالج|processor
+磁盘|القرص|disk
+网络|الشبكة|network
+存储|التخزين|storage
+日志聚合|تجميع السجلات|log aggregation
+指标监控|مراقبة المقاييس|metrics monitoring
+告警规则|قاعدة التنبيه|alert rule
+告警通知|إشعار التنبيه|alert notification
+值班表|جدول المناوبة|on-call rotation
+事故|الحادث|incident
+事故复盘|مراجعة ما بعد الحادث|post-incident review
+根因分析|تحليل السبب الجذري|root cause analysis
+平均修复时间|متوسط وقت الإصلاح|mean time to repair
+正常运行时间|وقت التشغيل|uptime
+停机时间|وقت التوقف|downtime
+维护窗口|نافذة الصيانة|maintenance window
+变更管理|إدارة التغيير|change management
+运行手册|دليل التشغيل|runbook
+自动化脚本|سكربت الأتمتة|automation script
+命令行工具|أداة سطر الأوامر|command-line tool
+操作系统|نظام التشغيل|operating system
+权限提升|رفع الصلاحيات|privilege escalation
+安全组|مجموعة الأمان|security group
+专有网络|الشبكة الافتراضية الخاصة|virtual private cloud
+弹性计算|الحوسبة المرنة|elastic compute
+函数计算|حوسبة الدوال|function compute
+云服务商|مزود الخدمات السحابية|cloud provider
+公有云|السحابة العامة|public cloud
+私有云|السحابة الخاصة|private cloud
+混合云|السحابة الهجينة|hybrid cloud
+多云|السحابات المتعددة|multi-cloud
+成本优化|تحسين التكاليف|cost optimization
+账单|الفاتورة|bill
+标签策略|سياسة الوسوم|tagging policy
+基础镜像|الصورة الأساسية|base image
+健康探针|مسبار السلامة|health probe
+就绪|الجاهزية|readiness
+存活|الحيوية|liveness
+资源限制|حدود الموارد|resource limits
+配置中心|مركز الإعدادات|configuration centre
+密文|النص المشفر|ciphertext
+证书管理|إدارة الشهادات|certificate management
+域名解析|تحليل أسماء النطاقات|DNS resolution
+内容分发|توزيع المحتوى|content delivery
+备份策略|سياسة النسخ الاحتياطي|backup policy
+灾备|النسخ الاحتياطي للكوارث|disaster backup
+性能调优|ضبط الأداء|performance tuning
+容量评估|تقييم السعة|capacity assessment
+压测|اختبار الضغط|stress testing
+自愈|الإصلاح الذاتي|self-healing
+声明式|التصريحي|declarative
+命令式|الأمري|imperative
+状态文件|ملف الحالة|state file
+基础设施代码|كود البنية التحتية|infrastructure code
+平台工程|هندسة المنصات|platform engineering
+开发者体验|تجربة المطوّر|developer experience
+内部平台|المنصة الداخلية|internal platform
+工具链|سلسلة الأدوات|toolchain
+可重复构建|البناء القابل للتكرار|reproducible build
++se-agile
+敏捷宣言|البيان الرشيق|Agile Manifesto
+敏捷教练|مدرب الرشاقة|agile coach
+产品负责人|مالك المنتج|product owner
+开发团队|فريق التطوير|development team
+跨职能团队|الفريق متعدد الوظائف|cross-functional team
+自组织|التنظيم الذاتي|self-organising
+冲刺计划会|اجتماع تخطيط السباق|sprint planning
+冲刺评审|مراجعة السباق|sprint review
+每日站会|الاجتماع اليومي|daily stand-up
+冲刺目标|هدف السباق|sprint goal
+冲刺待办列表|قائمة مهام السباق|sprint backlog
+完成的定义|تعريف الإنجاز|definition of done
+就绪的定义|تعريف الجاهزية|definition of ready
+故事点|نقاط القصة|story points
+速度|السرعة|velocity
+燃尽图|مخطط الاحتراق|burndown chart
+燃起图|مخطط الإنجاز التصاعدي|burn-up chart
+史诗|الملحمة (epic)|epic
+任务|المهمة|task
+子任务|المهمة الفرعية|subtask
+待办事项|البند المعلّق|to-do item
+进行中|قيد التنفيذ|in progress
+已完成|منجز|done
+阻塞|العائق|blocker
+依赖关系|علاقة الاعتماد|dependency
+风险管理|إدارة المخاطر|risk management
+范围蔓延|زحف النطاق|scope creep
+最小可行产品|المنتج الأدنى القابل للتطبيق|minimum viable product
+产品路线图|خارطة طريق المنتج|product roadmap
+愿景|الرؤية|vision
+目标|الهدف|goal
+关键结果|النتائج الرئيسية|key results
+目标与关键成果|الأهداف والنتائج الرئيسية|OKRs
+关键绩效指标|مؤشر الأداء الرئيسي|key performance indicator
+用户画像|شخصية المستخدم|user persona
+用户旅程|رحلة المستخدم|user journey
+用户调研|بحث المستخدمين|user research
+用户反馈|ملاحظات المستخدم|user feedback
+需求文档|وثيقة المتطلبات|requirements document
+功能需求|المتطلبات الوظيفية|functional requirements
+非功能需求|المتطلبات غير الوظيفية|non-functional requirements
+优先排序|ترتيب الأولويات|prioritisation
+必须有|ضروري|must have
+线框图|المخطط الهيكلي|wireframe
+设计稿|التصميم المرئي|design mockup
+评审会|اجتماع المراجعة|review meeting
+头脑风暴|العصف الذهني|brainstorming
+工作坊|ورشة العمل|workshop
+时间盒|الصندوق الزمني|timebox
+节奏|الإيقاع|cadence
+持续改进|التحسين المستمر|continuous improvement
+精益|الرشيق (lean)|lean
+浪费|الهدر|waste
+在制品限制|حد العمل الجاري|WIP limit
+周期时间|زمن الدورة|cycle time
+前置时间|زمن التسليم|lead time
+吞吐|الإنتاجية|throughput
+瀑布模型|نموذج الشلال|waterfall model
+规模化敏捷|الرشاقة على نطاق واسع|scaled agile
+项目经理|مدير المشروع|project manager
+项目计划|خطة المشروع|project plan
+甘特图|مخطط غانت|Gantt chart
+截止日期|الموعد النهائي|deadline
+工作量|حجم العمل|workload
+人天|يوم عمل للفرد|person-day
+资源分配|تخصيص الموارد|resource allocation
+沟通|التواصل|communication
+透明度|الشفافية|transparency
+检视|الفحص|inspection
+调整|التكيّف|adaptation
+团队协作|العمل الجماعي|teamwork
+心理安全|الأمان النفسي|psychological safety
+一对一会议|الاجتماع الفردي|one-on-one meeting
+会议纪要|محضر الاجتماع|meeting minutes
+行动项|بند الإجراء|action item
+负责人|المسؤول|owner
+客户|العميل|customer
+业务价值|القيمة التجارية|business value
+投资回报率|العائد على الاستثمار|return on investment
+上线计划|خطة الإطلاق|launch plan
+发布节奏|إيقاع الإصدارات|release cadence
+需求变更|تغيير المتطلبات|requirement change
+技术评审|المراجعة التقنية|technical review
+结对编程|البرمجة الثنائية|pair programming
+集体所有权|الملكية الجماعية|collective ownership
+极限编程|البرمجة القصوى|extreme programming
+远程协作|التعاون عن بُعد|remote collaboration
