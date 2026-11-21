@@ -672,3 +672,4 @@ html[lang="ar"] :is(.eyebrow,.lkind,.cmp .cmph){text-transform:none}
 .sumbtn{margin-top:4px;gap:12px;align-items:center}.sumbtn>span:first-child{font-size:22px}
 .sumcard .sn{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--gold-fill,rgba(var(--hl-rgb),.08));font-weight:700;font-size:13px}
 .sumpit{font-size:14px;line-height:1.6;padding:8px 10px;border-radius:10px;background:rgba(var(--hl-rgb),.05);border-inline-start:3px solid var(--gold)}
+.feedback .qrep{width:30px;height:30px;font-size:14px;margin-inline-start:6px;opacity:.75}

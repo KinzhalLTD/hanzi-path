@@ -169,10 +169,10 @@ function runQuiz(m,{qs,title,exam,seconds,boss,hearts:H0,onDone,onQuit}){ let i=
       if(boss){ const bs=$('#bs',m); if(o.ok){ SFX.hit(); $('#hp',m).style.width=(100-right/qs.length*100)+'%'; $('#bf',m).classList.add('ouch'); $('#tn',m).textContent=pickL(HITS); floatText('-'+Math.round(100/qs.length)+' HP',$('#bf',m)); }
         else { hearts--; bs.classList.add('shake'); $('#tn',m).textContent=pickL(TAUNTS); $('.hearts',m).innerHTML='❤️'.repeat(hearts)+'🖤'.repeat(hearts0-hearts); } }
       let lost=boss&&hearts<=0; const canRevive=lost&&!revived&&!exam, f=document.createElement('div'); f.className='feedback '+(o.ok?'good':'bad');
-      f.innerHTML=`<div><div class="row"><b class="v grow">${o.ok?t('correct'):t('wrong')}</b><span class="sub">${esc(pickL(o.ok?QUIP_OK:QUIP_BAD))}</span></div><div class="sub" style="color:var(--text)">${q.why}</div>
+      f.innerHTML=`<div><div class="row"><b class="v grow">${o.ok?t('correct'):t('wrong')}</b><span class="sub">${esc(pickL(o.ok?QUIP_OK:QUIP_BAD))}</span>${q.id?`<button class="icon-btn qrep" id="qr" aria-label="${isAr()?'أبلغ عن خطأ في هذا السؤال':'Report a problem with this question'}">⚑</button>`:''}</div><div class="sub" style="color:var(--text)">${q.why}</div>
         ${!o.ok&&!boss?`<button class="link tutwhy" id="tw">🐉 ${isAr()?'اسأل لونغباو: لماذا؟':'Ask Longbao why'}</button>`:''}
         ${canRevive?`<button class="btn block revive" id="rv">❤️ ${t('reviveT')} · ${reviveLabel()}</button>`:''}<button class="btn ${canRevive?'ghost ':''}block" id="fn">${lost?(isAr()?'النتيجة':'See result'):t('next')+' '+fwdA()}</button></div>`;
-      document.body.appendChild(f); const tw=$('#tw',f); if(tw) tw.onclick=()=>{ const tx=h=>{ const d=document.createElement('div'); d.innerHTML=h; return d.textContent; }; tutorExplain({question:tx(q.q),options:q.opts.map(x=>tx(x.h)),right:tx(q.opts.find(x=>x.ok).h),chosen:tx(o.h),why:tx(q.why)}); };
+      document.body.appendChild(f); const qr=$('#qr',f); if(qr) qr.onclick=()=>reportQ(q.id,qr); const tw=$('#tw',f); if(tw) tw.onclick=()=>{ const tx=h=>{ const d=document.createElement('div'); d.innerHTML=h; return d.textContent; }; tutorExplain({question:tx(q.q),options:q.opts.map(x=>tx(x.h)),right:tx(q.opts.find(x=>x.ok).h),chosen:tx(o.h),why:tx(q.why)}); };
       $('#fn',f).onclick=()=>{ f.remove(); delete m.dataset.lock; i++; (i<qs.length&&!lost)?draw():finish(); };
       const rv=$('#rv',f); if(rv) rv.onclick=async()=>{ rv.disabled=true; if(await reviveUse()){ revived=true; lost=false; hearts=1; log.pop(); qs[i]=Object.assign({},q,{opts:shuffle(q.opts)}); f.remove(); delete m.dataset.lock; draw(); SFX.ok(); toast('❤️ '+t('reviveOn')); } else rv.disabled=false; }; }); }
   function finish(){ clearInterval(timer); $$('.feedback').forEach(f=>f.remove()); save(); onDone(right,qs.length,log,hearts===hearts0); }
@@ -230,3 +230,9 @@ SCREENS.msum=(m,k)=>{ const x=MOD[k], ar=isAr(); if(!x) return SCREENS.learn(m);
   <button class="btn block" id="fight">${bossOf(x.k).h} ${ar?'قاتل':'Fight'} ${esc(bossOf(x.k).name)}</button>`);
   $('#bk',m).onclick=()=>go('module',k); $('#fight',m).onclick=()=>{ SFX.tap(); go('quizrun',{k}); };
 };
+
+// Learners flag questions that look wrong or unclear: kept in S.reports and sent as an analytics event, so
+// the content team sees which items to fix first (GA4 event `content_report`, param `id`).
+function reportQ(id,btn){ S.reports=S.reports||{}; if(S.reports[id]){ toast(isAr()?'سبق أن أبلغت عن هذا السؤال':'You already reported this question'); return; }
+  S.reports[id]=Date.now(); save(); try{ track('content_report',{id}); }catch(e){}
+  if(btn){ btn.disabled=true; btn.textContent='✓'; } toast(isAr()?'شكرًا! سنراجع هذا السؤال.':'Thanks! We will review this question.'); }
