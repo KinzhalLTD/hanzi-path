@@ -36,7 +36,7 @@ async def main():
             check(not miss, f'i18n keys missing in one language: {miss}')
             # ---- data sanity
             d = await pg.evaluate("({mods:MODS.length,se:TRACK('se').length,cy:TRACK('cy').length,terms:TERMS.length,labs:CODE_LABS.length,talk:TALK.map(x=>x.scenes.length)})")
-            check(d['mods'] == 24 and d['se'] == 12 and d['cy'] == 12 and d['terms'] >= 240 and d['labs'] == 24 and d['talk'] == [6, 6], f'data counts {d}')
+            check(d['mods'] == 24 and d['se'] == 12 and d['cy'] == 12 and d['terms'] >= 240 and d['labs'] == 38 and d['talk'] == [6, 6], f'data counts {d}')
             # ---- full module: se-fund
             await pg.evaluate("go('module','se-fund')"); await pg.wait_for_timeout(150)
             await pg.click('.step[data-s="L"]')
@@ -64,10 +64,11 @@ async def main():
             await pg.click('#nx'); await pg.wait_for_timeout(150)
             await pg.click('.step[data-s="T"]'); await pg.wait_for_timeout(100)
             while await pg.locator('.fcard .h').count() and await pg.locator('#nx').count(): await pg.click('#nx'); await pg.wait_for_timeout(40)
-            for i in range(10):
+            for i in range(40):
+                if await pg.locator('#dn').count(): break
                 await pg.wait_for_selector('.opt'); await pg.locator('.opt').first.click(); await pg.wait_for_timeout(40); await pg.click('.feedback #fn'); await pg.wait_for_timeout(40)
             await pg.click('#dn'); await pg.wait_for_timeout(150)
-            check(await pg.evaluate("!!S.mods['se-fund'].T&&Object.keys(S.srs).length===10"), f'{L}: terms step / SRS not recorded')
+            check(await pg.evaluate("!!S.mods['se-fund'].T&&Object.keys(S.srs).length===MOD['se-fund'].T.length"), f'{L}: terms step / SRS not recorded')
             await pg.click('.step[data-s="D"]'); await pg.wait_for_timeout(150); await pg.click('#dd'); await pg.wait_for_timeout(200)
             check(await pg.evaluate("!!S.mods['se-fund'].done"), f'{L}: module not completed after all steps')
             check(await pg.evaluate("!!(S.badges||{}).first&&!!S.badges.boss&&!!S.flawless"), f'{L}: seals for first lesson / boss / flawless not awarded')
@@ -190,7 +191,7 @@ async def main():
                 await clear(pg)
             # ---- cipher workshop: each flag reachable with the workbench tools
             steps = {'b64': ['b64d'], 'hex': ['hexd'], 'rot13': ['rot13'], 'bin': ['bind'], 'caesar5': [('rot', 21)], 'url': ['urld'], 'rev': ['rev'], 'b64hex': ['b64d', 'hexd'], 'rotb64': ['rot13', 'b64d'],
-                     'jwt': [('set', 'eyJ1c2VyIjoiZ3Vlc3QiLCJmbGFnIjoiQ1B7and0X2lzX3JlYWRhYmxlfSJ9'), 'b64d'], 'xor': [('xor', 42)], 'brute': [('rot', 7)]}
+                     'jwt': [('set', 'eyJ1c2VyIjoiZ3Vlc3QiLCJmbGFnIjoiQ1B7and0X2lzX3JlYWRhYmxlfSJ9'), 'b64d'], 'xor': [('xor', 42)], 'brute': [('rot', 7)], 'revb64': ['rev', 'b64d'], 'hexb64': ['b64d', 'hexd'], 'binrev': ['bind', 'rev']}
             for i, c in enumerate(await pg.evaluate("CTF.map(c=>[c.k,c.flag])")):
                 await pg.evaluate(f"go('ctflab',{{i:{i}}})"); await pg.wait_for_timeout(60)
                 for s in steps[c[0]]:

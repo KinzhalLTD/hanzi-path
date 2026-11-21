@@ -25,20 +25,20 @@ TWO TRACKS, 24 MODULES
 • Software engineering: fundamentals, data structures, algorithms and Big-O, object-oriented design, design patterns, Git, testing, web and APIs, databases and SQL, system design, DevOps and cloud, agile.
 • Cybersecurity: the CIA triad and risk, cryptography, identity and access, network security, the OWASP Top 10, secure coding, malware and phishing, security operations, incident response and forensics, cloud security and DevSecOps, governance and compliance (ISO 27001, NIST CSF, Saudi NCA controls, PDPL), and ethical hacking methodology.
 
-120 LESSONS, 384 BOSS QUESTIONS
-Every boss fight draws 8 questions from a bank of 16, so rematches stay fresh. Chapter gates test a whole chapter, and Weak Spots brings back every question you missed until you get it right twice.
+168 LESSONS, 624 BOSS QUESTIONS
+Every lesson ends with a real-world example, the most common mistake and the key takeaways. Every boss fight draws 8 questions from a bank of 26, so rematches stay fresh. Chapter gates test a whole chapter, and Weak Spots brings back every question you missed until you get it right twice.
 
 HANDS-ON LABS – SAFE AND LOCAL
-• 24 code labs: write real JavaScript, run automatic tests, see what failed and why.
+• 38 code labs: write real JavaScript, run automatic tests, see what failed and why.
 • Phishing detective: tap the red flags in realistic emails.
-• Log hunter: find the brute-force login, the SQL injection, the data leaking through DNS.
+• Log hunter: find the brute-force login, the SQL injection, the data leaking through DNS, ransomware and mailbox takeovers.
 • Secure code review: spot the vulnerable line and name the flaw, then see the safer fix.
 • Cipher workshop: decode Base64, hex, ROT, XOR and more to capture the flag.
 • Firewall simulator and a password & hash lab.
 Every scenario is fictional and runs on your phone; nothing touches real systems.
 
 TECH CHINESE
-241 professional terms with pinyin and audio, spaced-repetition practice, and 12 voiced workplace conversations, each character with a voice of their own: stand-ups, code reviews, release rollbacks, incident calls, audits, a cloud data leak and pen-test scoping.
+481 professional terms with pinyin and audio, spaced-repetition practice, and 12 voiced workplace conversations, each character with a voice of their own: stand-ups, code reviews, release rollbacks, incident calls, audits, a cloud data leak and pen-test scoping.
 
 PLAYFUL BY DESIGN
 Meet Lóngbǎo, the debugging dragon who tells terrible programmer jokes. Every module ends with a boss fight against monsters like the Infinite Loop Demon and the Merge Conflict Dragon. Open a red envelope every day, draw your coding fortune, chain answers into firecracker combos, collect 17 imperial seals and rise from Code Apprentice to Code Sage.
